@@ -1,6 +1,6 @@
 # גישת AI
 
-> מקור: [GovLab_2.0_AI_Evolution.pdf](../חומרי-מקור/מסמכים/GovLab_2.0_AI_Evolution.pdf) שקפים 3, 4, 9, 12; [הצעת הערך AI-Driven SDLC](../חומרי-מקור/מסמכים/הצעת_הערך_של_שטראוס_אסטרטגיה_-_AI-Driven_SDLC.pdf) סעיף 2.
+> מקור: [GovLab_2.0_AI_Evolution.pdf](../חומרי-מקור/מסמכים/GovLab_2.0_AI_Evolution.pdf) שקפים 3, 4, 9, 12; מתודולוגיית AI-Driven SDLC של שטראוס אסטרטגיה (מסמך פנימי, לא ב-repo) סעיף 2.
 
 ## שלושת חוקי הברזל
 
