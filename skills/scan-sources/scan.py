@@ -3,7 +3,7 @@
 סורק את חומרי-המקור, מזהה קבצים חדשים/שהשתנו/שנמחקו מול סטטוס.md,
 וממיר מה שאפשר לטקסט ב-_טקסט/ כדי שסוכן יוכל לקרוא.
 
-תלויות: Python 3 בלבד (stdlib). PDF — דרך pypdf אם מותקן, אחרת הסוכן קורא ישירות.
+תלויות: Python 3. Office/HTML — stdlib בלבד. PDF — pymupdf (pip install -r skills/scan-sources/requirements.txt).
 
 שימוש:
   python3 skills/scan-sources/scan.py            # סריקה + עדכון סטטוס.md + המרה
@@ -94,10 +94,17 @@ def conv_html(p: Path) -> str:
 
 def conv_pdf(p: Path) -> str:
     try:
-        import pypdf  # type: ignore
-        return "\n\n".join((pg.extract_text() or "") for pg in pypdf.PdfReader(str(p)).pages)
+        import pymupdf  # type: ignore
     except ImportError:
-        raise RuntimeError("PDF: אין pypdf. הסוכן יקרא את הקובץ ישירות (pip install pypdf כדי להמיר)")
+        raise RuntimeError("אין pymupdf — הרץ: pip install -r skills/scan-sources/requirements.txt (או קרא את ה-PDF ישירות)")
+    out = []
+    with pymupdf.open(str(p)) as doc:
+        for i, pg in enumerate(doc, 1):
+            t = pg.get_text().strip()
+            if t: out.append(f"## עמוד {i}\n\n{t}")
+        if not out:
+            raise RuntimeError(f"PDF סרוק ({len(doc)} עמודים, בלי שכבת טקסט) — צפה בקובץ ישירות")
+    return "\n\n".join(out)
 
 def conv_textutil(p: Path) -> str:
     r = subprocess.run(["textutil", "-convert", "txt", "-stdout", str(p)], capture_output=True, text=True)

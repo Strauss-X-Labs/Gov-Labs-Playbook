@@ -13,6 +13,7 @@
 
 1. שים את הקובץ בתיקייה המתאימה.
 2. הרץ את ה-skill `scan-sources` (ב-Claude Code / Kiro / Antigravity), או ידנית: `python3 skills/scan-sources/scan.py`.
+   פעם ראשונה במחשב: `pip install -r skills/scan-sources/requirements.txt` (בשביל PDF).
 3. ה-skill בוחן את החומר מול הפלייבוק וכותב המלצה ב-[סטטוס.md](סטטוס.md). השילוב עצמו — אחרי אישור.
 
 ## ההבדל מ-`_תיבת-כניסה/`
