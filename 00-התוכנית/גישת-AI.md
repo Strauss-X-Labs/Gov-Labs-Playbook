@@ -21,7 +21,7 @@
 ## חמישה עקרונות הנדסיים (מתודולוגיית AI-Driven SDLC של שטראוס)
 
 1. **Human-in-the-Loop** — ה-AI מנוע אוטונומי שמתזמר ומבצע; הצוות האנושי מקבל החלטות, מארכט ומבקר, ונושא באחריות המקצועית המלאה על התוצר.
-2. **Spec-Driven Development** — לפני כתיבת קוד, מפרט (Spec) מובנה וקריא לאדם הוא "מקור האמת היחיד". ראה [Spec-Driven Development](../03-ידע/מתודולוגיות/Spec-Driven-Development.md).
+2. **Spec-Driven Development** — לפני כתיבת קוד, מפרט (Spec) מובנה וקריא לאדם הוא "מקור האמת היחיד". ראה [Spec-Driven Development](../03-ידע/מתודות/Spec-Driven-Development.md).
 3. **AI Engineering Rulebook** — ספר חוקים מותאם ארגונית: עקרונות עבודה, Prompts, Skills וכללי כתיבה. ראה [AI Engineering Rulebook](../03-ידע/סטנדרטים/AI-Engineering-Rulebook.md).
 4. **Governance** — הרצת סוכנים מאובטחת: Least Privilege, Service Principals ייעודיים, Sandbox.
 5. **Tool-Agnostic** — המודל אינו קשור לכלי ספציפי (Copilot, Cursor, Claude Code, Kiro, AWS AI-DLC…).
