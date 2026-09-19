@@ -12,13 +12,13 @@
 
 | # | יום | מה קורה בין לבין |
 |---|---|---|
-| 01 | [Unboxing](01-Unboxing/סקירה.md) | שבועיים חקר שטח וראיונות |
+| 01 | [Unboxing](01-Unboxing/סקירה.md) | **Learning Loop** — שבועיים: חקר שטח, ראיונות, Challenge Space |
 | 02 | [Design Thinking 1](02-Design-Thinking-1/סקירה.md) | |
-| 03 | [Design Thinking 2](03-Design-Thinking-2/סקירה.md) | בדיקת קונספט מול המציאות |
+| 03 | [Design Thinking 2](03-Design-Thinking-2/סקירה.md) | **Validation Loop** — שבועיים: בדיקת קונספט מול משתמשים |
 | 04 | [Lean Canvas](04-Lean-Canvas/סקירה.md) | |
-| 05 | [Design Sprint](05-Design-Sprint/סקירה.md) | ~50% מוצר בפיתוח |
-| 06 | [Architecture](06-Architecture/סקירה.md) | |
-| 07 | [Roadmap](07-Roadmap/סקירה.md) | |
-| 08 | [Storytelling](08-Storytelling/סקירה.md) | |
+| 05 | [Design Sprint & Lean CX](05-Design-Sprint/סקירה.md) | ~50% מוצר בפיתוח |
+| 06 | [Architecture & Backlog](06-Architecture/סקירה.md) | |
+| 07 | [Roadmap & Budget](07-Roadmap/סקירה.md) | |
+| 08 | [Storytelling & Pitch](08-Storytelling/סקירה.md) | |
 
 תבניות: [_תבנית-יום/](_תבנית-יום/) — סקירה, היערכות, ותהליך.
