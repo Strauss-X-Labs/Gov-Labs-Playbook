@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GovLabs AI-SDLC — התפיסה (v0.7)</title>
+<style>
+  :root{--ink:#1a1f2b;--muted:#5b6474;--line:#e3e6ec;--bg:#ffffff;--soft:#f5f7fa;
+        --spec:#2f6fed;--arch:#7c3aed;--build:#0e9f6e;--gate:#e0821a;--kb:#0277bd;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"Segoe UI",Roboto,Arial,"Noto Sans Hebrew",sans-serif;line-height:1.65;font-size:16px}
+  main{max-width:1240px;margin:0 auto;padding:40px 28px 80px}
+  h1{font-size:34px;margin:0 0 6px}
+  h2{font-size:24px;margin:48px 0 12px;padding-top:18px;border-top:1px solid var(--line)}
+  h3{font-size:18px;margin:26px 0 8px}
+  p{margin:8px 0}
+  .lead{font-size:18px;color:var(--muted);margin-bottom:6px}
+  .tag{display:inline-block;font-size:12px;padding:2px 10px;border-radius:999px;background:#fff3e6;color:#9a4d00;border:1px solid #f4c88f;margin-inline-start:8px;vertical-align:middle}
+  .box{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:14px 0}
+  .callout{border-inline-start:4px solid var(--spec);background:#eef4ff;padding:14px 18px;border-radius:8px;margin:14px 0}
+  .kb{border-inline-start:4px solid var(--kb);background:#e8f5fd}
+  .changed{border-inline-start:4px solid #16a34a;background:#f0fdf4;padding:12px 18px;border-radius:8px;margin:14px 0}
+  table{border-collapse:collapse;width:100%;margin:12px 0;font-size:14.5px}
+  th,td{border:1px solid var(--line);padding:9px 11px;vertical-align:top;text-align:right}
+  th{background:var(--soft);font-weight:700}
+  code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.92em;direction:ltr;unicode-bidi:embed;background:#f1f3f7;padding:1px 5px;border-radius:4px}
+  pre{direction:ltr;text-align:left;background:#0f172a;color:#e5e7eb;padding:16px 18px;border-radius:10px;overflow:auto;font-size:13px;line-height:1.5}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:12px 0}
+  .three{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+  .card{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:#fff}
+  .card h4{margin:0 0 6px;font-size:16px}
+  .card p{margin:4px 0;font-size:14.5px;color:#333}
+  .num{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;align-items:center;justify-content:center;font-weight:700;font-size:14px;margin-inline-end:8px}
+  .p-spec{color:var(--spec)} .p-arch{color:var(--arch)} .p-build{color:var(--build)}
+  .diagram{border:1px solid var(--line);border-radius:14px;padding:10px;background:#fff;overflow-x:auto;margin:16px 0}
+  .diagram svg{display:block;min-width:1000px;width:100%;height:auto}
+  .diagram.tall svg{min-width:0;max-width:1000px;margin:0 auto}
+  ul,ol{padding-inline-start:22px}
+  li{margin:4px 0}
+  .small{font-size:13.5px;color:var(--muted)}
+  .sk td:first-child{white-space:nowrap}
+  .agentcell{white-space:nowrap;font-weight:700}
+  .skills code{display:inline-block;margin:2px 0}
+  .roles td:first-child{white-space:nowrap;font-weight:700}
+</style>
+</head>
+<body>
+<main>
+
+<h1>GovLabs AI-SDLC <span class="tag">v0.7</span></h1>
+<p class="lead">תהליך פיתוח מונחה-AI לתכנית ההאצה GovLabs, מבית שטראוס אסטרטגיה: ה-Agents מובילים, ה-Skills מקנים את הידע, הצוות מכריע ומאשר — מהחבילה העסקית ועד קוד בדוק, עם ה-Governance שממשלה דורשת.</p>
+
+<!-- ===================================================== -->
+<h2>1. התפיסה</h2>
+<div class="callout">
+<p><b>GovLabs AI-SDLC</b> הוא מודל הפעלה חדש לפיתוח מיזמי GovLabs, שנבנה סביב היכולות שה-AI מביא: לקרוא הקשר רחב, לנסח תוצרים מלאים, לזהות פערים ולשאול, לבדוק את עצמו ולעבוד ברציפות. במקום להוסיף AI לתהליך קיים, התהליך עצמו מתוכנן מחדש כך שה-AI מוביל אותו.</p>
+<p><b>ההובלה נעשית על-ידי סוכני AI (Agents), והידע מגיע ממיומנויות (Skills).</b> סוכן מנצח (Conductor) מכיר את המתודולוגיה ואת מצב המיזם ומריץ אותו קדימה: פותח כל שלב, אוסף את הקלט, מפעיל את הסוכן המתמחה בשלב (מוצר, ארכיטקטורה, בנייה, בדיקות), מריץ בדיקות, מזמן סוקר, מציג לאישור, מתעד את הלקחים ומכין את השלב הבא. הידע המקצועי — איך כותבים דרישות, איך מתעדים החלטה ארכיטקטונית, איך בונים תכנית בדיקות לפי תקני הממשלה — ארוז ב-Skills של GovLabs שהסוכנים מפעילים. השילוב הוא הליבה: ה-Agent הוא הביצוע, ה-Skill הוא המומחיות.</p>
+<p><b>הצוות האנושי עובר לתפקיד של הכוונה, הכרעה ואישור.</b> המנטור העסקי וצוות המיזם מגדירים את הכוונה וקובעים סדרי עדיפויות; הארכיטקט בוחר בין חלופות ומאשר החלטות; צוות ה-IT של המשרד קובע אילוצים; המפתחים והבודקים מכריעים מה מוכן ומה חוסם. הזמן של כולם מושקע במה שרק הם יכולים לתת — הקשר, שיקול דעת וסמכות.</p>
+<p><b>ההאצה</b> נובעת מכך שה-AI מוביל ומייצר: בכל שלב הסוכנים מגיעים עם התוצר כתוב — לא עם דף ריק — וכל תוצר מאושר הוא כבר הקלט המוכן של השלבים הבאים. הצוות לא כותב מסמכים ולא מתרגם בין שלבים; הוא מכריע על טיוטות מלאות, והסוכנים ממשיכים מיד עם ההכרעות. כך זמן ההמתנה בין שלבים — שהוא רוב הזמן בתהליך מסורתי — כמעט נעלם. <b>ה-Governance</b> מובנה בתהליך ולא נוסף עליו: כל תוצר הוא קובץ מפרט מנוהל-גרסאות; כל החלטת מוצר נרשמת ב-<code>decisions.md</code> וכל החלטה ארכיטקטונית ב-ADR; כל תוצר עובר בדיקה אוטומטית וסקירה של סוכן Reviewer; ואף שלב לא נסגר ללא אישור של בעל סמכות. שער האישור האנושי הוא מה שמאפשר להעניק ל-AI את ההובלה.</p>
+<p><b>הידע מצטבר.</b> כל מיזם קורא מ"מוח כללי" של GovLabs (Skills, כללים, תבניות, לקחים) ומחזיר אליו את מה שלמד. כל מיזם מתחיל מנקודה מתקדמת יותר מקודמו, והמתודולוגיה עצמה משתפרת עם כל הרצה.</p>
+</div>
+
+<!-- ===================================================== -->
+<h2>2. הערך העסקי — למה בכלל כדאי לעבור ל-AI-Driven</h2>
+<table>
+<tr><th style="width:22%">ערך</th><th>איך התפיסה מייצרת אותו</th></tr>
+<tr><td><b>מהירות</b></td><td>הסוכנים מייצרים את התוצרים המלאים של כל שלב, והצוות מכריע ומאשר במקום לכתוב. מפגשי צוות ממוקדים של שעות במקום סבבי תיאום של שבועות; מחזורי בנייה של ימים לכל סיפור משתמש. בשלב הראשון הצוות מפעיל את הסוכנים בעצמו מתוך הכלי שלו; בעתיד ניתן להעביר חלק מהריצה לאוטונומיה — התהליך והתוצרים לא משתנים.</td></tr>
+<tr><td><b>איכות ופחות הפתעות</b></td><td>קריטריוני קבלה כתובים לכל דרישה לפני שנכתב קוד; כל דרישה ניתנת למעקב עד הבדיקה שמוכיחה אותה; סוקר ובדיקות אוטומטיות לפני כל שער.</td></tr>
+<tr><td><b>Governance ושקיפות</b></td><td>שרשרת מלאה של מי החליט מה ומתי, מנוהלת-גרסאות. ADR לכל החלטה ארכיטקטונית. כללי אבטחה, פרטיות ונגישות ממשלתיים מובנים ב-Skills ובבדיקות — לא תלויים בזיכרון של אדם.</td></tr>
+<tr><td><b>המשרד הוא הבעלים של הידע</b></td><td>המפרט, הארכיטקטורה וההחלטות הם נכס של המשרד — מסמכים חיים ברפו שלו, לא ידע שנמצא רק אצל הספק. החלפת ספק, הרחבה או תחזוקה מתחילות ממסמכים מעודכנים.</td></tr>
+<tr><td><b>אחידות וסטנדרט</b></td><td>אותו תהליך, אותם תוצרים, אותם שערים, אותה שפה — לכלל המיזמים בתכנית. מנטור שליווה מיזם אחד מבין מיד את השני; הנהלת GovLabs רואה את כל המיזמים באותה שפה.</td></tr>
+<tr><td><b>ידע שמצטבר</b></td><td>לקח ממיזם אחד הופך לכלל או ל-Skill משופר במוח הכללי ומשרת את כל המיזמים הבאים. העלות והסיכון של כל מיזם יורדים עם הזמן.</td></tr>
+<tr><td><b>מוכנות לעתיד</b></td><td>תפיסה חדשנית ומתקדמת שאינה תלויה בכלי כזה או אחר: המתודולוגיה, ה-Skills והתוצרים עומדים בפני עצמם. מעבר לכלי חדש או לסוכנים אוטונומיים הוא שינוי במידת האוטונומיה, לא בתהליך.</td></tr>
+</table>
+
+<!-- ===================================================== -->
+<h2>3. אבני היסוד</h2>
+<div class="grid three">
+<div class="card">
+<h4>🤖 Agent — מי מבצע</h4>
+<p>סוכן AI עם תפקיד מוגדר: פרסונה (למשל "ארכיטקט תוכנה שמכיר את תקני הענן הממשלתי"), הכלים שמותר לו להשתמש בהם (קריאה וכתיבה של קבצים, הרצת בדיקות, חיפוש), והמנדט שלו בתהליך (אילו שלבים הוא מוביל). הסוכן מנהל את השיחה עם הצוות: שואל, מציע, כותב, ומציג לאישור.</p>
+<p>בתפיסה יש שבעה: <b>Conductor</b> (מנצח — מריץ את התהליך), <b>Product</b>, <b>Architect</b>, <b>API</b>, <b>Builder</b>, <b>Tester</b> ו-<b>Reviewer</b> (סוקר).</p>
+</div>
+<div class="card">
+<h4>📘 Skill — איך עושים את זה נכון</h4>
+<p>חבילת ידע לשימוש חוזר: קובץ הוראות שמסביר מתי משתמשים בו, מהם השלבים, מה תבנית הפלט ואיך נראית דוגמה טובה — לעיתים עם תבניות וסקריפטים מצורפים. הסוכן מפעיל את ה-Skills שהוא צריך לשלב הנוכחי. אותו Skill משרת כל סוכן, כל מיזם וכל כלי.</p>
+<p><b>ה-Agent הוא המבצע, ה-Skill הוא המומחיות.</b> Skill חדש או משופר משדרג מיד את כל המיזמים — בלי לשנות את הסוכנים.</p>
+</div>
+<div class="card">
+<h4>🧠 GovLabs Knowledge — המוח הכללי</h4>
+<p>מאגר אחד של GovLabs שכל מיזם מקבל: ספריית ה-Skills, כללי הממשלה (אבטחה, פרטיות, נגישות, ענן), תבניות לכל קובץ, דוגמאות טובות ולקחים ממיזמים קודמים. נטען לכל שלב, ומתעדכן ממה שנלמד.</p>
+<p>לצידו <b>זיכרון המיזם</b> — מה שפרטי למיזם אחד: ההקשר הקבוע שלו, ההחלטות, מצב ההתקדמות והלקחים של כל שלב.</p>
+</div>
+</div>
+
+<!-- ===================================================== -->
+<h2>4. שמונה עקרונות</h2>
+<div class="grid">
+<div class="card"><h4><span class="num">1</span>ה-AI מוביל, הצוות שולט</h4><p>סוכן מנצח מריץ את התהליך מקצה לקצה. הצוות מכוון, מכריע ומאשר. אף שלב לא נסגר בלי אישור של בעל סמכות.</p></div>
+<div class="card"><h4><span class="num">2</span>המפרט הוא מקור האמת</h4><p>כל תוצר הוא קובץ Markdown מנוהל-גרסאות ברפו של המיזם. מה שלא כתוב במפרט — לא קיים.</p></div>
+<div class="card"><h4><span class="num">3</span>הצוות כולו עובד יחד</h4><p>מנטור עסקי, צוות המיזם, ארכיטקט, IT המשרד, מוצר, פיתוח ובדיקות — כל אחד בתפקידו — יושבים יחד מול ה-AI. שאלות נענות במקום, החלטות נרשמות במקום.</p></div>
+<div class="card"><h4><span class="num">4</span>כל החלטה מתועדת</h4><p>החלטות מוצר ב-<code>decisions.md</code>, החלטות ארכיטקטורה ב-ADR. כל דרישה ניתנת למעקב: מאיפה הגיעה, מי אישר, איפה נבדקה.</p></div>
+<div class="card"><h4><span class="num">5</span>בודקים לפני כל שער</h4><p>בדיקה אוטומטית (סעיפים חסרים, עקיבות, מידע אישי) + סוכן Reviewer. הצוות מקבל ממצאים, לא דף ריק.</p></div>
+<div class="card"><h4><span class="num">6</span>מוח אחד לכל המיזמים</h4><p>GovLabs Knowledge נטען לכל שלב בכל מיזם, ומתעדכן ממה שנלמד. כל מיזם מתחיל מנקודה מתקדמת יותר מקודמו.</p></div>
+<div class="card"><h4><span class="num">7</span>עברית, מימין לשמאל</h4><p>התוצרים והתהליך מוצגים לצוות בעברית. בפועל הסוכנים עובדים באנגלית — איכות גבוהה יותר, יעילות וחיסכון בטוקנים — ובסוף כל מסמך פרק "תרגום לעברית" שמחייב את הצוות.</p></div>
+<div class="card"><h4><span class="num">8</span>אגנוסטיים לכלי, גדלים בהדרגה</h4><p>המתודולוגיה, ה-Skills והתוצרים לא תלויים בכלי — Kiro, Antigravity, Claude Code או אחר. היום הסוכנים רצים כשהצוות מולם; מחר — אוטונומית על אותם קבצים. התהליך לא משתנה, רק מידת האוטונומיה.</p></div>
+</div>
+
+<!-- ===================================================== -->
+<h2>5. ה-Pipeline — שלוש פאזות, שבעה שלבים, ארבעה Gates</h2>
+<p>הזרימה מימין לשמאל. ה-Conductor (למעלה) מריץ את כל התהליך; בכל שלב מסומן הסוכן המוביל. פאזות 1–2 (שלבים 1–4) מתבצעות במפגש צוות אחד; שלב 5 (חוזה API) הוא שלב מותנה שרץ פעם אחת, רק אם הארכיטקטורה מגדירה ממשקי API; שלבים 6–7 רצים במחזורים קצרים לכל סיפור משתמש. שני הפסים למטה הם הרכיבים הרוחביים: המוח הכללי שמזין את כל השלבים, ו-State &amp; Audit — מצב התהליך ויומן הביקורת שמתעדכנים בכל שלב.</p>
+<div class="diagram">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1610" height="710" viewBox="0 -45 1610 710" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,Arial,Noto Sans Hebrew,sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4b5563"/></marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#9ca3af"/></marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0e7490"/></marker>
+  </defs>
+  <style>
+    text{direction:rtl;unicode-bidi:embed}
+    .en{direction:ltr;unicode-bidi:embed;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:11.5px}
+    .title{font-size:17px;font-weight:700;fill:#111827}
+    .sub{font-size:12.5px;fill:#374151}
+    .md{font-size:12px;fill:#111827}
+    .lbl{font-size:12px;fill:#6b7280}
+    .phase{font-size:15px;font-weight:700}
+    .gate{font-size:12px;fill:#9a4d00;font-weight:700}
+  </style>
+
+  <!-- Conductor band -->
+  <rect x="89" y="-36" width="1375" height="34" rx="10" fill="#fdf2f8" stroke="#d9376e" stroke-width="1.5"/>
+  <text x="1450" y="-14" text-anchor="start" font-size="13.5" font-weight="700" fill="#b0245a">🎼 Conductor Agent — המנצח:</text>
+  <text x="1069" y="-14" text-anchor="start" font-size="12.5" fill="#7a1a40">מריץ את התהליך מקצה לקצה — פותח כל שלב, מזמן את ה-Agent המתאים (כולל API Agent בשלב 5 כשנדרש), מריץ בדיקות ו-Reviewer, מציג לשער, מעדכן <tspan class="en">STATUS.md</tspan></text>
+  <line x1="1464" y1="-2" x2="1464" y2="56" stroke="#d9376e" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="89" y1="-2" x2="89" y2="80" stroke="#d9376e" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <!-- one meeting bracket -->
+  <path d="M 1464 66 L 1464 56 L 664 56 L 664 66" fill="none" stroke="#6b7280" stroke-width="1.5"/>
+  <rect x="919" y="38" width="290" height="24" rx="12" fill="#fff" stroke="#6b7280"/>
+  <text x="1064" y="55" text-anchor="middle" font-size="13" font-weight="700" fill="#374151">👥 מפגש צוות אחד — שלבים 1–4 נעשים יחד</text>
+
+  <!-- Phase bands -->
+  <rect x="1064" y="80" width="400" height="440" rx="16" fill="#eef4ff" stroke="#c7d7fb"/>
+  <rect x="664" y="80" width="380" height="440" rx="16" fill="#f3eefe" stroke="#d9c9fb"/>
+  <rect x="89"  y="80" width="555" height="440" rx="16" fill="#e9f8f1" stroke="#b9e8d2"/>
+  <text x="1264" y="108" text-anchor="middle" class="phase" fill="#2f6fed">פאזה 1 · מפרט (SPEC) — מה בונים</text>
+  <text x="854"  y="108" text-anchor="middle" class="phase" fill="#7c3aed">פאזה 2 · ארכיטקטורה — איך בונים</text>
+  <text x="366"  y="108" text-anchor="middle" class="phase" fill="#0e9f6e">פאזה 3 · בנייה (BUILD) — בונים ובודקים</text>
+
+  <!-- Entry -->
+  <g>
+    <rect x="1494" y="195" width="88" height="160" rx="12" fill="#111827"/>
+    <text x="1538" y="222" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">קלט</text>
+    <text x="1538" y="244" text-anchor="middle" fill="#d1d5db" font-size="11">Lean Canvas</text>
+    <text x="1538" y="260" text-anchor="middle" fill="#d1d5db" font-size="11">בריף עסקי</text>
+    <text x="1538" y="276" text-anchor="middle" fill="#d1d5db" font-size="11">Intent עסקי</text>
+    <text x="1538" y="292" text-anchor="middle" fill="#d1d5db" font-size="11">Figma / UI-UX</text>
+    <text x="1538" y="318" text-anchor="middle" fill="#d1d5db" font-size="11">= החבילה</text>
+    <text x="1538" y="334" text-anchor="middle" fill="#d1d5db" font-size="11">העסקית</text>
+  </g>
+
+  <!-- Stage 1 -->
+  <g>
+    <rect x="1284.0" y="140" width="165.0" height="276" rx="12" fill="#fff" stroke="#2f6fed" stroke-width="2"/>
+    <text x="1366.5" y="168" text-anchor="middle" class="title">1 · כוונה</text>
+    <text x="1366.5" y="186" text-anchor="middle" class="lbl"><tspan class="en">Intent</tspan></text>
+    <text x="1437.0" y="239" text-anchor="start" class="sub">הבסיס למיזם: הצורך</text>
+    <text x="1437.0" y="256" text-anchor="start" class="sub">העסקי והפתרון — מטרה,</text>
+    <text x="1437.0" y="273" text-anchor="start" class="sub">משתמשים, ערך, גבולות,</text>
+    <text x="1437.0" y="290" text-anchor="start" class="sub">מדדי הצלחה</text>
+    <line x1="1296.0" y1="302" x2="1437.0" y2="278" stroke="#e5e7eb"/>
+    <text x="1437.0" y="324" text-anchor="start" class="md">📄 <tspan class="en">intent.md</tspan></text>
+    <text x="1437.0" y="386" text-anchor="start" class="lbl">👤 צוות המיזם + מנטור עסקי</text>
+    <text x="1437.0" y="402" text-anchor="start" class="lbl">⏱ מפגש צוות</text>
+    <rect x="1294.0" y="196" width="145.0" height="20" rx="10" fill="#e3ecff" stroke="#2f6fed"/>
+    <text x="1366.5" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#2f6fed">🤖 Product Agent</text>
+  </g>
+  <!-- Stage 2 -->
+  <g>
+    <rect x="1079.0" y="140" width="185.0" height="276" rx="12" fill="#fff" stroke="#2f6fed" stroke-width="2"/>
+    <text x="1171.5" y="168" text-anchor="middle" class="title">2 · דרישות + Stories</text>
+    <text x="1171.5" y="186" text-anchor="middle" class="lbl"><tspan class="en">Requirements + User Stories</tspan></text>
+    <text x="1252.0" y="239" text-anchor="start" class="sub">סיפורי משתמש עם</text>
+    <text x="1252.0" y="256" text-anchor="start" class="sub">קריטריוני קבלה ·</text>
+    <text x="1252.0" y="273" text-anchor="start" class="sub">מסכים וזרימות מ-Figma ·</text>
+    <text x="1252.0" y="290" text-anchor="start" class="sub">תעדוף וגבולות</text>
+    <line x1="1091.0" y1="302" x2="1252.0" y2="278" stroke="#e5e7eb"/>
+    <text x="1252.0" y="324" text-anchor="start" class="md">📄 <tspan class="en">requirements.md</tspan></text>
+    <text x="1252.0" y="342" text-anchor="start" class="md">📄 <tspan class="en">user-stories.md</tspan></text>
+    <text x="1252.0" y="360" text-anchor="start" class="md">📄 <tspan class="en">ux.md</tspan> · <tspan class="en">decisions.md</tspan></text>
+    <text x="1252.0" y="386" text-anchor="start" class="lbl">👤 צוות המיזם + ארכיטקט</text>
+    <text x="1252.0" y="402" text-anchor="start" class="lbl">⏱ באותו מפגש</text>
+    <rect x="1089.0" y="196" width="165.0" height="20" rx="10" fill="#e3ecff" stroke="#2f6fed"/>
+    <text x="1171.5" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#2f6fed">🤖 Product Agent</text>
+  </g>
+  <!-- Stage 3 -->
+  <g>
+    <rect x="874.0" y="140" width="155.0" height="276" rx="12" fill="#fff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="951.5" y="168" text-anchor="middle" class="title">3 · ארכיטקטורה</text>
+    <text x="951.5" y="186" text-anchor="middle" class="lbl"><tspan class="en">Architecture</tspan></text>
+    <text x="1017.0" y="239" text-anchor="start" class="sub">רכיבים, נתונים,</text>
+    <text x="1017.0" y="256" text-anchor="start" class="sub">אינטגרציות, ממשקי API</text>
+    <text x="1017.0" y="273" text-anchor="start" class="sub">(אם יש), ענן, אבטחה,</text>
+    <text x="1017.0" y="290" text-anchor="start" class="sub">ורשומות החלטה (ADR)</text>
+    <line x1="886.0" y1="302" x2="1017.0" y2="278" stroke="#e5e7eb"/>
+    <text x="1017.0" y="320" text-anchor="start" class="md">📄 <tspan class="en">architecture.md</tspan></text>
+    <text x="1017.0" y="338" text-anchor="start" class="md">📄 <tspan class="en" style="font-size:9.5px">architecture-diagram.md</tspan></text>
+    <text x="1017.0" y="356" text-anchor="start" class="md">📄 <tspan class="en">infra.md</tspan></text>
+    <text x="1017.0" y="374" text-anchor="start" class="md">📁 <tspan class="en">adr/</tspan></text>
+    <text x="1017.0" y="394" text-anchor="start" class="lbl">👤 ארכיטקט + IT משרדי</text>
+    <text x="1017.0" y="409" text-anchor="start" class="lbl">⏱ באותו מפגש</text>
+    <rect x="884.0" y="196" width="135.0" height="20" rx="10" fill="#ece4fd" stroke="#7c3aed"/>
+    <text x="951.5" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#7c3aed">🤖 Architect Agent</text>
+  </g>
+  <!-- Stage 4 -->
+  <g>
+    <rect x="679.0" y="140" width="175.0" height="276" rx="12" fill="#fff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="766.5" y="168" text-anchor="middle" class="title">4 · תכנון לפי Story</text>
+    <text x="766.5" y="186" text-anchor="middle" class="lbl"><tspan class="en">Plan by User Story</tspan></text>
+    <text x="842.0" y="239" text-anchor="start" class="sub">תכנית אחת למיזם: סדר</text>
+    <text x="842.0" y="256" text-anchor="start" class="sub">בניית סיפורי המשתמש,</text>
+    <text x="842.0" y="273" text-anchor="start" class="sub">תלויות ביניהם, ובעלים</text>
+    <text x="842.0" y="290" text-anchor="start" class="sub">לכל סיפור</text>
+    <line x1="691.0" y1="302" x2="842.0" y2="278" stroke="#e5e7eb"/>
+    <text x="842.0" y="324" text-anchor="start" class="md">📄 <tspan class="en">plan.md</tspan></text>
+    <text x="842.0" y="342" text-anchor="start" class="md">(סדר סיפורים + תלויות)</text>
+    <text x="842.0" y="386" text-anchor="start" class="lbl">👤 ארכיטקט + מוצר אינטגרטור</text>
+    <text x="842.0" y="402" text-anchor="start" class="lbl">⏱ באותו מפגש</text>
+    <rect x="689.0" y="196" width="155.0" height="20" rx="10" fill="#ece4fd" stroke="#7c3aed"/>
+    <text x="766.5" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#7c3aed">🤖 Architect Agent</text>
+  </g>
+  <!-- Stage 5 -->
+  <g>
+    <rect x="474.0" y="140" width="155.0" height="276" rx="12" fill="#fff" stroke="#0e7490" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="551.5" y="168" text-anchor="middle" class="title">5 · חוזה API (מותנה)</text>
+    <text x="551.5" y="186" text-anchor="middle" class="lbl"><tspan class="en">API Contract</tspan></text>
+    <text x="617.0" y="239" text-anchor="start" class="sub">לכל ממשק API שהוגדר</text>
+    <text x="617.0" y="256" text-anchor="start" class="sub">בארכיטקטורה: מפרט</text>
+    <text x="617.0" y="273" text-anchor="start" class="sub">OpenAPI, מוק חי, ובדיקות</text>
+    <text x="617.0" y="290" text-anchor="start" class="sub">חוזה אוטומטיות</text>
+    <line x1="486.0" y1="302" x2="617.0" y2="278" stroke="#e5e7eb"/>
+    <text x="617.0" y="320" text-anchor="start" class="md">📄 <tspan class="en">api-spec.yaml</tspan></text>
+    <text x="617.0" y="338" text-anchor="start" class="md">🔗 מוק חי — <tspan class="en">URL</tspan> אמיתי</text>
+    <text x="617.0" y="356" text-anchor="start" class="md">📄 <tspan class="en">postman.json</tspan></text>
+    <text x="617.0" y="374" text-anchor="start" class="md">📁 <tspan class="en">tests/api/</tspan></text>
+    <text x="617.0" y="394" text-anchor="start" class="lbl">👤 מפתח אינטגרציה · מאשר: ארכיטקט</text>
+    <text x="617.0" y="409" text-anchor="start" class="lbl">⏱ פעם אחת, לפני הבנייה</text>
+    <rect x="484.0" y="196" width="135.0" height="20" rx="10" fill="#cffafe" stroke="#0e7490" stroke-dasharray="7 5"/>
+    <text x="551.5" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#0e7490">🤖 API Agent</text>
+  </g>
+  <!-- Stage 6 -->
+  <g>
+    <rect x="294.0" y="140" width="160.0" height="276" rx="12" fill="#fff" stroke="#0e9f6e" stroke-width="2"/>
+    <text x="374.0" y="168" text-anchor="middle" class="title">6 · בנייה</text>
+    <text x="374.0" y="186" text-anchor="middle" class="lbl"><tspan class="en">Build · per Story</tspan></text>
+    <text x="442.0" y="239" text-anchor="start" class="sub">לכל סיפור משתמש: מפרט</text>
+    <text x="442.0" y="256" text-anchor="start" class="sub">מצומצם (דרישות → תכן →</text>
+    <text x="442.0" y="273" text-anchor="start" class="sub">משימות) → קוד + בדיקות</text>
+    <text x="442.0" y="290" text-anchor="start" class="sub">יחידה. מחזורים קצרים</text>
+    <line x1="306.0" y1="302" x2="442.0" y2="278" stroke="#e5e7eb"/>
+    <text x="442.0" y="324" text-anchor="start" class="md">📁 <tspan class="en">specs/<story>/</tspan> מפרט</text>
+    <text x="442.0" y="342" text-anchor="start" class="md">📁 <tspan class="en">src/</tspan> קוד המערכת</text>
+    <text x="442.0" y="360" text-anchor="start" class="md">📁 <tspan class="en">tests/</tspan> בדיקות</text>
+    <text x="442.0" y="386" text-anchor="start" class="lbl">👤 מפתחים · מאשר: ארכיטקט</text>
+    <text x="442.0" y="402" text-anchor="start" class="lbl">⏱ מחזור = 1–3 ימים</text>
+    <rect x="304.0" y="196" width="140.0" height="20" rx="10" fill="#dff5ea" stroke="#0e9f6e"/>
+    <text x="374.0" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#0e9f6e">🤖 Builder Agent</text>
+  </g>
+  <!-- Stage 7 -->
+  <g>
+    <rect x="104.0" y="140" width="170.0" height="276" rx="12" fill="#fff" stroke="#0e9f6e" stroke-width="2"/>
+    <text x="189.0" y="168" text-anchor="middle" class="title">7 · אימות</text>
+    <text x="189.0" y="186" text-anchor="middle" class="lbl"><tspan class="en">Verify</tspan></text>
+    <text x="262.0" y="239" text-anchor="start" class="sub">בדיקות אוטומטיות מול</text>
+    <text x="262.0" y="256" text-anchor="start" class="sub">קריטריוני הקבלה (כולל</text>
+    <text x="262.0" y="273" text-anchor="start" class="sub">בדיקות API אם רלוונטי),</text>
+    <text x="262.0" y="290" text-anchor="start" class="sub">סריקת אבטחה ונגישות</text>
+    <line x1="116.0" y1="302" x2="262.0" y2="278" stroke="#e5e7eb"/>
+    <text x="262.0" y="324" text-anchor="start" class="md">📄 <tspan class="en">test-plan.md</tspan></text>
+    <text x="262.0" y="342" text-anchor="start" class="md">📄 <tspan class="en">test-report.md</tspan></text>
+    <text x="262.0" y="360" text-anchor="start" class="md">📄 <tspan class="en">traceability.md</tspan></text>
+    <text x="262.0" y="386" text-anchor="start" class="lbl">👤 בודקים · מאשר: ארכיטקט</text>
+    <text x="262.0" y="402" text-anchor="start" class="lbl">⏱ רציף + סיום</text>
+    <rect x="114.0" y="196" width="150.0" height="20" rx="10" fill="#dff5ea" stroke="#0e9f6e"/>
+    <text x="189.0" y="210" text-anchor="middle" font-size="12" font-weight="700" fill="#0e9f6e">🤖 Tester + Reviewer</text>
+  </g>
+
+  <!-- Exit -->
+  <g>
+    <rect x="6" y="195" width="58" height="160" rx="12" fill="#111827"/>
+    <text x="35" y="240" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">פלט</text>
+    <text x="35" y="268" text-anchor="middle" fill="#d1d5db" font-size="10.5">קוד בדוק</text>
+    <text x="35" y="285" text-anchor="middle" fill="#d1d5db" font-size="10.5">בסביבת</text>
+    <text x="35" y="301" text-anchor="middle" fill="#d1d5db" font-size="10.5">המשרד</text>
+    <text x="35" y="325" text-anchor="middle" fill="#d1d5db" font-size="10.5">+ Spec מלא</text>
+  </g>
+
+  <!-- Flow arrows (right to left) -->
+  <line x1="1494" y1="275" x2="1482" y2="275" stroke="#4b5563" stroke-width="2"/>
+  <line x1="1462" y1="275" x2="1451" y2="275" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1284" y1="275" x2="1266" y2="275" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="1079" y1="275" x2="1064" y2="275" stroke="#4b5563" stroke-width="2"/>
+  <line x1="1044" y1="275" x2="1031" y2="275" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="874" y1="275" x2="856" y2="275" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="679" y1="275" x2="664" y2="275" stroke="#4b5563" stroke-width="2"/>
+  <line x1="644" y1="275" x2="631" y2="275" stroke="#0e7490" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowTeal)"/>
+  <line x1="474" y1="275" x2="456" y2="275" stroke="#0e7490" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrowTeal)"/>
+  <line x1="294" y1="275" x2="276" y2="275" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="104" y1="275" x2="94" y2="275" stroke="#4b5563" stroke-width="2"/>
+  <line x1="74" y1="275" x2="66" y2="275" stroke="#4b5563" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Gates -->
+  <g>
+    <polygon points="1461.5,275 1471.5,262 1481.5,275 1471.5,288" fill="#e0821a"/>
+    <line x1="1471.5" y1="290" x2="1471.5" y2="436" stroke="#e0821a" stroke-dasharray="3 4"/>
+    <text x="1471.5" y="452" text-anchor="middle" class="gate">G0 · כניסה</text>
+    <text x="1471.5" y="468" text-anchor="middle" class="lbl">רפו מוכן עם החבילה העסקית</text>
+    <text x="1471.5" y="484" text-anchor="middle" class="lbl">מנטור עסקי · ארכיטקט · GovLabs</text>
+  </g>
+  <g>
+    <polygon points="1044.0,275 1054.0,262 1064.0,275 1054.0,288" fill="#e0821a"/>
+    <line x1="1054.0" y1="290" x2="1054.0" y2="436" stroke="#e0821a" stroke-dasharray="3 4"/>
+    <text x="1054.0" y="452" text-anchor="middle" class="gate">G1 · Spec מאושר</text>
+    <text x="1054.0" y="468" text-anchor="middle" class="lbl">מנטור עסקי · ארכיטקט · צוות המיזם</text>
+  </g>
+  <g>
+    <polygon points="644.0,275 654.0,262 664.0,275 654.0,288" fill="#e0821a"/>
+    <line x1="654.0" y1="290" x2="654.0" y2="436" stroke="#e0821a" stroke-dasharray="3 4"/>
+    <text x="654.0" y="452" text-anchor="middle" class="gate">G2 · יום הארכיטקטורה</text>
+    <text x="654.0" y="468" text-anchor="middle" class="lbl">מוכנות לבנייה · שלבים 5–7</text>
+    <text x="654.0" y="484" text-anchor="middle" class="lbl">ארכיטקט · GovLabs · IT משרדי</text>
+  </g>
+  <g>
+    <polygon points="74.0,275 84.0,262 94.0,275 84.0,288" fill="#e0821a"/>
+    <line x1="84.0" y1="290" x2="84.0" y2="436" stroke="#e0821a" stroke-dasharray="3 4"/>
+    <text x="84.0" y="452" text-anchor="middle" class="gate">G3 · מוכן לשחרור</text>
+    <text x="84.0" y="468" text-anchor="middle" class="lbl">ארכיטקט · מנטור · משרד</text>
+  </g>
+
+  <!-- Build loop arrow (6 <-> 7) -->
+  <path d="M 274 400 Q 284 440 294 400" fill="none" stroke="#0e9f6e" stroke-width="1.5" marker-end="url(#arrowSoft)"/>
+  <text x="284" y="500" text-anchor="middle" class="lbl" fill="#0e9f6e">לולאה: לכל Story</text>
+
+  <!-- Knowledge band -->
+  <rect x="60" y="535" width="1530" height="52" rx="12" fill="#e1f5fe" stroke="#7fc3e8"/>
+  <text x="1580" y="557" text-anchor="start" class="title" font-size="14" fill="#0b5a8a">🧠 GovLabs Knowledge — "המוח הכללי"</text>
+  <text x="1580" y="576" text-anchor="start" class="sub" fill="#0b5a8a">Skills · כללי ממשלה (אבטחה, פרטיות, נגישות, ענן) · תבניות · לקחים ממיזמים קודמים — נטען לכל שלב בכל מיזם, ומתעדכן מכל שלב שמסתיים</text>
+  <text x="80" y="566" text-anchor="end" class="sub" fill="#0b5a8a">↑ מזין את כל השלבים · ↓ לומד מכולם</text>
+
+  <!-- State & Audit band -->
+  <rect x="60" y="597" width="1530" height="52" rx="12" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="1580" y="619" text-anchor="start" class="title" font-size="14" fill="#374151">🗂 State &amp; Audit — מצב התהליך ויומן הביקורת</text>
+  <text x="1580" y="638" text-anchor="start" class="sub" fill="#374151">מצב: <tspan class="en">STATUS.md</tspan> — באיזה שלב ושער המיזם, מה אושר, מה פתוח · ביקורת: <tspan class="en">audit/</tspan> — כל ריצת שלב וכל החלטת שער: מי, מתי, מה, ממצאים · חוזי API: <tspan class="en">api/</tspan> · החלטות: <tspan class="en">decisions.md</tspan> + <tspan class="en">adr/</tspan></text>
+  <text x="80" y="628" text-anchor="end" class="sub" fill="#374151">רוחבי · מתעדכן בכל שלב</text>
+</svg>
+
+</div>
+
+<h3>התפקידים בתהליך</h3>
+<table class="roles">
+<tr><th style="width:20%">תפקיד</th><th>מה הוא נותן לתהליך</th></tr>
+<tr><td>מנטור עסקי</td><td>בעל הכוונה העסקית; מאשר את הכוונה והדרישות ואת המוכנות לשחרור.</td></tr>
+<tr><td>ארכיטקט (טכנולוגי)</td><td>הסמכות הטכנולוגית: בוחר בין חלופות, מאשר ADR, תכנית העבודה, הבנייה והאימות.</td></tr>
+<tr><td>צוות המיזם</td><td>אנשי המשרד שמובילים את המיזם: עונים על שאלות הכוונה והדרישות, מתעדפים.</td></tr>
+<tr><td>צוות GovLabs</td><td>מנחה את התהליך, מנהל את המוח הכללי, מאשר כניסה ומוכנות לבנייה.</td></tr>
+<tr><td>צוות IT משרדי</td><td>אילוצי הסביבה, האבטחה והתשתית של המשרד; שותף לאישור הארכיטקטורה.</td></tr>
+<tr><td>מוצר אינטגרטור</td><td>מפרט את סיפורי המשתמש ומסדר עדיפויות לבנייה.</td></tr>
+<tr><td>מפתחי אינטגרטור</td><td>מאשרים מפרט סיפור לפני קוד, סוקרים קוד, מכריעים בשאלות מימוש.</td></tr>
+<tr><td>בודקים</td><td>מובילים את שלב האימות מהצד האנושי: מאשרים את תכנית הבדיקות שנגזרה מהדרישות, משלימים בדיקות שהאוטומציה לא מכסה (קבלה, חוויית משתמש, תרחישי קצה), מאמתים את מטריצת העקיבות וממליצים לארכיטקט על מוכנות לשחרור.</td></tr>
+</table>
+
+<h3>שלבי התהליך</h3>
+<table>
+<tr><th>#</th><th>שלב</th><th>קלט</th><th>Agent</th><th>Skills</th><th>הצוות</th><th>פלט</th><th>מאשר</th></tr>
+<tr><td>0</td><td><b>שער כניסה G0</b></td><td>החבילה העסקית: Lean Canvas, בריף עסקי, Intent עסקי, עיצוב Figma / UI-UX</td><td class="agentcell">Conductor</td><td class="skills"><code>status</code></td><td>צוות GovLabs יוצר את הרפו מהתבנית</td><td>רפו מוכן עם החבילה העסקית</td><td>מנטור עסקי, ארכיטקט, צוות GovLabs</td></tr>
+<tr><td>1</td><td class="p-spec"><b>כוונה</b></td><td>החבילה העסקית</td><td class="agentcell">Product</td><td class="skills"><code>business-package-to-intent</code></td><td>צוות המיזם + מנטור עסקי עונים ומאשרים</td><td><code>intent.md</code> — הבסיס למיזם: הצורך העסקי והפתרון</td><td>מנטור עסקי + צוות המיזם</td></tr>
+<tr><td>2</td><td class="p-spec"><b>דרישות + Stories</b></td><td><code>intent.md</code> + עיצובי Figma</td><td class="agentcell">Product</td><td class="skills"><code>write-requirements</code><br><code>write-user-stories</code><br><code>figma-to-ux</code></td><td>צוות המיזם, מוצר אינטגרטור, ארכיטקט: מתעדפים ומכריעים על גבולות</td><td><code>requirements.md</code><br><code>user-stories.md</code><br><code>ux.md</code><br><code>decisions.md</code></td><td>מנטור עסקי + ארכיטקט</td></tr>
+<tr><td>—</td><td><b>שער G1</b></td><td colspan="6">המפרט מאושר: לכל סיפור משתמש (<code>user-stories.md</code>) קריטריוני קבלה, כל מסך מקושר לסיפור, אין שאלות פתוחות חוסמות. מאשרים: מנטור עסקי, ארכיטקט, צוות המיזם.</td></tr>
+<tr><td>3</td><td class="p-arch"><b>ארכיטקטורה</b></td><td>הדרישות + אילוצי סביבת המשרד</td><td class="agentcell">Architect</td><td class="skills"><code>architecture-doc</code><br><code>architecture-diagram</code><br><code>security-privacy-requirements</code><br><code>adr</code><br><code>gov-cloud-patterns</code></td><td>ארכיטקט + IT משרדי בוחרים בין חלופות ומאשרים כל ADR</td><td><code>architecture.md</code><br><code>architecture-diagram.md</code><br><code>infra.md</code><br><code>adr/</code></td><td>ארכיטקט + IT משרדי</td></tr>
+<tr><td>4</td><td class="p-arch"><b>תכנון לפי Story</b></td><td>ארכיטקטורה + <code>user-stories.md</code></td><td class="agentcell">Architect</td><td class="skills"><code>story-plan</code></td><td>ארכיטקט + מוצר אינטגרטור מסדרים עדיפויות</td><td><code>plan.md</code> — סדר בניית הסיפורים, תלויות, בעלים (אחד למיזם)</td><td>ארכיטקט</td></tr>
+<tr><td>—</td><td><b>שער G2 · יום הארכיטקטורה</b></td><td colspan="6">בדיקת מוכנות למעבר לשלבים 5–7: לכל סיפור משתמש יש דרישות, ארכיטקטורה וסדר בנייה; אם יש ממשקי API הם מזוהים ומתועדים. מאשרים: ארכיטקט, צוות GovLabs, IT משרדי.</td></tr>
+<tr><td>5</td><td class="p-build"><b>חוזה API</b> (מותנה)</td><td>ממשקי API מהארכיטקטורה (אם יש)</td><td class="agentcell">API</td><td class="skills"><code>api-contract-spec</code><br><code>api-mock</code><br><code>api-tests</code><br><code>postman-collection</code></td><td>מפתח אינטגרציה מאשר את מפרט ה-API; ארכיטקט מאשר את השלב</td><td><code>api/spec.yaml</code><br>מוק חי (URL)<br><code>api/postman.json</code><br><code>api/tests/</code></td><td>ארכיטקט</td></tr>
+<tr><td>6</td><td class="p-build"><b>בנייה</b> (לכל Story)</td><td>סיפור משתמש + הדרישות והארכיטקטורה שלו</td><td class="agentcell">Builder</td><td class="skills"><code>story-spec</code><br><code>coding-standards-gov</code><br><code>adr</code> (אם התגלתה החלטה)</td><td>מפתחי אינטגרטור מאשרים מפרט סיפור לפני קוד וסוקרים קוד</td><td><code>specs/&lt;story&gt;/</code> — דרישות, תכן, משימות<br><code>src/</code> — קוד המערכת<br><code>tests/</code> — בדיקות</td><td>ארכיטקט</td></tr>
+<tr><td>7</td><td class="p-build"><b>אימות</b></td><td>קוד + דרישות (+ בדיקות ה-API אם רץ שלב 5)</td><td class="agentcell">Tester<br>Reviewer</td><td class="skills"><code>test-plan</code><br><code>traceability-check</code><br><code>security-scan</code><br><code>accessibility-check</code><br><code>review-code</code><br><code>review-api</code></td><td>בודקים מאשרים את תכנית הבדיקות, משלימים בדיקות קבלה ומאמתים עקיבות</td><td><code>test-plan.md</code><br><code>test-report.md</code><br><code>traceability.md</code></td><td>ארכיטקט</td></tr>
+<tr><td>—</td><td><b>שער G3 · מוכן לשחרור</b></td><td colspan="6">כל דרישה (כולל דרישות ה-API אם היו) ממופה לבדיקה שעברה; אין ממצאי אבטחה חוסמים. מאשרים: ארכיטקט, מנטור עסקי, המשרד. הפלט: קוד בדוק בסביבת המשרד + מפרט מלא ומעודכן.</td></tr>
+</table>
+
+<div class="box">
+<b>הבהרות:</b>
+<ul>
+<li><b>מפגש אחד לפאזות 1–2.</b> ארבעת השלבים הראשונים הם שלבים נפרדים מבחינת תוצרים ושערים, אבל הצוות עובר אותם ברצף במפגש אחד: הסוכנים מכינים טיוטות מראש, ובמפגש הצוות עונה, מכריע ומאשר שלב אחר שלב. יום הארכיטקטורה (G2) חותם את המפגש.</li>
+<li><b>Intent</b> הוא הבסיס למיזם: הצורך העסקי והפתרון המוצע — מטרה, משתמשים, הערך, גבולות, מדדי הצלחה. הוא נגזר מהחבילה העסקית (שנשארת בפורמט שלה ומקושרת) והוא המסמך שכל שאר התהליך מתייחס אליו.</li>
+<li><b>ADR</b> — Architecture Decision Record: קובץ קצר לכל החלטה ארכיטקטונית — הקשר, חלופות, החלטה, השלכות, מאשר. נכתב בשלב 3, ומתווסף בכל שלב שבו מתקבלת החלטה חדשה. ה-Reviewer בודק שלכל החלטה יש ADR מתועד.</li>
+<li><b><code>decisions.md</code></b> — יומן החלטות המוצר והתכולה: מה בפנים ומה בחוץ, איך הוכרעה כל שאלה, מה תועדף ולמה. יחד עם ה-ADR זו שרשרת ההחלטות המלאה של המיזם.</li>
+<li><b>State &amp; Audit — רוחבי, נפרד מההחלטות.</b> <code>STATUS.md</code> הוא מצב התהליך: באיזה שלב ושער המיזם נמצא, מה אושר, מה פתוח. <code>audit/</code> הוא יומן הביקורת: רשומה לכל ריצת שלב ולכל החלטת שער — מי אישר, מתי, מה השתנה, אילו ממצאים היו. ה-Conductor מעדכן את שניהם אוטומטית בכל שלב. <code>decisions.md</code> ו-ADR הם התוכן של ההחלטות; State &amp; Audit הם העדות שהתהליך התקיים כנדרש — זה מה שמאפשר לכל גורם מפקח לראות את המיזם בלי לשאול אף אחד.</li>
+<li><b>סיפורי המשתמש</b> (<code>user-stories.md</code>) נכתבים בשלב 2, יחד עם הדרישות — לא אחרי הארכיטקטורה: הם מה שהארכיטקטורה נענית לו, ולכן צריכים להיות מוכנים ומאושרים לפני שלב 3. תכנון הבנייה (שלב 4) והבנייה עצמה (שלב 6) מאורגנים לפי אותם סיפורים.</li>
+<li><b>תכנון עבודה</b> — קובץ אחד למיזם (<code>plan.md</code>): סדר בניית סיפורי המשתמש, תלויות ביניהם ובעלים. המשימות לכל סיפור נכתבות בשלב 6 במפרט הסיפור.</li>
+<li><b>חוזה API</b> (שלב 5) הוא שלב מותנה: רץ רק אם הארכיטקטורה מגדירה ממשקי API, ומדלגים עליו אחרת. הפלט — מפרט OpenAPI, מוק חי עם URL אמיתי, בדיקות חוזה ו-Postman collection שנוצרים אוטומטית מהמפרט — מוודא שהממשק יציב לפני שמתחילה הבנייה, כך שצוותים שונים יכולים לבנות במקביל מולו בלי להישבר.</li>
+<li><b>תרשים הארכיטקטורה</b> (<code>architecture-diagram.md</code>) הוא תוצר לכל דבר: הסוכן מייצר אותו כקוד (Mermaid) בתוך קובץ MD, הוא עובר סקירה ואישור יחד עם מסמך הארכיטקטורה, ומתעדכן איתו בכל שינוי — כך שהתרשים לא מתיישן.</li>
+</ul>
+</div>
+
+<h3>אבטחת מידע, סטנדרטים ונגישות — איפה הם נכנסים</h3>
+<p>לא שלב נפרד ולא בדיקה בסוף: הכללים נטענים מהמוח הכללי לכל שלב, והופכים לדרישה בשלב 2, לתכן בשלב 3, לקוד בשלב 6 ולראיה בדוקה בשלב 7.</p>
+<table class="roles">
+<tr><th style="width:20%">היכן</th><th>מה קורה שם</th></tr>
+<tr><td>רוחבי — המוח הכללי</td><td>כללי הממשלה (אבטחת מידע, פרטיות, נגישות, ענן) וסטנדרטי הפיתוח יושבים ב-GovLabs Knowledge ונטענים לכל שלב בכל מיזם — ומתורגמים לבדיקות אוטומטיות בתיקיית <code>checks/</code> שרצות לפני כל שער.</td></tr>
+<tr><td>שלב 2 · דרישות</td><td>סיווג המידע נקבע כאן, ודרישות האבטחה, הפרטיות והנגישות נכתבות כדרישות עם קריטריוני קבלה — לא כהערה כללית בסוף מסמך.</td></tr>
+<tr><td>שלב 3 · ארכיטקטורה</td><td>ה-Skill‏ <code>security-privacy-requirements</code> גוזר מסיווג המידע ומכללי הממשלה את פרק האבטחה של הארכיטקטורה: הצפנה, הרשאות וזהויות, טיפול במידע אישי, רישום ובקרה. כל בחירה עם השלכת אבטחה מקבלת ADR, וה-IT המשרדי מאשר.</td></tr>
+<tr><td>שלב 6 · בנייה</td><td>ה-Skill‏ <code>coding-standards-gov</code> מלווה כל סיפור משתמש: שפות ומסגרות מאושרות, טיפול במידע אישי, רישום, טיפול בשגיאות ובדיקות יחידה. <code>review-code</code> בודק את הקוד מול אותם סטנדרטים לפני האישור.</td></tr>
+<tr><td>שלב 7 · אימות</td><td>כאן נוצרת הראיה: <code>security-scan</code> (תלויות, סודות, פגיעויות ידועות), <code>accessibility-check</code> (תקן הנגישות הישראלי) והבדיקות שנגזרו מדרישות האבטחה — כולל בדיקות חוזה ה-API אם שלב 5 רץ. ממצא חוסם לא עובר את G3.</td></tr>
+</table>
+
+<!-- ===================================================== -->
+<h2>6. מה קורה בתוך כל שלב</h2>
+<p>אותו פלואו חוזר בכל שבעת השלבים: הסוכן מייצר, המערכת בודקת, אדם מאשר, והתוצר נסגר ונשמר. הצוות נכנס בשתי נקודות בלבד — שאלות הבהרה ושער האישור.</p>
+<div class="diagram tall">
+<svg viewBox="0 0 900 650" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,Segoe UI,Roboto,Arial,Noto Sans Hebrew,sans-serif">
+  <defs>
+    <marker id="s6" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#4b5563"/></marker>
+    <marker id="s6b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#0277bd"/></marker>
+    <marker id="s6o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#e65100"/></marker>
+  </defs>
+  <style>
+    text{direction:rtl;unicode-bidi:embed}
+    .en{direction:ltr;unicode-bidi:embed;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+    .h{font-size:16px;font-weight:700;fill:#111827}
+    .t{font-size:13px;fill:#1f2937}
+    .s{font-size:12px;fill:#5b6474}
+  </style>
+
+  <!-- INPUT -->
+  <rect x="330" y="28" width="450" height="46" rx="10" fill="#ede7f6" stroke="#5e35b1" stroke-width="2"/>
+  <text x="555" y="57" text-anchor="middle" class="t" font-weight="700">קלט · התוצרים המאושרים של השלב הקודם</text>
+  <line x1="555" y1="74" x2="555" y2="94" stroke="#4b5563" stroke-width="2" marker-end="url(#s6)"/>
+
+  <!-- 1 GENERATE -->
+  <rect x="330" y="98" width="450" height="112" rx="14" fill="#edf7ee" stroke="#43a047" stroke-width="2"/>
+  <text x="765" y="126" text-anchor="start" class="h">1 · ייצור — הסוכן כותב את התוצר</text>
+  <text x="765" y="150" text-anchor="start" class="t">מפעיל את ה-Skills של השלב וכותב את קבצי ה-MD</text>
+  <text x="765" y="172" text-anchor="start" class="t">מתעד החלטות: <tspan class="en">decisions.md</tspan> · <tspan class="en">adr/</tspan></text>
+  <rect x="346" y="180" width="418" height="24" rx="8" fill="#ffe0b2" stroke="#e65100" stroke-width="1.2"/>
+  <text x="750" y="197" text-anchor="start" class="s" fill="#7a3d00">משהו לא ברור? שאלה לצוות — התשובה נרשמת בקובץ</text>
+  <line x1="555" y1="210" x2="555" y2="230" stroke="#4b5563" stroke-width="2" marker-end="url(#s6)"/>
+
+  <!-- 2 CHECK -->
+  <rect x="330" y="234" width="450" height="96" rx="14" fill="#e9f3fd" stroke="#1e88e5" stroke-width="2"/>
+  <text x="765" y="262" text-anchor="start" class="h">2 · בדיקה — אוטומטית + סוקר</text>
+  <text x="765" y="288" text-anchor="start" class="t">בדיקות אוטומטיות: שלמות, עקיבות, מידע אישי, פורמט</text>
+  <text x="765" y="312" text-anchor="start" class="t">סוכן <tspan class="en">Reviewer</tspan>: <tspan class="en">READY</tspan> / <tspan class="en">NOT READY</tspan> + ממצאים לפי חומרה</text>
+  <line x1="555" y1="330" x2="555" y2="350" stroke="#4b5563" stroke-width="2" marker-end="url(#s6)"/>
+
+  <!-- 3 GATE -->
+  <rect x="330" y="354" width="450" height="92" rx="14" fill="#ffe0b2" stroke="#e65100" stroke-width="2.5"/>
+  <text x="765" y="382" text-anchor="start" class="h">3 · שער אישור אנושי</text>
+  <text x="765" y="406" text-anchor="start" class="t">בעל השלב רואה את התוצר ואת הממצאים</text>
+  <text x="765" y="430" text-anchor="start" class="t" font-weight="700">✅ אישור · ✏️ בקשת תיקונים → חזרה לייצור</text>
+  <line x1="555" y1="446" x2="555" y2="466" stroke="#4b5563" stroke-width="2" marker-end="url(#s6)"/>
+
+  <!-- 4 CLOSE + LEARN -->
+  <rect x="330" y="470" width="450" height="92" rx="14" fill="#fff6ea" stroke="#fb8c00" stroke-width="2"/>
+  <text x="765" y="498" text-anchor="start" class="h">4 · סגירה ולמידה</text>
+  <text x="765" y="522" text-anchor="start" class="t">מצב התהליך ויומן הביקורת מתעדכנים אוטומטית</text>
+  <text x="765" y="546" text-anchor="start" class="t">לקח נרשם במיזם; לקח שחוזר עולה למוח הכללי</text>
+  <line x1="555" y1="562" x2="555" y2="582" stroke="#4b5563" stroke-width="2" marker-end="url(#s6)"/>
+
+  <!-- OUTPUT -->
+  <rect x="330" y="586" width="450" height="46" rx="10" fill="#ede7f6" stroke="#5e35b1" stroke-width="2"/>
+  <text x="555" y="615" text-anchor="middle" class="t" font-weight="700">פלט · תוצר מאושר = הקלט של השלב הבא</text>
+
+  <!-- KNOWLEDGE -->
+  <rect x="40" y="240" width="250" height="96" rx="12" fill="#e1f5fe" stroke="#0277bd" stroke-width="2"/>
+  <text x="165" y="272" text-anchor="middle" class="h" fill="#01579b">🧠 GovLabs Knowledge</text>
+  <text x="165" y="295" text-anchor="middle" class="s" fill="#01579b">המוח הכללי: Skills, כללי ממשלה,</text>
+  <text x="165" y="313" text-anchor="middle" class="s" fill="#01579b">תבניות ולקחים ממיזמים קודמים</text>
+
+  <path d="M 290 268 L 310 268 L 310 150 L 328 150" fill="none" stroke="#0277bd" stroke-width="2" marker-end="url(#s6b)"/>
+  <rect x="268" y="196" width="86" height="18" fill="#fff"/>
+  <text x="311" y="210" text-anchor="middle" class="s" fill="#0277bd">נטען לכל שלב</text>
+
+  <path d="M 330 516 L 306 516 L 306 320 L 292 320" fill="none" stroke="#fb8c00" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#s6o)"/>
+  <rect x="262" y="412" width="90" height="18" fill="#fff"/>
+  <text x="307" y="426" text-anchor="middle" class="s" fill="#c25e00">לקחים חוזרים</text>
+
+  <!-- return loop -->
+  <path d="M 780 400 L 816 400 L 816 150 L 782 150" fill="none" stroke="#e65100" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#s6o)"/>
+  <rect x="820" y="266" width="62" height="18" fill="#fff"/>
+  <text x="851" y="280" text-anchor="middle" class="s" fill="#c25e00">תיקונים</text>
+</svg>
+
+</div>
+<div class="callout kb">
+<b>🧠 המוח הכללי</b> נטען לכל שלב, ומתעדכן כשלקח חוזר על עצמו — הופך לכלל, ל-Skill מעודכן או לבדיקה אוטומטית חדשה. GovLabs מנהלת אותו; מנטורים מאשרים קידום לקחים.<br>
+<b>🗂 זיכרון המיזם</b> נשמר ברפו: לקחים ושאלות פתוחות לכל שלב (<code>memory.md</code>), ההחלטות (<code>decisions.md</code>, <code>adr/</code>), מצב התהליך (<code>STATUS.md</code>), יומן הביקורת (<code>audit/</code>) וההקשר הקבוע של המיזם. זה מה שמאפשר לסוכן להמשיך מחר בדיוק מאיפה שעצרנו היום.
+</div>
+
+<!-- ===================================================== -->
+<h2>7. ה-Agents וספריית ה-Skills</h2>
+<h3>שבעה Agents</h3>
+<table>
+<tr><th>Agent</th><th>תפקיד</th><th>מוביל</th><th>Skills</th></tr>
+<tr><td class="agentcell">Conductor</td><td>המנצח: יודע באיזה שלב המיזם, פותח שלב, מזמן את הסוכן המתאים (כולל API Agent בשלב 5 כשנדרש), מריץ בדיקות ו-Reviewer, מציג לשער, מעדכן <code>STATUS.md</code> ו-<code>audit/</code>, מכין את השלב הבא. מופעל בפקודה <code>/govlabs</code>.</td><td>כל התהליך</td><td class="skills"><code>run-stage</code><br><code>gate</code><br><code>status</code><br><code>audit</code></td></tr>
+<tr><td class="agentcell">Product</td><td>מתרגם כוונה עסקית לדרישות ברורות; שואל שאלות שאיש עסקים מבין.</td><td>1, 2</td><td class="skills"><code>business-package-to-intent</code><br><code>write-requirements</code><br><code>figma-to-ux</code></td></tr>
+<tr><td class="agentcell">Architect</td><td>חלופות, החלטות (ADR), תרשים ארכיטקטורה, דרישות אבטחה וזיהוי ממשקי API; מכיר את אילוצי הענן הממשלתי; מתכנן את סדר הבנייה לפי סיפורי המשתמש.</td><td>3, 4</td><td class="skills"><code>architecture-doc</code><br><code>architecture-diagram</code><br><code>security-privacy-requirements</code><br><code>adr</code><br><code>gov-cloud-patterns</code><br><code>story-plan</code></td></tr>
+<tr><td class="agentcell">API</td><td>ממיר ממשק API שהוגדר בארכיטקטורה למפרט OpenAPI, מוק רץ עם URL אמיתי, בדיקות חוזה אוטומטיות ו-Postman collection.</td><td>5 (מותנה)</td><td class="skills"><code>api-contract-spec</code><br><code>api-mock</code><br><code>api-tests</code><br><code>postman-collection</code></td></tr>
+<tr><td class="agentcell">Builder</td><td>מסיפור משתמש לקוד עובד עם בדיקות, לפי הסטנדרטים.</td><td>6</td><td class="skills"><code>story-spec</code><br><code>coding-standards-gov</code></td></tr>
+<tr><td class="agentcell">Tester</td><td>תכנית בדיקות מהדרישות, בדיקות אוטומטיות, עקיבות, אבטחה, נגישות.</td><td>7</td><td class="skills"><code>test-plan</code><br><code>traceability-check</code><br><code>security-scan</code><br><code>accessibility-check</code></td></tr>
+<tr><td class="agentcell">Reviewer</td><td>סוקר עצמאי: בודק כל תוצר מול הדרישות והכללים לפני השער ומחזיר READY / NOT READY עם ממצאים.</td><td>לפני כל שער</td><td class="skills"><code>review-spec</code><br><code>review-architecture</code><br><code>review-code</code><br><code>review-api</code></td></tr>
+</table>
+
+<h3>ספריית ה-Skills (גרסה ראשונה — 25)</h3>
+<table class="sk">
+<tr><th>Skill</th><th>היכולת שהוא מקנה</th></tr>
+<tr><td colspan="2" style="background:var(--soft)"><b>תהליך</b></td></tr>
+<tr><td><code>run-stage</code></td><td>מריץ שלב לפי הפלואו הקבוע: קלט → ייצור → אימות → סקירה → שער → למידה, ומעדכן את מצב המיזם.</td></tr>
+<tr><td><code>gate</code></td><td>מציג לבעל השלב את התוצר, הממצאים וחוות דעת ה-Reviewer, ומתעד את ההחלטה (אישור / תיקונים) עם שם ותאריך.</td></tr>
+<tr><td><code>status</code></td><td>כותב ומעדכן את <code>STATUS.md</code>: באיזה שלב ושער המיזם, מה אושר, מה חסר, אילו שאלות פתוחות.</td></tr>
+<tr><td><code>audit</code></td><td>רושם ב-<code>audit/</code> כל ריצת שלב וכל החלטת שער: מי, מתי, מה השתנה, אילו ממצאים — יומן ביקורת שאי אפשר לערוך ידנית.</td></tr>
+<tr><td colspan="2" style="background:var(--soft)"><b>מפרט</b></td></tr>
+<tr><td><code>business-package-to-intent</code></td><td>קורא את החבילה העסקית (Lean Canvas, בריף, Intent עסקי) וכותב ממנה את הבסיס למיזם: הצורך העסקי, הפתרון, המשתמשים, הערך, הגבולות ומדדי ההצלחה — ומסמן פערים לשאלה.</td></tr>
+<tr><td><code>write-requirements</code></td><td>כותב את הדרישות הפונקציונליות והלא-פונקציונליות מתוך הכוונה העסקית, ומתעדף אותן מול צוות המיזם.</td></tr>
+<tr><td><code>write-user-stories</code></td><td>כותב סיפורי משתמש עם קריטריוני קבלה בפורמט "כאשר… המערכת…" — משפטים בודקים שכל אחד מהם הופך לבדיקה, ומהם נגזר גם סדר הבנייה.</td></tr>
+<tr><td><code>figma-to-ux</code></td><td>מתאר את המסכים והזרימות מעיצוב ה-Figma כטקסט, ומקשר כל מסך לסיפור המשתמש שהוא משרת.</td></tr>
+<tr><td colspan="2" style="background:var(--soft)"><b>ארכיטקטורה</b></td></tr>
+<tr><td><code>architecture-doc</code></td><td>כותב מסמך ארכיטקטורה: רכיבים, נתונים, אינטגרציות, אבטחה, פריסה — ומציג 2–3 חלופות עם יתרונות וחסרונות.</td></tr>
+<tr><td><code>architecture-diagram</code></td><td>מייצר את תרשים הארכיטקטורה כקוד (Mermaid) בתוך <code>architecture-diagram.md</code>: רכיבים, זרימות מידע, אינטגרציות וגבולות אבטחה. התרשים עובר סקירה ואישור יחד עם המסמך ומתעדכן איתו.</td></tr>
+<tr><td><code>security-privacy-requirements</code></td><td>גוזר מסיווג המידע ומכללי הממשלה את דרישות האבטחה והפרטיות — הצפנה, הרשאות וזהויות, טיפול במידע אישי, רישום ובקרה — וכותב אותן כסעיפים נבדקים בארכיטקטורה ובתכנית הבדיקות.</td></tr>
+<tr><td><code>adr</code></td><td>מתעד החלטה ארכיטקטונית אחת בפורמט קבוע: הקשר, חלופות, החלטה, השלכות, מאשר.</td></tr>
+<tr><td><code>gov-cloud-patterns</code></td><td>מכיר את תבניות הענן הממשלתי (AWS / GCP / Nimbus): אילו שירותים מאושרים, איך נראית סביבת משרד, אילו אילוצי רשת ואבטחה קיימים.</td></tr>
+<tr><td><code>story-plan</code></td><td>קובע את סדר בניית סיפורי המשתמש לפי תלויות ביניהם, ומסמן את השלד ההולך הראשון (הגרסה הדקה שעוברת מקצה לקצה).</td></tr>
+<tr><td colspan="2" style="background:var(--soft)"><b>חוזי API</b></td></tr>
+<tr><td><code>api-contract-spec</code></td><td>הופך כל ממשק API שזוהה בארכיטקטורה למפרט OpenAPI פורמלי: נתיבים, סכמות, קודי שגיאה.</td></tr>
+<tr><td><code>api-mock</code></td><td>מייצר מהמפרט שרת מוק רץ עם URL אמיתי, כך שצרכני הממשק יכולים לפתח מולו לפני שהמימוש האמיתי קיים.</td></tr>
+<tr><td><code>api-tests</code></td><td>מייצר בדיקות חוזה אוטומטיות שמוודאות שהמימוש עומד במפרט — נתיבים, סכמות, קודי שגיאה.</td></tr>
+<tr><td><code>postman-collection</code></td><td>מייצר מהמפרט אוסף Postman מוכן לשימוש, עם דוגמאות בקשה לכל נתיב.</td></tr>
+<tr><td colspan="2" style="background:var(--soft)"><b>בנייה</b></td></tr>
+<tr><td><code>story-spec</code></td><td>מייצר לסיפור משתמש את המפרט המצומצם — דרישות, תכן, משימות — מתוך המפרט והארכיטקטורה של המיזם.</td></tr>
+<tr><td><code>coding-standards-gov</code></td><td>מוודא שהקוד עומד בסטנדרטים: שפות ומסגרות מאושרות, טיפול במידע אישי, רישום, טיפול בשגיאות, בדיקות יחידה.</td></tr>
+<tr><td colspan="2" style="background:var(--soft)"><b>בדיקות, אבטחה ונגישות</b></td></tr>
+<tr><td><code>test-plan</code></td><td>גוזר תכנית בדיקות מקריטריוני הקבלה: לכל קריטריון — בדיקה, נתוני בדיקה, תוצאה צפויה.</td></tr>
+<tr><td><code>traceability-check</code></td><td>בונה את מטריצת העקיבות: כוונה → דרישה → סיפור משתמש → קוד → בדיקה, ומסמן דרישות ללא בדיקה או בדיקות ללא דרישה.</td></tr>
+<tr><td><code>security-scan</code></td><td>מריץ סריקות אבטחה (תלויות, סודות, פגיעויות ידועות) ומסכם ממצאים לפי חומרה.</td></tr>
+<tr><td><code>accessibility-check</code></td><td>בודק עמידה בתקן הנגישות הישראלי למסכים ולרכיבי הממשק.</td></tr>
+<tr><td colspan="2" style="background:var(--soft)"><b>סקירה</b></td></tr>
+<tr><td><code>review-spec</code> · <code>review-architecture</code> · <code>review-code</code> · <code>review-api</code></td><td>סוקרים תוצר מסוג מסוים מול הדרישות, הכללים והשלב הקודם, ומחזירים READY / NOT READY עם רשימת ממצאים לפי חומרה. סקירת הארכיטקטורה כוללת גם התאמה בין התרשים למסמך; סקירת ה-API כוללת התאמה בין המפרט, המוק והבדיקות.</td></tr>
+</table>
+<p class="small">כל Skill = תיקייה עם קובץ הוראות (מתי להשתמש, שלבים, תבנית הפלט, דוגמה טובה). נכתב פעם אחת ב-GovLabs Knowledge ומשתפר מכל מיזם. מהנדס כותב Skill טכני; איש עסקים יכול לכתוב Skill של תוכן (למשל "איך נראה Intent טוב") — כי זה טקסט פשוט.</p>
+
+<!-- ===================================================== -->
+<h2>8. איך עובדים</h2>
+<h3>מפגש צוות</h3>
+<ol>
+<li><b>לפני:</b> ה-Conductor פתח את השלב; הסוכן הכין טיוטה + שאלות פתוחות מסומנות בקובץ. המנחה שולח לצוות.</li>
+<li><b>במפגש:</b> הכלי פתוח על המסך. עוברים על השאלות; התשובות נכתבות ישר לקובץ; הסוכן מעדכן את הטיוטה תוך כדי. החלטות נרשמות ב-<code>decisions.md</code> או ב-ADR בזמן אמת.</li>
+<li><b>לפני הסיום:</b> הבדיקות וה-Reviewer רצים. עוברים על הממצאים. בעל השלב מאשר או מבקש סבב נוסף.</li>
+<li><b>אחרי:</b> התוצר נשמר. <code>STATUS.md</code> ו-<code>memory.md</code> מתעדכנים. ה-Conductor מכין את השלב הבא.</li>
+</ol>
+<h3>בין המפגשים — עבודה רציפה עם ה-AI</h3>
+<p>המפגש הוא נקודת ההכרעה, לא המקום היחיד שבו עובדים. כל חבר צוות יכול, בכל זמן, לפתוח את המיזם ולעבוד עליו עם הסוכנים: לשאול "מה סטטוס המיזם?" ולקבל את <code>STATUS.md</code> העדכני — שלב, שער, מה אושר ומה פתוח; לעבור על טיוטה ולהעיר עליה; לשאול את הסוכן למה הוחלט כך (הוא יפנה ל-<code>decisions.md</code> או ל-ADR); לבקש להריץ שוב בדיקה; או לענות על שאלה פתוחה עוד לפני המפגש. כל אינטראקציה כזו נרשמת במיזם — כך שהמפגש הבא מתחיל מנקודה מתקדמת יותר.</p>
+
+<!-- ===================================================== -->
+<h2>9. מבנה הרפו (תבנית אחת לכל מיזם)</h2>
+<pre>my-initiative/                       ← נוצר מתבנית GovLabs ב-G0
+├── business-package/                ← החבילה העסקית כפי שהתקבלה (Lean Canvas, בריף, עיצובים)
+├── knowledge/                       ← 🧠 GovLabs Knowledge: skills · rules · templates · lessons
+├── agents/                          ← conductor · product · architect · api · builder · tester · reviewer
+├── context/                         ← 🗂 ההקשר הקבוע של המיזם: product · tech · structure · design-system · gov-rules
+├── checks/                          ← בדיקות אוטומטיות לפני שער
+├── STATUS.md                        ← 🗂 מצב התהליך: שלב, שער, מה אושר, מה פתוח
+├── audit/                           ← 🗂 יומן ביקורת: כל ריצת שלב וכל החלטת שער
+├── spec/                            ← תוצרי שלבים 1–4, 7 (+ memory.md בכל תיקייה)
+│   ├── 1-intent/         intent.md
+│   ├── 2-requirements/   requirements.md  user-stories.md  ux.md  decisions.md
+│   ├── 3-architecture/   architecture.md  architecture-diagram.md  infra.md  adr/
+│   ├── 4-plan/           plan.md
+│   └── 7-verify/         test-plan.md  test-report.md  traceability.md
+├── api/                              ← שלב 5 (מותנה): spec.yaml · postman.json · tests/ · הגדרת המוק
+├── specs/&lt;story&gt;/                   ← שלב 6, לכל סיפור משתמש: requirements · design · tasks
+└── src/   tests/   infra/           ← קוד המערכת, בדיקות, קוד תשתית</pre>
+<p class="small">מיפוי התיקיות לכלי הספציפי (למשל <code>.kiro/</code> או <code>.claude/</code>) נעשה בתבנית — המבנה הלוגי לא משתנה.</p>
+
+<!-- ===================================================== -->
+<h2>10. תוכנית יישום</h2>
+<table>
+<tr><th>שלב</th><th>מה</th><th>מתי</th></tr>
+<tr><td><b>א. תבנית + מוח</b></td><td>תבנית מיזם + GovLabs Knowledge: 7 סוכנים, 25 Skills, הקשר קבוע, בדיקות, מבנה תיקיות. דמו מלא בכלי הראשון (Kiro).</td><td>עכשיו (דמו יום ג' · מצגת מנטורים 10.9)</td></tr>
+<tr><td><b>ב. פיילוט</b></td><td>2–3 מיזמים עוברים את התהליך המלא. כל מפגש = לקח למוח הכללי.</td><td>מחזור ראשון</td></tr>
+<tr><td><b>ג. הרחבה</b></td><td>כל המיזמים בתכנית. הכשרה מדורגת (מפרט → סוכנים → Skills) לפני יום הארכיטקטורה. ליווי צמוד ל-IT המשרדים.</td><td>מחזור שני</td></tr>
+<tr><td><b>ד. אוטונומיה</b></td><td>ה-Conductor והסוכנים רצים לבד (מחוץ לסביבת הפיתוח) על אותם קבצים; הצוות נשאר בשערים בלבד.</td><td>2027</td></tr>
+</table>
+
+</main>
+</body>
+</html>
