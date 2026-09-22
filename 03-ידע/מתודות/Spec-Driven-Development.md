@@ -25,7 +25,7 @@ Human Intent  →  MD Wiki  →  AI Agents  →  Human-in-the-Loop
 
 ---
 
-> מקור לכל מה שמכאן ולמטה: [GovLabs AI-SDLC — התפיסה, v0.7](../../חומרי-מקור/מסמכים/govlabs-ai-sdlc-concept-v0.7.html) — מתודולוגיית AI-SDLC של שטראוס אסטרטגיה, סעיפים 4–7.
+> מקור לכל מה שמכאן ולמטה: [GovLabs AI-SDLC — התפיסה, v0.7](../../חומרי-מקור/מסמכים/ארכיטקטורה-20-9-26/govlabs-ai-sdlc-concept-v0.7.pdf) — מתודולוגיית AI-SDLC של שטראוס אסטרטגיה, סעיפים 4–7.
 > **סטטוס: טיוטה — תוכן צוות הארכיטקטורה, טרם נבדק ע"י אביבית.**
 
 ## מבנה ה-Spec — שבעה שלבים
@@ -101,7 +101,7 @@ Human Intent  →  MD Wiki  →  AI Agents  →  Human-in-the-Loop
 
 ה-**Conductor** הוא שמריץ את התהליך מקצה לקצה בפיילוט: פותח כל שלב, מזמן את הסוכן המתאים, מריץ את הבדיקות ואת הסוקר, מציג לשער ומכין את השלב הבא. בתוכנית עצמה התפקיד הזה אנושי — [מפעיל ה-AI הצוותי](../../04-AI/עקרונות-רוחב.md) בליווי המנטור.
 
-הידע המקצועי של הסוכנים ארוז ב-**Skills** — ראה [AI Engineering Rulebook](../סטנדרטים/AI-Engineering-Rulebook.md).
+הידע המקצועי של הסוכנים ארוז ב-**Skills** — ראה [AI Engineering Rulebook](../סטנדרטים/AI-Engineering-Rulebook.md#agent--skill--md--מי-מחזיק-מה).
 
 ## נורות אזהרה
 
