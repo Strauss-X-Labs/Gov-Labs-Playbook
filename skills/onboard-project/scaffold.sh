@@ -28,7 +28,9 @@ done < <(find "$PLAYBOOK/תבנית-מיזם" -type f -print0)
 esc=$(printf '%s' "$NAME" | sed 's/[&/\]/\\&/g')
 wesc=$(printf '%s' "$WHERE" | sed 's/[&/\]/\\&/g')
 for f in "$OUT/README.md" "$OUT"/.kiro/steering/*.md; do
-  [ -f "$f" ] && sed -i "s/\[שם המיזם\]/$esc/g; s/\[מיקום החומר הגולמי\]/$wesc/g" "$f"
+  [ -f "$f" ] || continue
+  # בלי sed -i — ב-Mac הוא מתנהג אחרת
+  sed "s/\[שם המיזם\]/$esc/g; s/\[מיקום החומר הגולמי\]/$wesc/g" "$f" > "$f.tmp" && mv "$f.tmp" "$f"
 done
 
 # 3. תיקייה לכל יום, לפי 01-ימים/ (NN-שם; מדלגים על _תבנית-יום ו-README)

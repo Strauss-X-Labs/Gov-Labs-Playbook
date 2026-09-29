@@ -20,7 +20,7 @@ description: מאכלס מיזם חדש מהפלייבוק — פותח repo ח�
 2. **GitHub** — אחד מהשניים:
    - **לינק לחשבון/ארגון** (`https://github.com/<owner>`) — ייפתח repo **חדש** שם. שאל גם **שם ל-repo** (אנגלית, kebab-case, למשל `pmo-work-plans`). לא ממציאים שם.
    - **לינק ל-repo קיים** (`https://github.com/<owner>/<name>`) — משתמשים בו.
-3. **תיקיית השורש המקומית** — איפה במחשב ייווצר ה-clone, למשל `C:\Dev`. ה-clone נוצר ב-`<שורש>/<name>` (שם ה-repo). `<dir>` בהמשך = הנתיב הזה, בכתיב Git Bash (`C:\Dev` → `/c/Dev`).
+3. **תיקיית השורש המקומית** — איפה במחשב ייווצר ה-clone, למשל `C:\Dev` ב-Windows או `~/Dev` ב-Mac. ה-clone נוצר ב-`<שורש>/<name>` (שם ה-repo). `<dir>` בהמשך = הנתיב הזה; ב-Git Bash ב-Windows `C:\Dev` נכתב `/c/Dev`.
 4. **תיקייה ב-Google Drive** (לא חובה) — שם תיפתח תיקיית המיזם ובה תיקייה לכל יום. לא נתן — מדלגים על Drive. אחד מהשניים:
    - **נתיב מקומי** של Drive for desktop, למשל `G:\My Drive\...` או `G:\.shortcut-targets-by-id\...\<תיקייה>` — **עדיף**: בלי הגדרה ובלי התחברות, עם חשבון הגוגל שכבר מחובר במחשב. תיקייה ששותפה איתך מופיעה ב-`G:\` רק אחרי "Add shortcut to My Drive" בדפדפן.
    - **לינק** (`https://drive.google.com/drive/folders/...`) — דרך Google Drive API; דורש את ההגדרה החד-פעמית בסוף הקובץ.
@@ -37,7 +37,8 @@ description: מאכלס מיזם חדש מהפלייבוק — פותח repo ח�
 | נתיב | מאיפה |
 |---|---|
 | `README.md`, `CLAUDE.md`, `.kiro/steering/מנטור.md`, `.gitignore`, `ידע/`, `תוצרים/` | [תבנית-מיזם/](../../תבנית-מיזם/), עם `[שם המיזם]` ו-`[מיקום החומר הגולמי]` מוחלפים |
-| `.claude/` `.kiro/` `.agent/` `skills/run-agent/` | מצביע ל-[run-agent](../run-agent/SKILL.md) בפלייבוק — כך `/run-agent` זמין מתוך ה-repo של המיזם |
+| `.claude/` `.kiro/` `.agent/` `skills/run-agent/`, `.gemini/commands/run-agent.toml` | מצביע ל-[run-agent](../run-agent/SKILL.md) בפלייבוק — כך `/run-agent` זמין מתוך ה-repo של המיזם |
+| `AGENTS.md`, `GEMINI.md` | מצביעים ל-`מנטור.md` — לכלים שקוראים אותם (Gemini, Copilot ואחרים). `CLAUDE.md` עושה את זה ל-Claude Code, ו-Kiro קורא את `.kiro/steering/` לבד |
 | `ימים/NN-<יום>/README.md` | תיקייה לכל יום ב-[01-ימים/](../../01-ימים/) (כל `NN-*`, בלי `_תבנית-יום`). ה-README מצביע לסקירה ולתהליכים של היום בפלייבוק |
 
 רשימת הימים נקראת מ-`01-ימים/` בזמן הריצה — יום שנוסף לפלייבוק ייכנס אוטומטית. הסקריפט **לא דורס** קובץ שכבר קיים ביעד, ומדווח מה דילג.
@@ -62,7 +63,7 @@ description: מאכלס מיזם חדש מהפלייבוק — פותח repo ח�
 
 ## שלב 4 — clone, בנייה, push
 
-כל הפקודות ב-bash (ב-Windows: Git Bash), מתוך שורש הפלייבוק. `<dir>` = `<שורש>/<name>` משלב 1.
+כל הפקודות ב-bash, מתוך שורש הפלייבוק. Mac/Linux — `bash` רגיל. Windows — Git Bash; אם הכלי מריץ PowerShell / cmd, או ש-`bash` מפנה ל-WSL: `& "C:\Program Files\Git\bin\bash.exe" <סקריפט> <פרמטרים>`. `<dir>` = `<שורש>/<name>` משלב 1 (ב-Mac למשל `~/Dev/<name>`). נתיב Drive for desktop: Windows — `G:\...`, Mac — `~/Library/CloudStorage/GoogleDrive-<מייל>/...`.
 
 **repo חדש** — קודם יוצרים אותו, **פרטי** (ציבורי רק באישור מפורש):
 

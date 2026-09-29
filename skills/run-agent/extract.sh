@@ -8,16 +8,20 @@ F="${1:?חסר קובץ}"
 
 # XML → טקסט: סוף פסקה = שורה חדשה, בלי תגיות, ישויות בסיסיות
 xml2txt() {
-  sed -e 's#</a:p>#\n#g; s#</w:p>#\n#g; s#</si>#\n#g; s#<w:tab/># #g; s#<a:br/>#\n#g' \
-      -e 's/<[^>]*>//g' \
-      -e 's/&lt;/</g; s/&gt;/>/g; s/&quot;/"/g; s/&apos;/'"'"'/g; s/&amp;/\&/g' |
-  sed -e 's/[[:space:]]*$//' | grep -v '^$' || true
+  # awk ולא sed: ב-Mac, sed לא הופך \n לשורה חדשה
+  awk '{
+    gsub(/<\/a:p>|<\/w:p>|<\/si>|<a:br\/>/, "\n"); gsub(/<w:tab\/>/, " "); gsub(/<[^>]*>/, "")
+    gsub(/&lt;/, "<"); gsub(/&gt;/, ">"); gsub(/&quot;/, "\""); gsub(/&apos;/, "'"'"'"); gsub(/&amp;/, "\\&")
+    print
+  }' | sed -e 's/[[:space:]]*$//' | grep -v '^$' || true
 }
 
-case "${F,,}" in
-  *.pptx)
+ext=$(printf '%s' "${F##*.}" | tr '[:upper:]' '[:lower:]')   # לא ${F,,} — לא קיים ב-bash 3.2 (Mac)
+case "$ext" in
+  pptx)
     n=0
-    for s in $(unzip -Z1 "$F" | grep -E '^ppt/slides/slide[0-9]+\.xml$' | sort -V); do
+    # מיון לפי מספר השקף (לא sort -V — לא קיים ב-Mac)
+    for s in $(unzip -Z1 "$F" | grep -E '^ppt/slides/slide[0-9]+\.xml$' | sed 's/.*slide\([0-9]*\)\.xml$/\1 &/' | sort -n | cut -d' ' -f2); do
       n=$((n + 1))
       echo "## שקף $n"
       unzip -p "$F" "$s" | xml2txt
@@ -29,9 +33,9 @@ case "${F,,}" in
       fi
       echo
     done ;;
-  *.docx)
+  docx)
     unzip -p "$F" word/document.xml | xml2txt ;;
-  *.xlsx)
+  xlsx)
     unzip -p "$F" xl/sharedStrings.xml 2>/dev/null | xml2txt ;;
   *) echo "לא נתמך: $F (pptx / docx / xlsx בלבד — PDF ותמונות קוראים ישירות)" >&2; exit 1 ;;
 esac

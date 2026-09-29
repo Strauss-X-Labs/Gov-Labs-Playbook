@@ -82,10 +82,12 @@ fi
 show() { [ $# -gt 1 ] || return 0; echo "$1"; shift; printf '  %s\n' "$@"; }
 [ $DRY = 1 ] && echo "=== תוכנית (dry-run — לא שונה כלום) ===" || echo "=== בוצע ==="
 echo "מיקום החומר הגולמי: $WHERE"
-show "נוספו (חסרו במיזם):" "${added[@]}"
-show "עודכנו (לא נערכו ידנית):" "${updated[@]}"
-show "הוסרו (יצאו מהתבנית, לא נערכו):" "${removed[@]}"
-show "ימים חדשים:" "${newdays[@]}"
-show "נערכו ידנית — לא נגעתי, ההבדלים למטה:" "${edited[@]}"
-show "כבר מעודכנים:" "${current[@]}"
-for i in $(seq 1 ${#edited[@]}); do echo; cat "$TMP/diff-$i"; done
+# ${a[@]+"${a[@]}"} — רשימה ריקה עם set -u נכשלת ב-bash 3.2 (Mac)
+show "נוספו (חסרו במיזם):" ${added[@]+"${added[@]}"}
+show "עודכנו (לא נערכו ידנית):" ${updated[@]+"${updated[@]}"}
+show "הוסרו (יצאו מהתבנית, לא נערכו):" ${removed[@]+"${removed[@]}"}
+show "ימים חדשים:" ${newdays[@]+"${newdays[@]}"}
+show "נערכו ידנית — לא נגעתי, ההבדלים למטה:" ${edited[@]+"${edited[@]}"}
+show "כבר מעודכנים:" ${current[@]+"${current[@]}"}
+i=1
+while [ $i -le ${#edited[@]} ]; do echo; cat "$TMP/diff-$i"; i=$((i + 1)); done

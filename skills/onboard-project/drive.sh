@@ -93,7 +93,8 @@ case "${1:-}" in
   create)
     TARGET="${2:?חסר לינק או נתיב לתיקייה ב-Drive}"
     NAME="${3:?חסר שם מיזם}"
-    # נתיב מקומי (Drive for desktop, למשל G:\...) — יוצרים תיקיות, Drive מסנכרן. בלי API ובלי התחברות.
+    # נתיב מקומי (Drive for desktop: G:\... ב-Windows, ~/Library/CloudStorage/GoogleDrive-.../ ב-Mac) — יוצרים תיקיות, Drive מסנכרן. בלי API ובלי התחברות.
+    case "$TARGET" in "~/"*) TARGET="$HOME/${TARGET#\~/}" ;; esac
     if printf '%s' "$TARGET" | grep -qE '^([A-Za-z]:[\\/]|/)'; then
       command -v cygpath >/dev/null && TARGET=$(cygpath -u "$TARGET")
       [ -d "$TARGET" ] || die "אין תיקייה: $2 (Drive for desktop פועל? התיקייה ב-My Drive או כקיצור דרך?)"
