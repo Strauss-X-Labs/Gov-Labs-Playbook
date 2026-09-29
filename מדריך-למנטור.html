@@ -409,11 +409,16 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git /c/Dev/Gov-Lab
   </div>
 
   <h3 id="onb-team">חבר צוות שמצטרף, או מחשב נוסף</h3>
-  <p>מי שעובד על המיזם ממחשב אחר צריך את הפלייבוק במחשב (<a href="#setup">שלב 1</a>) ועותק של ה-repo של המיזם. אחר כך מחברים ביניהם פעם אחת, מתוך תיקיית הפלייבוק:</p>
-  <div class="code"><button class="copy" type="button">העתק</button><pre>git clone https://github.com/Strauss-X-Labs/gov-labs-cycle10-climate.git /c/Dev/gov-labs-cycle10-climate
-cd /c/Dev/Gov-Labs-Playbook
+  <p>במחשב שבו הקמת את המיזם הוא כבר מחובר. אם בשורש המיזם יש קובץ בשם <code>.gov-labs.local</code>, לא צריך לעשות כלום.</p>
+  <p>מי שעובד על המיזם ממחשב אחר צריך את הפלייבוק במחשב (<a href="#setup">שלב 1</a>) ועותק של ה-repo של המיזם:</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>git clone https://github.com/Strauss-X-Labs/gov-labs-cycle10-climate.git /c/Dev/gov-labs-cycle10-climate</pre></div>
+  <ol class="steps">
+    <li><strong>פותחים את תיקיית המיזם ב-VS Code</strong> ואת Claude Code בתוכה.</li>
+    <li><strong>מקלידים <code>/run-agent</code>.</strong> הסוכן מזהה שהמחשב לא מחובר, שואל איפה הפלייבוק ואיפה תיקיית המיזם ב-Drive, ומחבר לבד. זה קורה פעם אחת בלבד.</li>
+  </ol>
+  <p class="meta">חיבור ידני, אם צריך: ב-VS Code בוחרים Terminal ואז New Terminal. בחץ הקטן ליד סימן הפלוס בוחרים Git Bash, ומריצים את הפקודות הבאות. הפרמטר האחרון הוא תיקיית המיזם ב-Drive, ומדלגים עליו אם החומר נשמר ב-<code>ידע/</code>.</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>cd /c/Dev/Gov-Labs-Playbook
 bash skills/run-agent/connect.sh "/c/Dev/gov-labs-cycle10-climate" "G:\...\Gov Labs - מחזור 10 - אקלים"</pre></div>
-  <p class="meta">הפרמטר האחרון הוא תיקיית המיזם ב-Drive. מדלגים עליו אם החומר נשמר ב-<code>ידע/</code>.</p>
 
   <h3 id="onb-upgrade">עדכון מיזם קיים לתבנית חדשה</h3>
   <p>כשתבנית המיזם בפלייבוק משתנה, למשל כשנוסף יום או סוכן, מעדכנים מיזם קיים עם אותו סקיל: <code>/onboard-project</code>, ובשלב GitHub נותנים את הלינק ל-repo הקיים. הסקיל מזהה שזה מיזם קיים ועובר למצב עדכון.</p>
@@ -503,6 +508,7 @@ git push</pre></div>
         <tr><td><code>Author identity unknown</code></td><td>אין זהות git במחשב</td><td>שתי שורות <code>git config</code> מ<a href="#setup-check">שלב 1</a></td></tr>
         <tr><td>תיקיית Drive לא נמצאת ב-<code>G:\</code></td><td>תיקייה ששותפה איתך לא נוספה ל-My Drive</td><td>בדפדפן: Organize, Add shortcut, My Drive. התיקייה מופיעה ב-<code>G:\</code> תוך דקה</td></tr>
         <tr><td>הסוכן אומר שה-repo "לא מחובר במחשב הזה"</td><td>המיזם שוכפל בלי חיבור לפלייבוק</td><td>להריץ <code>connect.sh</code> כמו ב<a href="#onb-team">חבר צוות שמצטרף</a></td></tr>
+        <tr><td>אין אייקון של Claude בחלון של המיזם ב-VS Code, אבל בחלון של הפלייבוק יש</td><td>VS Code פתח את התיקייה ב-Restricted Mode (לא סימנת "Trust"), או שהתוסף מושבת לתיקייה הזו</td><td>1. לחיצה על "Restricted Mode" בפס הכחול למטה, ואז Trust. 2. אם זה לא עוזר: Extensions, Claude Code, ואז Enable (Workspace). 3. אם יש תוסף אבל אין אייקון: קליק ימני על הפס השמאלי וסימון Claude</td></tr>
         <tr><td>הסוכן לא מצליח לקרוא קובץ מ-Drive</td><td>קבצי Google מקוריים (Docs, Slides) הם רק קיצורי דרך במחשב</td><td>להוריד את הקובץ כ-PDF או DOCX לאותה תיקייה</td></tr>
         <tr><td>הסוכן מזהיר שהפלייבוק "לא על main" או "לא מעודכן"</td><td>העותק במחשב על ענף אחר או ישן</td><td><code>git -C /c/Dev/Gov-Labs-Playbook switch main</code> ואז <code>pull</code></td></tr>
       </tbody>
