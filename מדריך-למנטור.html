@@ -263,6 +263,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <li class="sub"><a href="#onb-where">איפה החומר של המיזם</a></li>
     <li class="sub"><a href="#onb-run">מהלך ההקמה</a></li>
     <li class="sub"><a href="#onb-team">חבר צוות שמצטרף</a></li>
+    <li class="sub"><a href="#onb-upgrade">עדכון מיזם קיים</a></li>
     <li class="stage"><a href="#daily">שלב 3: עבודה שוטפת עם הצוות</a></li>
     <li class="sub"><a href="#daily-rhythm">לפני, במהלך ואחרי מפגש</a></li>
     <li class="sub"><a href="#daily-agent">הרצת סוכן</a></li>
@@ -413,6 +414,21 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git /c/Dev/Gov-Lab
 cd /c/Dev/Gov-Labs-Playbook
 bash skills/run-agent/connect.sh "/c/Dev/gov-labs-cycle10-climate" "G:\...\Gov Labs - מחזור 10 - אקלים"</pre></div>
   <p class="meta">הפרמטר האחרון הוא תיקיית המיזם ב-Drive. מדלגים עליו אם החומר נשמר ב-<code>ידע/</code>.</p>
+
+  <h3 id="onb-upgrade">עדכון מיזם קיים לתבנית חדשה</h3>
+  <p>כשתבנית המיזם בפלייבוק משתנה, למשל כשנוסף יום או סוכן, מעדכנים מיזם קיים עם אותו סקיל: <code>/onboard-project</code>, ובשלב GitHub נותנים את הלינק ל-repo הקיים. הסקיל מזהה שזה מיזם קיים ועובר למצב עדכון.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>הקובץ במיזם</th><th>מה קורה</th></tr></thead>
+      <tbody>
+        <tr><td>חסר</td><td>נוסף</td></tr>
+        <tr><td>לא נערך מאז שנוצר</td><td>מוחלף בגרסה החדשה</td></tr>
+        <tr><td><strong>נערך ידנית</strong> ע"י הצוות</td><td><strong>לא נוגעים בו.</strong> הסקיל מציג את ההבדלים ומציע גרסה ממוזגת, ומחליף רק באישור שלך</td></tr>
+        <tr><td>יום חדש בתוכנית</td><td>נוספת תיקייה, ב-repo וב-Drive</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">לפני כל שינוי הסקיל מציג תוכנית מלאה ומחכה לאישור. תוצרים, סיכומי ימים וחומרים לא משתנים אף פעם.</p>
 </section>
 
 <section id="daily">
@@ -505,7 +521,7 @@ git push</pre></div>
         <tr><td>הרצת סוכן: פרסונה דיגיטלית על מיזם בדיקה</td><td>נבדק מקצה לקצה ב-Claude Code</td></tr>
         <tr><td>Kiro ו-Antigravity</td><td>ההגדרות קיימות, אבל לא נבדקו</td></tr>
         <tr><td>תמונת פרסונה</td><td>פתוח. המפרט דורש תמונה, והסוכן לא יוצר תמונות</td></tr>
-        <tr><td>המיזם של מחזור 10</td><td>הוקם לפני התבנית החדשה. צריך להוסיף לו את קובץ המנטור ואת <code>/run-agent</code></td></tr>
+        <tr><td>עדכון מיזם קיים</td><td>נבדק. המיזם של מחזור 10 עודכן לתבנית החדשה, וקובץ שנערך ידנית נשאר בלי שינוי</td></tr>
       </tbody>
     </table>
   </div>
