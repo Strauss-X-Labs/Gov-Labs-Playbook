@@ -180,6 +180,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <li class="sub"><a href="#daily-rhythm">לפני, במהלך ואחרי מפגש</a></li>
     <li class="sub"><a href="#daily-agent">הרצת סוכן</a></li>
     <li class="sub"><a href="#daily-git">שמירה ושיתוף</a></li>
+    <li class="sub"><a href="#daily-update">אחרי עדכון בפלייבוק</a></li>
     <li><a href="#trouble">תקלות נפוצות</a></li>
     <li><a href="#status">מה נבדק</a></li>
   </ol>
@@ -411,7 +412,7 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
     <div>
       <h4>לפני המפגש</h4>
       <ul>
-        <li>עדכון הפלייבוק: <code>git pull</code></li>
+        <li>עדכון הפלייבוק והמיזם (<a href="#daily-update">השגרה</a>)</li>
         <li>קריאת הסקירה וההיערכות של היום בפלייבוק</li>
         <li>בדיקה שהצוות העלה חומרים לתיקיית היום ב-Drive</li>
       </ul>
@@ -461,6 +462,28 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
 git commit -m "כרטיס פרסונה: מירב (תת-צוות 1)"
 git push</pre></div>
   <p class="meta">git push מעלה ל-GitHub, ורק אז שאר הצוות רואה את התוצרים. מי שעובד ממחשב נוסף מושך את העדכונים עם <code>git pull</code>.</p>
+
+  <h3 id="daily-update">אחרי עדכון בפלייבוק</h3>
+  <p>הפלייבוק מתעדכן כל הזמן: סוכנים חדשים, תיקונים במתודה, שינויים בתבנית המיזם. יש שני סוגי עדכונים, ולא צריך לדעת איזה מהם קרה: אותה שגרה מטפלת בשניהם.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>מה השתנה בפלייבוק</th><th>מה צריך לעשות</th></tr></thead>
+      <tbody>
+        <tr><td><strong>המתודה, הסוכנים, הטמפלטים של התוצרים</strong></td><td>רק <code>git pull</code> בפלייבוק. המיזם לא מחזיק עותק: הסוכן קורא את המתודה מהפלייבוק בכל הרצה</td></tr>
+        <tr><td><strong>תבנית המיזם</strong>: יום חדש, שינוי בקובץ ההנחיות או ב-README</td><td>לעדכן את המיזם עצמו, עם מצב העדכון (<a href="#onb-upgrade">עדכון מיזם קיים</a>)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>השגרה, פעם בשבוע או לפני מפגש:</p>
+  <ol class="steps">
+    <li><strong>מעדכנים את הפלייבוק.</strong>
+      <div class="code win"><button class="copy" type="button">העתק</button><pre>git -C /c/Dev/Gov-Labs-Playbook pull</pre></div>
+      <div class="code mac"><button class="copy" type="button">העתק</button><pre>git -C ~/Dev/Gov-Labs-Playbook pull</pre></div>
+    </li>
+    <li><strong>בודקים כל מיזם.</strong> בתיקיית הפלייבוק מפעילים את ההקמה (<code>/onboard-project</code> או <a href="#tools">משפט הפתיחה</a>) ונותנים את הלינק ל-repo של המיזם. אם כתוב "כבר מעודכנים", אין מה לעשות. אחרת מאשרים את התוכנית, והסוכן שומר ומעלה ל-GitHub.</li>
+    <li><strong>פותחים סשן חדש בכלי ה-AI.</strong> כלים טוענים את ההוראות בתחילת סשן, ולכן שינוי בפלייבוק נכנס לתוקף רק בסשן חדש.</li>
+  </ol>
+  <div class="note"><strong>מיזם שנעול על גרסה</strong><p>אם ב-README של המיזם, בשורת "גרסת הפלייבוק", כתובה תגית (למשל <code>v0.2</code>) ולא <code>main</code>, המיזם ממשיך לעבוד לפי הגרסה הנעולה, בכוונה. כדי לקבל את העדכונים משנים שם את הגרסה.</p></div>
 </section>
 
 <section id="trouble">
