@@ -1,0 +1,543 @@
+<title>המדריך למנטור לעבודה עם ה-Playbook</title>
+<!--
+  המדריך למנטור — מקור הדף.
+  הדף המפורסם (לקריאה): https://claude.ai/artifact/TDTCr53RVNnHw4VhX5XCfg
+  עדכון: עורכים את הקובץ הזה, ואז מבקשים מ-Claude Code: "פרסם את מדריך-למנטור.html ל-https://claude.ai/artifact/TDTCr53RVNnHw4VhX5XCfg".
+  פרסום בלי הלינק יוצר דף חדש בכתובת אחרת. אחרי כל עדכון — קומיט ו-PR כמו כל שינוי בפלייבוק.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=IBM+Plex+Sans+Hebrew:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --paper: #F6F7F4;
+  --surface: #FFFFFF;
+  --ink: #1D2A30;
+  --ink-soft: #52616A;
+  --rule: #D8DDD8;
+  --accent: #0F6B63;
+  --accent-soft: #E3F0EC;
+  --warn: #9A5B12;
+  --warn-soft: #FBF1E2;
+  --code-bg: #EEF1EE;
+  --serif: "Frank Ruhl Libre", "David", "Times New Roman", serif;
+  --sans: "IBM Plex Sans Hebrew", "Segoe UI", "Arial Hebrew", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, "Courier New", monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #12181A;
+    --surface: #1A2225;
+    --ink: #E4EBE8;
+    --ink-soft: #A2B0AC;
+    --rule: #2E3A3D;
+    --accent: #5CC2B5;
+    --accent-soft: #173330;
+    --warn: #E3AE63;
+    --warn-soft: #33281A;
+    --code-bg: #0D1214;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #12181A;
+  --surface: #1A2225;
+  --ink: #E4EBE8;
+  --ink-soft: #A2B0AC;
+  --rule: #2E3A3D;
+  --accent: #5CC2B5;
+  --accent-soft: #173330;
+  --warn: #E3AE63;
+  --warn-soft: #33281A;
+  --code-bg: #0D1214;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.75;
+}
+.page {
+  direction: rtl;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: 20px;
+  padding-block: 40px 80px;
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+@media (max-width: 860px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 24px 64px; }
+  .toc { position: static !important; }
+}
+
+/* תוכן עניינים */
+.toc {
+  position: sticky;
+  top: calc(env(safe-area-inset-top, 0px) + 24px);
+  font-size: 15px;
+  border-inline-start: 2px solid var(--rule);
+  padding-inline-start: 16px;
+}
+.toc h2 { font-family: var(--sans); font-size: 13px; letter-spacing: .04em; color: var(--ink-soft); margin: 0 0 8px; font-weight: 600; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover, .toc a:focus-visible { color: var(--accent); text-decoration: underline; }
+.toc .stage { font-weight: 600; }
+.toc .sub { padding-inline-start: 14px; color: var(--ink-soft); font-size: 14px; }
+
+main { min-width: 0; max-width: 72ch; }
+
+header.hero { margin-bottom: 40px; }
+.eyebrow { font-size: 13px; letter-spacing: .04em; color: var(--accent); font-weight: 600; margin: 0 0 8px; }
+h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: clamp(32px, 5vw, 46px);
+  line-height: 1.2;
+  margin: 0 0 16px;
+  text-wrap: balance;
+}
+.lead { font-size: 19px; color: var(--ink-soft); margin: 0; }
+
+.stages { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 28px; }
+@media (max-width: 600px) { .stages { grid-template-columns: minmax(0, 1fr); } }
+.stages a {
+  display: grid; gap: 2px; text-decoration: none; color: var(--ink);
+  background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px;
+}
+.stages a:hover, .stages a:focus-visible { border-color: var(--accent); }
+.stages .n { font-family: var(--serif); font-size: 26px; color: var(--accent); line-height: 1; }
+.stages .t { font-weight: 600; }
+.stages .d { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+
+section { margin-top: 56px; scroll-margin-top: 24px; }
+h2 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.3;
+  margin: 0 0 8px;
+  text-wrap: balance;
+}
+h2 .stage-no { color: var(--accent); margin-inline-end: 10px; }
+h3 { font-size: 19px; font-weight: 600; margin: 36px 0 8px; scroll-margin-top: 24px; }
+p { margin: 0 0 14px; }
+.meta { color: var(--ink-soft); font-size: 15px; margin-bottom: 20px; }
+a { color: var(--accent); }
+code {
+  font-family: var(--mono);
+  font-size: .88em;
+  background: var(--code-bg);
+  border-radius: 4px;
+  padding: 1px 5px;
+  unicode-bidi: isolate;
+  direction: ltr;
+}
+
+/* מבנה: שלוש שכבות */
+.layers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; margin: 20px 0 8px; align-items: stretch; }
+@media (max-width: 640px) { .layers { grid-template-columns: minmax(0, 1fr); } }
+.layer { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 16px; display: grid; align-content: start; gap: 6px; }
+.layer.mid { border: 2px solid var(--accent); background: var(--accent-soft); }
+.layer h4 { margin: 0; font-size: 17px; }
+.layer p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+.layer .tag { font-size: 12.5px; font-weight: 600; color: var(--ink-soft); }
+.layer.mid .tag { color: var(--accent); }
+.flow-arrow { display: grid; place-items: center; color: var(--ink-soft); font-size: 13px; padding: 4px 8px; }
+.layers-row { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1fr); align-items: stretch; margin: 20px 0 8px; }
+@media (max-width: 640px) {
+  .layers-row { grid-template-columns: minmax(0, 1fr); }
+  .flow-arrow .arr { transform: rotate(-90deg); }
+}
+.flow-arrow .arr { font-size: 20px; line-height: 1; }
+
+/* טבלאות */
+.table-wrap { overflow-x: auto; margin: 16px 0 20px; }
+table { border-collapse: collapse; width: 100%; font-size: 15.5px; line-height: 1.6; }
+th, td { text-align: right; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; color: var(--ink-soft); font-size: 14px; border-bottom-width: 2px; }
+
+/* צעדים */
+ol.steps { list-style: none; counter-reset: s; margin: 16px 0; padding: 0; display: grid; gap: 14px; }
+ol.steps > li {
+  counter-increment: s;
+  position: relative;
+  padding-inline-start: 44px;
+}
+ol.steps > li::before {
+  content: counter(s);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 2px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-family: var(--serif);
+  font-size: 16px;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+ol.steps > li > strong:first-child { display: block; }
+ul { padding-inline-start: 22px; margin: 6px 0 14px; }
+li { margin-bottom: 4px; }
+
+/* רשימת בדיקה */
+ul.check { list-style: none; padding: 0; display: grid; gap: 10px; margin: 16px 0; }
+ul.check li { display: grid; grid-template-columns: 22px minmax(0,1fr); gap: 10px; align-items: start; }
+ul.check input { width: 18px; height: 18px; margin-top: 6px; accent-color: var(--accent); }
+ul.check label { cursor: pointer; }
+
+/* קוד */
+.code {
+  direction: ltr;
+  text-align: left;
+  position: relative;
+  background: var(--code-bg);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  margin: 10px 0 16px;
+}
+.code pre {
+  margin: 0;
+  padding: 14px 16px;
+  padding-inline-end: 80px;
+  overflow-x: auto;
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.6;
+  white-space: pre;
+}
+.code pre .c { color: var(--ink-soft); }
+.copy {
+  position: absolute; top: 8px; right: 8px;
+  font-family: var(--sans); font-size: 13px;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--rule); border-radius: 6px;
+  padding: 3px 10px; cursor: pointer;
+}
+.copy:hover, .copy:focus-visible { border-color: var(--accent); color: var(--accent); }
+
+/* הערות */
+.note {
+  border-inline-start: 4px solid var(--accent);
+  background: var(--accent-soft);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin: 16px 0;
+  font-size: 16px;
+}
+[dir="rtl"] .note, .page .note { border-radius: 8px 0 0 8px; }
+.note.warn { border-color: var(--warn); background: var(--warn-soft); }
+.note strong:first-child { display: block; margin-bottom: 2px; }
+.note p:last-child { margin-bottom: 0; }
+
+.rhythm { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 16px 0; }
+@media (max-width: 700px) { .rhythm { grid-template-columns: minmax(0, 1fr); } }
+.rhythm > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+.rhythm h4 { margin: 0 0 6px; font-size: 16px; color: var(--accent); }
+.rhythm ul { margin: 0; padding-inline-start: 18px; font-size: 15px; line-height: 1.6; }
+
+footer { margin-top: 64px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 14px; }
+
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="page" dir="rtl" lang="he">
+
+<nav class="toc" aria-label="תוכן עניינים">
+  <h2>במדריך</h2>
+  <ol>
+    <li><a href="#overview">איך זה בנוי</a></li>
+    <li class="stage"><a href="#setup">שלב 1: הכנת סביבת העבודה</a></li>
+    <li class="sub"><a href="#setup-check">רשימת התקנות</a></li>
+    <li class="sub"><a href="#setup-verify">בדיקה שהכל עובד</a></li>
+    <li class="stage"><a href="#onboarding">שלב 2: הקמת מיזם</a></li>
+    <li class="sub"><a href="#onb-inputs">מה צריך להכין</a></li>
+    <li class="sub"><a href="#onb-where">איפה החומר של המיזם</a></li>
+    <li class="sub"><a href="#onb-run">מהלך ההקמה</a></li>
+    <li class="sub"><a href="#onb-team">חבר צוות שמצטרף</a></li>
+    <li class="stage"><a href="#daily">שלב 3: עבודה שוטפת עם הצוות</a></li>
+    <li class="sub"><a href="#daily-rhythm">לפני, במהלך ואחרי מפגש</a></li>
+    <li class="sub"><a href="#daily-agent">הרצת סוכן</a></li>
+    <li class="sub"><a href="#daily-git">שמירה ושיתוף</a></li>
+    <li><a href="#trouble">תקלות נפוצות</a></li>
+    <li><a href="#status">מצב נוכחי</a></li>
+  </ol>
+</nav>
+
+<main>
+<header class="hero">
+  <p class="eyebrow">Gov-Labs 2.0 · מדריך למנטור</p>
+  <h1>המדריך למנטור לעבודה עם ה-Playbook</h1>
+  <p class="lead">הפלייבוק מחזיק את המתודה ואת הגדרות הסוכנים, פעם אחת לכל המיזמים. המיזם שלך מחזיק את החומרים והתוצרים של הצוות. המדריך מסביר איך מחברים ביניהם: מהכנת המחשב, דרך הקמת המיזם, ועד הרצת סוכנים עם הצוות.</p>
+  <div class="stages">
+    <a href="#setup"><span class="n">1</span><span class="t">הכנת סביבת העבודה</span><span class="d">פעם אחת, כשעה</span></a>
+    <a href="#onboarding"><span class="n">2</span><span class="t">הקמת מיזם</span><span class="d">פעם אחת לכל מיזם, כ-5 דקות</span></a>
+    <a href="#daily"><span class="n">3</span><span class="t">עבודה שוטפת</span><span class="d">בכל מפגש עם הצוות</span></a>
+  </div>
+</header>
+
+<section id="overview">
+  <h2>איך זה בנוי</h2>
+  <p>הסוכן רץ מתוך המיזם שלך. הוא קורא את המתודה מהפלייבוק ואת החומרים מתיקיית היום, מתשאל את הצוות, וכותב את התוצר למיזם רק אחרי אישור.</p>
+  <div class="layers-row" role="group" aria-label="שלושת המקורות וסוכן ההפעלה">
+    <div class="layer">
+      <span class="tag">קוראים בלבד</span>
+      <h4>הפלייבוק</h4>
+      <p>מפרט הסוכן, התהליך של היום, המתודה והטמפלט של התוצר. זהה לכל המיזמים.</p>
+    </div>
+    <div class="flow-arrow" aria-hidden="true"><span class="arr">←</span><span>מתודה</span></div>
+    <div class="layer mid">
+      <span class="tag">כאן עובדים</span>
+      <h4>ה-repo של המיזם</h4>
+      <p>הסוכן (<code>/run-agent</code>) רץ כאן. התוצרים נשמרים בתיקיית <code>תוצרים/</code>, והסיכומים בתיקיית <code>ימים/</code>.</p>
+    </div>
+    <div class="flow-arrow" aria-hidden="true"><span class="arr">→</span><span>חומר היום</span></div>
+    <div class="layer">
+      <span class="tag">קוראים בלבד</span>
+      <h4>Google Drive</h4>
+      <p>תיקייה לכל יום: מצגות, מסמכים, סיכומי דיונים ותמונות שהצוות מעלה.</p>
+    </div>
+  </div>
+  <p class="meta">הצוות לא צריך לדעת git. הצוות עובד ב-Drive כרגיל, ואת הסוכן מפעילים המנטור או מפעיל ה-AI של הצוות.</p>
+</section>
+
+<section id="setup">
+  <h2><span class="stage-no">1</span>הכנת סביבת העבודה</h2>
+  <p class="meta">פעם אחת, לפני המיזם הראשון. אפשר לסמן כל שורה אחרי שסיימת.</p>
+
+  <h3 id="setup-check">רשימת התקנות</h3>
+  <ul class="check">
+    <li><input type="checkbox" id="c-git"><label for="c-git"><strong>Git for Windows</strong> מ-<a href="https://git-scm.com/download/win" target="_blank" rel="noopener">git-scm.com</a>. כולל את Git Bash, שבו רצים הסקריפטים. לא צריך Python.</label></li>
+    <li><input type="checkbox" id="c-claude"><label for="c-claude"><strong>Claude Code</strong>, לפי ההוראות ב-<a href="https://claude.com/claude-code" target="_blank" rel="noopener">claude.com/claude-code</a>. אפשר לעבוד מהטרמינל או מתוך VS Code.</label></li>
+    <li><input type="checkbox" id="c-gh"><label for="c-gh"><strong>GitHub CLI</strong> מ-<a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>, ואחר כך התחברות לחשבון GitHub שלך: <code>gh auth login</code>. זה מה שפותח repo חדש לכל מיזם.</label></li>
+    <li><input type="checkbox" id="c-drive"><label for="c-drive"><strong>Google Drive for desktop</strong>, מחובר לחשבון הגוגל שלך. אחרי ההתקנה Drive מופיע ככונן <code>G:\</code>.</label></li>
+    <li><input type="checkbox" id="c-shortcut"><label for="c-shortcut"><strong>תיקיית התוכנית ב-Drive מופיעה ב-<code>G:\</code>.</strong> תיקייה ששותפה איתך לא מופיעה שם לבד: פתח אותה בדפדפן, קליק ימני, Organize ואז Add shortcut, ובחר My Drive.</label></li>
+    <li><input type="checkbox" id="c-perm"><label for="c-perm"><strong>הרשאות:</strong> חבר בארגון <code>Strauss-X-Labs</code> ב-GitHub, והרשאת עריכה (Editor) לתיקיית התוכנית ב-Drive. בלי עריכה אי אפשר ליצור תיקיות מיזם.</label></li>
+    <li><input type="checkbox" id="c-id"><label for="c-id"><strong>זהות git.</strong> בלי שם ומייל כל שמירה (commit) נכשלת. פותחים Git Bash ומריצים את שתי השורות שבהמשך.</label></li>
+    <li><input type="checkbox" id="c-clone"><label for="c-clone"><strong>עותק של הפלייבוק במחשב.</strong> מומלץ בתיקייה <code>C:\Dev</code>, ולשים את המיזמים באותה תיקייה.</label></li>
+  </ul>
+
+  <p>זהות git, פעם אחת (עם השם והמייל שלך):</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>git config --global user.name "השם שלך"
+git config --global user.email "you@example.com"</pre></div>
+
+  <p>העתקת הפלייבוק למחשב, פעם אחת:</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>mkdir -p /c/Dev
+git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git /c/Dev/Gov-Labs-Playbook</pre></div>
+
+  <p>עדכון הפלייבוק לפני כל שבוע עבודה, כדי לקבל שינויים במתודה ובסוכנים:</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>git -C /c/Dev/Gov-Labs-Playbook pull</pre></div>
+
+  <h3 id="setup-verify">בדיקה שהכל עובד</h3>
+  <ol class="steps">
+    <li><strong>פתח את תיקיית הפלייבוק ב-Claude Code.</strong> ב-VS Code: File ואז Open Folder, ובחר <code>C:\Dev\Gov-Labs-Playbook</code>. מהטרמינל: <code>cd /c/Dev/Gov-Labs-Playbook</code> ואז <code>claude</code>.</li>
+    <li><strong>הקלד <code>/</code> בשורת ההודעה.</strong> ברשימה צריכים להופיע <code>onboard-project</code> ו-<code>scan-sources</code>.</li>
+    <li><strong>לא מופיעים?</strong> עדכן את הפלייבוק (<code>git pull</code>) ופתח את Claude Code מחדש. ראה גם <a href="#trouble">תקלות נפוצות</a>.</li>
+  </ol>
+</section>
+
+<section id="onboarding">
+  <h2><span class="stage-no">2</span>הקמת מיזם</h2>
+  <p class="meta">פעם אחת לכל מיזם. הסקיל <code>/onboard-project</code> עושה את כל העבודה, ומבקש אישור אחד לפני שהוא יוצר משהו.</p>
+
+  <h3 id="onb-inputs">מה צריך להכין</h3>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>פרט</th><th>דוגמה</th><th>הערות</th></tr></thead>
+      <tbody>
+        <tr><td>שם המיזם</td><td>Gov Labs - מחזור 10 - אקלים</td><td>בעברית, לתצוגה</td></tr>
+        <tr><td>GitHub</td><td><code>https://github.com/Strauss-X-Labs</code> ושם: <code>gov-labs-cycle10-climate</code></td><td>לינק לארגון ושם באנגלית פותחים repo חדש ופרטי. אפשר גם לתת לינק ל-repo קיים</td></tr>
+        <tr><td>תיקיית שורש במחשב</td><td><code>C:\Dev</code></td><td>המיזם ייווצר ב-<code>C:\Dev\gov-labs-cycle10-climate</code></td></tr>
+        <tr><td>תיקיית התוכנית ב-Drive</td><td><code>G:\...\Gov-Labs-2.0</code></td><td>לא חובה. עדיף נתיב מ-<code>G:\</code>: עובד בלי הגדרות נוספות</td></tr>
+        <tr><td>איפה יישמר החומר הגולמי</td><td>Google Drive</td><td>ההחלטה שלך. ראה הסעיף הבא</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="onb-where">איפה החומר של המיזם</h3>
+  <p>לכל מיזם אתה מחליט פעם אחת איפה נשמר החומר הגולמי. ההחלטה נרשמת בראש ה-README של המיזם, ומשם גם אנשים וגם סוכנים יודעים איפה לחפש.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>מה</th><th>איפה</th><th>מי מחליט</th></tr></thead>
+      <tbody>
+        <tr><td><strong>חומר גולמי</strong>: מצגות, מסמכים, סיכומי דיונים, ראיונות, תמונות</td><td>Google Drive, עם תיקייה לכל יום, <strong>או</strong> תיקיית <code>ידע/</code> ב-repo</td><td>המנטור, לכל מיזם</td></tr>
+        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td>תמיד בתיקיית <code>תוצרים/</code> ב-repo, כקבצי MD</td><td>קבוע, כי זה מה שהסוכנים קוראים וכותבים</td></tr>
+        <tr><td><strong>גרסת הפלייבוק</strong></td><td><code>main</code>, או תגית נעולה כמו <code>v0.2</code></td><td>המנטור. תגית שומרת שמחזור שכבר רץ לא ישתנה באמצע</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><strong>אם בחרת Drive</strong><p>הסקיל יבקש לינק לתיקיית המיזם, כי חברי הצוות פותחים אותו מהדפדפן ונתיב <code>G:\</code> לא עובד אצלם. ב-Drive: קליק ימני על תיקיית המיזם, Share ואז Copy link.</p></div>
+
+  <h3 id="onb-run">מהלך ההקמה</h3>
+  <ol class="steps">
+    <li><strong>פתח את הפלייבוק ב-Claude Code והקלד <code>/onboard-project</code>.</strong> הסקיל שואל את חמשת הפרטים מהטבלה.</li>
+    <li><strong>בדיקות מקדימות.</strong> הסקיל בודק זהות git, ששם ה-repo פנוי ושיש לך הרשאה לפתוח אותו, ושתיקיית ה-Drive קיימת וניתנת לכתיבה.</li>
+    <li><strong>אישור.</strong> מוצגת טבלה של כל מה שייווצר. שום דבר לא נוצר לפני שכתבת "כן".</li>
+    <li><strong>ביצוע.</strong> הסקיל עושה ארבעה דברים:
+      <ul>
+        <li>פותח repo פרטי ומעתיק אליו את תבנית המיזם.</li>
+        <li>יוצר תיקייה לכל יום בתוכנית, לפי הימים שבפלייבוק.</li>
+        <li>דוחף את הכל ל-GitHub.</li>
+        <li>יוצר ב-Drive תיקיית מיזם, ובתוכה תיקייה לכל יום.</li>
+      </ul>
+    </li>
+    <li><strong>חיבור לפלייבוק.</strong> הסקיל מחבר את המיזם לפלייבוק ול-Drive במחשב שלך. הנתיבים נשמרים בקובץ מקומי שלא עולה ל-GitHub, כי הם שונים בכל מחשב.</li>
+    <li><strong>דיווח.</strong> תקבל לינק ל-repo ולתיקיית ה-Drive, ורשימה של מה שנשאר לך לעשות: לתת הרשאות לחברי הצוות ב-GitHub וב-Drive.</li>
+  </ol>
+
+  <p>מה נוצר ב-repo של המיזם:</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>קובץ או תיקייה</th><th>מה יש בו</th></tr></thead>
+      <tbody>
+        <tr><td><code>README.md</code></td><td>שם המיזם, איפה החומר, גרסת הפלייבוק, ואיך מריצים סוכן</td></tr>
+        <tr><td><code>ימים/01-Unboxing</code> … <code>08-Storytelling</code></td><td>סיכומי מפגש, שיעורי בית והחלטות של כל יום. כל תיקייה מקשרת ליום בפלייבוק</td></tr>
+        <tr><td><code>תוצרים/</code></td><td>התוצרים שהסוכנים כותבים אחרי אישור הצוות</td></tr>
+        <tr><td><code>ידע/</code></td><td>חומר גולמי, רק אם בחרת לשמור אותו ב-repo</td></tr>
+        <tr><td><code>CLAUDE.md</code> ו-<code>.kiro/steering/מנטור.md</code></td><td>הנחיות לסוכן: מי הוא, שתי שכבות הידע, והכללים של המיזם</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 id="onb-team">חבר צוות שמצטרף, או מחשב נוסף</h3>
+  <p>מי שעובד על המיזם ממחשב אחר צריך את הפלייבוק במחשב (<a href="#setup">שלב 1</a>) ועותק של ה-repo של המיזם. אחר כך מחברים ביניהם פעם אחת, מתוך תיקיית הפלייבוק:</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>git clone https://github.com/Strauss-X-Labs/gov-labs-cycle10-climate.git /c/Dev/gov-labs-cycle10-climate
+cd /c/Dev/Gov-Labs-Playbook
+bash skills/run-agent/connect.sh "/c/Dev/gov-labs-cycle10-climate" "G:\...\Gov Labs - מחזור 10 - אקלים"</pre></div>
+  <p class="meta">הפרמטר האחרון הוא תיקיית המיזם ב-Drive. מדלגים עליו אם החומר נשמר ב-<code>ידע/</code>.</p>
+</section>
+
+<section id="daily">
+  <h2><span class="stage-no">3</span>עבודה שוטפת עם הצוות</h2>
+  <p class="meta">הצוות עובד כרגיל ומעלה חומרים ל-Drive. הסוכן עוזר לארגן, לאתגר ולנסח, אבל לא חושב ולא מחליט במקום הצוות.</p>
+
+  <h3 id="daily-rhythm">לפני, במהלך ואחרי מפגש</h3>
+  <div class="rhythm">
+    <div>
+      <h4>לפני המפגש</h4>
+      <ul>
+        <li>עדכון הפלייבוק: <code>git pull</code></li>
+        <li>קריאת הסקירה וההיערכות של היום בפלייבוק</li>
+        <li>בדיקה שהצוות העלה חומרים לתיקיית היום ב-Drive</li>
+      </ul>
+    </div>
+    <div>
+      <h4>במהלך המפגש</h4>
+      <ul>
+        <li>הצוות חושב ודן קודם, בלי AI</li>
+        <li>אחר כך מריצים את הסוכן של התהליך: <code>/run-agent</code></li>
+        <li>תתי-צוותים במקביל: סשן נפרד לכל אחד</li>
+      </ul>
+    </div>
+    <div>
+      <h4>אחרי המפגש</h4>
+      <ul>
+        <li>בדיקה שהתוצרים נשמרו ב-<code>תוצרים/</code></li>
+        <li>סיכום היום בתיקייה <code>ימים/NN-יום/</code></li>
+        <li>שמירה ושיתוף ב-GitHub</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 id="daily-agent">הרצת סוכן</h3>
+  <p>פותחים ב-Claude Code את <strong>תיקיית המיזם</strong> (לא את הפלייבוק), ומקלידים <code>/run-agent</code> עם שם הסוכן. למשל:</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>/run-agent פרסונה דיגיטלית</pre></div>
+  <p>בלי שם, הסוכן מציג את רשימת הסוכנים לפי ימים ושואל. הרשימה המלאה נמצאת ב-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook/blob/main/04-AI/%D7%A1%D7%95%D7%9B%D7%A0%D7%99%D7%9D/README.md" target="_blank" rel="noopener">טבלת הסוכנים בפלייבוק</a>. סוכן חדש שנוסף לפלייבוק זמין מיד, בלי התקנה.</p>
+
+  <p>מה קורה בהרצה:</p>
+  <ol class="steps">
+    <li><strong>קריאת המתודה.</strong> הסוכן קורא מהפלייבוק את מפרט הסוכן, התהליך, המתודה והטמפלט של התוצר.</li>
+    <li><strong>קריאת המיזם.</strong> הוא קורא את התוצרים הקיימים ואת תיקיית היום, מציג את רשימת הקבצים ב-Drive, <strong>ושואל אילו רלוונטיים</strong>. הוא קורא מצגות, Word, PDF ותמונות.</li>
+    <li><strong>בדיקת קלטים.</strong> מוצגת טבלה של מה יש ומה חסר מתוך מה שהמפרט דורש. מה שחסר נשאל מהצוות, ולא מומצא.</li>
+    <li><strong>תשאול הצוות.</strong> שאלה אחת בכל פעם, לפי התסריט שבמפרט. הסוכן מאתגר, שואל "למה?", ושם לב לנורות האזהרה של התהליך.</li>
+    <li><strong>טיוטה.</strong> הסוכן מציג טיוטה במבנה של הטמפלט, כשהשערות מסומנות כהשערות. הצוות מתקן.</li>
+    <li><strong>כתיבה.</strong> רק אחרי אישור הצוות התוצר נכתב ל-<code>תוצרים/</code>. אם התוצר כבר קיים, הסוכן מציג מה משתנה ומעדכן, בלי לדרוס.</li>
+    <li><strong>סיכום.</strong> מה נכתב, על מה זה מבוסס, ומה כדאי לבדוק בשטח. הסוכן גם מציע את הצעד הבא בתהליך.</li>
+  </ol>
+
+  <div class="note"><strong>מה הסוכן לא עושה</strong><p>לא עורך את הפלייבוק, לא כותב ל-Drive, לא ממציא מידע חסר, לא מחליט במקום הצוות, ולא שומר ב-GitHub בלי אישור.</p></div>
+
+  <div class="note warn"><strong>תתי-צוותים במקביל</strong><p>בתהליכים כמו הפרסונה, שני תתי-צוותים עובדים בו-זמנית. כל תת-צוות צריך סשן משלו: שני חלונות Claude Code על אותו מיזם, או שני מחשבים מחוברים. ההגדרה לכל מחשב נוסף מופיעה ב<a href="#onb-team">חבר צוות שמצטרף</a>.</p></div>
+
+  <h3 id="daily-git">שמירה ושיתוף</h3>
+  <p>בסוף ההרצה הסוכן מציע לשמור (commit). אפשר לאשר לו, או להריץ בעצמך מתוך תיקיית המיזם:</p>
+  <div class="code"><button class="copy" type="button">העתק</button><pre>git add תוצרים/ ימים/
+git commit -m "כרטיס פרסונה: מירב (תת-צוות 1)"
+git push</pre></div>
+  <p class="meta">git push מעלה ל-GitHub, ורק אז שאר הצוות רואה את התוצרים. מי שעובד ממחשב נוסף מושך את העדכונים עם <code>git pull</code>.</p>
+</section>
+
+<section id="trouble">
+  <h2>תקלות נפוצות</h2>
+  <p class="meta">כולן קרו בפועל בבדיקות.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>מה רואים</th><th>הסיבה</th><th>מה עושים</th></tr></thead>
+      <tbody>
+        <tr><td><code>/onboard-project</code> או <code>/run-agent</code> לא ברשימה</td><td>הפלייבוק לא מעודכן, או שהסקיל עוד לא מוזג</td><td><code>git pull</code> בפלייבוק ופתיחה מחדש של Claude Code. בינתיים ראה <a href="#status">מצב נוכחי</a></td></tr>
+        <tr><td><code>403 Permission denied</code> ב-push</td><td>לחשבון שלך אין הרשאת Write ל-repo</td><td>לבקש הרשאה מ-admin של הארגון. הקבצים נשמרים במחשב, ואחרי ההרשאה מריצים שוב <code>git push</code></td></tr>
+        <tr><td><code>Author identity unknown</code></td><td>אין זהות git במחשב</td><td>שתי שורות <code>git config</code> מ<a href="#setup-check">שלב 1</a></td></tr>
+        <tr><td>תיקיית Drive לא נמצאת ב-<code>G:\</code></td><td>תיקייה ששותפה איתך לא נוספה ל-My Drive</td><td>בדפדפן: Organize, Add shortcut, My Drive. התיקייה מופיעה ב-<code>G:\</code> תוך דקה</td></tr>
+        <tr><td>הסוכן אומר שה-repo "לא מחובר במחשב הזה"</td><td>המיזם שוכפל בלי חיבור לפלייבוק</td><td>להריץ <code>connect.sh</code> כמו ב<a href="#onb-team">חבר צוות שמצטרף</a></td></tr>
+        <tr><td>הסוכן לא מצליח לקרוא קובץ מ-Drive</td><td>קבצי Google מקוריים (Docs, Slides) הם רק קיצורי דרך במחשב</td><td>להוריד את הקובץ כ-PDF או DOCX לאותה תיקייה</td></tr>
+        <tr><td>הסוכן מזהיר שהפלייבוק "לא על main" או "לא מעודכן"</td><td>העותק במחשב על ענף אחר או ישן</td><td><code>git -C /c/Dev/Gov-Labs-Playbook switch main</code> ואז <code>pull</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="status">
+  <h2>מצב נוכחי</h2>
+  <div class="note warn"><strong>הסקילים ממתינים למיזוג</strong><p><code>/onboard-project</code> ו-<code>/run-agent</code> נמצאים ב-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook/pull/7" target="_blank" rel="noopener">PR #7</a>. עד שמישהו עם הרשאת Write ימזג אותו, הם לא יופיעו אצל מנטורים שעובדים על <code>main</code>.</p></div>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>מה</th><th>מצב</th></tr></thead>
+      <tbody>
+        <tr><td>הקמת מיזם: repo, תיקיות ימים, Drive</td><td>נבדק. המיזם "Gov Labs - מחזור 10 - אקלים" הוקם כך</td></tr>
+        <tr><td>הרצת סוכן: פרסונה דיגיטלית על מיזם בדיקה</td><td>נבדק מקצה לקצה ב-Claude Code</td></tr>
+        <tr><td>Kiro ו-Antigravity</td><td>ההגדרות קיימות, אבל לא נבדקו</td></tr>
+        <tr><td>תמונת פרסונה</td><td>פתוח. המפרט דורש תמונה, והסוכן לא יוצר תמונות</td></tr>
+        <tr><td>המיזם של מחזור 10</td><td>הוקם לפני התבנית החדשה. צריך להוסיף לו את קובץ המנטור ואת <code>/run-agent</code></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<footer>
+  Gov-Labs 2.0 · המדריך מבוסס על ה-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook" target="_blank" rel="noopener">Playbook</a>. מתודה, סוכנים וטמפלטים מתעדכנים שם בלבד.
+</footer>
+</main>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    var pre = btn.parentElement.querySelector('pre');
+    var text = pre.innerText;
+    var done = function () { btn.textContent = 'הועתק'; setTimeout(function () { btn.textContent = 'העתק'; }, 1600); };
+    var select = function () {
+      var r = document.createRange(); r.selectNodeContents(pre);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'סומן, Ctrl+C';
+    };
+    try {
+      navigator.clipboard.writeText(text).then(done, select);
+    } catch (e) { select(); }
+  });
+});
+document.querySelectorAll('ul.check input').forEach(function (box) {
+  var key = 'mentor-guide:' + box.id;
+  try { box.checked = localStorage.getItem(key) === '1'; } catch (e) {}
+  box.addEventListener('change', function () {
+    try { localStorage.setItem(key, box.checked ? '1' : '0'); } catch (e) {}
+  });
+});
+</script>
