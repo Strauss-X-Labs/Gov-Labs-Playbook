@@ -4,6 +4,7 @@
 #   bash skills/onboard-project/drive.sh auth-url                 # פעם אחת: לינק להתחברות לגוגל
 #   bash skills/onboard-project/drive.sh auth-code "<URL>"        # פעם אחת: ה-URL שהדפדפן הגיע אליו אחרי האישור
 #   bash skills/onboard-project/drive.sh create "<לינק לתיקייה>" "<שם המיזם>"
+#   bash skills/onboard-project/drive.sh create "G:\...\<תיקייה>" "<שם המיזם>"   # נתיב מקומי של Drive for desktop — בלי התחברות
 #
 # דרישה חד-פעמית (לארגון): OAuth client מסוג Desktop app ב-Google Cloud, עם Drive API מופעל.
 # את ה-JSON שלו שומרים ב-~/.gov-labs/google-oauth-client.json. ראה SKILL.md, "Google Drive".
@@ -90,8 +91,23 @@ case "${1:-}" in
     echo "מחובר לגוגל. נשמר ב-$TOKEN"
     ;;
   create)
-    parent=$(folder_id_from_link "${2:?חסר לינק לתיקייה ב-Drive}")
+    TARGET="${2:?חסר לינק או נתיב לתיקייה ב-Drive}"
     NAME="${3:?חסר שם מיזם}"
+    # נתיב מקומי (Drive for desktop, למשל G:\...) — יוצרים תיקיות, Drive מסנכרן. בלי API ובלי התחברות.
+    if printf '%s' "$TARGET" | grep -qE '^([A-Za-z]:[\\/]|/)'; then
+      command -v cygpath >/dev/null && TARGET=$(cygpath -u "$TARGET")
+      [ -d "$TARGET" ] || die "אין תיקייה: $2 (Drive for desktop פועל? התיקייה ב-My Drive או כקיצור דרך?)"
+      proj="$TARGET/$NAME"
+      [ -d "$proj" ] && echo "  קיים: $NAME" >&2 || { mkdir "$proj"; echo "  נוצר: $NAME" >&2; }
+      for d in "$PLAYBOOK"/01-ימים/[0-9][0-9]-*/; do
+        day="$(basename "$d")"
+        [ -d "$proj/$day" ] && echo "  קיים: $day" >&2 || { mkdir "$proj/$day"; echo "  נוצר: $day" >&2; }
+      done
+      command -v cygpath >/dev/null && proj=$(cygpath -w "$proj")
+      echo "תיקיית המיזם (Drive for desktop — מסתנכרן תוך דקה-שתיים): $proj"
+      exit 0
+    fi
+    parent=$(folder_id_from_link "$TARGET")
     AT=$(access_token)
     proj=$(ensure_folder "$parent" "$NAME")
     for d in "$PLAYBOOK"/01-ימים/[0-9][0-9]-*/; do
@@ -99,5 +115,5 @@ case "${1:-}" in
     done
     echo "תיקיית המיזם ב-Drive: https://drive.google.com/drive/folders/$proj"
     ;;
-  *) die "שימוש: drive.sh auth-url | auth-code <URL> | create <לינק> <שם המיזם>" ;;
+  *) die "שימוש: drive.sh auth-url | auth-code <URL> | create <לינק|נתיב> <שם המיזם>" ;;
 esac
