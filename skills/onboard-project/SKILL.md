@@ -37,7 +37,7 @@ description: מאכלס מיזם חדש מהפלייבוק — פותח repo ח�
 | נתיב | מאיפה |
 |---|---|
 | `README.md`, `CLAUDE.md`, `.kiro/steering/מנטור.md`, `.gitignore`, `ידע/`, `תוצרים/` | [תבנית-מיזם/](../../תבנית-מיזם/), עם `[שם המיזם]` ו-`[מיקום החומר הגולמי]` מוחלפים |
-| `.claude/` `.kiro/` `.agent/` `skills/<סקיל>/`, `.gemini/commands/<סקיל>.toml` | מצביעים לסקילים שרצים מהמיזם: [run-agent](../run-agent/SKILL.md) וסקילי יום 1 (`gov-labs-*`). כך `/run-agent` והסקילים הייעודיים זמינים מתוך ה-repo של המיזם |
+| `.claude/` `.kiro/` `.agent/` `skills/run-agent/`, `.gemini/commands/run-agent.toml` | מצביע ל-[run-agent](../run-agent/SKILL.md) בפלייבוק — כך `/run-agent` זמין מתוך ה-repo של המיזם |
 | `AGENTS.md`, `GEMINI.md` | מצביעים ל-`מנטור.md` — לכלים שקוראים אותם (Gemini, Copilot ואחרים). `CLAUDE.md` עושה את זה ל-Claude Code, ו-Kiro קורא את `.kiro/steering/` לבד |
 | `ימים/NN-<יום>/README.md` | תיקייה לכל יום ב-[01-ימים/](../../01-ימים/) (כל `NN-*`, בלי `_תבנית-יום`). ה-README מצביע לסקירה ולתהליכים של היום בפלייבוק |
 

@@ -18,8 +18,6 @@ repo של מיזם בתוכנית Gov-Labs. נוצר מהתבנית ב-[Gov-Labs
 
 פותחים את ה-repo הזה ב-Claude Code (או Kiro / Antigravity) ומקלידים `/run-agent <שם הסוכן>` — למשל `/run-agent פרסונה דיגיטלית`. הסוכן קורא את המפרט מהפלייבוק ואת החומרים מכאן / מ-Drive, מתשאל את הצוות, ואחרי אישור כותב את התוצר ל-`תוצרים/`.
 
-לסוכנים של יום 1 יש **סקילים ייעודיים** (`gov-labs-challenge-space`, `gov-labs-persona-card`, `gov-labs-persona-visual`, `gov-labs-assumptions-interview-guide`). אפשר להפעיל אותם בשמם, ו-`/run-agent` מעביר אליהם לבד.
-
 **פעם אחת בכל מחשב:** מחברים את ה-repo לפלייבוק (ול-Drive, אם החומר שם) — מתוך תיקיית הפלייבוק:
 
 ```bash

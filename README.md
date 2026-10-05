@@ -18,7 +18,7 @@
 | [תבנית-מיזם](תבנית-מיזם/) | השלד של repo קבוצה — משכפלים לכל מיזם |
 | [חומרי-מקור](חומרי-מקור/) | המסמכים והתמלולים שהפלייבוק נגזר מהם. לא יודע לאן? `חומרי-מקור/לא-ממוין/` |
 | [מדריך-למנטור.html](מדריך-למנטור.html) | המדריך למנטור — מקור הדף. לקריאה: [הדף המפורסם](https://claude.ai/artifact/TDTCr53RVNnHw4VhX5XCfg). עורכים כאן ומפרסמים מחדש לאותו לינק (ההוראות בראש הקובץ) |
-| [skills/](skills/) | Skills משותפים לכל הכלים (Claude Code / Kiro / Antigravity). `scan-sources` — סריקת חומרי מקור · `onboard-project` — הקמת מיזם: repo, Drive וחיבור לפלייבוק · `run-agent` — הרצת סוכן מ-`04-AI/סוכנים/` מתוך repo של מיזם (רץ מהמיזם, לא מכאן) · **סקילי יום 1** — `gov-labs-challenge-space` · `gov-labs-persona-card` · `gov-labs-persona-visual` · `gov-labs-assumptions-interview-guide`: סקילים ייעודיים לסוכני יום 1. גם הם רצים מהמיזם, והידע שלהם ב-`04-AI/פרומפטים/`. `run-agent` מעביר אליהם |
+| [skills/](skills/) | Skills משותפים לכל הכלים (Claude Code / Kiro / Antigravity). `scan-sources` — סריקת חומרי מקור · `onboard-project` — הקמת מיזם: repo, Drive וחיבור לפלייבוק · `run-agent` — הרצת סוכן מ-`04-AI/סוכנים/` מתוך repo של מיזם (רץ מהמיזם, לא מכאן) |
 | `.kiro/` `.claude/` `.agent/` | הגדרות פר-כלי — **לא תוכן**. ה-skills שם הם `SKILL.md` קצר שמפנה ל-`skills/` (לא symlink — לא נטען ב-Windows). משנים description? לעדכן גם בהם; `steering` מצביע על התוכן, לא מכפיל אותו |
 
 ## שני repos, לא אחד
