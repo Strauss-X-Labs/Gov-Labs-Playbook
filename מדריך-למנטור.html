@@ -180,6 +180,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <li class="sub"><a href="#daily-rhythm">לפני, במהלך ואחרי מפגש</a></li>
     <li class="sub"><a href="#daily-agent">הרצת סוכן</a></li>
     <li class="sub"><a href="#daily-git">שמירה ושיתוף</a></li>
+    <li class="sub"><a href="#daily-update">אחרי עדכון בפלייבוק</a></li>
     <li><a href="#trouble">תקלות נפוצות</a></li>
     <li><a href="#status">מה נבדק</a></li>
   </ol>
@@ -332,7 +333,7 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
       <thead><tr><th>מה</th><th>איפה</th><th>מי מחליט</th></tr></thead>
       <tbody>
         <tr><td><strong>חומר גולמי</strong>: מצגות, מסמכים, סיכומי דיונים, ראיונות, תמונות</td><td>Google Drive, עם תיקייה לכל יום, <strong>או</strong> תיקיית <code>ידע/</code> ב-repo</td><td>המנטור, לכל מיזם</td></tr>
-        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td>תמיד בתיקיית <code>תוצרים/</code> ב-repo, כקבצי MD</td><td>קבוע, כי זה מה שהסוכנים קוראים וכותבים</td></tr>
+        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td>תמיד בתיקיית <code>תוצרים/</code> ב-repo: קובץ MD לכל תוצר, ולצידו תצוגה ויזואלית (<code>.html</code>) ותמונה, באותו שם</td><td>קבוע, כי זה מה שהסוכנים קוראים וכותבים</td></tr>
         <tr><td><strong>גרסת הפלייבוק</strong></td><td><code>main</code>, או תגית נעולה כמו <code>v0.2</code></td><td>המנטור. תגית שומרת שמחזור שכבר רץ לא ישתנה באמצע</td></tr>
       </tbody>
     </table>
@@ -411,7 +412,7 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
     <div>
       <h4>לפני המפגש</h4>
       <ul>
-        <li>עדכון הפלייבוק: <code>git pull</code></li>
+        <li>עדכון הפלייבוק והמיזם (<a href="#daily-update">השגרה</a>)</li>
         <li>קריאת הסקירה וההיערכות של היום בפלייבוק</li>
         <li>בדיקה שהצוות העלה חומרים לתיקיית היום ב-Drive</li>
       </ul>
@@ -447,6 +448,7 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
     <li><strong>תשאול הצוות.</strong> שאלה אחת בכל פעם, לפי התסריט שבמפרט. הסוכן מאתגר, שואל "למה?", ושם לב לנורות האזהרה של התהליך.</li>
     <li><strong>טיוטה.</strong> הסוכן מציג טיוטה במבנה של הטמפלט, כשהשערות מסומנות כהשערות. הצוות מתקן.</li>
     <li><strong>כתיבה.</strong> רק אחרי אישור הצוות התוצר נכתב ל-<code>תוצרים/</code>. אם התוצר כבר קיים, הסוכן מציג מה משתנה ומעדכן, בלי לדרוס.</li>
+    <li><strong>תצוגה ותמונה, כשהסוכן מגדיר אותן.</strong> לדוגמה, בפרסונה נשמרים ליד קובץ ה-MD, באותו שם, גם תצוגה ויזואלית (<code>.html</code>) ותמונה. אם הכלי לא מחולל תמונות, הסוכן כותב פרומפט לכלי חיצוני, ואתה שומר את התמונה בשם שהוא נותן. אם הכלי מפרסם דפים לשיתוף, קישור השיתוף נרשם בראש קובץ ה-MD, ובכל עדכון הדף מתפרסם מחדש לאותו קישור.</li>
     <li><strong>סיכום.</strong> מה נכתב, על מה זה מבוסס, ומה כדאי לבדוק בשטח. הסוכן גם מציע את הצעד הבא בתהליך.</li>
   </ol>
 
@@ -460,6 +462,28 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
 git commit -m "כרטיס פרסונה: מירב (תת-צוות 1)"
 git push</pre></div>
   <p class="meta">git push מעלה ל-GitHub, ורק אז שאר הצוות רואה את התוצרים. מי שעובד ממחשב נוסף מושך את העדכונים עם <code>git pull</code>.</p>
+
+  <h3 id="daily-update">אחרי עדכון בפלייבוק</h3>
+  <p>הפלייבוק מתעדכן כל הזמן: סוכנים חדשים, תיקונים במתודה, שינויים בתבנית המיזם. יש שני סוגי עדכונים, ולא צריך לדעת איזה מהם קרה: אותה שגרה מטפלת בשניהם.</p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>מה השתנה בפלייבוק</th><th>מה צריך לעשות</th></tr></thead>
+      <tbody>
+        <tr><td><strong>המתודה, הסוכנים, הטמפלטים של התוצרים</strong></td><td>רק <code>git pull</code> בפלייבוק. המיזם לא מחזיק עותק: הסוכן קורא את המתודה מהפלייבוק בכל הרצה</td></tr>
+        <tr><td><strong>תבנית המיזם</strong>: יום חדש, שינוי בקובץ ההנחיות או ב-README</td><td>לעדכן את המיזם עצמו, עם מצב העדכון (<a href="#onb-upgrade">עדכון מיזם קיים</a>)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>השגרה, פעם בשבוע או לפני מפגש:</p>
+  <ol class="steps">
+    <li><strong>מעדכנים את הפלייבוק.</strong>
+      <div class="code win"><button class="copy" type="button">העתק</button><pre>git -C /c/Dev/Gov-Labs-Playbook pull</pre></div>
+      <div class="code mac"><button class="copy" type="button">העתק</button><pre>git -C ~/Dev/Gov-Labs-Playbook pull</pre></div>
+    </li>
+    <li><strong>בודקים כל מיזם.</strong> בתיקיית הפלייבוק מפעילים את ההקמה (<code>/onboard-project</code> או <a href="#tools">משפט הפתיחה</a>) ונותנים את הלינק ל-repo של המיזם. אם כתוב "כבר מעודכנים", אין מה לעשות. אחרת מאשרים את התוכנית, והסוכן שומר ומעלה ל-GitHub.</li>
+    <li><strong>פותחים סשן חדש בכלי ה-AI.</strong> כלים טוענים את ההוראות בתחילת סשן, ולכן שינוי בפלייבוק נכנס לתוקף רק בסשן חדש.</li>
+  </ol>
+  <div class="note"><strong>מיזם שנעול על גרסה</strong><p>אם ב-README של המיזם, בשורת "גרסת הפלייבוק", כתובה תגית (למשל <code>v0.2</code>) ולא <code>main</code>, המיזם ממשיך לעבוד לפי הגרסה הנעולה, בכוונה. כדי לקבל את העדכונים משנים שם את הגרסה.</p></div>
 </section>
 
 <section id="trouble">
@@ -472,6 +496,7 @@ git push</pre></div>
         <tr><td><code>onboard-project</code> או <code>run-agent</code> לא מופיעים בכלי</td><td>הפלייבוק לא מעודכן, או שהכלי לא מכיר פקודות <code>/</code> מהתיקייה</td><td><code>git pull</code> בפלייבוק ופתיחה מחדש של הכלי. אם עדיין לא, משתמשים ב<a href="#tools">משפט הפתיחה</a></td></tr>
         <tr><td>כלי ה-AI לא מופיע בחלון של המיזם, אבל בחלון של הפלייבוק כן</td><td>העורך פתח את התיקייה ב-Restricted Mode (לא סימנת "Trust"), או שהתוסף מושבת לתיקייה הזו</td><td>1. לחיצה על "Restricted Mode" בפס התחתון, ואז Trust. 2. בפאנל Extensions: התוסף, ואז Enable (Workspace). 3. קליק ימני על הפס השמאלי וסימון התוסף</td></tr>
         <tr class="win"><td><code>bash: command not found</code>, או שגיאות של WSL</td><td>הכלי מריץ פקודות ב-PowerShell, או ש-<code>bash</code> מפנה ל-WSL ולא ל-Git Bash</td><td>לבקש מהסוכן להריץ עם <code>"C:\Program Files\Git\bin\bash.exe"</code>. ההוראות לסוכן כבר כוללות את זה</td></tr>
+        <tr><td>הסוכן מבקש להקטין תמונה</td><td>התמונה גדולה מ-500KB. git שומר כל גרסה לתמיד, ופרסונה מתעדכנת הרבה</td><td>לשמור אותה כ-<code>.jpg</code>, או להקטין אותה לרוחב של כ-1000 פיקסלים</td></tr>
         <tr><td><code>403 Permission denied</code> ב-push</td><td>לחשבון שלך אין הרשאת Write ל-repo</td><td>לבקש הרשאה מ-admin של הארגון. הקבצים נשמרים במחשב, ואחרי ההרשאה מריצים שוב <code>git push</code></td></tr>
         <tr><td><code>Author identity unknown</code></td><td>אין זהות git במחשב</td><td>שתי שורות <code>git config</code> מ<a href="#setup-terminal">שלב 1</a></td></tr>
         <tr><td>תיקיית Drive לא מופיעה במחשב</td><td>תיקייה ששותפה איתך לא נוספה ל-My Drive</td><td>בדפדפן: Organize, Add shortcut, My Drive. התיקייה מופיעה תוך דקה</td></tr>
@@ -485,7 +510,7 @@ git push</pre></div>
 
 <section id="status">
   <h2>מה נבדק</h2>
-  <div class="note warn"><strong>הסקילים ממתינים למיזוג</strong><p><code>onboard-project</code> ו-<code>run-agent</code> נמצאים ב-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook/pull/7" target="_blank" rel="noopener">PR #7</a>. עד שמישהו עם הרשאת Write ימזג אותו, הם לא יופיעו אצל מנטורים שעובדים על <code>main</code>.</p></div>
+  <p><code>onboard-project</code> ו-<code>run-agent</code> זמינים ב-<code>main</code>. מי שהפלייבוק שלו לא מעודכן מריץ <code>git pull</code>.</p>
   <div class="table-wrap">
     <table>
       <thead><tr><th>שילוב</th><th>מצב</th></tr></thead>
