@@ -28,37 +28,37 @@
   h1,h2,h3,p{margin:0}
   .mono{font-family:var(--mono); direction:ltr; unicode-bidi:isolate}
 
-  .banner{background:var(--accent); color:var(--ink); font-weight:700; padding:6px 24px; text-align:center; font-size:.85em}
+  .banner{background:var(--accent); color:var(--ink); font-weight:700; padding:2px 16px; text-align:center; font-size:.65em}
 
-  .top{background:var(--ink); color:#F2F1ED; padding:14px 24px; display:flex; flex-wrap:wrap; gap:8px 32px; align-items:baseline}
+  .top{background:var(--ink); color:#F2F1ED; padding:5px 16px; display:flex; flex-wrap:wrap; gap:2px 24px; align-items:baseline; font-size:.8em}
   .top .jtbd{flex:1 1 320px; font-weight:500}
-  .top .jtbd .k{color:var(--accent); font-size:.75em; display:block; text-align:right}
+  .top .jtbd .k{color:var(--accent); font-size:.75em; margin-inline:0 10px; display:inline-block}
   .top .meta{font-size:.7em; color:var(--muted-dark)}
 
   /* השאלה שעל השולחן עכשיו */
-  .now{background:var(--panel); border-top:4px solid var(--ink); margin:14px 24px 0; padding:12px 20px; border-radius:var(--radius);
+  .now{background:var(--panel); margin:8px 12px 0; padding:5px 14px; border-radius:var(--radius);
     display:flex; gap:16px; align-items:baseline; flex-wrap:wrap}
   .now .k{font-size:.75em; font-weight:700; background:var(--accent); padding:2px 8px; border-radius:2px; flex:none}
-  .now .q{font-size:1.25em; font-weight:700; flex:1 1 320px}
+  .now .q{font-size:1.05em; font-weight:700; flex:1 1 320px}
   .now .who{font-size:.85em; color:var(--muted)}
 
   /* לוח של ארבעה רבעים: צלב באמצע, הפרסונה במרכז */
   .empathy{flex:1; position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:4px;
-    background:var(--ink); border:4px solid var(--ink); border-radius:var(--radius); margin:14px 24px; min-height:0}
-  .cell{background:var(--panel); padding:14px 20px; display:flex; flex-direction:column; gap:10px; min-height:0; min-width:0}
+    background:var(--ink); border:4px solid var(--ink); border-radius:var(--radius); margin:8px 12px; min-height:0}
+  .cell{background:var(--panel); padding:8px 14px; display:flex; flex-direction:column; gap:6px; min-height:0; min-width:0}
   /* כותרת הרבע בפינה החיצונית: למעלה ברבעים העליונים, למטה בתחתונים — המרכז נשאר פנוי לפרסונה */
   /* הרשימה מפנה מקום לעיגול בצד הפנימי של הרבע (ב-RTL: הרבע הראשון בשורה הוא הימני) */
   .cell:nth-of-type(odd) ul, .cell:nth-of-type(odd) .empty{margin-inline-end:calc(var(--hub)/2)}
   .cell:nth-of-type(even) ul, .cell:nth-of-type(even) .empty{margin-inline-start:calc(var(--hub)/2)}
   .cell.bottom-row{flex-direction:column-reverse}
-  .cell.bottom-row .cell-head{border-bottom:0; border-top:2px solid var(--ink); padding-bottom:0; padding-top:6px}
+  .cell.bottom-row .cell-head{border-bottom:0; border-top:2px solid var(--ink); padding-bottom:0; padding-top:2px}
   .cell.active{background:#FFF8DC; box-shadow:inset 0 0 0 4px var(--accent)}
   .hub{--d:var(--hub); position:absolute; top:50%; left:50%; width:var(--d); height:var(--d); transform:translate(-50%,-50%);
     background:var(--ink); color:#fff; border-radius:50%; border:4px solid var(--accent);
     display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:10px; line-height:1.15}
   .hub .name{font-size:1.5em; font-weight:700}
   .hub .nick{font-size:.8em; color:var(--muted-dark); font-weight:500}
-  .empathy{--hub:clamp(110px,11vw,160px)}
+  .empathy{--hub:clamp(100px,10vw,150px)}
   @media (max-width:700px){
     .empathy{grid-template-columns:1fr; grid-template-rows:none}
     .hub{position:static; transform:none; width:auto; height:auto; border-radius:0; border:0; order:-1; flex-direction:row; gap:10px; --d:auto}
@@ -66,8 +66,8 @@
     .cell.bottom-row{flex-direction:column}
     .cell.bottom-row .cell-head{border-top:0; border-bottom:2px solid var(--ink); padding-top:0; padding-bottom:6px}
   }
-  .cell-head{display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--ink); padding-bottom:6px}
-  .cell h2{font-size:1.25em}
+  .cell-head{display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--ink); padding-bottom:2px}
+  .cell h2{font-size:.95em}
   .cell-head .mono{font-size:.7em; color:var(--muted)}
   .cell ul{display:flex; flex-direction:column; gap:8px; overflow:auto}
   .cell ul{flex:1}
@@ -84,13 +84,13 @@
   .conf{display:inline-block; font-family:var(--mono); font-size:.65em; margin-inline-start:8px; direction:ltr; unicode-bidi:isolate; vertical-align:middle}
 
   /* מחלוקות ושאלות פתוחות */
-  .open{margin:0 24px 14px; background:var(--panel); border:1px dashed var(--dashed); border-radius:var(--radius); padding:10px 18px;
-    display:flex; gap:8px 24px; flex-wrap:wrap; align-items:baseline; font-size:.85em}
+  .open{margin:0 12px 8px; background:var(--panel); border:1px dashed var(--dashed); border-radius:var(--radius); padding:4px 14px;
+    display:flex; gap:4px 24px; flex-wrap:wrap; align-items:baseline; font-size:.8em}
   .empathy + .open{margin-top:0}
   .open .k{font-weight:700; flex:none}
   .open ul{display:flex; flex-wrap:wrap; gap:6px 24px}
 
-  .foot{background:var(--ink); color:var(--muted-dark); font-size:.65em; padding:6px 24px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+  .foot{background:var(--ink); color:var(--muted-dark); font-size:.55em; padding:2px 16px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
 </style>
 </head>
 <body>
