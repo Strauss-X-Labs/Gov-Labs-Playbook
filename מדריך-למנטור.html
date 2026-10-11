@@ -208,27 +208,27 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
 
 <section id="overview">
   <h2>איך זה בנוי</h2>
-  <p>הסוכן רץ מתוך המיזם שלך. הוא קורא את המתודה מהפלייבוק ואת החומרים מתיקיית היום, מתשאל את הצוות, וכותב את התוצר למיזם רק אחרי אישור.</p>
-  <div class="layers-row" role="group" aria-label="שלושת המקורות וסוכן ההפעלה">
+  <p>הכול נמצא ב-repo אחד של המיזם. הסוכן רץ מתוכו: הוא קורא את המתודה מהעותק של הפלייבוק ואת החומרים מתיקיית היום, מתשאל את הצוות, וכותב את התוצר רק אחרי אישור.</p>
+  <div class="layers-row" role="group" aria-label="שלושת החלקים של ה-repo של המיזם">
     <div class="layer">
       <span class="tag">קוראים בלבד</span>
-      <h4>הפלייבוק</h4>
-      <p>מפרט הסוכן, התהליך של היום, המתודה והטמפלט של התוצר. זהה לכל המיזמים.</p>
+      <h4>הפלייבוק, <code>.playbook/</code></h4>
+      <p>מפרט הסוכן, התהליך של היום, המתודה והטמפלט של התוצר. עותק של הפלייבוק, שנכנס ל-repo בהקמה ומתחדש בעדכון.</p>
     </div>
     <div class="flow-arrow" aria-hidden="true"><span class="arr">←</span><span>מתודה</span></div>
     <div class="layer mid">
-      <span class="tag">כאן עובדים</span>
-      <h4>ה-repo של המיזם</h4>
-      <p>הסוכן רץ כאן. התוצרים נשמרים בתיקיית <code>תוצרים/</code>, והסיכומים בתיקיית <code>ימים/</code>.</p>
+      <span class="tag">כאן נכתב</span>
+      <h4><code>תוצרים/</code></h4>
+      <p>הפרסונה, ה-Lean Canvas ושאר התוצרים. הסוכן כותב לכאן אחרי אישור הצוות.</p>
     </div>
     <div class="flow-arrow" aria-hidden="true"><span class="arr">→</span><span>חומר היום</span></div>
     <div class="layer">
-      <span class="tag">קוראים בלבד</span>
-      <h4>Google Drive</h4>
-      <p>תיקייה לכל יום: מצגות, מסמכים, סיכומי דיונים ותמונות שהצוות מעלה.</p>
+      <span class="tag">הצוות מעלה</span>
+      <h4><code>01-ימים/</code></h4>
+      <p>תיקייה לכל יום: מצגות, מסמכי Word, סיכומי מפגש, ראיונות ותמונות.</p>
     </div>
   </div>
-  <p class="meta">הצוות לא צריך לדעת git. הצוות עובד ב-Drive כרגיל, ואת הסוכן מפעילים המנטור או מפעיל ה-AI של הצוות.</p>
+  <p class="meta">מי שמוריד (clone) את ה-repo מקבל הכול, כולל הפלייבוק, ולכן אין מה לחבר במחשב. הצוות לא צריך לדעת git: חומרים מעלים לתיקיית היום דרך האתר של GitHub (Add file ואז Upload files), או שהמנטור מעתיק אותם. את הסוכן מפעילים המנטור או מפעיל ה-AI של הצוות.</p>
 </section>
 
 <section id="tools">
@@ -239,8 +239,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <table>
       <thead><tr><th>כלי AI</th><th>איפה עובדים</th><th>איך מפעילים</th><th>קובץ ההנחיות שהכלי קורא לבד</th></tr></thead>
       <tbody>
-        <tr><td><strong>Claude Code</strong></td><td>VS Code, או טרמינל</td><td><code>/onboard-project</code>, <code>/run-agent</code></td><td><code>CLAUDE.md</code></td></tr>
-        <tr><td><strong>Gemini CLI</strong></td><td>טרמינל, גם בתוך VS Code</td><td><code>/onboard-project</code>, <code>/run-agent</code></td><td><code>GEMINI.md</code></td></tr>
+        <tr><td><strong>Claude Code</strong></td><td>VS Code, או טרמינל</td><td><code>/onboard-project</code>, <code>/run-agent</code>, <code>/update-project</code></td><td><code>CLAUDE.md</code></td></tr>
+        <tr><td><strong>Gemini CLI</strong></td><td>טרמינל, גם בתוך VS Code</td><td><code>/onboard-project</code>, <code>/run-agent</code>, <code>/update-project</code></td><td><code>GEMINI.md</code></td></tr>
         <tr><td><strong>Gemini Code Assist</strong></td><td>VS Code</td><td>משפט פתיחה (למטה)</td><td><code>GEMINI.md</code></td></tr>
         <tr><td><strong>Kiro</strong></td><td>Kiro (עורך שבנוי על VS Code)</td><td>משפט פתיחה (למטה)</td><td><code>.kiro/steering/מנטור.md</code></td></tr>
         <tr><td><strong>כל כלי אחר</strong> (Antigravity, Copilot ועוד)</td><td>לפי הכלי</td><td>משפט פתיחה (למטה)</td><td><code>AGENTS.md</code>, ברוב הכלים</td></tr>
@@ -253,8 +253,10 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   <div class="code he"><button class="copy" type="button">העתק</button><pre>קרא את skills/onboard-project/SKILL.md ופעל לפיו.</pre></div>
   <p class="meta">להרצת סוכן, כשתיקיית המיזם פתוחה (מחליפים את שם הסוכן):</p>
   <div class="code he"><button class="copy" type="button">העתק</button><pre>קרא את AGENTS.md, ואז הרץ את הסוכן: פרסונה דיגיטלית</pre></div>
+  <p class="meta">לעדכון המיזם לפלייבוק העדכני, כשתיקיית המיזם פתוחה:</p>
+  <div class="code he"><button class="copy" type="button">העתק</button><pre>קרא את AGENTS.md, ואז עדכן את המיזם לפלייבוק העדכני.</pre></div>
 
-  <div class="note"><strong>איזה כלי לבחור?</strong><p>הכלי שהארגון שלך מאשר. אם אין הנחיה, Claude Code ב-VS Code הוא השילוב היחיד שנבדק מקצה לקצה. ראה <a href="#status">מה נבדק</a>.</p></div>
+  <div class="note"><strong>איזה כלי לבחור?</strong><p>הכלי שהארגון שלך מאשר. אם אין הנחיה, Claude Code ב-VS Code הוא השילוב היחיד שנבדק. ראה <a href="#status">מה נבדק</a>.</p></div>
 </section>
 
 <section id="setup">
@@ -272,13 +274,9 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
       <span class="win">מתקינים מ-<a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>.</span>
       <span class="mac">מתקינים מ-<a href="https://cli.github.com" target="_blank" rel="noopener">cli.github.com</a>, או עם Homebrew: <code>brew install gh</code>.</span>
       אחר כך מתחברים לחשבון GitHub: <code>gh auth login</code>.</label></li>
-    <li><input type="checkbox" id="c-drive"><label for="c-drive"><strong>Google Drive for desktop</strong>, מחובר לחשבון הגוגל שלך.
-      <span class="win">Drive מופיע ככונן <code>G:\</code>.</span>
-      <span class="mac">Drive מופיע ב-Finder תחת Google Drive, בנתיב <code>~/Library/CloudStorage/GoogleDrive-&lt;המייל שלך&gt;/</code>.</span></label></li>
-    <li><input type="checkbox" id="c-shortcut"><label for="c-shortcut"><strong>תיקיית התוכנית ב-Drive מופיעה במחשב.</strong> תיקייה ששותפה איתך לא מופיעה לבד: פותחים אותה בדפדפן, קליק ימני, Organize ואז Add shortcut, ובוחרים My Drive.</label></li>
-    <li><input type="checkbox" id="c-perm"><label for="c-perm"><strong>הרשאות:</strong> חבר בארגון <code>Strauss-X-Labs</code> ב-GitHub, והרשאת עריכה (Editor) לתיקיית התוכנית ב-Drive.</label></li>
+    <li><input type="checkbox" id="c-perm"><label for="c-perm"><strong>הרשאות:</strong> חבר בארגון <code>Strauss-X-Labs</code> ב-GitHub, עם הרשאה לפתוח בו repos.</label></li>
     <li><input type="checkbox" id="c-id"><label for="c-id"><strong>זהות git.</strong> בלי שם ומייל כל שמירה (commit) נכשלת. שתי שורות, למטה.</label></li>
-    <li><input type="checkbox" id="c-clone"><label for="c-clone"><strong>עותק של הפלייבוק במחשב.</strong> מומלץ לשים אותו ואת המיזמים באותה תיקייה: <span class="win"><code>C:\Dev</code></span><span class="mac"><code>~/Dev</code></span>.</label></li>
+    <li><input type="checkbox" id="c-clone"><label for="c-clone"><strong>עותק של הפלייבוק במחשב</strong>, רק כדי להקים מיזמים. המיזמים נוצרים לידו, באותה תיקייה: <span class="win"><code>C:\Dev</code></span><span class="mac"><code>~/Dev</code></span>.</label></li>
   </ul>
 
   <h3 id="setup-terminal">טרמינל ופקודות</h3>
@@ -295,15 +293,12 @@ git config --global user.email "you@example.com"</pre></div>
 git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git /c/Dev/Gov-Labs-Playbook</pre></div>
   <div class="code mac"><button class="copy" type="button">העתק</button><pre>mkdir -p ~/Dev
 git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs-Playbook</pre></div>
-
-  <p>עדכון הפלייבוק לפני כל שבוע עבודה, כדי לקבל שינויים במתודה ובסוכנים:</p>
-  <div class="code win"><button class="copy" type="button">העתק</button><pre>git -C /c/Dev/Gov-Labs-Playbook pull</pre></div>
-  <div class="code mac"><button class="copy" type="button">העתק</button><pre>git -C ~/Dev/Gov-Labs-Playbook pull</pre></div>
+  <p class="meta">לא צריך לעדכן את העותק הזה לפני כל הקמה: ההקמה מושכת תמיד את הגרסה העדכנית מ-GitHub. מספיק <code>git pull</code> מדי פעם.</p>
 
   <h3 id="setup-verify">בדיקה שהכל עובד</h3>
   <ol class="steps">
     <li><strong>פתח את תיקיית הפלייבוק בעורך</strong> (File ואז Open Folder), ואת כלי ה-AI בתוכה.</li>
-    <li><strong>בדוק שהכלי רואה את ההוראות.</strong> ב-Claude Code וב-Gemini CLI מקלידים <code>/</code>, ו-<code>onboard-project</code> צריך להופיע ברשימה. בכלים אחרים שואלים: "מה יש בתיקייה skills?", ובתשובה צריכים להופיע <code>onboard-project</code> ו-<code>run-agent</code>.</li>
+    <li><strong>בדוק שהכלי רואה את ההוראות.</strong> ב-Claude Code וב-Gemini CLI מקלידים <code>/</code>, ו-<code>onboard-project</code> צריך להופיע ברשימה. בכלים אחרים שואלים: "מה יש בתיקייה skills?", ובתשובה צריך להופיע <code>onboard-project</code>.</li>
     <li><strong>לא עובד?</strong> עדכן את הפלייבוק (<code>git pull</code>) ופתח את הכלי מחדש. ראה גם <a href="#trouble">תקלות נפוצות</a>.</li>
   </ol>
 </section>
@@ -313,48 +308,47 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
   <p class="meta">פעם אחת לכל מיזם. ההוראות של <code>onboard-project</code> עושות את כל העבודה, ומבקשות אישור אחד לפני שהן יוצרות משהו.</p>
 
   <h3 id="onb-inputs">מה צריך להכין</h3>
+  <p>רק את שם ה-repo. את השאר הסוכן מציע כברירת מחדל, ואתה מאשר או משנה.</p>
   <div class="table-wrap">
     <table>
       <thead><tr><th>פרט</th><th>דוגמה</th><th>הערות</th></tr></thead>
       <tbody>
-        <tr><td>שם המיזם</td><td>Gov Labs - מחזור 10 - אקלים</td><td>בעברית, לתצוגה</td></tr>
-        <tr><td>GitHub</td><td><code>https://github.com/Strauss-X-Labs</code> ושם: <code>gov-labs-cycle10-climate</code></td><td>לינק לארגון ושם באנגלית פותחים repo חדש ופרטי. אפשר גם לתת לינק ל-repo קיים</td></tr>
-        <tr><td>תיקיית שורש במחשב</td><td><span class="win"><code>C:\Dev</code></span><span class="mac"><code>~/Dev</code></span></td><td>המיזם ייווצר בתוכה, בתיקייה בשם ה-repo</td></tr>
-        <tr><td>תיקיית התוכנית ב-Drive</td><td><span class="win"><code>G:\...\Gov-Labs-2.0</code></span><span class="mac"><code>~/Library/CloudStorage/GoogleDrive-.../Gov-Labs-2.0</code></span></td><td>לא חובה. עדיף נתיב במחשב ולא לינק: עובד בלי הגדרות נוספות</td></tr>
-        <tr><td>איפה יישמר החומר הגולמי</td><td>Google Drive</td><td>ההחלטה שלך. ראה הסעיף הבא</td></tr>
+        <tr><td><strong>שם ה-repo</strong></td><td><code>gov-labs-cycle10-climate-env-protect</code></td><td>המבנה: <code>gov-labs</code>, ואז המחזור (<code>cycle10</code>), הנושא של התוכנית במילה אחת (<code>climate</code>) ושם הקבוצה (<code>env-protect</code>). אותיות קטנות באנגלית ומקפים</td></tr>
+        <tr><td>חשבון GitHub</td><td><code>https://github.com/Strauss-X-Labs</code></td><td>ברירת המחדל. אפשר לבחור חשבון אחר</td></tr>
+        <tr><td>הפלייבוק</td><td><code>https://github.com/Strauss-X-Labs/Gov-Labs-Playbook</code></td><td>ברירת המחדל. אפשר לתת כתובת אחרת, למשל fork</td></tr>
       </tbody>
     </table>
   </div>
+  <p class="meta">שם המיזם לתצוגה נגזר משם ה-repo, למשל "Gov-Labs מחזור 10 · climate · env-protect". המיזם נוצר ליד הפלייבוק, למשל <span class="win"><code>C:\Dev\gov-labs-cycle10-climate-env-protect</code></span><span class="mac"><code>~/Dev/gov-labs-cycle10-climate-env-protect</code></span>.</p>
 
   <h3 id="onb-where">איפה החומר של המיזם</h3>
-  <p>לכל מיזם אתה מחליט פעם אחת איפה נשמר החומר הגולמי. ההחלטה נרשמת בראש ה-README של המיזם, ומשם גם אנשים וגם סוכנים יודעים איפה לחפש.</p>
+  <p>הכול ב-repo של המיזם, ואין מה להחליט. אין Google Drive.</p>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>מה</th><th>איפה</th><th>מי מחליט</th></tr></thead>
+      <thead><tr><th>מה</th><th>איפה</th></tr></thead>
       <tbody>
-        <tr><td><strong>חומר גולמי</strong>: מצגות, מסמכים, סיכומי דיונים, ראיונות, תמונות</td><td>Google Drive, עם תיקייה לכל יום, <strong>או</strong> תיקיית <code>ידע/</code> ב-repo</td><td>המנטור, לכל מיזם</td></tr>
-        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td>תמיד בתיקיית <code>תוצרים/</code> ב-repo: קובץ MD לכל תוצר, ולצידו תצוגה ויזואלית (<code>.html</code>) ותמונה, באותו שם</td><td>קבוע, כי זה מה שהסוכנים קוראים וכותבים</td></tr>
-        <tr><td><strong>גרסת הפלייבוק</strong></td><td><code>main</code>, או תגית נעולה כמו <code>v0.2</code></td><td>המנטור. תגית שומרת שמחזור שכבר רץ לא ישתנה באמצע</td></tr>
+        <tr><td><strong>חומר גולמי</strong>: מצגות, מסמכי Word, סיכומי מפגש, ראיונות, תמונות</td><td><code>01-ימים/NN-יום/</code>, תיקייה לכל יום</td></tr>
+        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td><code>תוצרים/</code>: קובץ MD לכל תוצר, ולצידו תצוגה ויזואלית (<code>.html</code>) ותמונה, באותו שם</td></tr>
+        <tr><td><strong>הפלייבוק</strong>: המתודה והסוכנים</td><td><code>.playbook/</code>: עותק, שהגרסה שלו רשומה ב-<code>.playbook/SOURCE</code>. מתחדש רק כשמעדכנים, כך שמחזור שרץ לא משתנה באמצע</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="note"><strong>אם בחרת Drive</strong><p>יתבקש ממך לינק לתיקיית המיזם, כי חברי הצוות פותחים אותו מהדפדפן ונתיב במחשב שלך לא עובד אצלם. ב-Drive: קליק ימני על תיקיית המיזם, Share ואז Copy link.</p></div>
 
   <h3 id="onb-run">מהלך ההקמה</h3>
   <ol class="steps">
-    <li><strong>פותחים את תיקיית הפלייבוק ומפעילים את ההקמה.</strong> ב-Claude Code או ב-Gemini CLI מקלידים <code>/onboard-project</code>. בכלים אחרים מדביקים את <a href="#tools">משפט הפתיחה</a>. הסוכן שואל את חמשת הפרטים מהטבלה.</li>
-    <li><strong>בדיקות מקדימות.</strong> הסוכן בודק זהות git, ששם ה-repo פנוי ושיש לך הרשאה לפתוח אותו, ושתיקיית ה-Drive קיימת וניתנת לכתיבה.</li>
+    <li><strong>פותחים את תיקיית הפלייבוק ומפעילים את ההקמה.</strong> ב-Claude Code או ב-Gemini CLI מקלידים <code>/onboard-project</code>. בכלים אחרים מדביקים את <a href="#tools">משפט הפתיחה</a>. הסוכן שואל את שם ה-repo, ומאשר איתך את החשבון ואת הפלייבוק.</li>
+    <li><strong>משיכת הפלייבוק.</strong> הסוכן מוריד את הגרסה העדכנית של הפלייבוק מ-GitHub.</li>
+    <li><strong>בדיקות מקדימות.</strong> הסוכן בודק את זהות ה-git, ואם ה-repo כבר קיים, שיש לך הרשאה לכתוב בו.</li>
     <li><strong>אישור.</strong> מוצגת טבלה של כל מה שייווצר. שום דבר לא נוצר לפני שכתבת "כן".</li>
     <li><strong>ביצוע.</strong> הסוכן עושה ארבעה דברים:
       <ul>
-        <li>פותח repo פרטי ומעתיק אליו את תבנית המיזם.</li>
+        <li>פותח repo פרטי (או משתמש בקיים) ומעתיק אליו את תבנית המיזם.</li>
         <li>יוצר תיקייה לכל יום בתוכנית, לפי הימים שבפלייבוק.</li>
-        <li>דוחף את הכל ל-GitHub.</li>
-        <li>יוצר ב-Drive תיקיית מיזם, ובתוכה תיקייה לכל יום.</li>
+        <li>מעתיק את הפלייבוק ל-<code>.playbook/</code>.</li>
+        <li>שומר ודוחף את הכל ל-GitHub.</li>
       </ul>
     </li>
-    <li><strong>חיבור לפלייבוק.</strong> הסוכן מחבר את המיזם לפלייבוק ול-Drive במחשב שלך. הנתיבים נשמרים בקובץ מקומי שלא עולה ל-GitHub, כי הם שונים בכל מחשב.</li>
-    <li><strong>דיווח.</strong> תקבל לינק ל-repo ולתיקיית ה-Drive, ורשימה של מה שנשאר לך לעשות: לתת הרשאות לחברי הצוות ב-GitHub וב-Drive.</li>
+    <li><strong>דיווח.</strong> תקבל לינק ל-repo, ורשימה של מה שנשאר לך לעשות: לתת הרשאות ב-GitHub לחברי הצוות.</li>
   </ol>
 
   <p>מה נוצר ב-repo של המיזם:</p>
@@ -362,10 +356,10 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
     <table>
       <thead><tr><th>קובץ או תיקייה</th><th>מה יש בו</th></tr></thead>
       <tbody>
-        <tr><td><code>README.md</code></td><td>שם המיזם, איפה החומר, גרסת הפלייבוק, ואיך מריצים סוכן</td></tr>
-        <tr><td><code>ימים/01-Unboxing</code> … <code>08-Storytelling</code></td><td>סיכומי מפגש, שיעורי בית והחלטות של כל יום. כל תיקייה מקשרת ליום בפלייבוק</td></tr>
+        <tr><td><code>README.md</code></td><td>שם המיזם, איפה החומר, איך מריצים סוכן ואיך מעדכנים</td></tr>
+        <tr><td><code>01-ימים/01-Unboxing</code> … <code>08-Storytelling</code></td><td>החומר של כל יום: מצגות, מסמכים, סיכומי מפגש, שיעורי בית והחלטות. כל תיקייה מקשרת ליום ב-<code>.playbook/</code></td></tr>
         <tr><td><code>תוצרים/</code></td><td>התוצרים שהסוכנים כותבים אחרי אישור הצוות</td></tr>
-        <tr><td><code>ידע/</code></td><td>חומר גולמי, רק אם בחרת לשמור אותו ב-repo</td></tr>
+        <tr><td><code>.playbook/</code></td><td>עותק של הפלייבוק, בלי חומרי המקור. לקריאה בלבד</td></tr>
         <tr><td><code>.kiro/steering/מנטור.md</code></td><td>ההנחיות לסוכן: מי הוא, שתי שכבות הידע, והכללים של המיזם</td></tr>
         <tr><td><code>CLAUDE.md</code>, <code>GEMINI.md</code>, <code>AGENTS.md</code></td><td>מפנים את כלי ה-AI השונים לאותו קובץ הנחיות</td></tr>
       </tbody>
@@ -373,48 +367,40 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
   </div>
 
   <h3 id="onb-team">מחשב נוסף או חבר צוות</h3>
-  <p>במחשב שבו הקמת את המיזם הוא כבר מחובר. אם בשורש המיזם יש קובץ בשם <code>.gov-labs.local</code>, לא צריך לעשות כלום.</p>
-  <p>במחשב אחר צריך את הפלייבוק (<a href="#setup">שלב 1</a>) ועותק של ה-repo של המיזם:</p>
-  <div class="code win"><button class="copy" type="button">העתק</button><pre>git clone https://github.com/Strauss-X-Labs/gov-labs-cycle10-climate.git /c/Dev/gov-labs-cycle10-climate</pre></div>
-  <div class="code mac"><button class="copy" type="button">העתק</button><pre>git clone https://github.com/Strauss-X-Labs/gov-labs-cycle10-climate.git ~/Dev/gov-labs-cycle10-climate</pre></div>
-  <ol class="steps">
-    <li><strong>פותחים את תיקיית המיזם</strong> בעורך, ואת כלי ה-AI בתוכה.</li>
-    <li><strong>מבקשים להריץ סוכן</strong> (<code>/run-agent</code> או <a href="#tools">משפט הפתיחה</a>). הסוכן מזהה שהמחשב לא מחובר, שואל איפה הפלייבוק ואיפה תיקיית המיזם ב-Drive, ומחבר לבד. זה קורה פעם אחת בלבד.</li>
-  </ol>
-  <p class="meta">חיבור ידני, אם צריך. מריצים בטרמינל. הפרמטר האחרון הוא תיקיית המיזם ב-Drive, ומדלגים עליו אם החומר נשמר ב-<code>ידע/</code>.</p>
-  <div class="code win"><button class="copy" type="button">העתק</button><pre>cd /c/Dev/Gov-Labs-Playbook
-bash skills/run-agent/connect.sh "/c/Dev/gov-labs-cycle10-climate" "G:\...\Gov Labs - מחזור 10 - אקלים"</pre></div>
-  <div class="code mac"><button class="copy" type="button">העתק</button><pre>cd ~/Dev/Gov-Labs-Playbook
-bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/CloudStorage/GoogleDrive-.../Gov Labs - מחזור 10 - אקלים"</pre></div>
+  <p>מורידים את ה-repo של המיזם ופותחים אותו. אין חיבור ואין הגדרה, כי הפלייבוק כבר בפנים. גם את הפלייבוק עצמו לא צריך במחשב הזה, אלא אם מקימים ממנו מיזמים.</p>
+  <div class="code win"><button class="copy" type="button">העתק</button><pre>git clone https://github.com/Strauss-X-Labs/gov-labs-cycle10-climate-env-protect.git /c/Dev/gov-labs-cycle10-climate-env-protect</pre></div>
+  <div class="code mac"><button class="copy" type="button">העתק</button><pre>git clone https://github.com/Strauss-X-Labs/gov-labs-cycle10-climate-env-protect.git ~/Dev/gov-labs-cycle10-climate-env-protect</pre></div>
 
-  <h3 id="onb-upgrade">עדכון מיזם קיים לתבנית חדשה</h3>
-  <p>כשתבנית המיזם בפלייבוק משתנה, למשל כשנוסף יום או סוכן, מעדכנים מיזם קיים עם אותה הקמה, ובשלב GitHub נותנים את הלינק ל-repo הקיים. הסוכן מזהה שזה מיזם קיים ועובר למצב עדכון.</p>
+  <h3 id="onb-upgrade">עדכון מיזם קיים</h3>
+  <p>כשהפלייבוק משתנה (סוכן חדש, תיקון במתודה, יום חדש), פותחים את <strong>תיקיית המיזם</strong> ומקלידים <code>/update-project</code>, או מדביקים את <a href="#tools">משפט הפתיחה</a>. הסוכן מושך את הפלייבוק העדכני, מציג תוכנית, ומשנה רק אחרי אישור.</p>
   <div class="table-wrap">
     <table>
-      <thead><tr><th>הקובץ במיזם</th><th>מה קורה</th></tr></thead>
+      <thead><tr><th>מה במיזם</th><th>מה קורה</th></tr></thead>
       <tbody>
-        <tr><td>חסר</td><td>נוסף</td></tr>
-        <tr><td>לא נערך מאז שנוצר</td><td>מוחלף בגרסה החדשה</td></tr>
-        <tr><td><strong>נערך ידנית</strong> ע"י הצוות</td><td><strong>לא נוגעים בו.</strong> הסוכן מציג את ההבדלים ומציע גרסה ממוזגת, ומחליף רק באישור שלך</td></tr>
-        <tr><td>יום חדש בתוכנית</td><td>נוספת תיקייה, ב-repo וב-Drive</td></tr>
+        <tr><td><code>.playbook/</code></td><td>מוחלף כולו בגרסה העדכנית</td></tr>
+        <tr><td>קובץ מהתבנית שחסר</td><td>נוסף</td></tr>
+        <tr><td>קובץ מהתבנית שלא נערך מאז שנוצר</td><td>מוחלף בגרסה החדשה</td></tr>
+        <tr><td>קובץ מהתבנית ש<strong>נערך ידנית</strong> ע"י הצוות</td><td><strong>לא נוגעים בו.</strong> הסוכן מציג את ההבדלים ומציע גרסה ממוזגת, ומחליף רק באישור שלך</td></tr>
+        <tr><td>יום חדש בתוכנית</td><td>נוספת תיקייה ב-<code>01-ימים/</code></td></tr>
+        <tr><td>מיזם במבנה הישן (<code>ימים/</code>, <code>ידע/</code>, Drive)</td><td><code>ימים/</code> עובר ל-<code>01-ימים/</code>. קבצים ב-<code>ידע/</code> לא זזים לבד: הסוכן שואל לאיזה יום כל קובץ שייך</td></tr>
       </tbody>
     </table>
   </div>
-  <p class="meta">לפני כל שינוי מוצגת תוכנית מלאה, ושום דבר לא משתנה לפני אישור. תוצרים, סיכומי ימים וחומרים לא משתנים אף פעם.</p>
+  <p class="meta">תוצרים וחומרים של הצוות לא משתנים אף פעם.</p>
 </section>
 
 <section id="daily">
   <h2><span class="stage-no">3</span>עבודה שוטפת עם הצוות</h2>
-  <p class="meta">הצוות עובד כרגיל ומעלה חומרים ל-Drive. הסוכן עוזר לארגן, לאתגר ולנסח, אבל לא חושב ולא מחליט במקום הצוות.</p>
+  <p class="meta">הצוות עובד כרגיל ומעלה חומרים לתיקיית היום ב-<code>01-ימים/</code>. הסוכן עוזר לארגן, לאתגר ולנסח, אבל לא חושב ולא מחליט במקום הצוות.</p>
 
   <h3 id="daily-rhythm">לפני, במהלך ואחרי מפגש</h3>
   <div class="rhythm">
     <div>
       <h4>לפני המפגש</h4>
       <ul>
-        <li>עדכון הפלייבוק והמיזם (<a href="#daily-update">השגרה</a>)</li>
-        <li>קריאת הסקירה וההיערכות של היום בפלייבוק</li>
-        <li>בדיקה שהצוות העלה חומרים לתיקיית היום ב-Drive</li>
+        <li>משיכת העדכונים של הצוות (<code>git pull</code>), ועדכון לפלייבוק החדש אם צריך (<a href="#daily-update">השגרה</a>)</li>
+        <li>קריאת הסקירה וההיערכות של היום ב-<code>.playbook/01-ימים/</code></li>
+        <li>בדיקה שהחומרים של היום נמצאים ב-<code>01-ימים/NN-יום/</code></li>
       </ul>
     </div>
     <div>
@@ -429,7 +415,7 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
       <h4>אחרי המפגש</h4>
       <ul>
         <li>בדיקה שהתוצרים נשמרו ב-<code>תוצרים/</code></li>
-        <li>סיכום היום בתיקייה <code>ימים/NN-יום/</code></li>
+        <li>סיכום היום והחומרים בתיקייה <code>01-ימים/NN-יום/</code></li>
         <li>שמירה ושיתוף ב-GitHub</li>
       </ul>
     </div>
@@ -438,12 +424,12 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
   <h3 id="daily-agent">הרצת סוכן</h3>
   <p>פותחים את <strong>תיקיית המיזם</strong> (לא את הפלייבוק), ומבקשים סוכן לפי שם. ב-Claude Code או ב-Gemini CLI:</p>
   <div class="code"><button class="copy" type="button">העתק</button><pre>/run-agent פרסונה דיגיטלית</pre></div>
-  <p>בכל כלי אחר מדביקים את <a href="#tools">משפט הפתיחה</a> עם שם הסוכן. בלי שם, הסוכן מציג את רשימת הסוכנים לפי ימים ושואל. הרשימה המלאה נמצאת ב-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook/blob/main/04-AI/%D7%A1%D7%95%D7%9B%D7%A0%D7%99%D7%9D/README.md" target="_blank" rel="noopener">טבלת הסוכנים בפלייבוק</a>. סוכן חדש שנוסף לפלייבוק זמין מיד, בלי התקנה.</p>
+  <p>בכל כלי אחר מדביקים את <a href="#tools">משפט הפתיחה</a> עם שם הסוכן. בלי שם, הסוכן מציג את רשימת הסוכנים לפי ימים ושואל. הרשימה המלאה נמצאת ב-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook/blob/main/04-AI/%D7%A1%D7%95%D7%9B%D7%A0%D7%99%D7%9D/README.md" target="_blank" rel="noopener">טבלת הסוכנים בפלייבוק</a>. סוכן חדש שנוסף לפלייבוק מגיע למיזם בעדכון הבא (<code>/update-project</code>).</p>
 
   <p>מה קורה בהרצה:</p>
   <ol class="steps">
-    <li><strong>קריאת המתודה.</strong> הסוכן קורא מהפלייבוק את מפרט הסוכן, התהליך, המתודה והטמפלט של התוצר.</li>
-    <li><strong>קריאת המיזם.</strong> הוא קורא את התוצרים הקיימים ואת תיקיית היום, מציג את רשימת הקבצים ב-Drive, <strong>ושואל אילו רלוונטיים</strong>. הוא קורא מצגות, Word, PDF ותמונות.</li>
+    <li><strong>קריאת המתודה.</strong> הסוכן קורא מ-<code>.playbook/</code> את מפרט הסוכן, התהליך, המתודה והטמפלט של התוצר.</li>
+    <li><strong>קריאת המיזם.</strong> הוא קורא את התוצרים הקיימים, מציג את רשימת הקבצים בתיקיית היום, <strong>ושואל אילו רלוונטיים</strong>. הוא קורא מצגות, Word, PDF ותמונות.</li>
     <li><strong>בדיקת קלטים.</strong> מוצגת טבלה של מה יש ומה חסר מתוך מה שהמפרט דורש. מה שחסר נשאל מהצוות, ולא מומצא.</li>
     <li><strong>תשאול הצוות.</strong> שאלה אחת בכל פעם, לפי התסריט שבמפרט. הסוכן מאתגר, שואל "למה?", ושם לב לנורות האזהרה של התהליך.</li>
     <li><strong>טיוטה.</strong> הסוכן מציג טיוטה במבנה של הטמפלט, כשהשערות מסומנות כהשערות. הצוות מתקן.</li>
@@ -452,38 +438,25 @@ bash skills/run-agent/connect.sh ~/Dev/gov-labs-cycle10-climate "$HOME/Library/C
     <li><strong>סיכום.</strong> מה נכתב, על מה זה מבוסס, ומה כדאי לבדוק בשטח. הסוכן גם מציע את הצעד הבא בתהליך.</li>
   </ol>
 
-  <div class="note"><strong>מה הסוכן לא עושה</strong><p>לא עורך את הפלייבוק, לא כותב ל-Drive, לא ממציא מידע חסר, לא מחליט במקום הצוות, ולא שומר ב-GitHub בלי אישור.</p></div>
+  <div class="note"><strong>מה הסוכן לא עושה</strong><p>לא עורך את <code>.playbook/</code>, לא עורך ולא מוחק את החומרים של הצוות, לא ממציא מידע חסר, לא מחליט במקום הצוות, ולא שומר ב-GitHub בלי אישור.</p></div>
 
-  <div class="note warn"><strong>תתי-צוותים במקביל</strong><p>בתהליכים כמו הפרסונה, שני תתי-צוותים עובדים בו-זמנית. כל תת-צוות צריך סשן משלו: שני חלונות של כלי ה-AI על אותו מיזם, או שני מחשבים מחוברים (ראה <a href="#onb-team">מחשב נוסף</a>).</p></div>
+  <div class="note warn"><strong>תתי-צוותים במקביל</strong><p>בתהליכים כמו הפרסונה, שני תתי-צוותים עובדים בו-זמנית. כל תת-צוות צריך סשן משלו: שני חלונות של כלי ה-AI על אותו מיזם, או שני מחשבים (ראה <a href="#onb-team">מחשב נוסף</a>).</p></div>
 
   <h3 id="daily-git">שמירה ושיתוף</h3>
   <p>בסוף ההרצה הסוכן מציע לשמור (commit). אפשר לאשר לו, או להריץ בעצמך בטרמינל, מתוך תיקיית המיזם:</p>
-  <div class="code"><button class="copy" type="button">העתק</button><pre>git add תוצרים/ ימים/
+  <div class="code"><button class="copy" type="button">העתק</button><pre>git add תוצרים/ 01-ימים/
 git commit -m "כרטיס פרסונה: מירב (תת-צוות 1)"
 git push</pre></div>
   <p class="meta">git push מעלה ל-GitHub, ורק אז שאר הצוות רואה את התוצרים. מי שעובד ממחשב נוסף מושך את העדכונים עם <code>git pull</code>.</p>
 
   <h3 id="daily-update">אחרי עדכון בפלייבוק</h3>
-  <p>הפלייבוק מתעדכן כל הזמן: סוכנים חדשים, תיקונים במתודה, שינויים בתבנית המיזם. יש שני סוגי עדכונים, ולא צריך לדעת איזה מהם קרה: אותה שגרה מטפלת בשניהם.</p>
-  <div class="table-wrap">
-    <table>
-      <thead><tr><th>מה השתנה בפלייבוק</th><th>מה צריך לעשות</th></tr></thead>
-      <tbody>
-        <tr><td><strong>המתודה, הסוכנים, הטמפלטים של התוצרים</strong></td><td>רק <code>git pull</code> בפלייבוק. המיזם לא מחזיק עותק: הסוכן קורא את המתודה מהפלייבוק בכל הרצה</td></tr>
-        <tr><td><strong>תבנית המיזם</strong>: יום חדש, שינוי בקובץ ההנחיות או ב-README</td><td>לעדכן את המיזם עצמו, עם מצב העדכון (<a href="#onb-upgrade">עדכון מיזם קיים</a>)</td></tr>
-      </tbody>
-    </table>
-  </div>
+  <p>הפלייבוק מתעדכן כל הזמן: סוכנים חדשים, תיקונים במתודה, ימים חדשים. המיזם מחזיק עותק משלו ב-<code>.playbook/</code>, ולכן שום שינוי לא מגיע אליו לבד. זה בכוונה: מחזור שרץ לא משתנה באמצע, אלא כשאתה מחליט לעדכן.</p>
   <p>השגרה, פעם בשבוע או לפני מפגש:</p>
   <ol class="steps">
-    <li><strong>מעדכנים את הפלייבוק.</strong>
-      <div class="code win"><button class="copy" type="button">העתק</button><pre>git -C /c/Dev/Gov-Labs-Playbook pull</pre></div>
-      <div class="code mac"><button class="copy" type="button">העתק</button><pre>git -C ~/Dev/Gov-Labs-Playbook pull</pre></div>
-    </li>
-    <li><strong>בודקים כל מיזם.</strong> בתיקיית הפלייבוק מפעילים את ההקמה (<code>/onboard-project</code> או <a href="#tools">משפט הפתיחה</a>) ונותנים את הלינק ל-repo של המיזם. אם כתוב "כבר מעודכנים", אין מה לעשות. אחרת מאשרים את התוכנית, והסוכן שומר ומעלה ל-GitHub.</li>
-    <li><strong>פותחים סשן חדש בכלי ה-AI.</strong> כלים טוענים את ההוראות בתחילת סשן, ולכן שינוי בפלייבוק נכנס לתוקף רק בסשן חדש.</li>
+    <li><strong>פותחים את תיקיית המיזם</strong> ומקלידים <code>/update-project</code> (או <a href="#tools">משפט הפתיחה</a>).</li>
+    <li><strong>קוראים את התוכנית.</strong> אם כתוב שהכול כבר מעודכן, אין מה לעשות. אחרת מאשרים, והסוכן שומר ומעלה ל-GitHub.</li>
+    <li><strong>פותחים סשן חדש בכלי ה-AI.</strong> כלים טוענים את ההוראות בתחילת סשן, ולכן העדכון נכנס לתוקף רק בסשן חדש.</li>
   </ol>
-  <div class="note"><strong>מיזם שנעול על גרסה</strong><p>אם ב-README של המיזם, בשורת "גרסת הפלייבוק", כתובה תגית (למשל <code>v0.2</code>) ולא <code>main</code>, המיזם ממשיך לעבוד לפי הגרסה הנעולה, בכוונה. כדי לקבל את העדכונים משנים שם את הגרסה.</p></div>
 </section>
 
 <section id="trouble">
@@ -493,16 +466,15 @@ git push</pre></div>
     <table>
       <thead><tr><th>מה רואים</th><th>הסיבה</th><th>מה עושים</th></tr></thead>
       <tbody>
-        <tr><td><code>onboard-project</code> או <code>run-agent</code> לא מופיעים בכלי</td><td>הפלייבוק לא מעודכן, או שהכלי לא מכיר פקודות <code>/</code> מהתיקייה</td><td><code>git pull</code> בפלייבוק ופתיחה מחדש של הכלי. אם עדיין לא, משתמשים ב<a href="#tools">משפט הפתיחה</a></td></tr>
+        <tr><td><code>onboard-project</code> לא מופיע בכלי, בתיקיית הפלייבוק</td><td>הפלייבוק לא מעודכן, או שהכלי לא מכיר פקודות <code>/</code> מהתיקייה</td><td><code>git pull</code> בפלייבוק ופתיחה מחדש של הכלי. אם עדיין לא, משתמשים ב<a href="#tools">משפט הפתיחה</a></td></tr>
+        <tr><td><code>run-agent</code> או <code>update-project</code> לא מופיעים, בתיקיית המיזם</td><td>מיזם שהוקם לפני שהפקודות נוספו, או שהכלי לא מכיר פקודות <code>/</code></td><td>משפט הפתיחה לעדכון המיזם (ב<a href="#tools">טבלת הכלים</a>), ואז סשן חדש</td></tr>
+        <tr><td>הסוכן אומר שאין <code>.playbook/</code></td><td>מיזם שהוקם במבנה הישן</td><td><code>/update-project</code> או משפט הפתיחה לעדכון</td></tr>
         <tr><td>כלי ה-AI לא מופיע בחלון של המיזם, אבל בחלון של הפלייבוק כן</td><td>העורך פתח את התיקייה ב-Restricted Mode (לא סימנת "Trust"), או שהתוסף מושבת לתיקייה הזו</td><td>1. לחיצה על "Restricted Mode" בפס התחתון, ואז Trust. 2. בפאנל Extensions: התוסף, ואז Enable (Workspace). 3. קליק ימני על הפס השמאלי וסימון התוסף</td></tr>
         <tr class="win"><td><code>bash: command not found</code>, או שגיאות של WSL</td><td>הכלי מריץ פקודות ב-PowerShell, או ש-<code>bash</code> מפנה ל-WSL ולא ל-Git Bash</td><td>לבקש מהסוכן להריץ עם <code>"C:\Program Files\Git\bin\bash.exe"</code>. ההוראות לסוכן כבר כוללות את זה</td></tr>
         <tr><td>הסוכן מבקש להקטין תמונה</td><td>התמונה גדולה מ-500KB. git שומר כל גרסה לתמיד, ופרסונה מתעדכנת הרבה</td><td>לשמור אותה כ-<code>.jpg</code>, או להקטין אותה לרוחב של כ-1000 פיקסלים</td></tr>
         <tr><td><code>403 Permission denied</code> ב-push</td><td>לחשבון שלך אין הרשאת Write ל-repo</td><td>לבקש הרשאה מ-admin של הארגון. הקבצים נשמרים במחשב, ואחרי ההרשאה מריצים שוב <code>git push</code></td></tr>
         <tr><td><code>Author identity unknown</code></td><td>אין זהות git במחשב</td><td>שתי שורות <code>git config</code> מ<a href="#setup-terminal">שלב 1</a></td></tr>
-        <tr><td>תיקיית Drive לא מופיעה במחשב</td><td>תיקייה ששותפה איתך לא נוספה ל-My Drive</td><td>בדפדפן: Organize, Add shortcut, My Drive. התיקייה מופיעה תוך דקה</td></tr>
-        <tr><td>הסוכן אומר שה-repo "לא מחובר במחשב הזה"</td><td>המיזם שוכפל בלי חיבור לפלייבוק</td><td>לתת לסוכן לחבר (הוא ישאל איפה הפלייבוק), או חיבור ידני כמו ב<a href="#onb-team">מחשב נוסף</a></td></tr>
-        <tr><td>הסוכן לא מצליח לקרוא קובץ מ-Drive</td><td>קבצי Google מקוריים (Docs, Slides) הם רק קיצורי דרך במחשב</td><td>להוריד את הקובץ כ-PDF או DOCX לאותה תיקייה</td></tr>
-        <tr><td>הסוכן מזהיר שהפלייבוק "לא על main" או "לא מעודכן"</td><td>העותק במחשב על ענף אחר או ישן</td><td>בטרמינל, בתיקיית הפלייבוק: <code>git switch main</code> ואז <code>git pull</code></td></tr>
+        <tr><td>הסוכן לא מצליח לקרוא מסמך Google (Docs, Slides)</td><td>קישור למסמך Google הוא לא הקובץ עצמו</td><td>להוריד אותו כ-PDF או DOCX ולשים בתיקיית היום</td></tr>
       </tbody>
     </table>
   </div>
@@ -510,12 +482,12 @@ git push</pre></div>
 
 <section id="status">
   <h2>מה נבדק</h2>
-  <p><code>onboard-project</code> ו-<code>run-agent</code> זמינים ב-<code>main</code>. מי שהפלייבוק שלו לא מעודכן מריץ <code>git pull</code>.</p>
+  <p><code>onboard-project</code> זמין ב-<code>main</code> של הפלייבוק. <code>run-agent</code> ו-<code>update-project</code> זמינים בכל מיזם, מתוך <code>.playbook/</code>.</p>
   <div class="table-wrap">
     <table>
       <thead><tr><th>שילוב</th><th>מצב</th></tr></thead>
       <tbody>
-        <tr><td>Windows, VS Code, Claude Code</td><td class="yes">נבדק מקצה לקצה: הקמת מיזם, עדכון מיזם, הרצת סוכן פרסונה</td></tr>
+        <tr><td>Windows, VS Code, Claude Code</td><td class="yes">נבדק מקצה לקצה במבנה הקודם (עם Drive). במבנה של <code>.playbook/</code> נבדקו ההקמה והעדכון על repo מקומי, וש-<code>/run-agent</code> ו-<code>/update-project</code> נטענים. הקמה מול GitHub עוד לא נבדקה</td></tr>
         <tr><td>Mac</td><td class="no">לא נבדק. הסקריפטים הותאמו ל-bash ול-sed של Mac</td></tr>
         <tr><td>Gemini CLI, Gemini Code Assist</td><td class="no">לא נבדק. קבצי ההגדרה קיימים (<code>GEMINI.md</code>, פקודות <code>/</code>)</td></tr>
         <tr><td>Kiro</td><td class="no">לא נבדק. קובץ ההנחיות קיים (<code>.kiro/steering/</code>)</td></tr>
