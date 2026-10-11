@@ -8,7 +8,7 @@ description: תהליך 3 ביום ה־Unboxing של Gov-Labs, שלב ב׳ — �
 ## מקור האמת — הפלייבוק
 הסקיל הוא מפעיל; הידע בפלייבוק [Strauss-X-Labs/Gov-Labs-Playbook](https://github.com/Strauss-X-Labs/Gov-Labs-Playbook).
 
-**איתור:** שורת `PLAYBOOK=` בקובץ `.gov-labs.local` בשורש ה־repo של המיזם. אין קובץ — שאל איפה הפלייבוק במחשב. אל תנחש נתיב.
+**איתור:** הפלייבוק נמצא ב־`.playbook/` בשורש ה־repo של המיזם, וכל נתיב פלייבוק למטה הוא תחתיו. אין `.playbook/` — עצור והפנה ל־`/update-project`. אל תנחש נתיב.
 
 **קרא במלואם, בשקט, לפני שאתה פונה לצוות:**
 - `04-AI/סוכנים/פרסונה-דיגיטלית.md`
