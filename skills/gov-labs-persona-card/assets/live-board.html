@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- הדף טוען את עצמו מחדש כל 4 שניות, כך שכל עדכון של הסוכן בקובץ מופיע על המסך בלי לגעת בדפדפן. אין סקריפטים. -->
+<meta http-equiv="refresh" content="4">
+<!-- TEMPLATE: לוח חי לסשן התשאול. העתק לקובץ `.live/לוח-חי-<כינוי>.html` ב-repo של המיזם, החלף כל [placeholder], ועדכן אחרי כל תשובה של הצוות. ה-<style> והמבנה נשארים כמו שהם. זה כלי עבודה לחדר, לא התוצר: התוצר הוא כרטיס ה-MD. -->
+<title>לוח חי · [כינוי הפרסונה]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* אותם טוקנים כמו בדף הפרסונה (gov-labs-persona-visual) */
+  :root{
+    --ground:#E7E6E2; --panel:#FFFFFF; --panel-sub:#F4F3EF; --ink:#1E2124; --ink-2:#262A2E;
+    --line-dark:#3A3E43; --line:#E2E0DA; --muted:#5A5E63; --muted-dark:#B9B7B0; --dashed:#8E8C86;
+    --accent:#F2C230;
+    --font:"IBM Plex Sans Hebrew","Arial Hebrew",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --radius:4px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0; background:var(--ground); color:var(--ink); font-family:var(--font); font-size:clamp(16px,1.25vw,22px); line-height:1.45;
+    display:flex; flex-direction:column}
+  ul{margin:0; padding:0; list-style:none}
+  h1,h2,h3,p{margin:0}
+  .mono{font-family:var(--mono); direction:ltr; unicode-bidi:isolate}
+
+  .banner{background:var(--accent); color:var(--ink); font-weight:700; padding:6px 24px; text-align:center; font-size:.85em}
+
+  .top{background:var(--ink); color:#F2F1ED; padding:14px 24px; display:flex; flex-wrap:wrap; gap:8px 32px; align-items:baseline}
+  .top h1{font-size:1.7em; line-height:1.1; color:#fff}
+  .top h1 .nick{color:var(--muted-dark); font-weight:500}
+  .top .jtbd{flex:1 1 320px; font-weight:500}
+  .top .jtbd .k{color:var(--accent); font-size:.75em; display:block; text-align:right}
+  .top .meta{font-size:.7em; color:var(--muted-dark)}
+
+  /* השאלה שעל השולחן עכשיו */
+  .now{background:var(--panel); border-top:4px solid var(--ink); margin:14px 24px 0; padding:12px 20px; border-radius:var(--radius);
+    display:flex; gap:16px; align-items:baseline; flex-wrap:wrap}
+  .now .k{font-size:.75em; font-weight:700; background:var(--accent); padding:2px 8px; border-radius:2px; flex:none}
+  .now .q{font-size:1.25em; font-weight:700; flex:1 1 320px}
+  .now .who{font-size:.85em; color:var(--muted)}
+
+  /* ארבעת הרבעים */
+  .empathy{flex:1; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:14px; padding:14px 24px; min-height:0}
+  .cell{background:var(--panel); border-radius:var(--radius); padding:14px 18px; display:flex; flex-direction:column; gap:10px; min-height:0}
+  .cell.active{outline:4px solid var(--accent); outline-offset:-4px}
+  .cell-head{display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--ink); padding-bottom:6px}
+  .cell h2{font-size:1.25em}
+  .cell-head .mono{font-size:.7em; color:var(--muted)}
+  .cell ul{display:flex; flex-direction:column; gap:8px; overflow:auto}
+  .cell li{background:var(--panel-sub); border-radius:var(--radius); padding:8px 12px}
+  .cell li.new{background:var(--accent)}
+  .cell li .by{font-size:.7em; color:var(--muted); display:block; margin-top:2px}
+  .cell li.new .by{color:var(--ink)}
+  .cell .empty{color:var(--muted); border:1px dashed var(--dashed); border-radius:var(--radius); padding:8px 12px; font-size:.85em}
+
+  .hyp{display:inline-block; font-size:.65em; font-weight:500; color:var(--muted); border:1px solid var(--muted); border-radius:2px;
+    padding:0 6px; margin-inline-start:6px; line-height:1.5; vertical-align:middle}
+  li.new .hyp{color:var(--ink); border-color:var(--ink)}
+  .conf{display:inline-block; font-family:var(--mono); font-size:.65em; margin-inline-start:8px; direction:ltr; unicode-bidi:isolate; vertical-align:middle}
+
+  /* מחלוקות ושאלות פתוחות */
+  .open{margin:0 24px 14px; background:var(--panel); border:1px dashed var(--dashed); border-radius:var(--radius); padding:10px 18px;
+    display:flex; gap:8px 24px; flex-wrap:wrap; align-items:baseline; font-size:.85em}
+  .open .k{font-weight:700; flex:none}
+  .open ul{display:flex; flex-wrap:wrap; gap:6px 24px}
+
+  .foot{background:var(--ink); color:var(--muted-dark); font-size:.65em; padding:6px 24px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="banner">לוח חי — טיוטה בעבודה. כל פריט הוא השערה של הצוות, לא ממצא. התוצר הוא כרטיס ה-MD.</div>
+
+<header class="top">
+  <h1>[שם] <span class="nick">״[כינוי]״</span></h1>
+  <!-- JTBD: רק אחרי שהצוות ניסח. לפני כן: "טרם נוסח" -->
+  <p class="jtbd"><span class="k mono">JOB TO BE DONE</span>[מה האדם מנסה להשיג, במילות הצוות — או "טרם נוסח"]</p>
+  <p class="meta mono">SUB-TEAM [N] · [HH:MM]</p>
+</header>
+
+<!-- השאלה שהסוכן שאל עכשיו, ולמי היא מופנית. מתעדכן בכל סבב. -->
+<section class="now">
+  <span class="k">עכשיו</span>
+  <p class="q">[השאלה שעל השולחן]</p>
+  <p class="who">[למי מופנית השאלה — שם, או "כל אחד כותב לבד שתי דקות"]</p>
+</section>
+
+<!-- class="active" על הרבע שעובדים עליו עכשיו, אחד בלבד.
+     class="new" על פריטים שנוספו בסבב האחרון בלבד — בסבב הבא מסירים.
+     כל פריט: הניסוח של הצוות + <span class="hyp">השערה</span> + .by = מי אמר ומה הבסיס (שמענו / ראינו / מסיקים).
+     .conf — רק אם הצוות דירג ביטחון (1–5). לא דירג — משמיטים את ה-span. -->
+<main class="empathy">
+  <section class="cell active">
+    <div class="cell-head"><h2>אומרת</h2><span class="mono">SAYS · [n]</span></div>
+    <ul>
+      <li class="new">״[ציטוט כפי שהצוות מסר]״<span class="hyp">השערה</span><span class="conf">[3/5]</span><span class="by">[מי] · [בסיס: שמענו ממנה / משוער]</span></li>
+    </ul>
+  </section>
+
+  <section class="cell">
+    <div class="cell-head"><h2>חושבת</h2><span class="mono">THINKS · [n]</span></div>
+    <!-- רבע ריק: -->
+    <p class="empty">עוד לא הגענו לכאן</p>
+  </section>
+
+  <section class="cell">
+    <div class="cell-head"><h2>מרגישה</h2><span class="mono">FEELS · [n]</span></div>
+    <p class="empty">עוד לא הגענו לכאן</p>
+  </section>
+
+  <section class="cell">
+    <div class="cell-head"><h2>עושה</h2><span class="mono">DOES · [n]</span></div>
+    <p class="empty">עוד לא הגענו לכאן</p>
+  </section>
+</main>
+
+<!-- מחלוקות בתוך הצוות ושאלות שנשארו פתוחות. אין — משמיטים את ה-section כולו. -->
+<section class="open">
+  <span class="k">פתוח</span>
+  <ul>
+    <li>[מחלוקת: מי אומר מה — בלי להכריע]</li>
+  </ul>
+</section>
+
+<footer class="foot mono">
+  <span>LIVE BOARD · HYPOTHESIS · NOT A RESEARCH FINDING</span>
+  <span>UPDATED [HH:MM:SS]</span>
+</footer>
+
+</body>
+</html>
