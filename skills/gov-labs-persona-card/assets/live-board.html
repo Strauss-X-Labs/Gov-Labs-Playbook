@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- לוח חי לסשן תשאול הפרסונה. מוגש ע"י live-board.py (שרת מקומי בלבד), לא נפתח כקובץ.
+     הדף מציג את state.json שהסוכן כותב, ושולח את תשובות הצוות לסוכן. אין מה לערוך כאן בזמן סשן:
+     הסוכן מעדכן רק את .live/state.json. זה כלי עבודה לחדר, לא התוצר: התוצר הוא כרטיס ה-MD. -->
+<title>לוח חי · פרסונה</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* אותם טוקנים כמו בדף הפרסונה (gov-labs-persona-visual) */
+  :root{
+    --ground:#E7E6E2; --panel:#FFFFFF; --panel-sub:#F4F3EF; --ink:#1E2124; --ink-2:#262A2E;
+    --line-dark:#3A3E43; --line:#E2E0DA; --muted:#5A5E63; --muted-dark:#B9B7B0; --dashed:#8E8C86;
+    --accent:#F2C230;
+    --font:"IBM Plex Sans Hebrew","Arial Hebrew",sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,monospace;
+    --radius:4px;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{margin:0; background:var(--ground); color:var(--ink); font-family:var(--font); font-size:clamp(16px,1.25vw,22px); line-height:1.45;
+    display:flex; flex-direction:column}
+  ul{margin:0; padding:0; list-style:none}
+  h1,h2,h3,p{margin:0}
+  .mono{font-family:var(--mono); direction:ltr; unicode-bidi:isolate}
+
+  .banner{background:var(--accent); color:var(--ink); font-weight:700; padding:2px 16px; text-align:center; font-size:.65em}
+
+  .top{background:var(--ink); color:#F2F1ED; padding:10px 16px; display:flex; flex-wrap:wrap; gap:6px 32px; align-items:baseline; font-size:1.15em}
+  .top .jtbd{flex:1 1 280px; font-weight:700; color:#fff}
+  .top .jtbd .k{background:var(--accent); color:var(--ink); font-size:.65em; font-weight:700; padding:1px 8px; border-radius:2px; align-self:center}
+  .top .meta{font-size:.6em; color:var(--muted-dark)}
+
+  /* השאלה שעל השולחן עכשיו */
+  .now{background:var(--panel); margin:8px 12px 0; padding:5px 14px; border-radius:var(--radius);
+    display:flex; gap:16px; align-items:baseline; flex-wrap:wrap}
+  .now .k{font-size:.75em; font-weight:700; background:var(--accent); padding:2px 8px; border-radius:2px; flex:none}
+  .now .q{font-size:1.05em; font-weight:700; flex:1 1 320px}
+  .now .who{font-size:.85em; color:var(--muted)}
+
+  /* לוח של ארבעה רבעים: צלב באמצע, הפרסונה במרכז */
+  .empathy{flex:1; position:relative; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:4px;
+    background:var(--ink); border:4px solid var(--ink); border-radius:var(--radius); margin:8px 12px; min-height:0}
+  .cell{background:var(--panel); padding:8px 14px; display:flex; flex-direction:column; gap:6px; min-height:0; min-width:0}
+  /* כותרת הרבע בפינה החיצונית: למעלה ברבעים העליונים, למטה בתחתונים — המרכז נשאר פנוי לפרסונה */
+  /* הרשימה מפנה מקום לעיגול בצד הפנימי של הרבע (ב-RTL: הרבע הראשון בשורה הוא הימני) */
+  .cell:nth-of-type(odd) ul, .cell:nth-of-type(odd) .empty{margin-inline-end:calc(var(--hub)/2)}
+  .cell:nth-of-type(even) ul, .cell:nth-of-type(even) .empty{margin-inline-start:calc(var(--hub)/2)}
+  .cell.bottom-row{flex-direction:column-reverse}
+  .cell.bottom-row .cell-head{border-bottom:0; border-top:2px solid var(--ink); padding-bottom:0; padding-top:2px}
+  .cell.active{background:#FFF8DC; box-shadow:inset 0 0 0 4px var(--accent)}
+  .hub{--d:var(--hub); position:absolute; top:50%; left:50%; width:var(--d); height:var(--d); transform:translate(-50%,-50%);
+    background:var(--ink); color:#fff; border-radius:50%; border:4px solid var(--accent);
+    display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:10px; line-height:1.15}
+  .hub .name{font-size:1.5em; font-weight:700}
+  .hub .nick{font-size:.8em; color:var(--muted-dark); font-weight:500}
+  .empathy{--hub:clamp(100px,10vw,150px)}
+  @media (max-width:700px){
+    .empathy{grid-template-columns:1fr; grid-template-rows:none}
+    .hub{position:static; transform:none; width:auto; height:auto; border-radius:0; border:0; order:-1; flex-direction:row; gap:10px; --d:auto}
+    .cell:nth-of-type(n) ul, .cell:nth-of-type(n) .empty{margin-inline:0}
+    .cell.bottom-row{flex-direction:column}
+    .cell.bottom-row .cell-head{border-top:0; border-bottom:2px solid var(--ink); padding-top:0; padding-bottom:6px}
+  }
+  .cell-head{display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--ink); padding-bottom:2px}
+  .cell h2{font-size:.95em}
+  .cell-head .count{font-family:var(--mono); font-size:.8em; color:var(--muted)}
+  .cell ul{display:flex; flex-direction:column; gap:8px; overflow:auto}
+  .cell ul{flex:1}
+  .cell.bottom-row ul > li:first-child{margin-top:auto}
+  .cell li{background:var(--panel-sub); border-radius:var(--radius); padding:8px 12px}
+  .cell li.new{background:var(--accent)}
+  .cell li .by{font-size:.7em; color:var(--muted); display:block; margin-top:2px}
+  .cell li.new .by{color:var(--ink)}
+  .cell .empty{color:var(--muted); border:1px dashed var(--dashed); border-radius:var(--radius); padding:8px 12px; font-size:.85em}
+
+  .hyp{display:inline-block; font-size:.65em; font-weight:500; color:var(--muted); border:1px solid var(--muted); border-radius:2px;
+    padding:0 6px; margin-inline-start:6px; line-height:1.5; vertical-align:middle}
+  li.new .hyp{color:var(--ink); border-color:var(--ink)}
+  .conf{display:inline-block; font-family:var(--mono); font-size:.65em; margin-inline-start:8px; direction:ltr; unicode-bidi:isolate; vertical-align:middle}
+
+  /* מחלוקות ושאלות פתוחות */
+  .open{margin:0 12px 8px; background:var(--panel); border:1px dashed var(--dashed); border-radius:var(--radius); padding:4px 14px;
+    display:flex; gap:4px 24px; flex-wrap:wrap; align-items:baseline; font-size:.8em}
+  .empathy + .open{margin-top:0}
+  .open[hidden]{display:none}
+  .top .jtbd{display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+  .open .k{font-weight:700; flex:none}
+  .open ul{display:flex; flex-wrap:wrap; gap:6px 24px}
+
+  body.map .cell{cursor:pointer}
+  body.map .cell:hover, body.map .cell:focus-visible{box-shadow:inset 0 0 0 4px var(--accent); outline:0}
+  .hub{cursor:pointer}
+  .now{cursor:pointer}
+  /* חלון השאלה */
+  .veil{position:fixed; inset:0; background:rgba(30,33,36,.45); display:flex; align-items:center; justify-content:center; padding:24px; z-index:10}
+  .veil[hidden]{display:none}
+  .pop{background:var(--panel); border-top:5px solid var(--accent); border-radius:var(--radius); width:min(640px,100%); max-height:100%; overflow:auto;
+    padding:20px 24px; display:flex; flex-direction:column; gap:12px}
+  .pop .tag{font-size:.7em; font-weight:700; color:var(--muted)}
+  .pop h2{font-size:1.25em; line-height:1.3; text-wrap:balance}
+  .pop .to{color:var(--muted); font-size:.8em; margin-top:-6px}
+  .pop .to:empty{display:none}
+  .pop textarea, .pop input, .pop button{font:inherit; color:var(--ink); border:2px solid var(--ink); border-radius:var(--radius); padding:6px 12px; background:var(--panel)}
+  .pop textarea{width:100%; height:4.2em; resize:vertical; line-height:1.4}
+  .pop .row{display:flex; gap:8px; flex-wrap:wrap; align-items:stretch}
+  .pop .row > *{height:2.5em; line-height:1; box-sizing:border-box; display:inline-flex; align-items:center; justify-content:center}
+  .pop .row > input{justify-content:flex-start}
+  .pop input{flex:0 1 9em; min-width:6em}
+  .pop .spacer{flex:1}
+  .pop button{font-weight:700; cursor:pointer}
+  .pop button.send{background:var(--ink); color:#fff; padding-inline:22px}
+  .pop .row button{padding-block:0}
+  .pop button.quiet{border-color:transparent; background:none; color:var(--muted); font-weight:500}
+  .pop :focus-visible{outline:3px solid var(--accent); outline-offset:-1px}
+  .pop textarea{display:block; margin:0}
+  .pop textarea:focus-visible, .pop input:focus-visible{outline:0; border-color:var(--ink); box-shadow:0 0 0 3px var(--accent)}
+  .pop.busy textarea, .pop.busy input, .pop.busy button{opacity:.45; pointer-events:none}
+  .pop .busy-note{display:none; align-items:center; gap:12px; font-weight:700}
+  .pop.busy .busy-note{display:flex; animation:rise .3s ease-out both}
+  .spinner{flex:none; width:1.5em; height:1.5em; border-radius:50%; border:4px solid var(--line); border-top-color:var(--accent); border-inline-start-color:var(--ink);
+    animation:spin .8s linear infinite}
+  /* על מה הפריט נשען: בחירה אחת חובה, ופירוט חופשי */
+  .basis{border:0; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; font-size:.85em}
+  .basis[hidden]{display:none}
+  .basis legend{padding:0; font-weight:700; margin-bottom:4px; font-size:.9em; color:var(--muted)}
+  .basis .opts{display:flex; gap:6px; flex-wrap:wrap}
+  .basis label{display:flex; align-items:center; gap:8px; border:2px solid var(--ink); border-radius:999px; padding:3px 12px; cursor:pointer;
+    transition:background-color .2s ease, transform .1s ease; animation:rise .35s ease-out both}
+  .basis label:nth-child(2){animation-delay:.06s} .basis label:nth-child(3){animation-delay:.12s} .basis label:nth-child(4){animation-delay:.18s}
+  .basis label:has(input:checked){background:var(--accent); font-weight:700}
+  .basis label:active{transform:scale(.97)}
+  .basis input[type=radio]{position:absolute; opacity:0; width:0; height:0; min-width:0; padding:0; border:0}
+  .basis label:has(input:focus-visible){outline:3px solid var(--accent); outline-offset:2px}
+  .basis input[type=text]{width:100%; flex:none}
+  .basis.missing legend{color:#B42318}
+  .basis.missing .opts{animation:shake .35s ease-out}
+  @keyframes shake{0%,100%{transform:translateX(0)} 25%{transform:translateX(6px)} 75%{transform:translateX(-6px)}}
+  /* רבע שמתמלא: הטקסט קטן בהדרגה כך שכל הפריטים נשארים על המסך */
+  .cell ul{font-size:calc(1em * var(--fit,1)); transition:font-size .35s ease}
+  .cell ul{gap:calc(8px * var(--fit,1) * var(--fit,1))}
+  .cell ul li{padding:calc(8px * var(--fit,1) * var(--fit,1)) 12px; line-height:1.3}
+  .cell ul li .by{margin-top:0}
+  .cell ul.cols2{display:grid; grid-template-columns:1fr 1fr; align-content:start}
+  .cell.bottom-row ul.cols2{align-content:end}
+  .cell ul.measuring{align-content:start!important}
+  .cell.bottom-row ul.cols2 > li:first-child{margin-top:0}
+  /* פריט שנשלח ועוד לא עובד ע"י הסוכן: מופיע מיד, עם סימן קטן */
+  .cell li.pending{background:var(--accent)}
+  .cell li.pending .by{color:var(--ink); display:flex; align-items:center; gap:6px}
+  .cell li.pending .hyp{color:var(--ink); border-color:var(--ink)}
+  .cell li .spinner{width:.9em; height:.9em; border-width:2px}
+  /* סיום: כפתור, התקדמות ההפקה, והצגת התוצר */
+  .done-btn{font:inherit; font-weight:700; border:2px solid var(--ink); background:var(--ink); color:#fff; border-radius:var(--radius); padding:2px 18px; cursor:pointer;
+    transition:transform .1s ease, opacity .3s ease; animation:rise .35s ease-out both}
+  .done-btn[hidden]{display:none}
+  .done-btn:active{transform:scale(.96)}
+  .done-btn:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  .steps{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:10px}
+  .steps li{display:flex; align-items:center; gap:12px; animation:rise .35s ease-out both; color:var(--muted)}
+  .steps li.doing{color:var(--ink); font-weight:700}
+  .steps li.done{color:var(--ink)}
+  .steps li .mark{flex:none; width:1.5em; height:1.5em; border-radius:50%; border:2px solid var(--line); display:grid; place-items:center; font-size:.8em}
+  .steps li.done .mark{background:var(--ink); border-color:var(--ink); color:#fff}
+  .steps li.doing .mark{border:0}
+  .ready{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+  .ready[hidden]{display:none}
+  .ready a{font:inherit; font-weight:700; text-decoration:none; color:#fff; background:var(--ink); border:2px solid var(--ink); border-radius:var(--radius); padding:6px 22px; animation:rise .35s ease-out both}
+  .ready a.quiet{background:none; color:var(--ink)}
+  .ready a:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  /* חלון הפתיחה: מה עושים ולמה */
+  .intro{width:min(820px,100%); padding:28px 32px; gap:18px}
+  .intro h2{font-size:2em}
+  .intro .goal{font-size:1.15em; font-weight:500}
+  .intro ol{margin:0; padding:0; list-style:none; counter-reset:step; display:flex; flex-direction:column; gap:10px}
+  .intro ol li{counter-increment:step; display:flex; gap:14px; align-items:baseline; animation:rise .4s ease-out both}
+  .intro ol li:nth-child(2){animation-delay:.08s} .intro ol li:nth-child(3){animation-delay:.16s} .intro ol li:nth-child(4){animation-delay:.24s} .intro ol li:nth-child(5){animation-delay:.32s}
+  .intro ol li::before{content:counter(step); flex:none; font-family:var(--mono); font-size:.8em; background:var(--ink); color:#fff; border-radius:2px; padding:1px 9px}
+  .intro .note{color:var(--muted); font-size:.9em}
+  /* תנועה: כל שינוי על הלוח נראה לעין. מכובה למי שביקש פחות תנועה. */
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @keyframes page-in{from{opacity:0} to{opacity:1}}
+  @keyframes veil-in{from{opacity:0} to{opacity:1}}
+  @keyframes pop-in{from{opacity:0; transform:translateY(18px) scale(.96)} to{opacity:1; transform:none}}
+  @keyframes item-in{from{opacity:0; transform:translateY(10px) scale(.97)} to{opacity:1; transform:none}}
+  @keyframes flash{0%{background:var(--accent)} 100%{background:transparent}}
+  @keyframes bump{0%{transform:scale(1)} 40%{transform:scale(1.5)} 100%{transform:scale(1)}}
+  @keyframes hub-pop{0%{transform:translate(-50%,-50%) scale(1)} 40%{transform:translate(-50%,-50%) scale(1.12)} 100%{transform:translate(-50%,-50%) scale(1)}}
+  @keyframes rise{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+  @keyframes dots{0%{content:""} 25%{content:"."} 50%{content:".."} 75%{content:"..."}}
+  body{animation:page-in .4s ease-out}
+  .rise{animation:rise .35s ease-out both}
+  .cell .empty{animation:rise .35s ease-out both}
+  .open{animation:rise .35s ease-out both}
+  .veil{animation:veil-in .2s ease-out}
+  .veil .pop{animation:pop-in .28s cubic-bezier(.2,.8,.2,1)}
+  .veil.closing{opacity:0; transition:opacity .18s ease-in}
+  .veil.closing .pop{transform:translateY(12px) scale(.97); transition:transform .18s ease-in}
+  .cell{transition:background-color .3s ease, box-shadow .3s ease}
+  .cell li{transition:background-color .6s ease}
+  .cell li.enter{animation:item-in .45s cubic-bezier(.2,.8,.2,1) both}
+  .cell b.bump{display:inline-block; animation:bump .4s ease-out}
+  .hub.changed{animation:hub-pop .5s ease-out}
+  .flash{animation:flash 1.2s ease-out}
+  .now .q.changed, .open li.enter{animation:rise .35s ease-out both}
+  .pop button, .pop textarea, .pop input{transition:background-color .15s ease, transform .1s ease, opacity .2s ease}
+  .pop button:active{transform:scale(.96)}
+  .pop .busy-note::after{content:""; animation:dots 1.2s steps(1) infinite}
+  @media (prefers-reduced-motion:reduce){ *:not(.spinner),*::before,*::after{animation:none!important; transition:none!important} }
+  .foot{background:var(--ink); color:var(--muted-dark); font-size:.55em; padding:2px 16px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<div class="banner">לוח חי — טיוטה בעבודה. כל פריט הוא השערה של הצוות, לא ממצא. התוצר הוא כרטיס הפרסונה.</div>
+
+<header class="top">
+  <p class="jtbd"><span class="k">האתגר</span><span id="challenge">טרם נוסח</span></p>
+  <p class="jtbd"><span class="k">היעד המרכזי</span><span id="jtbd">טרם נוסח</span></p>
+  <p class="meta" id="meta"></p>
+</header>
+
+<section class="now" id="now">
+  <span class="k">עכשיו</span>
+  <p class="q" id="q">מחכים לסוכן…</p>
+  <p class="who" id="to"></p>
+  <button class="done-btn" id="done" type="button" hidden>סיימנו</button>
+</section>
+
+<main class="empathy">
+  <section class="cell top-row" data-q="says" tabindex="0"><div class="cell-head"><h2>אומרת</h2><span class="count"><b>0</b></span></div><ul></ul></section>
+  <section class="cell top-row" data-q="thinks" tabindex="0"><div class="cell-head"><h2>חושבת</h2><span class="count"><b>0</b></span></div><ul></ul></section>
+  <section class="cell bottom-row" data-q="feels" tabindex="0"><div class="cell-head"><h2>מרגישה</h2><span class="count"><b>0</b></span></div><ul></ul></section>
+  <section class="cell bottom-row" data-q="does" tabindex="0"><div class="cell-head"><h2>עושה</h2><span class="count"><b>0</b></span></div><ul></ul></section>
+  <div class="hub" id="hub"><span class="name" id="name">פרסונה</span><span class="nick" id="nick">בבנייה</span></div>
+</main>
+
+<section class="open" id="open" hidden>
+  <span class="k">פתוח</span>
+  <ul id="open-list"></ul>
+</section>
+
+<footer class="foot">
+  <span>לוח חי · השערות בלבד · לא ממצא מחקרי</span>
+  <span id="updated"></span>
+</footer>
+
+<div class="veil" id="intro" hidden>
+  <div class="pop intro" id="intro-pop">
+    <span class="tag" id="intro-tag">לפני שמתחילים</span>
+    <h2 id="intro-title"></h2>
+    <p class="goal" id="intro-goal"></p>
+    <ol id="intro-steps"></ol>
+    <p class="note" id="intro-note"></p>
+    <p class="busy-note"><span class="spinner" aria-hidden="true"></span><span>הסוכן מכין את השאלה הראשונה</span></p>
+    <div class="row"><span class="spacer"></span><button class="send" id="start" type="button">מתחילים</button></div>
+  </div>
+</div>
+
+<div class="veil" id="finish" hidden>
+  <div class="pop intro">
+    <span class="tag">מסיימים</span>
+    <h2>מפיקים את כרטיס הפרסונה</h2>
+    <p class="goal">הסוכן כותב את הכרטיס ממה שנאמר כאן, ומפיק ממנו תצוגה. הלוח נשאר כמו שהוא.</p>
+    <ul class="steps" id="steps"></ul>
+    <p class="goal" id="ready-note" hidden>הכרטיס מוכן. הוא נפתח בלשונית נפרדת; אם לא — מכאן:</p>
+    <div class="ready" id="ready" hidden>
+      <a id="result-open" target="_blank" rel="noopener">פתיחת הכרטיס</a>
+      <a id="result-md" class="quiet" target="_blank" rel="noopener" hidden>קובץ הכרטיס</a>
+      <span class="spacer"></span>
+      <button class="quiet" id="result-back" type="button">חזרה ללוח</button>
+    </div>
+  </div>
+</div>
+
+<div class="veil" id="veil" hidden>
+  <form class="pop" id="pop">
+    <span class="tag" id="pop-tag"></span>
+    <h2 id="pop-q"></h2>
+    <p class="to" id="pop-to"></p>
+    <textarea id="text" placeholder="התשובה" aria-label="התשובה"></textarea>
+    <fieldset class="basis" id="basis" hidden>
+      <legend id="basis-legend">על מה זה נשען?</legend>
+      <div class="opts" id="basis-opts"></div>
+      <input type="text" id="basis-text" placeholder="פירוט: מי, מתי, באיזה מצב" aria-label="פירוט הבסיס" autocomplete="off">
+    </fieldset>
+    <p class="busy-note"><span class="spinner" aria-hidden="true"></span><span>הסוכן קורא את התשובה ומעדכן את הלוח</span></p>
+    <div class="row">
+      <input id="who" placeholder="מי עונה" aria-label="מי עונה" autocomplete="off">
+      <span class="spacer"></span>
+      <button class="quiet" id="close" type="button">סגור</button>
+      <button id="skip" type="button">דלג</button>
+      <button class="send" id="send" type="submit">שלח</button>
+    </div>
+  </form>
+</div>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var NAMES={says:'אומרת',thinks:'חושבת',feels:'מרגישה',does:'עושה'};
+  var lastRaw=null, st={}, sentId=0, busy=false, openFor=null, shownGeneral=null;
+  var seen={}, first=true, prev={}, pending=[];
+  function pulse(node,cls){ node.classList.remove(cls); void node.offsetWidth; node.classList.add(cls); }
+  function setText(node,text,cls){ if(node.textContent!==text){ node.textContent=text; if(!first) pulse(node,cls||'rise'); } }
+  function changed(key,val){ var c=!first && prev[key]!==val; prev[key]=val; return c; }
+  function el(tag,cls,text){var e=document.createElement(tag); if(cls)e.className=cls; if(text!=null)e.textContent=text; return e}
+
+  function render(){
+    var p=st.persona||{};
+    setText($('name'),p.name||'פרסונה');
+    setText($('nick'),p.nick||'בבנייה');
+    if(changed('persona',(p.name||'')+'|'+(p.nick||''))) pulse($('hub'),'changed');
+    document.title='לוח חי · '+(p.name||'פרסונה');
+    setText($('challenge'),st.challenge||'טרם נוסח','flash');
+    setText($('jtbd'),st.jtbd||'טרם נוסח','flash');
+    setText($('meta'),st.subteam?'תת־צוות '+st.subteam:'');
+    document.body.classList.toggle('map', st.phase==='map');
+    var gq=st.question||{};
+    if(st.phase==='map'){ setText($('q'),'לחצו על רבע כדי לפתוח את השאלה שלו'); setText($('to'),''); }
+    else if(st.phase==='intro'){ setText($('q'),'לפני שמתחילים: מה עושים כאן ולמה'); setText($('to'),''); }
+    else { setText($('q'),gq.text||'מחכים לסוכן…'); setText($('to'),gq.to||''); }
+    var quads=st.quadrants||{};
+    document.querySelectorAll('.cell').forEach(function(cell){
+      var key=cell.dataset.q, items=(quads[key]||[]).concat(pending.filter(function(x){return x.quadrant===key && x.id>(st.answered||0)}));
+      cell.classList.toggle('active', openFor===key);
+      cell.querySelector('b').textContent=items.length;
+      if(changed('n-'+key,items.length)) pulse(cell.querySelector('b'),'bump');
+      var sig=JSON.stringify([items,st.phase]); if(cell.dataset.sig===sig) return; cell.dataset.sig=sig;
+      var old=cell.querySelector('ul, .empty'), node;
+      if(!items.length){ node=el('p','empty', st.phase==='map'?'לחצו כדי לפתוח את השאלה':'עוד לא הגענו לכאן'); }
+      else{
+        node=el('ul');
+        items.forEach(function(it){
+          var li=el('li', it.pending?'pending':(it.new?'new':'')), k=key+'|'+(it.pending?'p'+it.n:(it.text||''));
+          if(!seen[k]){ seen[k]=1; if(!first) li.classList.add('enter'); }
+          li.appendChild(document.createTextNode(it.text||''));
+          li.appendChild(el('span','hyp','השערה'));
+          if(it.conf) li.appendChild(el('span','conf',it.conf+'/5'));
+          var by=[it.by,it.basis].filter(Boolean).join(' · ');
+          if(by||it.pending){ var b=el('span','by',by); if(it.pending){ b.appendChild(el('span','spinner')); } li.appendChild(b); }
+          node.appendChild(li);
+        });
+      }
+      if(old.dataset&&old.dataset.fit&&node.tagName==='UL'){ node.dataset.fit=old.dataset.fit; node.style.setProperty('--fit',old.dataset.fit); }
+      old.replaceWith(node);
+    });
+    fit(); renderFinish();
+    var open=st.open||[];
+    if($('open').hidden===!!open.length){ $('open').hidden=!open.length; }
+    var osig=JSON.stringify(open); var ol=$('open-list'); if(ol.dataset.sig===osig){ setText($('updated'),st.updated?'עודכן '+st.updated:'','flash'); first=false; return; } ol.dataset.sig=osig; ol.textContent='';
+    open.forEach(function(t){var li=el('li',null,t), k='open|'+t; if(!seen[k]){seen[k]=1; if(!first) li.classList.add('enter')} ol.appendChild(li)});
+    setText($('updated'),st.updated?'עודכן '+st.updated:'','flash');
+    first=false;
+  }
+
+  var INTRO={
+    title:'בונים פרסונה ומפת אמפתיה',
+    goal:'המטרה: לנסח יחד השערה מובנית על האדם שעבורו אנחנו מעצבים — כדי לצאת ולבדוק אותה בשטח, לא כדי לקבוע עובדות.',
+    steps:['כמה שאלות כלליות: מי האדם, ומה הוא מנסה להשיג באמת.',
+           'ארבעה רבעים: מה הפרסונה אומרת, חושבת, מרגישה ועושה. לוחצים על רבע, והשאלה שלו נפתחת.',
+           'התוכן שלכם. הסוכן שואל, מאתגר ומארגן — ולא ממציא ולא עונה בשם הפרסונה.',
+           'כל פריט על הלוח מסומן כהשערה, עם מי אמר ועל מה זה נשען.',
+           'בסוף: כרטיס פרסונה, שממנו נגזרים ההנחות ומדריך הראיונות לשטח.'],
+    note:'כ־30 דקות לתת־צוות.'
+  };
+  function showIntro(){
+    var it=st.intro||{};
+    $('intro-title').textContent=it.title||INTRO.title;
+    $('intro-goal').textContent=it.goal||INTRO.goal;
+    $('intro-note').textContent=it.note||INTRO.note;
+    var ol=$('intro-steps'); ol.textContent='';
+    (it.steps||INTRO.steps).forEach(function(t){ol.appendChild(el('li',null,t))});
+    $('intro').hidden=false;
+  }
+  function hideIntro(){
+    var v=$('intro'); if(v.hidden) return;
+    v.classList.add('closing'); setTimeout(function(){ v.hidden=true; v.classList.remove('closing'); $('intro-pop').classList.remove('busy') },180);
+  }
+  $('start').addEventListener('click',function(){
+    $('intro-pop').classList.add('busy'); busy=true;
+    fetch('/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:'start',who:'',text:''})})
+      .then(function(r){return r.json()}).then(function(d){ sentId=d.id })
+      .catch(function(){ busy=false; $('intro-pop').classList.remove('busy') });
+  });
+
+  // סיום: הסוכן מדווח התקדמות ב-state.finish.steps ([{text, status: done|doing|todo}]) ואת התוצר ב-state.result ({html, md, title}).
+  var DEFAULT_STEPS=['כותב את כרטיס הפרסונה','בודק שהכרטיס נאמן למה שנאמר','מפיק את התצוגה החזותית'];
+  var shownResult=null, finishing=false, dismissed=false;
+  function renderFinish(){
+    var fin=st.finish, res=st.result;
+    $('done').hidden=!(st.phase==='map' && (!fin||dismissed) && !finishing);
+    var ready=!!(res&&res.html), show=(!!fin || finishing) && !dismissed;
+    if(show){
+      var steps=(fin&&fin.steps)||DEFAULT_STEPS.map(function(t,i){return {text:t,status:i?'todo':'doing'}});
+      var sig=JSON.stringify(steps), ul=$('steps');
+      if(ul.dataset.sig!==sig){
+        ul.dataset.sig=sig; ul.textContent='';
+        steps.forEach(function(sp){
+          var li=el('li',sp.status||'todo'), m=el('span','mark', sp.status==='done'?'✓':'');
+          if(sp.status==='doing'){ m.textContent=''; m.appendChild(el('span','spinner')); }
+          li.appendChild(m); li.appendChild(el('span',null,sp.text)); ul.appendChild(li);
+        });
+      }
+      $('finish').hidden=false;
+    } else if(!$('finish').hidden){
+      var v=$('finish'); v.classList.add('closing'); setTimeout(function(){ v.hidden=true; v.classList.remove('closing') },180);
+    }
+    // התוצר עצמו נפתח בלשונית משלו (הסוכן פותח את הקובץ; כאן רק קישור אליו). לא מוטמע בלוח.
+    $('ready').hidden=!ready; $('ready-note').hidden=!ready;
+    if(ready&&res.html!==shownResult){
+      shownResult=res.html; finishing=false;
+      var enc=function(pth){return '/out/'+pth.split('/').map(encodeURIComponent).join('/')};
+      $('result-open').href=enc(res.html);
+      if(res.md){ $('result-md').hidden=false; $('result-md').href=enc(res.md); }
+    }
+  }
+  $('done').addEventListener('click',function(){
+    if(busy) return;
+    finishing=true; dismissed=false; hide(); renderFinish();
+    fetch('/answer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({kind:'finish',who:$('who').value,text:''})})
+      .catch(function(){ finishing=false; renderFinish(); $('updated').textContent='השליחה נכשלה — נסו שוב' });
+  });
+  $('result-back').addEventListener('click',function(){ dismissed=true; renderFinish() });
+
+  // אפשרויות הבסיס לכל רבע. הסוכן יכול להחליף אותן ב-state.basis_options.
+  var BASIS={
+    says:['שמענו ממנה','שמענו מאחרים','משוער'],
+    thinks:['היא אמרה לנו','פרשנות שלנו','השערה'],
+    feels:['היא אמרה לנו','פרשנות שלנו','השערה'],
+    does:['ראינו בעצמנו','סיפרו לנו','השערה']
+  };
+  function setBasis(target){
+    var box=$('basis'), on=target!=='general';
+    box.hidden=!on; box.classList.remove('missing'); $('basis-text').value='';
+    var wrap=$('basis-opts'); wrap.textContent='';
+    if(!on) return;
+    var opts=((st.basis_options||{})[target])||BASIS[target];
+    opts.forEach(function(t,i){
+      var l=el('label'), r=el('input'); r.type='radio'; r.name='basis'; r.value=t; r.id='basis-'+i;
+      r.addEventListener('change',function(){ box.classList.remove('missing') });
+      l.appendChild(r); l.appendChild(document.createTextNode(t)); wrap.appendChild(l);
+    });
+  }
+  function pickedBasis(){ var r=document.querySelector('input[name=basis]:checked'); return r?r.value:''; }
+
+  // target: 'general' או שם של רבע
+  function show(target){
+    var q, tag;
+    if(target==='general'){ q=st.question||{}; tag='שאלה כללית'; }
+    else { q=(st.quadrant_questions||{})[target]||{}; tag='הרבע: '+NAMES[target]; }
+    if(typeof q==='string') q={text:q};
+    if(!q.text) return;
+    openFor=target;
+    setText($('pop-tag'),tag); setText($('pop-q'),q.text); setText($('pop-to'),q.to||'');
+    setBasis(target);
+    $('veil').classList.remove('closing'); $('veil').hidden=false;
+    setBusy(false);
+    render();
+    $('text').focus();
+  }
+  function hide(){
+    var v=$('veil'); if(v.hidden) return;
+    v.classList.add('closing'); openFor=null; render();
+    setTimeout(function(){ v.hidden=true; v.classList.remove('closing') },180);
+  }
+  function setBusy(b){ busy=b; $('pop').classList.toggle('busy',b); }
+
+  function poll(){
+    fetch('/state',{cache:'no-store'}).then(function(r){return r.json()}).then(function(d){
+      // גרסה חדשה של הדף עצמו — נטען מחדש לבד, בלי לבקש רענון ידני
+      if(window.__page===undefined) window.__page=d.page; else if(d.page!==window.__page && $('veil').hidden){ location.reload(); return; }
+      if(d.state_raw===lastRaw) return;
+      var next; try{next=JSON.parse(d.state_raw)}catch(e){return}   // הסוכן באמצע כתיבה
+      lastRaw=d.state_raw; st=next; render();
+      var done=(st.answered||0)>=sentId;
+      if(st.phase==='intro' && !busy && $('intro').hidden) showIntro();
+      if(st.phase!=='intro') hideIntro();
+      if(location.hash && !window.__hashDone && st.phase==='map'){ window.__hashDone=1; var h=location.hash.slice(1); if(NAMES[h]) show(h); }
+      if(busy && done){ setBusy(false); hide(); }
+      // שלב כללי: שאלה חדשה נפתחת לבד. שלב המפה: המנטור פותח בלחיצה על רבע.
+      if(!busy && st.phase!=='map' && st.phase!=='intro' && st.question && st.question.text && st.question.text!==shownGeneral){
+        shownGeneral=st.question.text; setTimeout(function(){ show('general') }, $('veil').hidden?0:220);
+      }
+    }).catch(function(){ $('updated').textContent='אין חיבור לשרת המקומי' });
+  }
+
+  // רבע שמתמלא: קודם מקטינים מעט את הטקסט (עד 80%), אחר כך עוברים לשני טורים, ורק אז ממשיכים להקטין (עד 55%).
+  function fit(){
+    document.querySelectorAll('.cell ul').forEach(function(ul){
+      function over(){ return ul.scrollHeight>ul.clientHeight+1 }
+      function shrink(f,min){ ul.style.setProperty('--fit',f); while(over() && f>min){ f=Math.round((f-0.05)*100)/100; ul.style.setProperty('--fit',f); } return f; }
+      ul.style.transition='none'; ul.classList.remove('cols2'); ul.classList.add('measuring');   // מודדים מלמעלה: גלישה כלפי מעלה לא נספרת
+      var f=shrink(1,0.8);
+      if(over()){ ul.classList.add('cols2'); f=shrink(1,0.55); }
+      ul.classList.remove('measuring');
+      var prevFit=parseFloat(ul.dataset.fit||'1'); ul.dataset.fit=f;
+      if(prevFit!==f){ ul.style.setProperty('--fit',prevFit); void ul.offsetWidth; ul.style.transition=''; ul.style.setProperty('--fit',f); }
+      else ul.style.transition='';
+    });
+  }
+  window.addEventListener('resize',fit);
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+  var pn=0;
+  // רבע: הפריט מופיע על הלוח מיד והחלון נסגר — לא מחכים לסוכן. הסוכן מעבד ברקע ומחליף את הפריט בגרסה שלו.
+  function sendQuadrant(kind,text,bk,bt){
+    var q=openFor, who=$('who').value, item=null;
+    if(kind==='answer'){ item={pending:true,n:++pn,id:Infinity,quadrant:q,text:text,by:who,basis:[bk,bt].filter(Boolean).join(' — ')}; pending.push(item); }
+    $('text').value=''; hide();
+    fetch('/answer',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({who:who,text:text,kind:kind,quadrant:q,basis_kind:bk,basis_text:bt})})
+      .then(function(r){return r.json()}).then(function(d){ if(item){ item.id=d.id; render(); } })
+      .catch(function(){ if(item){ pending.splice(pending.indexOf(item),1); render(); } $('updated').textContent='השליחה נכשלה — נסו שוב' });
+  }
+
+  function send(kind){
+    var text=$('text').value.trim();
+    if(kind==='answer' && !text) return;
+    var bk='', bt='';
+    if(openFor && openFor!=='general' && kind==='answer'){
+      bk=pickedBasis(); bt=$('basis-text').value.trim();
+      if(!bk){ pulse($('basis'),'missing'); return; }   // בלי בסיס הפריט לא נשלח
+    }
+    if(openFor && openFor!=='general'){ sendQuadrant(kind,text,bk,bt); return; }
+    setBusy(true);
+    fetch('/answer',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({who:$('who').value,text:text,kind:kind,quadrant:openFor==='general'?null:openFor,basis_kind:bk,basis_text:bt})})
+      .then(function(r){return r.json()}).then(function(d){ sentId=d.id; $('text').value='' })
+      .catch(function(){ setBusy(false); $('updated').textContent='השליחה נכשלה — נסו שוב' });
+  }
+
+  $('pop').addEventListener('submit',function(e){e.preventDefault(); send('answer')});
+  $('skip').addEventListener('click',function(){send('skip')});
+  $('close').addEventListener('click',hide);
+  $('text').addEventListener('keydown',function(e){ if(e.key==='Enter'&&(e.metaKey||e.ctrlKey)){e.preventDefault(); send('answer')} });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'&&!busy&&!$('veil').hidden) hide(); });
+  document.querySelectorAll('.cell').forEach(function(cell){
+    function go(){ if(st.phase==='map'&&!busy) show(cell.dataset.q) }
+    cell.addEventListener('click',go);
+    cell.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){e.preventDefault(); go()} });
+  });
+  $('hub').addEventListener('click',function(){ if(!busy) show('general') });
+  $('now').addEventListener('click',function(){ if(!busy&&st.phase!=='map') show('general') });
+  try{ $('who').value=localStorage.getItem('who')||''; $('who').addEventListener('change',function(){localStorage.setItem('who',$('who').value)}) }catch(e){}
+  poll(); setInterval(poll,1000);
+})();
+</script>
+</body>
+</html>
