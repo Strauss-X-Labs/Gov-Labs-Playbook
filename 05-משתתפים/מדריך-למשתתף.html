@@ -1,0 +1,323 @@
+<meta charset="utf-8">
+<title>המדריך למשתתף ב-Gov-Labs</title>
+<!--
+  המדריך למשתתף — מקור הדף. הדף המפורסם: https://claude.ai/artifact/CDBAVWZZk2kdDNsAYnCA61
+  עדכון: עורכים כאן, מעתיקים גם ל-תבנית-מיזם/מדריך-למשתתף.html (שני העותקים זהים), ומפרסמים מחדש לאותו קישור.
+-->
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&family=IBM+Plex+Sans+Hebrew:wght@400;500;600&display=swap">
+<style>
+/* פריסה: תוכן עניינים צדדי ודביק + עמודת קריאה; ציר המסע הוא הרגע החזותי היחיד. אותה שפה כמו המדריך למנטור */
+:root {
+  --paper: #F6F7F4;
+  --surface: #FFFFFF;
+  --ink: #1D2A30;
+  --ink-soft: #52616A;
+  --rule: #D8DDD8;
+  --accent: #0F6B63;
+  --accent-soft: #E3F0EC;
+  --loop: #9A5B12;
+  --loop-soft: #FBF1E2;
+  --serif: "Frank Ruhl Libre", "David", "Times New Roman", serif;
+  --sans: "IBM Plex Sans Hebrew", "Segoe UI", "Arial Hebrew", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #12181A; --surface: #1A2225; --ink: #E4EBE8; --ink-soft: #A2B0AC; --rule: #2E3A3D;
+    --accent: #5CC2B5; --accent-soft: #173330; --loop: #E3AE63; --loop-soft: #33281A;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #12181A; --surface: #1A2225; --ink: #E4EBE8; --ink-soft: #A2B0AC; --rule: #2E3A3D;
+  --accent: #5CC2B5; --accent-soft: #173330; --loop: #E3AE63; --loop-soft: #33281A;
+}
+
+body { background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.75; margin: 0; }
+.page {
+  direction: rtl; max-width: 1120px; margin: 0 auto;
+  padding-inline: 20px; padding-block: 40px 80px;
+  display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 56px; align-items: start;
+}
+@media (max-width: 860px) {
+  .page { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 24px 64px; }
+  .toc { position: static !important; }
+}
+
+.toc { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 24px); font-size: 15px; border-inline-start: 2px solid var(--rule); padding-inline-start: 16px; }
+.toc h2 { font-family: var(--sans); font-size: 13px; letter-spacing: .04em; color: var(--ink-soft); margin: 0 0 8px; font-weight: 600; }
+.toc ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover, .toc a:focus-visible { color: var(--accent); text-decoration: underline; }
+.toc .sub { padding-inline-start: 14px; color: var(--ink-soft); font-size: 14px; }
+
+main { min-width: 0; max-width: 70ch; }
+header.hero { margin-bottom: 8px; }
+.eyebrow { font-size: 13px; letter-spacing: .04em; color: var(--accent); font-weight: 600; margin: 0 0 8px; }
+h1 { font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 5.4vw, 50px); line-height: 1.15; margin: 0 0 16px; text-wrap: balance; }
+.lead { font-size: 19px; color: var(--ink-soft); margin: 0; }
+
+section { margin-top: 64px; scroll-margin-top: 24px; }
+h2 { font-family: var(--serif); font-weight: 700; font-size: 30px; line-height: 1.3; margin: 0 0 12px; text-wrap: balance; }
+p { margin: 0 0 14px; }
+a { color: var(--accent); }
+.quote { font-family: var(--serif); font-size: 22px; line-height: 1.5; color: var(--accent); margin: 20px 0; padding-inline-start: 18px; border-inline-start: 3px solid var(--accent); text-wrap: balance; }
+
+/* שלושה דברים שלוקחים */
+.gains { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+@media (max-width: 700px) { .gains { grid-template-columns: minmax(0, 1fr); } }
+.gains > div { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 14px 16px; }
+.gains h3 { margin: 0 0 4px; font-size: 16px; color: var(--accent); }
+.gains p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+
+/* ציר המסע */
+.journey { margin: 28px 0 8px; }
+.phases, .track { display: grid; grid-template-columns: 1fr .8fr 1fr 1fr .8fr 1fr 1fr 1fr 1fr 1fr; column-gap: 6px; }
+.phases { margin-bottom: 10px; }
+.phase { font-size: 12.5px; font-weight: 600; letter-spacing: .03em; color: var(--ink-soft); border-bottom: 2px solid var(--rule); padding-bottom: 4px; text-align: center; }
+.phase.p1 { grid-column: 1 / 2; } .phase.p2 { grid-column: 3 / 5; } .phase.p3 { grid-column: 6 / 7; } .phase.p4 { grid-column: 7 / 11; }
+.track { list-style: none; margin: 0; padding: 0; align-items: start; }
+.track li { display: grid; justify-items: center; text-align: center; gap: 6px; min-width: 0; }
+.track a { text-decoration: none; color: var(--ink); display: grid; justify-items: center; gap: 6px; }
+.track .n { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-family: var(--serif); font-size: 19px; color: var(--accent); border: 1.5px solid var(--accent); background: var(--surface); }
+.track a:hover .n, .track a:focus-visible .n { background: var(--accent); color: var(--paper); }
+.track .lbl { font-size: 13px; line-height: 1.35; font-weight: 500; }
+.track li.loop { align-self: stretch; justify-items: stretch; }
+.track li.loop a { justify-items: stretch; }
+.track .dash { height: 40px; display: grid; place-items: center; }
+.track .dash::before { content: ""; width: 100%; border-top: 2px dashed var(--loop); }
+.track li.loop .lbl { color: var(--loop); font-size: 12.5px; }
+@media (max-width: 600px) {
+  .phases { display: none; }
+  .track { grid-template-columns: minmax(0, 1fr); row-gap: 4px; }
+  .track li, .track a, .track li.loop a { justify-items: start; text-align: start; grid-template-columns: 40px minmax(0, 1fr); align-items: center; gap: 12px; }
+  .track a { display: grid; }
+  .track .dash { width: 40px; height: 22px; }
+  .track .dash::before { width: 0; height: 100%; border-top: 0; border-inline-start: 2px dashed var(--loop); }
+}
+
+/* עבודה עם AI */
+ul.rules { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 14px; }
+ul.rules li { padding-inline-start: 18px; border-inline-start: 2px solid var(--rule); }
+ul.rules strong { display: block; font-size: 17px; }
+.note { border-inline-start: 4px solid var(--accent); background: var(--accent-soft); padding: 12px 16px; border-radius: 8px 0 0 8px; margin: 18px 0; font-size: 16px; }
+
+/* תפקידים */
+.roles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 18px 0; }
+@media (max-width: 700px) { .roles { grid-template-columns: minmax(0, 1fr); } }
+.roles > div { border-top: 3px solid var(--accent); padding-top: 10px; }
+.roles h3 { margin: 0 0 4px; font-size: 16px; }
+.roles p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--ink-soft); }
+
+/* המפגשים */
+.day { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 4px 18px; margin-top: 36px; scroll-margin-top: 24px; }
+.day .num { font-family: var(--serif); font-size: 44px; line-height: 1; color: var(--accent); grid-row: span 2; padding-top: 4px; }
+.day h3 { font-family: var(--serif); font-size: 23px; font-weight: 700; margin: 0; line-height: 1.35; text-wrap: balance; }
+.day .meta { font-size: 13.5px; color: var(--ink-soft); font-weight: 500; }
+.day p { grid-column: 2; margin: 6px 0 0; }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: 999px; padding: 1px 10px; margin-inline-start: 8px; vertical-align: 2px; }
+.loopcard { margin: 32px 0 0; margin-inline-start: 74px; border: 1.5px dashed var(--loop); background: var(--loop-soft); border-radius: 10px; padding: 12px 16px; scroll-margin-top: 24px; }
+.loopcard h3 { margin: 0 0 4px; font-size: 16px; color: var(--loop); }
+.loopcard p { margin: 0; font-size: 16px; }
+@media (max-width: 520px) {
+  .day { grid-template-columns: 40px minmax(0, 1fr); gap: 2px 12px; }
+  .day .num { font-size: 34px; }
+  .loopcard { margin-inline-start: 0; }
+}
+
+footer { margin-top: 72px; padding-top: 16px; border-top: 1px solid var(--rule); color: var(--ink-soft); font-size: 14px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+
+<div class="page" dir="rtl" lang="he">
+  <nav class="toc" aria-label="תוכן">
+    <h2>במדריך</h2>
+    <ol>
+      <li><a href="#about">מה זו Gov-Labs</a></li>
+      <li><a href="#journey">איך התוכנית בנויה</a></li>
+      <li><a href="#ai">איך עובדים עם AI</a></li>
+      <li><a href="#team">הצוות שלכם</a></li>
+      <li><a href="#days">שמונת המפגשים</a></li>
+      <li class="sub"><a href="#day1">1 · Unboxing</a></li>
+      <li class="sub"><a href="#day2">2 · חשיבה עיצובית א׳</a></li>
+      <li class="sub"><a href="#day3">3 · חשיבה עיצובית ב׳</a></li>
+      <li class="sub"><a href="#day4">4 · Lean Canvas</a></li>
+      <li class="sub"><a href="#day5">5 · Design Sprint</a></li>
+      <li class="sub"><a href="#day6">6 · ארכיטקטורה ובקלוג</a></li>
+      <li class="sub"><a href="#day7">7 · מפת דרכים ותקציב</a></li>
+      <li class="sub"><a href="#day8">8 · סטוריטלינג ופיץ'</a></li>
+      <li><a href="#after">אחרי התוכנית</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <p class="eyebrow">Gov-Labs · למשתתפי התוכנית</p>
+      <h1>המדריך למשתתף</h1>
+      <p class="lead">שמונה מפגשים, שתי יציאות לשטח, וצוות אחד שהופך אתגר ציבורי מורכב למוצר דיגיטלי עובד. כאן תמצאו מה מחכה לכם, איך עובדים, ומה קורה בכל מפגש.</p>
+    </header>
+
+    <section id="about">
+      <h2>מה זו Gov-Labs</h2>
+      <p>Gov-Labs הוא מאיץ החדשנות הדיגיטלית של ממשלת ישראל, הפועל תחת מערך הדיגיטל הלאומי. המטרה שלו פשוטה לנסח וקשה לבצע: לקחת אתגר ציבורי מורכב ולהפוך אותו למוצר דיגיטלי עובד, שמשפר את השירות לאזרח ואת העבודה בממשלה.</p>
+      <p>התוכנית עובדת בגישת AI Mindset.</p>
+      <p class="quote">AI אינו המטרה. הוא מה שמאפשר לשנות את היעד, ולהגיע אליו מהר יותר ובדרך אחרת.</p>
+      <p>מה תיקחו מהתוכנית:</p>
+      <div class="gains">
+        <div>
+          <h3>שיטת עבודה</h3>
+          <p>איך גופי מוצר מודרניים עובדים: צוות לצד סוכני AI, בדיקת הנחות מהירה בשטח, המחשת קונספט. חוזרים למשרד כסוכני שינוי.</p>
+        </div>
+        <div>
+          <h3>דרך חשיבה</h3>
+          <p>לתכנן את השירות מחדש מתוך מה שאפשרי היום, ולא מתוך המגבלות של אתמול.</p>
+        </div>
+        <div>
+          <h3>מוצר שממשיך לחיות</h3>
+          <p>הידע של המיזם והסוכנים שעבדו איתכם נשארים עם הצוות במשרד גם אחרי שהתוכנית נגמרת.</p>
+        </div>
+      </div>
+      <p>זו לא האקתון של 24 שעות. לא קופצים לפתרון לפני שמבינים את הבעיה, ולא מדביקים צ'אטבוט על טופס ישן. נפגשים עם משתמשים אמיתיים כבר בשבועות הראשונים, ומחזיקים מוצר עובד ביד מוקדם יותר.</p>
+    </section>
+
+    <section id="journey">
+      <h2>איך התוכנית בנויה</h2>
+      <p>התוכנית בנויה משמונה מפגשי עבודה מלאים. מה שקורה בין המפגשים הוא חלק מהתוכנית ולא הפסקה: פעמיים יוצאים לשטח לשבועיים, ופעם בשבוע הצוות נפגש לפגישה קבועה. לאורך כל הדרך מתקדמים בשלושה צירים במקביל: המוצרי, העסקי והטכנולוגי.</p>
+      <div class="journey" role="group" aria-label="ציר המסע">
+        <div class="phases" aria-hidden="true">
+          <span class="phase p1">חקר</span>
+          <span class="phase p2">יצירה</span>
+          <span class="phase p3">אסטרטגיה</span>
+          <span class="phase p4">מאסטרטגיה למוצר</span>
+        </div>
+        <ol class="track">
+          <li><a href="#day1"><span class="n">1</span><span class="lbl">Unboxing</span></a></li>
+          <li class="loop"><a href="#loop1"><span class="dash" aria-hidden="true"></span><span class="lbl">שבועיים בשטח</span></a></li>
+          <li><a href="#day2"><span class="n">2</span><span class="lbl">חשיבה עיצובית א׳</span></a></li>
+          <li><a href="#day3"><span class="n">3</span><span class="lbl">חשיבה עיצובית ב׳</span></a></li>
+          <li class="loop"><a href="#loop2"><span class="dash" aria-hidden="true"></span><span class="lbl">שבועיים בשטח</span></a></li>
+          <li><a href="#day4"><span class="n">4</span><span class="lbl">Lean Canvas</span></a></li>
+          <li><a href="#day5"><span class="n">5</span><span class="lbl">Design Sprint</span></a></li>
+          <li><a href="#day6"><span class="n">6</span><span class="lbl">ארכיטקטורה</span></a></li>
+          <li><a href="#day7"><span class="n">7</span><span class="lbl">מפת דרכים</span></a></li>
+          <li><a href="#day8"><span class="n">8</span><span class="lbl">פיץ'</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="ai">
+      <h2>איך עובדים עם AI</h2>
+      <p>בכל מפגש תעבדו לצד סוכני AI. הם חלק מהצוות, וכמה כללים מגדירים את העבודה איתם:</p>
+      <ul class="rules">
+        <li><strong>קודם אתם חושבים.</strong> לפני שפונים ל-AI, מבינים מה אתם חושבים בעצמכם. חקר הכאב, האמפתיה, הגדרת הבעיה והרעיונות הראשונים מתחילים אצלכם, ורק אחר כך מקבלים הרחבה ואתגור.</li>
+        <li><strong>ה-AI מרחיב ומאתגר. אתם מחליטים.</strong> הוא מציע כיוונים, שואל "למה?" ומציף את מה שפספסתם. הוא לא חושב במקומכם ולא מחליט בשבילכם.</li>
+        <li><strong>המציאות מכריעה.</strong> AI יכול לייצר מאה השערות מבריקות. רק אנשים אמיתיים בשטח מאשרים אותן או מפריכים אותן.</li>
+        <li><strong>בלי העתק-הדבק.</strong> כל פלט עובר דיון וניסוח שלכם. מותר, ואפילו רצוי, לדחות הצעה של סוכן, כל עוד אתם מנמקים.</li>
+        <li><strong>השערות, לא עובדות.</strong> על פרסונה או על בעיה מנסחים השערות, מטילים בהן ספק ויוצאים לבדוק.</li>
+      </ul>
+      <p class="note">הלמידה שלכם היא חלק מהמטרה. לכן יש רגעים שבהם ה-AI מחכה בצד, בכוונה.</p>
+    </section>
+
+    <section id="team">
+      <h2>הצוות שלכם</h2>
+      <p>כל צוות מקבל מנטור שמלווה אותו לאורך כל התוכנית. המנטור מכוון, שואל ומאתגר, ולא עושה את העבודה במקומכם. במפגש הראשון ממנים בצוות שלושה תפקידים קבועים:</p>
+      <div class="roles">
+        <div>
+          <h3>מפעיל ה-AI</h3>
+          <p>מפעיל את הסוכנים ומזין להם את החומרים של הצוות.</p>
+        </div>
+        <div>
+          <h3>נציג טכנולוגי</h3>
+          <p>מכיר את המערכות במשרד ויודע מה כבר קיים.</p>
+        </div>
+        <div>
+          <h3>נציג מוצרי</h3>
+          <p>מחזיק את נקודת המבט של מי שמשתמש בשירות.</p>
+        </div>
+      </div>
+      <p>שני הנציגים מחזיקים, מהמפגש הרביעי, את מסמך הדרישות של המוצר בשם הצוות.</p>
+      <p>כל הידע של המיזם נשמר במאגר משותף של הצוות, ״המוח השני״: תמלולי ראיונות, החלטות ותוצרים. ממנו הסוכנים קוראים ואליו הם כותבים, והוא נשאר אצלכם בסוף התוכנית.</p>
+    </section>
+
+    <section id="days">
+      <h2>שמונת המפגשים</h2>
+
+      <article class="day" id="day1">
+        <span class="num" aria-hidden="true">1</span>
+        <h3>Unboxing <span class="chip">חקר</span></h3>
+        <span class="meta">פתיחה, התנעה וחקר מרחב האתגר</span>
+        <p>המפגש הראשון פותח את הדרך. מגיעים כמו שאתם, בלי שיעורי בית, עם האתגר שהמשרד הביא. מתחילים בהיכרות ובהרצאה על יזמות בעידן ה-AI, ועוברים לשיח צוותי: למה זה בכלל אתגר, איפה הוא פוגש אתכם ואת האזרחים, ומה ייחשב הצלחה. בהמשך היום, בשני תתי-צוותים, בונים שתי פרסונות של אנשים שאתם מניחים שהשירות פוגש, ומחלצים את ההנחות שכדאי להטיל בהן ספק. מהן נגזר מדריך הראיונות לשטח. בסוף היום ממנים את שלושת התפקידים בצוות, ומציגים במליאה את האתגר, הפרסונות ושאלות המחקר.</p>
+      </article>
+
+      <aside class="loopcard" id="loop1">
+        <h3>לולאת למידה · שבועיים בשטח</h3>
+        <p>בין המפגש הראשון לשני יוצאים לשטח. כל אחד בצוות, כולל אנשי הטכנולוגיה והתקציב, מקיים לפחות ראיון עומק אחד, ובסך הכול לפחות 5–6 ראיונות. מקליטים, מתמללים ומכניסים למוח השני. באמצע הדרך נפגשים לפגישת צוות, ומגיעים למפגש השני עם מרחב אתגר מלא ומבוסס ראיות.</p>
+      </aside>
+
+      <article class="day" id="day2">
+        <span class="num" aria-hidden="true">2</span>
+        <h3>חשיבה עיצובית א׳ <span class="chip">יצירה</span></h3>
+        <span class="meta">המסע הקיים ובעיית השורש</span>
+        <p>היום הראשון מתוך שניים רצופים של חשיבה עיצובית. ממפים בעצמכם, בלי AI, את המסע שהמשתמש עובר היום, כדי לחוות את הכאב מבפנים. אחר כך סוכן עוזר לזהות דפוסים ונקודות עיוורון במסע. פותחים מגוון אזורי הזדמנות לפני שמצמצמים, צוללים לשורש הבעיה בשיטת 5 Whys, ובוחנים אם היא באמת שווה פתרון. היום נגמר בבעיה מנוסחת היטב ובשאלות "איך נוכל…" שמכינות את יום הרעיונות. אין שיעורי בית, כי המפגש הבא הוא למחרת.</p>
+      </article>
+
+      <article class="day" id="day3">
+        <span class="num" aria-hidden="true">3</span>
+        <h3>חשיבה עיצובית ב׳ <span class="chip">יצירה</span></h3>
+        <span class="meta">רעיונות, הצעת ערך ובדיקת קונספט</span>
+        <p>יום הרעיונות. מתחילים מפירוק התהליך הקיים ובנייתו מחדש מאפס, ושואלים מה אפשר לעשות רק עכשיו, בזכות AI, שלא היה אפשרי קודם. אתם מייצרים רעיונות והסוכן מרחיב אותם. מגבשים הצעת ערך, וסוכן מאתגר אותה ובודק כמה היא חדשנית באמת. מציגים במליאה ומקבלים טיפים מהצוותים האחרים, ובסוף היום בונים המחשה של הקונספט, כמו דף נחיתה, שאלון או מוקאפ, שתיקח אתכם לשטח.</p>
+      </article>
+
+      <aside class="loopcard" id="loop2">
+        <h3>לולאת תיקוף · שבועיים בשטח</h3>
+        <p>שבועיים של בדיקת הקונספט מול משתמשים אמיתיים. מפיצים את ההמחשה ללפחות 30 משתמשי קצה, מודדים מה הם עושים בפועל, כמה לחצו וכמה השלימו, ולא רק מה הם אומרים, ומקיימים כמה שיחות עומק קצרות עם מי שהתנסו. התוצאות נכנסות למוח השני והן הבסיס למפגש הרביעי.</p>
+      </aside>
+
+      <article class="day" id="day4">
+        <span class="num" aria-hidden="true">4</span>
+        <h3>Lean Canvas <span class="chip">אסטרטגיה</span></h3>
+        <span class="meta">המצפן העסקי החי · אמצע התוכנית</span>
+        <p>היום שבו סוגרים את שלב התפיסה. לא ממלאים קנבס מדף ריק: הסוכן כבר עבר על כל מה שנאסף ומגיש טיוטה ראשונה, עם הראיות, ההנחות והפערים. במהלך היום מחדדים, מאתגרים, מבססים ומכריעים, קובייה אחר קובייה. בחלקים שבהם כבר יש ידע הסוכן מציע ראשון. בחלקים שדורשים שיקול דעת אתם מנסחים עמדה, והוא נכנס רק אחר כך כמאתגר. אחרי הצגות וטיפים מהצוותים מקבעים גרסה מוסכמת אחת, ומגדירים שלושה ערכי מוצר שילוו את ההמשך. אחרי היום, פורום קטן של הארכיטקט, המנטור ושני הנציגים בונה מהקנבס תמונה ראשונה של מה השירות צריך לדעת לעשות.</p>
+      </article>
+
+      <article class="day" id="day5">
+        <span class="num" aria-hidden="true">5</span>
+        <h3>Design Sprint <span class="chip">מוצר</span></h3>
+        <span class="meta">חיתוך ה-MVP ומוצר עובד</span>
+        <p>מכאן עוברים ממסמכים למוצר. חותכים את ה-MVP בחדות על בסיס ממצאי השטח והקנבס, ומתרגמים את ערכי המוצר לזרימת משתמש מקצה לקצה. בליווי איש עיצוב בונים באותו יום מוצר עובד על מערכת העיצוב הממשלתית, ולפחות חצי מקוד הממשק כבר מוכן. בלי שבועיים של המתנה לסטודיו. אחרי היום הנציגים מעדכנים את מסמך הדרישות, והקבוצה מאשרת אותו בפגישה השבועית.</p>
+      </article>
+
+      <article class="day" id="day6">
+        <span class="num" aria-hidden="true">6</span>
+        <h3>ארכיטקטורה ובקלוג <span class="chip">מוצר</span></h3>
+        <span class="meta">מבנה המערכת, אבטחה והיערכות לפיילוט</span>
+        <p>היום נפתח בהצגת הארכיטקטורה שהוכנה מראש, ומשם הוא יום של דיון והכרעה: איך המערכת בנויה, היכן פועלים הסוכנים, ואיך מגינים על המידע ועל הפרטיות בענן הממשלתי. אחר כך עוברים על רשימת המשימות לפיילוט, שנגזרת ממסמך הדרישות שאישרתם, וקובעים את סדר הבנייה. היום נגמר בהיערכות לפיילוט: תוכנית בדיקות, סביבת עבודה ומדדי הצלחה.</p>
+      </article>
+
+      <article class="day" id="day7">
+        <span class="num" aria-hidden="true">7</span>
+        <h3>מפת דרכים ותקציב <span class="chip">מוצר</span></h3>
+        <span class="meta">מהמאיץ לחיים במשרד</span>
+        <p>מתכננים איך המוצר עובר מהמאיץ לחיים במשרד. בונים מפת דרכים מדורגת, עד שנתיים קדימה, משלב ה-MVP ועד הטמעה רחבה. מחשבים כמה זה יעלה, כולל העלויות של AI והענן, וסוכן בתפקיד מנהל כספים ספקן מאתגר את התחזית. מסיימים עם קובץ שאלות ותשובות שמכין אתכם לשאלות הקשות של ההנהלה. לפני היום יש מפגש הכנה קצר אונליין.</p>
+      </article>
+
+      <article class="day" id="day8">
+        <span class="num" aria-hidden="true">8</span>
+        <h3>סטוריטלינג ופיץ' <span class="chip">מוצר</span></h3>
+        <span class="meta">מפגש הסיום</span>
+        <p>בונים את הסיפור של המיזם על בסיס הראיות שאספתם לאורך הדרך: ציטוטים מהראיונות, תוצאות בדיקת הקונספט והמוצר העובד. מחברים אותו לאימפקט הרחב ולמפת הדרכים, מכינים הדגמה חיה, ומתאמנים על הפיץ' מול סוכן שמגלם הנהלה ספקנית ושואל שאלות נוקבות. המפגש נגמר בהעברת המקל לצוות המשרדי, שממשיך לעבוד עם הסוכנים.</p>
+      </article>
+    </section>
+
+    <section id="after">
+      <h2>אחרי התוכנית</h2>
+      <p>ב-Demo Day מציגים את המיזם בפני הנהלות המשרדים וועדות ההיגוי. משם הפיילוט ממשיך במשרד, והמוח השני והסוכנים ממשיכים ללוות את הצוות. זה מה שהופך את Gov-Labs מאירוע לנכס.</p>
+    </section>
+
+    <footer>המדריך נגזר מהפלייבוק של Gov-Labs ומתעדכן איתו.</footer>
+  </main>
+</div>
