@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TEMPLATE: replace every [placeholder] with the persona's real content. Keep the structure, classes and <style> block unchanged. Design rules: ../references/PERSONA-DESIGN.md -->
+<title>פרסונה: [שם] ("[כינוי]") — [משפט מפתח שמתאר את הפרסונה]</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* ===== Design tokens — "Industrial spec sheet" ===== */
+  :root{
+    --ground:#E7E6E2;      /* concrete-gray page background */
+    --panel:#FFFFFF;       /* section panels */
+    --panel-sub:#F4F3EF;   /* empathy-map cells */
+    --ink:#1E2124;         /* charcoal: text, header band, rules, number tags */
+    --ink-2:#262A2E;       /* header meta cells */
+    --line-dark:#3A3E43;   /* lines inside the dark header */
+    --line:#E2E0DA;        /* lines on light panels */
+    --muted:#5A5E63;       /* labels on light */
+    --muted-dark:#B9B7B0;  /* labels on dark */
+    --dashed:#8E8C86;      /* placeholder borders */
+    --accent:#F2C230;      /* safety yellow — always with dark text */
+    --font:"IBM Plex Sans Hebrew", "Arial Hebrew", sans-serif;
+    --mono:"IBM Plex Mono", ui-monospace, monospace;
+    --radius:4px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--ground); color:var(--ink); font-family:var(--font); font-size:17px; line-height:1.6}
+  ul{margin:0; padding:0; list-style:none}
+  h1,h2,h3,p{margin:0}
+  .mono{font-family:var(--mono); direction:ltr; unicode-bidi:isolate}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 24px}
+
+  /* Warning bar */
+  .banner{background:var(--accent); color:var(--ink); font-weight:700; padding:10px 24px;
+    display:flex; align-items:center; justify-content:center; gap:10px; text-align:center; flex-wrap:wrap}
+
+  /* Dark header */
+  .hero{background:var(--ink); color:#F2F1ED}
+  .hero .wrap{padding-top:32px; padding-bottom:48px; display:flex; flex-direction:column; gap:32px}
+  .hero-top{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:14px;
+    color:var(--muted-dark); border-bottom:1px solid var(--line-dark); padding-bottom:16px}
+  .hero-top .hl{color:var(--accent)}
+  .hero-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:40px; align-items:center}
+  .hero figure{margin:0}
+  .hero img{display:block; width:100%; height:420px; object-fit:cover; object-position:50% 30%; border-radius:var(--radius); background:var(--ink-2)}
+  .hero figcaption{font-size:13px; color:var(--muted-dark); margin-top:10px}
+  .hero-text{display:flex; flex-direction:column; gap:20px}
+  .eyebrow{font-size:14px; color:var(--accent)}
+  h1{font-size:clamp(44px,7vw,76px); line-height:1; font-weight:700; color:#fff}
+  h1 .nick{color:var(--muted-dark); font-weight:500}
+  .tagline{font-size:26px; font-weight:500; line-height:1.35}
+  .meta{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line-dark);
+    border:1px solid var(--line-dark); border-radius:var(--radius); overflow:hidden}
+  .meta div{background:var(--ink-2); padding:12px 16px}
+  .meta .k{font-size:12px; color:var(--muted-dark)}
+  .meta .v{font-weight:700}
+
+  /* Body */
+  main.wrap{padding-top:40px; padding-bottom:96px; display:flex; flex-direction:column; gap:24px}
+  .row{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:24px}
+  .panel{background:var(--panel); border-top:4px solid var(--ink); border-radius:var(--radius);
+    padding:24px 28px; display:flex; flex-direction:column; gap:16px}
+  .sec-head{display:flex; align-items:center; gap:12px; flex-wrap:wrap}
+  .num{font-family:var(--mono); font-size:14px; background:var(--ink); color:#fff; padding:2px 8px; border-radius:2px}
+  .num.outline{background:none; color:var(--ink); border:1px solid var(--ink)}
+  h2{font-size:22px}
+  h2 .mono{font-size:14px; color:var(--muted); font-weight:500}
+
+  /* Field-level hypothesis mark — mirrors the marks in the MD card */
+  .hyp{display:inline-block; font-size:12px; font-weight:500; color:var(--muted); border:1px solid var(--muted);
+    border-radius:2px; padding:0 6px; margin-inline-start:6px; line-height:1.5; vertical-align:middle}
+
+  .kv{margin:0; display:flex; flex-direction:column}
+  .kv div{display:flex; gap:16px; padding:10px 0; border-bottom:1px solid var(--line)}
+  .kv div:last-child{border-bottom:0}
+  .kv dt{flex:0 0 90px; color:var(--muted); font-weight:500}
+  .kv dd{margin:0; font-weight:700}
+  .kv dd.normal{font-weight:400}
+
+  .checks{display:flex; flex-direction:column; gap:12px}
+  .checks li{display:flex; gap:12px; align-items:flex-start}
+  .checks svg{flex:none; margin-top:3px}
+
+  .empathy{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:16px}
+  .cell{background:var(--panel-sub); border-radius:var(--radius); padding:20px; display:flex; flex-direction:column; gap:12px}
+  .cell-head{display:flex; justify-content:space-between; align-items:center; border-bottom:2px solid var(--ink); padding-bottom:8px}
+  .cell h3{font-size:20px}
+  .cell-head .mono{font-size:12px; color:var(--muted)}
+  .cell ul{display:flex; flex-direction:column; gap:10px; font-size:16px}
+  .cell .key{font-weight:700}
+
+  .pains{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:1px; background:var(--line); border:1px solid var(--line)}
+  .pains div{background:var(--panel); padding:18px 20px; display:flex; flex-direction:column; gap:6px}
+  .pains .mono{font-size:13px; color:var(--muted)}
+  .pains strong{font-size:18px}
+
+  .insight{background:var(--accent); color:var(--ink); border-radius:var(--radius); padding:32px; display:flex; flex-direction:column; gap:14px}
+  .insight h2{font-size:24px}
+  .tag{border:2px solid var(--ink); border-radius:2px; padding:0 10px; font-weight:700; font-size:14px}
+  .insight .lead{font-size:22px; line-height:1.5; font-weight:500; max-width:920px}
+  .insight p{max-width:920px}
+
+  .pending{border:2px dashed var(--dashed); border-radius:var(--radius); padding:24px 28px; display:flex; flex-direction:column; gap:10px}
+  .pending h2{font-size:20px}
+  .pending p{color:#4E5257}
+  .pending .mono{font-size:13px}
+
+  footer{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:15px; color:#4E5257;
+    border-top:1px solid #C9C7C1; padding-top:16px}
+  footer strong{color:var(--ink)}
+  footer .mono{font-size:13px}
+
+  @media print{
+    body{background:#fff}
+    .panel,.insight,.pending,.cell{break-inside:avoid}
+    .banner,.hero,.insight{-webkit-print-color-adjust:exact; print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<!-- WARNING BAR: keep while the persona is a hypothesis; remove once validated in the field. -->
+<div class="banner" role="note">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 20h20L12 3z"/><path d="M12 10v4"/><path d="M12 17h.01"/></svg>
+  <span>פרסונה השערתית — מודל עבודה לבדיקת שטח, לא ממצא מחקרי</span>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <!-- Mono ID line: persona number (P-01, P-02…) and which side of the market it represents, in English caps. Status: HYPOTHESIS / VALIDATED. -->
+    <div class="hero-top">
+      <span class="mono">PERSONA SHEET · P-[XX] · [SIDE, e.g. CONSUMER SIDE / PRODUCER SIDE]</span>
+      <span class="mono">STATUS: <span class="hl">[HYPOTHESIS]</span></span>
+    </div>
+    <div class="hero-grid">
+      <!-- Portrait: embedded as base64 from the image saved next to the MD card under the same base name (<שם>.jpg / <שם>.png, max 500KB).
+           Use data:image/jpeg;base64,… for JPG and data:image/png;base64,… for PNG. Keep the image file next to the MD as its source.
+           No image yet → keep the alt/caption and replace src with a visible placeholder note; report the missing image. -->
+      <figure>
+        <img src="data:image/jpeg;base64,[BASE64 של <שם>.jpg]" alt="המחשה לפרסונה השערתית — אינה ממצא מחקרי">
+        <figcaption>המחשה לפרסונה השערתית — אינה ממצא מחקרי</figcaption>
+      </figure>
+      <div class="hero-text">
+        <!-- Eyebrow: profession + role in short English caps, prefixed with // -->
+        <div class="eyebrow mono">// [PROFESSION · ROLE IN ENGLISH]</div>
+        <h1>[שם] <span class="nick">״[כינוי]״</span></h1>
+        <!-- Tagline: one line that captures who this persona is -->
+        <p class="tagline">[משפט מפתח שמתאר את הפרסונה]</p>
+        <!-- Meta: exactly 4 cells. Value in Hebrew, label in English mono. -->
+        <div class="meta">
+          <div><div class="k mono">STATUS</div><div class="v">[השערה / מאושש]</div></div>
+          <div><div class="k mono">CREATED</div><div class="v">[איפה/באיזה תהליך נוצרה]</div></div>
+          <div><div class="k mono">SUB-TEAM</div><div class="v">[מס' תת־צוות (איזה צד)]</div></div>
+          <div><div class="k mono">PLANT</div><div class="v">[ארגון / מפעל, מיקום]</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HYPOTHESIS MARKS (all sections): wherever the MD card marks a field as a hypothesis, uncertain or disputed,
+       append <span class="hyp">השערה</span> (or the MD's own wording, e.g. "לא ודאי", "במחלוקת") right after that field.
+       Mirror the MD exactly — don't add marks the MD doesn't have and don't drop any it has. -->
+
+  <div class="row">
+    <!-- 01 Demographics: label/value rows. Add or remove rows as needed; long values get class="normal". -->
+    <section class="panel">
+      <div class="sec-head"><span class="num">01</span><h2>פרטים דמוגרפיים ורקע</h2></div>
+      <dl class="kv">
+        <div><dt>גיל</dt><dd>[גיל]</dd></div>
+        <div><dt>מגורים</dt><dd>[עיר · מצב משפחתי]</dd></div>
+        <div><dt>השכלה</dt><dd>[תואר / מוסד]</dd></div>
+        <div><dt>תפקיד</dt><dd class="normal">[תפקיד] — <strong>[הצד שהוא מייצג]</strong> ([הסבר קצר: על מה הוא מחליט / מה הוא עושה])</dd></div>
+      </dl>
+    </section>
+    <!-- 02 Job To Be Done: 2–4 short items, one per <li>. -->
+    <section class="panel">
+      <div class="sec-head"><span class="num">02</span><h2>היעד המרכזי <span class="mono">JTBD</span></h2></div>
+      <ul class="checks">
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>[מטרה 1 — מה הוא מנסה להשיג]</span></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>[מטרה 2]</span></li>
+        <li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>[מטרה 3]</span></li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- 03 Empathy map: always 4 cells in this order. Hebrew headings must match the persona's gender (אומר/אומרת, חושב/חושבת, מרגיש/מרגישה, עושה). -->
+  <section class="panel">
+    <div class="sec-head"><span class="num">03</span><h2>מפת אמפתיה</h2></div>
+    <div class="empathy">
+      <!-- SAYS: direct quotes in ״…״. Mark the single most telling quote with class="key". -->
+      <div class="cell">
+        <div class="cell-head"><h3>אומר</h3><span class="mono">SAYS</span></div>
+        <ul>
+          <li>״[ציטוט 1]״</li>
+          <li>״[ציטוט 2]״</li>
+          <li class="key">״[הציטוט המרכזי — שורה אחת שמסכמת אותו]״</li>
+        </ul>
+      </div>
+      <!-- THINKS: inner thoughts and questions, also in ״…״. -->
+      <div class="cell">
+        <div class="cell-head"><h3>חושב</h3><span class="mono">THINKS</span></div>
+        <ul>
+          <li>״[מחשבה / שאלה שמטרידה אותו 1]״</li>
+          <li>״[מחשבה 2]״</li>
+          <li>״[מחשבה 3]״</li>
+        </ul>
+      </div>
+      <!-- FEELS: emotions — fears, frustrations, motivations. No quotes. -->
+      <div class="cell">
+        <div class="cell-head"><h3>מרגיש</h3><span class="mono">FEELS</span></div>
+        <ul>
+          <li>[חשש / תסכול 1]</li>
+          <li>[חשש 2]</li>
+          <li>[מה מעניין או מניע אותו]</li>
+        </ul>
+      </div>
+      <!-- DOES: observable behaviors and habits. No quotes. -->
+      <div class="cell">
+        <div class="cell-head"><h3>עושה</h3><span class="mono">DOES</span></div>
+        <ul>
+          <li>[התנהגות 1]</li>
+          <li>[התנהגות 2]</li>
+          <li>[התנהגות 3]</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Pain points: one <div> per pain, numbered PAIN-01, PAIN-02… Short phrase each. -->
+  <section class="panel">
+    <div class="sec-head"><span class="num">04</span><h2>נקודות כאב מרכזיות וחסמי אמון מול המערכת</h2></div>
+    <div class="pains">
+      <div><span class="mono">PAIN-01</span><strong>[נקודת כאב 1]</strong></div>
+      <div><span class="mono">PAIN-02</span><strong>[נקודת כאב 2]</strong></div>
+      <div><span class="mono">PAIN-03</span><strong>[נקודת כאב 3]</strong></div>
+      <div><span class="mono">PAIN-04</span><strong>[נקודת כאב 4]</strong></div>
+    </div>
+  </section>
+
+  <!-- 05 Insight — OPTIONAL. Include ONLY if the MD card contains an insight; otherwise delete this whole <section>
+       and renumber the following sections (06 → 05, 07 → 06). Use the MD's wording only — never write an insight yourself.
+       First sentence = the core idea (.lead); second paragraph = context / link to other personas, if the MD gives one.
+       Keep the "לא מסקנה" tag while it is untested. -->
+  <section class="insight">
+    <div class="sec-head"><span class="num">05</span><h2>תובנה לציון</h2><span class="tag">לא מסקנה</span></div>
+    <p class="lead">[התובנה המרכזית במשפט אחד — מה באמת מניע או חוסם את הפרסונה, עם <strong>המילה החשובה</strong> מודגשת]</p>
+    <p>[הקשר: איך זה מתחבר לפרסונות או לפערים אחרים שזוהו]. <strong>טעונה בדיקה בשטח, לא מסקנה.</strong></p>
+  </section>
+
+  <!-- 06+ Sections not filled yet: use .pending (dashed). Once filled, convert to a regular .panel with a solid .num. -->
+  <div class="row">
+    <section class="pending">
+      <div class="sec-head"><span class="num outline">06</span><h2>הנחות יסוד שחולצו → מדריך ראיונות שטח</h2></div>
+      <p><span class="mono">PENDING ·</span> [באיזה שלב/תהליך יתמלא]</p>
+    </section>
+    <section class="pending">
+      <div class="sec-head"><span class="num outline">07</span><h2>מה למדנו בשטח</h2></div>
+      <p><span class="mono">PENDING ·</span> [באיזה שלב/תהליך יתמלא — מה אושש, מה הופרך, ציטוטים]</p>
+    </section>
+  </div>
+
+  <!-- Footer: the MD's "מידע נוסף" (hobby, habit), plus the mono ID line. -->
+  <footer>
+    <span><strong>מידע נוסף:</strong> [פרט אישי — תחביב / הרגל]</span>
+    <span class="mono">P-[XX] · [HYPOTHESIS] · NOT A RESEARCH FINDING</span>
+  </footer>
+
+</main>
+</body>
+</html>
