@@ -172,6 +172,18 @@
   .ready a{font:inherit; font-weight:700; text-decoration:none; color:#fff; background:var(--ink); border:2px solid var(--ink); border-radius:var(--radius); padding:6px 22px; animation:rise .35s ease-out both}
   .ready a.quiet{background:none; color:var(--ink)}
   .ready a:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  /* דיבור במקום הקלדה */
+  .answer-wrap{position:relative}
+  .answer-wrap textarea{padding-inline-end:3.4em}
+  .mic{position:absolute; inset-inline-end:8px; top:8px; width:2.3em; height:2.3em; border-radius:50%; border:2px solid var(--ink); background:var(--panel);
+    color:var(--ink); display:grid; place-items:center; cursor:pointer; padding:0; transition:background-color .2s ease, transform .1s ease}
+  .mic[hidden]{display:none}
+  .mic:active{transform:scale(.92)}
+  .mic:focus-visible{outline:3px solid var(--accent); outline-offset:2px}
+  .mic.on{background:var(--accent); animation:mic-pulse 1.1s ease-out infinite}
+  @keyframes mic-pulse{0%{box-shadow:0 0 0 0 rgba(242,194,48,.75)} 100%{box-shadow:0 0 0 14px rgba(242,194,48,0)}}
+  .mic-note{font-size:.75em; color:var(--muted); margin-top:-6px}
+  .mic-note:empty{display:none}
   /* חלון הפתיחה: מה עושים ולמה */
   .intro{width:min(820px,100%); padding:28px 32px; gap:18px}
   .intro h2{font-size:2em}
@@ -282,7 +294,13 @@
     <span class="tag" id="pop-tag"></span>
     <h2 id="pop-q"></h2>
     <p class="to" id="pop-to"></p>
-    <textarea id="text" placeholder="התשובה" aria-label="התשובה"></textarea>
+    <div class="answer-wrap">
+      <textarea id="text" placeholder="התשובה — מקלידים, או לוחצים על המיקרופון ומדברים" aria-label="התשובה"></textarea>
+      <button class="mic" id="mic" type="button" aria-pressed="false" aria-label="לדבר במקום להקליד" title="לדבר במקום להקליד">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3"/></svg>
+      </button>
+    </div>
+    <p class="mic-note" id="mic-note" aria-live="polite"></p>
     <fieldset class="basis" id="basis" hidden>
       <legend id="basis-legend">על מה זה נשען?</legend>
       <div class="opts" id="basis-opts"></div>
@@ -427,6 +445,27 @@
   });
   $('result-back').addEventListener('click',function(){ dismissed=true; renderFinish() });
 
+  // דיבור במקום הקלדה: זיהוי הדיבור של הדפדפן, בעברית. הטקסט נכנס לתיבה ואפשר לתקן אותו לפני השליחה.
+  // בכרום התמלול נעשה בשרתי Google — האודיו יוצא מהמחשב. ראו README.
+  var SR=window.SpeechRecognition||window.webkitSpeechRecognition, rec=null, micBase='';
+  if(!SR) $('mic').hidden=true;
+  function micSet(on,msg){ $('mic').classList.toggle('on',on); $('mic').setAttribute('aria-pressed',String(on)); $('mic-note').textContent=msg||''; }
+  function micAbort(){ if(rec){ rec.onresult=null; try{rec.abort()}catch(e){} rec=null; } micSet(false,''); }
+  $('mic').addEventListener('click',function(){
+    if(rec){ try{rec.stop()}catch(e){} return; }
+    rec=new SR(); rec.lang='he-IL'; rec.continuous=true; rec.interimResults=true;
+    micBase=$('text').value.trim(); if(micBase) micBase+=' ';
+    rec.onresult=function(e){ var t=''; for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript; $('text').value=micBase+t.trim(); };
+    rec.onerror=function(e){
+      var m={'not-allowed':'אין הרשאה למיקרופון — אשרו אותה בדפדפן ונסו שוב','service-not-allowed':'הדפדפן לא מאפשר זיהוי דיבור כאן',
+             'no-speech':'לא נשמע דיבור — נסו שוב','audio-capture':'לא נמצא מיקרופון','network':'אין חיבור לשירות זיהוי הדיבור'}[e.error]||('זיהוי הדיבור נעצר: '+e.error);
+      micSet(false,m);
+    };
+    rec.onend=function(){ rec=null; if($('mic').classList.contains('on')) micSet(false,''); $('text').focus(); };
+    try{ rec.start(); micSet(true,'מקשיבים — דברו, ולחצו שוב על המיקרופון כשסיימתם'); }
+    catch(e){ rec=null; micSet(false,'לא ניתן להפעיל את המיקרופון'); }
+  });
+
   // אפשרויות הבסיס לכל רבע. הסוכן יכול להחליף אותן ב-state.basis_options.
   var BASIS={
     says:['שמענו ממנה','שמענו מאחרים','משוער'],
@@ -464,6 +503,7 @@
     $('text').focus();
   }
   function hide(){
+    micAbort();
     var v=$('veil'); if(v.hidden) return;
     v.classList.add('closing'); openFor=null; render();
     setTimeout(function(){ v.hidden=true; v.classList.remove('closing') },180);
@@ -518,6 +558,7 @@
   }
 
   function send(kind){
+    micAbort();
     var text=$('text').value.trim();
     if(kind==='answer' && !text) return;
     var bk='', bt='';
