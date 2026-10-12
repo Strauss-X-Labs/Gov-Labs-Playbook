@@ -32,6 +32,9 @@ description: מריץ סוכן מהפלייבוק (פרסונה דיגיטלית
 | `פריזמת-האתגר.md` | `gov-labs-challenge-space` |
 | `פרסונה-דיגיטלית.md` | `gov-labs-persona-card` — שלב א׳, כרטיס ומפת אמפתיה · `gov-labs-persona-visual` — שלב ב׳, תמונה ו-HTML מכרטיס שהצוות בדק |
 | `חילוץ-הנחות-ומדריך-ראיונות.md` | `gov-labs-assumptions-interview-guide` |
+| `סינתזת-מסע-ועיוורונות.md` | `gov-labs-journey-synthesis` |
+| `אזורי-הזדמנות.md` | `gov-labs-opportunity-areas` |
+| `חידוד-בעיית-שורש-ומבחני-כדאיות.md` | `gov-labs-root-cause` |
 
 - **שני סקילים לאותו סוכן** (פרסונה) — שאל באיזה שלב הצוות. אין כרטיס שנבדק ב-`תוצרים/` — מתחילים בשלב א׳.
 - **נתיבים יחסיים בסקיל** (`references/`, `assets/`) — יחסית לתיקיית הסקיל: `.playbook/skills/<הסקיל>/...`.
