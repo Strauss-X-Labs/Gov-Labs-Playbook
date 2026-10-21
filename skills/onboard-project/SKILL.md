@@ -96,6 +96,7 @@ gh repo create <owner>/<name> --private --description "<שם המיזם>"
 ```bash
 git clone https://github.com/<owner>/<name>.git <dir>
 bash "$SRC/skills/onboard-project/scaffold.sh" "<שם המיזם>" <dir>
+# לפני הקומיט: הצג למשתמש מה נוצר (git -C <dir> status --short) ושאל. ממשיכים רק באישור מפורש.
 git -C <dir> add -A
 git -C <dir> commit -m "אכלוס מיזם <שם המיזם> מ-Gov-Labs-Playbook (<commit של הפלייבוק>)"
 git -C <dir> push origin HEAD
@@ -125,7 +126,7 @@ git -C <dir> push origin HEAD
 2. **תוכנית:** `bash "$SRC/skills/onboard-project/upgrade.sh" --dry-run <dir>` — לא משנה כלום. הצג את הפלט בשלב האישור (שלב 4).
 3. **קבצים שנערכו ידנית** — הצג את ה-diff והצע גרסה ממוזגת: הסעיפים החדשים מהתבנית **וגם** כל מה שהצוות הוסיף. כותבים אותה רק אחרי אישור מפורש, קובץ-קובץ.
 4. **קבצים ב-`ידע/`** — הצג את הרשימה ושאל לאיזה יום להעביר כל קובץ (`git -C <dir> mv`). אין תשובה — נשארים ב-`ידע/`.
-5. **אחרי אישור:** אותה פקודה בלי `--dry-run`, ואז קומיט `עדכון לפלייבוק <commit> ולתבנית העדכנית` ו-push.
+5. **אחרי אישור:** אותה פקודה בלי `--dry-run`. אז הצג מה השתנה (`git -C <dir> status --short`) ושאל לפני הקומיט — רק באישור מפורש: קומיט `עדכון לפלייבוק <commit> ולתבנית העדכנית` ו-push.
 
 ## שלב 6 — דיווח
 
