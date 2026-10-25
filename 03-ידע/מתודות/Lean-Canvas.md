@@ -16,7 +16,7 @@
 |---|---|---|---|
 | 1 | הלקוחות + Early Adopters | Customer Segments | AI-First |
 | 2 | הבעיות + **אלטרנטיבות קיימות** | Problem + Existing Alternatives | AI-First |
-| 3 | **מה תיחשב הצלחה** | ← Key Metrics *(הרחבה 1)* | Human-First |
+| 3 | **איך תיראה הצלחה?** | ← Key Metrics *(הרחבה 1)* | Human-First |
 | 4 | **יעדים מדידים** | ← Key Metrics *(הרחבה 1)* | Human-First |
 | 5 | הצעת ערך ייחודית + High Level Concept | UVP | AI-First |
 | 6 | הפתרון + **חלוקת אדם/AI/Agent** | Solution | Human-First |
@@ -26,7 +26,7 @@
 | 10 | תמורה וערך לארגון / למדינה | Revenue Streams | Human-First |
 | 11 | תשומות / משאבים | Cost Structure | Human-First |
 
-**הרחבה 1:** Key Metrics מתפצל — קודם ה-Outcome האיכותי ("איך ייראה Job Well Done?"), ורק אז ה-KPI.
+**הרחבה 1:** Key Metrics מתפצל — קודם ה-Outcome האיכותי ("איך תיראה הצלחה?"), ורק אז ה-KPI.
 **הרחבה 2:** מפתחות להצלחה מחזיק שתי שאלות שונות באותה קובייה — *למה אנחנו נצליח* ו*מה חייב לקרות כדי שנצליח*.
 
 הטמפלט המלא: [לוח Lean Canvas](../../02-תוצרים-וטמפלטים/לוח-Lean-Canvas.md).
