@@ -20,7 +20,7 @@
 | [בניית-סרטון-המחשת-הקונספט.md](בניית-סרטון-המחשת-הקונספט.md) | DT2, תהליך 4 | מוגדר · מורץ דרך `run-agent` · נכתב מפרומפט הבסיס של אריאל, טרם נבדק בהרצה |
 | [בניית-שאלון-בחינת-קונספט.md](בניית-שאלון-בחינת-קונספט.md) | DT2, תהליך 5 | מוגדר · מורץ דרך `run-agent` · נבנה מהרצת מחזור 10 |
 | [Lean-Readiness.md](Lean-Readiness.md) | יום 4, תהליך 1 | מוגדר עם Boundaries. טרם נבנה |
-| [Canvas-Synthesizer.md](Canvas-Synthesizer.md) | יום 4, תהליכים 2–3 | מוגדר. מנוע אחד, שני תזמונים |
+| [Canvas-Synthesizer.md](Canvas-Synthesizer.md) | יום 4, תהליכים 2–3 | מוגדר. מנוע אחד, שני תזמונים · **MVP: AI-First בלבד** |
 | [Red-Team-Lean-Canvas.md](Red-Team-Lean-Canvas.md) | יום 4, תהליך 4 | מוגדר. עד 5 אתגרים |
 | [Decision-and-PIN.md](Decision-and-PIN.md) | יום 4, תהליך 4 | מוגדר |
 | [Living-Canvas-Update.md](Living-Canvas-Update.md) | אחרי יום 4, לאורך התוכנית | מוגדר. המימוש הראשון של "מוח חי" |
