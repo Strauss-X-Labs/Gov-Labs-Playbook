@@ -1,7 +1,7 @@
 # תהליך 4: Friendly Tip 2.0, Red Team ו-Decide & PIN
 
 > מקור: [Gov-Labs-2.0-Lean-Canvas-Playbook.docx](../../../חומרי-מקור/מסמכים/רונית-lean-canvas-2026-09-23/Gov-Labs-2.0-Lean-Canvas-Playbook.docx) (רונית, 2026-09-23) — פרקים 1, 5, 8
-> יום: [Lean Canvas](../סקירה.md) · מתודות: [Friendly Tip](../../../03-ידע/מתודות/Friendly-Tip.md), [Red Teaming](../../../03-ידע/מתודות/Red-Teaming.md), [Decision Log](../../../03-ידע/מתודות/Decision-Log.md) · סוכנים: [Red Team](../../../04-AI/סוכנים/Red-Team-Lean-Canvas.md), [Decision & PIN](../../../04-AI/סוכנים/Decision-and-PIN.md) · תוצרים: [Decision & PIN](../../../02-תוצרים-וטמפלטים/Decision-and-PIN.md)
+> יום: [Lean Canvas](../סקירה.md) · מתודות: [Friendly Tip](../../../03-ידע/מתודות/Friendly-Tip.md), [Red Teaming](../../../03-ידע/מתודות/Red-Teaming.md), [Decision Log](../../../03-ידע/מתודות/Decision-Log.md) · סוכנים: [Red Team](../../../04-AI/סוכנים/Red-Team-Lean-Canvas.md), [Decision & PIN](../../../04-AI/סוכנים/Decision-and-PIN.md) · תוצרים: [Decision & PIN](../../../02-תוצרים-וטמפלטים/Decision-and-PIN.md) · כלי: [Miro](../../../skills/run-agent/miro.md)
 
 ## א. מטרת התהליך
 
@@ -18,13 +18,18 @@
 
 ### שלב א׳: הצגות + Friendly Tip 2.0 (65 דק׳)
 הקבוצות מציגות; המשתתפים נותנים טיפים, שאלות וזוויות. **הקבוצה המציגה אינה נדרשת להגן מיד על כל החלטה.** ראה [Friendly Tip](../../../03-ידע/מתודות/Friendly-Tip.md).
+- **מציגים מהלוח ב-Miro.**
+- **הטיפים מוקלדים בזמן אמת**, ע"י המתעד/ת של הקבוצה המציגה: פתק לכל טיפ, בפריים Friendly Tips בלוח של הקבוצה. הארכיטקט מוודא שזה קורה.
 
 ### שלב ב׳: Red Team (רץ בזמן ההצגות · מוצג ב-14:30)
 הארכיטקט מפעיל את הסוכן **במקביל להצגות**, על הקנבס ועל הטיפים שנרשמו, כך שהתוצרים מוכנים כשהקבוצה חוזרת לעבודה. המנטור והארכיטקט מציגים אותם לצוות.
 הסוכן מנסה **"להפיל את הקנבס לפני שהמציאות עושה זאת"**: הנחות שגויות · סתירות · Evidence חסר · סיכונים · מה יכול להפריך החלטה · מה צריך לבדוק בהמשך. **עד 5 אתגרים.**
+- **מתי:** מיד אחרי שהקבוצה הציגה. `/run-agent Red Team`, כ-10 דקות.
+- **מה קורה:** [הסוכן](../../../04-AI/סוכנים/Red-Team-Lean-Canvas.md) קורא את גרסת ההצגה מ-`תוצרים/לוח-Lean-Canvas.md` ואת הטיפים מהלוח, ומציג לארכיטקט את האתגרים. אחרי אישורו, הוא כותב אותם לפריים Red Team בלוח, ל-`01-ימים/04-Lean-Canvas/Red-Team.md`, ואת הטיפים ל-`Friendly-Tips.md`.
 
 ### שלב ג׳: הצוות מחליט מה לאמץ
 מהטיפים האנושיים ומאתגרי הסוכן יחד. מה שלא נבחן עכשיו — נרשם כסוגיה ל-Q&A או כבדיקת המשך.
+- **ב-14:30, מהלוח:** המנטור והארכיטקט פותחים את פריים Red Team ליד הקנבס. הצוות עובר על הטיפים ועל האתגרים, ו**מעדכן את הקנבס בלוח**. את ההחלטה על כל טיפ ואתגר אומרים בקול; הסוכן ירשום אותה בשלב הבא.
 
 ### שלב ד׳: Decide & PIN
 - גרסה מוסכמת אחת — **Lean Canvas v1.0 PINNED**.
@@ -33,16 +38,24 @@
 - מוגדרות **2–3 בדיקות המשך**.
 - מוגדר **Trigger ל-Revisit** — איזה מידע חדש יפתח את הקובייה מחדש.
 
+**איך:** כ-14:55 הצוות כותב "סיימנו", ומפעיל ה-AI מריץ `/run-agent Decision & PIN`, כ-10 דקות. [הסוכן](../../../04-AI/סוכנים/Decision-and-PIN.md) קורא את הקנבס מהלוח, משווה לגרסת ההצגה, ומציג בבת אחת: מה השתנה, החלטה לכל טיפ ואתגר, הנחות קריטיות, 2–3 בדיקות המשך ו-Trigger to Revisit. הצוות מתקן ומאשר. הסוכן מצלם את הקנבס, וכותב את v1.0 PINNED ואת Decision & PIN.
+- **הנחיה למנטור:** נגמר הזמן — מקבעים את מה שהוסכם. השאר הופך ל-Research Mission או לבדיקת המשך.
+- **מרגע ה-PIN, הקובץ הוא הגרסה הקובעת.** שינוי בלוח אחרי היום לא משנה את הקנבס, עד שהצוות מאשר אותו דרך [Living Canvas Update](../../../04-AI/סוכנים/Living-Canvas-Update.md).
+
 ## ד. מפרט יכולת ה-AI בתהליך
 
 | סוכן | סקופ וטריגר | קלטים | פלטים | Boundaries |
 |---|---|---|---|---|
-| [Red Team](../../../04-AI/סוכנים/Red-Team-Lean-Canvas.md) | בזמן ההצגות, על הקנבס והטיפים שנרשמו · **מוצג לצוות אחרי Friendly Tip אנושי** | Canvas · Evidence Map · Assumptions · החלטות · Peer Feedback | עד 5 אתגרים + סוגיות ל-Q&A | **אינו מחליט שהרעיון "טוב" או "רע"** — מייצר אתגר לבחינה |
-| [Decision & PIN](../../../04-AI/סוכנים/Decision-and-PIN.md) | אחרי הכרעות, ומרוכז בסיום היום | Final Canvas · החלטות · משוב Red Team · Evidence · הנחות פתוחות | Canvas v1.0 PINNED · Decision Log · Critical Assumptions · Next Tests · Trigger to Revisit | **הצוות מאשר. ה-AI מתעד ומקבע** |
+| [Red Team](../../../04-AI/סוכנים/Red-Team-Lean-Canvas.md) | בזמן ההצגות, מיד אחרי שהקבוצה הציגה · **מוצג לצוות אחרי Friendly Tip אנושי** · מריץ: הארכיטקט | `תוצרים/לוח-Lean-Canvas.md` (גרסת הצגה) · פריים Friendly Tips בלוח · `תוצרים/Lean-Readiness-Pack.md` · תוצאות Kayma | עד 5 אתגרים + סוגיות ל-Q&A: בפריים Red Team בלוח · `01-ימים/04-Lean-Canvas/Red-Team.md` · `01-ימים/04-Lean-Canvas/Friendly-Tips.md` | **אינו מחליט שהרעיון "טוב" או "רע"** — מייצר אתגר לבחינה · לא כותב לקנבס |
+| [Decision & PIN](../../../04-AI/סוכנים/Decision-and-PIN.md) | כשהצוות כותב "סיימנו", כ-14:55 · מריץ: מפעיל ה-AI | פריים הקנבס בלוח (קריאה טרייה) · גרסת ההצגה · `Red-Team.md` · `Friendly-Tips.md` · Research Missions מה-Pack | `תוצרים/לוח-Lean-Canvas.md` — v1.0 PINNED · `תוצרים/Decision-and-PIN.md` · `01-ימים/04-Lean-Canvas/miro/canvas-v1.0-pinned.png` · החלטת הצוות על כל טיפ ואתגר | **הצוות מאשר. ה-AI מתעד ומקבע** · רק מה שאושר · לא מעלה ל-✓ בלי מקור |
+
+לא drill-down — הנחיות ההפעלה בקבצי הסוכנים.
 
 ## ה. תוצרים וטמפלטים
 
 **[Decision & PIN](../../../02-תוצרים-וטמפלטים/Decision-and-PIN.md)** — Decision Log · Critical Assumptions · 2–3 Next Tests · Research Missions · Trigger to Revisit. כולל **Definition of Done ליום.**
+
+**[לוח Lean Canvas](../../../02-תוצרים-וטמפלטים/לוח-Lean-Canvas.md) v1.0 PINNED**, ותמונה של הקנבס כולו ב-`01-ימים/04-Lean-Canvas/miro/`. בתיקיית היום גם `Red-Team.md` ו-`Friendly-Tips.md`. ראה [הקבצים ב-repo של המיזם](../../../02-תוצרים-וטמפלטים/לוח-Lean-Canvas.md#הקבצים-ב-repo-של-המיזם).
 
 ## ו. נורות אזהרה למנטור (Red Flags)
 

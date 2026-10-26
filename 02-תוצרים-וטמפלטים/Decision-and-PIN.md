@@ -11,7 +11,8 @@
 
 ```markdown
 # Decision & PIN — [שם המיזם]
-> Lean Canvas v[ ] · PINNED בתאריך: [ ]
+> Lean Canvas v[ ] · PINNED בתאריך: [ ] · נקלט מהלוח ב-Miro: [קישור] · תמונה: [01-ימים/04-Lean-Canvas/miro/canvas-v1.0-pinned.png]
+> ההחלטה על כל טיפ ואתגר: בעמודה "מה הצוות החליט" ב-`01-ימים/04-Lean-Canvas/Friendly-Tips.md` וב-`Red-Team.md`
 
 ## 1. Decision Log
 | # | מה השתנה | מה הוחלט | למה | על בסיס איזה Evidence | מה נשאר פתוח |

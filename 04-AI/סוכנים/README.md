@@ -19,10 +19,10 @@
 | [תיעוד-המסע-החדש.md](תיעוד-המסע-החדש.md) | DT2, תהליך 3 | מוגדר · מורץ דרך `run-agent` · נבנה מהרצת מחזור 10 |
 | [בניית-סרטון-המחשת-הקונספט.md](בניית-סרטון-המחשת-הקונספט.md) | DT2, תהליך 4 | מוגדר · מורץ דרך `run-agent` · נכתב מפרומפט הבסיס של אריאל, טרם נבדק בהרצה |
 | [בניית-שאלון-בחינת-קונספט.md](בניית-שאלון-בחינת-קונספט.md) | DT2, תהליך 5 | מוגדר · מורץ דרך `run-agent` · נבנה מהרצת מחזור 10 |
-| [Lean-Readiness.md](Lean-Readiness.md) | יום 4, תהליך 1 | מוגדר עם Boundaries. טרם נבנה |
-| [Canvas-Synthesizer.md](Canvas-Synthesizer.md) | יום 4, תהליכים 2–3 | מוגדר. מנוע אחד, שני תזמונים · **שלב ראשון: AI-First בלבד** |
-| [Red-Team-Lean-Canvas.md](Red-Team-Lean-Canvas.md) | יום 4, תהליך 4 | מוגדר. עד 5 אתגרים |
-| [Decision-and-PIN.md](Decision-and-PIN.md) | יום 4, תהליך 4 | מוגדר |
+| [Lean-Readiness.md](Lean-Readiness.md) | יום 4, תהליך 1 | מוגדר · מורץ דרך `run-agent` · טרם נבדק בהרצה |
+| [Canvas-Synthesizer.md](Canvas-Synthesizer.md) | יום 4, תהליכים 2–3 | מוגדר · מורץ דרך `run-agent` · מנוע אחד, שני תזמונים · **שלב ראשון: הקמת הלוח ב-Miro, AI-First וקליטת הלוח** · טרם נבדק מול Miro |
+| [Red-Team-Lean-Canvas.md](Red-Team-Lean-Canvas.md) | יום 4, תהליך 4 | מוגדר · מורץ דרך `run-agent` · עד 5 אתגרים, בפריים בלוח ב-Miro · טרם נבדק מול Miro |
+| [Decision-and-PIN.md](Decision-and-PIN.md) | יום 4, תהליך 4 | מוגדר · מורץ דרך `run-agent` · קורא את הלוח ב-Miro ומקבע · טרם נבדק מול Miro |
 | [Living-Canvas-Update.md](Living-Canvas-Update.md) | אחרי יום 4, לאורך התוכנית | מוגדר. המימוש הראשון של "מוח חי" |
 | [בדיקת-כיסוי-יכולות.md](בדיקת-כיסוי-יכולות.md) | אחרי יום 4, תהליך 6 | טיוטה. Human-First: נכנס אחרי הפורום, פערים כשאלות עם אפשרויות |
 | [רכיבי-ממשק-מערכים.md](רכיבי-ממשק-מערכים.md) | יום 5, תהליך 1 | טיוטה. נפרד מיום 4 בהחלטה |
