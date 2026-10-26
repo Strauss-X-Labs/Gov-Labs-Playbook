@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[שם המיזם] — PR/FAQ</title>
+<!-- תבנית PR/FAQ — Gov-Labs. מחליפים כל [placeholder] בתוכן מ-PR-FAQ.md. ה-style והמבנה נשארים; את הערות ה-HTML מסירים. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1c1c;
+    --muted: #5f5f5f;
+    --rule: #1c1c1c;
+    --hair: #d9d6cf;
+    --paper: #fbfaf7;
+    --accent: #8a1c1c;
+    --ev: #1f6f43;
+    --ev-bg: #e6f2ea;
+    --hyp: #a0620a;
+    --hyp-bg: #fbf0dc;
+    --open: #6b6b6b;
+    --open-bg: #ececec;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: #ece9e2;
+    color: var(--ink);
+    font-family: "Assistant", Arial, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  .page {
+    max-width: 210mm;
+    margin: 24px auto;
+    background: var(--paper);
+    padding: 18mm 18mm 14mm;
+    box-shadow: 0 1px 3px rgba(0,0,0,.12);
+  }
+  .masthead {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    border-bottom: 3px double var(--rule);
+    padding-bottom: 6px;
+    font-size: 13px;
+    letter-spacing: .04em;
+    color: var(--muted);
+  }
+  .masthead .kind { font-weight: 700; color: var(--ink); }
+  .status {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 0 8px;
+    border-radius: 2px;
+  }
+  .dateline {
+    margin: 18px 0 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  h1 {
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    font-weight: 900;
+    font-size: clamp(28px, 6vw, 42px);
+    line-height: 1.15;
+    margin: 0 0 18px;
+  }
+  .story {
+    display: grid;
+    grid-template-columns: 1fr 34%;
+    gap: 28px;
+    border-bottom: 1px solid var(--hair);
+    padding-bottom: 20px;
+  }
+  .story p { margin: 0 0 12px; }
+  .story .label {
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    font-weight: 700;
+  }
+  .pull {
+    margin: 0;
+    padding: 4px 18px 4px 0;
+    border-right: 3px solid var(--accent);
+    align-self: start;
+  }
+  .pull blockquote {
+    margin: 0 0 8px;
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.35;
+  }
+  .pull figcaption { font-size: 14px; color: var(--muted); }
+  h2 {
+    font-family: "Frank Ruhl Libre", Georgia, serif;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 22px 0 8px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .faq {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: q;
+    columns: 2;
+    column-gap: 28px;
+  }
+  .faq li {
+    break-inside: avoid;
+    counter-increment: q;
+    margin: 0 0 14px;
+  }
+  .faq .q {
+    font-weight: 700;
+    display: block;
+    margin-bottom: 2px;
+  }
+  .faq .q::before {
+    content: counter(q) ". ";
+    color: var(--accent);
+  }
+  .faq .who {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    border: 1px solid var(--hair);
+    border-radius: 2px;
+    padding: 0 5px;
+    margin-inline-start: 6px;
+    vertical-align: 2px;
+  }
+  .faq li.int .who { color: var(--paper); background: var(--muted); border-color: var(--muted); }
+  .faq p { margin: 0; font-size: 15.5px; }
+  .ev, .hyp, .open { padding: 0 2px; border-radius: 2px; }
+  .ev { background: var(--ev-bg); box-shadow: inset 0 -2px 0 var(--ev); }
+  .hyp { background: var(--hyp-bg); box-shadow: inset 0 -2px 0 var(--hyp); }
+  .open { background: var(--open-bg); color: var(--open); font-style: italic; }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-top: 18px;
+    padding-top: 10px;
+    border-top: 3px double var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .legend span span { margin-inline-end: 4px; }
+  .note { font-size: 12px; color: var(--muted); margin-top: 6px; }
+  @media (max-width: 720px) {
+    body { font-size: 16px; }
+    .page { margin: 0; padding: 20px 16px; box-shadow: none; }
+    .story { grid-template-columns: 1fr; gap: 16px; }
+    .faq { columns: 1; }
+  }
+  @page { size: A4; margin: 14mm; }
+  @media print {
+    body { background: #fff; font-size: 11.5pt; }
+    .page { margin: 0; padding: 0; max-width: none; box-shadow: none; background: #fff; }
+    .ev, .hyp, .open, .faq li.int .who { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2, .faq li { break-after: avoid; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+
+  <header class="masthead">
+    <span class="kind">הודעה לעיתונות · [שם המיזם]</span>
+    <span class="status">[טיוטה / מאושר — תאריך]</span>
+  </header>
+
+  <p class="dateline">[מקום] · [מועד השקה — או "טרם הוכרע"]</p>
+
+  <h1>[כותרת: מה השירות עושה, ולמי]</h1>
+
+  <section class="story">
+    <div>
+      <!-- כל טענה עטופה ב-span לפי הסימון ב-MD: ev = ראיה · hyp = השערה · open = טרם הוכרע. המקור ב-title. -->
+      <p><span class="label">הבעיה.</span> <span class="ev" title="[קובץ]">[משפט שנשען על ראיה]</span> <span class="hyp" title="[בסיס]">[משפט שהוא השערה]</span></p>
+      <p><span class="label">הפתרון.</span> <span class="hyp" title="[בסיס]">[מה המשתמש חווה מהרגע הראשון]</span></p>
+    </div>
+    <!-- אין ציטוט אמיתי — מחליפים את ה-blockquote ב-<span class="open">טרם נמצא ציטוט מתאים</span> ומשמיטים את figcaption -->
+    <figure class="pull">
+      <blockquote>"[ציטוט אמיתי מהשטח]"</blockquote>
+      <figcaption>— [מי: תפקיד או תיאור, בלי שם] · <span class="ev" title="[קובץ]">ראיה</span></figcaption>
+    </figure>
+  </section>
+
+  <h2>שאלות ותשובות</h2>
+  <!-- li לכל שאלה, לפי ה-MD. שאלה פנימית: class="int" ו"פנימי" ב-who -->
+  <ol class="faq">
+    <li>
+      <span class="q">[שאלה]<span class="who">חיצוני</span></span>
+      <p><span class="ev" title="[קובץ]">[תשובה]</span></p>
+    </li>
+    <li class="int">
+      <span class="q">[שאלה]<span class="who">פנימי</span></span>
+      <p><span class="open">[טרם הוכרע — מה פתוח]</span></p>
+    </li>
+  </ol>
+
+  <footer>
+    <div class="legend">
+      <span><span class="ev">ראיה</span> נשען על ממצא מהשטח</span>
+      <span><span class="hyp">השערה</span> עדיין לא נבדק</span>
+      <span><span class="open">טרם הוכרע</span> שאלה פתוחה</span>
+    </div>
+    <p class="note">נכתב מהעתיד, כאילו השירות כבר הושק — מסמך עבודה, לא הודעה רשמית. מקור האמת: PR-FAQ.md.</p>
+  </footer>
+
+</main>
+</body>
+</html>
