@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lean Canvas</title>
+<!--
+  תבנית התצוגה למליאה של לוח Lean Canvas. הסוכן ממלא רק את בלוק הנתונים (id="data") מה-MD המאושר,
+  ומשנה את ה-<title>. העיצוב והפריסה קבועים — לא עורכים אותם.
+  status: "✓" | "~" | "?" | "⚡" | ""   ·   items: הבולטים, מילה במילה   ·   sub: תת-האזור (רק בקוביות 1, 2, 5)
+  source / gap: שורה קצרה, או "" כשאין
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --accent: #1f4e8c; --accent-soft: #e8eef8; --sub: #f7f8fa;
+    --ok: #1e7a45; --ok-bg: #e3f4ea; --assume: #8a5a00; --assume-bg: #fdf1d6;
+    --gap: #475569; --gap-bg: #e7ebf0; --conflict: #b42318; --conflict-bg: #fde4e1;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body {
+    font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif;
+    font-size: clamp(13px, 0.95vw, 26px); line-height: 1.35;
+    padding: 1.1em 1.2em 1.6em; overflow-x: hidden;
+  }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 1em; flex-wrap: wrap; margin-bottom: 0.8em; }
+  h1 { margin: 0; font-size: 2em; font-weight: 800; letter-spacing: -0.01em; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .meta { display: flex; align-items: center; gap: 0.6em; flex-wrap: wrap; color: var(--muted); }
+  .version { background: var(--accent); color: #fff; font-weight: 700; padding: 0.2em 0.8em; border-radius: 999px; }
+  .legend { display: flex; gap: 0.4em; flex-wrap: wrap; }
+  .grid {
+    display: grid; gap: 0.5em; width: 100%;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-areas:
+      "c1  c1  c7  c7  c5  c5  c6  c6  c2  c2"
+      "c1  c1  c8  c8  c3  c3  c4  c4  c9  c9"
+      "c10 c10 c10 c10 c10 c11 c11 c11 c11 c11";
+  }
+  .cube {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 10px;
+    padding: 0.7em 0.8em; display: flex; flex-direction: column; min-width: 0; min-height: 8em;
+  }
+  .cube-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5em; margin-bottom: 0.45em; }
+  .cube-title { display: flex; align-items: center; gap: 0.45em; font-weight: 800; font-size: 1.12em; }
+  .num {
+    flex: none; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--accent-soft); color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: 800;
+  }
+  .badge { flex: none; white-space: nowrap; font-weight: 700; font-size: 0.82em; padding: 0.12em 0.6em; border-radius: 999px; }
+  .badge.ok { color: var(--ok); background: var(--ok-bg); }
+  .badge.assume { color: var(--assume); background: var(--assume-bg); }
+  .badge.gap { color: var(--gap); background: var(--gap-bg); }
+  .badge.conflict { color: var(--conflict); background: var(--conflict-bg); }
+  .badge.none { color: var(--muted); background: transparent; border: 1px dashed var(--line); }
+  ul { margin: 0; padding-inline-start: 1.1em; }
+  li { margin: 0.18em 0; overflow-wrap: anywhere; }
+  li::marker { color: var(--accent); }
+  .sub { margin-top: auto; padding-top: 0.5em; }
+  .sub-box { border-top: 1px dashed var(--line); padding-top: 0.45em; margin-top: 0.5em; background: var(--sub); border-radius: 0 0 6px 6px; padding: 0.45em 0.5em; }
+  .sub-label { font-weight: 700; color: var(--accent); font-size: 0.88em; margin-bottom: 0.15em; }
+  .foot { margin-top: 0.55em; padding-top: 0.4em; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.82em; overflow-wrap: anywhere; }
+  .foot b { color: var(--ink); font-weight: 600; }
+  .empty { color: var(--muted); font-style: italic; }
+  @media (max-width: 900px) {
+    .grid { grid-template-columns: 1fr; grid-template-areas: "c1" "c2" "c3" "c4" "c5" "c6" "c7" "c8" "c9" "c10" "c11"; }
+  }
+  @media print {
+    @page { size: A3 landscape; margin: 8mm; }
+    body { background: #fff; font-size: 9pt; padding: 0; }
+    .cube { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Lean Canvas <span class="tag" id="venture"></span></h1>
+  <div class="meta">
+    <span class="version" id="version"></span>
+    <span id="date"></span>
+    <span class="legend" id="legend"></span>
+  </div>
+</header>
+<main class="grid" id="grid"></main>
+
+<script type="application/json" id="data">
+{
+  "venture": "[שם המיזם]",
+  "version": "גרסת הצגה",
+  "date": "[תאריך]",
+  "cubes": {
+    "1":  { "status": "", "items": [], "sub": [], "source": "", "gap": "" },
+    "2":  { "status": "", "items": [], "sub": [], "source": "", "gap": "" },
+    "3":  { "status": "", "items": [], "source": "", "gap": "" },
+    "4":  { "status": "", "items": [], "source": "", "gap": "" },
+    "5":  { "status": "", "items": [], "sub": [], "source": "", "gap": "" },
+    "6":  { "status": "", "items": [], "source": "", "gap": "" },
+    "7":  { "status": "", "items": [], "source": "", "gap": "" },
+    "8":  { "status": "", "items": [], "source": "", "gap": "" },
+    "9":  { "status": "", "items": [], "source": "", "gap": "" },
+    "10": { "status": "", "items": [], "source": "", "gap": "" },
+    "11": { "status": "", "items": [], "source": "", "gap": "" }
+  }
+}
+</script>
+<script>
+  const CUBES = {
+    1: { title: "הלקוחות", sub: "מאמצים ראשונים" },
+    2: { title: "הבעיות", sub: "אלטרנטיבות קיימות" },
+    3: { title: "איך תיראה הצלחה?" },
+    4: { title: "יעדים מדידים" },
+    5: { title: "הצעת ערך ייחודית", sub: "High Level Concept" },
+    6: { title: "הפתרון" },
+    7: { title: "מפתחות להצלחה" },
+    8: { title: "הטמעה / פריסה" },
+    9: { title: "שותפים בפרויקט" },
+    10: { title: "תמורה וערך לארגון / למדינה" },
+    11: { title: "תשומות / משאבים" }
+  };
+  const STATUS = {
+    "✓": ["ok", "✓ מבוסס"], "~": ["assume", "~ הנחה"], "?": ["gap", "? פער"], "⚡": ["conflict", "⚡ סתירה"], "": ["none", "לא סומן"]
+  };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const list = (items) => {
+    if (!items || !items.length) return el("div", "empty", "—");
+    const ul = el("ul"); items.forEach(t => ul.append(el("li", null, t))); return ul;
+  };
+  const data = JSON.parse(document.getElementById("data").textContent);
+  document.title = "Lean Canvas — " + data.venture;
+  document.getElementById("venture").textContent = "— " + data.venture;
+  document.getElementById("version").textContent = data.version;
+  document.getElementById("date").textContent = data.date;
+  const legend = document.getElementById("legend");
+  ["✓", "~", "?", "⚡"].forEach(s => legend.append(el("span", "badge " + STATUS[s][0], STATUS[s][1])));
+  const grid = document.getElementById("grid");
+  Object.keys(CUBES).forEach(n => {
+    const def = CUBES[n], c = (data.cubes && data.cubes[n]) || {};
+    const box = el("section", "cube"); box.style.gridArea = "c" + n;
+    const head = el("div", "cube-head");
+    const title = el("div", "cube-title"); title.append(el("span", "num", n), el("span", null, def.title));
+    const st = STATUS[c.status || ""] || STATUS[""];
+    head.append(title, el("span", "badge " + st[0], st[1]));
+    box.append(head, list(c.items));
+    if (def.sub) {
+      const sub = el("div", "sub"), sb = el("div", "sub-box");
+      sb.append(el("div", "sub-label", def.sub), list(c.sub)); sub.append(sb); box.append(sub);
+    }
+    if (c.source || c.gap) {
+      const foot = el("div", "foot");
+      if (c.source) { const s = el("div"); s.append(el("b", null, "מקור: "), document.createTextNode(c.source)); foot.append(s); }
+      if (c.gap) { const g = el("div"); g.append(el("b", null, "פתוח: "), document.createTextNode(c.gap)); foot.append(g); }
+      box.append(foot);
+    }
+    grid.append(box);
+  });
+</script>
+</body>
+</html>

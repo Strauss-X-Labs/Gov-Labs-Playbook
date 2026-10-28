@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lean Readiness</title>
+<!--
+  תבנית התצוגה של בדיקת המוכנות. הסוכן ממלא רק את בלוק הנתונים (id="data") מה-MD המאושר.
+  overall: "מוכן" | "מוכן עם פערים" | "לא מוכן"   ·   found: true / false   ·   enough: "כן" | "חלקית" | "לא"
+  status: "✓" | "~" | "?" | "⚡" | ""   ·   blocking: true כשההמלצה חוסמת את Draft 0
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --accent: #1f4e8c; --accent-soft: #e8eef8;
+    --ok: #1e7a45; --ok-bg: #e3f4ea; --assume: #8a5a00; --assume-bg: #fdf1d6;
+    --gap: #475569; --gap-bg: #e7ebf0; --conflict: #b42318; --conflict-bg: #fde4e1;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 1vw, 20px); line-height: 1.45; padding: 1.4em; overflow-x: hidden; }
+  .wrap { max-width: 1200px; margin: 0 auto; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 1em; flex-wrap: wrap; margin-bottom: 1.2em; }
+  h1 { margin: 0; font-size: 1.9em; font-weight: 800; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .overall { font-weight: 800; font-size: 1.1em; padding: 0.35em 1em; border-radius: 999px; }
+  .overall.ready { color: var(--ok); background: var(--ok-bg); }
+  .overall.partial { color: var(--assume); background: var(--assume-bg); }
+  .overall.not { color: var(--conflict); background: var(--conflict-bg); }
+  .sub { color: var(--muted); margin-top: 0.2em; }
+  section { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 1em 1.2em; margin-bottom: 1em; }
+  h2 { margin: 0 0 0.6em; font-size: 1.25em; font-weight: 800; color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  th, td { text-align: right; padding: 0.45em 0.5em; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+  th { font-weight: 700; color: var(--muted); font-size: 0.9em; }
+  .yes { color: var(--ok); font-weight: 700; } .no { color: var(--conflict); font-weight: 700; } .part { color: var(--assume); font-weight: 700; }
+  .badge { white-space: nowrap; font-weight: 700; font-size: 0.85em; padding: 0.1em 0.6em; border-radius: 999px; }
+  .badge.ok { color: var(--ok); background: var(--ok-bg); } .badge.assume { color: var(--assume); background: var(--assume-bg); }
+  .badge.gap { color: var(--gap); background: var(--gap-bg); } .badge.conflict { color: var(--conflict); background: var(--conflict-bg); }
+  .badge.none { color: var(--muted); border: 1px dashed var(--line); }
+  .block { color: var(--conflict); font-weight: 800; }
+  ul { margin: 0; padding-inline-start: 1.2em; } li { margin: 0.2em 0; }
+  .cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8em; }
+  .col h3 { margin: 0 0 0.3em; font-size: 1em; }
+  .empty { color: var(--muted); font-style: italic; }
+  @media (max-width: 800px) { .cols { grid-template-columns: 1fr; } }
+  @media print { body { background: #fff; font-size: 10pt; padding: 0; } section { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>Lean Readiness <span class="tag" id="venture"></span></h1>
+      <div class="sub" id="dates"></div>
+    </div>
+    <div class="overall" id="overall"></div>
+  </header>
+  <section><h2>1. התוצרים ב-repo</h2><div id="deliverables"></div></section>
+  <section><h2>2. מוכנות לקוביות 1, 2, 5</h2><div id="topics"></div></section>
+  <section><h2>3. תוצאות בדיקת הקונספט</h2><div id="concept"></div></section>
+  <section><h2>4. סתירות</h2><div id="contradictions"></div></section>
+  <section><h2>5. המלצות להשלמת פערים</h2><div id="recommendations"></div></section>
+  <section id="missing-sec"><h2>חסר ב-repo</h2><div id="missing"></div></section>
+</div>
+
+<script type="application/json" id="data">
+{
+  "venture": "[שם המיזם]",
+  "checked": "[תאריך]",
+  "updated": "",
+  "overall": "מוכן עם פערים",
+  "deliverables": [ { "name": "", "found": true, "where": "", "note": "" } ],
+  "topics": [
+    { "topic": "לקוחות", "enough": "", "status": "", "basis": "", "missing": "" },
+    { "topic": "בעיות", "enough": "", "status": "", "basis": "", "missing": "" },
+    { "topic": "אלטרנטיבות קיימות", "enough": "", "status": "", "basis": "", "missing": "" },
+    { "topic": "הצעת ערך ייחודית", "enough": "", "status": "", "basis": "", "missing": "" }
+  ],
+  "concept": { "confirmed": [], "refuted": [], "untested": [], "note": "" },
+  "contradictions": [],
+  "recommendations": [ { "gap": "", "action": "", "who": "", "by": "", "blocking": false } ],
+  "missing": []
+}
+</script>
+<script>
+  const STATUS = { "✓": ["ok", "✓ מבוסס"], "~": ["assume", "~ הנחה"], "?": ["gap", "? פער"], "⚡": ["conflict", "⚡ סתירה"], "": ["none", "—"] };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const empty = () => el("div", "empty", "—");
+  const list = (items) => { if (!items || !items.length) return empty(); const ul = el("ul"); items.forEach(t => ul.append(el("li", null, t))); return ul; };
+  const table = (heads, rows) => {
+    if (!rows.length) return empty();
+    const t = el("table"), hr = el("tr"); heads.forEach(h => hr.append(el("th", null, h))); t.append(hr);
+    rows.forEach(r => { const tr = el("tr"); r.forEach(c => { const td = el("td"); typeof c === "string" ? td.textContent = c : td.append(c); tr.append(td); }); t.append(tr); });
+    return t;
+  };
+  const d = JSON.parse(document.getElementById("data").textContent);
+  document.title = "Lean Readiness — " + d.venture;
+  document.getElementById("venture").textContent = "— " + d.venture;
+  document.getElementById("dates").textContent = "נבדק: " + d.checked + (d.updated ? " · עודכן: " + d.updated : "");
+  const ov = document.getElementById("overall"); ov.textContent = d.overall;
+  ov.className = "overall " + ({ "מוכן": "ready", "מוכן עם פערים": "partial", "לא מוכן": "not" }[d.overall] || "partial");
+  document.getElementById("deliverables").append(table(["תוצר", "נמצא?", "איפה", "הערה"],
+    (d.deliverables || []).filter(x => x.name).map(x => [x.name, el("span", x.found ? "yes" : "no", x.found ? "✓ נמצא" : "✗ חסר"), x.where || "", x.note || ""])));
+  document.getElementById("topics").append(table(["נושא", "יש מספיק חומר?", "סטטוס", "על מה נשען", "מה חסר"],
+    (d.topics || []).map(x => { const s = STATUS[x.status || ""] || STATUS[""];
+      return [x.topic, el("span", { "כן": "yes", "חלקית": "part", "לא": "no" }[x.enough] || "", x.enough || "—"), el("span", "badge " + s[0], s[1]), x.basis || "", x.missing || ""]; })));
+  const c = d.concept || {}, cc = el("div");
+  if (c.note) cc.append(el("p", "empty", c.note));
+  const cols = el("div", "cols");
+  [["מה אושש", c.confirmed], ["מה הופרך", c.refuted], ["מה לא נבדק", c.untested]].forEach(([h, items]) => { const col = el("div", "col"); col.append(el("h3", null, h), list(items)); cols.append(col); });
+  cc.append(cols); document.getElementById("concept").append(cc);
+  document.getElementById("contradictions").append(list(d.contradictions));
+  document.getElementById("recommendations").append(table(["#", "הפער", "ההמלצה", "מי", "עד מתי", "חוסם?"],
+    (d.recommendations || []).filter(x => x.gap || x.action).map((x, i) => [String(i + 1), x.gap || "", x.action || "", x.who || "", x.by || "", el("span", x.blocking ? "block" : "", x.blocking ? "חוסם" : "—")])));
+  if (d.missing && d.missing.length) document.getElementById("missing").append(list(d.missing));
+  else document.getElementById("missing-sec").remove();
+</script>
+</body>
+</html>
