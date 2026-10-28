@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Lean Canvas</title>
+<!--
+  תבנית תוצר הביניים של לוח Lean Canvas — מוצגת לצוות בכל שלב. בפריסה ובעיצוב של שקף הקנבס בפלייבוק
+  (living_lean_canvas.pptx, שקף 5). הסוכן ממלא רק את בלוק הנתונים (id="data") מה-MD המאושר. העיצוב קבוע.
+  version: "טיוטה — AI-First" | "טיוטה — בעבודה" | "גרסת הצגה" | "v1.0 PINNED" ...   ·   stage: משפט קצר — איפה אנחנו
+  cubes: לכל קובייה — status ("✓" | "~" | "?" | "⚡" | ""), items (מילה במילה), sub (רק 1, 2, 5), source, gap,
+         updated: true לקוביות שהתעדכנו בשלב הזה. קובייה בלי items — מוצגת עם השאלה המרכזית, "טרם מולא".
+  sections: מידע נוסף מתחת לקנבס — [{ "title": "...", "items": ["..."] }]. ריק — לא מוצג.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --page: #f5f6f8; --paper: #ffffff; --navy: #1b2a4a; --ink: #1c2430; --muted: #66707f; --line: #d7dee8;
+    --cream: #fbf3e3; --amber: #e0a544; --sub: #f7f9fb;
+    --ok: #1e7a45; --ok-bg: #e3f4ea; --assume: #8a5a00; --assume-bg: #fdf1d6;
+    --gap: #475569; --gap-bg: #e7ebf0; --conflict: #b42318; --conflict-bg: #fde4e1;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--page); color: var(--ink); color-scheme: light; }
+  body {
+    font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif;
+    font-size: clamp(13px, 0.92vw, 26px); line-height: 1.35;
+    padding: 1em 1.2em 1.6em; overflow-x: hidden;
+  }
+  header { display: flex; align-items: flex-end; justify-content: space-between; gap: 1em; flex-wrap: wrap; margin-bottom: 0.7em; }
+  h1 { margin: 0; font-size: 1.95em; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
+  h1 .venture { font-weight: 600; color: var(--muted); }
+  .stage { color: var(--muted); margin-top: 0.15em; }
+  .meta { display: flex; align-items: center; gap: 0.55em; flex-wrap: wrap; color: var(--muted); }
+  .version { background: var(--navy); color: #fff; font-weight: 700; padding: 0.2em 0.85em; border-radius: 999px; }
+  .legend { display: flex; gap: 0.35em; flex-wrap: wrap; align-items: center; }
+  .key-updated { display: inline-flex; align-items: center; gap: 0.3em; }
+  .key-updated i { width: 0.9em; height: 0.9em; background: var(--cream); border: 1px solid var(--amber); display: inline-block; }
+
+  .canvas {
+    border: 2px solid var(--navy); background: var(--line); width: 100%;
+    display: grid; gap: 1px;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-areas:
+      "c1  c1  c7  c7  c5  c5  c6  c6  c2  c2"
+      "c1  c1  c8  c8  c3  c3  c4  c4  c9  c9"
+      "c10 c10 c10 c10 c10 c11 c11 c11 c11 c11";
+  }
+  .cube { background: var(--paper); padding: 0.6em 0.75em 0.7em; display: flex; flex-direction: column; min-width: 0; min-height: 9em; }
+  .cube.updated { background: var(--cream); box-shadow: inset 0 0 0 1px var(--amber); }
+  .cube-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.5em; margin-bottom: 0.4em; }
+  .cube-title { font-weight: 800; font-size: 1.08em; color: var(--navy); }
+  .badge { flex: none; white-space: nowrap; font-weight: 700; font-size: 0.8em; padding: 0.1em 0.55em; border-radius: 999px; }
+  .badge.ok { color: var(--ok); background: var(--ok-bg); } .badge.assume { color: var(--assume); background: var(--assume-bg); }
+  .badge.gap { color: var(--gap); background: var(--gap-bg); } .badge.conflict { color: var(--conflict); background: var(--conflict-bg); }
+  .badge.none { display: none; }
+  ul { margin: 0; padding-inline-start: 1.05em; }
+  li { margin: 0.16em 0; overflow-wrap: anywhere; }
+  li::marker { color: var(--navy); }
+  .empty { color: var(--muted); font-style: italic; }
+  .empty b { font-style: normal; font-weight: 600; display: block; margin-top: 0.2em; }
+  .sub { margin-top: auto; padding-top: 0.45em; }
+  .sub-box { border-top: 1px dashed var(--line); padding: 0.4em 0.1em 0; }
+  .sub-label { font-weight: 700; color: var(--navy); font-size: 0.86em; margin-bottom: 0.1em; }
+  .foot { margin-top: 0.5em; padding-top: 0.35em; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8em; overflow-wrap: anywhere; }
+  .foot b { color: var(--ink); font-weight: 600; }
+
+  .below { display: grid; grid-template-columns: repeat(auto-fit, minmax(18em, 1fr)); gap: 0.7em; margin-top: 1em; }
+  .section { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: 6px; padding: 0.7em 0.9em; }
+  .section h2 { margin: 0 0 0.35em; font-size: 1.05em; color: var(--navy); font-weight: 800; }
+  .source-line { margin-top: 0.9em; color: var(--muted); font-size: 0.8em; }
+
+  @media (max-width: 900px) {
+    .canvas { grid-template-columns: 1fr; grid-template-areas: "c1" "c2" "c3" "c4" "c5" "c6" "c7" "c8" "c9" "c10" "c11"; }
+  }
+  @media print {
+    @page { size: A3 landscape; margin: 8mm; }
+    body { background: #fff; font-size: 9pt; padding: 0; }
+    .cube, .section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Lean Canvas <span class="venture" id="venture"></span></h1>
+    <div class="stage" id="stage"></div>
+  </div>
+  <div class="meta">
+    <span class="version" id="version"></span>
+    <span id="date"></span>
+    <span class="legend" id="legend"></span>
+  </div>
+</header>
+<main class="canvas" id="canvas"></main>
+<section class="below" id="below"></section>
+<div class="source-line" id="source"></div>
+
+<script type="application/json" id="data">
+{
+  "venture": "[שם המיזם]",
+  "version": "טיוטה — AI-First",
+  "stage": "[איפה אנחנו בתהליך]",
+  "date": "[תאריך]",
+  "source": "תוצרים/לוח-Lean-Canvas.md",
+  "cubes": {
+    "1":  { "status": "", "items": [], "sub": [], "source": "", "gap": "", "updated": false },
+    "2":  { "status": "", "items": [], "sub": [], "source": "", "gap": "", "updated": false },
+    "3":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "4":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "5":  { "status": "", "items": [], "sub": [], "source": "", "gap": "", "updated": false },
+    "6":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "7":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "8":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "9":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "10": { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "11": { "status": "", "items": [], "source": "", "gap": "", "updated": false }
+  },
+  "sections": []
+}
+</script>
+<script>
+  const CUBES = {
+    1: { title: "הלקוחות", sub: "מאמצים ראשונים", q: "למי אנחנו יוצרים ערך?" },
+    2: { title: "הבעיות", sub: "אלטרנטיבות קיימות", q: "3–5 בעיות מרכזיות" },
+    3: { title: "איך תיראה הצלחה?", q: "משפט אחד: מה יהיה נכון כשהמיזם מצליח" },
+    4: { title: "יעדים מדידים", q: "3–5 KPI תוצאתיים" },
+    5: { title: "הצעת ערך ייחודית", sub: "High Level Concept", q: "משפט אחד: ההבטחה ללקוח" },
+    6: { title: "הפתרון", q: "3–5 פתרונות · חלוקת אדם / AI / Agent" },
+    7: { title: "מפתחות להצלחה", q: "יתרון יחסי, וגם תנאי הכרחי" },
+    8: { title: "הטמעה / פריסה", q: "איך מטמיעים? Governance, Fallback אנושי" },
+    9: { title: "שותפים בפרויקט", q: "יחידות ובעלי תפקידים" },
+    10: { title: "תמורה וערך לארגון / למדינה", q: "הערך — מדיד, פשוט, \"עושה שכל\"" },
+    11: { title: "תשומות / משאבים", q: "עלויות, כולל AI" }
+  };
+  const STATUS = { "✓": ["ok", "✓ מבוסס"], "~": ["assume", "~ הנחה"], "?": ["gap", "? פער"], "⚡": ["conflict", "⚡ סתירה"], "": ["none", ""] };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const list = (items) => { const ul = el("ul"); items.forEach(t => ul.append(el("li", null, t))); return ul; };
+  const d = JSON.parse(document.getElementById("data").textContent);
+  document.title = "Lean Canvas — " + d.venture;
+  document.getElementById("venture").textContent = "— " + d.venture;
+  document.getElementById("stage").textContent = d.stage || "";
+  document.getElementById("version").textContent = d.version;
+  document.getElementById("date").textContent = d.date;
+  const legend = document.getElementById("legend");
+  ["✓", "~", "?", "⚡"].forEach(s => legend.append(el("span", "badge " + STATUS[s][0], STATUS[s][1])));
+  if (Object.values(d.cubes || {}).some(c => c.updated)) {
+    const k = el("span", "key-updated"); k.append(el("i"), document.createTextNode("עודכן בשלב הזה")); legend.append(k);
+  }
+  const canvas = document.getElementById("canvas");
+  Object.keys(CUBES).forEach(n => {
+    const def = CUBES[n], c = (d.cubes && d.cubes[n]) || {}, items = (c.items || []).filter(Boolean);
+    const box = el("section", "cube" + (c.updated ? " updated" : "")); box.style.gridArea = "c" + n;
+    const head = el("div", "cube-head"), st = STATUS[c.status || ""] || STATUS[""];
+    head.append(el("div", "cube-title", def.title + " (" + n + ")"), el("span", "badge " + st[0], st[1]));
+    box.append(head);
+    if (items.length) box.append(list(items));
+    else { const e = el("div", "empty", def.q); e.append(el("b", null, "טרם מולא")); box.append(e); }
+    if (def.sub && (c.sub || []).filter(Boolean).length) {
+      const sub = el("div", "sub"), sb = el("div", "sub-box");
+      sb.append(el("div", "sub-label", def.sub), list(c.sub.filter(Boolean))); sub.append(sb); box.append(sub);
+    }
+    if (c.source || c.gap) {
+      const foot = el("div", "foot");
+      if (c.source) { const s = el("div"); s.append(el("b", null, "מקור: "), document.createTextNode(c.source)); foot.append(s); }
+      if (c.gap) { const g = el("div"); g.append(el("b", null, "פתוח: "), document.createTextNode(c.gap)); foot.append(g); }
+      box.append(foot);
+    }
+    canvas.append(box);
+  });
+  const below = document.getElementById("below");
+  (d.sections || []).filter(s => s && s.title && (s.items || []).length).forEach(s => {
+    const sec = el("div", "section"); sec.append(el("h2", null, s.title), list(s.items)); below.append(sec);
+  });
+  if (!below.children.length) below.remove();
+  if (d.source) { const src = document.getElementById("source"); src.append("נגזר מ: ", el("bdi", null, d.source), d.date ? " · " + d.date : ""); }
+</script>
+</body>
+</html>

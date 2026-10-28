@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # תמונה של פריים מ-Miro: ממיר את ה-SVG ש-canvas_read_as_svg החזיר ל-PNG, ול-JPG כשה-PNG מעל 500KB.
 # שימוש: bash miro-snapshot.sh <קובץ.svg> <נתיב-בלי-סיומת> [רוחב בפיקסלים, ברירת מחדל 3000]
-# דוגמה: bash .playbook/skills/run-agent/miro-snapshot.sh /tmp/canvas.svg 01-ימים/04-Lean-Canvas/miro/canvas-presentation
+# דוגמה: bash .playbook/skills/tools/miro-snapshot.sh /tmp/canvas.svg 01-ימים/04-Lean-Canvas/miro/canvas-presentation
 # מדפיס בסוף את נתיב התמונה. דורש Chrome, Edge או Chromium. נתיב אחר לדפדפן: CHROME=<נתיב> bash ...
 set -euo pipefail
 

@@ -2,5 +2,5 @@
 
 ההנחיות המלאות בקובץ [.kiro/steering/מנטור.md](.kiro/steering/מנטור.md) — קרא אותו בתחילת כל שיחה ופעל לפיו.
 
-- להרצת סוכן מהפלייבוק (פרסונה דיגיטלית, Lean Canvas...): קרא את [.playbook/skills/run-agent/SKILL.md](.playbook/skills/run-agent/SKILL.md) ופעל לפיו.
+- **העבודה עם הפלייבוק — בשפה חופשית, לפי הימים והתהליכים:** קרא את [.playbook/04-AI/עבודה-עם-הפלייבוק.md](.playbook/04-AI/עבודה-עם-הפלייבוק.md) ופעל לפיו. אין הרצה ישירה של סוכנים — התהליך של היום קובע איזה סוכן, באיזו משימה.
 - לעדכון המיזם לגרסה העדכנית של הפלייבוק: קרא את [.playbook/skills/onboard-project/SKILL.md](.playbook/skills/onboard-project/SKILL.md) ופעל לפיו — מצב עדכון, על ה-repo הזה.
