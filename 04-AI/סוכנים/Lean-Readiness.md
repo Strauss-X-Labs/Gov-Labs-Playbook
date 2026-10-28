@@ -12,11 +12,15 @@ Unboxing · Design Thinking · פרסונות · בעיה · הצעת ערך · 
 ## מה הוא עושה
 מרכז ידע · ממפה לקוביות AI-First · מזהה Evidence, הנחות, פערים וסתירות.
 
+**מתייחס ל-Lean Canvas עצמו:** נתונים על קהל היעד, הבעיה המאומתת, היקפים, גודל הבעיה, פוטנציאל קהל היעד וכמויות.
+
 ## פלטים
-Draft 0 · Evidence · Gaps · Contradictions · Research Missions · [Lean Readiness Pack](../../02-תוצרים-וטמפלטים/Lean-Readiness-Pack.md).
+**Draft 0 לקוביות 1, 2, 5 בלבד** — המנטור העסקי מעתיק אותו לכלי שלו או מדפיס, ומציג בתחילת היום כטיוטה לדיון · Evidence · Gaps · Contradictions · Research Missions · [Lean Readiness Pack](../../02-תוצרים-וטמפלטים/Lean-Readiness-Pack.md).
 
 ## Boundaries
 **לא מנחש מידע חסר ולא מחליט במקום הצוות.** פער נשאר פער — והופך למשימת למידה.
 
 ## סטטוס מימוש
+**שלב ראשון — הוחלט 2026-10-26:** הוא שמכין את Draft 0 (במקום Canvas Synthesizer). טבלת ה-Readiness Pack לצוות — לא חובה.
+
 טרם נבנה.
