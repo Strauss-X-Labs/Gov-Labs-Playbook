@@ -8,9 +8,11 @@
 <!--
   תבנית ה-HTML הפנימי של יומן סקירת הקוביות — למנטור ולארכיטקט, לשאוב ממנו רעיונות. לא למליאה.
   נבנה מ-סקירת-קוביות.md, ומתעדכן בכל קלט. הסוכן ממלא רק את בלוק הנתונים (id="data"). העיצוב קבוע.
-  cubes: לכל קובייה שהגיעה — rounds, מהישן לחדש. כל סבב: time, written (מילה במילה), status ("✓" | "~" | "?" | "⚡" | ""),
+  cubes: לכל קובייה שהגיעה — rounds, מהישן לחדש. כל סבב: time, written (מילה במילה; בקובייה 7 — { advantage: [...], must: [...] }), status ("✓" | "~" | "?" | "⚡" | ""),
          changed (מה השתנה מהסבב הקודם · בפעם הראשונה — "חדשה"), recs: עד 2 — { missing, why, question }
   הסבב האחרון מוצג במלואו; הקודמים — מקופלים.
+  canvas: ב"סיימנו" — מבט על הקנבס כשלם, למנטור בלבד: { time, assumptions: ["הנחות ופערים מרכזיים"], consistency: ["עד 3 שאלות עקביות"] }.
+          מוצג ככרטיס ראשון, לרוחב. ריק — לא מוצג. לא נכנס ל-HTML של הקנבס.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -41,6 +43,8 @@
   .badge.none { color: var(--muted); border: 1px dashed var(--line); }
   h3 { margin: 0 0 0.2em; font-size: 0.85em; color: var(--muted); font-weight: 700; }
   ul, ol { margin: 0; padding-inline-start: 1.2em; } li { margin: 0.3em 0; overflow-wrap: anywhere; }
+  .group { margin-bottom: 0.4em; }
+  .group-label { font-weight: 700; color: var(--navy); font-size: 0.92em; }
   .changed { font-size: 0.9em; color: var(--navy); background: var(--navy-soft); border-radius: 6px; padding: 0.3em 0.6em; }
   .recs { display: flex; flex-direction: column; gap: 0.55em; border-top: 1px solid var(--line); padding-top: 0.6em; }
   .rec .missing { font-weight: 700; overflow-wrap: anywhere; }
@@ -51,7 +55,11 @@
   summary { cursor: pointer; color: var(--muted); font-weight: 700; }
   .round { margin-top: 0.6em; padding-inline-start: 0.8em; border-inline-start: 3px solid var(--line); display: flex; flex-direction: column; gap: 0.4em; }
   .empty { color: var(--muted); font-style: italic; }
-  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+  .card.whole { grid-column: 1 / -1; border-top-color: var(--assume); }
+  .whole .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1em; }
+  .whole .cols > div { min-width: 0; }
+  .whole .question-list li { background: var(--q); border: 1px solid var(--q-line); border-radius: 8px; padding: 0.3em 0.6em; list-style-position: inside; }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } .whole .cols { grid-template-columns: 1fr; } }
   @media print { @page { size: A4 landscape; margin: 10mm; } body { background: #fff; font-size: 9.5pt; padding: 0; } .card { break-inside: avoid; } details { display: none; } }
 </style>
 </head>
@@ -69,6 +77,7 @@
 {
   "venture": "[שם המיזם]",
   "updated": "[תאריך ושעה]",
+  "canvas": { "time": "", "assumptions": [], "consistency": [] },
   "cubes": {}
 }
 </script>
@@ -76,7 +85,20 @@
   const CUBE = { 1: "הלקוחות", 2: "הבעיות", 3: "איך תיראה הצלחה?", 4: "יעדים מדידים", 5: "הצעת ערך ייחודית", 6: "הפתרון", 7: "מפתחות להצלחה", 8: "הטמעה / פריסה", 9: "שותפים בפרויקט", 10: "תמורה וערך לארגון / למדינה", 11: "תשומות / משאבים" };
   const STATUS = { "✓": ["ok", "✓ מבוסס"], "~": ["assume", "~ הנחה"], "?": ["gap", "? פער"], "⚡": ["conflict", "⚡ סתירה"], "": ["none", "בלי סטטוס"] };
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
-  const list = (arr) => { arr = (arr || []).filter(Boolean); if (!arr.length) return el("div", "empty", "—"); const ul = el("ul"); arr.forEach(t => ul.append(el("li", null, t))); return ul; };
+  // כמו בקנבס: קובייה 2 ממוספרת, ובקובייה 6 הקשר לבעיות בסוגריים — "(בעיות 1, 2)" במקום "← בעיה N".
+  const linkToProblems = (t) => String(t).replace(/\s*(?:←|->|<-|→)\s*(?:בעיות|בעיה)?\s*((?:\d+\s*[,،]?\s*(?:ו-?)?)+)\s*$/u,
+    (m, nums) => { const n = nums.match(/\d+/g) || []; return n.length ? " (" + (n.length > 1 ? "בעיות " : "בעיה ") + n.join(", ") + ")" : m; });
+  const list = (arr, cube) => {
+    // קובייה 7 — written הוא אובייקט { advantage: [...], must: [...] }: שתי קטגוריות עם כותרת משנה.
+    if (cube === "7" && arr && !Array.isArray(arr) && typeof arr === "object") {
+      const wrap = el("div"), groups = [["advantage", "יתרון יחסי"], ["must", "תנאי הכרחי"]].map(([k, l]) => [l, (arr[k] || []).filter(Boolean)]).filter(g => g[1].length);
+      if (!groups.length) return el("div", "empty", "—");
+      groups.forEach(([label, a]) => { const g = el("div", "group"); g.append(el("div", "group-label", label), list(a)); wrap.append(g); });
+      return wrap;
+    }
+    arr = (arr || []).filter(Boolean); if (!arr.length) return el("div", "empty", "—");
+    const l = el(cube === "2" ? "ol" : "ul"); arr.forEach(t => l.append(el("li", null, cube === "6" ? linkToProblems(t) : t))); return l;
+  };
   const recs = (arr) => {
     const box = el("div", "recs"); arr = (arr || []).filter(r => r && r.missing);
     if (!arr.length) { box.append(el("div", "fine", "נראית טובה")); return box; }
@@ -95,7 +117,17 @@
   document.getElementById("venture").textContent = "— " + d.venture;
   document.getElementById("meta").textContent = "עודכן " + d.updated + " · " + nums.length + " קוביות · למנטור ולארכיטקט";
   const grid = document.getElementById("cubes");
-  if (!nums.length) grid.append(el("div", "empty", "עוד לא הגיעו קוביות"));
+  const cv = d.canvas || {}, asm = (cv.assumptions || []).filter(Boolean), cons = (cv.consistency || []).filter(Boolean);
+  if (asm.length || cons.length) {
+    const card = el("section", "card whole"), head = el("div", "head"), t = el("div", "title");
+    t.append(el("span", "num", "✓"), el("span", null, "\"סיימנו\" — מבט על הקנבס כשלם"));
+    head.append(t, el("div", "meta", (cv.time || "") + " · למנטור, לא למליאה")); card.append(head);
+    const cols = el("div", "cols");
+    const a = el("div"); a.append(el("h3", null, "הנחות ופערים מרכזיים"), list(asm)); cols.append(a);
+    const c = el("div"); c.append(el("h3", null, "שאלות עקביות")); const ql = list(cons); ql.className = "question-list"; c.append(ql); cols.append(c);
+    card.append(cols); grid.append(card);
+  }
+  if (!nums.length && !asm.length && !cons.length) grid.append(el("div", "empty", "עוד לא הגיעו קוביות"));
   nums.forEach(n => {
     const rounds = d.cubes[n].rounds, last = rounds[rounds.length - 1];
     const card = el("section", "card"), head = el("div", "head"), t = el("div", "title");
@@ -104,13 +136,13 @@
     meta.append(el("span", "badge " + s[0], s[1]), el("span", null, (rounds.length > 1 ? "סבב " + rounds.length + " · " : "") + (last.time || "")));
     head.append(t, meta); card.append(head);
     if (last.changed && rounds.length > 1) card.append(el("div", "changed", "מה השתנה: " + last.changed));
-    const w = el("div"); w.append(el("h3", null, "מה הצוות כתב"), list(last.written)); card.append(w);
+    const w = el("div"); w.append(el("h3", null, "מה הצוות כתב"), list(last.written, n)); card.append(w);
     card.append(recs(last.recs));
     if (rounds.length > 1) {
       const det = el("details"); det.append(el("summary", null, "סבבים קודמים (" + (rounds.length - 1) + ")"));
       rounds.slice(0, -1).reverse().forEach((r, i) => {
         const box = el("div", "round");
-        box.append(el("div", "meta", "סבב " + (rounds.length - 1 - i) + " · " + (r.time || "")), list(r.written), recs(r.recs));
+        box.append(el("div", "meta", "סבב " + (rounds.length - 1 - i) + " · " + (r.time || "")), list(r.written, n), recs(r.recs));
         det.append(box);
       });
       card.append(det);

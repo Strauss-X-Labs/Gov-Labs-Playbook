@@ -8,10 +8,13 @@
 <!--
   תבנית ה-HTML של לוח Lean Canvas — נוצרת ב"סיימנו", להצגה במליאה, ומתעדכנת ב-PIN ובערכי המוצר. בפריסה ובעיצוב של שקף הקנבס בפלייבוק
   (living_lean_canvas.pptx, שקף 5). הסוכן ממלא רק את בלוק הנתונים (id="data") מה-MD. העיצוב קבוע.
-  version: "גרסת הצגה" | "v1.0 PINNED" | "v1.1" ...   ·   stage: משפט קצר — איפה אנחנו
-  cubes: לכל קובייה — status ("✓" | "~" | "?" | "⚡" | ""), items (מילה במילה), sub (רק 1, 2, 5), source, gap,
+  version: "גרסת הצגה" | "v1.0 PINNED" | "v1.1" ...   ·   בכותרת רק שם המיזם, הגרסה והתאריך — בלי שורת "איפה אנחנו בתהליך"
+  cubes: לכל קובייה — status ("✓" | "~" | "?" | "⚡" | ""), items (מילה במילה; ב-2 מוצגים ממוספרים; ב-6 "← בעיה N" מוצג "(בעיה N)"), sub (רק 1, 2, 5), source, gap,
+         קובייה 7 — במקום items שתי קטגוריות: advantage (יתרון יחסי) ו-must (תנאי הכרחי), כל אחת רשימת בולטים; מוצגות ככותרות משנה.
          updated: true לקוביות שהשתנו מהגרסה הקודמת (ב-PIN — מגרסת ההצגה). קובייה בלי items — מוצגת עם השאלה המרכזית, "טרם מולא".
   sections: מידע נוסף מתחת לקנבס — [{ "title": "...", "items": ["..."] }]. ריק — לא מוצג.
+            בגרסת הצגה ("סיימנו") — ריק: הקנבס בלבד. ההנחות והפערים המרכזיים ושאלות העקביות הולכים ל-סקירת-קוביות (cube-review.html), למנטור.
+            ב-PIN ובערכי המוצר — המידע הנוסף של השלב, לפי הטמפלט.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +35,6 @@
   header { display: flex; align-items: flex-end; justify-content: space-between; gap: 1em; flex-wrap: wrap; margin-bottom: 0.7em; }
   h1 { margin: 0; font-size: 1.95em; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; }
   h1 .venture { font-weight: 600; color: var(--muted); }
-  .stage { color: var(--muted); margin-top: 0.15em; }
   .meta { display: flex; align-items: center; gap: 0.55em; flex-wrap: wrap; color: var(--muted); }
   .version { background: var(--navy); color: #fff; font-weight: 700; padding: 0.2em 0.85em; border-radius: 999px; }
   .legend { display: flex; gap: 0.35em; flex-wrap: wrap; align-items: center; }
@@ -61,6 +63,8 @@
   li::marker { color: var(--navy); }
   .empty { color: var(--muted); font-style: italic; }
   .empty b { font-style: normal; font-weight: 600; display: block; margin-top: 0.2em; }
+  .group { margin-bottom: 0.45em; }
+  .group-label { font-weight: 700; color: var(--navy); font-size: 0.92em; margin-bottom: 0.1em; }
   .sub { margin-top: auto; padding-top: 0.45em; }
   .sub-box { border-top: 1px dashed var(--line); padding: 0.4em 0.1em 0; }
   .sub-label { font-weight: 700; color: var(--navy); font-size: 0.86em; margin-bottom: 0.1em; }
@@ -86,7 +90,6 @@
 <header>
   <div>
     <h1>Lean Canvas <span class="venture" id="venture"></span></h1>
-    <div class="stage" id="stage"></div>
   </div>
   <div class="meta">
     <span class="version" id="version"></span>
@@ -102,7 +105,6 @@
 {
   "venture": "[שם המיזם]",
   "version": "גרסת הצגה",
-  "stage": "[איפה אנחנו בתהליך]",
   "date": "[תאריך]",
   "source": "01-ימים/04-Lean-Canvas/לוח-Lean-Canvas.md",
   "cubes": {
@@ -112,7 +114,7 @@
     "4":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
     "5":  { "status": "", "items": [], "sub": [], "source": "", "gap": "", "updated": false },
     "6":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
-    "7":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
+    "7":  { "status": "", "advantage": [], "must": [], "source": "", "gap": "", "updated": false },
     "8":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
     "9":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
     "10": { "status": "", "items": [], "source": "", "gap": "", "updated": false },
@@ -129,7 +131,7 @@
     4: { title: "יעדים מדידים", q: "3–5 KPI תוצאתיים" },
     5: { title: "הצעת ערך ייחודית", sub: "High Level Concept", q: "משפט אחד: ההבטחה ללקוח" },
     6: { title: "הפתרון", q: "3–5 פתרונות · חלוקת אדם / AI / Agent" },
-    7: { title: "מפתחות להצלחה", q: "יתרון יחסי, וגם תנאי הכרחי" },
+    7: { title: "מפתחות להצלחה", q: "יתרון יחסי, וגם תנאי הכרחי", groups: [["advantage", "יתרון יחסי"], ["must", "תנאי הכרחי"]] },
     8: { title: "הטמעה / פריסה", q: "איך מטמיעים? Governance, Fallback אנושי" },
     9: { title: "שותפים בפרויקט", q: "יחידות ובעלי תפקידים" },
     10: { title: "תמורה וערך לארגון / למדינה", q: "הערך — מדיד, פשוט, \"עושה שכל\"" },
@@ -137,11 +139,17 @@
   };
   const STATUS = { "✓": ["ok", "✓ מבוסס"], "~": ["assume", "~ הנחה"], "?": ["gap", "? פער"], "⚡": ["conflict", "⚡ סתירה"], "": ["none", ""] };
   const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
-  const list = (items) => { const ul = el("ul"); items.forEach(t => ul.append(el("li", null, t))); return ul; };
+  // קובייה 2 — הבעיות ממוספרות. קובייה 6 — הקשר לבעיות בסוגריים: "... (בעיות 1, 2)". "← בעיה N" מהלוח מומר אוטומטית.
+  const linkToProblems = (t) => String(t).replace(/\s*(?:←|->|<-|→)\s*(?:בעיות|בעיה)?\s*((?:\d+\s*[,،]?\s*(?:ו-?)?)+)\s*$/u,
+    (m, nums) => { const n = nums.match(/\d+/g) || []; return n.length ? " (" + (n.length > 1 ? "בעיות " : "בעיה ") + n.join(", ") + ")" : m; });
+  const list = (items, cube) => {
+    const l = el(cube === "2" ? "ol" : "ul");
+    items.forEach(t => l.append(el("li", null, cube === "6" ? linkToProblems(t) : t)));
+    return l;
+  };
   const d = JSON.parse(document.getElementById("data").textContent);
   document.title = "Lean Canvas — " + d.venture;
   document.getElementById("venture").textContent = "— " + d.venture;
-  document.getElementById("stage").textContent = d.stage || "";
   document.getElementById("version").textContent = d.version;
   document.getElementById("date").textContent = d.date;
   const legend = document.getElementById("legend");
@@ -156,7 +164,12 @@
     const head = el("div", "cube-head"), st = STATUS[c.status || ""] || STATUS[""];
     head.append(el("div", "cube-title", def.title + " (" + n + ")"), el("span", "badge " + st[0], st[1]));
     box.append(head);
-    if (items.length) box.append(list(items));
+    const groups = (def.groups || []).map(([key, label]) => [label, (c[key] || []).filter(Boolean)]).filter(g => g[1].length);
+    if (groups.length) {
+      groups.forEach(([label, arr]) => { const g = el("div", "group"); g.append(el("div", "group-label", label), list(arr, n)); box.append(g); });
+      if (items.length) box.append(list(items, n));
+    }
+    else if (items.length) box.append(list(items, n));
     else { const e = el("div", "empty", def.q); e.append(el("b", null, "טרם מולא")); box.append(e); }
     if (def.sub && (c.sub || []).filter(Boolean).length) {
       const sub = el("div", "sub"), sb = el("div", "sub-box");
