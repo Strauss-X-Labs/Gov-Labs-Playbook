@@ -38,7 +38,7 @@ repo של מיזם בתוכנית Gov-Labs. נוצר מהתבנית ב-[Gov-Labs
 | `תוצרים/` | התוצרים של המיזם, קובץ MD לכל תוצר. לצידו קבצים נלווים באותו שם: תצוגה ויזואלית (`.html`) ותמונה (`.png`). קישור השיתוף נמצא בראש ה-MD. השמות זהים לשמות ב-`02-תוצרים-וטמפלטים/` בפלייבוק, וכאן ממלאים אותם בפועל. ריק בהתחלה. **תוצרי יום 4** — בתיקיית היום. |
 | `.playbook/` | עותק של הפלייבוק, לקריאה בלבד. |
 | `.kiro/steering/` | הגדרות הסוכן של המנטור. מצביע לפלייבוק, כי התהליך, הכללים והשפה מוגדרים שם ולא כאן. |
-| `.mcp.json` · `.kiro/settings/mcp.json` · `.gemini/settings.json` | החיבור ל-Miro, שבו נבנה ה-Lean Canvas ביום 4. מתחברים פעם אחת בכל מחשב: [`.playbook/skills/tools/miro.md`](.playbook/skills/tools/miro.md). |
+| `.mcp.json` · `.kiro/settings/mcp.json` · `.gemini/settings.json` | החיבור ל-Canva, לשיטה הדיגיטלית של ה-Lean Canvas ביום 4. מתחברים פעם אחת בכל מחשב, והסוכן מוביל את ההקמה: [`.playbook/skills/tools/canva.md`](.playbook/skills/tools/canva.md). |
 
 ## מי עובד כאן
 

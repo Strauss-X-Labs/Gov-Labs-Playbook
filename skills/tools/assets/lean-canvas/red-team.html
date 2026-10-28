@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Red Team</title>
+<!--
+  תבנית ה-HTML הפנימי של Red Team ו-Friendly Tips — מצע לדיון למנטור ולארכיטקט, לא למליאה.
+  נבנה מ-Red-Team.md ומ-Friendly-Tips.md. הסוכן ממלא רק את בלוק הנתונים (id="data"). העיצוב קבוע.
+  challenges: עד 5 — cubes (מספרי קוביות), assumption, risk, evidence (Evidence חסר), refute (מה יפריך), test (מה לבדוק),
+              origin (מאיפה זה עולה), tips (מספרי טיפים קשורים), bring (להביא לצוות?), decision (מה הצוות החליט — ריק עד ההחלטה)
+  qa: עד 5 סוגיות ל-Q&A   ·   tips: text (מילה במילה), from, challenge (מספר האתגר שהטיפ מחזק, או null), decision
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --red: #b42318; --red-soft: #fdecea;
+    --bring: #8a5a00; --bring-bg: #fdf1d6; --bring-line: #f0d48a;
+    --done: #1e7a45; --done-bg: #e3f4ea; --tip: #6b3fa0; --tip-bg: #f1ebf8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); color-scheme: light; }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.95vw, 21px); line-height: 1.45; padding: 1.3em 1.4em; overflow-x: hidden; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 1em; flex-wrap: wrap; margin-bottom: 1.1em; }
+  h1 { margin: 0; font-size: 1.9em; font-weight: 800; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.2em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  h2 { font-size: 1.25em; margin: 1.3em 0 0.6em; display: flex; align-items: center; gap: 0.5em; }
+  h2 .count { font-size: 0.75em; font-weight: 700; color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1em; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--red); border-radius: 10px; padding: 1em 1.1em; display: flex; flex-direction: column; gap: 0.65em; min-width: 0; }
+  .card.bring { border-top-color: var(--bring); box-shadow: 0 0 0 2px var(--bring-line) inset; }
+  .head { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; flex-wrap: wrap; }
+  .title { display: flex; align-items: center; gap: 0.5em; font-weight: 800; font-size: 1.15em; }
+  .num { width: 1.8em; height: 1.8em; border-radius: 50%; background: var(--red-soft); color: var(--red); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: 800; flex: none; }
+  .chips { display: flex; gap: 0.35em; flex-wrap: wrap; }
+  .chip { font-size: 0.8em; font-weight: 700; padding: 0.1em 0.55em; border-radius: 999px; background: var(--navy-soft); color: var(--navy); white-space: nowrap; }
+  .chip.tip { background: var(--tip-bg); color: var(--tip); }
+  .flag { font-size: 0.8em; font-weight: 800; padding: 0.12em 0.6em; border-radius: 999px; color: var(--bring); background: var(--bring-bg); white-space: nowrap; }
+  .assumption { font-weight: 700; font-size: 1.05em; overflow-wrap: anywhere; }
+  .risk { color: var(--red); overflow-wrap: anywhere; }
+  .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5em 1em; border-top: 1px solid var(--line); padding-top: 0.6em; }
+  .fact h3 { margin: 0 0 0.1em; font-size: 0.82em; color: var(--muted); font-weight: 700; }
+  .fact div { overflow-wrap: anywhere; }
+  .decision { background: var(--done-bg); color: var(--done); border-radius: 8px; padding: 0.45em 0.75em; font-weight: 700; }
+  .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.9em 1.1em; }
+  ol, ul { margin: 0; padding-inline-start: 1.3em; } li { margin: 0.35em 0; overflow-wrap: anywhere; }
+  .tips { display: flex; flex-direction: column; gap: 0.5em; }
+  .tiprow { display: grid; grid-template-columns: 2.2em minmax(0, 1fr) auto; gap: 0.7em; align-items: start; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.6em 0.8em; }
+  .tiprow .n { font-weight: 800; color: var(--tip); }
+  .tiprow .from { display: block; color: var(--muted); font-size: 0.85em; }
+  .tiprow .side { display: flex; flex-direction: column; align-items: flex-end; gap: 0.3em; }
+  .tiprow .decision { font-size: 0.85em; padding: 0.15em 0.6em; }
+  .empty { color: var(--muted); font-style: italic; }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 640px) { .facts { grid-template-columns: 1fr; } .tiprow { grid-template-columns: 2em minmax(0, 1fr); } .tiprow .side { grid-column: 2; align-items: flex-start; } }
+  @media print { @page { size: A4 landscape; margin: 10mm; } body { background: #fff; font-size: 9.5pt; padding: 0; } .card, .tiprow { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Red Team <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon">פנימי — מצע לדיון, לא החלטה</div>
+</header>
+
+<h2>האתגרים <span class="count" id="ccount"></span></h2>
+<main class="grid" id="challenges"></main>
+
+<h2>סוגיות ל-Q&amp;A</h2>
+<section class="panel" id="qa"></section>
+
+<h2>Friendly Tips <span class="count" id="tcount"></span></h2>
+<section class="tips" id="tips"></section>
+
+<script type="application/json" id="data">
+{
+  "venture": "[שם המיזם]",
+  "date": "[תאריך ושעה]",
+  "canvas": "גרסת הצגה",
+  "challenges": [
+    { "cubes": [], "assumption": "", "risk": "", "evidence": "", "refute": "", "test": "", "origin": "", "tips": [], "bring": false, "decision": "" }
+  ],
+  "qa": [],
+  "tips": []
+}
+</script>
+<script>
+  const CUBE = { 1: "לקוחות", 2: "בעיות", 3: "הצלחה", 4: "יעדים", 5: "הצעת ערך", 6: "פתרון", 7: "מפתחות", 8: "הטמעה", 9: "שותפים", 10: "תמורה", 11: "תשומות" };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const d = JSON.parse(document.getElementById("data").textContent);
+  const challenges = (d.challenges || []).filter(c => c && c.assumption);
+  const tips = (d.tips || []).filter(t => t && t.text);
+  document.title = "Red Team — " + d.venture;
+  document.getElementById("venture").textContent = "— " + d.venture;
+  document.getElementById("meta").textContent = d.date + " · על הקנבס ב" + (d.canvas || "גרסת הצגה") + " · למנטור ולארכיטקט";
+  document.getElementById("ccount").textContent = challenges.length ? challenges.length + " אתגרים · " + challenges.filter(c => c.bring).length + " להביא לצוות" : "";
+  document.getElementById("tcount").textContent = tips.length ? String(tips.length) : "";
+
+  const box = document.getElementById("challenges");
+  if (!challenges.length) box.append(el("div", "empty", "אין עדיין אתגרים"));
+  challenges.forEach((c, i) => {
+    const card = el("section", "card" + (c.bring ? " bring" : ""));
+    const head = el("div", "head"), t = el("div", "title");
+    t.append(el("span", "num", String(i + 1)), el("span", null, "אתגר " + (i + 1)));
+    const right = el("div", "chips");
+    (c.cubes || []).forEach(n => right.append(el("span", "chip", n + " · " + (CUBE[n] || ""))));
+    if (c.bring) right.append(el("span", "flag", "להביא לצוות"));
+    head.append(t, right); card.append(head);
+    card.append(el("div", "assumption", c.assumption));
+    if (c.risk) card.append(el("div", "risk", "הסיכון: " + c.risk));
+    const facts = el("div", "facts");
+    [["Evidence חסר", c.evidence], ["מה יפריך", c.refute], ["מה לבדוק", c.test], ["מאיפה זה עולה", c.origin]].forEach(([h, v]) => {
+      if (!v) return; const f = el("div", "fact"); f.append(el("h3", null, h), el("div", null, v)); facts.append(f);
+    });
+    if (facts.childNodes.length) card.append(facts);
+    if ((c.tips || []).length) { const ch = el("div", "chips"); c.tips.forEach(n => ch.append(el("span", "chip tip", "טיפ " + n))); card.append(ch); }
+    if (c.decision) card.append(el("div", "decision", "הצוות החליט: " + c.decision));
+    box.append(card);
+  });
+
+  const qa = document.getElementById("qa"), qs = (d.qa || []).filter(Boolean);
+  if (qs.length) { const ol = el("ol"); qs.forEach(q => ol.append(el("li", null, q))); qa.append(ol); } else qa.append(el("div", "empty", "—"));
+
+  const tb = document.getElementById("tips");
+  if (!tips.length) tb.append(el("div", "empty panel", "הטיפים יתווספו בזמן ההצגה"));
+  tips.forEach((t, i) => {
+    const row = el("div", "tiprow");
+    row.append(el("span", "n", String(i + 1)));
+    const body = el("div", null, t.text); if (t.from) body.append(el("span", "from", t.from)); row.append(body);
+    const side = el("div", "side");
+    if (t.challenge) side.append(el("span", "chip", "מחזק את אתגר " + t.challenge));
+    if (t.decision) side.append(el("span", "decision", t.decision));
+    row.append(side); tb.append(row);
+  });
+</script>
+</body>
+</html>
