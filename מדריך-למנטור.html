@@ -219,7 +219,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <div class="layer mid">
       <span class="tag">כאן נכתב</span>
       <h4><code>תוצרים/</code></h4>
-      <p>הפרסונה, ה-Lean Canvas ושאר התוצרים. הסוכן כותב לכאן אחרי אישור הצוות.</p>
+      <p>הפרסונה ושאר התוצרים. הסוכן כותב לכאן אחרי אישור הצוות. תוצרי יום 4, ובהם ה-Lean Canvas, נכתבים לתיקיית היום, ומיד.</p>
     </div>
     <div class="flow-arrow" aria-hidden="true"><span class="arr">→</span><span>חומר היום</span></div>
     <div class="layer">
@@ -328,7 +328,7 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
       <thead><tr><th>מה</th><th>איפה</th></tr></thead>
       <tbody>
         <tr><td><strong>חומר גולמי</strong>: מצגות, מסמכי Word, סיכומי מפגש, ראיונות, תמונות</td><td><code>01-ימים/NN-יום/</code>, תיקייה לכל יום</td></tr>
-        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td><code>תוצרים/</code>: קובץ MD לכל תוצר, ולצידו תצוגה ויזואלית (<code>.html</code>) ותמונה, באותו שם</td></tr>
+        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td><code>תוצרים/</code>: קובץ MD לכל תוצר, ולצידו תצוגה ויזואלית (<code>.html</code>) ותמונה, באותו שם. תוצרי יום 4 — ב-<code>01-ימים/04-Lean-Canvas/</code></td></tr>
         <tr><td><strong>הפלייבוק</strong>: המתודה והסוכנים</td><td><code>.playbook/</code>: עותק, שהגרסה שלו רשומה ב-<code>.playbook/SOURCE</code>. מתחדש רק כשמעדכנים, כך שמחזור שרץ לא משתנה באמצע</td></tr>
       </tbody>
     </table>
@@ -358,7 +358,7 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
       <tbody>
         <tr><td><code>README.md</code></td><td>שם המיזם, איפה החומר, איך מריצים סוכן ואיך מעדכנים</td></tr>
         <tr><td><code>01-ימים/01-Unboxing</code> … <code>08-Storytelling</code></td><td>החומר של כל יום: מצגות, מסמכים, סיכומי מפגש, שיעורי בית והחלטות. כל תיקייה מקשרת ליום ב-<code>.playbook/</code></td></tr>
-        <tr><td><code>תוצרים/</code></td><td>התוצרים שהסוכנים כותבים אחרי אישור הצוות</td></tr>
+        <tr><td><code>תוצרים/</code></td><td>התוצרים שהסוכנים כותבים אחרי אישור הצוות. תוצרי יום 4 — בתיקיית היום</td></tr>
         <tr><td><code>.playbook/</code></td><td>עותק של הפלייבוק, בלי חומרי המקור. לקריאה בלבד</td></tr>
         <tr><td><code>.kiro/steering/מנטור.md</code></td><td>ההנחיות לסוכן: מי הוא, שתי שכבות הידע, והכללים של המיזם</td></tr>
         <tr><td><code>CLAUDE.md</code>, <code>GEMINI.md</code>, <code>AGENTS.md</code></td><td>מפנים את כלי ה-AI השונים לאותו קובץ הנחיות</td></tr>
@@ -414,7 +414,7 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
     <div>
       <h4>אחרי המפגש</h4>
       <ul>
-        <li>בדיקה שהתוצרים נשמרו ב-<code>תוצרים/</code></li>
+        <li>בדיקה שהתוצרים נשמרו ב-<code>תוצרים/</code>, או בתיקיית היום כשהיום מגדיר (יום 4)</li>
         <li>סיכום היום והחומרים בתיקייה <code>01-ימים/NN-יום/</code></li>
         <li>שמירה ושיתוף ב-GitHub</li>
       </ul>
@@ -434,7 +434,7 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
     <li><strong>בדיקת קלטים.</strong> מוצגת טבלה של מה יש ומה חסר מתוך מה שהמפרט דורש. מה שחסר נשאל מהצוות, ולא מומצא.</li>
     <li><strong>תשאול הצוות.</strong> שאלה אחת בכל פעם, לפי התסריט שבמפרט. הסוכן מאתגר, שואל "למה?", ושם לב לנורות האזהרה של התהליך.</li>
     <li><strong>טיוטה.</strong> הסוכן מציג טיוטה במבנה של הטמפלט, כשהשערות מסומנות כהשערות. הצוות מתקן.</li>
-    <li><strong>כתיבה.</strong> רק אחרי אישור הצוות התוצר נכתב ל-<code>תוצרים/</code>. אם התוצר כבר קיים, הסוכן מציג מה משתנה ומעדכן, בלי לדרוס.</li>
+    <li><strong>כתיבה.</strong> רק אחרי אישור הצוות התוצר נכתב ל-<code>תוצרים/</code>. אם התוצר כבר קיים, הסוכן מציג מה משתנה ומעדכן, בלי לדרוס. <strong>ביום 4</strong> הסוכן כותב מיד, לתיקיית היום, את ה-MD ואת ה-HTML, כשיש הצעה טובה, ומעדכן לפי התיקונים.</li>
     <li><strong>תצוגה ותמונה, כשהסוכן מגדיר אותן.</strong> לדוגמה, בפרסונה נשמרים ליד קובץ ה-MD, באותו שם, גם תצוגה ויזואלית (<code>.html</code>) ותמונה. אם הכלי לא מחולל תמונות, הסוכן כותב פרומפט לכלי חיצוני, ואתה שומר את התמונה בשם שהוא נותן. אם הכלי מפרסם דפים לשיתוף, קישור השיתוף נרשם בראש קובץ ה-MD, ובכל עדכון הדף מתפרסם מחדש לאותו קישור.</li>
     <li><strong>סיכום.</strong> מה נכתב, על מה זה מבוסס, ומה כדאי לבדוק בשטח. הסוכן גם מציע את הצעד הבא בתהליך.</li>
   </ol>

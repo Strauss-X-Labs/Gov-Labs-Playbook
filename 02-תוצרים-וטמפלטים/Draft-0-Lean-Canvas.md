@@ -1,7 +1,7 @@
 # Draft 0 — Lean Canvas
 
 > מקור: [Gov-Labs-2.0-Lean-Canvas-Playbook.docx](../חומרי-מקור/מסמכים/רונית-lean-canvas-2026-09-23/Gov-Labs-2.0-Lean-Canvas-Playbook.docx) (רונית, 2026-09-23) — פרקים 3, 5 · הנחיית אריאל, 2026-10-28, לא ב-repo: Draft 0 כרשימה, מצע לדיון, ופלט HTML
-> סוג: **טמפלט** · הקבצים: `Draft-0-Lean-Canvas.md` (מקור האמת) + `Draft-0-Lean-Canvas.html` (התצוגה), ב-`תוצרים/`
+> סוג: **טמפלט** · הקבצים: `Draft-0-Lean-Canvas.md` (מקור האמת) + `Draft-0-Lean-Canvas.html` (התצוגה), ב-`01-ימים/04-Lean-Canvas/`
 
 ## מה זה ולמה
 

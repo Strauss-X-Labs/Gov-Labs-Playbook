@@ -1,7 +1,7 @@
 # Lean Readiness — בדיקת מוכנות
 
 > מקור: [Gov-Labs-2.0-Lean-Canvas-Playbook.docx](../חומרי-מקור/מסמכים/רונית-lean-canvas-2026-09-23/Gov-Labs-2.0-Lean-Canvas-Playbook.docx) (רונית, 2026-09-23) — פרקים 2, 11 · הנחיית אריאל, 2026-10-28, לא ב-repo: בדיקת מוכנות בלבד; ה-HTML לצוות הוא Draft 0
-> סוג: **טמפלט** · הקובץ: `Lean-Readiness-Pack.md`, ב-`תוצרים/` — **למנטור.** בלי HTML: התוצר הראשון שמוצג לצוות הוא [Draft 0](Draft-0-Lean-Canvas.md)
+> סוג: **טמפלט** · הקובץ: `Lean-Readiness-Pack.md`, ב-`01-ימים/04-Lean-Canvas/` — **למנטור.** בלי HTML: התוצר הראשון שמוצג לצוות הוא [Draft 0](Draft-0-Lean-Canvas.md)
 
 ## מה זה ולמה
 
