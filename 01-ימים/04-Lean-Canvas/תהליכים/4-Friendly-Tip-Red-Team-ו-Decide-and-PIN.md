@@ -49,7 +49,7 @@
 
 | סוכן — משימה | מתי · מי מפעיל | קלטים | פלטים |
 |---|---|---|---|
-| [Lean Canvas Agent — Red Team](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-5--red-team) | מיד אחרי ההצגה של הקבוצה, מאחורי הקלעים · הארכיטקט | `תוצרים/לוח-Lean-Canvas.md` (גרסת הצגה) · הטיפים — **ידני:** הדבקה · **דיגיטלי:** Miro · `תוצרים/Lean-Readiness-Pack.md` · תוצאות Kayma ב-`01-ימים/03-Design-Thinking-2/שאלון-בחינת-קונספט/` · סינתזת הראיונות ב-`01-ימים/` | `01-ימים/04-Lean-Canvas/Friendly-Tips.md` · `01-ימים/04-Lean-Canvas/Red-Team.md`. **לא בלוח** |
+| [Lean Canvas Agent — Red Team](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-5--red-team) | מיד אחרי ההצגה של הקבוצה, מאחורי הקלעים · הארכיטקט | `תוצרים/לוח-Lean-Canvas.md` (גרסת הצגה) · הטיפים — **ידני:** הדבקה · **דיגיטלי:** Miro · `תוצרים/Lean-Readiness-Pack.md` · תוצאות גוף ביצוע הולידציה ב-`01-ימים/03-Design-Thinking-2/שאלון-בחינת-קונספט/` · סינתזת הראיונות ב-`01-ימים/` | `01-ימים/04-Lean-Canvas/Friendly-Tips.md` · `01-ימים/04-Lean-Canvas/Red-Team.md`. **לא בלוח** |
 | [Lean Canvas Agent — Decision & PIN](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-6--decision--pin) | "סיימנו", כ-14:55 · מפעיל ה-AI | הלוח העדכני — **ידני:** צילום חדש או הקלדה · **דיגיטלי:** Miro · `תוצרים/לוח-Lean-Canvas.md` (גרסת הצגה) · `Red-Team.md` · `Friendly-Tips.md` · `תוצרים/Lean-Readiness-Pack.md` | `תוצרים/לוח-Lean-Canvas.md` + `.html` — v1.0 PINNED · `תוצרים/Decision-and-PIN.md` · עמודת "מה הצוות החליט" ב-`Red-Team.md` וב-`Friendly-Tips.md` · **דיגיטלי** — תווית PINNED בלוח ותמונה |
 
 ## ה. תוצרים וטמפלטים
