@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>סקירת קוביות</title>
+<!--
+  תבנית ה-HTML הפנימי של יומן סקירת הקוביות — למנטור ולארכיטקט, לשאוב ממנו רעיונות. לא למליאה.
+  נבנה מ-סקירת-קוביות.md, ומתעדכן בכל קלט. הסוכן ממלא רק את בלוק הנתונים (id="data"). העיצוב קבוע.
+  cubes: לכל קובייה שהגיעה — rounds, מהישן לחדש. כל סבב: time, written (מילה במילה; בקובייה 7 — { advantage: [...], must: [...] }), status ("✓" | "~" | "?" | "⚡" | ""),
+         changed (מה השתנה מהסבב הקודם · בפעם הראשונה — "חדשה"), recs: עד 2 — { missing, why, question }
+  הסבב האחרון מוצג במלואו; הקודמים — מקופלים.
+  canvas: ב"סיימנו" — מבט על הקנבס כשלם, למנטור בלבד: { time, assumptions: ["הנחות ופערים מרכזיים"], consistency: ["עד 3 שאלות עקביות"] }.
+          מוצג ככרטיס ראשון, לרוחב. ריק — לא מוצג. לא נכנס ל-HTML של הקנבס.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --q: #fff8e1; --q-line: #f0d48a;
+    --ok: #1e7a45; --ok-bg: #e3f4ea; --assume: #8a5a00; --assume-bg: #fdf1d6;
+    --gap: #475569; --gap-bg: #e7ebf0; --conflict: #b42318; --conflict-bg: #fde4e1;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); color-scheme: light; }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.95vw, 21px); line-height: 1.45; padding: 1.3em 1.4em; overflow-x: hidden; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 1em; flex-wrap: wrap; margin-bottom: 1.1em; }
+  h1 { margin: 0; font-size: 1.9em; font-weight: 800; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.2em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1em; align-items: start; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--navy); border-radius: 10px; padding: 1em 1.1em; display: flex; flex-direction: column; gap: 0.65em; min-width: 0; }
+  .head { display: flex; align-items: center; justify-content: space-between; gap: 0.6em; flex-wrap: wrap; }
+  .title { display: flex; align-items: center; gap: 0.5em; font-weight: 800; font-size: 1.2em; }
+  .num { width: 1.8em; height: 1.8em; border-radius: 50%; background: var(--navy-soft); color: var(--navy); display: inline-flex; align-items: center; justify-content: center; font-size: 0.85em; font-weight: 800; flex: none; }
+  .meta { display: flex; gap: 0.4em; align-items: center; flex-wrap: wrap; color: var(--muted); font-size: 0.85em; }
+  .badge { white-space: nowrap; font-weight: 700; font-size: 0.85em; padding: 0.12em 0.6em; border-radius: 999px; }
+  .badge.ok { color: var(--ok); background: var(--ok-bg); } .badge.assume { color: var(--assume); background: var(--assume-bg); }
+  .badge.gap { color: var(--gap); background: var(--gap-bg); } .badge.conflict { color: var(--conflict); background: var(--conflict-bg); }
+  .badge.none { color: var(--muted); border: 1px dashed var(--line); }
+  h3 { margin: 0 0 0.2em; font-size: 0.85em; color: var(--muted); font-weight: 700; }
+  ul, ol { margin: 0; padding-inline-start: 1.2em; } li { margin: 0.3em 0; overflow-wrap: anywhere; }
+  .group { margin-bottom: 0.4em; }
+  .group-label { font-weight: 700; color: var(--navy); font-size: 0.92em; }
+  .changed { font-size: 0.9em; color: var(--navy); background: var(--navy-soft); border-radius: 6px; padding: 0.3em 0.6em; }
+  .recs { display: flex; flex-direction: column; gap: 0.55em; border-top: 1px solid var(--line); padding-top: 0.6em; }
+  .rec .missing { font-weight: 700; overflow-wrap: anywhere; }
+  .rec .why { color: var(--muted); font-size: 0.9em; overflow-wrap: anywhere; }
+  .rec .question { margin-top: 0.3em; background: var(--q); border: 1px solid var(--q-line); border-radius: 8px; padding: 0.4em 0.7em; overflow-wrap: anywhere; }
+  .fine { color: var(--ok); font-weight: 700; }
+  details { border-top: 1px dashed var(--line); padding-top: 0.5em; font-size: 0.92em; }
+  summary { cursor: pointer; color: var(--muted); font-weight: 700; }
+  .round { margin-top: 0.6em; padding-inline-start: 0.8em; border-inline-start: 3px solid var(--line); display: flex; flex-direction: column; gap: 0.4em; }
+  .empty { color: var(--muted); font-style: italic; }
+  .card.whole { grid-column: 1 / -1; border-top-color: var(--assume); }
+  .whole .cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1em; }
+  .whole .cols > div { min-width: 0; }
+  .whole .question-list li { background: var(--q); border: 1px solid var(--q-line); border-radius: 8px; padding: 0.3em 0.6em; list-style-position: inside; }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } .whole .cols { grid-template-columns: 1fr; } }
+  @media print { @page { size: A4 landscape; margin: 10mm; } body { background: #fff; font-size: 9.5pt; padding: 0; } .card { break-inside: avoid; } details { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>סקירת קוביות <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon">פנימי — לשאוב רעיונות, לא להקריא</div>
+</header>
+<main class="grid" id="cubes"></main>
+
+<script type="application/json" id="data">
+{
+  "venture": "[שם המיזם]",
+  "updated": "[תאריך ושעה]",
+  "canvas": { "time": "", "assumptions": [], "consistency": [] },
+  "cubes": {}
+}
+</script>
+<script>
+  const CUBE = { 1: "הלקוחות", 2: "הבעיות", 3: "איך תיראה הצלחה?", 4: "יעדים מדידים", 5: "הצעת ערך ייחודית", 6: "הפתרון", 7: "מפתחות להצלחה", 8: "הטמעה / פריסה", 9: "שותפים בפרויקט", 10: "תמורה וערך לארגון / למדינה", 11: "תשומות / משאבים" };
+  const STATUS = { "✓": ["ok", "✓ מבוסס"], "~": ["assume", "~ הנחה"], "?": ["gap", "? פער"], "⚡": ["conflict", "⚡ סתירה"], "": ["none", "בלי סטטוס"] };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  // כמו בקנבס: קובייה 2 ממוספרת, ובקובייה 6 הקשר לבעיות בסוגריים — "(בעיות 1, 2)" במקום "← בעיה N".
+  const linkToProblems = (t) => String(t).replace(/\s*(?:←|->|<-|→)\s*(?:בעיות|בעיה)?\s*((?:\d+\s*[,،]?\s*(?:ו-?)?)+)\s*$/u,
+    (m, nums) => { const n = nums.match(/\d+/g) || []; return n.length ? " (" + (n.length > 1 ? "בעיות " : "בעיה ") + n.join(", ") + ")" : m; });
+  const list = (arr, cube) => {
+    // קובייה 7 — written הוא אובייקט { advantage: [...], must: [...] }: שתי קטגוריות עם כותרת משנה.
+    if (cube === "7" && arr && !Array.isArray(arr) && typeof arr === "object") {
+      const wrap = el("div"), groups = [["advantage", "יתרון יחסי"], ["must", "תנאי הכרחי"]].map(([k, l]) => [l, (arr[k] || []).filter(Boolean)]).filter(g => g[1].length);
+      if (!groups.length) return el("div", "empty", "—");
+      groups.forEach(([label, a]) => { const g = el("div", "group"); g.append(el("div", "group-label", label), list(a)); wrap.append(g); });
+      return wrap;
+    }
+    arr = (arr || []).filter(Boolean); if (!arr.length) return el("div", "empty", "—");
+    const l = el(cube === "2" ? "ol" : "ul"); arr.forEach(t => l.append(el("li", null, cube === "6" ? linkToProblems(t) : t))); return l;
+  };
+  const recs = (arr) => {
+    const box = el("div", "recs"); arr = (arr || []).filter(r => r && r.missing);
+    if (!arr.length) { box.append(el("div", "fine", "נראית טובה")); return box; }
+    arr.forEach((r, i) => {
+      const rec = el("div", "rec");
+      rec.append(el("div", "missing", (i + 1) + ". " + r.missing));
+      if (r.why) rec.append(el("div", "why", "למה: " + r.why));
+      if (r.question) rec.append(el("div", "question", "שאלה לצוות: " + r.question));
+      box.append(rec);
+    });
+    return box;
+  };
+  const d = JSON.parse(document.getElementById("data").textContent);
+  const nums = Object.keys(d.cubes || {}).filter(n => (d.cubes[n].rounds || []).length).sort((a, b) => a - b);
+  document.title = "סקירת קוביות — " + d.venture;
+  document.getElementById("venture").textContent = "— " + d.venture;
+  document.getElementById("meta").textContent = "עודכן " + d.updated + " · " + nums.length + " קוביות · למנטור ולארכיטקט";
+  const grid = document.getElementById("cubes");
+  const cv = d.canvas || {}, asm = (cv.assumptions || []).filter(Boolean), cons = (cv.consistency || []).filter(Boolean);
+  if (asm.length || cons.length) {
+    const card = el("section", "card whole"), head = el("div", "head"), t = el("div", "title");
+    t.append(el("span", "num", "✓"), el("span", null, "\"סיימנו\" — מבט על הקנבס כשלם"));
+    head.append(t, el("div", "meta", (cv.time || "") + " · למנטור, לא למליאה")); card.append(head);
+    const cols = el("div", "cols");
+    const a = el("div"); a.append(el("h3", null, "הנחות ופערים מרכזיים"), list(asm)); cols.append(a);
+    const c = el("div"); c.append(el("h3", null, "שאלות עקביות")); const ql = list(cons); ql.className = "question-list"; c.append(ql); cols.append(c);
+    card.append(cols); grid.append(card);
+  }
+  if (!nums.length && !asm.length && !cons.length) grid.append(el("div", "empty", "עוד לא הגיעו קוביות"));
+  nums.forEach(n => {
+    const rounds = d.cubes[n].rounds, last = rounds[rounds.length - 1];
+    const card = el("section", "card"), head = el("div", "head"), t = el("div", "title");
+    t.append(el("span", "num", n), el("span", null, CUBE[n] || ""));
+    const s = STATUS[last.status || ""] || STATUS[""], meta = el("div", "meta");
+    meta.append(el("span", "badge " + s[0], s[1]), el("span", null, (rounds.length > 1 ? "סבב " + rounds.length + " · " : "") + (last.time || "")));
+    head.append(t, meta); card.append(head);
+    if (last.changed && rounds.length > 1) card.append(el("div", "changed", "מה השתנה: " + last.changed));
+    const w = el("div"); w.append(el("h3", null, "מה הצוות כתב"), list(last.written, n)); card.append(w);
+    card.append(recs(last.recs));
+    if (rounds.length > 1) {
+      const det = el("details"); det.append(el("summary", null, "סבבים קודמים (" + (rounds.length - 1) + ")"));
+      rounds.slice(0, -1).reverse().forEach((r, i) => {
+        const box = el("div", "round");
+        box.append(el("div", "meta", "סבב " + (rounds.length - 1 - i) + " · " + (r.time || "")), list(r.written, n), recs(r.recs));
+        det.append(box);
+      });
+      card.append(det);
+    }
+    grid.append(card);
+  });
+</script>
+</body>
+</html>

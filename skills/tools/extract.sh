@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # טקסט מתוך pptx / docx / xlsx — בלי Python, רק unzip ו-sed.
-#   bash skills/run-agent/extract.sh "<קובץ>"
+#   bash skills/tools/extract.sh "<קובץ>"
 # pptx → "## שקף N" + הטקסט של כל שקף (לפי הסדר). docx → פסקאות. xlsx → כל המחרוזות בגיליונות.
 set -euo pipefail
 F="${1:?חסר קובץ}"

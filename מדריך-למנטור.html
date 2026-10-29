@@ -219,7 +219,7 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <div class="layer mid">
       <span class="tag">כאן נכתב</span>
       <h4><code>תוצרים/</code></h4>
-      <p>הפרסונה, ה-Lean Canvas ושאר התוצרים. הסוכן כותב לכאן אחרי אישור הצוות.</p>
+      <p>הפרסונה ושאר התוצרים. הסוכן כותב לכאן אחרי אישור הצוות. תוצרי יום 4, ובהם ה-Lean Canvas, נכתבים לתיקיית היום, ומיד.</p>
     </div>
     <div class="flow-arrow" aria-hidden="true"><span class="arr">→</span><span>חומר היום</span></div>
     <div class="layer">
@@ -239,8 +239,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
     <table>
       <thead><tr><th>כלי AI</th><th>איפה עובדים</th><th>איך מפעילים</th><th>קובץ ההנחיות שהכלי קורא לבד</th></tr></thead>
       <tbody>
-        <tr><td><strong>Claude Code</strong></td><td>VS Code, או טרמינל</td><td><code>/onboard-project</code>, <code>/run-agent</code>, <code>/update-project</code></td><td><code>CLAUDE.md</code></td></tr>
-        <tr><td><strong>Gemini CLI</strong></td><td>טרמינל, גם בתוך VS Code</td><td><code>/onboard-project</code>, <code>/run-agent</code>, <code>/update-project</code></td><td><code>GEMINI.md</code></td></tr>
+        <tr><td><strong>Claude Code</strong></td><td>VS Code, או טרמינל</td><td><code>/onboard-project</code>, <code>/update-project</code>, ובשפה חופשית</td><td><code>CLAUDE.md</code></td></tr>
+        <tr><td><strong>Gemini CLI</strong></td><td>טרמינל, גם בתוך VS Code</td><td><code>/onboard-project</code>, <code>/update-project</code>, ובשפה חופשית</td><td><code>GEMINI.md</code></td></tr>
         <tr><td><strong>Gemini Code Assist</strong></td><td>VS Code</td><td>משפט פתיחה (למטה)</td><td><code>GEMINI.md</code></td></tr>
         <tr><td><strong>Kiro</strong></td><td>Kiro (עורך שבנוי על VS Code)</td><td>משפט פתיחה (למטה)</td><td><code>.kiro/steering/מנטור.md</code></td></tr>
         <tr><td><strong>כל כלי אחר</strong> (Antigravity, Copilot ועוד)</td><td>לפי הכלי</td><td>משפט פתיחה (למטה)</td><td><code>AGENTS.md</code>, ברוב הכלים</td></tr>
@@ -251,8 +251,8 @@ a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid 
   <p><strong>משפט פתיחה</strong>, לכלים בלי פקודת <code>/</code>. מדביקים אותו בצ'אט של הכלי:</p>
   <p class="meta">להקמת מיזם, כשתיקיית הפלייבוק פתוחה:</p>
   <div class="code he"><button class="copy" type="button">העתק</button><pre>קרא את skills/onboard-project/SKILL.md ופעל לפיו.</pre></div>
-  <p class="meta">להרצת סוכן, כשתיקיית המיזם פתוחה (מחליפים את שם הסוכן):</p>
-  <div class="code he"><button class="copy" type="button">העתק</button><pre>קרא את AGENTS.md, ואז הרץ את הסוכן: פרסונה דיגיטלית</pre></div>
+  <p class="meta">לעבודה עם הסוכן, כשתיקיית המיזם פתוחה (מחליפים את היום ואת מה שעושים):</p>
+  <div class="code he"><button class="copy" type="button">העתק</button><pre>קרא את AGENTS.md. אנחנו ביום 1, מתחילים בפרסונה הדיגיטלית.</pre></div>
   <p class="meta">לעדכון המיזם לפלייבוק העדכני, כשתיקיית המיזם פתוחה:</p>
   <div class="code he"><button class="copy" type="button">העתק</button><pre>קרא את AGENTS.md, ואז עדכן את המיזם לפלייבוק העדכני.</pre></div>
 
@@ -328,7 +328,7 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
       <thead><tr><th>מה</th><th>איפה</th></tr></thead>
       <tbody>
         <tr><td><strong>חומר גולמי</strong>: מצגות, מסמכי Word, סיכומי מפגש, ראיונות, תמונות</td><td><code>01-ימים/NN-יום/</code>, תיקייה לכל יום</td></tr>
-        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td><code>תוצרים/</code>: קובץ MD לכל תוצר, ולצידו תצוגה ויזואלית (<code>.html</code>) ותמונה, באותו שם</td></tr>
+        <tr><td><strong>תוצרים</strong>: פרסונה, Lean Canvas ושאר הישויות החיות</td><td><code>תוצרים/</code>: קובץ MD לכל תוצר, ולצידו תצוגה ויזואלית (<code>.html</code>) ותמונה, באותו שם. תוצרי יום 4 — ב-<code>01-ימים/04-Lean-Canvas/</code></td></tr>
         <tr><td><strong>הפלייבוק</strong>: המתודה והסוכנים</td><td><code>.playbook/</code>: עותק, שהגרסה שלו רשומה ב-<code>.playbook/SOURCE</code>. מתחדש רק כשמעדכנים, כך שמחזור שרץ לא משתנה באמצע</td></tr>
       </tbody>
     </table>
@@ -358,7 +358,7 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
       <tbody>
         <tr><td><code>README.md</code></td><td>שם המיזם, איפה החומר, איך מריצים סוכן ואיך מעדכנים</td></tr>
         <tr><td><code>01-ימים/01-Unboxing</code> … <code>08-Storytelling</code></td><td>החומר של כל יום: מצגות, מסמכים, סיכומי מפגש, שיעורי בית והחלטות. כל תיקייה מקשרת ליום ב-<code>.playbook/</code></td></tr>
-        <tr><td><code>תוצרים/</code></td><td>התוצרים שהסוכנים כותבים אחרי אישור הצוות</td></tr>
+        <tr><td><code>תוצרים/</code></td><td>התוצרים שהסוכנים כותבים אחרי אישור הצוות. תוצרי יום 4 — בתיקיית היום</td></tr>
         <tr><td><code>.playbook/</code></td><td>עותק של הפלייבוק, בלי חומרי המקור. לקריאה בלבד</td></tr>
         <tr><td><code>.kiro/steering/מנטור.md</code></td><td>ההנחיות לסוכן: מי הוא, שתי שכבות הידע, והכללים של המיזם</td></tr>
         <tr><td><code>CLAUDE.md</code>, <code>GEMINI.md</code>, <code>AGENTS.md</code></td><td>מפנים את כלי ה-AI השונים לאותו קובץ הנחיות</td></tr>
@@ -414,26 +414,27 @@ git clone https://github.com/Strauss-X-Labs/Gov-Labs-Playbook.git ~/Dev/Gov-Labs
     <div>
       <h4>אחרי המפגש</h4>
       <ul>
-        <li>בדיקה שהתוצרים נשמרו ב-<code>תוצרים/</code></li>
+        <li>בדיקה שהתוצרים נשמרו ב-<code>תוצרים/</code>, או בתיקיית היום כשהיום מגדיר (יום 4)</li>
         <li>סיכום היום והחומרים בתיקייה <code>01-ימים/NN-יום/</code></li>
         <li>שמירה ושיתוף ב-GitHub</li>
       </ul>
     </div>
   </div>
 
-  <h3 id="daily-agent">הרצת סוכן</h3>
-  <p>פותחים את <strong>תיקיית המיזם</strong> (לא את הפלייבוק), ומבקשים סוכן לפי שם. ב-Claude Code או ב-Gemini CLI:</p>
-  <div class="code"><button class="copy" type="button">העתק</button><pre>/run-agent פרסונה דיגיטלית</pre></div>
-  <p>בכל כלי אחר מדביקים את <a href="#tools">משפט הפתיחה</a> עם שם הסוכן. בלי שם, הסוכן מציג את רשימת הסוכנים לפי ימים ושואל. הרשימה המלאה נמצאת ב-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook/blob/main/04-AI/%D7%A1%D7%95%D7%9B%D7%A0%D7%99%D7%9D/README.md" target="_blank" rel="noopener">טבלת הסוכנים בפלייבוק</a>. סוכן חדש שנוסף לפלייבוק מגיע למיזם בעדכון הבא (<code>/update-project</code>).</p>
+  <h3 id="daily-agent">עבודה עם הסוכן</h3>
+  <p>פותחים את <strong>תיקיית המיזם</strong> (לא את הפלייבוק), ו<strong>מדברים בשפה חופשית</strong> על מה שקורה עכשיו. אין פקודה להרצת סוכן: הסוכן מזהה את היום ואת השלב, והתהליך של היום קובע איזה סוכן, באיזו משימה. לדוגמה:</p>
+  <div class="code he"><button class="copy" type="button">העתק</button><pre>אנחנו ביום 4, בוא נתחיל בבדיקת המוכנות ל-Lean Canvas.</pre></div>
+  <p>ובהמשך היום: "הצוות סיים את קובייה 6", "סיימנו". בכלים בלי <code>CLAUDE.md</code> או <code>GEMINI.md</code> פותחים ב<a href="#tools">משפט הפתיחה</a>. לא ברור לסוכן איפה אתם — הוא שואל, לפי סדר היום. הרשימה המלאה נמצאת ב-<a href="https://github.com/Strauss-X-Labs/Gov-Labs-Playbook/blob/main/04-AI/%D7%A1%D7%95%D7%9B%D7%A0%D7%99%D7%9D/README.md" target="_blank" rel="noopener">טבלת הסוכנים בפלייבוק</a>. סוכן חדש שנוסף לפלייבוק מגיע למיזם בעדכון הבא (<code>/update-project</code>).</p>
 
   <p>מה קורה בהרצה:</p>
   <ol class="steps">
-    <li><strong>קריאת המתודה.</strong> הסוכן קורא מ-<code>.playbook/</code> את מפרט הסוכן, התהליך, המתודה והטמפלט של התוצר.</li>
-    <li><strong>קריאת המיזם.</strong> הוא קורא את התוצרים הקיימים, מציג את רשימת הקבצים בתיקיית היום, <strong>ושואל אילו רלוונטיים</strong>. הוא קורא מצגות, Word, PDF ותמונות.</li>
+    <li><strong>איתור.</strong> הסוכן מזהה את היום ואת השלב, מסקירת היום בפלייבוק.</li>
+    <li><strong>קריאת המתודה.</strong> התהליך קובע איזה סוכן ובאיזו משימה. הסוכן קורא מ-<code>.playbook/</code> את התהליך, את קובץ הסוכן, את המתודות של המשימה ואת הטמפלט של התוצר.</li>
+    <li><strong>קריאת המיזם.</strong> הוא קורא את הקלטים שהתהליך מגדיר, כולל כל המופעים של תוצר (למשל מדריך ראיונות לכל פרסונה). כשהסוכן מוגדר לקרוא את כל מה שנמצא — הוא קורא הכול, בלי לשאול. הוא קורא מצגות, Word, PDF ותמונות.</li>
     <li><strong>בדיקת קלטים.</strong> מוצגת טבלה של מה יש ומה חסר מתוך מה שהמפרט דורש. מה שחסר נשאל מהצוות, ולא מומצא.</li>
     <li><strong>תשאול הצוות.</strong> שאלה אחת בכל פעם, לפי התסריט שבמפרט. הסוכן מאתגר, שואל "למה?", ושם לב לנורות האזהרה של התהליך.</li>
     <li><strong>טיוטה.</strong> הסוכן מציג טיוטה במבנה של הטמפלט, כשהשערות מסומנות כהשערות. הצוות מתקן.</li>
-    <li><strong>כתיבה.</strong> רק אחרי אישור הצוות התוצר נכתב ל-<code>תוצרים/</code>. אם התוצר כבר קיים, הסוכן מציג מה משתנה ומעדכן, בלי לדרוס.</li>
+    <li><strong>כתיבה.</strong> רק אחרי אישור הצוות התוצר נכתב ל-<code>תוצרים/</code>. אם התוצר כבר קיים, הסוכן מציג מה משתנה ומעדכן, בלי לדרוס. <strong>ביום 4</strong> הסוכן כותב מיד, לתיקיית היום, את ה-MD ואת ה-HTML, כשיש הצעה טובה, ומעדכן לפי התיקונים.</li>
     <li><strong>תצוגה ותמונה, כשהסוכן מגדיר אותן.</strong> לדוגמה, בפרסונה נשמרים ליד קובץ ה-MD, באותו שם, גם תצוגה ויזואלית (<code>.html</code>) ותמונה. אם הכלי לא מחולל תמונות, הסוכן כותב פרומפט לכלי חיצוני, ואתה שומר את התמונה בשם שהוא נותן. אם הכלי מפרסם דפים לשיתוף, קישור השיתוף נרשם בראש קובץ ה-MD, ובכל עדכון הדף מתפרסם מחדש לאותו קישור.</li>
     <li><strong>סיכום.</strong> מה נכתב, על מה זה מבוסס, ומה כדאי לבדוק בשטח. הסוכן גם מציע את הצעד הבא בתהליך.</li>
   </ol>
@@ -467,7 +468,7 @@ git push</pre></div>
       <thead><tr><th>מה רואים</th><th>הסיבה</th><th>מה עושים</th></tr></thead>
       <tbody>
         <tr><td><code>onboard-project</code> לא מופיע בכלי, בתיקיית הפלייבוק</td><td>הפלייבוק לא מעודכן, או שהכלי לא מכיר פקודות <code>/</code> מהתיקייה</td><td><code>git pull</code> בפלייבוק ופתיחה מחדש של הכלי. אם עדיין לא, משתמשים ב<a href="#tools">משפט הפתיחה</a></td></tr>
-        <tr><td><code>run-agent</code> או <code>update-project</code> לא מופיעים, בתיקיית המיזם</td><td>מיזם שהוקם לפני שהפקודות נוספו, או שהכלי לא מכיר פקודות <code>/</code></td><td>משפט הפתיחה לעדכון המיזם (ב<a href="#tools">טבלת הכלים</a>), ואז סשן חדש</td></tr>
+        <tr><td><code>update-project</code> לא מופיע, בתיקיית המיזם</td><td>מיזם שהוקם לפני שהפקודה נוספה, או שהכלי לא מכיר פקודות <code>/</code></td><td>משפט הפתיחה לעדכון המיזם (ב<a href="#tools">טבלת הכלים</a>), ואז סשן חדש</td></tr>
         <tr><td>הסוכן אומר שאין <code>.playbook/</code></td><td>מיזם שהוקם במבנה הישן</td><td><code>/update-project</code> או משפט הפתיחה לעדכון</td></tr>
         <tr><td>כלי ה-AI לא מופיע בחלון של המיזם, אבל בחלון של הפלייבוק כן</td><td>העורך פתח את התיקייה ב-Restricted Mode (לא סימנת "Trust"), או שהתוסף מושבת לתיקייה הזו</td><td>1. לחיצה על "Restricted Mode" בפס התחתון, ואז Trust. 2. בפאנל Extensions: התוסף, ואז Enable (Workspace). 3. קליק ימני על הפס השמאלי וסימון התוסף</td></tr>
         <tr class="win"><td><code>bash: command not found</code>, או שגיאות של WSL</td><td>הכלי מריץ פקודות ב-PowerShell, או ש-<code>bash</code> מפנה ל-WSL ולא ל-Git Bash</td><td>לבקש מהסוכן להריץ עם <code>"C:\Program Files\Git\bin\bash.exe"</code>. ההוראות לסוכן כבר כוללות את זה</td></tr>
@@ -482,12 +483,12 @@ git push</pre></div>
 
 <section id="status">
   <h2>מה נבדק</h2>
-  <p><code>onboard-project</code> זמין ב-<code>main</code> של הפלייבוק. <code>run-agent</code> ו-<code>update-project</code> זמינים בכל מיזם, מתוך <code>.playbook/</code>.</p>
+  <p><code>onboard-project</code> זמין ב-<code>main</code> של הפלייבוק. <code>update-project</code> זמין בכל מיזם, מתוך <code>.playbook/</code>. העבודה עם הסוכנים — בשפה חופשית, בלי פקודה.</p>
   <div class="table-wrap">
     <table>
       <thead><tr><th>שילוב</th><th>מצב</th></tr></thead>
       <tbody>
-        <tr><td>Windows, VS Code, Claude Code</td><td class="yes">נבדק מקצה לקצה במבנה הקודם (עם Drive). במבנה של <code>.playbook/</code> נבדקו ההקמה והעדכון על repo מקומי, וש-<code>/run-agent</code> ו-<code>/update-project</code> נטענים. הקמה מול GitHub עוד לא נבדקה</td></tr>
+        <tr><td>Windows, VS Code, Claude Code</td><td class="yes">נבדק מקצה לקצה במבנה הקודם (עם Drive). במבנה של <code>.playbook/</code> נבדקו ההקמה והעדכון על repo מקומי, וש-<code>/update-project</code> נטען. הקמה מול GitHub עוד לא נבדקה</td></tr>
         <tr><td>Mac</td><td class="no">לא נבדק. הסקריפטים הותאמו ל-bash ול-sed של Mac</td></tr>
         <tr><td>Gemini CLI, Gemini Code Assist</td><td class="no">לא נבדק. קבצי ההגדרה קיימים (<code>GEMINI.md</code>, פקודות <code>/</code>)</td></tr>
         <tr><td>Kiro</td><td class="no">לא נבדק. קובץ ההנחיות קיים (<code>.kiro/steering/</code>)</td></tr>

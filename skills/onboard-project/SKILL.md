@@ -57,7 +57,7 @@ git clone -q <כתובת הפלייבוק> "$SRC"
 | נתיב | מאיפה |
 |---|---|
 | `README.md`, `CLAUDE.md`, `.kiro/steering/מנטור.md`, `.gitignore`, `תוצרים/` | [תבנית-מיזם/](../../תבנית-מיזם/), עם `[שם המיזם]` מוחלף |
-| `.claude/skills/` `.kiro/skills/` `.agent/skills/` (`run-agent`, `update-project`), `.gemini/commands/` | מצביעים ל-`.playbook/skills/run-agent/` ול-`.playbook/skills/onboard-project/`. כך `/run-agent` ו-`/update-project` זמינים מתוך ה-repo של המיזם |
+| `.claude/skills/` `.kiro/skills/` `.agent/skills/` (`update-project`), `.gemini/commands/` | מצביעים ל-`.playbook/skills/onboard-project/`. כך `/update-project` זמין מתוך ה-repo של המיזם. **אין פקודה להרצת סוכן** — העבודה בשפה חופשית, לפי `.playbook/04-AI/עבודה-עם-הפלייבוק.md` |
 | `AGENTS.md`, `GEMINI.md` | מצביעים ל-`מנטור.md` — לכלים שקוראים אותם (Gemini, Copilot ואחרים). `CLAUDE.md` עושה את זה ל-Claude Code, ו-Kiro קורא את `.kiro/steering/` לבד |
 | `01-ימים/NN-<יום>/README.md` | תיקייה לכל יום ב-[01-ימים/](../../01-ימים/) (כל `NN-*`, בלי `_תבנית-יום`). לכאן מעלים את החומר הגולמי של היום. ה-README מקשר לסקירה ולתהליכים ב-`.playbook/` |
 | `.playbook/` | הפלייבוק, בלי `חומרי-מקור/` (40MB), בלי `תבנית-מיזם/`, בלי הגדרות הכלים שלו (`.claude/` `.kiro/` `.agent/` `.gemini/`) ובלי `skills/scan-sources/`. ב-`.playbook/SOURCE`: הכתובת, ה-commit והתאריך. נכנס ל-git — מי שמוריד את ה-repo מקבל אותו |
@@ -136,9 +136,9 @@ git -C <dir> push origin HEAD
 נדחף ל: <לינק ל-repo> (<חדש, פרטי / קיים>)
 עותק מקומי: <dir>
 פלייבוק: .playbook/ — <כתובת> @ <commit> (<תאריך>)
-נוצרו: README.md, CLAUDE.md + .kiro/steering/מנטור.md (הנחיות לסוכן), /run-agent, /update-project, תוצרים/, 01-ימים/ (N ימים: 01-Unboxing … )
+נוצרו: README.md, CLAUDE.md + .kiro/steering/מנטור.md (הנחיות לסוכן), /update-project, תוצרים/, 01-ימים/ (N ימים: 01-Unboxing … )
 חומר גולמי: לשים ב-01-ימים/NN-<יום>/ — מסמכים, מצגות, סיכומי מפגש
-להרצת סוכן: פתח את <dir> ב-Claude Code והקלד /run-agent
+לעבודה: פתח את <dir> ב-Claude Code ודבר בשפה חופשית — למשל "אנחנו ביום 1, מתחילים"
 לא נדרסו: <רשימה, אם יש>
 
 עוד נדרש:

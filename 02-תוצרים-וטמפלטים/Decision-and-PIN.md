@@ -1,17 +1,18 @@
 # Decision & PIN
 
 > מקור: [Gov-Labs-2.0-Lean-Canvas-Playbook.docx](../חומרי-מקור/מסמכים/רונית-lean-canvas-2026-09-23/Gov-Labs-2.0-Lean-Canvas-Playbook.docx) (רונית, 2026-09-23) — פרקים 1, 8, 12
-> סוג: **טמפלט** · נוצר ב: [יום 4, תהליך 4](../01-ימים/04-Lean-Canvas/תהליכים/4-Friendly-Tip-Red-Team-ו-Decide-and-PIN.md) · ממלא: [סוכן Decision & PIN](../04-AI/סוכנים/Decision-and-PIN.md) · מתודה: [Decision Log](../03-ידע/מתודות/Decision-Log.md)
+> סוג: **טמפלט** · הקובץ: `Decision-and-PIN.md`, ב-`01-ימים/04-Lean-Canvas/` · יחד עם [לוח Lean Canvas](לוח-Lean-Canvas.md) v1.0 PINNED
 
 ## מה זה ולמה
 
-סוף יום 4 מייצר **גרסה מוסכמת אחת** — ואת התיעוד שמאפשר לחזור אליה. בלי זה, בעוד חודש מתווכחים שוב על אותה החלטה.
+הקיבוע מייצר **גרסה מוסכמת אחת** — ואת התיעוד שמאפשר לחזור אליה. בלי זה, בעוד חודש מתווכחים שוב על אותה החלטה.
 
 ## הטמפלט
 
 ```markdown
 # Decision & PIN — [שם המיזם]
-> Lean Canvas v[ ] · PINNED בתאריך: [ ]
+> Lean Canvas v[ ] · PINNED בתאריך: [ ] · מקור: [הלוח — קישור ל-Canva, צילום, או הסשן] · תצוגה: [לוח-Lean-Canvas.html](לוח-Lean-Canvas.html)
+> ההחלטה על כל טיפ ואתגר: בעמודה "מה הצוות החליט" ב-`01-ימים/04-Lean-Canvas/Friendly-Tips.md` וב-`Red-Team.md`
 
 ## 1. Decision Log
 | # | מה השתנה | מה הוחלט | למה | על בסיס איזה Evidence | מה נשאר פתוח |

@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Draft 0</title>
+<!--
+  תבנית התצוגה של Draft 0 — מצע לדיון לקוביות 1, 2, 5. הסוכן ממלא רק את בלוק הנתונים (id="data") מה-MD.
+  השורה התחתונה בלבד: מה כדאי לשים בכל קובייה. מקורות, סטטוס, "לדיון" ופערים נשארים ב-MD ולא מוצגים כאן.
+  proposals / sub: מחרוזות. ב-2 (הבעיות) ההצעות ממוספרות.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --accent: #6b3fa0; --accent-soft: #f1ebf8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); color-scheme: light; }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(15px, 1.1vw, 24px); line-height: 1.45; padding: 1.3em 1.4em; overflow-x: hidden; }
+  header { display: flex; align-items: center; justify-content: space-between; gap: 1em; flex-wrap: wrap; margin-bottom: 1em; }
+  h1 { margin: 0; font-size: 1.9em; font-weight: 800; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .ribbon { background: var(--accent); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .sub { color: var(--muted); margin-top: 0.2em; }
+  .cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1em; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--accent); border-radius: 10px; padding: 1em 1.1em; display: flex; flex-direction: column; gap: 0.9em; min-width: 0; }
+  .card-title { display: flex; align-items: center; gap: 0.5em; font-weight: 800; font-size: 1.25em; }
+  .num { width: 1.7em; height: 1.7em; border-radius: 50%; background: var(--accent-soft); color: var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 0.8em; font-weight: 800; flex: none; }
+  h3 { margin: 0 0 0.25em; font-size: 0.95em; color: var(--accent); font-weight: 700; }
+  ul, ol { margin: 0; padding-inline-start: 1.2em; } li { margin: 0.35em 0; overflow-wrap: anywhere; }
+  .empty { color: var(--muted); font-style: italic; }
+  @media (max-width: 1000px) { .cards { grid-template-columns: 1fr; } }
+  @media print { @page { size: A4 landscape; margin: 10mm; } body { background: #fff; font-size: 10pt; padding: 0; } .card { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Draft 0 <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon">מצע לדיון — לא החלטה</div>
+</header>
+<main class="cards" id="cards"></main>
+
+<script type="application/json" id="data">
+{
+  "venture": "[שם המיזם]",
+  "date": "[תאריך]",
+  "cubes": {
+    "1": { "proposals": [ "" ], "sub": [ "" ] },
+    "2": { "proposals": [ "" ], "sub": [ "" ] },
+    "5": { "proposals": [ "" ], "sub": [ "" ] }
+  }
+}
+</script>
+<script>
+  const CUBES = {
+    1: { title: "הלקוחות", main: "הצעה", sub: "Early Adopters" },
+    2: { title: "הבעיות", main: "הצעה (3–5)", sub: "אלטרנטיבות קיימות", ordered: true },
+    5: { title: "הצעת ערך ייחודית", main: "הצעה (משפט אחד)", sub: "High Level Concept" }
+  };
+  const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+  const items = (arr, ordered) => {
+    arr = (arr || []).map(p => (p && typeof p === "object") ? p.text : p).filter(Boolean);
+    if (!arr.length) return el("div", "empty", "—");
+    const l = el(ordered ? "ol" : "ul");
+    arr.forEach(t => l.append(el("li", null, t)));
+    return l;
+  };
+  const d = JSON.parse(document.getElementById("data").textContent);
+  document.title = "Draft 0 — " + d.venture;
+  document.getElementById("venture").textContent = "— " + d.venture;
+  document.getElementById("meta").textContent = d.date + " · קוביות 1, 2, 5";
+  const cards = document.getElementById("cards");
+  Object.keys(CUBES).forEach(n => {
+    const def = CUBES[n], c = (d.cubes && d.cubes[n]) || {};
+    const card = el("section", "card"), t = el("div", "card-title");
+    t.append(el("span", "num", n), el("span", null, def.title));
+    card.append(t);
+    const main = el("div"); main.append(el("h3", null, def.main), items(c.proposals, def.ordered)); card.append(main);
+    const sub = el("div"); sub.append(el("h3", null, def.sub), items(c.sub)); card.append(sub);
+    cards.append(card);
+  });
+</script>
+</body>
+</html>
