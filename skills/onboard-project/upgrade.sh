@@ -10,7 +10,8 @@
 #   זהה לגרסה ישנה כלשהי של התבנית → לא נערך ידנית → מוחלף בגרסה העדכנית
 #   שונה מכל גרסה                  → נערך ידנית → לא נוגעים, מדפיסים diff
 # קובץ שהיה בתבנית ויצא ממנה, ולא נערך → מוסר. ימים חדשים ב-01-ימים/ → נוספים.
-# מבנה ישן: ימים/ → 01-ימים/ (הלינקים לפלייבוק ב-README של כל יום → .playbook/). קבצים ב-ידע/ — מדווחים, לא מוזזים.
+# בכל יום: תוצרים/ ו-רפרנס-מנחה/ (נוספות אם חסרות).
+# מבנה ישן: ימים/ → 01-ימים/ (הלינקים לפלייבוק ב-README של כל יום → .playbook/). קבצים ב-ידע/ וב-תוצרים/ שבשורש — מדווחים, לא מוזזים.
 # היסטוריית התבנית = git log של הפלייבוק — לכן רצים מ-clone מלא, לא shallow.
 # --dry-run מדפיס את התוכנית בלי לשנות כלום.
 set -euo pipefail
@@ -24,7 +25,7 @@ PLAYBOOK="$(cd "$(dirname "$0")/../.." && pwd)"
 T="תבנית-מיזם"
 G() { git -c core.quotepath=false -C "$PLAYBOOK" "$@"; }
 
-[ -f "$P/README.md" ] && [ -d "$P/תוצרים" ] || { echo "$P לא נראה כמו repo של מיזם" >&2; exit 1; }
+[ -f "$P/README.md" ] && { [ -d "$P/01-ימים" ] || [ -d "$P/ימים" ]; } || { echo "$P לא נראה כמו repo של מיזם" >&2; exit 1; }
 [ -n "$NAME" ] || NAME=$(head -1 "$P/README.md" | tr -d '\r' | sed 's/^# *//')
 [ -n "$NAME" ] || { echo "חסר שם מיזם (אין כותרת ב-README) — העבר כפרמטר שני" >&2; exit 1; }
 
@@ -57,7 +58,7 @@ matches_history() {  # $1 נתיב יחסי, $2 קובץ במיזם
   return 1
 }
 
-added=(); updated=(); current=(); edited=(); removed=(); moved=(); conflicts=(); leftover=()
+added=(); updated=(); current=(); edited=(); removed=(); moved=(); conflicts=(); leftover=(); oldout=()
 do_write() { [ $DRY = 1 ] && return; mkdir -p "$(dirname "$P/$1")"; cp "$TMP/new" "$P/$1"; }
 
 # 0. מבנה ישן: ימים/<יום> → 01-ימים/<יום>
@@ -102,6 +103,11 @@ done < <(G log --name-only --format= -- "$T" | sed -n "s#^$T/##p" | sort -u)
 if [ -d "$P/ידע" ]; then
   while IFS= read -r f; do leftover+=("$f"); done < <(cd "$P" && find ידע -type f ! -name .gitkeep)
 fi
+# תוצרים/ בשורש — המבנה הישן. לא מוזזים: כל תוצר שייך ליום שבו נוצר (02-תוצרים-וטמפלטים/README.md); הסוכן מציע, הצוות מאשר
+if [ -d "$P/תוצרים" ]; then
+  while IFS= read -r f; do oldout+=("$f"); done < <(cd "$P" && find תוצרים -type f ! -name .gitkeep)
+  [ $DRY = 1 ] || [ ${#oldout[@]} -gt 0 ] || { rm -f "$P/תוצרים/.gitkeep"; rmdir "$P/תוצרים" 2>/dev/null || true; }
+fi
 # קובץ מקומי מהגרסה הקודמת (connect.sh) — לא בשימוש יותר
 [ $DRY = 1 ] || rm -f "$P/.gov-labs.local"
 
@@ -112,6 +118,7 @@ for d in "$PLAYBOOK"/01-ימים/[0-9][0-9]-*/; do
   [ -e "$P/01-ימים/$day/README.md" ] || [ -e "$P/ימים/$day/README.md" ] || newdays+=("$day")
 done
 [ $DRY = 1 ] || make_days "$NAME" "$P" > /dev/null
+[ $DRY = 1 ] || make_day_dirs "$P"
 
 # 4. הפלייבוק
 old_src="—"; [ -f "$P/.playbook/SOURCE" ] && old_src=$(sed -n 's/^commit=//p' "$P/.playbook/SOURCE")
@@ -130,6 +137,7 @@ show "עודכנו (לא נערכו ידנית):" ${updated[@]+"${updated[@]}"}
 show "הוסרו (יצאו מהתבנית, לא נערכו):" ${removed[@]+"${removed[@]}"}
 show "ימים חדשים:" ${newdays[@]+"${newdays[@]}"}
 show "קבצים ב-ידע/ — התיקייה יצאה מהתבנית; להעביר ל-01-ימים/<יום>/ (רק הצוות יודע לאיזה יום):" ${leftover[@]+"${leftover[@]}"}
+show "קבצים ב-תוצרים/ שבשורש — המבנה הישן; להעביר ל-01-ימים/<יום>/תוצרים/ של היום שבו נוצרו (לפי 02-תוצרים-וטמפלטים/README.md), באישור:" ${oldout[@]+"${oldout[@]}"}
 show "נערכו ידנית — לא נגעתי, ההבדלים למטה:" ${edited[@]+"${edited[@]}"}
 show "כבר מעודכנים:" ${current[@]+"${current[@]}"}
 i=1
