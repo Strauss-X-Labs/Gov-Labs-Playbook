@@ -9,6 +9,7 @@
   תבנית ה-HTML הפנימי של יומן סקירת הקוביות — למנטור ולארכיטקט, לשאוב ממנו רעיונות. לא למליאה.
   נבנה מ-סקירת-קוביות.md, ומתעדכן בכל קלט. הסוכן ממלא רק את בלוק הנתונים (id="data"). העיצוב קבוע.
   cubes: לכל קובייה שהגיעה — rounds, מהישן לחדש. כל סבב: time, written (מילה במילה; בקובייה 7 — { advantage: [...], must: [...] }), status ("✓" | "~" | "?" | "⚡" | ""),
+         sub (רק 1, 2, 5 — מאמצים ראשונים · אלטרנטיבות קיימות · High Level Concept; ריק או חסר — לא מוצג),
          changed (מה השתנה מהסבב הקודם · בפעם הראשונה — "חדשה"), recs: עד 2 — { missing, why, question }
   הסבב האחרון מוצג במלואו; הקודמים — מקופלים.
   canvas: ב"סיימנו" — מבט על הקנבס כשלם, למנטור בלבד: { time, assumptions: ["הנחות ופערים מרכזיים"], consistency: ["עד 3 שאלות עקביות"] }.
@@ -45,6 +46,8 @@
   ul, ol { margin: 0; padding-inline-start: 1.2em; } li { margin: 0.3em 0; overflow-wrap: anywhere; }
   .group { margin-bottom: 0.4em; }
   .group-label { font-weight: 700; color: var(--navy); font-size: 0.92em; }
+  .sub-box { border-top: 1px dashed var(--line); padding: 0.4em 0.1em 0; margin-top: 0.4em; }
+  .sub-label { font-weight: 700; color: var(--navy); font-size: 0.86em; margin-bottom: 0.1em; }
   .changed { font-size: 0.9em; color: var(--navy); background: var(--navy-soft); border-radius: 6px; padding: 0.3em 0.6em; }
   .recs { display: flex; flex-direction: column; gap: 0.55em; border-top: 1px solid var(--line); padding-top: 0.6em; }
   .rec .missing { font-weight: 700; overflow-wrap: anywhere; }
@@ -99,6 +102,12 @@
     arr = (arr || []).filter(Boolean); if (!arr.length) return el("div", "empty", "—");
     const l = el(cube === "2" ? "ol" : "ul"); arr.forEach(t => l.append(el("li", null, cube === "6" ? linkToProblems(t) : t))); return l;
   };
+  // תת-האזור של 1, 2, 5 — כמו בקנבס: כותרת משנה ורשימת בולטים, לא ממוספרת.
+  const SUB = { 1: "מאמצים ראשונים", 2: "אלטרנטיבות קיימות", 5: "High Level Concept" };
+  const sub = (arr, cube) => {
+    arr = (arr || []).filter(Boolean); if (!SUB[cube] || !arr.length) return [];
+    const box = el("div", "sub-box"); box.append(el("div", "sub-label", SUB[cube]), list(arr)); return [box];
+  };
   const recs = (arr) => {
     const box = el("div", "recs"); arr = (arr || []).filter(r => r && r.missing);
     if (!arr.length) { box.append(el("div", "fine", "נראית טובה")); return box; }
@@ -136,13 +145,13 @@
     meta.append(el("span", "badge " + s[0], s[1]), el("span", null, (rounds.length > 1 ? "סבב " + rounds.length + " · " : "") + (last.time || "")));
     head.append(t, meta); card.append(head);
     if (last.changed && rounds.length > 1) card.append(el("div", "changed", "מה השתנה: " + last.changed));
-    const w = el("div"); w.append(el("h3", null, "מה הצוות כתב"), list(last.written, n)); card.append(w);
+    const w = el("div"); w.append(el("h3", null, "מה הצוות כתב"), list(last.written, n), ...sub(last.sub, n)); card.append(w);
     card.append(recs(last.recs));
     if (rounds.length > 1) {
       const det = el("details"); det.append(el("summary", null, "סבבים קודמים (" + (rounds.length - 1) + ")"));
       rounds.slice(0, -1).reverse().forEach((r, i) => {
         const box = el("div", "round");
-        box.append(el("div", "meta", "סבב " + (rounds.length - 1 - i) + " · " + (r.time || "")), list(r.written, n), recs(r.recs));
+        box.append(el("div", "meta", "סבב " + (rounds.length - 1 - i) + " · " + (r.time || "")), list(r.written, n), ...sub(r.sub, n), recs(r.recs));
         det.append(box);
       });
       card.append(det);
