@@ -13,9 +13,8 @@
          בלי מקור ובלי פער בקובייה — הם רק ב-MD (Evidence / Source). שדות source / gap בנתונים — לא מוצגים.
          קובייה 7 — במקום items שתי קטגוריות: advantage (יתרון יחסי) ו-must (תנאי הכרחי), כל אחת רשימת בולטים; מוצגות ככותרות משנה.
          updated: true לקוביות שהשתנו מהגרסה הקודמת (ב-PIN — מגרסת ההצגה). קובייה בלי items — מוצגת עם השאלה המרכזית, "טרם מולא".
-  sections: מידע נוסף מתחת לקנבס — [{ "title": "...", "items": ["..."] }]. ריק — לא מוצג.
-            בגרסת הצגה ("סיימנו") — ריק: הקנבס בלבד. ההנחות והפערים המרכזיים ושאלות העקביות הולכים ל-סקירת-קוביות (cube-review.html), למנטור.
-            ב-PIN ובערכי המוצר — המידע הנוסף של השלב, לפי הטמפלט.
+  הקוביות בלבד, בכל גרסה — בלי מלל מתחת לקנבס ובלי פוטר. ההחלטות, ההנחות והבדיקות — ב-Decision-and-PIN.md; ערכי המוצר — ב-דף-ערכי-מוצר.md;
+  ההנחות ושאלות העקביות ב"סיימנו" — ב-סקירת-קוביות. שדות sections / source ברמת הדף בנתונים ישנים — לא מוצגים.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -70,10 +69,6 @@
   .sub-box { border-top: 1px dashed var(--line); padding: 0.4em 0.1em 0; }
   .sub-label { font-weight: 700; color: var(--navy); font-size: 0.86em; margin-bottom: 0.1em; }
 
-  .below { display: grid; grid-template-columns: repeat(auto-fit, minmax(18em, 1fr)); gap: 0.7em; margin-top: 1em; }
-  .section { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: 6px; padding: 0.7em 0.9em; }
-  .section h2 { margin: 0 0 0.35em; font-size: 1.05em; color: var(--navy); font-weight: 800; }
-  .source-line { margin-top: 0.9em; color: var(--muted); font-size: 0.8em; }
 
   @media (max-width: 900px) {
     .canvas { grid-template-columns: 1fr; grid-template-areas: "c1" "c2" "c3" "c4" "c5" "c6" "c7" "c8" "c9" "c10" "c11"; }
@@ -81,7 +76,7 @@
   @media print {
     @page { size: A3 landscape; margin: 8mm; }
     body { background: #fff; font-size: 9pt; padding: 0; }
-    .cube, .section { break-inside: avoid; }
+    .cube { break-inside: avoid; }
   }
 </style>
 </head>
@@ -97,15 +92,12 @@
   </div>
 </header>
 <main class="canvas" id="canvas"></main>
-<section class="below" id="below"></section>
-<div class="source-line" id="source"></div>
 
 <script type="application/json" id="data">
 {
   "venture": "[שם המיזם]",
   "version": "גרסת הצגה",
   "date": "[תאריך]",
-  "source": "01-ימים/04-Lean-Canvas/לוח-Lean-Canvas.md",
   "cubes": {
     "1":  { "status": "", "items": [], "sub": [], "updated": false },
     "2":  { "status": "", "items": [], "sub": [], "updated": false },
@@ -118,8 +110,7 @@
     "9":  { "status": "", "items": [], "updated": false },
     "10": { "status": "", "items": [], "updated": false },
     "11": { "status": "", "items": [], "updated": false }
-  },
-  "sections": []
+  }
 }
 </script>
 <script>
@@ -176,12 +167,6 @@
     }
     canvas.append(box);
   });
-  const below = document.getElementById("below");
-  (d.sections || []).filter(s => s && s.title && (s.items || []).length).forEach(s => {
-    const sec = el("div", "section"); sec.append(el("h2", null, s.title), list(s.items)); below.append(sec);
-  });
-  if (!below.children.length) below.remove();
-  if (d.source) { const src = document.getElementById("source"); src.append("נגזר מ: ", el("bdi", null, d.source), d.date ? " · " + d.date : ""); }
 </script>
 </body>
 </html>
