@@ -1,7 +1,7 @@
 # Decision & PIN
 
 > מקור: [Gov-Labs-2.0-Lean-Canvas-Playbook.docx](../חומרי-מקור/מסמכים/רונית-lean-canvas-2026-09-23/Gov-Labs-2.0-Lean-Canvas-Playbook.docx) (רונית, 2026-09-23) — פרקים 1, 8, 12
-> סוג: **טמפלט** · הקובץ: `Decision-and-PIN.md`, ב-`01-ימים/04-Lean-Canvas/` · יחד עם [לוח Lean Canvas](לוח-Lean-Canvas.md) v1.0 PINNED
+> סוג: **טמפלט** · הקובץ: `Decision-and-PIN.md`, ב-`01-ימים/04-Lean-Canvas/תוצרים/` · יחד עם [לוח Lean Canvas](לוח-Lean-Canvas.md) v1.0 PINNED
 
 ## מה זה ולמה
 
@@ -12,7 +12,7 @@
 ```markdown
 # Decision & PIN — [שם המיזם]
 > Lean Canvas v[ ] · PINNED בתאריך: [ ] · מקור: [הלוח — קישור ל-Canva, צילום, או הסשן] · תצוגה: [לוח-Lean-Canvas.html](לוח-Lean-Canvas.html)
-> ההחלטה על כל טיפ ואתגר: בעמודה "מה הצוות החליט" ב-`01-ימים/04-Lean-Canvas/Friendly-Tips.md` וב-`Red-Team.md`
+> ההחלטה על כל טיפ ואתגר: בעמודה "מה הצוות החליט" ב-`01-ימים/04-Lean-Canvas/רפרנס-מנחה/Friendly-Tips.md` וב-`Red-Team.md`
 
 ## 1. Decision Log
 | # | מה השתנה | מה הוחלט | למה | על בסיס איזה Evidence | מה נשאר פתוח |

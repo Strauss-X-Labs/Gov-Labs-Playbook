@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # תמונה של הלוח מ-Canva: מוריד את הייצוא של export-design (או לוקח קובץ שכבר יוצא), שומר PNG, וממיר ל-JPG כשה-PNG מעל 500KB.
 # שימוש: bash canva-snapshot.sh <קישור הורדה או קובץ> <נתיב-בלי-סיומת>
-# דוגמה: bash .playbook/skills/tools/canva-snapshot.sh "https://export-download.canva.com/..." 01-ימים/04-Lean-Canvas/canva/canvas-presentation
+# דוגמה: bash .playbook/skills/tools/canva-snapshot.sh "https://export-download.canva.com/..." 01-ימים/04-Lean-Canvas/רפרנס-מנחה/canva/canvas-presentation
 # מדפיס בסוף את נתיב התמונה. להורדה — curl. להמרה ל-JPG — sips (Mac), magick או Pillow.
 set -euo pipefail
 

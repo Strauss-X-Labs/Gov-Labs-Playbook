@@ -50,15 +50,15 @@
 
 | סוכן — משימה | מתי · מי מפעיל | קלטים | פלטים |
 |---|---|---|---|
-| [Lean Canvas Agent — Red Team, האתגרים](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-5--red-team) | מיד אחרי "סיימנו", כשהסוכן מציע · הארכיטקט | `01-ימים/04-Lean-Canvas/לוח-Lean-Canvas.md` (גרסת הצגה) · `01-ימים/04-Lean-Canvas/Lean-Readiness-Pack.md` · תוצאות גוף ביצוע הולידציה ב-`01-ימים/03-Design-Thinking-2/שאלון-בחינת-קונספט/` · סינתזת הראיונות ב-`01-ימים/` | `01-ימים/04-Lean-Canvas/Red-Team.md` + `.html`, פנימי. **לא בלוח** |
-| [Lean Canvas Agent — Red Team, הטיפים](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-5--red-team) | בזמן ההצגה של הקבוצה · המתעד/ת, או הארכיטקט | הטיפים — **ידני:** הדבקה · **דיגיטלי:** Canva · `Red-Team.md` | `01-ימים/04-Lean-Canvas/Friendly-Tips.md`, עם האתגר שכל טיפ מחזק · הטיפים גם ב-`Red-Team.html` |
-| [Lean Canvas Agent — Decision & PIN](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-6--decision--pin) | "סיימנו", כ-14:55 · מפעיל ה-AI | הלוח העדכני — **ידני:** צילום חדש או הקלדה · **דיגיטלי:** Canva · `01-ימים/04-Lean-Canvas/לוח-Lean-Canvas.md` (גרסת הצגה) · `Red-Team.md` · `Friendly-Tips.md` · `01-ימים/04-Lean-Canvas/Lean-Readiness-Pack.md` | `01-ימים/04-Lean-Canvas/לוח-Lean-Canvas.md` + `.html` — v1.0 PINNED · `01-ימים/04-Lean-Canvas/Decision-and-PIN.md` · עמודת "מה הצוות החליט" ב-`Red-Team.md`, ב-`Friendly-Tips.md` וב-`Red-Team.html` · **דיגיטלי** — תווית PINNED בלוח (או הערה על העיצוב) ותמונה |
+| [Lean Canvas Agent — Red Team, האתגרים](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-5--red-team) | מיד אחרי "סיימנו", כשהסוכן מציע · הארכיטקט | `01-ימים/04-Lean-Canvas/תוצרים/לוח-Lean-Canvas.md` (גרסת הצגה) · `01-ימים/04-Lean-Canvas/רפרנס-מנחה/Lean-Readiness-Pack.md` · תוצאות גוף ביצוע הולידציה ב-`01-ימים/03-Design-Thinking-2/תוצרים/שאלון-בחינת-קונספט/` · סינתזת הראיונות ב-`01-ימים/` | `01-ימים/04-Lean-Canvas/רפרנס-מנחה/Red-Team.md` + `.html`, פנימי. **לא בלוח** |
+| [Lean Canvas Agent — Red Team, הטיפים](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-5--red-team) | בזמן ההצגה של הקבוצה · המתעד/ת, או הארכיטקט | הטיפים — **ידני:** הדבקה · **דיגיטלי:** Canva · `Red-Team.md` | `01-ימים/04-Lean-Canvas/רפרנס-מנחה/Friendly-Tips.md`, עם האתגר שכל טיפ מחזק · הטיפים גם ב-`Red-Team.html` |
+| [Lean Canvas Agent — Decision & PIN](../../../04-AI/סוכנים/Lean-Canvas-Agent.md#משימה-6--decision--pin) | "סיימנו", כ-14:55 · מפעיל ה-AI | הלוח העדכני — **ידני:** צילום חדש או הקלדה · **דיגיטלי:** Canva · `01-ימים/04-Lean-Canvas/תוצרים/לוח-Lean-Canvas.md` (גרסת הצגה) · `Red-Team.md` · `Friendly-Tips.md` · `01-ימים/04-Lean-Canvas/רפרנס-מנחה/Lean-Readiness-Pack.md` | `01-ימים/04-Lean-Canvas/תוצרים/לוח-Lean-Canvas.md` + `.html` — v1.0 PINNED · `01-ימים/04-Lean-Canvas/תוצרים/Decision-and-PIN.md` · עמודת "מה הצוות החליט" ב-`Red-Team.md`, ב-`Friendly-Tips.md` וב-`Red-Team.html` · **דיגיטלי** — תווית PINNED בלוח (או הערה על העיצוב) ותמונה |
 
 ## ה. תוצרים וטמפלטים
 
 - **[Decision & PIN](../../../02-תוצרים-וטמפלטים/Decision-and-PIN.md)** — Decision Log · Critical Assumptions · 2–3 Next Tests · Research Missions · Trigger to Revisit. כולל **Definition of Done ליום.**
 - **[לוח Lean Canvas](../../../02-תוצרים-וטמפלטים/לוח-Lean-Canvas.md) v1.0 PINNED** — MD + HTML: [ה-HTML של הקנבס](../../../02-תוצרים-וטמפלטים/לוח-Lean-Canvas.md#ה-html-של-הקנבס), בגרסה של סוף היום.
-- בתיקיית היום: `Friendly-Tips.md` ו-`Red-Team.md`, עם ההחלטה על כל פריט, ו-`Red-Team.html` — HTML פנימי לדיון, לשניהם.
+- ב-`רפרנס-מנחה/` של היום: `Friendly-Tips.md` ו-`Red-Team.md`, עם ההחלטה על כל פריט, ו-`Red-Team.html` — HTML פנימי לדיון, לשניהם.
 
 ## ו. נורות אזהרה למנטור (Red Flags)
 

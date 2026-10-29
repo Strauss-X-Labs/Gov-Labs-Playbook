@@ -25,6 +25,7 @@
 מתודות שהמתודות האלה מפנות אליהן (למשל [5 Whys](../../03-ידע/מתודות/5-Whys.md) או [הצעת ערך](../../03-ידע/מתודות/הצעת-ערך.md)) — קורא כשקובייה מסוימת דורשת.
 
 **מבנה הפלטים:** [Lean Readiness](../../02-תוצרים-וטמפלטים/Lean-Readiness-Pack.md) · [Draft 0](../../02-תוצרים-וטמפלטים/Draft-0-Lean-Canvas.md) · [לוח Lean Canvas](../../02-תוצרים-וטמפלטים/לוח-Lean-Canvas.md) · [Decision & PIN](../../02-תוצרים-וטמפלטים/Decision-and-PIN.md). **כלים:** תבניות ה-HTML — [draft-0.html](../../skills/tools/assets/lean-canvas/draft-0.html) ו-[canvas.html](../../skills/tools/assets/lean-canvas/canvas.html), ולתוצרי הביניים הפנימיים — [cube-review.html](../../skills/tools/assets/lean-canvas/cube-review.html) ו-[red-team.html](../../skills/tools/assets/lean-canvas/red-team.html) · [html-preview.sh](../../skills/tools/html-preview.sh) · [עבודה עם Canva](../../skills/tools/canva.md), בשיטה הדיגיטלית.
+**איפה נכתב:** מה שהצוות רואה ומציג — `01-ימים/04-Lean-Canvas/תוצרים/` (Draft 0, הקנבס, Decision & PIN, דף ערכי המוצר, המיפוי). מה שלמנטור ולארכיטקט בלבד — `01-ימים/04-Lean-Canvas/רפרנס-מנחה/` (בדיקת המוכנות, יומן הסקירה, Red Team והטיפים, `canva/`).
 
 ## שתי שיטות עבודה
 

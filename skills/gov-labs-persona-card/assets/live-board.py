@@ -66,10 +66,10 @@ def serve(d, port):
                 last = answers[-1]["id"] if answers else 0
                 self.send(200, json.dumps({"state_raw": body, "last_answer": last, "page": int(os.path.getmtime(page))}), "application/json")
             elif path.startswith("/out/"):
-                # התוצרים של המיזם (כרטיס, תמונה, HTML) — מוגשים מ-תוצרים/ שליד .live
+                # התוצרים של המיזם (כרטיס, תמונה, HTML) — מוגשים מ-01-ימים/01-Unboxing/תוצרים/ של ה-repo (.live בשורש)
                 from urllib.parse import unquote
                 import mimetypes
-                root = os.path.realpath(os.path.join(d, os.pardir, "תוצרים"))
+                root = os.path.realpath(os.path.join(d, os.pardir, "01-ימים", "01-Unboxing", "תוצרים"))
                 f = os.path.realpath(os.path.join(root, unquote(path[5:])))
                 if not f.startswith(root + os.sep) or not os.path.isfile(f):
                     return self.send(404, "not found", "text/plain")
