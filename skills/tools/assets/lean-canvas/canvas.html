@@ -9,7 +9,8 @@
   תבנית ה-HTML של לוח Lean Canvas — נוצרת ב"סיימנו", להצגה במליאה, ומתעדכנת ב-PIN ובערכי המוצר. בפריסה ובעיצוב של שקף הקנבס בפלייבוק
   (living_lean_canvas.pptx, שקף 5). הסוכן ממלא רק את בלוק הנתונים (id="data") מה-MD. העיצוב קבוע.
   version: "גרסת הצגה" | "v1.0 PINNED" | "v1.1" ...   ·   בכותרת רק שם המיזם, הגרסה והתאריך — בלי שורת "איפה אנחנו בתהליך"
-  cubes: לכל קובייה — status ("✓" | "~" | "?" | "⚡" | ""), items (מילה במילה; ב-2 מוצגים ממוספרים; ב-6 "← בעיה N" מוצג "(בעיה N)"), sub (רק 1, 2, 5), source, gap,
+  cubes: לכל קובייה — status ("✓" | "~" | "?" | "⚡" | ""), items (מילה במילה; ב-2 מוצגים ממוספרים; ב-6 "← בעיה N" מוצג "(בעיה N)"), sub (רק 1, 2, 5),
+         בלי מקור ובלי פער בקובייה — הם רק ב-MD (Evidence / Source). שדות source / gap בנתונים — לא מוצגים.
          קובייה 7 — במקום items שתי קטגוריות: advantage (יתרון יחסי) ו-must (תנאי הכרחי), כל אחת רשימת בולטים; מוצגות ככותרות משנה.
          updated: true לקוביות שהשתנו מהגרסה הקודמת (ב-PIN — מגרסת ההצגה). קובייה בלי items — מוצגת עם השאלה המרכזית, "טרם מולא".
   sections: מידע נוסף מתחת לקנבס — [{ "title": "...", "items": ["..."] }]. ריק — לא מוצג.
@@ -68,8 +69,6 @@
   .sub { margin-top: auto; padding-top: 0.45em; }
   .sub-box { border-top: 1px dashed var(--line); padding: 0.4em 0.1em 0; }
   .sub-label { font-weight: 700; color: var(--navy); font-size: 0.86em; margin-bottom: 0.1em; }
-  .foot { margin-top: 0.5em; padding-top: 0.35em; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.8em; overflow-wrap: anywhere; }
-  .foot b { color: var(--ink); font-weight: 600; }
 
   .below { display: grid; grid-template-columns: repeat(auto-fit, minmax(18em, 1fr)); gap: 0.7em; margin-top: 1em; }
   .section { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--navy); border-radius: 6px; padding: 0.7em 0.9em; }
@@ -108,17 +107,17 @@
   "date": "[תאריך]",
   "source": "01-ימים/04-Lean-Canvas/לוח-Lean-Canvas.md",
   "cubes": {
-    "1":  { "status": "", "items": [], "sub": [], "source": "", "gap": "", "updated": false },
-    "2":  { "status": "", "items": [], "sub": [], "source": "", "gap": "", "updated": false },
-    "3":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
-    "4":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
-    "5":  { "status": "", "items": [], "sub": [], "source": "", "gap": "", "updated": false },
-    "6":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
-    "7":  { "status": "", "advantage": [], "must": [], "source": "", "gap": "", "updated": false },
-    "8":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
-    "9":  { "status": "", "items": [], "source": "", "gap": "", "updated": false },
-    "10": { "status": "", "items": [], "source": "", "gap": "", "updated": false },
-    "11": { "status": "", "items": [], "source": "", "gap": "", "updated": false }
+    "1":  { "status": "", "items": [], "sub": [], "updated": false },
+    "2":  { "status": "", "items": [], "sub": [], "updated": false },
+    "3":  { "status": "", "items": [], "updated": false },
+    "4":  { "status": "", "items": [], "updated": false },
+    "5":  { "status": "", "items": [], "sub": [], "updated": false },
+    "6":  { "status": "", "items": [], "updated": false },
+    "7":  { "status": "", "advantage": [], "must": [], "updated": false },
+    "8":  { "status": "", "items": [], "updated": false },
+    "9":  { "status": "", "items": [], "updated": false },
+    "10": { "status": "", "items": [], "updated": false },
+    "11": { "status": "", "items": [], "updated": false }
   },
   "sections": []
 }
@@ -174,12 +173,6 @@
     if (def.sub && (c.sub || []).filter(Boolean).length) {
       const sub = el("div", "sub"), sb = el("div", "sub-box");
       sb.append(el("div", "sub-label", def.sub), list(c.sub.filter(Boolean))); sub.append(sb); box.append(sub);
-    }
-    if (c.source || c.gap) {
-      const foot = el("div", "foot");
-      if (c.source) { const s = el("div"); s.append(el("b", null, "מקור: "), document.createTextNode(c.source)); foot.append(s); }
-      if (c.gap) { const g = el("div"); g.append(el("b", null, "פתוח: "), document.createTextNode(c.gap)); foot.append(g); }
-      box.append(foot);
     }
     canvas.append(box);
   });
