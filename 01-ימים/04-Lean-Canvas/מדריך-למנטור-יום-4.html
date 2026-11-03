@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>יום ה-Lean Canvas</title>
+<meta name="description" content="מדריך למנטור ליום ה-Lean Canvas של Gov-Labs 2.0: מהלך היום שלב אחר שלב, קלט, פלט, עבודה ידנית, ועבודה עם ה-Playbook.">
+<!--
+  מדריך למנטור ליום 4 — מקור הדף. נגזר מ: סקירה.md · היערכות-למפגש.md · תהליכים/1–5 · 04-AI/סוכנים/Lean-Canvas-Agent.md
+  שפה גרפית: שטראוס אסטרטגיה (s-strategy.com) — נייבי, פלום, ענבר, טורקיז. גופן: Calibri בלבד.
+  הדף המפורסם (לשיתוף): https://claude.ai/artifact/81WLeY76uH2r3G8U2MF9eX
+  עדכון: עורכים את הקובץ הזה, ואז מבקשים מסוכן ה-AI: "פרסם את מדריך-למנטור-יום-4.html ל-https://claude.ai/artifact/81WLeY76uH2r3G8U2MF9eX".
+  פרסום בלי הלינק יוצר דף חדש בכתובת אחרת. אחרי כל עדכון — קומיט ו-PR כמו כל שינוי בפלייבוק.
+-->
+<style>
+:root {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --ink: #242840;
+  --plum: #362B48;
+  --blue: #14246B;
+  --muted: #6B7280;
+  --rule: #D9D9D9;
+  --soft: #F4F5F7;
+  --amber: #FDB415;
+  --amber-soft: #FFF6DC;
+  --amber-ink: #8A5A00;
+  --teal: #39A28F;
+  --teal-soft: #E6F4F1;
+  --teal-ink: #1F6D60;
+  --navy-soft: #E8ECF1;
+  --font: Calibri, "Carlito", "Segoe UI", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16.5px; line-height: 1.5; }
+.page { max-width: 1120px; margin: 0 auto; padding: 36px 20px 72px; }
+a { color: var(--blue); }
+p { margin: 0 0 10px; }
+h1, h2, h3, h4 { font-family: var(--font); color: var(--plum); margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 42px); font-weight: 700; margin-bottom: 10px; }
+h2 { font-size: 27px; font-weight: 700; margin-bottom: 4px; position: relative; padding-inline-start: 16px; }
+h2::before { content: ""; position: absolute; inset-inline-start: 0; top: 6px; bottom: 6px; width: 5px; border-radius: 3px; background: var(--amber); }
+h3 { font-size: 19px; font-weight: 700; }
+.eyebrow { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--amber-ink); font-weight: 700; margin-bottom: 8px; }
+.lead { font-size: 18px; color: var(--muted); max-width: 72ch; margin-bottom: 16px; }
+.meta { color: var(--muted); font-size: 15px; margin-bottom: 14px; max-width: 76ch; }
+section { margin-top: 48px; scroll-margin-top: 16px; }
+
+/* עקרונות */
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.principle { background: var(--plum); color: #fff; border-radius: 12px; padding: 14px 16px; font-size: 15px; line-height: 1.45; }
+.principle b { display: block; color: var(--amber); font-size: 16px; margin-bottom: 3px; }
+
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; font-size: 14px; }
+nav.jump a { text-decoration: none; color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; }
+nav.jump a:hover { border-color: var(--amber); background: var(--amber-soft); }
+
+/* שלושה דברים */
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.card { border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px; font-size: 15px; line-height: 1.5; }
+.card h4 { font-size: 16px; margin-bottom: 6px; }
+.card ul { margin: 0; padding-inline-start: 16px; }
+.card li { margin-bottom: 3px; }
+.tree { font-size: 14.5px; line-height: 1.6; background: var(--soft); border-radius: 8px; padding: 8px 12px; margin: 6px 0 8px; }
+.tree div { display: flex; justify-content: space-between; gap: 10px; }
+.tree .t { color: var(--teal-ink); font-weight: 700; }
+.tree .m { color: var(--amber-ink); font-weight: 700; }
+.tree small { color: var(--muted); font-size: 13.5px; }
+.say { background: var(--soft); border-inline-start: 3px solid var(--amber); border-radius: 6px; padding: 6px 10px; font-size: 14.5px; margin: 6px 0; }
+.say b { color: var(--amber-ink); margin-inline-end: 4px; }
+.roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 14px; }
+.roles span { background: var(--navy-soft); border-radius: 999px; padding: 3px 12px; }
+.roles span b { color: var(--blue); }
+
+/* רצועת סדר היום */
+.strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; margin: 14px 0 4px; }
+.strip a { text-decoration: none; color: var(--ink); font-size: 13.5px; line-height: 1.3; border: 1px solid var(--rule); border-top: 3px solid var(--blue); border-radius: 8px; padding: 6px 10px; display: grid; gap: 1px; align-content: start; }
+.strip a.pre, .strip a.post { border-top-color: var(--rule); background: var(--soft); }
+.strip a:hover { border-color: var(--amber); }
+.strip .tm { font-size: 12px; color: var(--muted); white-space: nowrap; unicode-bidi: isolate; }
+.rng { direction: ltr; unicode-bidi: isolate; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 10px 0 18px; font-size: 13.5px; color: var(--muted); }
+.legend .k::before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-inline-end: 5px; vertical-align: -1px; border: 1px solid; }
+.legend .manual::before { background: var(--navy-soft); border-color: var(--blue); }
+.legend .input::before { background: var(--soft); border-color: var(--muted); }
+.legend .team::before { background: var(--teal-soft); border-color: var(--teal); }
+.legend .mentor::before { background: var(--amber-soft); border-color: var(--amber); }
+
+/* ציר הזמן */
+.timeline { position: relative; display: grid; gap: 14px; }
+.timeline::before { content: ""; position: absolute; top: 22px; bottom: 22px; inset-inline-start: 21px; width: 2px; background: var(--rule); }
+.stage { position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: start; scroll-margin-top: 16px; }
+.node { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--amber); color: var(--plum); font-size: 19px; font-weight: 700; position: relative; z-index: 1; }
+.stage.pre .node, .stage.post .node { background: var(--bg); border: 2px dashed var(--muted); color: var(--muted); }
+.body { border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px 12px; min-width: 0; }
+.stage.key .body { border: 2px solid var(--amber); }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.time { font-size: 13.5px; color: var(--blue); font-weight: 700; unicode-bidi: isolate; }
+.goal { font-size: 15px; color: var(--muted); margin: 2px 0 6px; }
+.who { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.who span { font-size: 12.5px; border: 1px solid var(--rule); border-radius: 999px; padding: 0 9px; color: var(--muted); }
+.who .lead-role { border-color: var(--blue); color: var(--blue); font-weight: 700; }
+.stage .say { margin: 0 0 10px; }
+.cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.cell { border-radius: 10px; padding: 9px 12px 8px; font-size: 14.5px; line-height: 1.45; border: 1px solid var(--rule); min-width: 0; }
+.lbl { display: block; font-size: 12px; font-weight: 700; letter-spacing: .03em; margin-bottom: 4px; }
+.cell ul { margin: 0; padding-inline-start: 15px; }
+.cell li { margin-bottom: 2px; }
+.cell.manual { background: var(--navy-soft); border-color: #D3DBE7; }
+.cell.manual .lbl { color: var(--blue); }
+.cell.input { background: var(--soft); }
+.cell.input .lbl { color: var(--muted); }
+.cell.output { padding: 0; border: 0; display: grid; gap: 6px; align-content: start; }
+.out { border-radius: 10px; padding: 8px 12px 7px; border: 1px solid; }
+.out.team { background: var(--teal-soft); border-color: #BFE0D8; }
+.out.team .lbl { color: var(--teal-ink); }
+.out.mentor { background: var(--amber-soft); border-color: #F3DFA6; }
+.out.mentor .lbl { color: var(--amber-ink); }
+.out.none { border: 1px dashed var(--rule); color: var(--muted); font-size: 14px; }
+.cell.tips .lbl { color: var(--plum); }
+.fallback { margin-top: 6px; border-top: 1px dashed var(--rule); padding-top: 5px; font-size: 13.5px; color: var(--muted); }
+.fallback q { display: block; quotes: "„" "“"; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 4px 8px; margin-top: 3px; }
+.file { font-weight: 700; color: var(--ink); unicode-bidi: isolate; }
+.flag { color: var(--amber-ink); font-weight: 700; }
+
+/* טבלאות ורשימות */
+.table-wrap { overflow-x: auto; margin: 10px 0 6px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.45; }
+th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 700; border-bottom: 2px solid var(--rule); }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
+ul.flags { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px; }
+ul.flags li { font-size: 15px; line-height: 1.45; padding-inline-start: 16px; position: relative; }
+ul.flags li::before { content: ""; position: absolute; inset-inline-start: 0; top: 8px; width: 7px; height: 7px; border-radius: 2px; background: var(--amber); }
+ul.flags b { color: var(--plum); }
+.note { background: var(--plum); color: #fff; border-radius: 12px; padding: 14px 18px; margin-top: 16px; font-size: 15px; line-height: 1.5; }
+.note b { color: var(--amber); }
+footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 13.5px; color: var(--muted); }
+footer a { margin-inline-end: 10px; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .principles, .cards3, .two { grid-template-columns: minmax(0, 1fr); }
+  ul.flags { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 680px) {
+  .page { padding: 22px 16px 56px; }
+  .cells { grid-template-columns: minmax(0, 1fr); }
+  .stage { grid-template-columns: 36px minmax(0, 1fr); gap: 8px; }
+  .node { width: 36px; height: 36px; font-size: 16px; }
+  .timeline::before { inset-inline-start: 17px; }
+}
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { font-size: 11pt; }
+  .body, .card, .cell { break-inside: avoid; }
+  nav.jump, .strip { display: none; }
+  .principle, .note { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <p class="eyebrow">Gov-Labs 2.0 · יום 4 · מדריך למנטור</p>
+  <h1>יום ה-Lean Canvas: איך זה הולך לעבוד</h1>
+  <p class="lead">לא ממלאים קנבס מאפס. את מה שכבר נאסף בתוכנית <b>מחדדים, מאתגרים, מבססים ומכריעים</b>, עד גרסה מוסכמת אחת ומקובעת.</p>
+  <div class="principles">
+    <div class="principle"><b>AI-first בידע. Human-first בהכרעה.</b>ה-Playbook מביא ידע, מתעד ומאתגר. הצוות חושב, מנסח במילים שלו, ומחליט.</div>
+    <div class="principle"><b>אין AI חי בחדר.</b>הסוכן עובד מאחורי הקלעים. מה שמגיע לצוות עובר דרככם, במילים שלכם, ורק אם הוא מעניין.</div>
+    <div class="principle"><b>Gaps לא מסתירים.</b>כל קובייה מקבלת סטטוס: ✓ מבוסס · ~ הנחה · ? פער · ⚡ סתירה. בלי מקור זו הנחה, וזה בסדר.</div>
+  </div>
+  <nav class="jump" aria-label="ניווט">
+    <a href="#before">לפני שמתחילים</a><a href="#flow">מהלך היום</a><a href="#ref">רפרנס-מנחה</a><a href="#feed">מתי מזינים חומר</a><a href="#gaps">כשחסר קלט</a><a href="#flags">נורות אזהרה</a>
+  </nav>
+</header>
+
+<section id="before">
+  <h2>לפני שמתחילים</h2>
+  <div class="cards3">
+    <div class="card">
+      <h4>איפה הכול נשמר</h4>
+      <div class="tree">
+        <div><span><b>תיקיית היום</b></span><small class="rng">04-Lean-Canvas</small></div>
+        <div><span class="t">תוצרים/</span><small>מה שהצוות רואה ומציג</small></div>
+        <div><span class="m">רפרנס-מנחה/</span><small>רק לכם ולארכיטקט</small></div>
+      </div>
+      <p>הסוכן רואה רק מה שב-repo.</p>
+    </div>
+    <div class="card">
+      <h4>איך מדברים עם ה-Playbook</h4>
+      <p>בשפה חופשית, על מה שקורה עכשיו. אין פקודות.</p>
+      <div class="say"><b>אומרים:</b>אנחנו לפני יום 4, בוא נבדוק אם אנחנו מוכנים ל-Lean Canvas.</div>
+      <div class="say"><b>אומרים:</b>הצוות כתב את קוביות 3 ו-4.</div>
+      <div class="say"><b>אומרים:</b>סיימנו.</div>
+    </div>
+    <div class="card">
+      <h4>באיזה כלי עובדים על הלוח</h4>
+      <p>החלטה שלכם, לפני היום. <b>ההמלצה: Canva</b>, לפי תבנית הלוח בפלייבוק. כל כלי עובד: לוח פיזי, Miro, Mural, Canvali.</p>
+      <ul>
+        <li>בכל כלי אותו תהליך: מה שהצוות כותב מגיע לסוכן בהקלדה או בצילום.</li>
+        <li>קריאה אוטומטית של הלוח על ידי הסוכן: פיצ'ר עתידי.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="roles">
+    <span><b>המנטור העסקי</b> מוביל ומאתגר</span>
+    <span><b>הארכיטקט / מפעיל ה-AI</b> מזין לסוכן ומביא את "קול ה-AI"</span>
+    <span><b>מנחה המליאה</b> מתודה, הצגות, טיפים</span>
+    <span><b>מתעד/ת</b> מקליד/ה טיפים בהצגה</span>
+    <span>סשן אחד עם הסוכן לכל קבוצה, לכל היום</span>
+  </div>
+</section>
+
+<section id="flow">
+  <h2>מהלך היום, שלב אחר שלב</h2>
+  <p class="meta">בכל שלב: מה עושים בידיים, מה צריך להיות מוכן ומה עושים כשחסר, מה יוצא, ומה חשוב לכם.</p>
+
+  <div class="strip" aria-label="סדר היום">
+    <a class="pre" href="#s1"><span class="tm">ימים לפני</span>בדיקת מוכנות</a>
+    <a class="pre" href="#s2"><span class="tm">יום לפני</span>Draft 0 והלוח</a>
+    <a href="#s3"><span class="tm"><span class="rng">09:10–10:00</span></span>הצגת המתודה</a>
+    <a href="#s4"><span class="tm"><span class="rng">10:00–10:40</span></span>קוביות AI-First</a>
+    <a href="#s5"><span class="tm"><span class="rng">10:40–12:30</span></span>קוביות Human-First</a>
+    <a href="#s6"><span class="tm"><span class="rng">12:30–12:40</span></span>"סיימנו": גרסת הצגה</a>
+    <a href="#s7"><span class="tm"><span class="rng">12:40–13:25</span></span>צהריים · Red Team</a>
+    <a href="#s8"><span class="tm"><span class="rng">13:25–14:30</span></span>הצגות + Friendly Tip</a>
+    <a href="#s9"><span class="tm"><span class="rng">14:30–15:05</span></span>Decide &amp; PIN</a>
+    <a href="#s10"><span class="tm"><span class="rng">15:05–15:50</span></span>ערכי מוצר</a>
+    <a class="post" href="#s11"><span class="tm">אחרי היום</span>PR/FAQ · PRD · קנבס חי</a>
+  </div>
+  <div class="legend">
+    <span class="k manual">עבודה ידנית</span>
+    <span class="k input">קלט שצריך להיות מוכן</span>
+    <span class="k team">פלט: תוצרים לקבוצה</span>
+    <span class="k mentor">פלט: רפרנס-מנחה</span>
+  </div>
+
+  <div class="timeline">
+
+    <article class="stage pre" id="s1">
+      <div class="node">1</div>
+      <div class="body">
+        <div class="head"><h3>בדיקת מוכנות (Lean Readiness)</h3><span class="time">ימים לפני · כ-20 דק׳</span></div>
+        <p class="goal">מה יש ב-repo, על מה נשענים, מה חסר. בדיקה בלבד, לא מנסחים קוביות.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span></div>
+        <div class="say"><b>אומרים:</b>אנחנו לפני יום 4, בוא נבדוק אם אנחנו מוכנים ל-Lean Canvas.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מעלים ל-repo תוצרים שנשארו בדרייב.</li>
+            <li>בוחרים כלי ללוח ואומרים לסוכן.</li>
+            <li>יום לפני: עוברים על הבדיקה של כל קבוצה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li>תוצרי ימים 1–3 ב-repo.</li>
+            <li>תוצאות בדיקת הקונספט.</li></ul>
+            <div class="fallback">חסר? <q>עוד אין תוצאות בדיקת הקונספט. תסמן כפער ותמשיך.</q></div></div>
+          <div class="cell output">
+            <div class="out none">אין עדיין תוצר לקבוצה.</div>
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span><span class="file">Lean-Readiness-Pack.md</span>: מוכנות, סתירות, שיטת העבודה, המלצות להשלמה.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>המלצה חוסמת: משלימים לפני Draft 0.</li>
+            <li><span class="flag">הכול ✓?</span> "מה המקור?"</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage pre" id="s2">
+      <div class="node">2</div>
+      <div class="body">
+        <div class="head"><h3>Draft 0 והכנת הלוח</h3><span class="time">יום לפני · כ-15 דק׳</span></div>
+        <p class="goal">מצע לדיון לקוביות 1, 2, 5. רשימה, לא קנבס.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span><span>בלי הצוות</span></div>
+        <div class="say"><b>אומרים:</b>בוא נכין את Draft 0.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מתקנים את Draft 0; הסוכן מעדכן.</li>
+            <li>מכינים את הלוח בכלי שבחרתם: 11 קוביות, תיבת Draft 0, אזור Friendly Tips.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>בדיקת מוכנות בלי המלצה חוסמת.</li></ul>
+            <div class="fallback">"לא מוכן"? <q>תכין Draft 0 ממה שיש. כל הצעה בלי מקור תסמן כהנחה.</q></div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">Draft-0-Lean-Canvas.html</span>: רק מה כדאי לשים בכל קובייה.</div>
+            <div class="out mentor"><span class="lbl">לעיניכם</span>ה-MD של Draft 0: מקורות, סטטוס, "לדיון", פערים.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul><li><span class="flag">הקבוצות לא רואות את Draft 0 ואת הקנבס לפני היום.</span></li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s3">
+      <div class="node">3</div>
+      <div class="body">
+        <div class="head"><h3>הצגת המתודה במליאה</h3><span class="time"><span class="rng">09:10–10:00</span></span></div>
+        <div class="who"><span class="lead-role">מנחה המליאה</span></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul><li>מבנה הקנבס, הלוגיקה בין הקוביות, ודוגמה מלאה.</li></ul></div>
+          <div class="cell tips"><span class="lbl">הדגשים</span><ul><li>הקנבס הוא אמצעי, לא מטרה.</li><li><b>מטרת היום: החלטות</b>, לא למלא הכול מהר.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s4">
+      <div class="node">4</div>
+      <div class="body">
+        <div class="head"><h3>קוביות AI-First (1, 2, 5)</h3><span class="time"><span class="rng">10:00–10:40</span></span></div>
+        <p class="goal">לקוחות, בעיות, הצעת ערך: הקוביות שכבר יש עליהן ידע. Draft 0 הוא מצע הדיון.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI מזין</span></div>
+        <div class="say"><b>אומרים, מתי שהצוות רוצה:</b>הצוות כתב את קוביות 1 ו-2.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מציגים את Draft 0 כהצעה לדיון, כ-12 דק׳ לקובייה.</li>
+            <li>הצוות כותב על הלוח <b>במילים שלו</b>, סטטוס אחד לקובייה.</li>
+            <li>מפעיל ה-AI מקליד או מצלם לסוכן.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>Draft 0 על מסך או מודפס.</li><li>מה שהצוות כתב, בכל סדר.</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">לוח-Lean-Canvas.md</span>, טיוטה. MD בלבד, עדיין בלי HTML.</div>
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span><span class="file">סקירת-קוביות</span>: עד 2 המלצות לקובייה, כל אחת עם שאלה לצוות.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>מביאים רק מה שמעניין, במילים שלכם. <span class="flag">לא מקריאים.</span></li>
+            <li><span class="flag">Draft 0 כלשונו?</span> "באילו מילים שלכם?"</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s5">
+      <div class="node">5</div>
+      <div class="body">
+        <div class="head"><h3>קוביות Human-First (3, 4, 6–11)</h3><span class="time"><span class="rng">10:40–12:30</span></span></div>
+        <p class="goal">החלק המרכזי. הצוות חושב קודם; ה-AI נכנס רק אחר כך.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>הארכיטקט מזין ומביא את "קול ה-AI"</span></div>
+        <div class="say"><b>אומרים, בכל פעם שהצוות כתב:</b>הצוות כתב את קוביות 3 ו-4. · חזרנו לקובייה 6.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>הצוות עובד <b>ללא AI</b>, בכל סדר, וחוזר לקוביות.</li>
+            <li>על הלוח: פתק לבולט · סטטוס · פתק "מקור:" ו"פער:" · בפתרון "← בעיה N" · במפתחות להצלחה: יתרון יחסי ותנאי הכרחי.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>מה שהצוות כתב.</li></ul>
+            <div class="fallback">תקועים? לא מבקשים נוסח. <q>תן שתי שאלות שיעזרו לצוות, בלי להציע נוסח.</q></div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">לוח-Lean-Canvas.md</span> ממשיך להתעדכן.</div>
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span><span class="file">סקירת-קוביות.html</span> פתוח אצל הארכיטקט כל הבוקר.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><b>קודם הצוות, אחר כך קול ה-AI.</b></li>
+            <li>השאלה החזקה: <b>"מה עלול להפיל את ההחלטה הזאת?"</b></li>
+            <li><span class="flag">לא לקפוץ לפתרון. לא להפוך נוסח משכנע ל-Fact.</span></li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s6">
+      <div class="node">6</div>
+      <div class="body">
+        <div class="head"><h3>"סיימנו": גרסת הצגה</h3><span class="time"><span class="rng">12:30–12:40</span></span></div>
+        <p class="goal">גרסה אחת למליאה. כאן נוצר לראשונה ה-HTML של הקנבס.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>הארכיטקט אומר "סיימנו"</span></div>
+        <div class="say"><b>אומרים, ב-12:40:</b>סיימנו.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>סטטוס בכל קובייה, שום פתק בשוליים.</li>
+            <li>מצלמים את הלוח, ואומרים "סיימנו".</li>
+            <li>הארכיטקט עונה לשאלות הסוכן ומעלה את ה-HTML למסך המליאה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>הלוח במצבו הסופי.</li></ul>
+            <div class="fallback">קובייה ריקה? <q>קובייה 8 נשארת ריקה. תציג "טרם מולא" ותמשיך.</q></div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">לוח-Lean-Canvas.html</span>: הקנבס בלבד, 11 קוביות עם סטטוס. זה מה שעל המסך.</div>
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span>סעיף "סיימנו" בסקירת הקוביות: הנחות ופערים מרכזיים, עד 3 שאלות עקביות.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><span class="flag">לסיים לפני 13:25.</span></li>
+            <li>הסוכן מציע Red Team. מאשרים.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s7">
+      <div class="node">7</div>
+      <div class="body">
+        <div class="head"><h3>מאחורי הקלעים: Red Team</h3><span class="time"><span class="rng">12:40–13:25</span> · בארוחת הצהריים</span></div>
+        <p class="goal">הסוכן מסתכל על הקנבס כשלם: עד 5 אתגרים ועד 5 סוגיות ל-Q&amp;A.</p>
+        <div class="who"><span class="lead-role">הארכיטקט</span></div>
+        <div class="say"><b>אומרים:</b>כן, Red Team.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul><li>הארכיטקט מסמן מה מספיק טוב להביא לצוות.</li></ul></div>
+          <div class="cell output">
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span><span class="file">Red-Team.md + .html</span>. לא נכתב ללוח ולא לקנבס.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul><li>הסוכן מאתגר, לא פוסק. קול ה-AI מגיע לצוות רק אחרי הטיפים.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s8">
+      <div class="node">8</div>
+      <div class="body">
+        <div class="head"><h3>הצגות + Friendly Tip 2.0</h3><span class="time"><span class="rng">13:25–14:30</span></span></div>
+        <p class="goal">כל קבוצה מציגה מה-HTML. המשתתפים נותנים טיפים; המציגים מקשיבים וכותבים, לא מגינים.</p>
+        <div class="who"><span class="lead-role">מנחה המליאה</span><span>מתעד/ת בכל קבוצה</span></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מסך המליאה: ה-HTML של כל קבוצה בתורה.</li>
+            <li>המתעד/ת מקליד/ה כל טיפ, שורה לטיפ, בצ'אט עם הסוכן.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>ה-HTML של הקנבס לכל קבוצה.</li></ul>
+            <div class="fallback">לא הוקלד בזמן? <q>אלה הטיפים מהמליאה. תרשום אותם ותסמן איזה אתגר כל אחד מחזק.</q></div></div>
+          <div class="cell output">
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span><span class="file">Friendly-Tips.md</span>, וליד כל טיפ האתגר שהוא מחזק.</div></div>
+          <div class="cell tips"><span class="lbl">למנחה המליאה</span><ul><li>אוכפים "אין תשובה": <b>"רשמו את זה, נחזור לזה בקבוצה."</b></li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s9">
+      <div class="node">9</div>
+      <div class="body">
+        <div class="head"><h3>חזרה לקבוצות: טיפים, קול ה-AI, Decide &amp; PIN</h3><span class="time"><span class="rng">14:30–15:05</span></span></div>
+        <p class="goal">גרסה מוסכמת אחת, אחרי אתגור כפול: בני אדם ו-AI.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>הארכיטקט מביא את "קול ה-AI"</span><span>מפעיל ה-AI</span></div>
+        <div class="say"><b>אומרים, כ-14:55:</b>סיימנו, מקבעים.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li><b>בסדר הזה:</b> הטיפים → קול ה-AI מ-Red Team, רק מה שאפשר לעמוד מאחוריו → הצוות מעדכן את הלוח.</li>
+            <li>כל טיפ ואתגר מקבל החלטה בקול: אומץ, בדיקת המשך, Q&amp;A, לא אומץ.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>הלוח המעודכן.</li><li>Red Team והטיפים.</li></ul>
+            <div class="fallback">נגמר הזמן? <q>על טיפים 4–6 לא דנו. תרשום אותם כבדיקות המשך.</q></div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">לוח-Lean-Canvas v1.0 PINNED</span>, השינויים מודגשים · <span class="file">Decision-and-PIN.md</span>: החלטות, הנחות קריטיות, 2–3 בדיקות המשך, Trigger to Revisit.</div>
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span>עמודת "מה הצוות החליט" ב-Red Team ובטיפים.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>מקבעים מה שהוסכם. מרגע ה-PIN הקובץ קובע.</li>
+            <li><span class="flag">הכול ✓?</span> "מה כאן עדיין הנחה?" · <span class="flag">אין Trigger?</span> "מה יפתח את הקובייה מחדש?"</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s10">
+      <div class="node">10</div>
+      <div class="body">
+        <div class="head"><h3>ערכי מוצר ומיפוי פיצ'רים</h3><span class="time"><span class="rng">15:05–15:50</span></span></div>
+        <p class="goal">שלושה ערכי ליבה, וכל ערך ממופה לפיצ'רים. המצפן ליום 5. הקנבס לא נפתח.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span></div>
+        <div class="say"><b>אומרים:</b>אלה הערכים שהצוות הציע. · עכשיו מיפוי הפיצ'רים.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul><li>הצוות מציע 3–5 ערכים במילים שלו; הסוכן בודק, הצוות בוחר שלושה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>הקנבס v1.0 PINNED.</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">דף-ערכי-מוצר.md</span> · <span class="file">מיפוי-פיצרים.md</span></div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul><li><b>ערך ≠ פיצ'ר. שלושה, לא עשרה.</b></li><li><span class="flag">"מקצועיות", "שירותיות"?</span> "מה מייחד את שלנו?"</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage post" id="s11">
+      <div class="node">+</div>
+      <div class="body">
+        <div class="head"><h3>אחרי היום</h3></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">מה קורה</span><ul>
+            <li><b>PR/FAQ:</b> הסוכן ממלא מראש; הצוות מאשר בפגישה השבועית.</li>
+            <li><b>PRD-גג v0.1:</b> פורום בהובלת הארכיטקט.</li>
+            <li><b>קנבס חי:</b> מידע חדש → הסוכן מציע שינוי, הצוות מאשר.</li></ul></div>
+          <div class="cell output"><div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">PR-FAQ</span> · <span class="file">PRD.md</span> · גרסאות הבאות של הקנבס, תמיד בתיקיית יום 4.</div></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="ref">
+  <h2>איך משתמשים ברפרנס-מנחה</h2>
+  <p class="meta">שלכם ושל הארכיטקט. לא על מסך המליאה, לא לצוות. שואבים ממנו רעיונות, לא מקריאים.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>קובץ</th><th>מתי</th><th>מה עושים איתו</th></tr></thead>
+    <tbody>
+      <tr><td><span class="file">Lean-Readiness-Pack.md</span></td><td>ימים לפני</td><td>רשימת המשימות שלכם לפני היום, ואיפה הידע של הקבוצה דק.</td></tr>
+      <tr><td>ה-MD של Draft 0</td><td>יום לפני</td><td>המקורות וה"לדיון" של כל קובייה. פתוח לידכם בשעה הראשונה.</td></tr>
+      <tr><td><span class="file">סקירת-קוביות.html</span></td><td>כל הבוקר</td><td>אחרי כל קלט: יש המלצה ששווה להביא? מנסחים אותה כשאלה. ב"סיימנו": ההנחות ושאלות העקביות לאחר הצהריים.</td></tr>
+      <tr><td><span class="file">Red-Team.html</span></td><td>מ-12:40</td><td>בצהריים מסמנים אילו אתגרים להביא. ב-14:30 מביאים בעל-פה, אחרי הטיפים.</td></tr>
+      <tr><td><span class="file">Friendly-Tips.md</span></td><td>בהצגות</td><td>עוברים עליהם אחד-אחד ב-14:30. טיפ שלא נדון הופך לבדיקת המשך.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="feed">
+  <h2>מתי מזינים חומר ל-Playbook</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>מתי</th><th>מה</th><th>איך</th></tr></thead>
+    <tbody>
+      <tr><td>ימים לפני</td><td>תוצרי ימים 1–3 ותוצאות בדיקת הקונספט</td><td>מעלים ל-repo ומבקשים הרצה נוספת של בדיקת המוכנות</td></tr>
+      <tr><td>בבדיקת המוכנות</td><td>כלי הלוח שבחרתם</td><td>אומרים לסוכן</td></tr>
+      <tr><td><span class="rng">10:00–12:30</span></td><td>מה שהצוות כתב, בכל סדר</td><td>מקלידים או מצלמים, ואומרים אילו קוביות</td></tr>
+      <tr><td>12:40 וכ-14:55</td><td>הלוח כולו</td><td>צילום, ואז "סיימנו" / "סיימנו, מקבעים"</td></tr>
+      <tr><td><span class="rng">13:25–14:30</span></td><td>הטיפים מהמליאה</td><td>המתעד/ת, שורה לטיפ</td></tr>
+      <tr><td>15:05</td><td>הערכים שהצוות הציע</td><td>"אלה הערכים שהצוות הציע"</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="gaps">
+  <h2>כשחסר קלט</h2>
+  <p class="meta">אף שלב לא נתקע. אומרים לסוכן מה לעשות עם החוסר. הוא לא ינחש עובדות ולא יכתוב קובייה במקום הצוות.</p>
+  <div class="two">
+    <div class="card">
+      <h4>להשאיר כפער</h4>
+      <p>הסוכן ממשיך, ורושם את החוסר: המלצה להשלמה, סטטוס "? פער", או Research Mission.</p>
+      <div class="say"><b>למשל:</b>אין סינתזת ראיונות ב-repo. תסמן כפער ותמשיך.</div>
+    </div>
+    <div class="card">
+      <h4>לייצר ממה שיש, מסומן כהנחה</h4>
+      <p>הסוכן מציע על בסיס מה שכן ב-repo, ומסמן כל מה שאין לו מקור כ-"~ הנחה". מתאים ל-Draft 0 ולהצעות לדיון.</p>
+      <div class="say"><b>למשל:</b>אין מפת מסע קיים. תכין Draft 0 ממה שיש, וכל הצעה בלי מקור תסמן כהנחה.</div>
+    </div>
+  </div>
+</section>
+
+<section id="flags">
+  <h2>נורות אזהרה</h2>
+  <ul class="flags">
+    <li><b>קול ה-AI לפני הצוות.</b> "קודם אתם."</li>
+    <li><b>מקריאים את כל הפלט.</b> רק מה שמעניין, כשאלה.</li>
+    <li><b>Draft 0 מתקבל כהחלטה.</b> "באילו מילים שלכם?"</li>
+    <li><b>נוסח משכנע הופך ל-Fact.</b> "מה המקור? אם אין, זו הנחה."</li>
+    <li><b>הכול ✓.</b> "אם הכול מבוסס, לא באמת בדקנו."</li>
+    <li><b>קופצים לפתרון.</b> קודם לקוחות, בעיה והצלחה.</li>
+    <li><b>הקבוצה מתגוננת בטיפים.</b> "רשמו, נחזור לזה בקבוצה."</li>
+    <li><b>טיפ או אתגר שנעלם.</b> עוברים עליהם אחד-אחד.</li>
+  </ul>
+  <div class="note"><b>תפקידכם:</b> לא למלא את הקנבס עם הקבוצה. לשמור על רצף חשיבה, להפריד Fact מהנחה, למנוע קפיצה לפתרון, ולהביא להכרעה. <b>Definition of Done:</b> גרסה מוסכמת אחת · ברור מה Fact ומה הנחה · Gaps גלויים · החלטות מתועדות · בדיקות להמשך · הקנבס ממשיך לחיות.</div>
+</section>
+
+<footer>
+  בפלייבוק:
+  <a href="סקירה.md">סקירת היום</a>
+  <a href="היערכות-למפגש.md">היערכות</a>
+  <a href="תהליכים/1-Lean-Readiness.md">תהליך 1</a>
+  <a href="תהליכים/2-קוביות-AI-First.md">תהליך 2</a>
+  <a href="תהליכים/3-קוביות-Human-First.md">תהליך 3</a>
+  <a href="תהליכים/4-Friendly-Tip-Red-Team-ו-Decide-and-PIN.md">תהליך 4</a>
+  <a href="תהליכים/5-הגדרת-ערכי-מוצר-ותרגומם-לרכיבים.md">תהליך 5</a>
+  <a href="../../04-AI/סוכנים/Lean-Canvas-Agent.md">Lean Canvas Agent</a>
+  <a href="../../02-תוצרים-וטמפלטים/לוח-Lean-Canvas.md">לוח Lean Canvas</a>
+  <a href="../../מדריך-למנטור.html">המדריך הכללי למנטור</a>
+</footer>
+
+</div>
+</body>
+</html>
