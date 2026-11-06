@@ -4,7 +4,7 @@
 
 # מה לא נכנס ל-.playbook: חומרי מקור (40MB, לא נחוץ לסוכן), השלד של המיזם (כבר בשורש המיזם),
 # הגדרות הכלים של הפלייבוק עצמו (שלא ייטענו כ-skills בתוך המיזם), וכלי תחזוקה של הפלייבוק
-PLAYBOOK_EXCLUDE=(חומרי-מקור תבנית-מיזם .claude .kiro .agent .gemini .gitignore .gitattributes skills/scan-sources)
+PLAYBOOK_EXCLUDE=(חומרי-מקור תבנית-מיזם .claude .kiro .agent .gemini CLAUDE.md AGENTS.md GEMINI.md .gitignore .gitattributes skills/scan-sources)
 
 # copy_playbook <repo של המיזם> — מחליף את <repo>/.playbook בעותק של הפלייבוק (קבצים במעקב git בלבד)
 # ורושם מאיפה ובאיזה commit ב-.playbook/SOURCE. את .playbook לא עורכים ביד — הוא מוחלף כולו בכל עדכון.
