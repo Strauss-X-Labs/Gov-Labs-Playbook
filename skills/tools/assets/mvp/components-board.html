@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>רכיבים לשאלת ה-MVP</title>
+<!--
+  תבנית לוח בחירת הרכיבים — נשמר במיזם כ-מפרט-MVP.html, ליד מפרט-MVP.md, ונגזר מהנספח שלו (הרשימה המדורגת).
+  הסוכן ממלא רק את בלוק הנתונים (id="data"). העיצוב קבוע. Light theme בלבד.
+  question: שאלת ה-MVP שנבחרה, מילה במילה   ·   max: כמה רכיבים בוחרים (ברירת מחדל 5)
+  values: id, name (שם הערך, מילה במילה), meaning (מה המשמעות עבור המשתמש — שורה, רשות)
+  components: id, rank (מספר הדירוג; null לרכיב שהצוות העלה), name, does (מה הוא עושה), why (למה הוא חשוב לשאלה),
+              values (מזהי ערכים — הראשון קובע את העמודה), type ("ממשק" / "התנהגות של סוכן", רשות),
+              overlap (true אם הופיע גם ברשימות האישיות), source ("team" לרכיב שהצוות העלה והרשימה לא), selected (true אחרי בחירת הצוות)
+  capabilities: name, does, for (מזהי הרכיבים שנשענים עליה) — לתצוגה בלבד, לא לבחירה
+  בלי סטטוס ובלי סימוני חשיבות. עריכות הצוות נשמרות בדפדפן; "העתקת סיכום" מחזירה Markdown לסוכן.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --sel: #1e7a45; --sel-bg: #e3f4ea;
+    --warn: #b42318; --warn-bg: #fdecea; --team: #6b3fa0; --team-bg: #f1ebf8; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); color-scheme: light; }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.9vw, 20px); line-height: 1.45; padding: 1.2em 1.4em 3em; overflow-x: hidden; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button { font: inherit; cursor: pointer; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.85em; font-weight: 800; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; white-space: nowrap; }
+  .question { margin: 0.9em 0 0; background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--navy); border-radius: 10px; padding: 0.7em 1em; }
+  .question .lbl { font-size: 0.82em; font-weight: 700; color: var(--muted); }
+  .question .q { font-size: 1.2em; font-weight: 800; overflow-wrap: anywhere; }
+  .bar { position: sticky; top: 0; z-index: 5; margin: 0.9em -1.4em 1em; padding: 0.6em 1.4em; background: rgba(244, 245, 247, 0.96); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+  .count { font-weight: 800; font-size: 1.15em; background: var(--sel-bg); color: var(--sel); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
+  .bar.over .count { background: var(--warn-bg); color: var(--warn); }
+  .warn { font-weight: 700; color: var(--muted); }
+  .bar.over .warn { color: var(--warn); }
+  .chosen { display: flex; gap: 0.35em; flex-wrap: wrap; flex: 1 1 20em; min-width: 0; }
+  .chosen span { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 0.05em 0.6em; font-weight: 700; font-size: 0.88em; overflow-wrap: anywhere; }
+  .tools { display: flex; gap: 0.4em; flex-wrap: wrap; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .btn[aria-pressed="true"] { background: var(--navy-soft); border-color: var(--navy); }
+  .board { display: grid; grid-template-columns: repeat(auto-fit, minmax(19em, 1fr)); gap: 1em; align-items: start; }
+  .col { --c: #1b2a4a; background: color-mix(in srgb, var(--c) 6%, var(--bg)); border: 1px solid color-mix(in srgb, var(--c) 25%, var(--line)); border-top: 5px solid var(--c); border-radius: 12px; padding: 0.8em; display: flex; flex-direction: column; gap: 0.7em; min-width: 0; }
+  .colhead h2 { margin: 0; font-size: 1.3em; color: var(--c); overflow-wrap: anywhere; }
+  .colhead p { margin: 0.1em 0 0; color: var(--muted); font-size: 0.92em; }
+  .cards { display: flex; flex-direction: column; gap: 0.6em; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.45em; min-width: 0; }
+  .card.sel { border-color: var(--sel); box-shadow: 0 0 0 2px var(--sel) inset; }
+  .card .head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5em; align-items: start; }
+  .rank { width: 1.9em; height: 1.9em; border-radius: 50%; background: color-mix(in srgb, var(--c) 14%, #fff); color: var(--c); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9em; }
+  .rank.team { background: var(--team-bg); color: var(--team); }
+  .name { margin: 0; font-size: 1.08em; font-weight: 800; overflow-wrap: anywhere; }
+  .does { margin: 0; overflow-wrap: anywhere; }
+  .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
+  .ed:hover { background: var(--navy-soft); }
+  .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
+  .pick { display: inline-flex; align-items: center; gap: 0.3em; font-weight: 700; font-size: 0.88em; color: var(--muted); white-space: nowrap; cursor: pointer; }
+  .pick input { width: 1.15em; height: 1.15em; accent-color: var(--sel); cursor: pointer; }
+  .card.sel .pick { color: var(--sel); }
+  .why { font-size: 0.92em; color: var(--muted); overflow-wrap: anywhere; }
+  .why b { color: var(--ink); font-weight: 700; }
+  .chips { display: flex; gap: 0.3em; flex-wrap: wrap; }
+  .chip { font-size: 0.8em; font-weight: 700; padding: 0.08em 0.55em; border-radius: 999px; background: var(--navy-soft); color: var(--navy); white-space: nowrap; }
+  .chip.team { background: var(--team-bg); color: var(--team); }
+  .rm { align-self: flex-end; background: none; border: none; color: var(--muted); font-size: 0.85em; padding: 0.1em 0.3em; text-decoration: underline; }
+  .add { background: none; border: 1.5px dashed color-mix(in srgb, var(--c) 45%, var(--line)); border-radius: 10px; padding: 0.45em; color: var(--c); font-weight: 800; }
+  .board.only .card:not(.sel), .board.only .add { display: none; }
+  .empty { color: var(--muted); font-style: italic; }
+  h2.sec { font-size: 1.2em; margin: 1.6em 0 0.5em; }
+  .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.8em 1em; }
+  .caps { margin: 0; padding-inline-start: 1.2em; } .caps li { margin: 0.3em 0; overflow-wrap: anywhere; }
+  .caps .for { color: var(--muted); font-size: 0.9em; }
+  details.out { margin-top: 1em; }
+  details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
+  details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
+  .toast { position: fixed; inset-inline: 0; bottom: 1.2em; margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
+  .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
+  @media (max-width: 640px) { body { padding-inline: 1em; } .bar { margin-inline: -1em; padding-inline: 1em; } .board { grid-template-columns: 1fr; } }
+  @media print { .bar .tools, .rm, .add, .toast, details.out { display: none !important; } body { background: #fff; } .card { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div>
+    <h1>רכיבים לשאלת ה-MVP <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon">מצע לבחירה, לא החלטה</div>
+</header>
+<div class="question" id="qbox"><div class="lbl">שאלת ה-MVP</div><div class="q" id="question"></div></div>
+
+<div class="bar" id="bar">
+  <span class="count" id="count" aria-live="polite"></span>
+  <span class="warn" id="warn"></span>
+  <div class="chosen" id="chosen"></div>
+  <div class="tools">
+    <button type="button" class="btn" id="only" aria-pressed="false">רק הנבחרים</button>
+    <button type="button" class="btn primary" id="copy">העתקת סיכום</button>
+    <button type="button" class="btn" id="reset">חזרה להצעה</button>
+  </div>
+</div>
+
+<main class="board" id="board"></main>
+
+<section id="capsec" hidden>
+  <h2 class="sec">יכולות מאחורי הקלעים — לא לבחירה</h2>
+  <div class="panel"><ul class="caps" id="caps"></ul></div>
+</section>
+
+<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
+
+<script type="application/json" id="data">
+{
+  "venture": "[שם המיזם]",
+  "date": "[תאריך]",
+  "question": "[שאלת ה-MVP — הנוסח שהצוות בחר]",
+  "max": 5,
+  "values": [
+    { "id": "v1", "name": "[ערך 1]", "meaning": "" },
+    { "id": "v2", "name": "[ערך 2]", "meaning": "" },
+    { "id": "v3", "name": "[ערך 3]", "meaning": "" }
+  ],
+  "components": [
+    { "id": "c1", "rank": 1, "name": "[רכיב]", "does": "[מה הוא עושה]", "why": "[למה הוא חשוב לשאלה]", "values": ["v1"], "type": "", "overlap": false, "source": "", "selected": false }
+  ],
+  "capabilities": []
+}
+</script>
+<script>
+(function () {
+  var COLORS = ["#1f5f8b", "#7a3f96", "#a8551f", "#2c7448", "#9c2f4a", "#566a1f"];
+  var raw = document.getElementById("data").textContent;
+  var d = JSON.parse(raw);
+  var MAX = d.max || 5;
+  var values = (d.values || []).filter(function (v) { return v && v.name; });
+  var vIndex = {}; values.forEach(function (v, i) { vIndex[v.id] = i; });
+  var baseComps = (d.components || []).filter(function (c) { return c && c.name; });
+  var KEY = "mvp-board:" + hash(raw);
+  var onlySel = false, toastTimer = null;
+
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function fresh() { return { comps: baseComps.map(function (c) { var o = JSON.parse(JSON.stringify(c)); o.values = o.values || []; o.selected = !!o.selected; return o; }), seq: 0 }; }
+  function load() { try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.comps) return s; } catch (e) {} return null; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var state = load() || fresh();
+
+  function byRank(a, b) { var ra = a.rank == null ? 1e9 : a.rank, rb = b.rank == null ? 1e9 : b.rank; return ra - rb; }
+  function primary(c) { var vs = c.values || []; for (var i = 0; i < vs.length; i++) if (vs[i] in vIndex) return vs[i]; return "_none"; }
+  function valueNames(c) { return (c.values || []).filter(function (id) { return id in vIndex; }).map(function (id) { return values[vIndex[id]].name; }).join(", "); }
+
+  document.title = "רכיבים לשאלת ה-MVP — " + (d.venture || "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  document.getElementById("meta").textContent = [d.date, "הצוות בוחר עד " + MAX + " רכיבים", "הדירוג הוא סדר, לא החלטה"].filter(Boolean).join(" · ");
+  if (d.question) document.getElementById("question").textContent = d.question; else document.getElementById("qbox").hidden = true;
+
+  var board = document.getElementById("board");
+
+  function editable(tag, cls, text, label, set) {
+    var n = el(tag, cls + " ed", text || "");
+    var before = text || "";
+    n.contentEditable = "true";
+    n.spellcheck = false;
+    n.setAttribute("role", "textbox");
+    n.setAttribute("aria-label", label);
+    n.dataset.ph = label;
+    n.addEventListener("focus", function () { before = n.textContent; });
+    n.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); n.blur(); }
+      if (e.key === "Escape") { n.textContent = before; n.blur(); }
+    });
+    n.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var t = ((e.clipboardData || window.clipboardData).getData("text") || "").replace(/\s+/g, " ");
+      document.execCommand("insertText", false, t);
+    });
+    n.addEventListener("blur", function () { var t = n.textContent.replace(/\s+/g, " ").trim(); n.textContent = t; set(t); save(); update(); });
+    return n;
+  }
+
+  function card(c, color) {
+    var k = el("article", "card" + (c.selected ? " sel" : ""));
+    k.dataset.id = c.id;
+    var head = el("div", "head");
+    var team = c.rank == null;
+    var rank = el("span", "rank" + (team ? " team" : ""), team ? "+" : String(c.rank));
+    rank.title = team ? "רכיב שהצוות העלה" : "דירוג " + c.rank;
+    var name = editable("h3", "name", c.name, "שם הרכיב", function (t) { c.name = t; });
+    var pick = el("label", "pick"), cb = el("input");
+    cb.type = "checkbox"; cb.checked = !!c.selected; cb.setAttribute("aria-label", "בחירה: " + (c.name || "רכיב"));
+    cb.addEventListener("change", function () { c.selected = cb.checked; k.classList.toggle("sel", cb.checked); save(); update(); });
+    pick.append(cb, el("span", null, "בחירה"));
+    head.append(rank, name, pick);
+    k.append(head);
+    k.append(editable("p", "does", c.does, "מה הרכיב עושה", function (t) { c.does = t; }));
+    if (c.why) { var w = el("div", "why"); w.append(el("b", null, "למה לשאלה: "), document.createTextNode(c.why)); k.append(w); }
+    var chips = el("div", "chips");
+    (c.values || []).filter(function (id) { return id in vIndex && id !== primary(c); }).forEach(function (id) { chips.append(el("span", "chip", "גם: " + values[vIndex[id]].name)); });
+    if (c.type) chips.append(el("span", "chip", c.type));
+    if (c.overlap) chips.append(el("span", "chip team", "גם ברשימות של הצוות"));
+    if (c.source === "team" || team) chips.append(el("span", "chip team", "מהצוות"));
+    if (chips.childNodes.length) k.append(chips);
+    var rm = el("button", "rm", "הסרה"); rm.type = "button";
+    rm.addEventListener("click", function () { removeComp(c); });
+    k.append(rm);
+    return k;
+  }
+
+  function column(id, title, meaning, color) {
+    var col = el("section", "col"); col.style.setProperty("--c", color);
+    var h = el("header", "colhead"); h.append(el("h2", null, title)); if (meaning) h.append(el("p", null, meaning));
+    col.append(h);
+    var list = el("div", "cards");
+    var mine = state.comps.filter(function (c) { return primary(c) === id; }).sort(byRank);
+    mine.forEach(function (c) { list.append(card(c, color)); });
+    if (!mine.length) list.append(el("div", "empty", "אין רכיבים לערך הזה"));
+    col.append(list);
+    if (id !== "_none") {
+      var add = el("button", "add", "+ רכיב"); add.type = "button";
+      add.addEventListener("click", function () { addComp(id); });
+      col.append(add);
+    }
+    return col;
+  }
+
+  function render() {
+    board.textContent = "";
+    values.forEach(function (v, i) { board.append(column(v.id, v.name, v.meaning, COLORS[i % COLORS.length])); });
+    if (state.comps.some(function (c) { return primary(c) === "_none"; })) board.append(column("_none", "בלי ערך", "רכיב בלי ערך — שאלה לצוות", "#5d6878"));
+    var caps = (d.capabilities || []).filter(function (x) { return x && x.name; });
+    var ul = document.getElementById("caps"); ul.textContent = "";
+    caps.forEach(function (x) {
+      var li = el("li"); li.append(el("b", null, x.name));
+      if (x.does) li.append(document.createTextNode(" — " + x.does));
+      var f = (x.for || []).map(function (id) { var c = state.comps.filter(function (y) { return y.id === id; })[0]; return c ? c.name : null; }).filter(Boolean);
+      if (f.length) li.append(el("span", "for", " · נשענים עליה: " + f.join(", ")));
+      ul.append(li);
+    });
+    document.getElementById("capsec").hidden = !caps.length;
+    update();
+  }
+
+  function update() {
+    var sel = state.comps.filter(function (c) { return c.selected; }).sort(byRank);
+    var bar = document.getElementById("bar");
+    document.getElementById("count").textContent = "נבחרו " + sel.length + " / " + MAX;
+    bar.classList.toggle("over", sel.length > MAX);
+    document.getElementById("warn").textContent = sel.length > MAX ? "מעל " + MAX + " — בחרו עד " + MAX : (sel.length ? "" : "עוד לא נבחרו רכיבים");
+    var ch = document.getElementById("chosen"); ch.textContent = "";
+    sel.forEach(function (c) { ch.append(el("span", null, c.name || "רכיב")); });
+    board.classList.toggle("only", onlySel);
+    document.getElementById("summary").textContent = summary();
+  }
+
+  function addComp(vid) {
+    state.seq = (state.seq || 0) + 1;
+    var c = { id: "t" + Date.now().toString(36) + state.seq, rank: null, name: "", does: "", why: "", values: [vid], source: "team", selected: false };
+    state.comps.push(c); save(); render();
+    var n = board.querySelector('[data-id="' + c.id + '"] .name'); if (n) n.focus();
+  }
+
+  function removeComp(c) {
+    var i = state.comps.indexOf(c); if (i < 0) return;
+    state.comps.splice(i, 1); save(); render();
+    toast('"' + (c.name || "רכיב") + '" הוסר', "ביטול", function () { state.comps.splice(i, 0, c); save(); render(); });
+  }
+
+  function summary() {
+    var sel = state.comps.filter(function (c) { return c.selected; }).sort(byRank);
+    var L = [];
+    if (d.question) L.push("**שאלת ה-MVP:** " + d.question, "");
+    L.push("### הרכיבים שנבחרו (" + sel.length + "/" + MAX + ")");
+    if (!sel.length) L.push("- —");
+    sel.forEach(function (c, i) {
+      var vs = valueNames(c);
+      L.push((i + 1) + ". **" + (c.name || "רכיב") + "**" + (c.does ? " — " + c.does : "") + (vs ? " · ערך: " + vs : "") + (c.rank == null ? " · מהצוות" : " · דירוג " + c.rank));
+    });
+    var changes = [];
+    baseComps.forEach(function (b) {
+      var c = state.comps.filter(function (x) { return x.id === b.id; })[0];
+      if (!c) { changes.push('- הוסר: "' + b.name + '"'); return; }
+      if ((c.name || "") !== (b.name || "")) changes.push('- שם: "' + b.name + '" ← "' + c.name + '"');
+      if ((c.does || "") !== (b.does || "")) changes.push('- "מה הוא עושה" ב"' + (c.name || b.name) + '": ' + (c.does || "—"));
+    });
+    state.comps.forEach(function (c) {
+      if (baseComps.some(function (b) { return b.id === c.id; })) return;
+      var vs = valueNames(c);
+      changes.push('- נוסף: "' + (c.name || "רכיב") + '"' + (c.does ? " — " + c.does : "") + (vs ? " · ערך: " + vs : ""));
+    });
+    if (changes.length) { L.push("", "### שינויים מול ההצעה"); L = L.concat(changes); }
+    return L.join("\n");
+  }
+
+  function toast(msg, action, fn) {
+    var t = document.getElementById("toast"), b = document.getElementById("toastBtn");
+    document.getElementById("toastMsg").textContent = msg;
+    b.hidden = !action; b.textContent = action || "";
+    b.onclick = fn ? function () { fn(); t.hidden = true; } : null;
+    t.hidden = false; clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 7000);
+  }
+
+  document.getElementById("only").addEventListener("click", function () {
+    onlySel = !onlySel; this.setAttribute("aria-pressed", onlySel ? "true" : "false"); update();
+  });
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = summary();
+    function fallback() {
+      var ok = false;
+      try { var ta = el("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e) {}
+      done(ok);
+    }
+    function done(ok) { if (!ok) document.getElementById("out").open = true; toast(ok ? "הסיכום הועתק — הדביקו לסוכן" : "לא הצלחתי להעתיק — הסיכום פתוח למטה"); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback();
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    var prev = JSON.stringify(state);
+    state = fresh(); save(); render();
+    toast("הלוח חזר להצעה", "ביטול", function () { state = JSON.parse(prev); save(); render(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
