@@ -6,7 +6,7 @@
 
 **מנטור?** → **[המדריך למנטור לעבודה עם ה-Playbook](https://claude.ai/artifact/TDTCr53RVNnHw4VhX5XCfg)** — הכנת סביבת העבודה, הקמת מיזם, ועבודה שוטפת עם הצוות והסוכנים. המקור: [מדריך-למנטור.html](מדריך-למנטור.html).
 
-מדריכים למנטור לפי יום: יום 4 — **[יום ה-Lean Canvas](https://claude.ai/artifact/81WLeY76uH2r3G8U2MF9eX)**. המקור: [01-ימים/04-Lean-Canvas/מדריך-למנטור-יום-4.html](01-ימים/04-Lean-Canvas/מדריך-למנטור-יום-4.html).
+מדריכים למנטור לפי יום: יום 4 — **[יום ה-Lean Canvas](https://claude.ai/artifact/81WLeY76uH2r3G8U2MF9eX)**. המקור: [01-ימים/04-Lean-Canvas/מדריך-למנטור-יום-4.html](01-ימים/04-Lean-Canvas/מדריך-למנטור-יום-4.html) · יום 5 — **[יום ה-Design Sprint](https://claude.ai/artifact/FLBZLa8PTRQjoQyaNSyMbC)**. המקור: [01-ימים/05-Design-Sprint/מדריך-למנטור-יום-5.html](01-ימים/05-Design-Sprint/מדריך-למנטור-יום-5.html).
 
 **משתתף?** → **[המדריך למשתתף ב-Gov-Labs](https://claude.ai/artifact/CDBAVWZZk2kdDNsAYnCA61)** — מה זו התוכנית, איך עובדים עם AI, ומה קורה בכל מפגש. המקור: [05-משתתפים/מדריך-למשתתף.html](05-משתתפים/מדריך-למשתתף.html).
 
