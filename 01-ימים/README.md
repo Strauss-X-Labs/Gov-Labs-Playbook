@@ -16,7 +16,7 @@
 | 02 | [Design Thinking 1](02-Design-Thinking-1/סקירה.md) | |
 | 03 | [Design Thinking 2](03-Design-Thinking-2/סקירה.md) | **Validation Loop** — שבועיים: בדיקת קונספט מול משתמשים |
 | 04 | [Lean Canvas](04-Lean-Canvas/סקירה.md) | |
-| 05 | [Design Sprint & Lean CX](05-Design-Sprint/סקירה.md) | ~50% מוצר בפיתוח |
+| 05 | [Design Sprint & Lean CX](05-Design-Sprint/סקירה.md) | דיוק העיצוב · PRD v0.2, ואישור v1.0 בפגישה השבועית |
 | 06 | [Architecture & Backlog](06-Architecture/סקירה.md) | |
 | 07 | [Roadmap & Budget](07-Roadmap/סקירה.md) | |
 | 08 | [Storytelling & Pitch](08-Storytelling/סקירה.md) | |
