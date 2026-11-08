@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>מסכים ו-Prototype</title>
+<!--
+  תבנית המסכים — שני שימושים, אותה תבנית:
+    kind: "Draft 0" — נשמר במיזם כ-Draft-0-Wireframes.html, ליד Draft-0-Wireframes.md. טיוטה, לא בריף. prototype: true — חובה.
+    kind: "בריף"    — נשמר במיזם כ-בריף-מסכים.html, ליד בריף-מסכים.md. סופי, להעברה לסטודיו. prototype — רשות.
+  הסוכן ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד. wireframe בנאמנות נמוכה.
+  example: true רק בדוגמה · question: שאלת ה-MVP · studio: קישור לתוצר הסטודיו (בבריף, רשות)
+  actors: id (אות — A, B), name, device ("נייד" / "מחשב"), who (שורה: מי זה, רשות)
+  steps: n, text (שלב בתרחיש, מתוך מפרט ה-MVP), screens (קודי מסכים)
+  path: סדר המסכים ב-Prototype (המסלול המרכזי). חסר — לפי סדר השלבים
+  screens: code, name, actor, device, step, lead (רשות), essence, does, actions [{ label, to, result }], components [{ name, value, notSelected }],
+           changed (מה השתנה — בבריף), wireframe: אבני בניין, מלמעלה למטה:
+             { "t": "bar", "text" } · { "t": "title", "text" } · { "t": "text", "text" } או { "t": "text", "lines": 2 }
+             { "t": "card", "tag", "title", "text", "lines", "solid": true, "to" } · { "t": "chips", "items": ["...", { "text", "to" }] }
+             { "t": "button", "text", "secondary": true, "to" } · { "t": "input", "text" } · { "t": "list", "items": ["...", { "text", "to" }] }
+             { "t": "bubble", "side": "in" / "out", "text", "lines", "label" } · { "t": "note", "text" } · { "t": "spacer" }
+             { "t": "split", "side": [...], "main": [...] } — מחשב, שני טורים
+           "to" — קוד המסך שהלחיצה מובילה אליו. ב-Prototype זה לחיץ.
+  open: מה שעלה ולא הוחלט
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+  הדוגמה מפורסמת: https://claude.ai/artifact/CAcdoznESpKwAxGCZ8YAWP — עדכון התבנית: מפרסמים את הקובץ הזה לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: one centered column — header, sticky jump links, actors map, flow, screens stacked one under another, working prototype at the bottom. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --lead: #8a5a00; --lead-bg: #fdf1d6; --lead-line: #f0d48a;
+    --warn: #b42318; --warn-bg: #fdecea; --ok: #1e7a45;
+    --wf-bg: #f7f7f5; --wf-line: #a9aeb5; --wf-fill: #e4e6e9; --wf-dark: #8d939b; --wf-ink: #4a525c;
+    --a1: #1f5f8b; --a2: #7a3f96; --a3: #a8551f; --a4: #2c7448; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: 17px; line-height: 1.5; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  a { color: inherit; }
+  button { font: inherit; cursor: pointer; }
+  .wrap { max-width: 1180px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .example { background: var(--lead-bg); border: 1px dashed var(--lead); color: var(--lead); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-top: 1em; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; padding-top: 1.2em; }
+  h1 { margin: 0; font-size: clamp(26px, 3.4vw, 38px); font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .ribbon.draft { background: var(--lead-bg); color: var(--lead); border: 1px solid var(--lead-line); }
+  .question { margin-top: 0.9em; background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--navy); border-radius: 10px; padding: 0.6em 1em; }
+  .lbl { font-size: 0.8em; font-weight: 700; color: var(--muted); letter-spacing: 0.02em; }
+  .question .q { font-size: 1.1em; font-weight: 800; overflow-wrap: anywhere; }
+  nav.jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); margin-top: 1em; }
+  nav.jump .wrap { display: flex; gap: 0.35em; flex-wrap: wrap; padding-block: 0.5em; align-items: center; }
+  nav.jump a { text-decoration: none; font-size: 0.86em; font-weight: 700; border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 0.15em 0.7em; white-space: nowrap; }
+  nav.jump a.code { color: #fff; border-color: transparent; background: var(--c, var(--navy)); }
+  nav.jump a:hover { border-color: var(--navy); }
+  nav.jump .sep { width: 1px; height: 1.2em; background: var(--line); margin-inline: 0.2em; }
+  section { margin-top: 2em; scroll-margin-top: 4em; }
+  h2 { font-size: 1.35em; margin: 0 0 0.6em; text-wrap: balance; }
+  .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 0.9em 1.1em; }
+  .actors { display: grid; grid-template-columns: repeat(auto-fit, minmax(16em, 1fr)); gap: 0.8em; }
+  .actor { --c: var(--navy); background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 12px; padding: 0.8em 1em; display: grid; gap: 0.45em; min-width: 0; }
+  .actor h3 { margin: 0; font-size: 1.1em; color: var(--c); }
+  .actor .who { color: var(--muted); font-size: 0.92em; }
+  .device { display: inline-flex; align-items: center; gap: 0.4em; font-weight: 700; font-size: 0.9em; }
+  .device i { display: inline-block; border: 2px solid var(--c); border-radius: 3px; }
+  .device i.phone { width: 0.7em; height: 1.15em; border-radius: 4px; }
+  .device i.desk { width: 1.25em; height: 0.85em; }
+  .codes { display: flex; gap: 0.3em; flex-wrap: wrap; align-items: center; }
+  .codes a { text-decoration: none; font-weight: 700; background: var(--navy-soft); color: var(--navy); border-radius: 6px; padding: 0 0.45em; font-size: 0.92em; }
+  .codes .arrow { color: var(--muted); font-weight: 800; }
+  table.steps { width: 100%; border-collapse: collapse; }
+  table.steps th, table.steps td { text-align: start; padding: 0.45em 0.5em; border-top: 1px solid var(--line); vertical-align: top; }
+  table.steps th { color: var(--muted); font-size: 0.82em; font-weight: 700; border-top: none; }
+  table.steps td.n { font-weight: 800; width: 2.5em; }
+  .tbl { overflow-x: auto; }
+  .screens { display: grid; gap: 1em; }
+  .screen { --c: var(--navy); background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--c); border-radius: 12px; padding: 1em 1.1em; display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "head head" "info wf" "foot foot"; gap: 0.8em 1.4em; scroll-margin-top: 4em; }
+  .screen.desk { grid-template-areas: "head head" "info info" "wf wf" "foot foot"; }
+  .screen > header { grid-area: head; display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; }
+  .code { background: var(--c); color: #fff; font-weight: 800; border-radius: 6px; padding: 0.05em 0.5em; }
+  .screen h3 { margin: 0; font-size: 1.2em; font-weight: 800; }
+  .pill { font-size: 0.8em; font-weight: 700; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.05em 0.6em; white-space: nowrap; }
+  .pill.lead { background: var(--lead-bg); color: var(--lead); }
+  .info { grid-area: info; display: grid; gap: 0.55em; align-content: start; min-width: 0; }
+  .fact h4 { margin: 0; font-size: 0.8em; color: var(--muted); font-weight: 700; }
+  .fact div, .fact li { overflow-wrap: anywhere; }
+  .fact ul { margin: 0.1em 0 0; padding-inline-start: 1.1em; } .fact li { margin: 0.15em 0; }
+  .fact li a { font-weight: 800; }
+  .comp { display: inline-block; font-size: 0.88em; font-weight: 700; background: var(--navy-soft); color: var(--navy); border-radius: 6px; padding: 0.05em 0.5em; margin: 0.15em 0 0 0.25em; }
+  .comp .v { font-weight: 600; color: var(--muted); }
+  .comp.ns { background: var(--warn-bg); color: var(--warn); }
+  .changed { background: var(--lead-bg); border-radius: 8px; padding: 0.4em 0.7em; }
+  .wf-wrap { grid-area: wf; display: flex; flex-direction: column; align-items: center; gap: 0.3em; }
+  .screen > footer { grid-area: foot; display: flex; justify-content: space-between; gap: 1em; font-size: 0.85em; }
+  .screen > footer a { color: var(--muted); text-decoration: none; font-weight: 700; }
+  .wf-cap { font-size: 0.78em; color: var(--muted); }
+  .wf { background: var(--wf-bg); border: 2px solid var(--wf-line); color: var(--wf-ink); font-size: 0.8em; line-height: 1.35; display: flex; flex-direction: column; gap: 0.45em; padding: 0.6em; overflow: hidden; }
+  .wf.phone { width: 16em; max-width: 100%; min-height: 28em; border-radius: 1.6em; padding-top: 1.1em; }
+  .wf.desk { width: 100%; max-width: 44em; min-height: 18em; border-radius: 0.6em; }
+  .wf-bar { display: flex; justify-content: space-between; gap: 0.5em; font-weight: 700; border-bottom: 1.5px solid var(--wf-line); padding-bottom: 0.35em; }
+  .wf-title { font-weight: 800; color: var(--ink); }
+  .wf-text { overflow-wrap: anywhere; }
+  .wf-lines { display: flex; flex-direction: column; gap: 0.3em; }
+  .wf-ln { height: 0.55em; border-radius: 3px; background: var(--wf-fill); }
+  .wf-card { border: 1.5px dashed var(--wf-line); border-radius: 0.5em; padding: 0.45em; display: flex; flex-direction: column; gap: 0.35em; }
+  .wf-card.solid { border-style: solid; background: #fff; }
+  .wf-tag { align-self: flex-start; font-size: 0.85em; font-weight: 700; border: 1px solid var(--wf-dark); border-radius: 999px; padding: 0 0.5em; }
+  .wf-chips { display: flex; gap: 0.3em; flex-wrap: wrap; }
+  .wf-chips > * { border: 1.5px solid var(--wf-dark); border-radius: 999px; padding: 0.05em 0.55em; background: #fff; color: var(--wf-ink); font: inherit; }
+  .wf-btn { text-align: center; font-weight: 800; background: var(--wf-dark); color: #fff; border-radius: 0.4em; padding: 0.35em; border: none; font: inherit; font-weight: 800; }
+  .wf-btn.sec { background: #fff; color: var(--wf-ink); border: 1.5px solid var(--wf-dark); }
+  .wf-input { display: flex; justify-content: space-between; gap: 0.4em; border: 1.5px solid var(--wf-line); border-radius: 0.5em; background: #fff; padding: 0.35em 0.5em; color: var(--muted); }
+  .wf-input input { border: none; outline: none; font: inherit; color: var(--ink); background: transparent; flex: 1; min-width: 0; }
+  .wf-list { display: flex; flex-direction: column; }
+  .wf-list > * { border-bottom: 1px solid var(--wf-fill); padding: 0.25em 0; overflow-wrap: anywhere; text-align: start; background: none; border-inline: none; border-top: none; font: inherit; color: inherit; }
+  .wf-bub { max-width: 85%; border-radius: 0.8em; padding: 0.4em 0.55em; display: flex; flex-direction: column; gap: 0.3em; overflow-wrap: anywhere; }
+  .wf-bub.in { align-self: flex-start; background: #fff; border: 1.5px solid var(--wf-line); }
+  .wf-bub.out { align-self: flex-end; background: var(--wf-fill); }
+  .wf-bub small { color: var(--muted); font-size: 0.85em; }
+  .wf-note { font-style: italic; color: var(--muted); text-align: center; }
+  .wf-spacer { margin-top: auto; }
+  .wf-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 0.6em; flex: 1; }
+  .wf-split > div { display: flex; flex-direction: column; gap: 0.45em; min-width: 0; }
+  .wf-split > div:first-child { border-inline-end: 1.5px solid var(--wf-line); padding-inline-end: 0.6em; }
+  /* Prototype */
+  .proto { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.2em; align-items: start; }
+  .proto-side { display: grid; gap: 0.7em; align-content: start; min-width: 0; }
+  .proto-now { background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--c, var(--navy)); border-radius: 10px; padding: 0.6em 0.9em; }
+  .proto-now .t { font-weight: 800; font-size: 1.1em; }
+  .proto-ctrl { display: flex; gap: 0.4em; flex-wrap: wrap; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.9em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .btn:disabled { opacity: 0.45; cursor: default; }
+  .proto-path { display: flex; gap: 0.3em; flex-wrap: wrap; }
+  .proto-path button { border: 1px solid var(--line); background: var(--paper); border-radius: 6px; padding: 0.05em 0.5em; font-weight: 700; color: var(--muted); }
+  .proto-path button[aria-current="step"] { background: var(--navy); color: #fff; border-color: var(--navy); }
+  .proto-hint { color: var(--muted); font-size: 0.9em; }
+  .proto-stage { display: flex; justify-content: center; }
+  .proto-stage .wf { font-size: 0.95em; }
+  .proto-stage .wf.phone { width: 21em; min-height: 36em; }
+  .proto-stage .wf.desk { width: 46em; min-height: 24em; }
+  .proto-stage [data-to] { cursor: pointer; outline: 2px dashed var(--focus); outline-offset: 2px; }
+  .proto-stage [data-to]:hover { filter: brightness(0.96); }
+  .empty { color: var(--muted); font-style: italic; }
+  ul.open { margin: 0; padding-inline-start: 1.2em; } ul.open li { margin: 0.3em 0; overflow-wrap: anywhere; }
+  footer.page { margin-block: 2.5em 2em; color: var(--muted); font-size: 0.85em; }
+  @media (max-width: 900px) { .proto { grid-template-columns: 1fr; } .proto-stage .wf.desk { width: 100%; } }
+  @media (max-width: 680px) { .screen { grid-template-columns: 1fr; grid-template-areas: "head" "info" "wf" "foot"; } }
+  @media print { nav.jump, #proto { display: none; } body { background: #fff; } .screen { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+  <header class="top">
+    <div>
+      <h1><span id="kind"></span> <span class="tag" id="venture"></span></h1>
+      <div class="sub" id="meta"></div>
+    </div>
+    <div class="ribbon" id="ribbon"></div>
+  </header>
+  <div class="question" id="qbox"><div class="lbl">שאלת ה-MVP</div><div class="q" id="question"></div></div>
+</div>
+
+<nav class="jump" aria-label="קפיצה לחלקי הדף"><div class="wrap" id="jump"></div></nav>
+
+<div class="wrap">
+  <section id="actors-sec">
+    <h2>מי משתמש במה</h2>
+    <div class="actors" id="actors"></div>
+  </section>
+
+  <section id="flow-sec">
+    <h2>מפת הזרימה</h2>
+    <div class="panel tbl"><table class="steps" id="steps"></table></div>
+  </section>
+
+  <section id="screens-sec">
+    <h2>המסכים, לפי הסדר</h2>
+    <div class="screens" id="screens"></div>
+  </section>
+
+  <section id="proto" hidden>
+    <h2>Prototype — להפעלה מול הצוות</h2>
+    <div class="proto">
+      <div class="proto-side">
+        <div class="proto-now" id="pnow"></div>
+        <div class="proto-ctrl">
+          <button type="button" class="btn" id="pprev">הקודם</button>
+          <button type="button" class="btn primary" id="pnext">הבא</button>
+          <button type="button" class="btn" id="preset">מההתחלה</button>
+        </div>
+        <div><div class="lbl">המסלול</div><div class="proto-path" id="ppath"></div></div>
+        <p class="proto-hint">מה שמסומן במסגרת מקווקוות — לחיץ, ומוביל למסך הבא. אפשר להקליד בשדות. טקסט בסוגריים מרובעים — עוד לא הוגדר.</p>
+      </div>
+      <div class="proto-stage" id="pstage"></div>
+    </div>
+  </section>
+
+  <section id="open-sec" hidden>
+    <h2>מה פתוח</h2>
+    <div class="panel"><ul class="open" id="open"></ul></div>
+  </section>
+
+  <footer class="page" id="foot"></footer>
+</div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "kind": "Draft 0",
+  "venture": "מיזם לדוגמה",
+  "date": "דוגמה",
+  "question": "האם תושב שמקבל מהסוכן, ולא מפקיד בטלפון, הודעה על מסמך חסר עם הסבר מה להעלות, יעלה את המסמך לפני המועד?",
+  "studio": "",
+  "prototype": true,
+  "actors": [
+    { "id": "A", "name": "התושב", "device": "נייד", "who": "הפרסונה — מגיש בקשה, לא מכיר את התהליך" },
+    { "id": "B", "name": "הפקיד", "device": "מחשב", "who": "מאשר את מה שהסוכן ניסח, וכותב כשהסוכן לא בטוח" }
+  ],
+  "steps": [
+    { "n": 1, "text": "הסוכן מזהה מסמך חסר ומנסח הודעה; הפקיד מאשר", "screens": ["B1"] },
+    { "n": 2, "text": "התושב מקבל הודעה, עם הסבר מה להעלות", "screens": ["A1", "A2"] },
+    { "n": 3, "text": "התושב מעלה את המסמך", "screens": ["A3"] },
+    { "n": 4, "text": "התושב מקבל אישור שהמסמך התקבל", "screens": ["A4"] }
+  ],
+  "path": ["B1", "A1", "A2", "A3", "A4"],
+  "screens": [
+    { "code": "B1", "name": "תור אישור", "actor": "B", "device": "מחשב", "step": 1,
+      "essence": "לאשר מהר את מה שהסוכן ניסח", "does": "עובר על ההודעות שממתינות, מאשר או מתקן",
+      "actions": [ { "label": "אישור ושליחה", "to": "A1" }, { "label": "תיקון", "result": "עריכת הנוסח לפני שליחה" } ],
+      "components": [ { "name": "תור אישור לפקיד", "value": "אמון" }, { "name": "תווית מקור", "value": "אמון" } ],
+      "wireframe": [
+        { "t": "bar", "text": "תור אישור · [שם הפקיד]" },
+        { "t": "split",
+          "side": [ { "t": "title", "text": "ממתינות לאישור (12)" }, { "t": "list", "items": ["בקשה 1047 · מסמך חסר", "בקשה 1052 · מסמך חסר", "בקשה 1060 · מסמך חסר"] } ],
+          "main": [ { "t": "card", "solid": true, "tag": "נוסח ע\"י הסוכן", "title": "בקשה 1047", "text": "שלום [שם], בבקשה שלך חסר [המסמך]. אפשר להעלות אותו כאן עד [תאריך]." },
+                    { "t": "chips", "items": [ { "text": "אישור ושליחה", "to": "A1" }, "תיקון" ] } ] }
+      ] },
+    { "code": "A1", "name": "הודעה", "actor": "A", "device": "נייד", "step": 2,
+      "essence": "לתפוס את התושב לפני המועד, בלי שיחפש", "does": "רואה הודעה בטלפון",
+      "actions": [ { "label": "הקשה על ההודעה", "to": "A2" } ],
+      "components": [ { "name": "התראה יזומה על מסמך חסר", "value": "פשטות" } ],
+      "wireframe": [
+        { "t": "note", "text": "מסך נעילה" },
+        { "t": "card", "solid": true, "title": "השירות · עכשיו", "text": "חסר מסמך בבקשה שלך. הקישו לפרטים.", "to": "A2" },
+        { "t": "spacer" }
+      ] },
+    { "code": "A2", "name": "כרטיס ההודעה", "actor": "A", "device": "נייד", "step": 2, "lead": true,
+      "essence": "מה חסר, עד מתי, ולמה — ומי עומד מאחורי ההודעה", "does": "קורא, ומחליט אם להעלות עכשיו",
+      "actions": [ { "label": "העלאה", "to": "A3" }, { "label": "יש לי שאלה", "result": "שדה כתיבה" } ],
+      "components": [ { "name": "הסבר מה להעלות ולמה", "value": "פשטות" }, { "name": "תווית מקור", "value": "אמון" } ],
+      "wireframe": [
+        { "t": "bar", "text": "השירות" },
+        { "t": "card", "solid": true, "tag": "הודעה יזומה", "title": "חסר [המסמך]", "text": "כדי להמשיך בבקשה, צריך להעלות [המסמך] עד [תאריך]. זה המסמך ש[הסבר קצר]." },
+        { "t": "text", "text": "נוסח ע\"י הסוכן · אושר ע\"י [הפקיד]" },
+        { "t": "chips", "items": [ { "text": "העלאה", "to": "A3" }, "יש לי שאלה" ] },
+        { "t": "spacer" },
+        { "t": "input", "text": "כתבו שאלה…" }
+      ] },
+    { "code": "A3", "name": "העלאת המסמך", "actor": "A", "device": "נייד", "step": 3,
+      "essence": "להעלות בלחיצה, ישר מההודעה", "does": "מצלם או בוחר קובץ, ושולח",
+      "actions": [ { "label": "שליחה", "to": "A4" }, { "label": "ביטול", "to": "A2" } ],
+      "components": [ { "name": "העלאה בלחיצה מההודעה", "value": "פשטות" } ],
+      "wireframe": [
+        { "t": "bar", "text": "העלאת מסמך" },
+        { "t": "card", "title": "צילום המסמך", "lines": 2 },
+        { "t": "button", "text": "צילום", "secondary": true },
+        { "t": "spacer" },
+        { "t": "button", "text": "שליחה", "to": "A4" },
+        { "t": "button", "text": "ביטול", "secondary": true, "to": "A2" }
+      ] },
+    { "code": "A4", "name": "אישור קבלה", "actor": "A", "device": "נייד", "step": 4,
+      "essence": "לסגור את הלולאה: המסמך התקבל, ומה עכשיו", "does": "רואה שהמסמך התקבל",
+      "actions": [ { "label": "חזרה לבקשה", "to": "A2" } ],
+      "components": [ { "name": "התראה יזומה על מסמך חסר", "value": "פשטות" } ],
+      "wireframe": [
+        { "t": "bar", "text": "השירות" },
+        { "t": "bubble", "side": "in", "text": "קיבלנו את המסמך. נעדכן כשהבדיקה תסתיים.", "label": "הסוכן" },
+        { "t": "text", "text": "סטטוס: בבדיקה (לדוגמה)" },
+        { "t": "spacer" },
+        { "t": "button", "text": "חזרה לבקשה", "secondary": true, "to": "A2" }
+      ] }
+  ],
+  "open": [ "האם ההודעה יוצאת בלי אישור הפקיד, כשהסוכן בטוח?", "\"יש לי שאלה\" — מי עונה ב-MVP: הסוכן או הפקיד?" ]
+}
+</script>
+<script>
+(function () {
+  var LANE = ["var(--a1)", "var(--a2)", "var(--a3)", "var(--a4)"];
+  var WIDTHS = ["100%", "86%", "64%", "92%", "72%"];
+  var d = JSON.parse(document.getElementById("data").textContent);
+  var actors = (d.actors || []).filter(function (a) { return a && a.id; });
+  var aIndex = {}; actors.forEach(function (a, i) { aIndex[a.id] = i; });
+  var screens = (d.screens || []).filter(function (s) { return s && s.code; });
+  var sByCode = {}; screens.forEach(function (s) { sByCode[s.code] = s; });
+  var steps = (d.steps || []).filter(function (s) { return s && s.text; });
+  var isDraft = (d.kind || "Draft 0") === "Draft 0";
+  var hasProto = isDraft || !!d.prototype;
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function color(actor) { return actor in aIndex ? LANE[aIndex[actor] % LANE.length] : "var(--navy)"; }
+  function link(code) { var a = el("a", null, code); a.href = "#" + code; return a; }
+  function isDesk(s) { return (s.device || "") === "מחשב"; }
+
+  // כותרת
+  if (d.example) document.getElementById("example").hidden = false;
+  document.getElementById("kind").textContent = isDraft ? "Draft 0 Wireframes" : "בריף מסכים";
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  document.title = (isDraft ? "Draft 0 Wireframes" : "בריף מסכים") + (d.venture ? " — " + d.venture : "");
+  var meta = document.getElementById("meta");
+  meta.textContent = [d.date, screens.length + " מסכים", actors.map(function (a) { return a.name; }).join(" · ")].filter(Boolean).join(" · ");
+  if (d.studio) { meta.append(" · התוצר של הסטודיו: "); var sa = el("a", null, "קישור"); sa.href = d.studio; sa.target = "_blank"; sa.rel = "noopener"; meta.append(sa); }
+  var rib = document.getElementById("ribbon");
+  rib.textContent = isDraft ? "טיוטה לדיון — לא בריף" : "בריף סופי — להעברה לסטודיו";
+  if (isDraft) rib.classList.add("draft");
+  if (d.question) document.getElementById("question").textContent = d.question; else document.getElementById("qbox").hidden = true;
+
+  // קפיצה
+  var jump = document.getElementById("jump");
+  function jl(href, text, cls, c) { var a = el("a", cls, text); a.href = href; if (c) a.style.setProperty("--c", c); jump.append(a); }
+  jl("#actors-sec", "מי משתמש במה"); jl("#flow-sec", "מפת הזרימה"); jump.append(el("span", "sep"));
+  screens.forEach(function (s) { var a = el("a", "code", s.code); a.href = "#" + s.code; a.title = s.name || ""; a.style.setProperty("--c", color(s.actor)); jump.append(a); });
+  if (hasProto) { jump.append(el("span", "sep")); jl("#proto", "Prototype"); }
+  if ((d.open || []).length) jl("#open-sec", "מה פתוח");
+
+  // מי משתמש במה
+  var ab = document.getElementById("actors");
+  actors.forEach(function (a) {
+    var mine = screens.filter(function (s) { return s.actor === a.id; });
+    var card = el("div", "actor"); card.style.setProperty("--c", color(a.id));
+    card.append(el("h3", null, a.id + " · " + a.name));
+    if (a.who) card.append(el("div", "who", a.who));
+    var dev = el("span", "device"); var ic = el("i", (a.device || "") === "מחשב" ? "desk" : "phone"); dev.append(ic, document.createTextNode(a.device || "")); card.append(dev);
+    var c = el("div", "codes");
+    mine.forEach(function (s, i) { if (i) c.append(el("span", "arrow", "←")); c.append(link(s.code)); });
+    if (!mine.length) c.append(el("span", "empty", "—"));
+    card.append(c);
+    var st = []; mine.forEach(function (s) { if (s.step != null && st.indexOf(s.step) === -1) st.push(s.step); });
+    if (st.length) card.append(el("div", "who", "בשלבים: " + st.join(", ")));
+    ab.append(card);
+  });
+
+  // מפת הזרימה
+  var tb = document.getElementById("steps");
+  if (steps.length) {
+    var hr = el("tr"); hr.append(el("th", null, "#"), el("th", null, "שלב בתרחיש"), el("th", null, "מי"), el("th", null, "מסכים")); tb.append(hr);
+    steps.forEach(function (s) {
+      var tr = el("tr"), c = el("div", "codes"), who = [];
+      (s.screens || []).forEach(function (code, i) { if (i) c.append(el("span", "arrow", "←")); c.append(link(code)); var sc = sByCode[code]; if (sc && actors[aIndex[sc.actor]] && who.indexOf(actors[aIndex[sc.actor]].name) === -1) who.push(actors[aIndex[sc.actor]].name); });
+      var td = el("td"); td.append(c);
+      tr.append(el("td", "n", String(s.n)), el("td", null, s.text), el("td", null, who.join(", ")), td); tb.append(tr);
+    });
+  } else tb.append(el("tr")).append(el("td", "empty", "אין שלבים"));
+
+  // אבני הבניין — בתצוגה (proto=false) ובהפעלה (proto=true, לחיץ)
+  function lines(n, box) { var w = el("div", "wf-lines"); for (var i = 0; i < (n || 2); i++) { var l = el("div", "wf-ln"); l.style.width = WIDTHS[i % WIDTHS.length]; w.append(l); } box.append(w); }
+  function clickable(node, to, proto) { if (proto && to && sByCode[to]) { node.dataset.to = to; node.setAttribute("role", "button"); node.tabIndex = 0; } }
+  function item(x, tag, proto) { var t = typeof x === "string" ? { text: x } : (x || {}); var e = el(proto && t.to ? "button" : tag, null, t.text || ""); if (e.tagName === "BUTTON") e.type = "button"; clickable(e, t.to, proto); return e; }
+  function blocks(list, box, proto) {
+    (list || []).forEach(function (b) {
+      if (!b || !b.t) return;
+      var e;
+      switch (b.t) {
+        case "bar": e = el("div", "wf-bar"); e.append(el("span", null, b.text || ""), el("span", null, "☰")); break;
+        case "title": e = el("div", "wf-title", b.text || ""); break;
+        case "text": if (b.text) e = el("div", "wf-text", b.text); else { e = el("div"); lines(b.lines, e); } break;
+        case "card":
+          e = el("div", "wf-card" + (b.solid ? " solid" : ""));
+          if (b.tag) e.append(el("span", "wf-tag", b.tag));
+          if (b.title) e.append(el("div", "wf-title", b.title));
+          if (b.text) e.append(el("div", "wf-text", b.text));
+          if (b.lines) lines(b.lines, e);
+          clickable(e, b.to, proto);
+          break;
+        case "chips": e = el("div", "wf-chips"); (b.items || []).forEach(function (x) { e.append(item(x, "span", proto)); }); break;
+        case "button": e = el(proto ? "button" : "div", "wf-btn" + (b.secondary ? " sec" : ""), b.text || ""); if (proto) e.type = "button"; clickable(e, b.to, proto); break;
+        case "input":
+          e = el("div", "wf-input");
+          if (proto) { var inp = el("input"); inp.type = "text"; inp.placeholder = b.text || ""; inp.setAttribute("aria-label", b.text || "שדה"); e.append(inp); }
+          else e.append(el("span", null, b.text || ""));
+          e.append(el("span", null, "➤"));
+          break;
+        case "list": e = el("div", "wf-list"); (b.items || []).forEach(function (x) { e.append(item(x, "span", proto)); }); break;
+        case "bubble":
+          e = el("div", "wf-bub " + (b.side === "out" ? "out" : "in"));
+          if (b.text) e.append(el("div", null, b.text));
+          if (b.lines) lines(b.lines, e);
+          if (b.label) e.append(el("small", null, b.label));
+          break;
+        case "note": e = el("div", "wf-note", b.text || ""); break;
+        case "spacer": e = el("div", "wf-spacer"); break;
+        case "split":
+          e = el("div", "wf-split"); var side = el("div"), main = el("div");
+          blocks(b.side, side, proto); blocks(b.main, main, proto); e.append(side, main);
+          break;
+        default: return;
+      }
+      box.append(e);
+    });
+  }
+  function fact(title, node) { var f = el("div", "fact"); f.append(el("h4", null, title)); f.append(node); return f; }
+
+  // המסכים — אחד מתחת לשני
+  var grid = document.getElementById("screens");
+  if (!screens.length) grid.append(el("div", "empty", "אין עדיין מסכים"));
+  screens.forEach(function (s, idx) {
+    var card = el("article", "screen" + (isDesk(s) ? " desk" : "")); card.id = s.code; card.style.setProperty("--c", color(s.actor));
+    var h = el("header"), actor = actors[aIndex[s.actor]];
+    h.append(el("span", "code", s.code), el("h3", null, s.name || ""));
+    h.append(el("span", "pill", (actor ? actor.name : s.actor || "") + " · " + (s.device || "")));
+    if (s.step != null) h.append(el("span", "pill", "שלב " + s.step));
+    if (s.lead) h.append(el("span", "pill lead", "מסך מוביל"));
+    card.append(h);
+    var info = el("div", "info");
+    if (s.essence) info.append(fact("מהות", el("div", null, s.essence)));
+    if (s.does) info.append(fact("מה המשתמש עושה", el("div", null, s.does)));
+    var acts = (s.actions || []).filter(function (a) { return a && a.label; });
+    if (acts.length) {
+      var ul = el("ul");
+      acts.forEach(function (a) {
+        var li = el("li"); li.append(el("b", null, a.label));
+        if (a.to && sByCode[a.to]) { li.append(document.createTextNode(" ← ")); li.append(link(a.to)); }
+        else if (a.to) li.append(document.createTextNode(" ← " + a.to));
+        if (a.result) li.append(document.createTextNode(" · " + a.result));
+        ul.append(li);
+      });
+      info.append(fact("פעולות", ul));
+    }
+    var comps = (s.components || []).filter(function (c) { return c && c.name; });
+    if (comps.length) {
+      var box = el("div");
+      comps.forEach(function (c) {
+        var sp = el("span", "comp" + (c.notSelected ? " ns" : ""), c.name);
+        if (c.value) sp.append(el("span", "v", " · " + c.value));
+        if (c.notSelected) sp.append(document.createTextNode(" · [לא נבחר]"));
+        box.append(sp);
+      });
+      info.append(fact("רכיבים, ואיזה ערך", box));
+    }
+    if (s.changed) { var ch = fact("מה השתנה", el("div", null, s.changed)); ch.className = "fact changed"; info.append(ch); }
+    card.append(info);
+    var wrap = el("div", "wf-wrap"), wf = el("div", "wf " + (isDesk(s) ? "desk" : "phone"));
+    blocks(s.wireframe, wf, false);
+    wrap.append(wf, el("span", "wf-cap", "wireframe · " + (isDesk(s) ? "מחשב" : "נייד") + " · נאמנות נמוכה"));
+    card.append(wrap);
+    var foot = el("footer"), up = el("a", null, "↑ לראש הדף"); up.href = "#actors-sec"; foot.append(up);
+    var nx = screens[idx + 1];
+    if (nx) { var n = el("a", null, "המסך הבא: " + nx.code + " ←"); n.href = "#" + nx.code; foot.append(n); }
+    else if (hasProto) { var p = el("a", null, "ל-Prototype ←"); p.href = "#proto"; foot.append(p); }
+    card.append(foot);
+    grid.append(card);
+  });
+
+  // Prototype
+  if (hasProto && screens.length) {
+    document.getElementById("proto").hidden = false;
+    var path = (d.path || []).filter(function (c) { return sByCode[c]; });
+    if (!path.length) { steps.forEach(function (s) { (s.screens || []).forEach(function (c) { if (sByCode[c] && path.indexOf(c) === -1) path.push(c); }); }); }
+    if (!path.length) path = screens.map(function (s) { return s.code; });
+    var cur = path[0];
+    var stage = document.getElementById("pstage"), now = document.getElementById("pnow"), pp = document.getElementById("ppath");
+    path.forEach(function (c) { var b = el("button", null, c); b.type = "button"; b.title = sByCode[c].name || ""; b.addEventListener("click", function () { go(c); }); pp.append(b); });
+    function stepText(s) { var st = steps.filter(function (x) { return (x.screens || []).indexOf(s.code) !== -1; })[0]; return st ? "שלב " + st.n + ": " + st.text : ""; }
+    function go(code) {
+      if (!sByCode[code]) return;
+      cur = code; var s = sByCode[code], actor = actors[aIndex[s.actor]];
+      now.style.setProperty("--c", color(s.actor)); now.textContent = "";
+      now.append(el("div", "lbl", stepText(s)), el("div", "t", s.code + " · " + (s.name || "")), el("div", "who", (actor ? actor.name : "") + " · " + (s.device || "")));
+      stage.textContent = "";
+      var wf = el("div", "wf " + (isDesk(s) ? "desk" : "phone"));
+      blocks(s.wireframe, wf, true); stage.append(wf);
+      var i = path.indexOf(code);
+      document.getElementById("pprev").disabled = i <= 0;
+      document.getElementById("pnext").disabled = i === -1 || i >= path.length - 1;
+      Array.prototype.forEach.call(pp.children, function (b) { if (b.textContent === code) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
+    }
+    stage.addEventListener("click", function (e) { var t = e.target.closest("[data-to]"); if (t) go(t.dataset.to); });
+    stage.addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && e.target.dataset && e.target.dataset.to) { e.preventDefault(); go(e.target.dataset.to); } });
+    document.getElementById("pprev").addEventListener("click", function () { var i = path.indexOf(cur); if (i > 0) go(path[i - 1]); });
+    document.getElementById("pnext").addEventListener("click", function () { var i = path.indexOf(cur); if (i < path.length - 1) go(path[i + 1]); });
+    document.getElementById("preset").addEventListener("click", function () { go(path[0]); });
+    go(cur);
+  }
+
+  // מה פתוח
+  var open = (d.open || []).filter(Boolean), ou = document.getElementById("open");
+  open.forEach(function (t) { ou.append(el("li", null, t)); });
+  document.getElementById("open-sec").hidden = !open.length;
+  document.getElementById("foot").textContent = isDraft ? "Draft 0 — טיוטה. מה שהקבוצה תחליט אחרי הצהריים נכנס לבריף המסכים הסופי." : "בריף מסכים — סופי. נגזר מה-MD ליד הקובץ הזה.";
+})();
+</script>
+</body>
+</html>

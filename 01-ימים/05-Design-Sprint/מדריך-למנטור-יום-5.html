@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>יום ה-Design Sprint</title>
-<meta name="description" content="מדריך למנטור ליום ה-Design Sprint של Gov-Labs 2.0: משאלת ה-MVP, דרך הרכיבים והתרחיש, ועד בריף המסכים עם נציג הסטודיו — שלב אחר שלב.">
+<meta name="description" content="מדריך למנטור ליום ה-Design Sprint של Gov-Labs 2.0: משאלת ה-MVP, דרך הרכיבים והתרחיש, Draft 0 עם Prototype, ועד בריף המסכים עם נציג הסטודיו — שלב אחר שלב, ומה ה-Playbook מצפה לקבל בכל שלב.">
 <!--
-  מדריך למנטור ליום 5 — מקור הדף. נגזר מ: סקירה.md · היערכות-למפגש.md · תהליכים/1–7 · 04-AI/סוכנים/MVP-שאלה-רכיבים-ומסכים.md
+  מדריך למנטור ליום 5 — מקור הדף. נגזר מ: סקירה.md · היערכות-למפגש.md · תהליכים/1–7 · 04-AI/סוכנים/MVP-שאלה-רכיבים-ומסכים.md · חומרי-מקור/מסמכים/יום-5-חידודים-אריאל-2026-11-08.md
   שפה גרפית: כמו המדריך ליום 4 — שטראוס אסטרטגיה (s-strategy.com) — נייבי, פלום, ענבר, טורקיז. גופן: Calibri בלבד.
   הדף המפורסם (לשיתוף): https://claude.ai/artifact/FLBZLa8PTRQjoQyaNSyMbC
   עדכון: עורכים את הקובץ הזה, ואז מבקשים מסוכן ה-AI: "פרסם את מדריך-למנטור-יום-5.html ל-https://claude.ai/artifact/FLBZLa8PTRQjoQyaNSyMbC".
@@ -139,6 +139,16 @@ ul.flags b { color: var(--plum); }
 footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 13.5px; color: var(--muted); }
 footer a { margin-inline-end: 10px; white-space: nowrap; }
 
+/* העבודה עם ה-Playbook — רצועה בראש כל שלב */
+.pb { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid #C7D0DE; border-radius: 10px; overflow: hidden; font-size: 14.5px; line-height: 1.45; }
+.pb > div { background: var(--navy-soft); padding: 7px 12px 6px; border-inline-start: 1px solid #C7D0DE; min-width: 0; }
+.pb > div:first-child { border-inline-start: 0; }
+.pb .lbl { color: var(--blue); }
+.pb.q-yes > div:nth-child(3) { background: var(--amber-soft); }
+.pb.q-yes > div:nth-child(3) .lbl { color: var(--amber-ink); }
+.legend .pbk::before { background: var(--navy-soft); border-color: #C7D0DE; }
+@media (max-width: 900px) { .pb { grid-template-columns: repeat(2, minmax(0, 1fr)); } .pb > div:nth-child(3) { border-inline-start: 0; } .pb > div:nth-child(n+3) { border-top: 1px solid #C7D0DE; } }
+@media (max-width: 680px) { .pb { grid-template-columns: minmax(0, 1fr); } .pb > div { border-inline-start: 0; } .pb > div + div { border-top: 1px solid #C7D0DE; } }
 @media (max-width: 900px) {
   .principles, .cards3, .two { grid-template-columns: minmax(0, 1fr); }
   ul.flags { grid-template-columns: minmax(0, 1fr); }
@@ -165,14 +175,14 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
 <header>
   <p class="eyebrow">Gov-Labs 2.0 · יום 5 · מדריך למנטור</p>
   <h1>יום ה-Design Sprint: איך זה הולך לעבוד</h1>
-  <p class="lead">בבוקר הצוות מגדיר <b>מה ה-MVP צריך להוכיח</b>, בוחר עד חמישה רכיבים שעוזרים להוכיח את זה, וכותב את תרחיש השימוש. אחרי הצהריים הצוות עובד על המסכים עם נציג הסטודיו, באותו יום ולא בשבועיים של המתנה. בסוף היום יוצא בריף מסכים.</p>
+  <p class="lead">בבוקר הצוות מגדיר <b>מה ה-MVP צריך להוכיח</b>, מחליט על עד חמישה רכיבים שעוזרים להוכיח את זה, וכותב את תרחיש השימוש. לפני ההפסקה מזינים את ההחלטות על התרחיש, וה-Playbook מכין לבד את <b>Draft 0 עם Prototype</b>. אחרי ההפסקה הצוות עובד עליו עם נציג הסטודיו, ובסוף היום יוצא בריף מסכים לסטודיו.</p>
   <div class="principles">
     <div class="principle"><b>קודם הצוות, אחר כך הסוכן.</b>את השאלה, את הרכיבים ואת התרחיש הצוות כותב לבד. רק אחרי זה הסוכן מעיר עליהם ומתעד אותם.</div>
     <div class="principle"><b>הצעה שלא עברה את המבחן לא נזרקת.</b>שואלים מה הצוות רצה לבדוק בה, ומכניסים את זה לנוסח המתוקן. למשל, "האזרחים יסמכו על השירות" היא תחושה ולא התנהגות. אבל אם הדאגה היא אמון, הנוסח המתוקן בודק התנהגות שמראה אמון: כמה מגישים את הבקשה בלי להתקשר למוקד.</div>
-    <div class="principle"><b>הסוכן מדרג, הצוות בוחר.</b>הסוכן מציג 8–12 רכיבים, מסודרים לפי כמה כל אחד עוזר לענות על השאלה, בלי לסמן מה "קריטי" ומה "אחר כך". הצוות בוחר עד חמישה, וצריך לוותר על השאר. סעיף "איך מודדים" אין, כי המדידה כבר נבדקה במבחן השאלה.</div>
+    <div class="principle"><b>ה-Playbook ממליץ, הצוות מחליט.</b>הסוכן מציג 8–12 רכיבים, ומסמן "מומלץ" על חמישה שביחד בודקים את כל חלקי השאלה. הלוח נפתח עם ההמלצה, ומעיר כשהבחירה משאירה חלק בשאלה בלי רכיב. הצוות מוסיף, מוריד ומחליט. סעיף "איך מודדים" אין, כי המדידה כבר נבדקה במבחן השאלה.</div>
   </div>
   <nav class="jump" aria-label="ניווט">
-    <a href="#before">לפני שמתחילים</a><a href="#flow">מהלך היום</a><a href="#ref">רפרנס-מנחה</a><a href="#feed">מתי מזינים חומר</a><a href="#gaps">כשחסר קלט</a><a href="#flags">נורות אזהרה</a>
+    <a href="#before">לפני שמתחילים</a><a href="#flow">מהלך היום</a><a href="#playbook">העבודה עם ה-Playbook</a><a href="#ref">רפרנס-מנחה</a><a href="#gaps">כשחסר קלט</a><a href="#flags">נורות אזהרה</a>
   </nav>
 </header>
 
@@ -183,53 +193,55 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <h4>איפה הכול נשמר</h4>
       <div class="tree">
         <div><span><b>תיקיית היום</b></span><small class="rng">05-Design-Sprint</small></div>
-        <div><span class="t">תוצרים/</span><small>מפרט MVP, לוח הרכיבים, בריף המסכים</small></div>
+        <div><span class="t">תוצרים/</span><small>מפרט MVP, לוח הרכיבים, Draft 0, בריף המסכים</small></div>
         <div><span class="m">רפרנס-מנחה/</span><small>הרפרנס לשאלה, רק לכם</small></div>
-        <div><span>שורש התיקייה</span><small>התרחיש, ההחלטות, צילומי הסטודיו</small></div>
+        <div><span>שורש התיקייה</span><small>התרחיש, ההערות, צילומי הסטודיו</small></div>
       </div>
-      <p>הסוכן רואה רק מה שב-repo.</p>
+      <p>הסוכן רואה רק מה שב-repo. <b>כל HTML הוא גם דף לשיתוף</b>: הסוכן מפרסם, ואתם פותחים לצפייה לכל מי שיש לו קישור, בתפריט השיתוף של הדף. הסוכן לא יכול לשנות הרשאות.</p>
     </div>
     <div class="card">
       <h4>איך מדברים עם ה-Playbook</h4>
       <p>במשפט רגיל, על מה שקורה עכשיו בחדר. אין פקודות מיוחדות.</p>
       <div class="say"><b>אומרים:</b>אנחנו לפני יום 5, בוא נכין רפרנס לשאלת ה-MVP.</div>
       <div class="say"><b>אומרים:</b>זו השאלה שהצוות הציע.</div>
-      <div class="say"><b>אומרים:</b>סיימנו את הסבב, בוא נעשה בריף.</div>
+      <div class="say"><b>אומרים:</b>אלה ההחלטות שלנו.</div>
     </div>
     <div class="card">
       <h4>נציג הסטודיו</h4>
-      <p>איש עיצוב <b>לכל קבוצה, בנפרד</b>. מתאמים אותו לפני היום, כך שיהיה עם הקבוצה לפחות מהצהריים.</p>
+      <p>איש עיצוב <b>לכל קבוצה, בנפרד</b>. מתאמים אותו לפני היום, כך שיהיה עם הקבוצה לפחות מאחרי הצהריים.</p>
       <ul>
-        <li>מקבל את Draft 0 בצהריים ומתחיל לבנות.</li>
-        <li>הקבוצה מחליטה אילו מסכים יש ובאיזה סדר. הוא בונה, מתקן בזמן שהקבוצה דנה, ומציג לה את התוצאה.</li>
+        <li>רואה את Draft 0 יחד עם הקבוצה, אחרי ההפסקה.</li>
+        <li>בונה ממנו בזמן שהקבוצה דנה, ומציג איפה הוא עומד אחרי שהקבוצה מסכמת.</li>
         <li>מה הוא מביא, ובאיזו סביבת עבודה: עוד לא נקבע.</li>
       </ul>
     </div>
   </div>
+  <p class="meta"><b>איך זה נראה:</b> <a href="https://claude.ai/artifact/D69YExRMvKqxb6zWXF68Ez">לוח הרכיבים — דוגמה</a> · <a href="https://claude.ai/artifact/CAcdoznESpKwAxGCZ8YAWP">Draft 0 עם Prototype — דוגמה</a>. מיזם לדוגמה, לא אמיתי.</p>
   <div class="roles">
     <span><b>המנטור</b> מוביל את הצוות ומאתגר</span>
-    <span><b>המנטור הטכנולוגי (הארכיטקט)</b> Draft 0 ובריף המסכים, ומלווה את מפעיל ה-AI</span>
-    <span><b>מפעיל ה-AI</b> מזין לסוכן ורושם החלטות</span>
-    <span><b>נציג הסטודיו</b> בונה עיצוב ראשוני</span>
+    <span><b>המנטור הטכנולוגי (הארכיטקט)</b> בודק את Draft 0, יוצר את הבריף, ומלווה את מפעיל ה-AI</span>
+    <span><b>מפעיל ה-AI</b> מזין לסוכן ורושם החלטות והערות</span>
+    <span><b>נציג הסטודיו</b> בונה מ-Draft 0</span>
     <span>סשן אחד עם הסוכן לכל קבוצה, לכל היום</span>
   </div>
 </section>
 
 <section id="flow">
   <h2>מהלך היום, שלב אחר שלב</h2>
-  <p class="meta">כל שלב כאן הוא תהליך בפלייבוק, באותו מספר. לכל שלב ארבעה חלקים: מה עושים בלי הסוכן, מה צריך להיות מוכן ומה עושים כשמשהו חסר, מה נוצר בסוף השלב, ועל מה המנטור צריך לשים לב. כמה זמן לוקח כל שלב עוד לא נקבע.</p>
+  <p class="meta">כל שלב כאן הוא תהליך בפלייבוק, באותו מספר. בראש כל שלב — <b>העבודה עם ה-Playbook</b>: מה נותנים לו, מה הוא מחזיר, אם הוא חוזר עם שאלות, ומתי ממשיכים. מתחת: מה עושים בלי הסוכן, מה צריך להיות מוכן ומה עושים כשמשהו חסר, מה נוצר בסוף השלב, ועל מה המנטור צריך לשים לב. כמה זמן לוקח כל שלב עוד לא נקבע.</p>
 
   <div class="strip" aria-label="סדר היום">
     <a class="pre" href="#s1"><span class="tm">לפני היום</span>רפרנס לשאלת ה-MVP</a>
     <a href="#s2"><span class="tm">חצי יום ראשון</span>שאלת MVP ומבחן</a>
     <a href="#s3"><span class="tm">חצי יום ראשון</span>רכיבים לשאלה</a>
-    <a href="#s4"><span class="tm">חצי יום ראשון</span>תרחיש השימוש</a>
-    <a href="#s5"><span class="tm">צהריים</span>Draft 0 Wireframes</a>
+    <a href="#s4"><span class="tm">עד ההפסקה</span>תרחיש השימוש</a>
+    <a href="#s5"><span class="tm">הפסקת הצהריים</span>Draft 0 עם Prototype</a>
     <a href="#s6"><span class="tm">חצי יום שני</span>סבב עם הסטודיו</a>
     <a href="#s7"><span class="tm">סוף היום</span>בריף מסכים</a>
     <a class="post" href="#s8"><span class="tm">אחרי היום</span>PRD v0.2 · השער ליום 6</a>
   </div>
   <div class="legend">
+    <span class="k pbk">העבודה עם ה-Playbook</span>
     <span class="k manual">עבודה ידנית</span>
     <span class="k input">קלט שצריך להיות מוכן</span>
     <span class="k team">פלט: תוצרים לקבוצה</span>
@@ -244,8 +256,8 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
         <div class="head"><h3>רפרנס לשאלת ה-MVP</h3><span class="time">לפני היום</span></div>
         <p class="goal">המנטור מגיע לבוקר עם שאלת MVP מומלצת ומנומקת. היא עוזרת לו לשאול את הצוות שאלות מכוונות. לצוות לא מציגים אותה.</p>
         <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span><span>בלי הצוות</span></div>
-        <div class="say"><b>אומרים:</b>אנחנו לפני יום 5, בוא נכין רפרנס לשאלת ה-MVP.</div>
         <div class="cells">
+          <div class="pb"><div><span class="lbl">נותנים</span>"אנחנו לפני יום 5, בוא נכין רפרנס לשאלת ה-MVP."</div><div><span class="lbl">מחזיר</span>רפרנס, למנטור בלבד</div><div><span class="lbl">שאלות?</span>לא</div><div><span class="lbl">ממשיכים כש</span>עברתם על הרפרנס</div></div>
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
             <li>מעלים ל-repo מה שחסר: ה-Story, Decision &amp; PIN.</li>
             <li>המנטור עובר על הרפרנס ואומר מה לתקן, והסוכן מעדכן.</li>
@@ -271,8 +283,8 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
         <div class="head"><h3>שאלת MVP ומבחן השאלה</h3><span class="time">חצי יום ראשון</span></div>
         <p class="goal">שאלה במילים של הצוות, שעברה את ארבעת התנאים: הנחה קריטית, ספציפית, מדידה, התנהגות.</p>
         <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI מזין</span><span>המנטור הטכנולוגי מלווה</span></div>
-        <div class="say"><b>אומרים, אחרי שהצוות ניסח:</b>זו השאלה שהצוות הציע.</div>
         <div class="cells">
+          <div class="pb"><div><span class="lbl">נותנים</span>"זו השאלה שהצוות הציע." · אחר כך — איזה נוסח נבחר</div><div><span class="lbl">מחזיר</span>טבלת מבחן, מה לשמור, ונוסח מתוקן · אחרי הבחירה — סעיף 1 במפרט</div><div><span class="lbl">שאלות?</span>לא — הצוות בוחר נוסח</div><div><span class="lbl">ממשיכים כש</span>הנוסח נבחר ונרשם</div></div>
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
             <li>הרצאת פתיחה: מאסטרטגיה למוצר, מוצרים וחוויה בעידן ה-AI.</li>
             <li>הצוות מנסח שאלה לפי המתודה, <b>במילים שלו</b>.</li>
@@ -294,48 +306,48 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <div class="node">3</div>
       <div class="body">
         <div class="head"><h3>רכיבים לשאלת ה-MVP</h3><span class="time">חצי יום ראשון</span></div>
-        <p class="goal">עד חמישה רכיבים, כלומר דברים שהמשתמש יפגוש במוצר. כל רכיב נשען על אחד מערכי המוצר, ועוזר לענות על שאלת ה-MVP.</p>
+        <p class="goal">עד חמישה רכיבים, כלומר דברים שהמשתמש יפגוש במוצר. כל רכיב נשען על אחד מערכי המוצר, ובודק חלק בשאלת ה-MVP. ה-Playbook ממליץ, הצוות מחליט.</p>
         <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span></div>
-        <div class="say"><b>אומרים, אחרי שכל אחד רשם:</b>הצוות רשם רכיבים, מה הרשימה שלך? · <b>אחרי הבחירה:</b> מדביקים את "העתקת סיכום" מהלוח.</div>
         <div class="cells">
+          <div class="pb"><div><span class="lbl">נותנים</span>"הצוות רשם רכיבים, מה הרשימה שלך?" · אחר כך — "העתקת סיכום" מהלוח: "זו ההחלטה שלנו."</div><div><span class="lbl">מחזיר</span>חלקי השאלה, 8–12 רכיבים, "מומלץ" על חמישה, ולוח הרכיבים · אחרי ההחלטה — רישום במפרט, ו<b>מה חשוב שיהיה בתיאור התרחיש</b></div><div><span class="lbl">שאלות?</span>לא — הלוח מעיר לפי הבחירה</div><div><span class="lbl">ממשיכים כש</span>ההחלטה נרשמה. הסוכן מחכה לתרחיש, ולא כותב אותו</div></div>
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
             <li>כל אחד רושם לעצמו 5 רכיבים, <b>לפני</b> שרואים את ההמלצה.</li>
-            <li>לוח הרכיבים על המסך: עריכת שם, הוספה, הסרה, ובחירה של עד 5 עם מונה.</li>
-            <li>"העתקת סיכום" מהלוח, ומדביקים לסוכן.</li></ul></div>
+            <li>לוח הרכיבים על המסך. הוא נפתח עם חמשת המומלצים בחורים. כל שינוי מעדכן את ההודעות: איזה חלק בשאלה נשאר בלי רכיב, מה הורד מההמלצה, איזה ערך לא מיוצג.</li>
+            <li>הצוות מחליט. "העתקת סיכום" מהלוח, ומדביקים לסוכן.</li></ul></div>
           <div class="cell input"><span class="lbl">קלט</span><ul><li>שאלת ה-MVP שנבחרה.</li><li>הרשימות האישיות: רשות, אחרי שהרשימה של הסוכן הוצגה.</li></ul>
             <div class="fallback">הלוח לא נפתח? <q>אלה חמשת הרכיבים שהצוות בחר. תרשום אותם במפרט, בניסוח שלהם.</q></div></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מפרט-MVP.html</span>: לוח הרכיבים, 8–12 רכיבים מדורגים · <span class="file">מפרט-MVP.md</span>, סעיפים 2–3: הרכיבים שנבחרו והיכולות שהם נשענים עליהן.</div>
-            <div class="out mentor"><span class="lbl">בצ'אט</span>לפני הרשימה, תיאור של מי עושה היום כל פעולה בשירות, אדם או מערכת (Common Sense). כך רואים איפה אדם עושה עבודה שה-AI יכול לעשות.</div></div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מפרט-MVP.html</span>: לוח הרכיבים, עם ההמלצה, גם כדף לשיתוף · <span class="file">מפרט-MVP.md</span>: חלקי השאלה, הרכיבים שהוחלטו והיכולות שהם נשענים עליהן.</div>
+            <div class="out mentor"><span class="lbl">בצ'אט</span>לפני הרשימה: מי עושה היום כל פעולה בשירות, אדם או מערכת (Common Sense) · אחרי ההחלטה: מה חשוב שיהיה בתיאור התרחיש — לתת לצוות לפני שהוא כותב.</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
-            <li><span class="flag">טופס, כפתור, דשבורד?</span> "מה השירות יכול לעשות כאן ביוזמתו?"</li>
-            <li><span class="flag">חמשת הראשונים נבחרו כמו שהם?</span> "מה מהרשימות שלכם חסר שם?"</li>
-            <li><span class="flag">יותר מ-5?</span> "איזה מהם הכי פחות מוכיח את השאלה?"</li></ul></div>
+            <li><b>ההמלצה היא המלצה.</b> <span class="flag">הבחירה זהה להמלצה?</span> "מה מהרשימות שלכם חסר שם?"</li>
+            <li><span class="flag">"⚠ אף רכיב לא בודק את..."?</span> "החלק הזה לא ייבדק. משנים רכיב, או משנים את השאלה?"</li>
+            <li><span class="flag">טופס, כפתור, דשבורד?</span> "מה השירות יכול לעשות כאן ביוזמתו?" · <span class="flag">יותר מ-5?</span> "איזה מהם הכי פחות מוכיח את השאלה?"</li></ul></div>
         </div>
       </div>
     </article>
 
-    <article class="stage" id="s4">
+    <article class="stage key" id="s4">
       <div class="node">4</div>
       <div class="body">
-        <div class="head"><h3>תרחיש השימוש המרכזי</h3><span class="time">חצי יום ראשון</span></div>
-        <p class="goal">השלבים שהפרסונה עוברת, מההתחלה ועד ההתנהגות ששאלת ה-MVP בודקת. כל רכיב שנבחר מופיע באחד השלבים.</p>
+        <div class="head"><h3>תרחיש השימוש המרכזי</h3><span class="time">חצי יום ראשון · עד ההפסקה</span></div>
+        <p class="goal">השלבים שהפרסונה עוברת, מההתחלה ועד ההתנהגות ששאלת ה-MVP בודקת. ההחלטות על התרחיש הן הקלט האחרון לפני ההפסקה: מהן ה-Playbook מכין את Draft 0.</p>
         <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span></div>
-        <div class="say"><b>אומרים, אחרי שהצוות כתב:</b>זה התרחיש של הצוות.</div>
         <div class="cells">
+          <div class="pb q-yes"><div><span class="lbl">נותנים</span>"זה התרחיש של הצוות." · אחר כך — "אלה ההחלטות שלנו."</div><div><span class="lbl">מחזיר</span>עד 5 שאלות וחידודים, ממוספרים · אחרי ההחלטות — תרחיש מעודכן, ו<b>ממשיך לבד ל-Draft 0</b></div><div><span class="lbl">שאלות?</span><b>כן — סבב אחד.</b> אחרי ההחלטות אין עוד שאלות</div><div><span class="lbl">ממשיכים כש</span>ההחלטות הוזנו, <b>לפני ההפסקה</b></div></div>
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
-            <li>הצוות כותב את השלבים <b>בלי הסוכן</b>: מי עושה מה, ובאיזה שלב כל רכיב נכנס.</li>
+            <li>הצוות כותב את השלבים <b>בלי הסוכן</b>, לפי מה שהסוכן אמר שחשוב: מי עושה מה, ובאיזה שלב כל רכיב נכנס.</li>
             <li>מקלידים או מצלמים לסוכן.</li>
-            <li>עוברים על ההערות של הסוכן, והצוות מחליט מה לשנות.</li></ul></div>
-          <div class="cell input"><span class="lbl">קלט</span><ul><li>התרחיש של הצוות.</li><li>הרכיבים שנבחרו.</li></ul>
-            <div class="fallback">התרחיש עוד חלקי? <q>זה התרחיש עד שלב 3. תאתגר את מה שיש, ותגיד מה חסר כדי להגיע להתנהגות שהשאלה בודקת.</q></div></div>
+            <li>עוברים על השאלות של הסוכן, אחת-אחת. הקבוצה מחליטה, ומפעיל ה-AI מזין את ההחלטות לפי המספרים.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>התרחיש של הצוות.</li><li>ההחלטות על כל שאלה.</li></ul>
+            <div class="fallback">לא החלטתם על אחת? <q>על שאלה 4 לא החלטנו. תרשום אותה כפתוחה ותמשיך.</q></div></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מפרט-MVP.md</span>, סעיף 4: התרחיש, ההסתעפויות, ומה השתנה באתגור.</div>
-            <div class="out mentor"><span class="lbl">בצ'אט</span>עד 5 הערות על התרחיש. לכל הערה: מה הבעיה, למה היא חשובה, ומה מוצע.</div></div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מפרט-MVP.md</span>, סעיף 4: התרחיש, ההסתעפויות, ומה השתנה בעקבות השאלות.</div>
+            <div class="out mentor"><span class="lbl">בצ'אט</span>עד 5 שאלות וחידודים. לכל אחד: מה, למה, ומה מוצע · ובסוף: "ממשיך ל-Draft 0."</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><span class="flag">מזינים את ההחלטות לפני שיוצאים להפסקה.</span> בלי זה אין Draft 0 כשחוזרים.</li>
             <li><span class="flag">קופצים למסכים?</span> "קודם מה קורה, ומי עושה. המסכים אחרי הצהריים."</li>
-            <li><span class="flag">רכיב שנבחר לא בתרחיש?</span> "איפה הפרסונה פוגשת אותו?"</li>
-            <li><span class="flag">המערכת עושה הכול?</span> "מה הפרסונה עושה כאן?"</li></ul></div>
+            <li><span class="flag">רכיב שנבחר לא בתרחיש?</span> "איפה הפרסונה פוגשת אותו?" · <span class="flag">המערכת עושה הכול?</span> "מה הפרסונה עושה כאן?"</li></ul></div>
         </div>
       </div>
     </article>
@@ -343,21 +355,23 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
     <article class="stage" id="s5">
       <div class="node">5</div>
       <div class="body">
-        <div class="head"><h3>Draft 0 Wireframes</h3><span class="time">צהריים · בלי הקבוצה</span></div>
-        <p class="goal">סקיצות מסכים פשוטות, בלי עיצוב. הקבוצה דנה בהן אחרי הצהריים, ונציג הסטודיו מתחיל לבנות מהן.</p>
-        <div class="who"><span class="lead-role">המנטור הטכנולוגי</span><span>נציג הסטודיו מקבל</span></div>
-        <div class="say"><b>אומרים:</b>בוא נכין Draft 0 ל-wireframes.</div>
+        <div class="head"><h3>Draft 0 עם Prototype</h3><span class="time">הפסקת הצהריים · בלי הקבוצה</span></div>
+        <p class="goal">טיוטה, לא בריף: סקיצות מסכים פשוטות, בלי עיצוב, ו-Prototype שאפשר ללחוץ בו ממסך למסך. מחכה לקבוצה כשהיא חוזרת.</p>
+        <div class="who"><span class="lead-role">הסוכן, לבד</span><span>המנטור הטכנולוגי בודק</span></div>
         <div class="cells">
+          <div class="pb"><div><span class="lbl">נותנים</span>כלום — ממשיך לבד מהשלב הקודם. רק אם נעצר: "תמשיך ל-Draft 0."</div><div><span class="lbl">מחזיר</span>Draft 0 עם Prototype, וקישור לדף</div><div><span class="lbl">שאלות?</span><b>לא.</b> מה שלא ברור — מחליט, ורושם ב"מה פתוח"</div><div><span class="lbl">ממשיכים כש</span>הדף מפורסם, ה-Prototype רץ, והקישור פתוח לצפייה</div></div>
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
-            <li>המנטור הטכנולוגי עובר על Draft 0 ואומר מה לתקן, והסוכן מעדכן.</li>
-            <li>מוסרים לנציג הסטודיו, והוא מתחיל לבנות מהן גרסה ראשונה.</li></ul></div>
-          <div class="cell input"><span class="lbl">קלט</span><ul><li>מפרט ה-MVP: שאלה, רכיבים, תרחיש.</li></ul>
-            <div class="fallback">משהו בתרחיש לא סגור? <q>תכין Draft 0 מהתרחיש כמו שהוא, ותרשום מה פתוח ב"מה לא בבריף".</q></div></div>
+            <li>המנטור הטכנולוגי פותח את הדף, ומפעיל את ה-Prototype מההתחלה עד הסוף.</li>
+            <li>אומר מה לתקן, והסוכן מעדכן לאותו קישור.</li>
+            <li>פותח את הדף לצפייה, בתפריט השיתוף, ומכין אותו על המסך של הקבוצה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>מפרט ה-MVP: שאלה, רכיבים, ותרחיש אחרי ההחלטות.</li></ul>
+            <div class="fallback">הסוכן נעצר עם שאלה? <q>תמשיך ל-Draft 0, ותרשום את זה ב"מה פתוח".</q></div></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">בריף-מסכים.md + .html</span>, Draft 0: מפת זרימה, וכרטיס ו-wireframe לכל מסך.</div></div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">Draft-0-Wireframes.md + .html</span>, גם כדף לשיתוף: קישורים לכל מסך, מי משתמש במה, מפת הזרימה, המסכים אחד מתחת לשני, ו-Prototype בתחתית.</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
             <li><b>מה יש בסקיצה:</b> אילו חלקים יש במסך, מה חשוב יותר, ואילו פעולות אפשר לעשות בו. <span class="flag">בלי צבע, לוגו וגופן.</span></li>
-            <li>רכיב שהצוות לא בחר מסומן <b>[לא נבחר]</b>. שואלים את הקבוצה אם להוסיף אותו, ולא מוסיפים בלי אישור.</li></ul></div>
+            <li>רכיב שהצוות לא בחר מסומן <b>[לא נבחר]</b>. שואלים את הקבוצה, ולא מוסיפים בלי אישור.</li>
+            <li>"מה פתוח" — הדברים שהסוכן החליט לבד. הקבוצה מחליטה עליהם אחרי ההפסקה.</li></ul></div>
         </div>
       </div>
     </article>
@@ -366,21 +380,22 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <div class="node">6</div>
       <div class="body">
         <div class="head"><h3>סבב עם הסטודיו</h3><span class="time">חצי יום שני</span></div>
-        <p class="goal">הקבוצה מחליטה איך המסכים ייראו, ונציג הסטודיו בונה במקביל. באותו יום, בלי שבועיים של המתנה.</p>
-        <div class="who"><span class="lead-role">המנטור</span><span>המנטור הטכנולוגי ונציג הסטודיו מציגים</span><span>מפעיל ה-AI רושם</span><span>בלי סוכן</span></div>
+        <p class="goal">הקבוצה מחליטה מה משתנה ב-Draft 0, ונציג הסטודיו בונה במקביל. באותו יום, בלי שבועיים של המתנה.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>המנטור הטכנולוגי מציג</span><span>נציג הסטודיו</span><span>מפעיל ה-AI רושם</span></div>
         <div class="cells">
+          <div class="pb"><div><span class="lbl">נותנים</span>— בלי סוכן</div><div><span class="lbl">מחזיר</span>—</div><div><span class="lbl">שאלות?</span>—</div><div><span class="lbl">ממשיכים כש</span>ההערות על הפלואו ועל העיצוב סוכמו ונרשמו</div></div>
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
-            <li><b>הצגה:</b> Draft 0, ומה שהסטודיו התחיל.</li>
-            <li><b>בזוגות:</b> כל זוג מגדיר איך היה רוצה שזה ייראה, ומעדכן.</li>
-            <li><b>הקבוצה מתכנסת</b> (לא מליאה של כל הקבוצות): הזוגות מציגים, הקבוצה מכריעה. במקביל, הסטודיו מתקן לפי ההחלטות.</li>
-            <li><b>הסטודיו מציג</b> את התוצאה ומקבל פידבק.</li></ul></div>
-          <div class="cell input"><span class="lbl">קלט</span><ul><li>Draft 0.</li><li>מה שנציג הסטודיו התחיל לבנות.</li></ul></div>
+            <li><b>הצגה:</b> Draft 0 לקבוצה ולנציג הסטודיו יחד. מפעילים את ה-Prototype על המסך.</li>
+            <li><b>זוגות או שלשות</b>, בזמן שאתם מגדירים: כל אחד דן בשינויים בפלואו, ורושם.</li>
+            <li><b>הקבוצה מתכנסת</b> (לא מליאה של כל הקבוצות): דנה בהערות ומסכמת. במקביל, נציג הסטודיו מתקן, משנה ובונה.</li>
+            <li><b>הסטודיו מציג איפה הוא עומד</b>, אחרי שהקבוצה סיכמה. הקבוצה מעירה על העיצוב.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>הקישור ל-Draft 0.</li></ul></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span>העיצוב הראשוני של הסטודיו: קישור או צילומים · ההחלטות: בשורש תיקיית היום.</div></div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span>ההערות על הפלואו ועל העיצוב: בשורש תיקיית היום · העבודה של הסטודיו: קישור או צילומים.</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
             <li><span class="flag">"נראה טוב, ממשיכים"?</span> "מה הייתם עושים אחרת, אם זה היה השירות שלכם?"</li>
-            <li>אילו מסכים יש ובאיזה סדר, הקבוצה קובעת. <span class="flag">נציג הסטודיו בונה לפי ההחלטות, ולא מחליט במקומה.</span></li>
-            <li>מפעיל ה-AI רושם כל החלטה ברגע שהיא מתקבלת. הבריף בסוף היום נכתב מהרישום הזה.</li></ul></div>
+            <li>אילו מסכים יש ובאיזה סדר, הקבוצה קובעת. <span class="flag">נציג הסטודיו בונה, ולא מחליט במקומה.</span></li>
+            <li>מפעיל ה-AI רושם תוך כדי, שתי רשימות: הערות על הפלואו, הערות על העיצוב. הבריף נכתב מהן.</li></ul></div>
         </div>
       </div>
     </article>
@@ -389,22 +404,23 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <div class="node">7</div>
       <div class="body">
         <div class="head"><h3>בריף מסכים</h3><span class="time">סוף היום</span></div>
-        <p class="goal">הבריף הסופי. לכל מסך: מה תפקידו, מה המשתמש עושה בו, אילו רכיבים וערכים הוא מממש, וסקיצה. הבריף עובר לסטודיו, לפיתוח וליום 6.</p>
-        <div class="who"><span class="lead-role">המנטור הטכנולוגי</span></div>
-        <div class="say"><b>אומרים:</b>סיימנו את הסבב, בוא נעשה בריף.</div>
+        <p class="goal">הבריף הסופי, להעברה לסטודיו. לכל מסך: מה תפקידו, מה המשתמש עושה בו, אילו רכיבים וערכים הוא מממש, סקיצה, ומה השתנה מ-Draft 0. עובר גם לפיתוח וליום 6.</p>
+        <div class="who"><span class="lead-role">המנטור הטכנולוגי</span><span>מפעיל ה-AI</span></div>
         <div class="cells">
+          <div class="pb"><div><span class="lbl">נותנים</span>"אלה ההערות של הקבוצה על הפלואו ועל העיצוב, וזה הקישור לעבודה של הסטודיו. בוא נעשה בריף."</div><div><span class="lbl">מחזיר</span>בריף סופי, וקישור לדף · הצעה לעדכון הרכיבים, אם השתנו</div><div><span class="lbl">שאלות?</span>לא</div><div><span class="lbl">ממשיכים כש</span>הבריף נמסר לסטודיו</div></div>
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
-            <li>מעבירים לסוכן את ההחלטות ואת התוצר של הסטודיו.</li>
-            <li>עוברים על הבריף מול מה שהוחלט, ומתקנים.</li>
-            <li>רכיב שהשתנה בסבב: הקבוצה מאשרת עדכון למפרט.</li></ul></div>
-          <div class="cell input"><span class="lbl">קלט</span><ul><li>Draft 0 · ההחלטות · התוצר של הסטודיו.</li></ul>
-            <div class="fallback">אין עדיין קישור לעיצוב? <q>תעדכן את הבריף לפי ההחלטות, ותשאיר את הקישור לתוצר של הסטודיו כחסר.</q></div></div>
+            <li>מעבירים לסוכן את שתי רשימות ההערות ואת הקישור לסטודיו.</li>
+            <li>עוברים על הבריף מול מה שהוחלט, ומתקנים. רכיב שהשתנה בסבב: הקבוצה מאשרת עדכון למפרט.</li>
+            <li>פותחים את הדף לצפייה, ומוסרים את הקישור לנציג הסטודיו.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>Draft 0 · ההערות על הפלואו ועל העיצוב · העבודה של הסטודיו.</li></ul>
+            <div class="fallback">אין עדיין קישור לעיצוב? <q>תעדכן את הבריף לפי ההערות, ותשאיר את הקישור לעבודה של הסטודיו כחסר.</q></div></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">בריף-מסכים.md + .html</span>, סופי, עם "מה השתנה בסבב" לכל מסך.</div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">בריף-מסכים.md + .html</span>, סופי, גם כדף לשיתוף, עם "מה השתנה" לכל מסך.</div>
             <div class="out mentor"><span class="lbl">בצ'אט</span>הצעה לעדכון הרכיבים במפרט, אם רכיב נוסף או ירד בסבב.</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
             <li>מה שהקבוצה לא החליטה נרשם בסעיף "מה לא בבריף", כשאלה פתוחה.</li>
-            <li>הדגמה שאפשר ללחוץ בה, הסוכן מכין רק אם מבקשים ממנו.</li></ul></div>
+            <li><span class="flag">רק הערות על הפלואו?</span> בלי ההערות על העיצוב, הסטודיו מקבל חצי בריף.</li>
+            <li>Prototype בבריף: הסוכן מכין רק אם מבקשים ממנו.</li></ul></div>
         </div>
       </div>
     </article>
@@ -418,7 +434,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
             <li><b>דיוק העיצוב:</b> איש UI/UX של המשרד או של הגוף המלווה.</li>
             <li><b>PRD v0.2:</b> הנציגים כותבים PRD-רכיב ליכולות ה-MVP, ואת הקונספט התפעולי מהתרחיש, עם לינק לבריף.</li>
             <li><b>PRD v1.0:</b> הקבוצה מאשרת בפגישה השבועית.</li></ul></div>
-          <div class="cell output"><div class="out team"><span class="lbl">השער ליום 6</span><span class="file">מפרט-MVP</span> · <span class="file">בריף-מסכים</span> · קישור לתוצר הסטודיו · <span class="file">PRD v1.0</span></div></div>
+          <div class="cell output"><div class="out team"><span class="lbl">השער ליום 6</span><span class="file">מפרט-MVP</span> · <span class="file">בריף-מסכים</span> · קישור לעבודה של הסטודיו · <span class="file">PRD v1.0</span></div></div>
         </div>
       </div>
     </article>
@@ -426,33 +442,36 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
   </div>
 </section>
 
+<section id="playbook">
+  <h2>העבודה עם ה-Playbook, שלב אחר שלב</h2>
+  <p class="meta">מה נותנים לו, מה הוא מחזיר, מתי הוא חוזר עם שאלות, ומתי ממשיכים. <b>הוא שואל רק פעם אחת ביום</b> — על התרחיש. בכל השאר הוא מחזיר תוצר, ומחכה לקלט הבא. הוא לא מבקש קלט ולא מזכיר מה חסר.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>שלב</th><th>נותנים ל-Playbook</th><th>הוא מחזיר</th><th>שאלות וחידודים?</th><th>התוצר בסוף השלב</th><th>ממשיכים כש</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b> · לפני היום</td><td>"בוא נכין רפרנס לשאלת ה-MVP"</td><td>רפרנס, למנטור בלבד</td><td>לא</td><td><span class="file">רפרנס-שאלת-MVP.md</span></td><td>עברתם על הרפרנס</td></tr>
+      <tr><td><b>2</b> · שאלה</td><td>השאלה של הצוות · הנוסח שנבחר</td><td>טבלת מבחן, מה לשמור, נוסח מתוקן</td><td>לא — הצוות בוחר</td><td><span class="file">מפרט-MVP</span>, סעיף 1</td><td>הנוסח נבחר ונרשם</td></tr>
+      <tr><td><b>3</b> · רכיבים</td><td>"הצוות רשם רכיבים" · ההחלטה מהלוח</td><td>חלקי השאלה, רכיבים, המלצה על חמישה, לוח · אחר כך: מה חשוב בתיאור התרחיש</td><td>לא — הלוח מעיר לפי הבחירה</td><td>לוח הרכיבים (דף) · <span class="file">מפרט-MVP</span>, סעיפים 2–3</td><td>ההחלטה נרשמה. הסוכן מחכה לתרחיש</td></tr>
+      <tr><td><b>4</b> · תרחיש</td><td>התרחיש · ההחלטות על השאלות</td><td>עד 5 שאלות וחידודים · אחר כך: תרחיש מעודכן</td><td><b>כן — סבב אחד</b></td><td><span class="file">מפרט-MVP</span>, סעיף 4</td><td>ההחלטות הוזנו, לפני ההפסקה</td></tr>
+      <tr><td><b>5</b> · Draft 0</td><td>כלום — ממשיך לבד</td><td>Draft 0 עם Prototype, וקישור</td><td><b>לא</b> — מה שלא ברור, ל"מה פתוח"</td><td><span class="file">Draft-0-Wireframes</span> (דף)</td><td>הדף פתוח לצפייה, וה-Prototype רץ</td></tr>
+      <tr><td><b>6</b> · סבב</td><td>— בלי סוכן</td><td>—</td><td>—</td><td>הערות על הפלואו ועל העיצוב · העבודה של הסטודיו</td><td>ההערות סוכמו ונרשמו</td></tr>
+      <tr><td><b>7</b> · בריף</td><td>שתי רשימות ההערות, וקישור לסטודיו</td><td>בריף סופי, וקישור · הצעה לעדכון הרכיבים</td><td>לא</td><td><span class="file">בריף-מסכים</span> (דף)</td><td>הבריף נמסר לסטודיו</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
 <section id="ref">
   <h2>איך משתמשים ברפרנס-מנחה ובמה שבצ'אט</h2>
-  <p class="meta">החומרים האלה למנטור ולמנטור הטכנולוגי בלבד, ולא מוצגים לקבוצה. משתמשים בהם כדי לשאול את הקבוצה שאלות, ולא מקריאים אותם.</p>
+  <p class="meta">החומרים האלה למנטור ולמנטור הטכנולוגי, ולא מוצגים לקבוצה כמו שהם. משתמשים בהם כדי לשאול את הקבוצה שאלות, ולא מקריאים אותם.</p>
   <div class="table-wrap"><table>
     <thead><tr><th>מה</th><th>מתי</th><th>מה עושים איתו</th></tr></thead>
     <tbody>
       <tr><td><span class="file">רפרנס-שאלת-MVP.md</span></td><td>לפני היום</td><td>פתוח לידכם בשלב 2. שאלות מכוונות: "על איזו הנחה המיזם נשען?" לא מציגים.</td></tr>
       <tr><td>טבלת המבחן</td><td>שלב 2</td><td>מציגים לצוות מה מההצעה שלו עובר לנוסח המתוקן, ואת הנוסח המתוקן כהצעה. הצוות בוחר.</td></tr>
       <tr><td>Common Sense</td><td>שלב 3</td><td>לפני הדיון ברכיבים. אם אדם עושה היום משהו שה-AI יכול לעשות, שואלים את הצוות למה.</td></tr>
-      <tr><td>ההערות על התרחיש</td><td>שלב 4</td><td>מביאים לצוות רק הערות שמשנות את התרחיש, בניסוח של שאלה. הצוות מחליט.</td></tr>
+      <tr><td>מה חשוב בתיאור התרחיש</td><td>סוף שלב 3</td><td>נותנים לצוות לפני שהוא כותב, כדי שהתרחיש יהיה מוכן לשאלות.</td></tr>
+      <tr><td>השאלות על התרחיש</td><td>שלב 4</td><td>עוברים אחת-אחת. הצוות מחליט על כל אחת, או אומר שלא החליט.</td></tr>
+      <tr><td>"מה פתוח" ב-Draft 0</td><td>שלב 5</td><td>מה שהסוכן החליט לבד. מביאים לקבוצה בתחילת הסבב.</td></tr>
       <tr><td>הצעה לעדכון המפרט</td><td>שלב 7</td><td>רכיב שהשתנה בסבב חוזר לקבוצה לאישור.</td></tr>
-    </tbody>
-  </table></div>
-</section>
-
-<section id="feed">
-  <h2>מתי מזינים חומר ל-Playbook</h2>
-  <div class="table-wrap"><table>
-    <thead><tr><th>מתי</th><th>מה</th><th>איך</th></tr></thead>
-    <tbody>
-      <tr><td>לפני היום</td><td>תוצרי יום 4 וה-Story</td><td>מעלים ל-repo, ואומרים "בוא נכין רפרנס לשאלת ה-MVP"</td></tr>
-      <tr><td>שלב 2</td><td>השאלה של הצוות</td><td>"זו השאלה שהצוות הציע"</td></tr>
-      <tr><td>שלב 3</td><td>שהצוות רשם רכיבים · הרשימות האישיות (רשות) · הבחירה</td><td>"מה הרשימה שלך?" · הדבקה · "העתקת סיכום" מהלוח</td></tr>
-      <tr><td>שלב 4</td><td>התרחיש של הצוות</td><td>מקלידים או מצלמים: "זה התרחיש של הצוות"</td></tr>
-      <tr><td>צהריים</td><td>בלי חומר חדש</td><td>"בוא נכין Draft 0 ל-wireframes"</td></tr>
-      <tr><td>חצי יום שני</td><td>ההחלטות של הזוגות ושל הקבוצה</td><td>מפעיל ה-AI רושם, לשורש תיקיית היום</td></tr>
-      <tr><td>סוף היום</td><td>ההחלטות והתוצר של הסטודיו</td><td>"סיימנו את הסבב, בוא נעשה בריף"</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -468,8 +487,8 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
     </div>
     <div class="card">
       <h4>לייצר ממה שיש, מסומן</h4>
-      <p>הסוכן עובד ממה שכן יש, ומסמן מה חסר: טענה בלי מקור כהנחה, תוכן שלא הוגדר כ-[X].</p>
-      <div class="say"><b>למשל:</b>אין עדיין קישור לעיצוב של הסטודיו. תכין את הבריף מההחלטות, ותסמן את הקישור כחסר.</div>
+      <p>הסוכן עובד ממה שכן יש, ומסמן מה חסר: טענה בלי מקור כהנחה, תוכן שלא הוגדר כ-[X], החלטה שהוא קיבל לבד — ב"מה פתוח".</p>
+      <div class="say"><b>למשל:</b>על שאלה 4 לא החלטנו. תרשום אותה כפתוחה ותמשיך ל-Draft 0.</div>
     </div>
   </div>
 </section>
@@ -482,11 +501,13 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
     <li><b>שאלה של תחושה.</b> "מה הם יעשו, אם זה עובד?"</li>
     <li><b>ההצעה של הצוות נזרקת.</b> "מה רציתם לבדוק בה? איפה זה בנוסח החדש?"</li>
     <li><b>רכיבים כלליים, כמו טופס, דשבורד או צ'אט.</b> "מה השירות יכול לעשות כאן ביוזמתו?"</li>
-    <li><b>הרשימה של הסוכן מאומצת כלשונה.</b> "למה דווקא אלה מוכיחים את השאלה?"</li>
+    <li><b>ההמלצה מאומצת בלי דיון.</b> "למה דווקא אלה מוכיחים את השאלה?"</li>
+    <li><b>ההחלטות על התרחיש לא הוזנו לפני ההפסקה.</b> אין Draft 0 כשחוזרים.</li>
     <li><b>דנים בצבעים ובעיצוב, ולא במה שיש במסך.</b> "מה המשתמש עושה במסך הזה?"</li>
     <li><b>הסטודיו מחליט במקום הקבוצה.</b> הקבוצה מחליטה, הסטודיו מבצע.</li>
+    <li><b>הדף לא פתוח לצפייה.</b> פותחים בתפריט השיתוף של הדף, לפני שמציגים.</li>
   </ul>
-  <div class="note"><b>התפקיד של המנטור:</b> לא לתת לצוות את השאלה ואת הרכיבים, אלא לשאול אותו עד שהוא מנסח, בוחר ומחליט בעצמו. וכשהצעה שלו לא עוברת את המבחן, לוודא שמה שהוא רצה לבדוק בה נכנס לנוסח החדש. <b>בסוף היום ביד:</b> שאלת MVP שעברה מבחן · עד 5 רכיבים · תרחיש אחרי אתגור · בריף מסכים · עיצוב ראשוני של הסטודיו.</div>
+  <div class="note"><b>התפקיד של המנטור:</b> לא לתת לצוות את השאלה ואת הרכיבים, אלא לשאול אותו עד שהוא מנסח, בוחר ומחליט בעצמו. וכשהצעה שלו לא עוברת את המבחן, לוודא שמה שהוא רצה לבדוק בה נכנס לנוסח החדש. <b>בסוף היום ביד:</b> שאלת MVP שעברה מבחן · עד 5 רכיבים · תרחיש אחרי שאלות · Draft 0 עם Prototype · העבודה של הסטודיו · בריף מסכים לסטודיו.</div>
 </section>
 
 <footer>
@@ -502,6 +523,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
   <a href="תהליכים/7-בריף-מסכים.md">תהליך 7</a>
   <a href="../../04-AI/סוכנים/MVP-שאלה-רכיבים-ומסכים.md">סוכן MVP</a>
   <a href="../../02-תוצרים-וטמפלטים/מפרט-MVP.md">מפרט MVP</a>
+  <a href="../../02-תוצרים-וטמפלטים/Draft-0-Wireframes.md">Draft 0 Wireframes</a>
   <a href="../../02-תוצרים-וטמפלטים/בריף-מסכים.md">בריף מסכים</a>
   <a href="../../מדריך-למנטור.html">המדריך הכללי למנטור</a>
 </footer>
