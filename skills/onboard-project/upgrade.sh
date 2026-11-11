@@ -121,8 +121,13 @@ done
 [ $DRY = 1 ] || make_day_dirs "$P"
 
 # 4. הפלייבוק
-old_src="—"; [ -f "$P/.playbook/SOURCE" ] && old_src=$(sed -n 's/^commit=//p' "$P/.playbook/SOURCE")
-new_src=$(G rev-parse --short HEAD)
+# SOURCE ישן, בלי branch= — נוצר לפני שנרשם ענף, והוא תמיד היה main
+old_src="—"
+if [ -f "$P/.playbook/SOURCE" ]; then
+  old_br=$(sed -n 's/^branch=//p' "$P/.playbook/SOURCE")
+  old_src="$(sed -n 's/^commit=//p' "$P/.playbook/SOURCE")@${old_br:-main}"
+fi
+new_src="$(G rev-parse --short HEAD)@$(G rev-parse --abbrev-ref HEAD)"
 [ $DRY = 1 ] || copy_playbook "$P"
 
 show() { [ $# -gt 1 ] || return 0; echo "$1"; shift; printf '  %s\n' "$@"; }
