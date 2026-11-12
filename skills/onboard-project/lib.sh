@@ -7,15 +7,16 @@
 PLAYBOOK_EXCLUDE=(חומרי-מקור תבנית-מיזם .claude .kiro .agent .gemini CLAUDE.md AGENTS.md GEMINI.md .gitignore .gitattributes skills/scan-sources)
 
 # copy_playbook <repo של המיזם> — מחליף את <repo>/.playbook בעותק של הפלייבוק (קבצים במעקב git בלבד)
-# ורושם מאיפה ובאיזה commit ב-.playbook/SOURCE. את .playbook לא עורכים ביד — הוא מוחלף כולו בכל עדכון.
+# ורושם מאיפה, מאיזה ענף ובאיזה commit ב-.playbook/SOURCE. את .playbook לא עורכים ביד — הוא מוחלף כולו בכל עדכון.
 copy_playbook() {
   local out="$1/.playbook" x
   rm -rf "$out"
   mkdir -p "$out"
   git -C "$PLAYBOOK" archive HEAD | tar -x -C "$out"
   for x in "${PLAYBOOK_EXCLUDE[@]}"; do rm -rf "${out:?}/$x"; done
-  printf 'url=%s\ncommit=%s\ndate=%s\n' \
+  printf 'url=%s\nbranch=%s\ncommit=%s\ndate=%s\n' \
     "$(git -C "$PLAYBOOK" remote get-url origin)" \
+    "$(git -C "$PLAYBOOK" rev-parse --abbrev-ref HEAD)" \
     "$(git -C "$PLAYBOOK" rev-parse --short HEAD)" \
     "$(git -C "$PLAYBOOK" log -1 --format=%cs)" > "$out/SOURCE"
 }
