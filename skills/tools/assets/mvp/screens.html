@@ -7,10 +7,11 @@
 <title>מסכים ו-Prototype</title>
 <!--
   תבנית המסכים — שני שימושים, אותה תבנית:
-    kind: "Draft 0" — נשמר במיזם כ-Draft-0-Wireframes.html, ליד Draft-0-Wireframes.md. טיוטה, לא בריף. prototype: true — חובה.
-    kind: "בריף"    — נשמר במיזם כ-בריף-מסכים.html, ליד בריף-מסכים.md. סופי, להעברה לסטודיו. prototype — רשות.
+    kind: "Draft 0" — נשמר במיזם כ-Draft-0-Wireframes.html, ליד Draft-0-Wireframes.md. בריף Draft 0 — מצע לדיון, לא החלטה. Prototype תמיד.
+    kind: "בריף"    — נשמר במיזם כ-בריף-מסכים.html, ליד בריף-מסכים.md. מוכן לעיצוב, מההחלטות של הסבב. Prototype — תמיד, אלא אם prototype: false.
   הסוכן ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד. wireframe בנאמנות נמוכה.
-  example: true רק בדוגמה · question: שאלת ה-MVP · studio: קישור לתוצר הסטודיו (בבריף, רשות)
+  example: true רק בדוגמה · question: שאלת ה-MVP · studio: קישור לעבודה של המעצב (בבריף, רשות)
+  context: ההקשר למעצב, שלא היה בבוקר ולא מחובר ל-repo — persona (שורה), values (שמות הערכים), components [{ name, value }] (הרכיבים שנבחרו)
   actors: id (אות — A, B), name, device ("נייד" / "מחשב"), who (שורה: מי זה, רשות)
   steps: n, text (שלב בתרחיש, מתוך מפרט ה-MVP), screens (קודי מסכים)
   path: סדר המסכים ב-Prototype (המסלול המרכזי). חסר — לפי סדר השלבים
@@ -58,6 +59,13 @@
   .question { margin-top: 0.9em; background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--navy); border-radius: 10px; padding: 0.6em 1em; }
   .lbl { font-size: 0.8em; font-weight: 700; color: var(--muted); letter-spacing: 0.02em; }
   .question .q { font-size: 1.1em; font-weight: 800; overflow-wrap: anywhere; }
+  .ctxd { margin-top: 0.5em; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.5em 1em; display: grid; gap: 0.35em; }
+  .cxrow { display: grid; grid-template-columns: 8em minmax(0, 1fr); gap: 0.8em; align-items: baseline; overflow-wrap: anywhere; }
+  @media (max-width: 640px) { .cxrow { grid-template-columns: minmax(0, 1fr); gap: 0.1em; } }
+  .cxchips { display: flex; gap: 0.35em; flex-wrap: wrap; }
+  .cxchip { font-weight: 700; font-size: 0.9em; border-radius: 999px; padding: 0.05em 0.65em; background: var(--navy-soft); color: var(--navy); }
+  .cxchip.val { background: var(--lead-bg); color: var(--lead); }
+  .cxchip small { font-weight: 600; opacity: 0.8; }
   nav.jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); margin-top: 1em; }
   nav.jump .wrap { display: flex; gap: 0.35em; flex-wrap: wrap; padding-block: 0.5em; align-items: center; }
   nav.jump a { text-decoration: none; font-size: 0.86em; font-weight: 700; border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 0.15em 0.7em; white-space: nowrap; }
@@ -170,6 +178,7 @@
     <div class="ribbon" id="ribbon"></div>
   </header>
   <div class="question" id="qbox"><div class="lbl">שאלת ה-MVP</div><div class="q" id="question"></div></div>
+  <div class="ctxd" id="ctxbox" hidden></div>
 </div>
 
 <nav class="jump" aria-label="קפיצה לחלקי הדף"><div class="wrap" id="jump"></div></nav>
@@ -224,6 +233,17 @@
   "question": "האם תושב שמקבל מהסוכן, ולא מפקיד בטלפון, הודעה על מסמך חסר עם הסבר מה להעלות, יעלה את המסמך לפני המועד?",
   "studio": "",
   "prototype": true,
+  "context": {
+    "persona": "התושב — מגיש בקשה מהטלפון, לא מכיר את התהליך",
+    "values": ["פשטות", "אמון", "ליווי"],
+    "components": [
+      { "name": "התראה יזומה על מסמך חסר", "value": "פשטות" },
+      { "name": "העלאה בלחיצה מההודעה", "value": "פשטות" },
+      { "name": "הסבר מה להעלות ולמה", "value": "פשטות" },
+      { "name": "תווית מקור", "value": "אמון" },
+      { "name": "תזכורת לפני המועד", "value": "ליווי" }
+    ]
+  },
   "actors": [
     { "id": "A", "name": "התושב", "device": "נייד", "who": "הפרסונה — מגיש בקשה, לא מכיר את התהליך" },
     { "id": "B", "name": "הפקיד", "device": "מחשב", "who": "מאשר את מה שהסוכן ניסח, וכותב כשהסוכן לא בטוח" }
@@ -306,7 +326,7 @@
   var sByCode = {}; screens.forEach(function (s) { sByCode[s.code] = s; });
   var steps = (d.steps || []).filter(function (s) { return s && s.text; });
   var isDraft = (d.kind || "Draft 0") === "Draft 0";
-  var hasProto = isDraft || !!d.prototype;
+  var hasProto = isDraft || d.prototype !== false;
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function color(actor) { return actor in aIndex ? LANE[aIndex[actor] % LANE.length] : "var(--navy)"; }
@@ -315,16 +335,27 @@
 
   // כותרת
   if (d.example) document.getElementById("example").hidden = false;
-  document.getElementById("kind").textContent = isDraft ? "Draft 0 Wireframes" : "בריף מסכים";
+  document.getElementById("kind").textContent = isDraft ? "בריף Draft 0" : "בריף מסכים";
   document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
-  document.title = (isDraft ? "Draft 0 Wireframes" : "בריף מסכים") + (d.venture ? " — " + d.venture : "");
+  document.title = (isDraft ? "בריף Draft 0" : "בריף מסכים") + (d.venture ? " — " + d.venture : "");
   var meta = document.getElementById("meta");
   meta.textContent = [d.date, screens.length + " מסכים", actors.map(function (a) { return a.name; }).join(" · ")].filter(Boolean).join(" · ");
-  if (d.studio) { meta.append(" · התוצר של הסטודיו: "); var sa = el("a", null, "קישור"); sa.href = d.studio; sa.target = "_blank"; sa.rel = "noopener"; meta.append(sa); }
+  if (d.studio) { meta.append(" · העבודה של המעצב: "); var sa = el("a", null, "קישור"); sa.href = d.studio; sa.target = "_blank"; sa.rel = "noopener"; meta.append(sa); }
   var rib = document.getElementById("ribbon");
-  rib.textContent = isDraft ? "טיוטה לדיון — לא בריף" : "בריף סופי — להעברה לסטודיו";
+  rib.textContent = isDraft ? "מצע לדיון, לא החלטה" : "מוכן לעיצוב";
   if (isDraft) rib.classList.add("draft");
   if (d.question) document.getElementById("question").textContent = d.question; else document.getElementById("qbox").hidden = true;
+
+  // ההקשר למעצב
+  var cx = d.context || {}, cxComps = (cx.components || []).filter(function (c) { return c && c.name; });
+  if (cx.persona || (cx.values || []).length || cxComps.length) {
+    var cb = document.getElementById("ctxbox");
+    function cxRow(label, node) { var r = el("div", "cxrow"); r.append(el("span", "lbl", label), node); cb.append(r); }
+    if (cx.persona) cxRow("הפרסונה", el("span", null, cx.persona));
+    if ((cx.values || []).length) { var vv = el("span", "cxchips"); cx.values.forEach(function (v) { vv.append(el("span", "cxchip val", v)); }); cxRow("ערכי המוצר", vv); }
+    if (cxComps.length) { var cc = el("span", "cxchips"); cxComps.forEach(function (c) { var x = el("span", "cxchip", c.name); if (c.value) x.append(el("small", null, " · " + c.value)); cc.append(x); }); cxRow("הרכיבים שנבחרו", cc); }
+    cb.hidden = false;
+  }
 
   // קפיצה
   var jump = document.getElementById("jump");
@@ -497,7 +528,7 @@
   var open = (d.open || []).filter(Boolean), ou = document.getElementById("open");
   open.forEach(function (t) { ou.append(el("li", null, t)); });
   document.getElementById("open-sec").hidden = !open.length;
-  document.getElementById("foot").textContent = isDraft ? "Draft 0 — טיוטה. מה שהקבוצה תחליט אחרי הצהריים נכנס לבריף המסכים הסופי." : "בריף מסכים — סופי. נגזר מה-MD ליד הקובץ הזה.";
+  document.getElementById("foot").textContent = isDraft ? "בריף Draft 0 — מצע לדיון, לא החלטה. מה שהקבוצה תחליט בסבב נכנס לבריף המסכים." : "בריף מסכים — מוכן לעיצוב, מההחלטות של הסבב. נגזר מה-MD ליד הקובץ הזה.";
 })();
 </script>
 </body>
