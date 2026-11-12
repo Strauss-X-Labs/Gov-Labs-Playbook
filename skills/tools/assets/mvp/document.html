@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>מסמך</title>
+<!--
+  תבנית מסמך — תצוגה של קובץ MD כמו שהוא, לכל MD ביום 5 שאין לו לוח או דף משלו:
+    רפרנס-שאלת-MVP.md → רפרנס-שאלת-MVP.html · מפרט-MVP.md → מפרט-MVP.html · יומן-החלטות-הסבב.md → יומן-החלטות-הסבב.html
+  הסוכן ממלא שני בלוקים, ומחליף את שניהם במלואם — התוכן כאן הוא דוגמה. העיצוב קבוע. Light theme בלבד.
+    id="data" (JSON): example (true רק בדוגמה) · audience (רשות — למשל "למנטורים בלבד. לא משתפים עם הצוות") · links (רשות — [{ text, href }]: דפים קשורים, קישורים מלאים בלבד)
+    id="md": תוכן ה-MD, מילה במילה, כמו שהוא בקובץ. בלי "</script>" בתוך התוכן.
+  מה מוצג: הכותרת (#) בראש · שורות ה-> שלפני הסעיף הראשון — שורות פרטים · קפיצה לסעיפים (##) · טבלאות, רשימות, הדגשות, ו-<details>.
+  ✓ / ~ / ✗ בתא טבלה — צבע. קישור יחסי (לקובץ ב-repo) — מוצג כטקסט, כי בדף לשיתוף הוא לא נפתח.
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: one centered reading column — title and meta, optional audience banner, sticky section links, the document in cards per section. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --ok: #1e7a45; --ok-bg: #e3f4ea;
+    --mid: #8a5a00; --mid-bg: #fff3d6; --bad: #b42318; --bad-bg: #fdecea; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: 17px; line-height: 1.6; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  .wrap { max-width: 1080px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .example { background: var(--mid-bg); border: 1px dashed var(--mid); color: var(--mid); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-top: 1em; }
+  header.top { padding-top: 1.2em; }
+  h1 { margin: 0; font-size: clamp(26px, 3.2vw, 36px); font-weight: 800; line-height: 1.25; text-wrap: balance; overflow-wrap: anywhere; }
+  .meta { margin-top: 0.5em; display: grid; gap: 0.15em; color: var(--muted); font-size: 0.92em; overflow-wrap: anywhere; }
+  .audience { margin-top: 0.8em; background: var(--mid-bg); border: 1px solid #f0d48a; color: #5c3d00; border-radius: 10px; padding: 0.45em 0.9em; font-weight: 700; }
+  .links { margin-top: 0.6em; display: flex; gap: 0.4em; flex-wrap: wrap; }
+  .links a { text-decoration: none; font-weight: 700; font-size: 0.9em; border: 1px solid var(--line); background: var(--paper); color: var(--navy); border-radius: 999px; padding: 0.1em 0.75em; }
+  nav.jump { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); margin-top: 1em; }
+  nav.jump .wrap { display: flex; gap: 0.35em; flex-wrap: wrap; padding-block: 0.5em; }
+  nav.jump a { text-decoration: none; font-size: 0.86em; font-weight: 700; color: var(--ink); border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 0.15em 0.7em; }
+  nav.jump a:hover { border-color: var(--navy); }
+  main { padding-block: 1em 3em; display: grid; gap: 1em; }
+  section.card { background: var(--paper); border: 1px solid var(--line); border-radius: 12px; padding: 0.9em 1.2em 1em; scroll-margin-top: 4em; min-width: 0; }
+  section.card.intro { background: transparent; border: none; padding: 0; }
+  h2 { margin: 0 0 0.5em; font-size: 1.35em; color: var(--navy); text-wrap: balance; }
+  h3 { margin: 1em 0 0.35em; font-size: 1.12em; }
+  h4 { margin: 0.9em 0 0.3em; font-size: 1em; color: var(--muted); }
+  p { margin: 0.45em 0; overflow-wrap: anywhere; }
+  ul, ol { margin: 0.4em 0; padding-inline-start: 1.4em; }
+  li { margin: 0.2em 0; overflow-wrap: anywhere; }
+  blockquote { margin: 0.6em 0; padding: 0.35em 0.9em; border-inline-start: 4px solid var(--navy-soft); color: var(--muted); background: #fafbfc; border-radius: 6px; }
+  blockquote p { margin: 0.15em 0; }
+  code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 0.88em; background: var(--navy-soft); border-radius: 4px; padding: 0 0.3em; direction: ltr; unicode-bidi: isolate; }
+  pre { white-space: pre-wrap; overflow-wrap: anywhere; background: #fafbfc; border: 1px solid var(--line); border-radius: 8px; padding: 0.7em 0.9em; font-size: 0.9em; }
+  pre code { background: none; padding: 0; }
+  hr { border: none; border-top: 1px solid var(--line); margin: 1em 0; }
+  a { color: var(--navy); }
+  .rel { font-weight: 600; color: var(--navy); }
+  .tbl { overflow-x: auto; margin: 0.6em 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.95em; }
+  th, td { text-align: start; vertical-align: top; padding: 0.45em 0.6em; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  th { color: var(--muted); font-size: 0.85em; font-weight: 700; background: #fafbfc; border-bottom: 2px solid var(--line); }
+  tr:nth-child(even) td { background: #fbfbfd; }
+  .mark { display: inline-block; min-width: 1.8em; text-align: center; font-weight: 800; border-radius: 6px; padding: 0 0.4em; }
+  .mark.ok { background: var(--ok-bg); color: var(--ok); } .mark.mid { background: var(--mid-bg); color: var(--mid); } .mark.bad { background: var(--bad-bg); color: var(--bad); }
+  details { margin: 0.6em 0; border: 1px solid var(--line); border-radius: 8px; padding: 0.4em 0.8em; background: #fafbfc; }
+  details summary { cursor: pointer; font-weight: 700; color: var(--navy); }
+  footer.page { margin-block: 0 2em; color: var(--muted); font-size: 0.85em; }
+  @media (max-width: 640px) { body { font-size: 16px; } section.card { padding: 0.8em 0.9em; } }
+  @media print { nav.jump, .links { display: none; } body { background: #fff; } section.card { break-inside: avoid; border-color: #ccc; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל התוכן.</div>
+  <header class="top">
+    <h1 id="title"></h1>
+    <div class="meta" id="meta"></div>
+    <div class="audience" id="audience" hidden></div>
+    <div class="links" id="links" hidden></div>
+  </header>
+</div>
+<nav class="jump" id="jump" aria-label="קפיצה לסעיפים" hidden><div class="wrap" id="jumpIn"></div></nav>
+<div class="wrap"><main id="doc"></main><footer class="page" id="foot">נגזר מקובץ ה-MD שלידו. מקור האמת — ה-MD.</footer></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "audience": "למנטורים בלבד. לא משתפים עם הצוות, ולא מציגים על המסך.",
+  "links": []
+}
+</script>
+<script type="text/markdown" id="md">
+# רפרנס לשאלת ה-MVP — מיזם לדוגמה
+> נוצר ע"י: סוכן MVP — רפרנס לשאלת ה-MVP · דוגמה · מקורות: לוח-Lean-Canvas.md, Decision-and-PIN.md, דף-ערכי-מוצר.md
+> **למנטורים בלבד.** לא מוצג לצוות לפני שהציע שאלה משלו.
+
+## השאלה המומלצת
+**האם תושב שמקבל מהסוכן, ולא מפקיד בטלפון, הודעה על מסמך חסר עם הסבר מה להעלות, יעלה את המסמך לפני המועד?** · נשענת על: ההנחה שהעיכוב נובע מחוסר הבנה מה להעלות, ולא מחוסר רצון (Decision & PIN, Critical Assumption 2)
+
+| תנאי | למה היא עוברת | מקור |
+|---|---|---|
+| הנחת יסוד קריטית | אם תושבים לא יעלו גם כשהם מבינים מה חסר — אין שירות | Decision & PIN, הנחה 2 |
+| ספציפית | תושב, הודעה על מסמך חסר, לפני המועד | לוח Lean Canvas, קובייה 1 |
+| מדידה | אחוז המעלים לפני המועד — נתון הבסיס: `[X]` | ממצאי בדיקת הקונספט |
+| התנהגות, לא תחושה | "יעלה" — פעולה, לא "יסכים" | — |
+
+## מה השאלה לא בודקת
+- האם הפקידים יסכימו שהסוכן ינסח — נבדק ב-Next Tests.
+- האם המסמך שהועלה תקין — יכולת, לא שאלת ה-MVP.
+
+## חלופה
+1. **האם תושב יעלה מסמך חסר כשהוא מקבל תזכורת יזומה?** — חלשה יותר: לא בודקת את ההסבר, שהוא לב ההנחה.
+</script>
+<script>
+(function () {
+  var opt = {}; try { opt = JSON.parse(document.getElementById("data").textContent) || {}; } catch (e) {}
+  var src = document.getElementById("md").textContent.replace(/\r/g, "").replace(/^\n+/, "");
+  var lines = src.split("\n");
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function inline(s) {
+    var codes = [];
+    s = s.replace(/`([^`]+)`/g, function (m, c) { codes.push(c); return "\u0000" + (codes.length - 1) + "\u0000"; });
+    s = esc(s);
+    s = s.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, t, h) {
+      var href = h.replace(/&amp;/g, "&");
+      if (/^https?:\/\//.test(href)) return '<a href="' + esc(href) + '" target="_blank" rel="noopener">' + t + "</a>";
+      return '<span class="rel" title="' + esc(href) + '">' + t + "</span>";
+    });
+    s = s.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>").replace(/(^|[^*])\*([^*\s][^*]*)\*/g, "$1<em>$2</em>");
+    s = s.replace(/\u0000(\d+)\u0000/g, function (m, i) { return "<code>" + esc(codes[+i]) + "</code>"; });
+    return s;
+  }
+  function cell(s) {
+    var t = s.trim();
+    var m = { "✓": "ok", "~": "mid", "✗": "bad" }[t];
+    return m ? '<span class="mark ' + m + '">' + t + "</span>" : inline(t);
+  }
+  function splitRow(l) {
+    var t = l.trim().replace(/^\|/, "").replace(/\|$/, "");
+    return t.split(/(?<!\\)\|/).map(function (c) { return c.replace(/\\\|/g, "|"); });
+  }
+
+  function isBlock(s) { return /^(#{1,6}\s|>|\s*\||```|\s*([-*]|\d+\.)\s|\s*<\/?details|\s*(---|\*\*\*)\s*$)/.test(s); }
+  var title = "", meta = [], out = [], sections = [], sec = null, i = 0, started = false;
+  function push(h) { if (sec) sec.html.push(h); else out.push(h); }
+
+  while (i < lines.length) {
+    var l = lines[i];
+    if (!started && /^#\s+/.test(l)) { title = l.replace(/^#\s+/, ""); i++; continue; }
+    if (!sec && /^>\s?/.test(l) && !out.length) { meta.push(inline(l.replace(/^>\s?/, ""))); i++; continue; }
+    started = true;
+    if (/^#{1,2}\s+/.test(l)) { sec = { title: l.replace(/^#+\s+/, ""), html: [] }; sections.push(sec); i++; continue; }
+    if (/^#{3,6}\s+/.test(l)) { var lv = Math.min(l.match(/^#+/)[0].length, 4); push("<h" + lv + ">" + inline(l.replace(/^#+\s+/, "")) + "</h" + lv + ">"); i++; continue; }
+    if (/^```/.test(l)) { var code = []; i++; while (i < lines.length && !/^```/.test(lines[i])) code.push(lines[i++]); i++; push("<pre><code>" + esc(code.join("\n")) + "</code></pre>"); continue; }
+    if (/^\s*<details>/.test(l)) { var sm = l.match(/<summary>(.*?)<\/summary>/); push("<details>" + (sm ? "<summary>" + inline(sm[1]) + "</summary>" : "")); i++; continue; }
+    if (/^\s*<\/details>/.test(l)) { push("</details>"); i++; continue; }
+    if (/^\s*(---|\*\*\*)\s*$/.test(l)) { push("<hr>"); i++; continue; }
+    if (/^\s*\|/.test(l)) {
+      var rows = []; while (i < lines.length && /^\s*\|/.test(lines[i])) rows.push(lines[i++]);
+      var h = "<div class=\"tbl\"><table>", body = rows;
+      if (rows.length > 1 && /^\s*\|?\s*:?-{2,}/.test(rows[1])) { h += "<thead><tr>" + splitRow(rows[0]).map(function (c) { return "<th>" + inline(c.trim()) + "</th>"; }).join("") + "</tr></thead>"; body = rows.slice(2); }
+      h += "<tbody>" + body.map(function (r) { return "<tr>" + splitRow(r).map(function (c) { return "<td>" + cell(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
+      push(h); continue;
+    }
+    if (/^>\s?/.test(l)) { var q = []; while (i < lines.length && /^>\s?/.test(lines[i])) q.push("<p>" + inline(lines[i++].replace(/^>\s?/, "")) + "</p>"); push("<blockquote>" + q.join("") + "</blockquote>"); continue; }
+    if (/^\s*([-*]|\d+\.)\s+/.test(l)) {
+      var html = "", stack = [];
+      while (i < lines.length && /^\s*([-*]|\d+\.)\s+/.test(lines[i])) {
+        var m = lines[i].match(/^(\s*)([-*]|\d+\.)\s+(.*)$/), depth = m[1].length >= 2 ? 1 : 0, tag = /\d/.test(m[2]) ? "ol" : "ul";
+        while (stack.length > depth + 1) html += "</li></" + stack.pop() + ">";
+        if (stack.length < depth + 1) { html += "<" + tag + "><li>"; stack.push(tag); }
+        else html += "</li><li>";
+        html += inline(m[3]); i++;
+      }
+      while (stack.length) html += "</li></" + stack.pop() + ">";
+      push(html); continue;
+    }
+    if (!l.trim()) { i++; continue; }
+    // פסקה — תמיד צורכת לפחות שורה אחת, כדי ששורה שלא זוהתה לא תעצור את הדף
+    var para = [inline(lines[i++])];
+    while (i < lines.length && lines[i].trim() && !isBlock(lines[i])) para.push(inline(lines[i++]));
+    push("<p>" + para.join("<br>") + "</p>");
+  }
+
+  if (opt.example) document.getElementById("example").hidden = false;
+  document.title = title.replace(/[*`]/g, "") || "מסמך";
+  document.getElementById("title").innerHTML = inline(title || "מסמך");
+  document.getElementById("meta").innerHTML = meta.map(function (m) { return "<div>" + m + "</div>"; }).join("");
+  if (opt.audience) { var a = document.getElementById("audience"); a.textContent = opt.audience; a.hidden = false; }
+  var links = (opt.links || []).filter(function (x) { return x && x.href && /^https?:\/\//.test(x.href); });
+  if (links.length) { var lb = document.getElementById("links"); links.forEach(function (x) { var e = document.createElement("a"); e.href = x.href; e.target = "_blank"; e.rel = "noopener"; e.textContent = x.text || x.href; lb.append(e); }); lb.hidden = false; }
+
+  var doc = document.getElementById("doc"), jump = document.getElementById("jumpIn");
+  if (out.length) { var intro = document.createElement("section"); intro.className = "card intro"; intro.innerHTML = out.join(""); doc.append(intro); }
+  sections.forEach(function (s, k) {
+    var el = document.createElement("section"); el.className = "card"; el.id = "s" + (k + 1);
+    el.innerHTML = "<h2>" + inline(s.title) + "</h2>" + s.html.join("");
+    doc.append(el);
+    var j = document.createElement("a"); j.href = "#s" + (k + 1); j.innerHTML = inline(s.title.replace(/^\d+\.\s*/, "")); jump.append(j);
+  });
+  document.getElementById("jump").hidden = sections.length < 3;
+})();
+</script>
+</body>
+</html>
