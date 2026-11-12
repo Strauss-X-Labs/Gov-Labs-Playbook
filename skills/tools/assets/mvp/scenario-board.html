@@ -11,18 +11,18 @@
   example: true רק בדוגמה (מציג פס "דוגמה") · question: שאלת ה-MVP, מילה במילה · status: "הצעה" (ברירת מחדל) / "אחרי עריכה"
   persona: name, who (שורה) — הפרסונה שהתרחיש שלה
   actors: id (אות — A, S, B), name, ai (true לסוכן / ל-AI; אחרת אדם), persona (true לשחקן שהוא הפרסונה)
-  components: id, name, value — הרכיבים שנבחרו (עד 5), מסעיף 2 במפרט ה-MVP. רק הם.
+  components: id, name, value — הרכיבים שנבחרו (עד 5), מסעיף 2 במפרט ה-MVP, בשמות שלהם בלוח הרכיבים. רק הם.
   steps: id, actor (מזהה שחקן), text (מה קורה — במשפט), components (מזהי רכיבים), behavior (true לשלב שבו קורית ההתנהגות שהשאלה בודקת),
          open (רשות — מה שהסוכן החליט לבד בשלב הזה, ולמה; מוצג כפתק "פתוח")
   branches: kind ("לא רלוונטי" / "שאלה" / "אין תגובה" / "פנייה לאדם"), text
   open: מה שהסוכן החליט לבד על התרחיש כולו, ולמה — רשימה
-  ההצעה היא מצע לדיון: הצוות עורך, מוסיף, מוריד ומזיז. ההודעות מתעדכנות בכל שינוי. עריכות נשמרות בדפדפן; "העתקת סיכום" מחזירה Markdown לסוכן, עם מה שהצוות שינה בהצעה.
+  ההצעה היא מצע לדיון: הצוות עורך, מוריד ומזיז (↑ / ↓), ומוסיף שלב בכל מקום — "+ הוסף שלב" לפני השלב הראשון, בין כל שני שלבים, ואחרי האחרון. ההודעות מתעדכנות בכל שינוי. עריכות נשמרות בדפדפן; "העתקת סיכום" מחזירה Markdown לסוכן, עם מה שהצוות שינה בהצעה.
   לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* Layout: header + context (question, persona, actors, chosen components with live coverage), sticky bar, live messages, step cubes in reading order, branches, open items. Light theme only. */
+  /* Layout: header + question and persona, sticky bar, then two columns — the flow (steps one under another, joined by a line, with "+ הוסף שלב" between every two) and a sticky side panel (who is in the scenario, chosen components with live coverage, live messages). Branches and open items under the flow. Light theme only. */
   :root {
     color-scheme: light;
     --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
@@ -43,9 +43,12 @@
   h1 .tag { font-weight: 600; color: var(--muted); }
   .sub { color: var(--muted); margin-top: 0.15em; }
   .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
-  .ctx { margin: 0.9em 0 0; background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--navy); border-radius: 10px; padding: 0.7em 1em; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 0.6em 1.6em; }
-  .ctx > .wide { grid-column: 1 / -1; }
+  .ctx { margin: 0.9em 0 0; background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--navy); border-radius: 10px; padding: 0.7em 1em; display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 0.6em 1.6em; }
   @media (max-width: 900px) { .ctx { grid-template-columns: minmax(0, 1fr); } }
+  .layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(17em, 25em); gap: 1.6em; align-items: start; }
+  .side { position: sticky; top: 4.4em; display: grid; gap: 0.8em; max-height: calc(100vh - 5.4em); overflow: auto; padding-bottom: 0.5em; }
+  .sbox { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.7em 0.9em; display: grid; gap: 0.45em; }
+  @media (max-width: 1000px) { .layout { grid-template-columns: minmax(0, 1fr); } .side { position: static; max-height: none; overflow: visible; order: -1; } }
   .lbl { font-size: 0.82em; font-weight: 700; color: var(--muted); }
   .q { font-size: 1.2em; font-weight: 800; overflow-wrap: anywhere; }
   .persona { font-weight: 700; overflow-wrap: anywhere; } .persona span { font-weight: 400; color: var(--muted); }
@@ -60,7 +63,7 @@
   .badge.ai { background: var(--ai-bg); color: var(--ai); } .badge.hu { background: var(--hu-bg); color: var(--hu); }
   button.badge:hover { filter: brightness(0.95); }
   .persona-tag { font-size: 0.75em; color: var(--muted); font-weight: 700; }
-  .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
+  .legend { display: grid; gap: 0.3em; color: var(--muted); font-size: 0.9em; }
   .legend .star { color: var(--star); font-weight: 800; }
   .legend .opentag { background: var(--open-bg); border: 1px solid var(--open-line); color: var(--open); font-weight: 800; border-radius: 6px; padding: 0 0.5em; }
   .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
@@ -69,20 +72,26 @@
   .tools { display: flex; gap: 0.4em; flex-wrap: wrap; }
   .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
   .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
-  .msgs { display: grid; gap: 0.4em; margin-bottom: 1em; }
+  .msgs { display: grid; gap: 0.4em; }
   .msg { border-radius: 8px; padding: 0.45em 0.8em; font-weight: 600; border-inline-start: 5px solid; overflow-wrap: anywhere; }
   .msg.warn { background: var(--warn-bg); border-color: var(--warn); color: #7a1a12; }
   .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
   .msg.ok { background: var(--sel-bg); border-color: var(--sel); color: #14532d; }
   .msg b { font-weight: 800; }
-  .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(19em, 1fr)); gap: 1em; align-items: start; }
-  .step { --c: var(--hu); background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 12px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.5em; min-width: 0; }
+  .flow { display: flex; flex-direction: column; }
+  .step { --c: var(--hu); background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--c); border-radius: 12px; padding: 0.75em 1em; display: flex; flex-direction: column; gap: 0.5em; min-width: 0; }
   .step.ai { --c: var(--ai); }
   .step.beh { box-shadow: 0 0 0 2px var(--star) inset; border-color: var(--star); }
-  .step .head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5em; align-items: center; }
+  .step .head { display: flex; gap: 0.6em; align-items: center; flex-wrap: wrap; }
   .num { width: 1.9em; height: 1.9em; border-radius: 50%; background: color-mix(in srgb, var(--c) 14%, #fff); color: var(--c); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95em; }
-  .step select { min-width: 0; width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 0.15em 0.3em; background: var(--paper); font-weight: 700; color: var(--ink); }
-  .text { margin: 0; font-size: 1.05em; font-weight: 600; overflow-wrap: anywhere; min-height: 1.5em; }
+  .step select { min-width: 8em; max-width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 0.15em 0.3em; background: var(--paper); font-weight: 700; color: var(--ink); }
+  .text { margin: 0; font-size: 1.12em; font-weight: 600; overflow-wrap: anywhere; min-height: 1.5em; }
+  .ins { position: relative; display: flex; justify-content: center; padding: 0.45em 0; }
+  .ins::before { content: ""; position: absolute; top: 0; bottom: 0; left: calc(50% - 1px); width: 2px; background: var(--line); }
+  .ins button { position: relative; background: var(--bg); border: 1.5px dashed color-mix(in srgb, var(--navy) 35%, var(--line)); color: var(--muted); border-radius: 999px; padding: 0.12em 1em; font-weight: 700; font-size: 0.85em; }
+  .ins button:hover, .ins button:focus-visible { border-style: solid; border-color: var(--navy); color: var(--navy); background: var(--paper); }
+  .ins.first::before { top: 50%; } .ins.last::before { bottom: 50%; }
+  .ins.only::before { display: none; }
   .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
   .ed:hover { background: var(--navy-soft); }
   .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
@@ -98,7 +107,6 @@
   .mini { background: none; border: 1px solid transparent; color: var(--muted); font-size: 0.85em; padding: 0.05em 0.35em; border-radius: 6px; }
   .mini:hover { border-color: var(--line); color: var(--ink); }
   .mini[disabled] { opacity: 0.35; cursor: default; }
-  .add { background: none; border: 1.5px dashed color-mix(in srgb, var(--navy) 45%, var(--line)); border-radius: 12px; padding: 0.8em; color: var(--navy); font-weight: 800; min-height: 4em; }
   .addactor { background: none; border: 1px dashed var(--line); border-radius: 999px; padding: 0.05em 0.6em; color: var(--muted); font-weight: 700; font-size: 0.85em; }
   h2.sec { font-size: 1.2em; margin: 1.6em 0 0.5em; }
   .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.8em 1em; }
@@ -115,8 +123,7 @@
   details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
   .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
   .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
-  @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
-  @media print { .bar .tools, .foot, .add, .addactor, .toast, details.out, .note button { display: none !important; } body { background: #fff; } .step { break-inside: avoid; } }
+  @media print { .bar .tools, .foot, .ins button, .addactor, .toast, details.out, .note button { display: none !important; } body { background: #fff; } .step { break-inside: avoid; } .side { position: static; max-height: none; } }
 </style>
 </head>
 <body>
@@ -130,15 +137,8 @@
 </header>
 
 <div class="ctx" id="ctx">
-  <div class="wide" id="qbox"><div class="lbl">שאלת ה-MVP</div><div class="q" id="question"></div></div>
+  <div id="qbox"><div class="lbl">שאלת ה-MVP</div><div class="q" id="question"></div></div>
   <div id="pbox"><div class="lbl">הפרסונה</div><div class="persona" id="persona"></div></div>
-  <div><div class="lbl">מי בתרחיש — לחיצה על AI / אדם מחליפה</div><div class="row" id="actors"></div></div>
-  <div class="wide" id="cbox"><div class="lbl">הרכיבים שנבחרו — וכמה מהם כבר מופיעים בתרחיש</div><div class="row" id="comps"></div></div>
-</div>
-<div class="legend">
-  <span><span class="badge ai">AI</span> / <span class="badge hu">אדם</span> מי עושה את השלב</span>
-  <span><span class="star">★</span> ההתנהגות שהשאלה בודקת</span>
-  <span><span class="opentag">פתוח</span> מה שה-AI החליט לבד — מכריעים, או משאירים פתוח</span>
 </div>
 
 <div class="bar" id="bar">
@@ -149,20 +149,32 @@
     <button type="button" class="btn" id="reset">חזרה להצעה</button>
   </div>
 </div>
-<div class="msgs" id="msgs" aria-live="polite"></div>
+<div class="layout">
+  <main>
+    <div class="flow" id="steps"></div>
 
-<main class="steps" id="steps"></main>
+    <h2 class="sec">הסתעפויות</h2>
+    <div class="branches" id="branches"></div>
+    <div class="row" style="margin-top:0.5em"><button type="button" class="addactor" id="addBranch">+ הוספת הסתעפות</button></div>
 
-<h2 class="sec">הסתעפויות</h2>
-<div class="branches" id="branches"></div>
-<div class="row" style="margin-top:0.5em"><button type="button" class="addactor" id="addBranch">+ הסתעפות</button></div>
+    <section id="opensec" hidden>
+      <h2 class="sec">פתוח — מה ה-AI החליט לבד על התרחיש</h2>
+      <div class="panel"><ul class="open" id="open"></ul></div>
+    </section>
 
-<section id="opensec" hidden>
-  <h2 class="sec">פתוח — מה ה-AI החליט לבד על התרחיש</h2>
-  <div class="panel"><ul class="open" id="open"></ul></div>
-</section>
-
-<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+    <details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+  </main>
+  <aside class="side" aria-label="מצב התרחיש">
+    <div class="msgs" id="msgs" aria-live="polite"></div>
+    <div class="sbox" id="cbox"><div class="lbl">הרכיבים שנבחרו — ✓ מופיע בתרחיש · ⚠ עוד לא</div><div class="row" id="comps"></div></div>
+    <div class="sbox"><div class="lbl">מי בתרחיש — לחיצה על AI / אדם מחליפה</div><div class="row" id="actors"></div></div>
+    <div class="sbox legend">
+      <span><span class="badge ai">AI</span> / <span class="badge hu">אדם</span> — מי עושה את השלב</span>
+      <span><span class="star">★</span> — השלב שבו קורית ההתנהגות שהשאלה בודקת</span>
+      <span><span class="opentag">פתוח</span> — מה שה-AI החליט לבד. מכריעים, או משאירים פתוח</span>
+    </div>
+  </aside>
+</div>
 <div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
 
 <script type="application/json" id="data">
@@ -179,11 +191,11 @@
     { "id": "B", "name": "הפקיד", "ai": false }
   ],
   "components": [
-    { "id": "c1", "name": "התראה יזומה על מסמך חסר", "value": "פשטות" },
-    { "id": "c2", "name": "העלאה בלחיצה מההודעה", "value": "פשטות" },
-    { "id": "c3", "name": "הסבר מה להעלות ולמה", "value": "פשטות" },
+    { "id": "c1", "name": "התראות", "value": "פשטות" },
+    { "id": "c2", "name": "העלאת מסמכים", "value": "פשטות" },
+    { "id": "c3", "name": "הסבר על המסמך", "value": "פשטות" },
     { "id": "c4", "name": "תווית מקור", "value": "אמון" },
-    { "id": "c5", "name": "תזכורת לפני המועד", "value": "ליווי" }
+    { "id": "c5", "name": "תזכורות", "value": "ליווי" }
   ],
   "steps": [
     { "id": "s1", "actor": "B", "text": "מסמן בבקשה של מירב שחסר אישור תושבות", "components": [], "open": "ב-MVP הזיהוי ידני (מפרט ה-MVP, סעיף 3) — לכן הפקיד מסמן. אם הזיהוי אוטומטי, השלב עובר לסוכן." },
@@ -197,7 +209,7 @@
   ],
   "branches": [
     { "kind": "לא רלוונטי", "text": "מירב עונה שהמסמך כבר הוגש — הסוכן מעביר לפקיד לבדיקה" },
-    { "kind": "שאלה", "text": "מירב לא מבינה מה זה אישור תושבות — [לא נבחר] שאלה בשפה חופשית; ב-MVP: קישור להסבר" },
+    { "kind": "שאלה", "text": "מירב לא מבינה מה זה אישור תושבות — [לא נבחר] צ'אט עם הסוכן; ב-MVP: קישור להסבר" },
     { "kind": "אין תגובה", "text": "תזכורת יום לפני המועד (שלב 8)" },
     { "kind": "פנייה לאדם", "text": "\"לדבר עם פקיד\" — הפקיד מקבל את הבקשה ואת ההודעה" }
   ],
@@ -329,26 +341,32 @@
     }
     var foot = el("div", "foot");
     var mv = el("span");
-    var up = el("button", "mini", "→ לפני"); up.type = "button"; up.disabled = i === 0; up.setAttribute("aria-label", "הזזת שלב " + (i + 1) + " אחורה");
+    var up = el("button", "mini", "↑ למעלה"); up.type = "button"; up.disabled = i === 0; up.setAttribute("aria-label", "הזזת שלב " + (i + 1) + " למעלה");
     up.addEventListener("click", function () { move(i, -1); });
-    var dn = el("button", "mini", "אחרי ←"); dn.type = "button"; dn.disabled = i === state.steps.length - 1; dn.setAttribute("aria-label", "הזזת שלב " + (i + 1) + " קדימה");
+    var dn = el("button", "mini", "↓ למטה"); dn.type = "button"; dn.disabled = i === state.steps.length - 1; dn.setAttribute("aria-label", "הזזת שלב " + (i + 1) + " למטה");
     dn.addEventListener("click", function () { move(i, 1); });
     mv.append(up, dn);
-    var ins = el("button", "mini", "+ שלב אחרי"); ins.type = "button";
-    ins.addEventListener("click", function () { addStep(i + 1); });
-    var rm = el("button", "mini", "הסרה"); rm.type = "button";
+    var rm = el("button", "mini", "מחיקת השלב"); rm.type = "button";
     rm.addEventListener("click", function () { removeStep(i); });
-    foot.append(mv, ins, rm);
+    foot.append(mv, rm);
     k.append(foot);
     return k;
   }
 
+  // "+ הוסף שלב" — לפני השלב הראשון, בין כל שני שלבים, ואחרי האחרון. כמו בבוני תהליכים: מוסיפים בדיוק במקום שרוצים.
+  function slot(at) {
+    var n = state.steps.length;
+    var w = el("div", "ins" + (n === 0 ? " only" : at === 0 ? " first" : at === n ? " last" : ""));
+    var b = el("button", null, "+ הוסף שלב"); b.type = "button";
+    b.setAttribute("aria-label", n === 0 ? "הוסף שלב" : at === 0 ? "הוסף שלב לפני שלב 1" : at === n ? "הוסף שלב בסוף" : "הוסף שלב בין שלב " + at + " לשלב " + (at + 1));
+    b.addEventListener("click", function () { addStep(at); });
+    w.append(b);
+    return w;
+  }
   function renderSteps() {
     var box = document.getElementById("steps"); box.textContent = "";
-    state.steps.forEach(function (s, i) { box.append(stepCard(s, i)); });
-    var add = el("button", "add", "+ שלב בסוף"); add.type = "button";
-    add.addEventListener("click", function () { addStep(state.steps.length); });
-    box.append(add);
+    box.append(slot(0));
+    state.steps.forEach(function (s, i) { box.append(stepCard(s, i)); box.append(slot(i + 1)); });
   }
 
   function renderBranches() {
