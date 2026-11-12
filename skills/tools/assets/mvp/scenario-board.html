@@ -12,7 +12,7 @@
   persona: name, who (שורה) — הפרסונה שהתרחיש שלה
   actors: id (אות — A, S, B), name, ai (true לסוכן / ל-AI; אחרת אדם), persona (true לשחקן שהוא הפרסונה)
   components: id, name, value — הרכיבים שנבחרו (עד 5), מסעיף 2 במפרט ה-MVP, בשמות שלהם בלוח הרכיבים. רק הם.
-  steps: id, actor (מזהה שחקן), text (מה קורה — במשפט), components (מזהי רכיבים), behavior (true לשלב שבו קורית ההתנהגות שהשאלה בודקת),
+  steps: id, actor (מזהה שחקן), text (מה קורה — במשפט), components (מזהי רכיבים),
          open (רשות — מה שהסוכן החליט לבד בשלב הזה, ולמה; מוצג כפתק "פתוח")
   branches: kind ("לא רלוונטי" / "שאלה" / "אין תגובה" / "פנייה לאדם"), text
   open: מה שהסוכן החליט לבד על התרחיש כולו, ולמה — רשימה
@@ -29,7 +29,7 @@
     --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
     --navy: #1b2a4a; --navy-soft: #e8ecf3; --sel: #1e7a45; --sel-bg: #e3f4ea;
     --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
-    --open: #8a5a00; --open-bg: #fff6dc; --open-line: #f0d48a; --star: #c27c00;
+    --open: #8a5a00; --open-bg: #fff6dc; --open-line: #f0d48a;
     --ai: #1f5f8b; --ai-bg: #e2eef8; --hu: #7a3f96; --hu-bg: #f1e8f7; --focus: #1a5fd0;
   }
   * { box-sizing: border-box; }
@@ -62,7 +62,6 @@
   button.badge:hover { filter: brightness(0.95); }
   .persona-tag { font-size: 0.75em; color: var(--muted); font-weight: 700; }
   .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
-  .legend .star { color: var(--star); font-weight: 800; }
   .legend .opentag { background: var(--open-bg); border: 1px solid var(--open-line); color: var(--open); font-weight: 800; border-radius: 6px; padding: 0 0.5em; }
   .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
   .count { font-weight: 800; font-size: 1.15em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
@@ -80,7 +79,6 @@
   .unit { display: flex; align-items: stretch; flex: 1 1 24em; min-width: 22em; max-width: 30em; }
   .step { --c: var(--hu); flex: 1 1 auto; background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 12px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.5em; min-width: 0; }
   .step.ai { --c: var(--ai); }
-  .step.beh { box-shadow: 0 0 0 2px var(--star) inset; border-color: var(--star); }
   .step .head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5em; align-items: center; }
   .num { width: 1.9em; height: 1.9em; border-radius: 50%; background: color-mix(in srgb, var(--c) 14%, #fff); color: var(--c); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95em; }
   .step select { min-width: 0; width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 0.15em 0.3em; background: var(--paper); font-weight: 700; color: var(--ink); }
@@ -91,7 +89,6 @@
   .toggles { display: flex; gap: 0.3em; flex-wrap: wrap; }
   .tg { font-size: 0.8em; font-weight: 700; padding: 0.08em 0.55em; border-radius: 999px; background: var(--paper); border: 1px dashed var(--line); color: var(--muted); overflow-wrap: anywhere; text-align: start; }
   .tg[aria-pressed="true"] { background: var(--navy-soft); border: 1px solid var(--navy); color: var(--navy); }
-  .tg.star[aria-pressed="true"] { background: #fff1d1; border-color: var(--star); color: #6b4300; }
   .note { background: var(--open-bg); border: 1px solid var(--open-line); border-radius: 8px; padding: 0.35em 0.6em; font-size: 0.9em; display: grid; gap: 0.25em; }
   .note .lbl { color: var(--open); }
   .note .ntext { overflow-wrap: anywhere; }
@@ -147,7 +144,6 @@
 </div>
 <div class="legend">
   <span><span class="badge ai">AI</span> / <span class="badge hu">אדם</span> מי עושה את השלב</span>
-  <span><span class="star">★</span> ההתנהגות שהשאלה בודקת</span>
   <span><span class="opentag">פתוח</span> מה שה-AI החליט לבד — מכריעים, או משאירים פתוח</span>
 </div>
 
@@ -201,7 +197,7 @@
     { "id": "s3", "actor": "B", "text": "מאשר את הנוסח בלחיצה", "components": ["c4"], "open": "הנחתי שפקיד מאשר כל הודעה — בגלל תווית המקור. אם לא, השלב יורד." },
     { "id": "s4", "actor": "S", "text": "שולח למירב התראה לטלפון, עם \"נוסח ע\"י הסוכן · אושר ע\"י [הפקיד]\"", "components": ["c1", "c4"] },
     { "id": "s5", "actor": "A", "text": "פותחת את ההודעה, וקוראת מה להעלות ולמה", "components": ["c3"] },
-    { "id": "s6", "actor": "A", "text": "מצלמת את המסמך ומעלה, ישר מההודעה", "components": ["c2"], "behavior": true },
+    { "id": "s6", "actor": "A", "text": "מצלמת את המסמך ומעלה, ישר מההודעה", "components": ["c2"] },
     { "id": "s7", "actor": "S", "text": "בודק שהקובץ קריא, ומאשר למירב שהתקבל", "components": [], "open": "הוספתי כדי לסגור את המסלול — זו יכולת (קליטת קובץ), לא רכיב שנבחר." },
     { "id": "s8", "actor": "S", "text": "למי שלא העלתה — תזכורת יום לפני המועד", "components": ["c5"] }
   ],
@@ -232,7 +228,7 @@
   function fresh() {
     return {
       actors: clone((d.actors || []).filter(function (a) { return a && a.id; })),
-      steps: clone((d.steps || []).filter(function (s) { return s; })).map(function (s, i) { s.id = s.id || "s" + (i + 1); s.components = s.components || []; s.open = s.open || ""; s.behavior = !!s.behavior; return s; }),
+      steps: clone((d.steps || []).filter(function (s) { return s; })).map(function (s, i) { s.id = s.id || "s" + (i + 1); s.components = s.components || []; s.open = s.open || ""; delete s.behavior; return s; }),
       branches: clone((d.branches || []).filter(function (b) { return b; })).map(function (b, i) { b.id = b.id || "b" + (i + 1); b.text = b.text || ""; return b; }),
       open: (d.open || []).filter(Boolean).map(function (t) { return { text: t, done: false }; }),
       seq: 0
@@ -303,7 +299,7 @@
 
   function stepCard(s, i) {
     var a = actor(s.actor), ai = a && a.ai;
-    var k = el("article", "step" + (ai ? " ai" : "") + (s.behavior ? " beh" : "")); k.dataset.id = s.id;
+    var k = el("article", "step" + (ai ? " ai" : "")); k.dataset.id = s.id;
     var head = el("div", "head");
     head.append(el("span", "num", String(i + 1)));
     var sel = el("select"); sel.setAttribute("aria-label", "מי עושה את שלב " + (i + 1));
@@ -325,9 +321,6 @@
       });
       k.append(tg);
     }
-    var star = el("button", "tg star", "★ ההתנהגות שהשאלה בודקת"); star.type = "button"; star.setAttribute("aria-pressed", s.behavior ? "true" : "false");
-    star.addEventListener("click", function () { s.behavior = !s.behavior; save(); render(); });
-    k.append(star);
     if (s.open) {
       var note = el("div", "note");
       note.append(el("span", "lbl", "פתוח"));
@@ -405,8 +398,6 @@
   function messages() {
     var out = [], u = used();
     comps.forEach(function (c) { if (!u[c.id]) out.push(["warn", "<b>«" + esc(c.name) + "»</b> לא מופיע באף שלב. איפה הפרסונה פוגשת אותו? אם לא — למה בחרתם בו?"]); });
-    var beh = state.steps.filter(function (s) { return s.behavior; });
-    if (state.steps.length && !beh.length) out.push(["warn", "אף שלב לא מסומן <b>★</b>. איפה קורית ההתנהגות שהשאלה בודקת?"]);
     state.steps.forEach(function (s, i) {
       if (!s.text) out.push(["warn", "שלב <b>" + (i + 1) + "</b> ריק — מה קורה בו?"]);
       else if (!actor(s.actor)) out.push(["warn", "בשלב <b>" + (i + 1) + "</b> לא ברור מי עושה — AI או אדם?"]);
@@ -420,7 +411,7 @@
     if (!changes().length && !after) out.push(["info", "התרחיש זהה להצעה. זו החלטה שלכם? מה קורה אצל הפרסונה אחרת?"]);
     var allIn = comps.every(function (c) { return u[c.id]; });
     var allActors = state.steps.every(function (s) { return s.text && actor(s.actor); });
-    if (state.steps.length && allIn && beh.length && allActors) out.push(["ok", "כל הרכיבים שנבחרו מופיעים, בכל שלב ברור מי עושה, וההתנהגות שהשאלה בודקת מסומנת."]);
+    if (state.steps.length && allIn && allActors) out.push(["ok", "כל הרכיבים שנבחרו מופיעים, ובכל שלב ברור מי עושה."]);
     return out;
   }
 
@@ -438,7 +429,6 @@
       if (s.actor !== b.actor) L.push("- שלב " + n + " — מי עושה: " + aname(b.actor) + " ← " + aname(s.actor));
       var bc = (b.components || []).slice().sort().join(","), sc = s.components.slice().sort().join(",");
       if (bc !== sc) L.push("- שלב " + n + " — רכיבים: " + (s.components.map(cname).filter(Boolean).join(", ") || "—"));
-      if (!!s.behavior !== !!b.behavior) L.push("- שלב " + n + (s.behavior ? " סומן ★ — ההתנהגות שהשאלה בודקת" : " — הורד הסימון ★"));
       if (b.open && !s.open) L.push("- הוכרע (שלב " + n + '): "' + b.open + '"');
       else if (b.open && s.open !== b.open) L.push("- שלב " + n + ' — "פתוח" נערך: "' + s.open + '"');
     });
@@ -471,10 +461,8 @@
     L.push("", "### התרחיש — " + state.steps.length + " שלבים", "", "| # | מי | AI / אדם | מה קורה | רכיב |", "|---|---|---|---|---|");
     state.steps.forEach(function (s, i) {
       var a = actor(s.actor);
-      L.push("| " + (i + 1) + " | " + cell(aname(s.actor)) + " | " + (a ? (a.ai ? "AI" : "אדם") : "?") + " | " + (s.behavior ? "★ " : "") + cell(s.text || "—") + " | " + cell(s.components.map(cname).filter(Boolean).join(", ") || "—") + " |");
+      L.push("| " + (i + 1) + " | " + cell(aname(s.actor)) + " | " + (a ? (a.ai ? "AI" : "אדם") : "?") + " | " + cell(s.text || "—") + " | " + cell(s.components.map(cname).filter(Boolean).join(", ") || "—") + " |");
     });
-    var beh = []; state.steps.forEach(function (s, i) { if (s.behavior) beh.push(i + 1); });
-    L.push("", "**ההתנהגות שהשאלה בודקת:** " + (beh.length ? "שלב " + beh.join(", ") : "⚠ לא סומנה"));
     var br = state.branches.filter(function (b) { return b.text; });
     if (br.length) { L.push("", "### הסתעפויות"); br.forEach(function (b) { L.push("- **" + (b.kind || "—") + ":** " + b.text); }); }
     var op = [];
@@ -512,7 +500,7 @@
   }
   function addStep(at) {
     var prev = state.steps[at - 1];
-    var s = { id: "t" + seq(), actor: prev ? prev.actor : (state.actors[0] ? state.actors[0].id : ""), text: "", components: [], behavior: false, open: "" };
+    var s = { id: "t" + seq(), actor: prev ? prev.actor : (state.actors[0] ? state.actors[0].id : ""), text: "", components: [], open: "" };
     state.steps.splice(at, 0, s); save(); render();
     var n = document.querySelector('[data-id="' + s.id + '"] .text'); if (n) n.focus();
   }
