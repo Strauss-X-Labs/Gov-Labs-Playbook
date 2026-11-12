@@ -1,0 +1,278 @@
+<title>סדר יום Design Sprint</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<!--
+  סדר יום 5 ומי עושה מה — באותו פורמט כמו "סדר-יום-Lean-Canvas" של יום 4.
+  המקור: .playbook/01-ימים/05-Design-Sprint/ (commit 527ff87), עם הלו"ז והדיוקים של צוות ההנחיה, 2026-11-11.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Hebrew:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* פריסה: עמוד א — כותרת, שלושה עקרונות וציר סדר היום · עמוד ב — טבלת "מי עושה מה" בארבעה טורים, שנערמת לכרטיסים בטלפון */
+:root {
+  --bg: #FFFFFF;
+  --ink: #1B2433;
+  --ink-soft: #5B6576;
+  --rule: #D5DCE6;
+  --blue: #1458D4;
+  --blue-deep: #0B3F9E;
+  --blue-soft: #EAF1FC;
+  --violet: #5B3FC4;
+  --violet-soft: #EFEBFB;
+  --amber: #A2580E;
+  --amber-soft: #FBF0E1;
+  --green: #0E6B4A;
+  --muted-dot: #9AA3B0;
+  --card: #FFFFFF;
+  --sans: "IBM Plex Sans Hebrew", "Segoe UI", "Arial Hebrew", Arial, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #10151D; --ink: #E6EBF2; --ink-soft: #A3ADBC; --rule: #2B3545;
+    --blue: #7FA8F5; --blue-deep: #A9C4F8; --blue-soft: #18233A;
+    --violet: #B4A3F2; --violet-soft: #231E3D; --amber: #EDB36E; --amber-soft: #33271A;
+    --green: #6FD0A8; --muted-dot: #5E6878; --card: #151C26;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #10151D; --ink: #E6EBF2; --ink-soft: #A3ADBC; --rule: #2B3545;
+  --blue: #7FA8F5; --blue-deep: #A9C4F8; --blue-soft: #18233A;
+  --violet: #B4A3F2; --violet-soft: #231E3D; --amber: #EDB36E; --amber-soft: #33271A;
+  --green: #6FD0A8; --muted-dot: #5E6878; --card: #151C26;
+}
+
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15.5px; line-height: 1.6; margin: 0; }
+.wrap {
+  direction: rtl; max-width: 980px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 64px;
+  display: grid; gap: 56px;
+}
+p { margin: 0; }
+
+/* עמוד א */
+.top { display: grid; gap: 14px; }
+.eyebrow { color: var(--blue); font-weight: 600; font-size: 14px; margin: 0; }
+h1 { color: var(--blue-deep); font-size: clamp(30px, 5vw, 40px); line-height: 1.2; margin: 0; font-weight: 700; text-wrap: balance; }
+.lead { color: var(--ink-soft); font-size: 17px; max-width: 70ch; }
+.motto { justify-self: end; background: var(--blue-soft); color: var(--blue-deep); font-weight: 700; padding: 10px 18px; border-radius: 10px; font-size: 16px; }
+@media (max-width: 640px) { .motto { justify-self: stretch; } }
+
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 760px) { .principles { grid-template-columns: minmax(0, 1fr); } }
+.principle { border: 1px solid var(--rule); border-radius: 12px; padding: 16px 18px; background: var(--card); display: grid; gap: 6px; align-content: start; }
+.principle h3 { margin: 0; font-size: 16.5px; font-weight: 700; }
+.principle p { color: var(--ink-soft); font-size: 14.5px; }
+
+h2 { font-size: 24px; margin: 0 0 14px; font-weight: 700; }
+.sched { list-style: none; margin: 0; padding: 0; display: grid; border-inline-start: 0; position: relative; }
+.sched::before { content: ""; position: absolute; inset-inline-start: 7px; top: 14px; bottom: 14px; width: 3px; background: var(--blue-soft); border-radius: 2px; }
+.sched li { display: grid; grid-template-columns: 16px 118px 58px minmax(0, 1fr); gap: 14px; align-items: baseline; padding: 9px 0; position: relative; }
+.sched .dot { width: 14px; height: 14px; border-radius: 50%; background: var(--blue); align-self: center; position: relative; z-index: 1; box-shadow: 0 0 0 3px var(--bg); }
+.sched .dot.open { background: var(--bg); border: 3px solid var(--blue); width: 10px; height: 10px; }
+.sched .dot.break { background: var(--muted-dot); }
+.sched .t { font-family: var(--mono); font-weight: 600; color: var(--blue-deep); font-size: 15.5px; font-variant-numeric: tabular-nums; direction: ltr; text-align: right; }
+.sched .t.word { font-family: var(--sans); color: var(--blue); }
+.sched .d { color: var(--ink-soft); font-size: 14px; font-variant-numeric: tabular-nums; }
+.sched .what { min-width: 0; }
+.sched .what b { font-weight: 700; margin-inline-end: 8px; }
+.sched .what span { color: var(--ink-soft); font-size: 14.5px; }
+@media (max-width: 640px) {
+  .sched li { grid-template-columns: 16px minmax(0, 1fr); gap: 2px 12px; }
+  .sched .t { grid-column: 2; text-align: right; }
+  .sched .d { display: none; }
+  .sched .what { grid-column: 2; }
+}
+
+.end { border-top: 1px solid var(--rule); padding-top: 14px; display: flex; flex-wrap: wrap; gap: 8px 10px; align-items: center; font-size: 15px; }
+.end b { color: var(--blue-deep); }
+.chip { background: var(--blue-soft); color: var(--blue-deep); border-radius: 999px; padding: 3px 12px; font-weight: 600; font-size: 14px; }
+
+/* עמוד ב */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13.5px; color: var(--ink-soft); margin-bottom: 14px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+.sw.b { background: var(--blue); } .sw.v { background: var(--violet); } .sw.a { background: var(--amber); } .sw.g { background: var(--green); }
+
+.who { display: grid; gap: 10px; }
+.row, .head { display: grid; grid-template-columns: 150px minmax(0, 1fr) minmax(0, 1.55fr) minmax(0, 1.15fr); }
+.head { font-size: 13.5px; color: var(--ink-soft); font-weight: 600; border-bottom: 2px solid var(--rule); }
+.head > div { padding: 6px 12px; }
+.row { border: 1px solid var(--rule); border-radius: 12px; overflow: hidden; background: var(--card); }
+.row > div { padding: 12px 14px; border-inline-start: 1px solid var(--rule); font-size: 14.5px; display: grid; gap: 8px; align-content: start; min-width: 0; }
+.row > .stage { border-inline-start: 0; background: var(--blue-soft); }
+.stage .when { font-family: var(--mono); color: var(--blue-deep); font-weight: 600; font-size: 14.5px; direction: ltr; text-align: right; font-variant-numeric: tabular-nums; }
+.stage .when.word { font-family: var(--sans); color: var(--blue); }
+.stage h3 { margin: 0; font-size: 16.5px; line-height: 1.35; }
+.stage small { color: var(--ink-soft); font-size: 13px; }
+.dash { color: var(--ink-soft); }
+.lead-pill { display: inline-block; background: var(--blue-soft); color: var(--blue); font-size: 12px; font-weight: 700; border-radius: 999px; padding: 1px 9px; margin-inline-end: 6px; }
+.box { border-radius: 8px; padding: 8px 10px; display: grid; gap: 2px; }
+.box .lbl { font-size: 12px; font-weight: 700; }
+.box.v { background: var(--violet-soft); } .box.v .lbl { color: var(--violet); }
+.box.a { background: var(--amber-soft); } .box.a .lbl { color: var(--amber); }
+.ai h4 { margin: 0; color: var(--green); font-size: 14.5px; font-weight: 700; }
+.ai p { color: var(--ink-soft); }
+.ai .say { font-style: italic; color: var(--ink); }
+
+@media (max-width: 760px) {
+  .head { display: none; }
+  .row { grid-template-columns: minmax(0, 1fr); }
+  .row > div { border-inline-start: 0; border-top: 1px solid var(--rule); }
+  .row > .stage { border-top: 0; }
+  .row > div[data-role]::before { content: attr(data-role); font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+}
+
+footer { color: var(--ink-soft); font-size: 13px; border-top: 1px solid var(--rule); padding-top: 12px; }
+</style>
+
+<div class="wrap">
+
+  <section class="top">
+    <p class="eyebrow">Gov-Labs 2.0 · יום 5 מתוך 8 · מאסטרטגיה למוצר</p>
+    <h1>יום ה-Design Sprint: מי עושה מה</h1>
+    <p class="lead">סדר היום, ומה עושים בו מנחה המליאה, המנטור העסקי, המנטור הטכנולוגי, המעצב וה-AI בכל שלב. היום עוברים מהקנבס למוצר: שאלה, רכיבים, תרחיש ומסכים, עד בריף ופרוטוטייפ באותו יום.</p>
+    <p class="motto">AI-first בעבודת ידע. Human-first במשמעות ובהכרעה.</p>
+  </section>
+
+  <section class="principles" aria-label="עקרונות היום">
+    <div class="principle">
+      <h3>הצוות מחליט, ה-AI מציע</h3>
+      <p>הצוות קובע את שאלת ה-MVP. בשאר היום המידע מוצג על ידי ה-AI, שמייצר את התוצרים עבור הצוות. הצוות מכריע.</p>
+    </div>
+    <div class="principle">
+      <h3>כל החלטה חוזרת לריפו</h3>
+      <p>המנטור הטכנולוגי מזין לריפו את השאלה הסופית, את הרכיבים, את התרחיש הערוך ואת החלטות הסבב.</p>
+    </div>
+    <div class="principle">
+      <h3>המעצב צמוד לקבוצה כל היום</h3>
+      <p>מקבל את Draft 0 בהפסקה, עובד במקביל לזוגות ולסבב, ומסיים את היום עם פיגמה באחוז השלמה כלשהו.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="sched-h">
+    <h2 id="sched-h">סדר היום</h2>
+    <ol class="sched">
+      <li><i class="dot open"></i><span class="t word">לפני היום</span><span class="d">—</span><p class="what"><b>רפרנס לשאלת ה-MVP</b><span>למנטור בלבד · תיאום מעצב לקבוצה</span></p></li>
+      <li><i class="dot"></i><span class="t">09:00–09:15</span><span class="d">15 דק׳</span><p class="what"><b>התכנסות ופתיחה</b></p></li>
+      <li><i class="dot"></i><span class="t">09:15–09:45</span><span class="d">30 דק׳</span><p class="what"><b>הקדמה והסבר</b><span>מאסטרטגיה למוצר · מוצרים וחוויה בעידן ה-AI</span></p></li>
+      <li><i class="dot"></i><span class="t">09:45–12:30</span><span class="d">2:45 ש׳</span><p class="what"><b>שאלת MVP, רכיבים ותרחיש</b><span>מבחן השאלה · עד 5 רכיבים · תרחיש ב-HTML עריך</span></p></li>
+      <li><i class="dot break"></i><span class="t">12:30–13:15</span><span class="d">45 דק׳</span><p class="what"><b>ארוחת צהריים</b><span>מאחורי הקלעים: בריף Draft 0</span></p></li>
+      <li><i class="dot"></i><span class="t">13:15–13:30</span><span class="d">15 דק׳</span><p class="what"><b>הסבר על גיבוש הפרוטוטייפ</b><span>Draft 0 הוא מצע לדיון, לא החלטה</span></p></li>
+      <li><i class="dot"></i><span class="t">13:30–14:15</span><span class="d">45 דק׳</span><p class="what"><b>זוגות ושלשות על המסכים</b><span>מתקפים ומדייקים · המעצב במקביל</span></p></li>
+      <li><i class="dot"></i><span class="t">14:15–16:30</span><span class="d">2:15 ש׳</span><p class="what"><b>סבב דיונים והחלטות</b><span>בריף מדויק למעצב · פיגמה במקביל</span></p></li>
+      <li><i class="dot"></i><span class="t">16:30–17:00</span><span class="d">30 דק׳</span><p class="what"><b>הצגת התוצר</b><span>פיגמה של המעצב, או פרוטוטייפ מהבריף</span></p></li>
+    </ol>
+  </section>
+
+  <p class="end"><b>היום מסתיים עם:</b><span class="chip">בריף עדכני לעיצוב</span><span class="chip">פרוטוטייפ של המעצב, באחוז השלמה כלשהו</span><span class="chip">מפרט MVP</span></p>
+
+  <section aria-labelledby="who-h">
+    <h2 id="who-h">מי עושה מה בכל שלב</h2>
+    <div class="legend">
+      <span><i class="sw b"></i>מנחה המליאה והמנטור העסקי</span>
+      <span><i class="sw v"></i>המנטור הטכנולוגי</span>
+      <span><i class="sw a"></i>המעצב</span>
+      <span><i class="sw g"></i>AI — סוכן MVP, מאחורי הקלעים</span>
+    </div>
+
+    <div class="who">
+      <div class="head" aria-hidden="true"><div>שלב</div><div>מנחה המליאה</div><div>המנטור העסקי + המנטור הטכנולוגי</div><div>AI</div></div>
+
+      <div class="row">
+        <div class="stage"><span class="when word">לפני היום</span><h3>רפרנס לשאלת ה-MVP</h3></div>
+        <div data-role="מנחה המליאה"><p>מוודא שלכל קבוצה מתואם מעצב, ושהקנבס וערכי המוצר מקובעים.</p></div>
+        <div data-role="המנטורים"><p>מכין עם המנטור הטכנולוגי את הרפרנס, בלי הצוות. מגיע ליום עם <b>שאלות מכוונות, לא עם תשובה</b>.</p></div>
+        <div class="ai" data-role="AI"><h4>רפרנס לשאלת ה-MVP</h4><p>שאלה מומלצת אחת, מנומקת מול ארבעת התנאים. MD למנטור בלבד, לא מוצג לצוות.</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">09:00–09:45</span><h3>פתיחה, הקדמה והסבר</h3></div>
+        <div data-role="מנחה המליאה"><p><span class="lead-pill">מוביל</span>מאסטרטגיה למוצר: מוצרים וחוויה בעידן ה-AI.</p></div>
+        <div data-role="המנטורים"><p class="dash">—</p></div>
+        <div class="ai" data-role="AI"><p class="dash">—</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">09:45–12:30</span><h3>שאלת ה-MVP</h3><small>א׳ · מבחן השאלה</small></div>
+        <div data-role="מנחה המליאה"><p class="dash">—</p></div>
+        <div data-role="המנטורים">
+          <p><span class="lead-pill">מוביל</span><b>הצוות מגדיר את השאלה.</b> המנטור מריץ את המבחן ומביא את התוצאה, והצוות מחליט אם לדייק.</p>
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>כשהשאלה סופית, מזין אותה חזרה לריפו.</p></div>
+        </div>
+        <div class="ai" data-role="AI"><h4>מבחן שאלת ה-MVP</h4><p>טבלת ארבעת התנאים (✓ / ~ / ✗), מה לשמור מההצעה, וגרסה מחודדת אחת. אחרי ההחלטה: מפרט MVP, סעיף 1.</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">09:45–12:30</span><h3>רכיבים לשאלת ה-MVP</h3><small>ב׳ · עד 5 רכיבים</small></div>
+        <div data-role="מנחה המליאה"><p class="dash">—</p></div>
+        <div data-role="המנטורים">
+          <p><span class="lead-pill">מוביל</span><b>15 דק׳:</b> כל חבר צוות כותב רכיבים שחשוב לו שיהיו בממשק. אחר כך מציג את לוח ה-HTML, עובר עם הצוות ומדייקים עד 5.</p>
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>במקביל ל-15 הדקות, מריץ את מיפוי הרכיבים. כשמסיימים לדייק, מעתיק את הסיכום מהלוח לריפו.</p></div>
+        </div>
+        <div class="ai" data-role="AI"><h4>מיפוי רכיבים</h4><p>8–12 רכיבים מדורגים, ויכולות מאחורי הקלעים בנפרד. לוח בחירה ב-HTML למסך הקבוצה. מפרט MVP, סעיפים 2–3.</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">09:45–12:30</span><h3>תרחיש השימוש</h3><small>ג׳ · לפרסונה, מקצה לקצה</small></div>
+        <div data-role="מנחה המליאה"><p class="dash">—</p></div>
+        <div data-role="המנטורים">
+          <p><span class="lead-pill">מוביל</span>הקבוצה עורכת יחד את התרחיש המוצע: של הפרסונה, כל רכיב שנבחר מופיע, ובכל שלב ברור מי עושה, AI או אדם.</p>
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>מריץ את הסוכן ומעלה את ה-HTML למסך. אחרי העריכה, מעתיק את התרחיש חזרה לריפו.</p></div>
+        </div>
+        <div class="ai" data-role="AI"><h4>תרחיש שימוש מוצע</h4><p>תרחיש לפרסונה ב-HTML עריך. אחרי העריכה: מפרט MVP, סעיף 4.</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">12:30–13:15</span><h3>ארוחת צהריים</h3><small>מאחורי הקלעים</small></div>
+        <div data-role="מנחה המליאה"><p class="dash">—</p></div>
+        <div data-role="המנטורים">
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>מריץ את בריף Draft 0, עובר ומתקן, ומוסר למעצב.</p></div>
+          <div class="box a"><span class="lbl">המעצב</span><p>מקבל את Draft 0 כ-MD וכ-HTML ומתחיל לבנות.</p></div>
+        </div>
+        <div class="ai" data-role="AI"><h4>בריף Draft 0</h4><p>מפת זרימה, וכרטיס ו-wireframe בנאמנות נמוכה לכל מסך. MD ו-HTML.</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">13:15–13:30</span><h3>הסבר על גיבוש הפרוטוטייפ</h3></div>
+        <div data-role="מנחה המליאה"><p><span class="lead-pill">מוביל</span>מסביר את שלב גיבוש הפרוטוטייפ ומה עושים בו.</p></div>
+        <div data-role="המנטורים"><p>הקבוצה רואה את Draft 0. <b>מצע לדיון, לא החלטה.</b></p></div>
+        <div class="ai" data-role="AI"><p class="dash">—</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">13:30–14:15</span><h3>זוגות ושלשות</h3><small>45 דק׳ על המסכים</small></div>
+        <div data-role="מנחה המליאה"><p class="dash">—</p></div>
+        <div data-role="המנטורים">
+          <p><span class="lead-pill">מוביל</span>מתחלקים לזוגות או לשלשות, ומתחילים לתקף ולדייק את המסכים: מבנה וסדר פעולות, לא סגנון.</p>
+          <div class="box a"><span class="lbl">המעצב</span><p>עובד במקביל על המסכים.</p></div>
+        </div>
+        <div class="ai" data-role="AI"><p class="dash">—</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">14:15–16:30</span><h3>סבב דיונים והחלטות</h3><small>גיבוש הפרוטוטייפ ודיוק הבריף</small></div>
+        <div data-role="מנחה המליאה"><p class="dash">—</p></div>
+        <div data-role="המנטורים">
+          <p><span class="lead-pill">מוביל</span>מתכנסים: הזוגות מציגים, הקבוצה דנה ומחליטה.</p>
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>מתעד את ההחלטות תוך כדי, כך שבסוף הסבב יש בריף מדויק, מוכן למעצב.</p></div>
+          <div class="box a"><span class="lbl">המעצב</span><p>מייצר פיגמה עם התיקונים של הצוות.</p></div>
+        </div>
+        <div class="ai" data-role="AI"><h4>בריף מסכים</h4><p>מעודכן לפי ההחלטות: לכל מסך מהות, פעולות, רכיבים וערך, wireframe, ומה השתנה בסבב. MD ו-HTML.</p></div>
+      </div>
+
+      <div class="row">
+        <div class="stage"><span class="when">16:30–17:00</span><h3>הצגת התוצר</h3></div>
+        <div data-role="מנחה המליאה"><p><span class="lead-pill">מוביל</span>את ההצגות.</p></div>
+        <div data-role="המנטורים"><p><b>הצוות בוחר מה להציג:</b> את הפיגמה של המעצב, או את הפרוטוטייפ שנוצר מהבריף העדכני.</p></div>
+        <div class="ai" data-role="AI"><h4>פרוטוטייפ מהבריף</h4><p>אם הצוות בחר בו.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>יום ה-Design Sprint · עודכן 11 בנובמבר 2026 · המקור: הפלייבוק, יום 5, עם הלו"ז והדיוקים של צוות ההנחיה.</footer>
+</div>

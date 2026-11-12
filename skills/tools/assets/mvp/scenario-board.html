@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>תרחיש השימוש המרכזי</title>
+<!--
+  תבנית לוח התרחיש — נשמר במיזם כ-מפרט-MVP-תרחיש.html, ליד מפרט-MVP.md, ונגזר מסעיף 4 שלו (התרחיש המוצע).
+  הסוכן ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
+  example: true רק בדוגמה (מציג פס "דוגמה") · question: שאלת ה-MVP, מילה במילה · status: "הצעה" (ברירת מחדל) / "אחרי עריכה"
+  persona: name, who (שורה) — הפרסונה שהתרחיש שלה
+  actors: id (אות — A, S, B), name, ai (true לסוכן / ל-AI; אחרת אדם), persona (true לשחקן שהוא הפרסונה)
+  components: id, name, value — הרכיבים שנבחרו (עד 5), מסעיף 2 במפרט ה-MVP. רק הם.
+  steps: id, actor (מזהה שחקן), text (מה קורה — במשפט), components (מזהי רכיבים), behavior (true לשלב שבו קורית ההתנהגות שהשאלה בודקת),
+         open (רשות — מה שהסוכן החליט לבד בשלב הזה, ולמה; מוצג כפתק "פתוח")
+  branches: kind ("לא רלוונטי" / "שאלה" / "אין תגובה" / "פנייה לאדם"), text
+  open: מה שהסוכן החליט לבד על התרחיש כולו, ולמה — רשימה
+  ההצעה היא מצע לדיון: הצוות עורך, מוסיף, מוריד ומזיז. ההודעות מתעדכנות בכל שינוי. עריכות נשמרות בדפדפן; "העתקת סיכום" מחזירה Markdown לסוכן, עם מה שהצוות שינה בהצעה.
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: header + context (question, persona, actors, chosen components with live coverage), sticky bar, live messages, step cubes in reading order, branches, open items. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --sel: #1e7a45; --sel-bg: #e3f4ea;
+    --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
+    --open: #8a5a00; --open-bg: #fff6dc; --open-line: #f0d48a; --star: #c27c00;
+    --ai: #1f5f8b; --ai-bg: #e2eef8; --hu: #7a3f96; --hu-bg: #f1e8f7; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.9vw, 20px); line-height: 1.45; padding-block: 1.2em 3em; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: hidden; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button, select { font: inherit; cursor: pointer; }
+  .example { background: var(--open-bg); border: 1px dashed var(--open); color: var(--open); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-bottom: 0.8em; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.85em; font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .ctx { margin: 0.9em 0 0; background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--navy); border-radius: 10px; padding: 0.7em 1em; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 0.6em 1.6em; }
+  .ctx > .wide { grid-column: 1 / -1; }
+  @media (max-width: 900px) { .ctx { grid-template-columns: minmax(0, 1fr); } }
+  .lbl { font-size: 0.82em; font-weight: 700; color: var(--muted); }
+  .q { font-size: 1.2em; font-weight: 800; overflow-wrap: anywhere; }
+  .persona { font-weight: 700; overflow-wrap: anywhere; } .persona span { font-weight: 400; color: var(--muted); }
+  .row { display: flex; gap: 0.4em; flex-wrap: wrap; align-items: center; }
+  .comp { font-weight: 700; font-size: 0.9em; border-radius: 999px; padding: 0.1em 0.7em; border: 1.5px solid; overflow-wrap: anywhere; }
+  .comp small { font-weight: 600; opacity: 0.8; }
+  .comp.ok { color: var(--sel); border-color: var(--sel); background: var(--sel-bg); }
+  .comp.miss { color: var(--warn); border-color: var(--warn); background: var(--warn-bg); }
+  .actor { display: inline-flex; align-items: center; gap: 0.35em; background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 0.05em 0.35em 0.05em 0.6em; font-weight: 700; font-size: 0.9em; max-width: 100%; }
+  .actor .aname { min-width: 2em; overflow-wrap: anywhere; }
+  .badge { font-size: 0.78em; font-weight: 800; border-radius: 999px; padding: 0.05em 0.55em; border: none; white-space: nowrap; }
+  .badge.ai { background: var(--ai-bg); color: var(--ai); } .badge.hu { background: var(--hu-bg); color: var(--hu); }
+  button.badge:hover { filter: brightness(0.95); }
+  .persona-tag { font-size: 0.75em; color: var(--muted); font-weight: 700; }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
+  .legend .star { color: var(--star); font-weight: 800; }
+  .legend .opentag { background: var(--open-bg); border: 1px solid var(--open-line); color: var(--open); font-weight: 800; border-radius: 6px; padding: 0 0.5em; }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+  .count { font-weight: 800; font-size: 1.15em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
+  .split { display: flex; gap: 0.35em; flex-wrap: wrap; flex: 1 1 14em; min-width: 0; }
+  .tools { display: flex; gap: 0.4em; flex-wrap: wrap; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .msgs { display: grid; gap: 0.4em; margin-bottom: 1em; }
+  .msg { border-radius: 8px; padding: 0.45em 0.8em; font-weight: 600; border-inline-start: 5px solid; overflow-wrap: anywhere; }
+  .msg.warn { background: var(--warn-bg); border-color: var(--warn); color: #7a1a12; }
+  .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
+  .msg.ok { background: var(--sel-bg); border-color: var(--sel); color: #14532d; }
+  .msg b { font-weight: 800; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(19em, 1fr)); gap: 1em; align-items: start; }
+  .step { --c: var(--hu); background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 12px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.5em; min-width: 0; }
+  .step.ai { --c: var(--ai); }
+  .step.beh { box-shadow: 0 0 0 2px var(--star) inset; border-color: var(--star); }
+  .step .head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5em; align-items: center; }
+  .num { width: 1.9em; height: 1.9em; border-radius: 50%; background: color-mix(in srgb, var(--c) 14%, #fff); color: var(--c); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95em; }
+  .step select { min-width: 0; width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 0.15em 0.3em; background: var(--paper); font-weight: 700; color: var(--ink); }
+  .text { margin: 0; font-size: 1.05em; font-weight: 600; overflow-wrap: anywhere; min-height: 1.5em; }
+  .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
+  .ed:hover { background: var(--navy-soft); }
+  .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
+  .toggles { display: flex; gap: 0.3em; flex-wrap: wrap; }
+  .tg { font-size: 0.8em; font-weight: 700; padding: 0.08em 0.55em; border-radius: 999px; background: var(--paper); border: 1px dashed var(--line); color: var(--muted); overflow-wrap: anywhere; text-align: start; }
+  .tg[aria-pressed="true"] { background: var(--navy-soft); border: 1px solid var(--navy); color: var(--navy); }
+  .tg.star[aria-pressed="true"] { background: #fff1d1; border-color: var(--star); color: #6b4300; }
+  .note { background: var(--open-bg); border: 1px solid var(--open-line); border-radius: 8px; padding: 0.35em 0.6em; font-size: 0.9em; display: grid; gap: 0.25em; }
+  .note .lbl { color: var(--open); }
+  .note .ntext { overflow-wrap: anywhere; }
+  .note button { justify-self: start; background: var(--paper); border: 1px solid var(--open-line); color: var(--open); border-radius: 6px; font-weight: 700; font-size: 0.9em; padding: 0 0.5em; }
+  .foot { display: flex; gap: 0.3em; flex-wrap: wrap; align-items: center; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 0.4em; }
+  .mini { background: none; border: 1px solid transparent; color: var(--muted); font-size: 0.85em; padding: 0.05em 0.35em; border-radius: 6px; }
+  .mini:hover { border-color: var(--line); color: var(--ink); }
+  .mini[disabled] { opacity: 0.35; cursor: default; }
+  .add { background: none; border: 1.5px dashed color-mix(in srgb, var(--navy) 45%, var(--line)); border-radius: 12px; padding: 0.8em; color: var(--navy); font-weight: 800; min-height: 4em; }
+  .addactor { background: none; border: 1px dashed var(--line); border-radius: 999px; padding: 0.05em 0.6em; color: var(--muted); font-weight: 700; font-size: 0.85em; }
+  h2.sec { font-size: 1.2em; margin: 1.6em 0 0.5em; }
+  .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.8em 1em; }
+  .branches { display: grid; grid-template-columns: repeat(auto-fit, minmax(22em, 1fr)); gap: 0.6em; }
+  .branch { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.6em; align-items: start; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.5em 0.7em; }
+  .branch .kind { font-weight: 800; color: var(--navy); white-space: nowrap; }
+  .branch .btext { overflow-wrap: anywhere; }
+  ul.open { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.4em; }
+  ul.open li { display: flex; gap: 0.5em; align-items: flex-start; overflow-wrap: anywhere; }
+  ul.open li.done span { text-decoration: line-through; color: var(--muted); }
+  ul.open input { width: 1.1em; height: 1.1em; margin-top: 0.2em; accent-color: var(--sel); flex: none; }
+  details.out { margin-top: 1.2em; }
+  details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
+  details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
+  .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
+  .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
+  @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
+  @media print { .bar .tools, .foot, .add, .addactor, .toast, details.out, .note button { display: none !important; } body { background: #fff; } .step { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+<header class="top">
+  <div>
+    <h1>תרחיש השימוש המרכזי <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon" id="ribbon">הצעה של ה-AI. הצוות עורך ומכריע.</div>
+</header>
+
+<div class="ctx" id="ctx">
+  <div class="wide" id="qbox"><div class="lbl">שאלת ה-MVP</div><div class="q" id="question"></div></div>
+  <div id="pbox"><div class="lbl">הפרסונה</div><div class="persona" id="persona"></div></div>
+  <div><div class="lbl">מי בתרחיש — לחיצה על AI / אדם מחליפה</div><div class="row" id="actors"></div></div>
+  <div class="wide" id="cbox"><div class="lbl">הרכיבים שנבחרו — וכמה מהם כבר מופיעים בתרחיש</div><div class="row" id="comps"></div></div>
+</div>
+<div class="legend">
+  <span><span class="badge ai">AI</span> / <span class="badge hu">אדם</span> מי עושה את השלב</span>
+  <span><span class="star">★</span> ההתנהגות שהשאלה בודקת</span>
+  <span><span class="opentag">פתוח</span> מה שה-AI החליט לבד — מכריעים, או משאירים פתוח</span>
+</div>
+
+<div class="bar" id="bar">
+  <span class="count" id="count" aria-live="polite"></span>
+  <div class="split" id="split"></div>
+  <div class="tools">
+    <button type="button" class="btn primary" id="copy">העתקת סיכום</button>
+    <button type="button" class="btn" id="reset">חזרה להצעה</button>
+  </div>
+</div>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+
+<main class="steps" id="steps"></main>
+
+<h2 class="sec">הסתעפויות</h2>
+<div class="branches" id="branches"></div>
+<div class="row" style="margin-top:0.5em"><button type="button" class="addactor" id="addBranch">+ הסתעפות</button></div>
+
+<section id="opensec" hidden>
+  <h2 class="sec">פתוח — מה ה-AI החליט לבד על התרחיש</h2>
+  <div class="panel"><ul class="open" id="open"></ul></div>
+</section>
+
+<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "date": "דוגמה",
+  "status": "הצעה",
+  "question": "האם תושב שמקבל מהסוכן, ולא מפקיד בטלפון, הודעה על מסמך חסר עם הסבר מה להעלות, יעלה את המסמך לפני המועד?",
+  "persona": { "name": "מירב, 41", "who": "מגישה בקשה לזכאות מהטלפון, בין העבודה לילדים" },
+  "actors": [
+    { "id": "A", "name": "מירב", "ai": false, "persona": true },
+    { "id": "S", "name": "הסוכן", "ai": true },
+    { "id": "B", "name": "הפקיד", "ai": false }
+  ],
+  "components": [
+    { "id": "c1", "name": "התראה יזומה על מסמך חסר", "value": "פשטות" },
+    { "id": "c2", "name": "העלאה בלחיצה מההודעה", "value": "פשטות" },
+    { "id": "c3", "name": "הסבר מה להעלות ולמה", "value": "פשטות" },
+    { "id": "c4", "name": "תווית מקור", "value": "אמון" },
+    { "id": "c5", "name": "תזכורת לפני המועד", "value": "ליווי" }
+  ],
+  "steps": [
+    { "id": "s1", "actor": "B", "text": "מסמן בבקשה של מירב שחסר אישור תושבות", "components": [], "open": "ב-MVP הזיהוי ידני (מפרט ה-MVP, סעיף 3) — לכן הפקיד מסמן. אם הזיהוי אוטומטי, השלב עובר לסוכן." },
+    { "id": "s2", "actor": "S", "text": "מנסח הודעה: מה חסר, איך המסמך נראה, למה צריך אותו, ועד מתי", "components": ["c3"] },
+    { "id": "s3", "actor": "B", "text": "מאשר את הנוסח בלחיצה", "components": ["c4"], "open": "הנחתי שפקיד מאשר כל הודעה — בגלל תווית המקור. אם לא, השלב יורד." },
+    { "id": "s4", "actor": "S", "text": "שולח למירב התראה לטלפון, עם \"נוסח ע\"י הסוכן · אושר ע\"י [הפקיד]\"", "components": ["c1", "c4"] },
+    { "id": "s5", "actor": "A", "text": "פותחת את ההודעה, וקוראת מה להעלות ולמה", "components": ["c3"] },
+    { "id": "s6", "actor": "A", "text": "מצלמת את המסמך ומעלה, ישר מההודעה", "components": ["c2"], "behavior": true },
+    { "id": "s7", "actor": "S", "text": "בודק שהקובץ קריא, ומאשר למירב שהתקבל", "components": [], "open": "הוספתי כדי לסגור את המסלול — זו יכולת (קליטת קובץ), לא רכיב שנבחר." },
+    { "id": "s8", "actor": "S", "text": "למי שלא העלתה — תזכורת יום לפני המועד", "components": ["c5"] }
+  ],
+  "branches": [
+    { "kind": "לא רלוונטי", "text": "מירב עונה שהמסמך כבר הוגש — הסוכן מעביר לפקיד לבדיקה" },
+    { "kind": "שאלה", "text": "מירב לא מבינה מה זה אישור תושבות — [לא נבחר] שאלה בשפה חופשית; ב-MVP: קישור להסבר" },
+    { "kind": "אין תגובה", "text": "תזכורת יום לפני המועד (שלב 8)" },
+    { "kind": "פנייה לאדם", "text": "\"לדבר עם פקיד\" — הפקיד מקבל את הבקשה ואת ההודעה" }
+  ],
+  "open": [
+    "מירב בטלפון — מכרטיס הפרסונה.",
+    "המועד — [X] ימים מההודעה. לא הוגדר."
+  ]
+}
+</script>
+<script>
+(function () {
+  var raw = document.getElementById("data").textContent;
+  var d = JSON.parse(raw);
+  var comps = (d.components || []).filter(function (c) { return c && c.name; });
+  var cIndex = {}; comps.forEach(function (c, i) { cIndex[c.id] = i; });
+  var KEY = "mvp-scenario:" + hash(raw);
+  var toastTimer = null;
+
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function clone(x) { return JSON.parse(JSON.stringify(x)); }
+  function fresh() {
+    return {
+      actors: clone((d.actors || []).filter(function (a) { return a && a.id; })),
+      steps: clone((d.steps || []).filter(function (s) { return s; })).map(function (s, i) { s.id = s.id || "s" + (i + 1); s.components = s.components || []; s.open = s.open || ""; s.behavior = !!s.behavior; return s; }),
+      branches: clone((d.branches || []).filter(function (b) { return b; })).map(function (b, i) { b.id = b.id || "b" + (i + 1); b.text = b.text || ""; return b; }),
+      open: (d.open || []).filter(Boolean).map(function (t) { return { text: t, done: false }; }),
+      seq: 0
+    };
+  }
+  var base = fresh();
+  function load() { try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.steps && s.actors) return s; } catch (e) {} return null; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var state = load() || fresh();
+
+  function actor(id) { return state.actors.filter(function (a) { return a.id === id; })[0] || null; }
+  function aname(id) { var a = actor(id); return a ? (a.name || a.id) : "—"; }
+  function cname(id) { return id in cIndex ? comps[cIndex[id]].name : null; }
+  function seq() { state.seq = (state.seq || 0) + 1; return Date.now().toString(36) + state.seq; }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); }
+
+  if (d.example) document.getElementById("example").hidden = false;
+  document.title = "תרחיש השימוש המרכזי" + (d.venture ? " — " + d.venture : "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  var after = d.status === "אחרי עריכה";
+  document.getElementById("ribbon").textContent = after ? "התרחיש של הצוות, אחרי עריכה" : "הצעה של ה-AI. הצוות עורך ומכריע.";
+  if (d.question) document.getElementById("question").textContent = d.question; else document.getElementById("qbox").hidden = true;
+  if (d.persona && d.persona.name) {
+    var pp = document.getElementById("persona"); pp.textContent = d.persona.name;
+    if (d.persona.who) pp.append(el("span", null, " — " + d.persona.who));
+  } else document.getElementById("pbox").hidden = true;
+  if (!comps.length) document.getElementById("cbox").hidden = true;
+
+  // full: true — שינוי שצריך לבנות מחדש את הלוח (שם שחקן מופיע בכל השלבים). אחרת — רק ההודעות והסיכום, כדי לא לאבד את המיקום בעריכה.
+  function editable(tag, cls, text, label, set, full) {
+    var n = el(tag, (cls ? cls + " " : "") + "ed", text || "");
+    var before = text || "";
+    n.contentEditable = "true"; n.spellcheck = false;
+    n.setAttribute("role", "textbox"); n.setAttribute("aria-label", label); n.dataset.ph = label;
+    n.addEventListener("focus", function () { before = n.textContent; });
+    n.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); n.blur(); }
+      if (e.key === "Escape") { n.textContent = before; n.blur(); }
+    });
+    n.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var t = ((e.clipboardData || window.clipboardData).getData("text") || "").replace(/\s+/g, " ");
+      document.execCommand("insertText", false, t);
+    });
+    n.addEventListener("blur", function () { var t = n.textContent.replace(/\s+/g, " ").trim(); n.textContent = t; if (t !== before) { set(t); save(); if (full) render(); else update(); } });
+    return n;
+  }
+
+  function renderActors() {
+    var box = document.getElementById("actors"); box.textContent = "";
+    state.actors.forEach(function (a) {
+      var chip = el("span", "actor");
+      chip.append(editable("span", "aname", a.name, "שם השחקן", function (t) { a.name = t; }, true));
+      var b = el("button", "badge " + (a.ai ? "ai" : "hu"), a.ai ? "AI" : "אדם"); b.type = "button";
+      b.title = "מי זה — AI או אדם? לחיצה מחליפה";
+      b.addEventListener("click", function () { a.ai = !a.ai; save(); render(); });
+      chip.append(b);
+      if (a.persona) chip.append(el("span", "persona-tag", "הפרסונה"));
+      box.append(chip);
+    });
+    var add = el("button", "addactor", "+ שחקן"); add.type = "button";
+    add.addEventListener("click", function () {
+      var a = { id: "x" + seq(), name: "", ai: false }; state.actors.push(a); save(); render();
+      var n = document.querySelectorAll("#actors .aname"); if (n.length) n[n.length - 1].focus();
+    });
+    box.append(add);
+  }
+
+  function stepCard(s, i) {
+    var a = actor(s.actor), ai = a && a.ai;
+    var k = el("article", "step" + (ai ? " ai" : "") + (s.behavior ? " beh" : "")); k.dataset.id = s.id;
+    var head = el("div", "head");
+    head.append(el("span", "num", String(i + 1)));
+    var sel = el("select"); sel.setAttribute("aria-label", "מי עושה את שלב " + (i + 1));
+    if (!a) { var o0 = el("option", null, "מי עושה?"); o0.value = ""; sel.append(o0); }
+    state.actors.forEach(function (x) { var o = el("option", null, (x.name || x.id) + (x.ai ? " · AI" : "")); o.value = x.id; if (x.id === s.actor) o.selected = true; sel.append(o); });
+    sel.addEventListener("change", function () { s.actor = sel.value; save(); render(); });
+    head.append(sel);
+    head.append(a ? el("span", "badge " + (ai ? "ai" : "hu"), ai ? "AI" : "אדם") : el("span", "badge hu", "?"));
+    k.append(head);
+    k.append(editable("p", "text", s.text, "מה קורה בשלב", function (t) { s.text = t; }));
+    if (comps.length) {
+      var tg = el("div", "toggles");
+      comps.forEach(function (c) {
+        var on = s.components.indexOf(c.id) !== -1;
+        var b = el("button", "tg", c.name); b.type = "button"; b.setAttribute("aria-pressed", on ? "true" : "false");
+        b.title = on ? "הרכיב בשלב — לחיצה מורידה" : "לחיצה מוסיפה את הרכיב לשלב";
+        b.addEventListener("click", function () { var j = s.components.indexOf(c.id); if (j === -1) s.components.push(c.id); else s.components.splice(j, 1); save(); render(); });
+        tg.append(b);
+      });
+      k.append(tg);
+    }
+    var star = el("button", "tg star", "★ ההתנהגות שהשאלה בודקת"); star.type = "button"; star.setAttribute("aria-pressed", s.behavior ? "true" : "false");
+    star.addEventListener("click", function () { s.behavior = !s.behavior; save(); render(); });
+    k.append(star);
+    if (s.open) {
+      var note = el("div", "note");
+      note.append(el("span", "lbl", "פתוח"));
+      note.append(editable("span", "ntext", s.open, "מה פתוח", function (t) { s.open = t; }));
+      var done = el("button", null, "הוכרע ✓"); done.type = "button";
+      done.addEventListener("click", function () { var prev = s.open; s.open = ""; save(); render(); toast("סומן כהוכרע", "ביטול", function () { s.open = prev; save(); render(); }); });
+      note.append(done);
+      k.append(note);
+    }
+    var foot = el("div", "foot");
+    var mv = el("span");
+    var up = el("button", "mini", "→ לפני"); up.type = "button"; up.disabled = i === 0; up.setAttribute("aria-label", "הזזת שלב " + (i + 1) + " אחורה");
+    up.addEventListener("click", function () { move(i, -1); });
+    var dn = el("button", "mini", "אחרי ←"); dn.type = "button"; dn.disabled = i === state.steps.length - 1; dn.setAttribute("aria-label", "הזזת שלב " + (i + 1) + " קדימה");
+    dn.addEventListener("click", function () { move(i, 1); });
+    mv.append(up, dn);
+    var ins = el("button", "mini", "+ שלב אחרי"); ins.type = "button";
+    ins.addEventListener("click", function () { addStep(i + 1); });
+    var rm = el("button", "mini", "הסרה"); rm.type = "button";
+    rm.addEventListener("click", function () { removeStep(i); });
+    foot.append(mv, ins, rm);
+    k.append(foot);
+    return k;
+  }
+
+  function renderSteps() {
+    var box = document.getElementById("steps"); box.textContent = "";
+    state.steps.forEach(function (s, i) { box.append(stepCard(s, i)); });
+    var add = el("button", "add", "+ שלב בסוף"); add.type = "button";
+    add.addEventListener("click", function () { addStep(state.steps.length); });
+    box.append(add);
+  }
+
+  function renderBranches() {
+    var box = document.getElementById("branches"); box.textContent = "";
+    state.branches.forEach(function (b, i) {
+      var r = el("div", "branch");
+      r.append(editable("span", "kind", b.kind, "סוג", function (t) { b.kind = t; }));
+      r.append(editable("span", "btext", b.text, "מה קורה", function (t) { b.text = t; }));
+      var rm = el("button", "mini", "הסרה"); rm.type = "button";
+      rm.addEventListener("click", function () { state.branches.splice(i, 1); save(); render(); toast("ההסתעפות הוסרה", "ביטול", function () { state.branches.splice(i, 0, b); save(); render(); }); });
+      r.append(rm);
+      box.append(r);
+    });
+  }
+
+  function renderOpen() {
+    var ul = document.getElementById("open"); ul.textContent = "";
+    state.open.forEach(function (o, i) {
+      var li = el("li", o.done ? "done" : null), cb = el("input"); cb.type = "checkbox"; cb.checked = !!o.done; cb.id = "open-" + i;
+      cb.setAttribute("aria-label", "הוכרע: " + o.text);
+      cb.addEventListener("change", function () { o.done = cb.checked; save(); render(); });
+      var lab = el("label"); lab.htmlFor = cb.id; lab.append(el("span", null, o.text));
+      li.append(cb, lab); ul.append(li);
+    });
+    document.getElementById("opensec").hidden = !state.open.length;
+  }
+
+  function used() { var u = {}; state.steps.forEach(function (s) { s.components.forEach(function (c) { u[c] = true; }); }); return u; }
+
+  // ההודעות — מתעדכנות בכל שינוי. אזהרה: משהו שהתרחיש משאיר פתוח. מידע: משהו ששווה לשים לב אליו. אישור: התרחיש מכסה את מה שצריך.
+  function messages() {
+    var out = [], u = used();
+    comps.forEach(function (c) { if (!u[c.id]) out.push(["warn", "<b>«" + esc(c.name) + "»</b> לא מופיע באף שלב. איפה הפרסונה פוגשת אותו? אם לא — למה בחרתם בו?"]); });
+    var beh = state.steps.filter(function (s) { return s.behavior; });
+    if (state.steps.length && !beh.length) out.push(["warn", "אף שלב לא מסומן <b>★</b>. איפה קורית ההתנהגות שהשאלה בודקת?"]);
+    state.steps.forEach(function (s, i) {
+      if (!s.text) out.push(["warn", "שלב <b>" + (i + 1) + "</b> ריק — מה קורה בו?"]);
+      else if (!actor(s.actor)) out.push(["warn", "בשלב <b>" + (i + 1) + "</b> לא ברור מי עושה — AI או אדם?"]);
+    });
+    state.actors.filter(function (a) { return a.persona; }).forEach(function (a) {
+      if (!state.steps.some(function (s) { return s.actor === a.id; })) out.push(["info", "<b>«" + esc(a.name || a.id) + "»</b> לא עושה כלום באף שלב. זה התרחיש שלה, או של המערכת?"]);
+    });
+    if (!state.branches.some(function (b) { return b.text; })) out.push(["info", "אין הסתעפויות. מה קורה כשזה לא רלוונטי, כשיש שאלה, כשאין תגובה, וכשצריך אדם?"]);
+    var openN = state.steps.filter(function (s) { return s.open; }).length + state.open.filter(function (o) { return !o.done; }).length;
+    if (openN) out.push(["info", "נשארו <b>" + openN + "</b> פריטים פתוחים — מה שה-AI החליט לבד. מכריעים, או משאירים פתוח לבריף."]);
+    if (!changes().length && !after) out.push(["info", "התרחיש זהה להצעה. זו החלטה שלכם? מה קורה אצל הפרסונה אחרת?"]);
+    var allIn = comps.every(function (c) { return u[c.id]; });
+    var allActors = state.steps.every(function (s) { return s.text && actor(s.actor); });
+    if (state.steps.length && allIn && beh.length && allActors) out.push(["ok", "כל הרכיבים שנבחרו מופיעים, בכל שלב ברור מי עושה, וההתנהגות שהשאלה בודקת מסומנת."]);
+    return out;
+  }
+
+  function cell(t) { return String(t || "").replace(/\|/g, "\\|").replace(/\s+/g, " ").trim(); }
+
+  function changes() {
+    var L = [];
+    var cur = {}; state.steps.forEach(function (s, i) { cur[s.id] = { s: s, n: i + 1 }; });
+    var bm = {}; base.steps.forEach(function (b) { bm[b.id] = b; });
+    base.steps.forEach(function (b) { if (!cur[b.id]) L.push('- הוסר שלב: "' + b.text + '"'); });
+    state.steps.forEach(function (s, i) {
+      var b = bm[s.id], n = i + 1;
+      if (!b) { L.push("- נוסף שלב " + n + ': "' + (s.text || "—") + '" · ' + aname(s.actor)); return; }
+      if ((s.text || "") !== (b.text || "")) L.push("- שלב " + n + ' נערך: "' + b.text + '" ← "' + s.text + '"');
+      if (s.actor !== b.actor) L.push("- שלב " + n + " — מי עושה: " + aname(b.actor) + " ← " + aname(s.actor));
+      var bc = (b.components || []).slice().sort().join(","), sc = s.components.slice().sort().join(",");
+      if (bc !== sc) L.push("- שלב " + n + " — רכיבים: " + (s.components.map(cname).filter(Boolean).join(", ") || "—"));
+      if (!!s.behavior !== !!b.behavior) L.push("- שלב " + n + (s.behavior ? " סומן ★ — ההתנהגות שהשאלה בודקת" : " — הורד הסימון ★"));
+      if (b.open && !s.open) L.push("- הוכרע (שלב " + n + '): "' + b.open + '"');
+      else if (b.open && s.open !== b.open) L.push("- שלב " + n + ' — "פתוח" נערך: "' + s.open + '"');
+    });
+    var bo = base.steps.map(function (b) { return b.id; }).filter(function (id) { return cur[id]; });
+    var so = state.steps.map(function (s) { return s.id; }).filter(function (id) { return bm[id]; });
+    if (bo.join() !== so.join()) L.push("- סדר השלבים השתנה");
+    var ba = {}; base.actors.forEach(function (a) { ba[a.id] = a; });
+    state.actors.forEach(function (a) {
+      var b = ba[a.id];
+      if (!b) { L.push('- נוסף שחקן: "' + (a.name || "—") + '" (' + (a.ai ? "AI" : "אדם") + ")"); return; }
+      if ((a.name || "") !== (b.name || "")) L.push('- שחקן: "' + b.name + '" ← "' + a.name + '"');
+      if (!!a.ai !== !!b.ai) L.push('- "' + (a.name || a.id) + '" — ' + (a.ai ? "AI" : "אדם") + " (בהצעה: " + (b.ai ? "AI" : "אדם") + ")");
+    });
+    var bb = {}; base.branches.forEach(function (b) { bb[b.id] = b; });
+    base.branches.forEach(function (b) { if (!state.branches.some(function (x) { return x.id === b.id; })) L.push('- הוסרה הסתעפות: "' + b.kind + '"'); });
+    state.branches.forEach(function (b) {
+      var o = bb[b.id];
+      if (!o) { L.push('- נוספה הסתעפות: "' + (b.kind || "—") + '" — ' + (b.text || "—")); return; }
+      if ((b.text || "") !== (o.text || "") || (b.kind || "") !== (o.kind || "")) L.push('- הסתעפות "' + (b.kind || o.kind) + '" נערכה: ' + (b.text || "—"));
+    });
+    state.open.forEach(function (o) { if (o.done) L.push('- הוכרע: "' + o.text + '"'); });
+    return L;
+  }
+
+  function summary() {
+    var L = [];
+    if (d.question) L.push("**שאלת ה-MVP:** " + d.question);
+    if (d.persona && d.persona.name) L.push("**הפרסונה:** " + d.persona.name + (d.persona.who ? " — " + d.persona.who : ""));
+    L.push("**מי בתרחיש:** " + state.actors.map(function (a) { return (a.name || a.id) + " (" + (a.ai ? "AI" : "אדם") + (a.persona ? ", הפרסונה" : "") + ")"; }).join(" · "));
+    L.push("", "### התרחיש — " + state.steps.length + " שלבים", "", "| # | מי | AI / אדם | מה קורה | רכיב |", "|---|---|---|---|---|");
+    state.steps.forEach(function (s, i) {
+      var a = actor(s.actor);
+      L.push("| " + (i + 1) + " | " + cell(aname(s.actor)) + " | " + (a ? (a.ai ? "AI" : "אדם") : "?") + " | " + (s.behavior ? "★ " : "") + cell(s.text || "—") + " | " + cell(s.components.map(cname).filter(Boolean).join(", ") || "—") + " |");
+    });
+    var beh = []; state.steps.forEach(function (s, i) { if (s.behavior) beh.push(i + 1); });
+    L.push("", "**ההתנהגות שהשאלה בודקת:** " + (beh.length ? "שלב " + beh.join(", ") : "⚠ לא סומנה"));
+    var br = state.branches.filter(function (b) { return b.text; });
+    if (br.length) { L.push("", "### הסתעפויות"); br.forEach(function (b) { L.push("- **" + (b.kind || "—") + ":** " + b.text); }); }
+    var op = [];
+    state.steps.forEach(function (s, i) { if (s.open) op.push("- שלב " + (i + 1) + ": " + s.open); });
+    state.open.forEach(function (o) { if (!o.done) op.push("- " + o.text); });
+    if (op.length) { L.push("", "### פתוח — לא הוכרע"); L = L.concat(op); }
+    var u = used(), miss = comps.filter(function (c) { return !u[c.id]; });
+    if (miss.length) { L.push("", "### רכיבים שלא מופיעים בתרחיש"); miss.forEach(function (c) { L.push("- ⚠ «" + c.name + "»"); }); }
+    var ch = changes();
+    L.push("", "### מה הצוות שינה בהצעה");
+    L = L.concat(ch.length ? ch : ["- בלי שינויים מההצעה"]);
+    return L.join("\n");
+  }
+
+  function update() {
+    var u = used(), cb = document.getElementById("comps"); cb.textContent = "";
+    comps.forEach(function (c) { var ok = !!u[c.id]; var x = el("span", "comp " + (ok ? "ok" : "miss"), (ok ? "✓ " : "⚠ ") + c.name); if (c.value) x.append(el("small", null, " · " + c.value)); cb.append(x); });
+    var n = state.steps.length, nai = state.steps.filter(function (s) { var a = actor(s.actor); return a && a.ai; }).length;
+    var nhu = state.steps.filter(function (s) { var a = actor(s.actor); return a && !a.ai; }).length;
+    document.getElementById("count").textContent = n + " שלבים";
+    var sp = document.getElementById("split"); sp.textContent = "";
+    sp.append(el("span", "badge ai", "AI · " + nai), el("span", "badge hu", "אדם · " + nhu));
+    var mb = document.getElementById("msgs"); mb.textContent = "";
+    messages().forEach(function (x) { var e = el("div", "msg " + x[0]); e.innerHTML = x[1]; mb.append(e); });
+    document.getElementById("summary").textContent = summary();
+    document.getElementById("meta").textContent = [d.date, n + " שלבים", after ? "אחרי עריכה" : "הצעה — עורכים כאן, ובסוף \"העתקת סיכום\""].filter(Boolean).join(" · ");
+  }
+
+  function render() { renderActors(); renderSteps(); renderBranches(); renderOpen(); update(); }
+
+  function move(i, dir) {
+    var j = i + dir; if (j < 0 || j >= state.steps.length) return;
+    var t = state.steps[i]; state.steps[i] = state.steps[j]; state.steps[j] = t; save(); render();
+    var b = document.querySelector('[data-id="' + t.id + '"] select'); if (b) b.focus();
+  }
+  function addStep(at) {
+    var prev = state.steps[at - 1];
+    var s = { id: "t" + seq(), actor: prev ? prev.actor : (state.actors[0] ? state.actors[0].id : ""), text: "", components: [], behavior: false, open: "" };
+    state.steps.splice(at, 0, s); save(); render();
+    var n = document.querySelector('[data-id="' + s.id + '"] .text'); if (n) n.focus();
+  }
+  function removeStep(i) {
+    var s = state.steps[i]; state.steps.splice(i, 1); save(); render();
+    toast("שלב " + (i + 1) + " הוסר", "ביטול", function () { state.steps.splice(i, 0, s); save(); render(); });
+  }
+  function toast(msg, action, fn) {
+    var t = document.getElementById("toast"), b = document.getElementById("toastBtn");
+    document.getElementById("toastMsg").textContent = msg;
+    b.hidden = !action; b.textContent = action || "";
+    b.onclick = fn ? function () { fn(); t.hidden = true; } : null;
+    t.hidden = false; clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 7000);
+  }
+
+  document.getElementById("addBranch").addEventListener("click", function () {
+    var b = { id: "t" + seq(), kind: "", text: "" }; state.branches.push(b); save(); render();
+    var n = document.querySelectorAll("#branches .kind"); if (n.length) n[n.length - 1].focus();
+  });
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = document.getElementById("summary").textContent;
+    function fallback() {
+      var ok = false;
+      try { var ta = el("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e) {}
+      done(ok);
+    }
+    function done(ok) { if (!ok) document.getElementById("out").open = true; toast(ok ? "הסיכום הועתק — הדביקו לסוכן" : "לא הצלחתי להעתיק — הסיכום פתוח למטה"); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback(); } catch (e) { fallback(); }
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    var prev = JSON.stringify(state);
+    state = fresh(); save(); render();
+    toast("הלוח חזר להצעה", "ביטול", function () { state = JSON.parse(prev); save(); render(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
