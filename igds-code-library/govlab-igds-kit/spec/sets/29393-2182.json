@@ -1,0 +1,789 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "29393:2182",
+  "name": ".Step Status",
+  "key": "377f228516f73b8ae80b4d13a7208c6611013ab6",
+  "defs": {
+   "Step Number": {
+    "t": "TEXT",
+    "d": "1"
+   },
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Current",
+     "Completed",
+     "Not Started",
+     "Failed",
+     "Failed-Hover"
+    ],
+    "d": "Completed"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-29393-2182.json",
+   "sha256": "8bd408b68c539f66219c29100164d59f82f35594b76137c7b102534840c26010",
+   "format": "v5-rest",
+   "restResponseSha256": "d8caa1eda290d17a3a6efc972794997e8bca6c634af45faeeccdb7d6bca415b1",
+   "filter": null,
+   "offset": 0,
+   "captured": 5,
+   "totalMatching": 5
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 5,
+  "byFilter": {
+   "null": {
+    "totalMatching": 5,
+    "captured": 5
+   }
+  },
+  "detail": {
+   "tree": 5,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Colors/Background/State/default": {
+   "figma": "Colors/Background/State/default",
+   "css": "--igds-base-color-background-state-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/failure": {
+   "figma": "Colors/Border/failure",
+   "css": "--igds-base-color-border-failure",
+   "status": "css-token",
+   "light": {
+    "figma": "#a72223",
+    "css": "#a72223",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ff8283",
+    "css": "#ff8283",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/subtle-default": {
+   "figma": "Colors/Border/subtle-default",
+   "css": "--igds-base-color-border-subtle-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/background-primary": {
+   "figma": "Colors/Button/background-primary",
+   "css": "--igds-base-color-button-background-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/Inverted/subtle-primary": {
+   "figma": "Colors/Text & Icon/Inverted/subtle-primary",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/mist-blue/50",
+    "Dark IGDS": "→Brand/mist-blue/50",
+    "כבאות והצלה": "→Brand/mist-blue/50",
+    "ביטוח לאומי": "→Brand/mist-blue/50"
+   }
+  },
+  "Colors/Text & Icon/failure": {
+   "figma": "Colors/Text & Icon/failure",
+   "css": "--igds-base-color-text-failure",
+   "status": "css-token",
+   "light": {
+    "figma": "#a72223",
+    "css": "#a72223",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ffa6a7",
+    "css": "#ffa6a7",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-secondary": {
+   "figma": "Colors/Text & Icon/subtle-secondary",
+   "css": "--igds-base-color-text-subtle-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#466186",
+    "css": "#466186",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#99c2fb",
+    "css": "#99c2fb",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "29393:2177",
+   "name": "State=Completed",
+   "props": {
+    "State": "Completed"
+   },
+   "w": 32,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 32,
+    "h": 32,
+    "nid": "29393:2177",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Button/background-primary"
+     }
+    ],
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Checkmark",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "30787:22866",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FILL"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "checkmark",
+        "t": "INSTANCE",
+        "x": 4,
+        "y": 4,
+        "w": 24,
+        "h": 24,
+        "nid": "29393:2165",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "checkmark",
+         "setId": "1893:6572",
+         "variant": "Size=24x24, Color=Inverted"
+        },
+        "mcid": "1970:9222",
+        "cp": {
+         "Size": "24x24",
+         "Color": "Inverted"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#f5f9ff",
+          "v": "Colors/Text & Icon/Inverted/subtle-primary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-29393-2182.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "29393:2217",
+   "name": "State=Current",
+   "props": {
+    "State": "Current"
+   },
+   "w": 32,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 32,
+    "h": 32,
+    "nid": "29393:2217",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Button/background-primary"
+     }
+    ],
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Number",
+      "t": "TEXT",
+      "x": 4,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "29393:2218",
+      "ref": {
+       "characters": "Step Number#30787:42"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f5f9ff",
+        "v": "Colors/Text & Icon/Inverted/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "1",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-29393-2182.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "47111:3934",
+   "name": "State=Failed",
+   "props": {
+    "State": "Failed"
+   },
+   "w": 32,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 32,
+    "h": 32,
+    "nid": "47111:3934",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#a72223",
+      "v": "Colors/Text & Icon/failure"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#a72223",
+      "v": "Colors/Border/failure"
+     }
+    ],
+    "sw": 1,
+    "sa": "INSIDE",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "close",
+      "t": "INSTANCE",
+      "x": 4,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "47111:3935",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "close",
+       "setId": "46582:9745",
+       "variant": "Tile=Tile4"
+      },
+      "mcid": "46582:9746",
+      "cp": {
+       "Tile": "Tile4"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#f5f9ff",
+        "v": "Colors/Text & Icon/Inverted/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-29393-2182.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Border/failure",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/failure",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "46582:9357",
+   "name": "State=Failed-Hover",
+   "props": {
+    "State": "Failed-Hover"
+   },
+   "w": 32,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 32,
+    "h": 32,
+    "nid": "46582:9357",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/State/default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#a72223",
+      "v": "Colors/Border/failure"
+     }
+    ],
+    "sw": 1,
+    "sa": "INSIDE",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "close",
+      "t": "INSTANCE",
+      "x": 4,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "46582:9762",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "close",
+       "setId": "46582:9745",
+       "variant": "Tile=Tile4"
+      },
+      "mcid": "46582:9746",
+      "cp": {
+       "Tile": "Tile4"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#a72223",
+        "v": "Colors/Text & Icon/failure"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-29393-2182.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/State/default",
+    "Colors/Border/failure",
+    "Colors/Text & Icon/failure",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "29393:2180",
+   "name": "State=Not Started",
+   "props": {
+    "State": "Not Started"
+   },
+   "w": 32,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 32,
+    "h": 32,
+    "nid": "29393:2180",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#5c697a",
+      "v": "Colors/Border/subtle-default"
+     }
+    ],
+    "sw": 1,
+    "sa": "INSIDE",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Number",
+      "t": "TEXT",
+      "x": 4,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "29393:2161",
+      "ref": {
+       "characters": "Step Number#30787:42"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#466186",
+        "v": "Colors/Text & Icon/subtle-secondary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "1",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-29393-2182.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-200",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

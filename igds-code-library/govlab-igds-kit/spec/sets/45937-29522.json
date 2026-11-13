@@ -1,0 +1,278 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "45937:29522",
+  "name": "Notification Button",
+  "key": "57a301b4b618d58ddfad4deb7e87e849f2edb9f5",
+  "defs": {}
+ },
+ "sources": [
+  {
+   "file": "rest-45937-29522.json",
+   "sha256": "1f8add224afce350cb0f648fad4aa1f9754592576e1bdc86c2ba766aa0c2ebc7",
+   "format": "v5-rest",
+   "restResponseSha256": "0b83ffb923b401fc945ed22e80655a09fa840a65047154dc22fa7094ae4bfecd",
+   "filter": null,
+   "offset": 0,
+   "captured": 1,
+   "totalMatching": 1
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 1,
+  "byFilter": {
+   "null": {
+    "totalMatching": 1,
+    "captured": 1
+   }
+  },
+  "detail": {
+   "tree": 1,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/border/radius-full": {
+   "figma": "Brand/border/radius-full",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-3xs": {
+   "figma": "Brand/space/space-3xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/brand-sidebar-pressed": {
+   "figma": "Colors/Background/brand-sidebar-pressed",
+   "css": "--igds-base-color-background-brand-sidebar-pressed",
+   "status": "css-token",
+   "light": {
+    "figma": "#b7d6ff",
+    "css": "#b7d6ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#00347b",
+    "css": "#00347b",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/text-secondary": {
+   "figma": "Colors/Button/text-secondary",
+   "css": "--igds-base-color-button-text-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-600": {
+   "figma": "Space/space-600",
+   "css": "--igds-ref-space-600",
+   "status": "css-token",
+   "light": {
+    "figma": 24,
+    "css": "24px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "45937:29522",
+   "name": "Notification Button",
+   "props": {},
+   "w": 56,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 56,
+    "h": 56,
+    "nid": "45937:29522",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "c": [
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 4,
+      "y": 4,
+      "w": 48,
+      "h": 48,
+      "nid": "45937:29513",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        12,
+        24,
+        12,
+        24
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-600",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-600",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+      },
+      "mcid": "195:1021",
+      "cp": {
+       "Icon Op": "45309:18387",
+       "RTL": "True",
+       "State": "Default",
+       "Type": "Link Button",
+       "Size": "Medium",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Button/text-secondary"
+       }
+      ]
+     },
+     {
+      "n": "Numeric Badge ",
+      "t": "INSTANCE",
+      "x": 28,
+      "y": 10,
+      "w": 16,
+      "h": 16,
+      "nid": "45937:29519",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "mm": [
+       16,
+       42,
+       16,
+       null
+      ],
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#b7d6ff",
+        "v": "Colors/Background/brand-sidebar-pressed"
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero",
+       "topLeftRadius": "Brand/border/radius-full",
+       "topRightRadius": "Brand/border/radius-full",
+       "bottomLeftRadius": "Brand/border/radius-full",
+       "bottomRightRadius": "Brand/border/radius-full"
+      },
+      "inst": {
+       "set": "Numeric Badge ",
+       "setId": "2078:3425",
+       "variant": "Info/Notification=False"
+      },
+      "mcid": "2078:3426",
+      "cp": {
+       "Info/Notification": "False"
+      },
+      "itx": [
+       "9"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-45937-29522.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/brand-sidebar-pressed",
+    "Colors/Button/text-secondary",
+    "Space/space-400",
+    "Space/space-600"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

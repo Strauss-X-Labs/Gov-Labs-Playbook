@@ -1,0 +1,1685 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "53251:22465",
+  "name": "Prompt AI",
+  "key": "5bca8368b20178ec2ded3886906d641f4bbe98ce",
+  "defs": {
+   "Title": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Prompts": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "AI Button": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-53251-22465.json",
+   "sha256": "3a7b23c1e902a324dedc7f0bb3f85f55f702c72e2ea2d617e65f6a312540abee",
+   "format": "v5-rest",
+   "restResponseSha256": "189df152bffbbc0bec2d241924e7ffe7689b50d002474a7fe2f9f06cb1a63b30",
+   "filter": null,
+   "offset": 0,
+   "captured": 2,
+   "totalMatching": 2
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 2,
+  "byFilter": {
+   "null": {
+    "totalMatching": 2,
+    "captured": 2
+   }
+  },
+  "detail": {
+   "tree": 2,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Border/radius-l": {
+   "figma": "Border/radius-l",
+   "css": "--igds-ref-border-radius-l",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/subtle-default": {
+   "figma": "Colors/Border/subtle-default",
+   "css": "--igds-base-color-border-subtle-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/Inverted/subtle-primary": {
+   "figma": "Colors/Text & Icon/Inverted/subtle-primary",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/mist-blue/50",
+    "Dark IGDS": "→Brand/mist-blue/50",
+    "כבאות והצלה": "→Brand/mist-blue/50",
+    "ביטוח לאומי": "→Brand/mist-blue/50"
+   }
+  },
+  "Colors/Text & Icon/link-tertiary-default": {
+   "figma": "Colors/Text & Icon/link-tertiary-default",
+   "css": "--igds-base-color-text-link-tertiary-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#d7e8ff",
+    "css": "#d7e8ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-secondary": {
+   "figma": "Colors/Text & Icon/subtle-secondary",
+   "css": "--igds-base-color-text-subtle-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#466186",
+    "css": "#466186",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#99c2fb",
+    "css": "#99c2fb",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Layout/Desktop/Desktop/Maximum/Full": {
+   "figma": "Layout/Desktop/Desktop/Maximum/Full",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "Mode 1": 1600
+   }
+  },
+  "Layout/Mobile/Minimum/Full": {
+   "figma": "Layout/Mobile/Minimum/Full",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "Mode 1": 328
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Stroke/weight-s": {
+   "figma": "Stroke/weight-s",
+   "css": "--igds-ref-border-width-s",
+   "status": "css-token",
+   "light": {
+    "figma": 1,
+    "css": "1px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Typography/font-size/xs": {
+   "figma": "Typography/font-size/xs",
+   "css": "--igds-ref-font-size-xs",
+   "status": "css-token",
+   "light": {
+    "figma": 14,
+    "css": "14px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  },
+  "[remote]Typography/font-weight/medium": {
+   "figma": "Typography/font-weight/medium",
+   "css": "--igds-ref-font-weight-medium",
+   "status": "css-token",
+   "light": {
+    "figma": 500,
+    "css": "500",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "53251:22477",
+   "name": "RTL=False",
+   "props": {
+    "RTL": "False"
+   },
+   "w": 748,
+   "h": 518,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 748,
+    "h": 518,
+    "nid": "53251:22477",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Frame 1261159529",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 748,
+      "h": 74,
+      "nid": "53251:22478",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Floating Button",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 48,
+        "h": 48,
+        "nid": "53251:22479",
+        "ref": {
+         "visible": "AI Button#42409:0"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          8,
+          8,
+          8,
+          8
+         ],
+         "g": 8,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "GRADIENT_LINEAR",
+          "stops": [
+           [
+            "#6730c3",
+            1,
+            0
+           ],
+           [
+            "#0068f5",
+            1,
+            1
+           ]
+          ],
+          "gh": [
+           [
+            1,
+            0.5
+           ],
+           [
+            0.0738,
+            0.5
+           ],
+           [
+            1,
+            0.1676
+           ]
+          ]
+         }
+        ],
+        "fs": "gradiant4_vertical",
+        "fx": [
+         {
+          "t": "DROP_SHADOW",
+          "rad": 24,
+          "c": "#0068f5",
+          "a": 0.15,
+          "o": [
+           0,
+           10
+          ]
+         }
+        ],
+        "es": "Shadow-dark/Level3",
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingTop": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "paddingBottom": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": "Floating Button",
+         "setId": "1798:2270",
+         "variant": "State=Default, Size=Mobile, Type=Icon-Only Primary, RTL=True"
+        },
+        "mcid": "1798:2274",
+        "cp": {
+         "Swap Icon": "39280:20280",
+         "State": "Default",
+         "Size": "Mobile",
+         "Type": "Icon-Only Primary",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#f5f9ff",
+          "v": "Colors/Text & Icon/Inverted/subtle-primary"
+         }
+        ]
+       },
+       {
+        "n": "What are you looking for today?",
+        "t": "TEXT",
+        "x": 0,
+        "y": 56,
+        "w": 748,
+        "h": 18,
+        "nid": "53251:22480",
+        "ref": {
+         "visible": "Title#42246:0"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "[remote]Typography/font-weight/medium",
+         "fontSize": "[remote]Typography/font-size/xs"
+        },
+        "tx": "What are you looking for today?",
+        "font": [
+         "Rubik",
+         "Medium"
+        ],
+        "fsz": 14,
+        "lh": [
+         125,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Label/Medium"
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261159528",
+      "t": "FRAME",
+      "x": 0,
+      "y": 90,
+      "w": 748,
+      "h": 428,
+      "nid": "53251:22481",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Input Prompt",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 90,
+        "w": 748,
+        "h": 156,
+        "nid": "53251:22482",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FIXED",
+         "sv": "HUG"
+        },
+        "r": 16,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Border/subtle-default"
+         }
+        ],
+        "sw": 1,
+        "sa": "OUTSIDE",
+        "v": {
+         "topLeftRadius": "Border/radius-l",
+         "topRightRadius": "Border/radius-l",
+         "bottomLeftRadius": "Border/radius-l",
+         "bottomRightRadius": "Border/radius-l"
+        },
+        "inst": {
+         "set": "Input Prompt",
+         "setId": "53251:22036",
+         "variant": "State=Default, RTL=FALSE"
+        },
+        "mcid": "53251:22251",
+        "cp": {
+         "State": "Default",
+         "RTL": "FALSE"
+        },
+        "itx": [
+         "Ask the - AI",
+         "Summarize",
+         "Translate",
+         "Analyze the data",
+         "Highlight important points"
+        ],
+        "ifill": [
+         {
+          "t": "GRADIENT_LINEAR",
+          "stops": [
+           [
+            "#6730c3",
+            1,
+            0
+           ],
+           [
+            "#0068f5",
+            1,
+            1
+           ]
+          ],
+          "gh": [
+           [
+            1,
+            0.5
+           ],
+           [
+            0.0738,
+            0.5
+           ],
+           [
+            1,
+            0.1676
+           ]
+          ]
+         },
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/link-tertiary-default"
+         },
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261159537",
+        "t": "FRAME",
+        "x": 0,
+        "y": 262,
+        "w": 748,
+        "h": 256,
+        "nid": "53251:22483",
+        "ref": {
+         "visible": "Prompts#42246:1"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 262,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22484",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=False"
+          },
+          "mcid": "53251:21964",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "False"
+          },
+          "itx": [
+           "Prompt Text"
+          ]
+         },
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 328,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22485",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=False"
+          },
+          "mcid": "53251:21964",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "False"
+          },
+          "itx": [
+           "Prompt Text"
+          ]
+         },
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 394,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22486",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=False"
+          },
+          "mcid": "53251:21964",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "False"
+          },
+          "itx": [
+           "Prompt Text"
+          ]
+         },
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 460,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22487",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=False"
+          },
+          "mcid": "53251:21964",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "False"
+          },
+          "itx": [
+           "Prompt Text"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-22465.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-l",
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Layout/Desktop/Desktop/Maximum/Full",
+    "Layout/Mobile/Minimum/Full",
+    "Space/space-300",
+    "Space/space-500",
+    "Stroke/weight-s",
+    "[remote]Typography/font-size/xs",
+    "[remote]Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:22466",
+   "name": "RTL=True",
+   "props": {
+    "RTL": "True"
+   },
+   "w": 748,
+   "h": 518,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 748,
+    "h": 518,
+    "nid": "53251:22466",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Frame 1261159529",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 748,
+      "h": 74,
+      "nid": "53251:22467",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Floating Button",
+        "t": "INSTANCE",
+        "x": 700,
+        "y": 0,
+        "w": 48,
+        "h": 48,
+        "nid": "53251:22468",
+        "ref": {
+         "visible": "AI Button#42409:0"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          8,
+          8,
+          8,
+          8
+         ],
+         "g": 8,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "GRADIENT_LINEAR",
+          "stops": [
+           [
+            "#6730c3",
+            1,
+            0
+           ],
+           [
+            "#0068f5",
+            1,
+            1
+           ]
+          ],
+          "gh": [
+           [
+            1,
+            0.5
+           ],
+           [
+            0.0738,
+            0.5
+           ],
+           [
+            1,
+            0.1676
+           ]
+          ]
+         }
+        ],
+        "fs": "gradiant4_vertical",
+        "fx": [
+         {
+          "t": "DROP_SHADOW",
+          "rad": 24,
+          "c": "#0068f5",
+          "a": 0.15,
+          "o": [
+           0,
+           10
+          ]
+         }
+        ],
+        "es": "Shadow-dark/Level3",
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingTop": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "paddingBottom": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": "Floating Button",
+         "setId": "1798:2270",
+         "variant": "State=Default, Size=Mobile, Type=Icon-Only Primary, RTL=True"
+        },
+        "mcid": "1798:2274",
+        "cp": {
+         "Swap Icon": "39280:20280",
+         "State": "Default",
+         "Size": "Mobile",
+         "Type": "Icon-Only Primary",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#f5f9ff",
+          "v": "Colors/Text & Icon/Inverted/subtle-primary"
+         }
+        ]
+       },
+       {
+        "n": "מה אתם מחפשים היום?",
+        "t": "TEXT",
+        "x": 0,
+        "y": 56,
+        "w": 748,
+        "h": 18,
+        "nid": "53251:22469",
+        "ref": {
+         "visible": "Title#42246:0"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "[remote]Typography/font-weight/medium",
+         "fontSize": "[remote]Typography/font-size/xs"
+        },
+        "tx": "מה אתם מחפשים היום?",
+        "font": [
+         "Rubik",
+         "Medium"
+        ],
+        "fsz": 14,
+        "lh": [
+         125,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Label/Medium"
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261159528",
+      "t": "FRAME",
+      "x": 0,
+      "y": 90,
+      "w": 748,
+      "h": 428,
+      "nid": "53251:22470",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Input Prompt",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 90,
+        "w": 748,
+        "h": 156,
+        "nid": "53251:22471",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "r": 16,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Border/subtle-default"
+         }
+        ],
+        "sw": 1,
+        "sa": "OUTSIDE",
+        "v": {
+         "topLeftRadius": "Border/radius-l",
+         "topRightRadius": "Border/radius-l",
+         "bottomLeftRadius": "Border/radius-l",
+         "bottomRightRadius": "Border/radius-l"
+        },
+        "inst": {
+         "set": "Input Prompt",
+         "setId": "53251:22036",
+         "variant": "State=Default, RTL=TRUE"
+        },
+        "mcid": "53251:22037",
+        "cp": {
+         "State": "Default",
+         "RTL": "TRUE"
+        },
+        "itx": [
+         "לשאול את ה- AI",
+         "הדגש נקודות חשובות",
+         "נתח את הנתונים",
+         "תרגם לאנגלית",
+         "סכם את התוכן"
+        ],
+        "ifill": [
+         {
+          "t": "GRADIENT_LINEAR",
+          "stops": [
+           [
+            "#6730c3",
+            1,
+            0
+           ],
+           [
+            "#0068f5",
+            1,
+            1
+           ]
+          ],
+          "gh": [
+           [
+            1,
+            0.5
+           ],
+           [
+            0.0738,
+            0.5
+           ],
+           [
+            1,
+            0.1676
+           ]
+          ]
+         },
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/link-tertiary-default"
+         },
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261159537",
+        "t": "FRAME",
+        "x": 0,
+        "y": 262,
+        "w": 748,
+        "h": 256,
+        "nid": "53251:22472",
+        "ref": {
+         "visible": "Prompts#42246:1"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 262,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22473",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=True"
+          },
+          "mcid": "53251:21892",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "True"
+          },
+          "itx": [
+           "תוכן הפרומפט"
+          ]
+         },
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 328,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22474",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=True"
+          },
+          "mcid": "53251:21892",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "True"
+          },
+          "itx": [
+           "תוכן הפרומפט"
+          ]
+         },
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 394,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22475",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=True"
+          },
+          "mcid": "53251:21892",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "True"
+          },
+          "itx": [
+           "תוכן הפרומפט"
+          ]
+         },
+         {
+          "n": "Prompt",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 460,
+          "w": 748,
+          "h": 58,
+          "nid": "53251:22476",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG",
+           "wr": 1,
+           "cg": 16
+          },
+          "mm": [
+           328,
+           1600,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "clip": 1,
+          "v": {
+           "itemSpacing": "Space/space-500",
+           "counterAxisSpacing": "Space/space-500",
+           "minWidth": "Layout/Mobile/Minimum/Full",
+           "maxWidth": "Layout/Desktop/Desktop/Maximum/Full",
+           "strokeTopWeight": "Stroke/weight-s",
+           "strokeBottomWeight": "Stroke/weight-s",
+           "strokeLeftWeight": "Stroke/weight-s",
+           "strokeRightWeight": "Stroke/weight-s",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Prompt",
+           "setId": "53251:21891",
+           "variant": "State=Default, RTL=True"
+          },
+          "mcid": "53251:21892",
+          "cp": {
+           "Link Button": false,
+           "State": "Default",
+           "RTL": "True"
+          },
+          "itx": [
+           "תוכן הפרומפט"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-22465.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-l",
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Layout/Desktop/Desktop/Maximum/Full",
+    "Layout/Mobile/Minimum/Full",
+    "Space/space-300",
+    "Space/space-500",
+    "Stroke/weight-s",
+    "[remote]Typography/font-size/xs",
+    "[remote]Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

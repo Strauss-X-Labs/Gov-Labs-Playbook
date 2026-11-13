@@ -1,0 +1,3468 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "15096:234",
+  "name": ".Atom Face-rating",
+  "key": "da4931ba6ee9b7651a1e86479ac2a0619adb1762",
+  "defs": {
+   "Rating": {
+    "t": "VARIANT",
+    "o": [
+     "Not good",
+     "Okay",
+     "Good",
+     "Excellent",
+     "Terrible"
+    ],
+    "d": "Terrible"
+   },
+   "chosen": {
+    "t": "VARIANT",
+    "o": [
+     "False",
+     "True"
+    ],
+    "d": "False"
+   },
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Hover",
+     "Focused"
+    ],
+    "d": "Default"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-15096-234.json",
+   "sha256": "fbed509c4f3436a7e42a50eadb22158f913e4a47ad22acf27a417bd3b621c459",
+   "format": "v5-rest",
+   "restResponseSha256": "16c4184783d95d3279750813659c0eef384d9a6814e4f95e875346b002a5d215",
+   "filter": null,
+   "offset": 0,
+   "captured": 25,
+   "totalMatching": 25
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 25,
+  "byFilter": {
+   "null": {
+    "totalMatching": 25,
+    "captured": 25
+   }
+  },
+  "detail": {
+   "tree": 25,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/failure-with-border": {
+   "figma": "Colors/Background/failure-with-border",
+   "css": "--igds-base-color-background-failure-with-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#fff5f5",
+    "css": "#fff5f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#851414",
+    "css": "#851414",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/failure-without-border": {
+   "figma": "Colors/Background/failure-without-border",
+   "css": "--igds-base-color-background-failure-without-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffcbcb",
+    "css": "#ffcbcb",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#851414",
+    "css": "#851414",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/success-with-border": {
+   "figma": "Colors/Background/success-with-border",
+   "css": "--igds-base-color-background-success-with-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#f5ffef",
+    "css": "#f5ffef",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#347314",
+    "css": "#347314",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/success-without-border": {
+   "figma": "Colors/Background/success-without-border",
+   "css": "--igds-base-color-background-success-without-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#ddffcd",
+    "css": "#ddffcd",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#347314",
+    "css": "#347314",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/warning-without-border": {
+   "figma": "Colors/Background/warning-without-border",
+   "css": "--igds-base-color-background-warning-without-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffecc2",
+    "css": "#ffecc2",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#a35200",
+    "css": "#a35200",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/focused": {
+   "figma": "Colors/Border/focused",
+   "css": "--igds-base-color-border-focused",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/failure": {
+   "figma": "Colors/Text & Icon/failure",
+   "css": "--igds-base-color-text-failure",
+   "status": "css-token",
+   "light": {
+    "figma": "#a72223",
+    "css": "#a72223",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ffa6a7",
+    "css": "#ffa6a7",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/link-primary-hover": {
+   "figma": "Colors/Text & Icon/link-primary-hover",
+   "css": "--igds-base-color-text-link-primary-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#0045a3",
+    "css": "#0045a3",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#91bcf8",
+    "css": "#91bcf8",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/success": {
+   "figma": "Colors/Text & Icon/success",
+   "css": "--igds-base-color-text-success",
+   "status": "css-token",
+   "light": {
+    "figma": "#347314",
+    "css": "#347314",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#c6ffaa",
+    "css": "#c6ffaa",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/warning-text": {
+   "figma": "Colors/Text & Icon/warning-text",
+   "css": "--igds-base-color-text-warning-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#a35200",
+    "css": "#a35200",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ffd36d",
+    "css": "#ffd36d",
+    "equal": true,
+    "how": "exact"
+   }
+  }
+ },
+ "variants": [
+  {
+   "id": "15096:250",
+   "name": "Rating=Excellent, chosen=False, State=Default",
+   "props": {
+    "Rating": "Excellent",
+    "chosen": "False",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15096:250",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15096:251",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15096:252",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:253",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:254",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Subtract",
+      "t": "BOOLEAN_OPERATION",
+      "x": 8,
+      "y": 13,
+      "w": 8,
+      "h": 4,
+      "nid": "15096:258",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10685",
+   "name": "Rating=Excellent, chosen=False, State=Focused",
+   "props": {
+    "Rating": "Excellent",
+    "chosen": "False",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10685",
+    "r": 4,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10686",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10687",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10688",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10689",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Subtract",
+      "t": "BOOLEAN_OPERATION",
+      "x": 8,
+      "y": 13,
+      "w": 8,
+      "h": 4,
+      "nid": "15204:10690",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10592",
+   "name": "Rating=Excellent, chosen=False, State=Hover",
+   "props": {
+    "Rating": "Excellent",
+    "chosen": "False",
+    "State": "Hover"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10592",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10593",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10594",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10595",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10596",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Subtract",
+      "t": "BOOLEAN_OPERATION",
+      "x": 8,
+      "y": 13,
+      "w": 8,
+      "h": 4,
+      "nid": "15204:10597",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Text & Icon/link-primary-hover"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/link-primary-hover"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15110:5635",
+   "name": "Rating=Excellent, chosen=True, State=Default",
+   "props": {
+    "Rating": "Excellent",
+    "chosen": "True",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15110:5635",
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ddffcd",
+      "v": "Colors/Background/success-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15110:5636",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15110:5637",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5638",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5639",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Subtract",
+      "t": "BOOLEAN_OPERATION",
+      "x": 8,
+      "y": 13,
+      "w": 8,
+      "h": 4,
+      "nid": "15110:5640",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#347314",
+        "v": "Colors/Text & Icon/success"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/success-without-border",
+    "Colors/Text & Icon/success"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10717",
+   "name": "Rating=Excellent, chosen=True, State=Focused",
+   "props": {
+    "Rating": "Excellent",
+    "chosen": "True",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10717",
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ddffcd",
+      "v": "Colors/Background/success-without-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10718",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10719",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10720",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10721",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Subtract",
+      "t": "BOOLEAN_OPERATION",
+      "x": 8,
+      "y": 13,
+      "w": 8,
+      "h": 4,
+      "nid": "15204:10722",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#347314",
+        "v": "Colors/Text & Icon/success"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/success-without-border",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/success"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15096:244",
+   "name": "Rating=Good, chosen=False, State=Default",
+   "props": {
+    "Rating": "Good",
+    "chosen": "False",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15096:244",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15096:245",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15096:246",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:247",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:248",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 14.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15096:249",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10679",
+   "name": "Rating=Good, chosen=False, State=Focused",
+   "props": {
+    "Rating": "Good",
+    "chosen": "False",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10679",
+    "r": 4,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10680",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10681",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10682",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10683",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 14.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15204:10684",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10586",
+   "name": "Rating=Good, chosen=False, State=Hover",
+   "props": {
+    "Rating": "Good",
+    "chosen": "False",
+    "State": "Hover"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10586",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10587",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10588",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10589",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10590",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 14.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15204:10591",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/link-primary-hover"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15110:5629",
+   "name": "Rating=Good, chosen=True, State=Default",
+   "props": {
+    "Rating": "Good",
+    "chosen": "True",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15110:5629",
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f5ffef",
+      "v": "Colors/Background/success-with-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15110:5630",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15110:5631",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5632",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5633",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 14.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15110:5634",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/success-with-border",
+    "Colors/Text & Icon/success"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10711",
+   "name": "Rating=Good, chosen=True, State=Focused",
+   "props": {
+    "Rating": "Good",
+    "chosen": "True",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10711",
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f5ffef",
+      "v": "Colors/Background/success-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10712",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10713",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10714",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10715",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 14.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15204:10716",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/success-with-border",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/success"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15110:299",
+   "name": "Rating=Not good, chosen=False, State=Default",
+   "props": {
+    "Rating": "Not good",
+    "chosen": "False",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15110:299",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15110:300",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15110:301",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:302",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:303",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 13.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15110:304",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10667",
+   "name": "Rating=Not good, chosen=False, State=Focused",
+   "props": {
+    "Rating": "Not good",
+    "chosen": "False",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10667",
+    "r": 4,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10668",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10669",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10670",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10671",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 13.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15204:10672",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10574",
+   "name": "Rating=Not good, chosen=False, State=Hover",
+   "props": {
+    "Rating": "Not good",
+    "chosen": "False",
+    "State": "Hover"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10574",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10575",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10576",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10577",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10578",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 13.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15204:10579",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/link-primary-hover"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15110:5615",
+   "name": "Rating=Not good, chosen=True, State=Default",
+   "props": {
+    "Rating": "Not good",
+    "chosen": "True",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15110:5615",
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15110:5616",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15110:5617",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5618",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5619",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 13.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15110:5620",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/failure-with-border",
+    "Colors/Text & Icon/failure"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10699",
+   "name": "Rating=Not good, chosen=True, State=Focused",
+   "props": {
+    "Rating": "Not good",
+    "chosen": "True",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10699",
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10700",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10701",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10702",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10703",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 9,
+        "y": 13.88,
+        "w": 6,
+        "h": 1.12,
+        "nid": "15204:10704",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/failure-with-border",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/failure"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15096:235",
+   "name": "Rating=Okay, chosen=False, State=Default",
+   "props": {
+    "Rating": "Okay",
+    "chosen": "False",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15096:235",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15096:236",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15096:237",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:238",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:239",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "LINE",
+        "x": 8,
+        "y": 16,
+        "w": 8,
+        "h": 0,
+        "nid": "15096:240",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10673",
+   "name": "Rating=Okay, chosen=False, State=Focused",
+   "props": {
+    "Rating": "Okay",
+    "chosen": "False",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10673",
+    "r": 4,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10674",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10675",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10676",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10677",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "LINE",
+        "x": 8,
+        "y": 16,
+        "w": 8,
+        "h": 0,
+        "nid": "15204:10678",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10580",
+   "name": "Rating=Okay, chosen=False, State=Hover",
+   "props": {
+    "Rating": "Okay",
+    "chosen": "False",
+    "State": "Hover"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10580",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10581",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10582",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10583",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10584",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "LINE",
+        "x": 8,
+        "y": 16,
+        "w": 8,
+        "h": 0,
+        "nid": "15204:10585",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/link-primary-hover"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15110:5621",
+   "name": "Rating=Okay, chosen=True, State=Default",
+   "props": {
+    "Rating": "Okay",
+    "chosen": "True",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15110:5621",
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffecc2",
+      "v": "Colors/Background/warning-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15110:5622",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15110:5623",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5624",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:5625",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "LINE",
+        "x": 8,
+        "y": 16,
+        "w": 8,
+        "h": 0,
+        "nid": "15110:5626",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/warning-without-border",
+    "Colors/Text & Icon/warning-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10705",
+   "name": "Rating=Okay, chosen=True, State=Focused",
+   "props": {
+    "Rating": "Okay",
+    "chosen": "True",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10705",
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffecc2",
+      "v": "Colors/Background/warning-without-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10706",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10707",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10708",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 8,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10709",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "LINE",
+        "x": 8,
+        "y": 16,
+        "w": 8,
+        "h": 0,
+        "nid": "15204:10710",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/warning-without-border",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/warning-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15096:285",
+   "name": "Rating=Terrible, chosen=False, State=Default",
+   "props": {
+    "Rating": "Terrible",
+    "chosen": "False",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15096:285",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15096:286",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15096:287",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:288",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15096:289",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 8,
+        "y": 13,
+        "w": 8,
+        "h": 3,
+        "nid": "15096:290",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10661",
+   "name": "Rating=Terrible, chosen=False, State=Focused",
+   "props": {
+    "Rating": "Terrible",
+    "chosen": "False",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10661",
+    "r": 4,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10662",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10663",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10664",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10665",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 8,
+        "y": 13,
+        "w": 8,
+        "h": 3,
+        "nid": "15204:10666",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10568",
+   "name": "Rating=Terrible, chosen=False, State=Hover",
+   "props": {
+    "Rating": "Terrible",
+    "chosen": "False",
+    "State": "Hover"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10568",
+    "clip": 1,
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10569",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10570",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10571",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10572",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 8,
+        "y": 13,
+        "w": 8,
+        "h": 3,
+        "nid": "15204:10573",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Text & Icon/link-primary-hover"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/link-primary-hover"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15110:310",
+   "name": "Rating=Terrible, chosen=True, State=Default",
+   "props": {
+    "Rating": "Terrible",
+    "chosen": "True",
+    "State": "Default"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15110:310",
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffcbcb",
+      "v": "Colors/Background/failure-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15110:311",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15110:312",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:313",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15110:314",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 8,
+        "y": 13,
+        "w": 8,
+        "h": 3,
+        "nid": "15110:315",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/failure-without-border",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15204:10693",
+   "name": "Rating=Terrible, chosen=True, State=Focused",
+   "props": {
+    "Rating": "Terrible",
+    "chosen": "True",
+    "State": "Focused"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "15204:10693",
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffcbcb",
+      "v": "Colors/Background/failure-without-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Group 1261152235",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "15204:10694",
+      "c": [
+       {
+        "n": "Ellipse 5",
+        "t": "ELLIPSE",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "15204:10695",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 6",
+        "t": "ELLIPSE",
+        "x": 14,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10696",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Ellipse 7",
+        "t": "ELLIPSE",
+        "x": 8,
+        "y": 7,
+        "w": 2,
+        "h": 3,
+        "nid": "15204:10697",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "vec": 1
+       },
+       {
+        "n": "Line 1",
+        "t": "VECTOR",
+        "x": 8,
+        "y": 13,
+        "w": 8,
+        "h": 3,
+        "nid": "15204:10698",
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "sw": 2,
+        "sa": "CENTER",
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-15096-234.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/failure-without-border",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

@@ -1,0 +1,5231 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "522:495",
+  "name": ".accordion-item",
+  "key": "b9178c23534d8be7194d9542ff791ad1460750ce",
+  "defs": {
+   "Title": {
+    "t": "TEXT",
+    "d": "כותרת "
+   },
+   "Body Text": {
+    "t": "TEXT",
+    "d": "רכיב האקורדיון מאפשר הצגת תוכן במרחב קטן דרך חשיפה הדרגתית. המשתמש מקבל פרטים מרכזיים על התוכן ויכול לבחור להרחיב את התוכן הזה על ידי פתיחת הרכיב."
+   },
+   "Show Slot": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Show Content Text": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Swap slot": {
+    "t": "INSTANCE_SWAP",
+    "d": "522:643",
+    "pv": 1
+   },
+   "Icon": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Title LTR": {
+    "t": "TEXT",
+    "d": "Title"
+   },
+   "Body Text LTR": {
+    "t": "TEXT",
+    "d": "The accordion component allows content to be displayed in a small space through gradual exposure. The user is presented with key details about the content and can choose to expand that content by opening the component."
+   },
+   "Divider": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Hover",
+     "Focused",
+     "Disabled"
+    ],
+    "d": "Default"
+   },
+   "Expanded": {
+    "t": "VARIANT",
+    "o": [
+     "False",
+     "True"
+    ],
+    "d": "False"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-522-495.json",
+   "sha256": "df12909fb1f74e42875c473e7bb2127f53fc03e4180e0f22e12353049f012254",
+   "format": "v5-rest",
+   "restResponseSha256": "ae31832ef9669fbeb1555b471189919f47f518463e3f988629ceef92fa9a9228",
+   "filter": null,
+   "offset": 0,
+   "captured": 14,
+   "totalMatching": 14
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 14,
+  "byFilter": {
+   "null": {
+    "totalMatching": 14,
+    "captured": 14
+   }
+  },
+  "detail": {
+   "tree": 14,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/space/space-2xs": {
+   "figma": "Brand/space/space-2xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/disabled-with-text": {
+   "figma": "Colors/Background/disabled-with-text",
+   "css": "--igds-base-color-background-disabled-with-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#e0e8ef",
+    "css": "#e0e8ef",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1a283c",
+    "css": "#1a283c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-hover": {
+   "figma": "Colors/Background/neutral-hover",
+   "css": "--igds-base-color-background-neutral-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#f2f6fd",
+    "css": "#f2f6fd",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1a283c",
+    "css": "#1a283c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-secondlevel": {
+   "figma": "Colors/Background/neutral-secondlevel",
+   "css": "--igds-base-color-background-neutral-secondlevel",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": null,
+    "css": "#f2f6fd",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Border/focused": {
+   "figma": "Colors/Border/focused",
+   "css": "--igds-base-color-border-focused",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/subtle-default": {
+   "figma": "Colors/Border/subtle-default",
+   "css": "--igds-base-color-border-subtle-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/disabled": {
+   "figma": "Colors/Text & Icon/disabled",
+   "css": "--igds-base-color-text-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Spacing/Zero spacing": {
+   "figma": "Spacing/Zero spacing",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/medium": {
+   "figma": "Typography/font-weight/medium",
+   "css": "--igds-ref-font-weight-medium",
+   "status": "css-token",
+   "light": {
+    "figma": 500,
+    "css": "500",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  },
+  "[remote]Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "36632:36352",
+   "name": "RTL=False, State=Default, Expanded=False",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 58,
+    "nid": "36632:36352",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 58,
+      "nid": "36632:36353",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 57,
+        "nid": "36632:36354",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 25,
+          "nid": "36632:36355",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36356",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 25,
+            "nid": "36632:36357",
+            "ref": {
+             "characters": "Title LTR#35181:111"
+            },
+            "sz": [
+             "FILL",
+             "FIXED"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "NONE",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36358",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=down"
+            },
+            "mcid": "138:773",
+            "cp": {
+             "Direction": "down"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 57,
+        "w": 1000,
+        "h": 1,
+        "nid": "36632:36359",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35069:100933",
+   "name": "RTL=False, State=Default, Expanded=True",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Expanded": "True"
+   },
+   "w": 1000,
+   "h": 186,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 186,
+    "nid": "35069:100933",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 186,
+      "nid": "35069:100934",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 185,
+        "nid": "35069:100935",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 25,
+          "nid": "35069:100936",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "35069:100939",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 25,
+            "nid": "35069:107309",
+            "ref": {
+             "characters": "Title LTR#35181:111"
+            },
+            "sz": [
+             "FILL",
+             "FIXED"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "NONE",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "35069:100937",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=up"
+            },
+            "mcid": "138:771",
+            "cp": {
+             "Direction": "up"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Description",
+          "t": "TEXT",
+          "x": 16,
+          "y": 57,
+          "w": 968,
+          "h": 48,
+          "nid": "35069:102218",
+          "ref": {
+           "visible": "Show Content Text#522:35",
+           "characters": "Body Text LTR#35181:126"
+          },
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "The accordion component allows content to be displayed in a small space through gradual exposure. The user is presented with key details about the content and can choose to expand that content by opening the component.",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Body/Small/Regular"
+         },
+         {
+          "n": ".Slot",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 121,
+          "w": 968,
+          "h": 48,
+          "nid": "36524:20899",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            12,
+            12,
+            12
+           ],
+           "g": 12,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#f2f6fd",
+            "v": "Colors/Background/neutral-secondlevel"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "v": {
+           "itemSpacing": "[remote]Space/space-400",
+           "paddingLeft": "[remote]Space/space-400",
+           "paddingTop": "[remote]Space/space-400",
+           "paddingRight": "[remote]Space/space-400",
+           "paddingBottom": "[remote]Space/space-400",
+           "topLeftRadius": "[remote]Border/radius-m",
+           "topRightRadius": "[remote]Border/radius-m",
+           "bottomLeftRadius": "[remote]Border/radius-m",
+           "bottomRightRadius": "[remote]Border/radius-m"
+          },
+          "inst": {
+           "set": ".Slot",
+           "setId": "36363:8451",
+           "variant": null
+          },
+          "mcid": "36363:8451",
+          "itx": [
+           "Slot Placeholder"
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 185,
+        "w": 1000,
+        "h": 1,
+        "nid": "35069:100942",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Border/subtle-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular",
+    "[remote]Border/radius-m",
+    "[remote]Space/space-400"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36632:36426",
+   "name": "RTL=False, State=Disabled, Expanded=False",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 58,
+    "nid": "36632:36426",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e0e8ef",
+      "v": "Colors/Background/disabled-with-text"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 58,
+      "nid": "36632:36427",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 57,
+        "nid": "36632:36428",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 25,
+          "nid": "36632:36429",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36430",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#5c697a",
+              "v": "Colors/Text & Icon/disabled"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 25,
+            "nid": "36632:36431",
+            "ref": {
+             "characters": "Title LTR#35181:111"
+            },
+            "sz": [
+             "FILL",
+             "FIXED"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#5c697a",
+              "v": "Colors/Text & Icon/disabled"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "NONE",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36432",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=down"
+            },
+            "mcid": "138:773",
+            "cp": {
+             "Direction": "down"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#5c697a",
+              "v": "Colors/Text & Icon/disabled"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 57,
+        "w": 1000,
+        "h": 1,
+        "nid": "36632:36433",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/disabled-with-text",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36632:36413",
+   "name": "RTL=False, State=Focused, Expanded=False",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 57,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 57,
+    "nid": "36632:36413",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 992,
+      "h": 49,
+      "nid": "36632:36414",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        12,
+        12,
+        12,
+        12
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 16,
+        "w": 968,
+        "h": 25,
+        "nid": "36632:36415",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "mm": [
+         268,
+         null,
+         null,
+         null
+        ],
+        "r": 8,
+        "v": {
+         "itemSpacing": "Brand/space/space-2xs",
+         "paddingLeft": "Spacing/Zero spacing",
+         "paddingTop": "Spacing/Zero spacing",
+         "paddingRight": "Spacing/Zero spacing",
+         "paddingBottom": "Spacing/Zero spacing"
+        },
+        "c": [
+         {
+          "n": "Image",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 16.5,
+          "w": 24,
+          "h": 24,
+          "nid": "36632:36416",
+          "ref": {
+           "visible": "Icon#1021:28"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Image",
+           "setId": "6299:48",
+           "variant": "Fill=off"
+          },
+          "mcid": "138:916",
+          "cp": {
+           "Fill": "off"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Title",
+          "t": "TEXT",
+          "x": 48,
+          "y": 16,
+          "w": 904,
+          "h": 25,
+          "nid": "36632:36417",
+          "ref": {
+           "characters": "Title LTR#35181:111"
+          },
+          "sz": [
+           "FILL",
+           "FIXED"
+          ],
+          "grow": 1,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/medium",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Title",
+          "font": [
+           "Rubik",
+           "Medium"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "CENTER"
+          ],
+          "tar": "NONE",
+          "ts": "Component/Title/Small/Medium"
+         },
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 960,
+          "y": 16.5,
+          "w": 24,
+          "h": 24,
+          "nid": "36632:36418",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-xs",
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35069:100965",
+   "name": "RTL=False, State=Focused, Expanded=True",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Expanded": "True"
+   },
+   "w": 1000,
+   "h": 185,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 185,
+    "nid": "35069:100965",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 992,
+      "h": 177,
+      "nid": "35069:100966",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        12,
+        12,
+        12,
+        12
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 16,
+        "w": 968,
+        "h": 25,
+        "nid": "35069:100967",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "mm": [
+         268,
+         null,
+         null,
+         null
+        ],
+        "r": 8,
+        "v": {
+         "itemSpacing": "Brand/space/space-2xs",
+         "paddingLeft": "Spacing/Zero spacing",
+         "paddingTop": "Spacing/Zero spacing",
+         "paddingRight": "Spacing/Zero spacing",
+         "paddingBottom": "Spacing/Zero spacing"
+        },
+        "c": [
+         {
+          "n": "Image",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 16.5,
+          "w": 24,
+          "h": 24,
+          "nid": "35069:100970",
+          "ref": {
+           "visible": "Icon#1021:28"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Image",
+           "setId": "6299:48",
+           "variant": "Fill=off"
+          },
+          "mcid": "138:916",
+          "cp": {
+           "Fill": "off"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Title",
+          "t": "TEXT",
+          "x": 48,
+          "y": 16,
+          "w": 904,
+          "h": 25,
+          "nid": "35069:110367",
+          "ref": {
+           "characters": "Title LTR#35181:111"
+          },
+          "sz": [
+           "FILL",
+           "FIXED"
+          ],
+          "grow": 1,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/medium",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Title",
+          "font": [
+           "Rubik",
+           "Medium"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "CENTER"
+          ],
+          "tar": "NONE",
+          "ts": "Component/Title/Small/Medium"
+         },
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 960,
+          "y": 16.5,
+          "w": 24,
+          "h": 24,
+          "nid": "35069:100968",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Description",
+        "t": "TEXT",
+        "x": 16,
+        "y": 57,
+        "w": 968,
+        "h": 48,
+        "nid": "35069:102620",
+        "ref": {
+         "visible": "Show Content Text#522:35",
+         "characters": "Body Text LTR#35181:126"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "The accordion component allows content to be displayed in a small space through gradual exposure. The user is presented with key details about the content and can choose to expand that content by opening the component.",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Body/Small/Regular"
+       },
+       {
+        "n": ".Slot",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 121,
+        "w": 968,
+        "h": 48,
+        "nid": "36524:20933",
+        "ref": {
+         "mainComponent": "Swap slot#531:0"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          12,
+          12,
+          12
+         ],
+         "g": 12,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "r": 8,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#f2f6fd",
+          "v": "Colors/Background/neutral-secondlevel"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Border/subtle-default"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "v": {
+         "itemSpacing": "Space/space-400",
+         "paddingLeft": "Space/space-400",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-400",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": ".Slot",
+         "setId": "522:643",
+         "variant": null
+        },
+        "mcid": "522:643",
+        "itx": [
+         "Slot Placeholder"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-xs",
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Border/focused",
+    "Colors/Border/subtle-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36632:36384",
+   "name": "RTL=False, State=Hover, Expanded=False",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 58,
+    "nid": "36632:36384",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 58,
+      "nid": "36632:36385",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 57,
+        "nid": "36632:36386",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 25,
+          "nid": "36632:36387",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36388",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 25,
+            "nid": "36632:36389",
+            "ref": {
+             "characters": "Title LTR#35181:111"
+            },
+            "sz": [
+             "FILL",
+             "FIXED"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "NONE",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36390",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=down"
+            },
+            "mcid": "138:773",
+            "cp": {
+             "Direction": "down"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 57,
+        "w": 1000,
+        "h": 1,
+        "nid": "36632:36391",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35069:100950",
+   "name": "RTL=False, State=Hover, Expanded=True",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Expanded": "True"
+   },
+   "w": 1000,
+   "h": 186,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 186,
+    "nid": "35069:100950",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 186,
+      "nid": "35069:100951",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 185,
+        "nid": "35069:100952",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 25,
+          "nid": "35069:100953",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "35069:100956",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 25,
+            "nid": "35069:110365",
+            "ref": {
+             "characters": "Title LTR#35181:111"
+            },
+            "sz": [
+             "FILL",
+             "FIXED"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "NONE",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16.5,
+            "w": 24,
+            "h": 24,
+            "nid": "35069:100954",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=up"
+            },
+            "mcid": "138:771",
+            "cp": {
+             "Direction": "up"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Description",
+          "t": "TEXT",
+          "x": 16,
+          "y": 57,
+          "w": 968,
+          "h": 48,
+          "nid": "35069:102619",
+          "ref": {
+           "visible": "Show Content Text#522:35",
+           "characters": "Body Text LTR#35181:126"
+          },
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "The accordion component allows content to be displayed in a small space through gradual exposure. The user is presented with key details about the content and can choose to expand that content by opening the component.",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Body/Small/Regular"
+         },
+         {
+          "n": ".Slot",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 121,
+          "w": 968,
+          "h": 48,
+          "nid": "36524:20917",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            12,
+            12,
+            12
+           ],
+           "g": 12,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#f2f6fd",
+            "v": "Colors/Background/neutral-secondlevel"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "v": {
+           "itemSpacing": "[remote]Space/space-400",
+           "paddingLeft": "[remote]Space/space-400",
+           "paddingTop": "[remote]Space/space-400",
+           "paddingRight": "[remote]Space/space-400",
+           "paddingBottom": "[remote]Space/space-400",
+           "topLeftRadius": "[remote]Border/radius-m",
+           "topRightRadius": "[remote]Border/radius-m",
+           "bottomLeftRadius": "[remote]Border/radius-m",
+           "bottomRightRadius": "[remote]Border/radius-m"
+          },
+          "inst": {
+           "set": ".Slot",
+           "setId": "36363:8451",
+           "variant": null
+          },
+          "mcid": "36363:8451",
+          "itx": [
+           "Slot Placeholder"
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 185,
+        "w": 1000,
+        "h": 1,
+        "nid": "35069:100959",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Border/subtle-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular",
+    "[remote]Border/radius-m",
+    "[remote]Space/space-400"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36632:35940",
+   "name": "RTL=True, State=Default, Expanded=False",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 57,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 57,
+    "nid": "36632:35940",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 57,
+      "nid": "36632:35941",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 56,
+        "nid": "36632:35942",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 24,
+          "nid": "36632:35943",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:35944",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=down"
+            },
+            "mcid": "138:773",
+            "cp": {
+             "Direction": "down"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 24,
+            "nid": "36632:35945",
+            "ref": {
+             "characters": "Title#522:5"
+            },
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "כותרת ",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:35946",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 56,
+        "w": 1000,
+        "h": 1,
+        "nid": "36632:35947",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "522:566",
+   "name": "RTL=True, State=Default, Expanded=True",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Expanded": "True"
+   },
+   "w": 1000,
+   "h": 185,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 185,
+    "nid": "522:566",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 185,
+      "nid": "1635:3400",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 184,
+        "nid": "522:591",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 24,
+          "nid": "522:590",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "522:567",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=up"
+            },
+            "mcid": "138:771",
+            "cp": {
+             "Direction": "up"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 24,
+            "nid": "522:568",
+            "ref": {
+             "characters": "Title#522:5"
+            },
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "כותרת ",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "1021:6751",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Description",
+          "t": "TEXT",
+          "x": 16,
+          "y": 56,
+          "w": 968,
+          "h": 48,
+          "nid": "522:589",
+          "ref": {
+           "visible": "Show Content Text#522:35",
+           "characters": "Body Text#522:21"
+          },
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "רכיב האקורדיון מאפשר הצגת תוכן במרחב קטן דרך חשיפה הדרגתית. המשתמש מקבל פרטים מרכזיים על התוכן ויכול לבחור להרחיב את התוכן הזה על ידי פתיחת הרכיב.",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "RIGHT",
+           "TOP"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Body/Small/Regular"
+         },
+         {
+          "n": ".Slot",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 120,
+          "w": 968,
+          "h": 48,
+          "nid": "36524:20902",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            12,
+            12,
+            12
+           ],
+           "g": 12,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#f2f6fd",
+            "v": "Colors/Background/neutral-secondlevel"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "v": {
+           "itemSpacing": "[remote]Space/space-400",
+           "paddingLeft": "[remote]Space/space-400",
+           "paddingTop": "[remote]Space/space-400",
+           "paddingRight": "[remote]Space/space-400",
+           "paddingBottom": "[remote]Space/space-400",
+           "topLeftRadius": "[remote]Border/radius-m",
+           "topRightRadius": "[remote]Border/radius-m",
+           "bottomLeftRadius": "[remote]Border/radius-m",
+           "bottomRightRadius": "[remote]Border/radius-m"
+          },
+          "inst": {
+           "set": ".Slot",
+           "setId": "36363:8451",
+           "variant": null
+          },
+          "mcid": "36363:8451",
+          "itx": [
+           "Slot Placeholder"
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 184,
+        "w": 1000,
+        "h": 1,
+        "nid": "1635:3437",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Border/subtle-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular",
+    "[remote]Border/radius-m",
+    "[remote]Space/space-400"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36632:36172",
+   "name": "RTL=True, State=Disabled, Expanded=False",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 57,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 57,
+    "nid": "36632:36172",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e0e8ef",
+      "v": "Colors/Background/disabled-with-text"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 57,
+      "nid": "36632:36173",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 56,
+        "nid": "36632:36174",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 24,
+          "nid": "36632:36175",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36176",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=down"
+            },
+            "mcid": "138:773",
+            "cp": {
+             "Direction": "down"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#5c697a",
+              "v": "Colors/Text & Icon/disabled"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 24,
+            "nid": "36632:36177",
+            "ref": {
+             "characters": "Title#522:5"
+            },
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#5c697a",
+              "v": "Colors/Text & Icon/disabled"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "כותרת ",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36178",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#5c697a",
+              "v": "Colors/Text & Icon/disabled"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 56,
+        "w": 1000,
+        "h": 1,
+        "nid": "36632:36179",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/disabled-with-text",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36632:36155",
+   "name": "RTL=True, State=Focused, Expanded=False",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 56,
+    "nid": "36632:36155",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 992,
+      "h": 48,
+      "nid": "36632:36156",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        12,
+        12,
+        12,
+        12
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 16,
+        "w": 968,
+        "h": 24,
+        "nid": "36632:36157",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "mm": [
+         268,
+         null,
+         null,
+         null
+        ],
+        "r": 8,
+        "v": {
+         "itemSpacing": "Brand/space/space-2xs",
+         "paddingLeft": "Spacing/Zero spacing",
+         "paddingTop": "Spacing/Zero spacing",
+         "paddingRight": "Spacing/Zero spacing",
+         "paddingBottom": "Spacing/Zero spacing"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "36632:36158",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Title",
+          "t": "TEXT",
+          "x": 48,
+          "y": 16,
+          "w": 904,
+          "h": 24,
+          "nid": "36632:36159",
+          "ref": {
+           "characters": "Title#522:5"
+          },
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "grow": 1,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/medium",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "כותרת ",
+          "font": [
+           "Rubik",
+           "Medium"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "RIGHT",
+           "CENTER"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Component/Title/Small/Medium"
+         },
+         {
+          "n": "Image",
+          "t": "INSTANCE",
+          "x": 960,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "36632:36160",
+          "ref": {
+           "visible": "Icon#1021:28"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Image",
+           "setId": "6299:48",
+           "variant": "Fill=off"
+          },
+          "mcid": "138:916",
+          "cp": {
+           "Fill": "off"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-xs",
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "531:438",
+   "name": "RTL=True, State=Focused, Expanded=True",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Expanded": "True"
+   },
+   "w": 1000,
+   "h": 184,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 184,
+    "nid": "531:438",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 992,
+      "h": 176,
+      "nid": "531:439",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        12,
+        12,
+        12,
+        12
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 16,
+        "w": 968,
+        "h": 24,
+        "nid": "531:440",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "mm": [
+         268,
+         null,
+         null,
+         null
+        ],
+        "r": 8,
+        "v": {
+         "itemSpacing": "Brand/space/space-2xs",
+         "paddingLeft": "Spacing/Zero spacing",
+         "paddingTop": "Spacing/Zero spacing",
+         "paddingRight": "Spacing/Zero spacing",
+         "paddingBottom": "Spacing/Zero spacing"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "531:441",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Title",
+          "t": "TEXT",
+          "x": 48,
+          "y": 16,
+          "w": 904,
+          "h": 24,
+          "nid": "531:442",
+          "ref": {
+           "characters": "Title#522:5"
+          },
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "grow": 1,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/medium",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "כותרת ",
+          "font": [
+           "Rubik",
+           "Medium"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "RIGHT",
+           "CENTER"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Component/Title/Small/Medium"
+         },
+         {
+          "n": "Image",
+          "t": "INSTANCE",
+          "x": 960,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "1021:6798",
+          "ref": {
+           "visible": "Icon#1021:28"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Image",
+           "setId": "6299:48",
+           "variant": "Fill=off"
+          },
+          "mcid": "138:916",
+          "cp": {
+           "Fill": "off"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Description",
+        "t": "TEXT",
+        "x": 16,
+        "y": 56,
+        "w": 968,
+        "h": 48,
+        "nid": "531:443",
+        "ref": {
+         "visible": "Show Content Text#522:35",
+         "characters": "Body Text#522:21"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "רכיב האקורדיון מאפשר הצגת תוכן במרחב קטן דרך חשיפה הדרגתית. המשתמש מקבל פרטים מרכזיים על התוכן ויכול לבחור להרחיב את התוכן הזה על ידי פתיחת הרכיב.",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Body/Small/Regular"
+       },
+       {
+        "n": ".Slot",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 120,
+        "w": 968,
+        "h": 48,
+        "nid": "36524:20937",
+        "ref": {
+         "mainComponent": "Swap slot#531:0"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          12,
+          12,
+          12
+         ],
+         "g": 12,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "r": 8,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#f2f6fd",
+          "v": "Colors/Background/neutral-secondlevel"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Border/subtle-default"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "v": {
+         "itemSpacing": "Space/space-400",
+         "paddingLeft": "Space/space-400",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-400",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": ".Slot",
+         "setId": "522:643",
+         "variant": null
+        },
+        "mcid": "522:643",
+        "itx": [
+         "Slot Placeholder"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-xs",
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Border/focused",
+    "Colors/Border/subtle-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36632:36122",
+   "name": "RTL=True, State=Hover, Expanded=False",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Expanded": "False"
+   },
+   "w": 1000,
+   "h": 57,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 57,
+    "nid": "36632:36122",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 57,
+      "nid": "36632:36123",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 56,
+        "nid": "36632:36124",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 24,
+          "nid": "36632:36125",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36126",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=down"
+            },
+            "mcid": "138:773",
+            "cp": {
+             "Direction": "down"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 24,
+            "nid": "36632:36127",
+            "ref": {
+             "characters": "Title#522:5"
+            },
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "כותרת ",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "36632:36128",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 56,
+        "w": 1000,
+        "h": 1,
+        "nid": "36632:36129",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "531:429",
+   "name": "RTL=True, State=Hover, Expanded=True",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Expanded": "True"
+   },
+   "w": 1000,
+   "h": 185,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 185,
+    "nid": "531:429",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 185,
+      "nid": "1635:3478",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1000,
+        "h": 184,
+        "nid": "531:430",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          16,
+          16,
+          16,
+          16
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500",
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-500",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 16,
+          "y": 16,
+          "w": 968,
+          "h": 24,
+          "nid": "531:431",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "mm": [
+           268,
+           null,
+           null,
+           null
+          ],
+          "v": {
+           "itemSpacing": "Brand/space/space-2xs",
+           "paddingLeft": "Spacing/Zero spacing",
+           "paddingTop": "Spacing/Zero spacing",
+           "paddingRight": "Spacing/Zero spacing",
+           "paddingBottom": "Spacing/Zero spacing"
+          },
+          "c": [
+           {
+            "n": "Chevron",
+            "t": "INSTANCE",
+            "x": 16,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "531:432",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Chevron",
+             "setId": "23064:341",
+             "variant": "Direction=up"
+            },
+            "mcid": "138:771",
+            "cp": {
+             "Direction": "up"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           },
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 48,
+            "y": 16,
+            "w": 904,
+            "h": 24,
+            "nid": "531:433",
+            "ref": {
+             "characters": "Title#522:5"
+            },
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "grow": 1,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "כותרת ",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Component/Title/Small/Medium"
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 960,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "1021:6772",
+            "ref": {
+             "visible": "Icon#1021:28"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "6299:48",
+             "variant": "Fill=off"
+            },
+            "mcid": "138:916",
+            "cp": {
+             "Fill": "off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Description",
+          "t": "TEXT",
+          "x": 16,
+          "y": 56,
+          "w": 968,
+          "h": 48,
+          "nid": "531:434",
+          "ref": {
+           "visible": "Show Content Text#522:35",
+           "characters": "Body Text#522:21"
+          },
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "רכיב האקורדיון מאפשר הצגת תוכן במרחב קטן דרך חשיפה הדרגתית. המשתמש מקבל פרטים מרכזיים על התוכן ויכול לבחור להרחיב את התוכן הזה על ידי פתיחת הרכיב.",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "RIGHT",
+           "TOP"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Body/Small/Regular"
+         },
+         {
+          "n": ".Slot",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 120,
+          "w": 968,
+          "h": 48,
+          "nid": "36524:20920",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            12,
+            12,
+            12
+           ],
+           "g": 12,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#f2f6fd",
+            "v": "Colors/Background/neutral-secondlevel"
+           }
+          ],
+          "s": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Border/subtle-default"
+           }
+          ],
+          "sw": 1,
+          "sa": "INSIDE",
+          "v": {
+           "itemSpacing": "[remote]Space/space-400",
+           "paddingLeft": "[remote]Space/space-400",
+           "paddingTop": "[remote]Space/space-400",
+           "paddingRight": "[remote]Space/space-400",
+           "paddingBottom": "[remote]Space/space-400",
+           "topLeftRadius": "[remote]Border/radius-m",
+           "topRightRadius": "[remote]Border/radius-m",
+           "bottomLeftRadius": "[remote]Border/radius-m",
+           "bottomRightRadius": "[remote]Border/radius-m"
+          },
+          "inst": {
+           "set": ".Slot",
+           "setId": "36363:8451",
+           "variant": null
+          },
+          "mcid": "36363:8451",
+          "itx": [
+           "Slot Placeholder"
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 184,
+        "w": 1000,
+        "h": 1,
+        "nid": "1635:3491",
+        "ref": {
+         "visible": "Divider#36632:0"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Horizontal, Style=Default, Width=Full"
+        },
+        "mcid": "708:2133",
+        "cp": {
+         "Position": "Horizontal",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-522-495.json"
+   ],
+   "vars": [
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Border/subtle-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Spacing/Zero spacing",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular",
+    "[remote]Border/radius-m",
+    "[remote]Space/space-400"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

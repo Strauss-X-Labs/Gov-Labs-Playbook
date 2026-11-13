@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Button (כל המצבים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Button — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Button node <code>81:1195</code>, דרך Figma MCP.
+            מבוסס על <code>.gov-button</code> והטוקנים ב-<code>styles.css</code>.
+            4 סוגים × 3 גדלים × 5 מצבים, עם תמיכה באייקון.
+            <br>הערה: Hover / Pressed / Focused אמיתיים — העבירו עכבר / לחצו / נווטו ב-Tab על הכפתורים החיים.
+        </p>
+
+        <h2 class="sketch__mapping-title">סוגים (Medium) — מצב Default</h2>
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+            <button class="gov-button gov-button--primary">כפתור ראשי</button>
+            <button class="gov-button gov-button--secondary">כפתור משני</button>
+            <button class="gov-button gov-button--link">Link Button</button>
+            <button class="gov-button gov-button--alt-link">Alternative Link</button>
+        </div>
+
+        <h2 class="sketch__mapping-title">גדלים (Primary)</h2>
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+            <button class="gov-button gov-button--primary gov-button--small">Small</button>
+            <button class="gov-button gov-button--primary">Medium</button>
+            <button class="gov-button gov-button--primary gov-button--large">Large</button>
+        </div>
+
+        <h2 class="sketch__mapping-title">מצבים (Primary · Medium)</h2>
+        <p class="sketch__sub">Default / Hover / Pressed / Focused אמיתיים דרך אינטראקציה; Disabled מוצג ישירות.</p>
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+            <span>
+                <span class="sketch__state-label">Default</span><br>
+                <button class="gov-button gov-button--primary">כפתור</button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Disabled</span><br>
+                <button class="gov-button gov-button--primary" disabled>כפתור</button>
+            </span>
+        </div>
+
+        <h2 class="sketch__mapping-title">מצבים (Secondary · Medium)</h2>
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+            <span>
+                <span class="sketch__state-label">Default</span><br>
+                <button class="gov-button gov-button--secondary">כפתור</button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Disabled</span><br>
+                <button class="gov-button gov-button--secondary" disabled>כפתור</button>
+            </span>
+        </div>
+
+        <h2 class="sketch__mapping-title">כפתור עם אייקון</h2>
+        <p class="sketch__sub">אייקון מוביל (ימין ב-RTL) ו/או נגרר (שמאל ב-RTL). האייקון <code>aria-hidden</code>.</p>
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+            <button class="gov-button gov-button--primary">
+                <span class="gov-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                    </svg>
+                </span>
+                הוספת פריט
+            </button>
+            <button class="gov-button gov-button--secondary">
+                הוספת פריט
+                <span class="gov-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                    </svg>
+                </span>
+            </button>
+        </div>
+
+        <h2 class="sketch__mapping-title">כפתור אייקון בלבד (Icon Button)</h2>
+        <p class="sketch__sub">ריבועי, ללא טקסט. חובה <code>aria-label</code> לתיאור הפעולה.</p>
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+            <button class="gov-button gov-button--primary gov-button--icon gov-button--small" aria-label="הוספה">
+                <span class="gov-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                    </svg>
+                </span>
+            </button>
+            <button class="gov-button gov-button--primary gov-button--icon" aria-label="הוספה">
+                <span class="gov-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                    </svg>
+                </span>
+            </button>
+            <button class="gov-button gov-button--secondary gov-button--icon gov-button--large" aria-label="הוספה">
+                <span class="gov-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                    </svg>
+                </span>
+            </button>
+        </div>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>סוג / מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primary — טקסט</td>
+                    <td>#f5f9ff</td>
+                    <td>--igds-base-color-button-text-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Primary — רקע Default</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-button-background-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Primary — רקע Hover</td>
+                    <td>#0057cc</td>
+                    <td>--igds-base-color-background-brand-hover</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Primary — רקע Pressed</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-background-brand-pressed</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Secondary — טקסט / גבול Default</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-button-text-secondary / --igds-base-color-button-border-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Secondary — טקסט / גבול Hover+Pressed</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-border-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Secondary / Link / Alt — רקע Pressed</td>
+                    <td>#ebf3ff</td>
+                    <td>--igds-base-color-background-secondary-button-pressed</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Secondary — גבול Disabled</td>
+                    <td>#8091a9</td>
+                    <td>--igds-base-color-button-border-disabled</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Link Button — טקסט Default / Hover</td>
+                    <td>#0068f5 / #0045a3</td>
+                    <td>--igds-base-color-button-text-secondary / --igds-base-color-text-link-primary-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Alternative Link — טקסט Default / Hover</td>
+                    <td>#0c3058 / #0045a3</td>
+                    <td>--igds-base-color-text-link-tertiary-default / -hover</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Disabled — טקסט (כל הסוגים)</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Primary — רקע Disabled</td>
+                    <td>#e0e8ef</td>
+                    <td>--igds-base-color-background-disabled-with-text</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>radius</td>
+                    <td>8px</td>
+                    <td>--igds-ref-border-radius-m</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>עובי גבול</td>
+                    <td>1px</td>
+                    <td>--igds-ref-border-width-s</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding Medium</td>
+                    <td>12px / 20px</td>
+                    <td>--igds-ref-space-400 / --igds-ref-space-550</td>
+                    <td>✓ (space-550 נוסף)</td>
+                </tr>
+                <tr>
+                    <td>padding Small</td>
+                    <td>4px / 8px</td>
+                    <td>--igds-ref-space-200 / --igds-ref-space-300</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding Large</td>
+                    <td>12px / 16px</td>
+                    <td>--igds-ref-space-400 / --igds-ref-space-500</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט Small/Medium</td>
+                    <td>16px</td>
+                    <td>--igds-ref-font-size-s</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט Large</td>
+                    <td>20px</td>
+                    <td>--igds-ref-font-size-l</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>משקל טקסט Primary / שאר הסוגים</td>
+                    <td>500 / 400</td>
+                    <td>--igds-ref-font-weight-medium / -regular</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גובה Small / Medium / Large</td>
+                    <td>32px / 48px / 56px</td>
+                    <td>ערך קבוע (height)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+                <tr>
+                    <td>גודל אייקון</td>
+                    <td>24px (SVG 16px)</td>
+                    <td>ערך קבוע (אייקון בסיס 24px)</td>
+                    <td>— מוסכמת אייקונים</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

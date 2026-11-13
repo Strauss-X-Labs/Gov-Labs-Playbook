@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Badge (כל הסוגים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Badge — סקיצת כל הסוגים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Badge node <code>1646:12</code>,
+            דרך Figma MCP. מבוסס על <code>.gov-badge</code> והטוקנים ב-<code>styles.css</code>.
+            תגית סטטוס בצורת גלולה עם טקסט ואייקון אופציונלי. 5 סוגים.
+        </p>
+
+        <div class="sketch__grid">
+
+            <section>
+                <span class="sketch__state-label">Failure</span>
+                <span class="gov-badge gov-badge--failure">
+                    <span class="gov-badge__text">תיאור</span>
+                    <span class="gov-badge__icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2 10C2 8.154 2.635 6.458 3.688 5.103L14.897 16.312C13.542 17.366 11.846 18 10 18C5.589 18 2 14.411 2 10ZM18 10C18 11.846 17.365 13.542 16.312 14.897L5.103 3.688C6.458 2.634 8.154 2 10 2C14.411 2 18 5.589 18 10ZM10 0C4.486 0 0 4.486 0 10C0 15.514 4.486 20 10 20C15.514 20 20 15.514 20 10C20 4.486 15.514 0 10 0Z" />
+                        </svg>
+                    </span>
+                </span>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Warning</span>
+                <span class="gov-badge gov-badge--warning">
+                    <span class="gov-badge__text">תיאור</span>
+                    <span class="gov-badge__icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5229 4.47715 20 10 20C15.5229 20 20 15.5229 20 10C20 4.47715 15.5229 0 10 0ZM9 14C9 14.5523 9.44771 15 10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14ZM10 12C10.5523 12 11 11.5523 11 11V6C11 5.44772 10.5523 5 10 5C9.44772 5 9 5.44771 9 6V11C9 11.5523 9.44771 12 10 12Z" />
+                        </svg>
+                    </span>
+                </span>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Success</span>
+                <span class="gov-badge gov-badge--success">
+                    <span class="gov-badge__text">תיאור</span>
+                    <span class="gov-badge__icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M10 0C4.477 0 0 4.477 0 10C0 15.522 4.477 20 10 20C15.523 20 20 15.522 20 10C20 4.477 15.523 0 10 0ZM9.727 13.605L14.295 7.605C14.63 7.166 14.545 6.539 14.106 6.204C13.665 5.869 13.038 5.955 12.704 6.394L8.92 11.363L7.287 9.277C6.947 8.841 6.317 8.765 5.883 9.106C5.448 9.446 5.372 10.075 5.712 10.509L8.144 13.616C8.334 13.858 8.624 14 8.931 14H8.938C9.248 13.998 9.539 13.852 9.727 13.605Z" />
+                        </svg>
+                    </span>
+                </span>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">In-Progress</span>
+                <span class="gov-badge gov-badge--in-progress">
+                    <span class="gov-badge__text">תיאור</span>
+                    <span class="gov-badge__icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 0C15.4292 0 19.8479 4.32667 19.9962 9.7201L20 10C20 15.5228 15.5228 20 10 20C4.47715 20 0 15.5228 0 10C0 4.47715 4.47715 0 10 0ZM10 2C5.58206 2 2.00054 5.58118 2 9.999L18 10C18 5.58172 14.4183 2 10 2Z" />
+                        </svg>
+                    </span>
+                </span>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Informative</span>
+                <span class="gov-badge gov-badge--informative">
+                    <span class="gov-badge__text">תיאור</span>
+                    <span class="gov-badge__icon" aria-hidden="true">
+                        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z" />
+                            <path
+                                d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z" />
+                            <path
+                                d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z" />
+                        </svg>
+                    </span>
+                </span>
+            </section>
+
+        </div>
+
+        <h2 class="sketch__mapping-title">דוגמה ללא אייקון</h2>
+        <p class="sketch__sub">האייקון אופציונלי (<code>showIcon</code> בפיגמה) — ניתן להשמיט את
+            <code>.gov-badge__icon</code>.</p>
+        <div style="display: flex; gap: var(--space-md); flex-wrap: wrap; align-items: center;">
+            <span class="gov-badge gov-badge--failure"><span class="gov-badge__text">נדחה</span></span>
+            <span class="gov-badge gov-badge--warning"><span class="gov-badge__text">בהמתנה</span></span>
+            <span class="gov-badge gov-badge--success"><span class="gov-badge__text">אושר</span></span>
+            <span class="gov-badge gov-badge--in-progress"><span class="gov-badge__text">בטיפול</span></span>
+            <span class="gov-badge gov-badge--informative"><span class="gov-badge__text">מידע</span></span>
+        </div>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>סוג / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Failure — טקסט</td>
+                    <td>#a72223</td>
+                    <td>--igds-base-color-text-failure</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Failure — רקע</td>
+                    <td>#ffcbcb</td>
+                    <td>--igds-base-color-background-failure-without-border</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Warning — טקסט</td>
+                    <td>#a35200</td>
+                    <td>--igds-base-color-text-warning</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Warning — רקע</td>
+                    <td>#ffecc2</td>
+                    <td>--igds-base-color-background-warning-without-border</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Success — טקסט</td>
+                    <td>#347314</td>
+                    <td>--igds-base-color-text-success</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Success — רקע</td>
+                    <td>#ddffcd</td>
+                    <td>--igds-base-color-background-success-without-border</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>In-Progress / Informative — טקסט</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>In-Progress / Informative — רקע</td>
+                    <td>#e8f0fc</td>
+                    <td>--igds-base-color-background-neutral-badge</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>radius (צורת גלולה)</td>
+                    <td>100px</td>
+                    <td>--igds-ref-border-radius-full</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding אופקי מיכל</td>
+                    <td>8px</td>
+                    <td>--igds-ref-space-300</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding בלוק טקסט</td>
+                    <td>4px</td>
+                    <td>--igds-ref-space-200</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט</td>
+                    <td>16px</td>
+                    <td>--igds-ref-font-size-s</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>משקל טקסט</td>
+                    <td>400</td>
+                    <td>--igds-ref-font-weight-regular</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גובה מינימלי</td>
+                    <td>32px</td>
+                    <td>ערך קבוע (min-height)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+                <tr>
+                    <td>גודל אייקון</td>
+                    <td>24px (SVG 20px)</td>
+                    <td>ערך קבוע (אייקון בסיס 24px)</td>
+                    <td>— מוסכמת אייקונים</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

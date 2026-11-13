@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Dropdown (כל הסוגים והמצבים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+    <style>
+        /* רווח תחתון לדוגמאות הפתוחות כדי שהרשימה הצפה לא תיחתך בגלריה */
+        .sketch__grid--dropdown {
+            align-items: start;
+            gap: var(--space-2xl) var(--space-xl);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Dropdown — סקיצת כל הסוגים והמצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Dropdown node <code>35069:17714</code>,
+            דרך Figma MCP. מבוסס על <code>.gov-dropdown</code> והטוקנים ב-<code>styles.css</code>.
+            רכיב בחירה מתקדם (combobox) הנבדל מ-<code>.gov-select</code> הנייטיב — תומך בסינון תוך
+            כדי הקלדה, בחירה מרובה עם תגיות ורשימת אפשרויות צפה. 4 סוגים × 6 מצבים.
+            האייקונים נמשכו כ-glyphs מקוריים מהפיגמה. סקיצה סטטית (ללא JS).
+        </p>
+
+        <!-- ========== סוג Default — 6 מצבים ========== -->
+        <h2 class="sketch__mapping-title">Type=Default — מצבי השדה</h2>
+        <div class="sketch__grid sketch__grid--dropdown">
+
+            <!-- Default -->
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <div class="gov-dropdown">
+                    <div class="gov-dropdown__label">
+                        <a class="gov-dropdown__why" href="#">למה זה נחוץ?</a>
+                        <span class="gov-dropdown__label-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5229 4.47715 20 10 20C15.5229 20 20 15.5229 20 10C20 4.47715 15.5229 0 10 0ZM2 10C2 14.4183 5.58172 18 10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10Z"/><path d="M10 4C8.067 4 6.5 5.567 6.5 7.5C6.5 8.052 6.948 8.5 7.5 8.5C8.052 8.5 8.5 8.052 8.5 7.5C8.5 6.672 9.172 6 10 6C10.828 6 11.5 6.672 11.5 7.5C11.5 8.328 10.828 9 10 9C9.448 9 9 9.448 9 10V12C9 12.552 9.448 13 10 13C10.552 13 11 12.552 11 12V10.84C12.671 10.352 13.727 8.708 13.475 6.985C13.223 5.263 11.741 3.989 10 4Z"/><path d="M10 16C10.552 16 11 15.552 11 15C11 14.448 10.552 14 10 14C9.448 14 9 14.448 9 15C9 15.552 9.448 16 10 16Z"/></svg>
+                        </span>
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value gov-dropdown__value--placeholder">בחירה</span>
+                            <span class="gov-dropdown__field-icon" aria-hidden="true">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M5 7C5.828 7 6.5 6.328 6.5 5.5C6.5 4.672 5.828 4 5 4C4.172 4 3.5 4.672 3.5 5.5C3.5 6.328 4.172 7 5 7ZM15 16H3.561L10.566 10.155C10.812 9.946 11.258 9.947 11.499 10.154L16 13.994V15C16 15.552 15.552 16 15 16ZM3 2H15C15.552 2 16 2.448 16 3V11.364L12.797 8.632C11.807 7.79 10.258 7.79 9.277 8.626L2 14.698V3C2 2.448 2.448 2 3 2ZM15 0H3C1.346 0 0 1.346 0 3V15C0 16.654 1.346 18 3 18H15C16.654 18 18 16.654 18 15V3C18 1.346 16.654 0 15 0Z"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="gov-dropdown__help">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg>
+                        </span>
+                        <span>טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hover (מודגם דרך מודיפיקטור סטטי) -->
+            <section>
+                <span class="sketch__state-label">Hover</span>
+                <div class="gov-dropdown gov-dropdown--hover">
+                    <div class="gov-dropdown__label">
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value gov-dropdown__value--placeholder">בחירה</span>
+                            <span class="gov-dropdown__field-icon" aria-hidden="true">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M5 7C5.828 7 6.5 6.328 6.5 5.5C6.5 4.672 5.828 4 5 4C4.172 4 3.5 4.672 3.5 5.5C3.5 6.328 4.172 7 5 7ZM15 16H3.561L10.566 10.155C10.812 9.946 11.258 9.947 11.499 10.154L16 13.994V15C16 15.552 15.552 16 15 16ZM3 2H15C15.552 2 16 2.448 16 3V11.364L12.797 8.632C11.807 7.79 10.258 7.79 9.277 8.626L2 14.698V3C2 2.448 2.448 2 3 2ZM15 0H3C1.346 0 0 1.346 0 3V15C0 16.654 1.346 18 3 18H15C16.654 18 18 16.654 18 15V3C18 1.346 16.654 0 15 0Z"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="gov-dropdown__help">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg>
+                        </span>
+                        <span>טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Focused -->
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <div class="gov-dropdown gov-dropdown--focused">
+                    <div class="gov-dropdown__label">
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value gov-dropdown__value--placeholder">בחירה</span>
+                            <span class="gov-dropdown__field-icon" aria-hidden="true">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M5 7C5.828 7 6.5 6.328 6.5 5.5C6.5 4.672 5.828 4 5 4C4.172 4 3.5 4.672 3.5 5.5C3.5 6.328 4.172 7 5 7ZM15 16H3.561L10.566 10.155C10.812 9.946 11.258 9.947 11.499 10.154L16 13.994V15C16 15.552 15.552 16 15 16ZM3 2H15C15.552 2 16 2.448 16 3V11.364L12.797 8.632C11.807 7.79 10.258 7.79 9.277 8.626L2 14.698V3C2 2.448 2.448 2 3 2ZM15 0H3C1.346 0 0 1.346 0 3V15C0 16.654 1.346 18 3 18H15C16.654 18 18 16.654 18 15V3C18 1.346 16.654 0 15 0Z"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="gov-dropdown__help">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg>
+                        </span>
+                        <span>טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error -->
+            <section>
+                <span class="sketch__state-label">Error</span>
+                <div class="gov-dropdown gov-dropdown--error">
+                    <div class="gov-dropdown__label">
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header" aria-invalid="true">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value gov-dropdown__value--placeholder">בחירה</span>
+                            <span class="gov-dropdown__field-icon" aria-hidden="true">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M5 7C5.828 7 6.5 6.328 6.5 5.5C6.5 4.672 5.828 4 5 4C4.172 4 3.5 4.672 3.5 5.5C3.5 6.328 4.172 7 5 7ZM15 16H3.561L10.566 10.155C10.812 9.946 11.258 9.947 11.499 10.154L16 13.994V15C16 15.552 15.552 16 15 16ZM3 2H15C15.552 2 16 2.448 16 3V11.364L12.797 8.632C11.807 7.79 10.258 7.79 9.277 8.626L2 14.698V3C2 2.448 2.448 2 3 2ZM15 0H3C1.346 0 0 1.346 0 3V15C0 16.654 1.346 18 3 18H15C16.654 18 18 16.654 18 15V3C18 1.346 16.654 0 15 0Z"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="gov-dropdown__help" role="alert">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5229 4.47715 20 10 20C15.5229 20 20 15.5229 20 10C20 4.47715 15.5229 0 10 0ZM9 14C9 14.5523 9.44771 15 10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14ZM10 12C10.5523 12 11 11.5523 11 11V6C11 5.44772 10.5523 5 10 5C9.44772 5 9 5.44771 9 6V11C9 11.5523 9.44771 12 10 12Z"/></svg>
+                        </span>
+                        <span>לא נבחרה אף אפשרות</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ErrorFocused -->
+            <section>
+                <span class="sketch__state-label">ErrorFocused</span>
+                <div class="gov-dropdown gov-dropdown--error-focused">
+                    <div class="gov-dropdown__label">
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header" aria-invalid="true">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value gov-dropdown__value--placeholder">בחירה</span>
+                            <span class="gov-dropdown__field-icon" aria-hidden="true">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M5 7C5.828 7 6.5 6.328 6.5 5.5C6.5 4.672 5.828 4 5 4C4.172 4 3.5 4.672 3.5 5.5C3.5 6.328 4.172 7 5 7ZM15 16H3.561L10.566 10.155C10.812 9.946 11.258 9.947 11.499 10.154L16 13.994V15C16 15.552 15.552 16 15 16ZM3 2H15C15.552 2 16 2.448 16 3V11.364L12.797 8.632C11.807 7.79 10.258 7.79 9.277 8.626L2 14.698V3C2 2.448 2.448 2 3 2ZM15 0H3C1.346 0 0 1.346 0 3V15C0 16.654 1.346 18 3 18H15C16.654 18 18 16.654 18 15V3C18 1.346 16.654 0 15 0Z"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="gov-dropdown__help" role="alert">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C4.47715 0 0 4.47715 0 10C0 15.5229 4.47715 20 10 20C15.5229 20 20 15.5229 20 10C20 4.47715 15.5229 0 10 0ZM9 14C9 14.5523 9.44771 15 10 15C10.5523 15 11 14.5523 11 14C11 13.4477 10.5523 13 10 13C9.44772 13 9 13.4477 9 14ZM10 12C10.5523 12 11 11.5523 11 11V6C11 5.44772 10.5523 5 10 5C9.44772 5 9 5.44771 9 6V11C9 11.5523 9.44771 12 10 12Z"/></svg>
+                        </span>
+                        <span>לא נבחרה אף אפשרות</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Disabled -->
+            <section>
+                <span class="sketch__state-label">Disabled</span>
+                <div class="gov-dropdown gov-dropdown--disabled">
+                    <div class="gov-dropdown__label">
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header" disabled aria-disabled="true">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value gov-dropdown__value--placeholder">בחירה</span>
+                            <span class="gov-dropdown__field-icon" aria-hidden="true">
+                                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M5 7C5.828 7 6.5 6.328 6.5 5.5C6.5 4.672 5.828 4 5 4C4.172 4 3.5 4.672 3.5 5.5C3.5 6.328 4.172 7 5 7ZM15 16H3.561L10.566 10.155C10.812 9.946 11.258 9.947 11.499 10.154L16 13.994V15C16 15.552 15.552 16 15 16ZM3 2H15C15.552 2 16 2.448 16 3V11.364L12.797 8.632C11.807 7.79 10.258 7.79 9.277 8.626L2 14.698V3C2 2.448 2.448 2 3 2ZM15 0H3C1.346 0 0 1.346 0 3V15C0 16.654 1.346 18 3 18H15C16.654 18 18 16.654 18 15V3C18 1.346 16.654 0 15 0Z"/></svg>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="gov-dropdown__help">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg>
+                        </span>
+                        <span>טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ========== סוגים מורחבים (Expanded) ========== -->
+        <h2 class="sketch__mapping-title">סוגים מורחבים (Expanded=True)</h2>
+        <div class="sketch__grid sketch__grid--dropdown">
+
+            <!-- Active Filterable -->
+            <section>
+                <span class="sketch__state-label">Active Filterable</span>
+                <div class="gov-dropdown gov-dropdown--expanded">
+                    <div class="gov-dropdown__label">
+                        <a class="gov-dropdown__why" href="#">למה זה נחוץ?</a>
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header" aria-expanded="true">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value">|</span>
+                        </button>
+                        <ul class="gov-dropdown__list" role="listbox">
+                            <li class="gov-dropdown__option" role="option">
+                                <span class="gov-dropdown__option-text">אפשרות</span>
+                                <span class="gov-dropdown__option-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L5.57506 6.09449L5.80772 6.01859L6.00041 6L6.23017 6.02675L6.39421 6.08068L6.57799 6.18383L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9646 11.2282 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 14.4477 14 15 14C15.5128 14 15.9355 14.386 15.9933 14.8834L16 15V17H18V2H8V3.83333C8 4.38562 7.55228 4.83333 7 4.83333C6.48716 4.83333 6.06449 4.44729 6.00673 3.94995L6 3.83333V1.94444C6 0.906785 6.82715 0.0784177 7.85227 0.00525546L8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 5.44772 13.3333 6 13.3333C6.51284 13.3333 6.93551 13.7194 6.99327 14.2167L7 14.3333V17H10V12.023L5.999 8.356ZM15 9C15.5128 9 15.9355 9.386 15.9933 9.88338L16 10V11C16 11.5523 15.5523 12 15 12C14.4872 12 14.0645 11.614 14.0067 11.1166L14 11V10C14 9.44772 14.4477 9 15 9ZM11 4C11.5128 4 11.9355 4.386 11.9933 4.88338L12 5V6C12 6.55228 11.5523 7 11 7C10.4872 7 10.0645 6.614 10.0067 6.11662L10 6V5C10 4.44772 10.4477 4 11 4ZM15 4C15.5128 4 15.9355 4.386 15.9933 4.88338L16 5V6C16 6.55228 15.5523 7 15 7C14.4872 7 14.0645 6.614 14.0067 6.11662L14 6V5C14 4.44772 14.4477 4 15 4Z"/></svg>
+                                </span>
+                            </li>
+                            <li class="gov-dropdown__option" role="option"><span class="gov-dropdown__option-text">אפשרות</span><span class="gov-dropdown__option-icon" aria-hidden="true"><svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L6.00041 6L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9646 11.2282 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 14.4477 14 15 14C15.5128 14 15.9933 14.8834L16 15V17H18V2H8V3.83333C8 4.38562 7.55228 4.83333 7 4.83333L6 3.83333V1.94444C6 0.906785 6.82715 0.0784177 8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 5.44772 13.3333 6 13.3333L7 14.3333V17H10V12.023L5.999 8.356Z"/></svg></span></li>
+                            <li class="gov-dropdown__option" role="option"><span class="gov-dropdown__option-text">אפשרות</span><span class="gov-dropdown__option-icon" aria-hidden="true"><svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L6.00041 6L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9646 11.2282 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 14.4477 14 15 14C15.5128 14 15.9933 14.8834L16 15V17H18V2H8V3.83333C8 4.38562 7.55228 4.83333 7 4.83333L6 3.83333V1.94444C6 0.906785 6.82715 0.0784177 8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 5.44772 13.3333 6 13.3333L7 14.3333V17H10V12.023L5.999 8.356Z"/></svg></span></li>
+                            <li class="gov-dropdown__option" role="option"><span class="gov-dropdown__option-text">אפשרות</span><span class="gov-dropdown__option-icon" aria-hidden="true"><svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L6.00041 6L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9646 11.2282 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 14.4477 14 15 14C15.5128 14 15.9933 14.8834L16 15V17H18V2H8V3.83333C8 4.38562 7.55228 4.83333 7 4.83333L6 3.83333V1.94444C6 0.906785 6.82715 0.0784177 8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 5.44772 13.3333 6 13.3333L7 14.3333V17H10V12.023L5.999 8.356Z"/></svg></span></li>
+                        </ul>
+                    </div>
+                    <div class="gov-dropdown__help">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg>
+                        </span>
+                        <span>טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active Unfilterable -->
+            <section>
+                <span class="sketch__state-label">Active Unfilterable</span>
+                <div class="gov-dropdown gov-dropdown--expanded">
+                    <div class="gov-dropdown__label">
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header" aria-expanded="true">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value gov-dropdown__value--placeholder">בחירה</span>
+                        </button>
+                        <ul class="gov-dropdown__list" role="listbox">
+                            <li class="gov-dropdown__option" role="option"><span class="gov-dropdown__option-text">אפשרות</span></li>
+                            <li class="gov-dropdown__option" role="option"><span class="gov-dropdown__option-text">אפשרות</span></li>
+                            <li class="gov-dropdown__option" role="option"><span class="gov-dropdown__option-text">אפשרות</span></li>
+                            <li class="gov-dropdown__option" role="option"><span class="gov-dropdown__option-text">אפשרות</span></li>
+                        </ul>
+                    </div>
+                    <div class="gov-dropdown__help">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg>
+                        </span>
+                        <span>טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tags -->
+            <section>
+                <span class="sketch__state-label">Tags (בחירה מרובה)</span>
+                <div class="gov-dropdown gov-dropdown--expanded">
+                    <div class="gov-dropdown__label">
+                        <a class="gov-dropdown__why" href="#">למה זה נחוץ?</a>
+                        <span><span class="gov-dropdown__required">*</span>תווית</span>
+                    </div>
+                    <div class="gov-dropdown__field">
+                        <button type="button" class="gov-dropdown__header" aria-expanded="true">
+                            <span class="gov-dropdown__chevron" aria-hidden="true">
+                                <svg viewBox="0 0 8.18 14" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                            </span>
+                            <span class="gov-dropdown__value">|</span>
+                        </button>
+                        <div class="gov-dropdown__list">
+                            <div class="gov-dropdown__actions">
+                                <button type="button" class="gov-dropdown__action">הסרת הכל</button>
+                                <button type="button" class="gov-dropdown__action">בחירת הכל</button>
+                            </div>
+                            <div class="gov-divider gov-divider--horizontal" role="separator" aria-orientation="horizontal">
+                                <div class="gov-divider__line"></div>
+                            </div>
+                            <div class="gov-dropdown__tags">
+                                <span class="gov-dropdown__tag"><button type="button" class="gov-dropdown__tag-remove" aria-label="הסרת תיאור"><svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><path d="M4.94283 4.00017L7.80483 1.13817C8.0655 0.8775 8.0655 0.456167 7.80483 0.1955C7.54417 -0.0651667 7.12283 -0.0651667 6.86217 0.1955L4.00017 3.0575L1.13817 0.1955C0.8775 -0.0651667 0.456167 -0.0651667 0.1955 0.1955C-0.0651667 0.456167 -0.0651667 0.8775 0.1955 1.13817L3.0575 4.00017L0.1955 6.86217C-0.0651667 7.12283 -0.0651667 7.54417 0.1955 7.80483C0.3255 7.93483 0.496167 8.00017 0.666833 8.00017C0.8375 8.00017 1.00817 7.93483 1.13817 7.80483L4.00017 4.94283L6.86217 7.80483C6.99217 7.93483 7.16283 8.00017 7.3335 8.00017C7.50417 8.00017 7.67483 7.93483 7.80483 7.80483C8.0655 7.54417 8.0655 7.12283 7.80483 6.86217L4.94283 4.00017Z"/></svg></button>תיאור</span>
+                                <span class="gov-dropdown__tag"><button type="button" class="gov-dropdown__tag-remove" aria-label="הסרת תיאור"><svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><path d="M4.94283 4.00017L7.80483 1.13817C8.0655 0.8775 8.0655 0.456167 7.80483 0.1955C7.54417 -0.0651667 7.12283 -0.0651667 6.86217 0.1955L4.00017 3.0575L1.13817 0.1955C0.8775 -0.0651667 0.456167 -0.0651667 0.1955 0.1955C-0.0651667 0.456167 -0.0651667 0.8775 0.1955 1.13817L3.0575 4.00017L0.1955 6.86217C-0.0651667 7.12283 -0.0651667 7.54417 0.1955 7.80483C0.3255 7.93483 0.496167 8.00017 0.666833 8.00017C0.8375 8.00017 1.00817 7.93483 1.13817 7.80483L4.00017 4.94283L6.86217 7.80483C6.99217 7.93483 7.16283 8.00017 7.3335 8.00017C7.50417 8.00017 7.67483 7.93483 7.80483 7.80483C8.0655 7.54417 8.0655 7.12283 7.80483 6.86217L4.94283 4.00017Z"/></svg></button>תיאור</span>
+                                <span class="gov-dropdown__tag"><button type="button" class="gov-dropdown__tag-remove" aria-label="הסרת תיאור"><svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><path d="M4.94283 4.00017L7.80483 1.13817C8.0655 0.8775 8.0655 0.456167 7.80483 0.1955C7.54417 -0.0651667 7.12283 -0.0651667 6.86217 0.1955L4.00017 3.0575L1.13817 0.1955C0.8775 -0.0651667 0.456167 -0.0651667 0.1955 0.1955C-0.0651667 0.456167 -0.0651667 0.8775 0.1955 1.13817L3.0575 4.00017L0.1955 6.86217C-0.0651667 7.12283 -0.0651667 7.54417 0.1955 7.80483C0.3255 7.93483 0.496167 8.00017 0.666833 8.00017C0.8375 8.00017 1.00817 7.93483 1.13817 7.80483L4.00017 4.94283L6.86217 7.80483C6.99217 7.93483 7.16283 8.00017 7.3335 8.00017C7.50417 8.00017 7.67483 7.93483 7.80483 7.80483C8.0655 7.54417 8.0655 7.12283 7.80483 6.86217L4.94283 4.00017Z"/></svg></button>תיאור</span>
+                                <span class="gov-dropdown__tag"><button type="button" class="gov-dropdown__tag-remove" aria-label="הסרת תיאור"><svg viewBox="0 0 8 8" xmlns="http://www.w3.org/2000/svg"><path d="M4.94283 4.00017L7.80483 1.13817C8.0655 0.8775 8.0655 0.456167 7.80483 0.1955C7.54417 -0.0651667 7.12283 -0.0651667 6.86217 0.1955L4.00017 3.0575L1.13817 0.1955C0.8775 -0.0651667 0.456167 -0.0651667 0.1955 0.1955C-0.0651667 0.456167 -0.0651667 0.8775 0.1955 1.13817L3.0575 4.00017L0.1955 6.86217C-0.0651667 7.12283 -0.0651667 7.54417 0.1955 7.80483C0.3255 7.93483 0.496167 8.00017 0.666833 8.00017C0.8375 8.00017 1.00817 7.93483 1.13817 7.80483L4.00017 4.94283L6.86217 7.80483C6.99217 7.93483 7.16283 8.00017 7.3335 8.00017C7.50417 8.00017 7.67483 7.93483 7.80483 7.80483C8.0655 7.54417 8.0655 7.12283 7.80483 6.86217L4.94283 4.00017Z"/></svg></button>תיאור</span>
+                            </div>
+                            <ul class="gov-dropdown__list" role="listbox" aria-multiselectable="true" style="box-shadow:none;margin:0;">
+                                <li class="gov-dropdown__option" role="option" aria-selected="false">
+                                    <span class="gov-dropdown__option-text">אפשרות</span>
+                                    <span class="gov-dropdown__option-icon" aria-hidden="true"><svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L6.00041 6L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 15 14C15.5128 14 16 15V17H18V2H8V3.83333C8 4.38562 7 4.83333L6 3.83333V1.94444C6 0.906785 8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 6 13.3333L7 14.3333V17H10V12.023L5.999 8.356Z"/></svg></span>
+                                    <span class="gov-dropdown__option-check" aria-hidden="true"></span>
+                                </li>
+                                <li class="gov-dropdown__option" role="option" aria-selected="false">
+                                    <span class="gov-dropdown__option-text">אפשרות</span>
+                                    <span class="gov-dropdown__option-icon" aria-hidden="true"><svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L6.00041 6L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 15 14C15.5128 14 16 15V17H18V2H8V3.83333C8 4.38562 7 4.83333L6 3.83333V1.94444C6 0.906785 8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 6 13.3333L7 14.3333V17H10V12.023L5.999 8.356Z"/></svg></span>
+                                    <span class="gov-dropdown__option-check" aria-hidden="true"></span>
+                                </li>
+                                <li class="gov-dropdown__option" role="option" aria-selected="false">
+                                    <span class="gov-dropdown__option-text">אפשרות</span>
+                                    <span class="gov-dropdown__option-icon" aria-hidden="true"><svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L6.00041 6L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 15 14C15.5128 14 16 15V17H18V2H8V3.83333C8 4.38562 7 4.83333L6 3.83333V1.94444C6 0.906785 8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 6 13.3333L7 14.3333V17H10V12.023L5.999 8.356Z"/></svg></span>
+                                    <span class="gov-dropdown__option-check" aria-hidden="true"></span>
+                                </li>
+                                <li class="gov-dropdown__option" role="option" aria-selected="false">
+                                    <span class="gov-dropdown__option-text">אפשרות</span>
+                                    <span class="gov-dropdown__option-icon" aria-hidden="true"><svg viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M18 0C19.0425 0 19.9171 0.7812 19.9944 1.79769L20 1.94444V18C20 18.5128 19.614 18.9355 19.1166 18.9933L19 19H1C0.487164 19 0.0644928 18.614 0.0067277 18.1166L0 18V11.5833C0 11.3431 0.086434 11.1123 0.241251 10.9319L0.324275 10.8462L5.37929 6.2159L6.00041 6L6.65803 6.2469L11.6757 10.8462C11.8528 11.0085 11.9929 11.4642L12 11.5833V17H14V15C14 14.4477 15 14C15.5128 14 16 15V17H18V2H8V3.83333C8 4.38562 7 4.83333L6 3.83333V1.94444C6 0.906785 8 0H18ZM5.999 8.356L2 12.022V17H5V14.3333C5 13.781 6 13.3333L7 14.3333V17H10V12.023L5.999 8.356Z"/></svg></span>
+                                    <span class="gov-dropdown__option-check" aria-hidden="true"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="gov-dropdown__help">
+                        <span class="gov-dropdown__help-icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg>
+                        </span>
+                        <span>טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / אלמנט</th>
+                    <th>ערך Figma</th>
+                    <th>טוקן ב-styles.css</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>גבול Default</td><td>#5c697a</td><td><code>--igds-base-color-border-subtle-default</code></td></tr>
+                <tr><td>גבול Hover</td><td>#0045a3</td><td><code>--igds-base-color-border-brand-hover</code></td></tr>
+                <tr><td>גבול Focused (2px)</td><td>#0068f5</td><td><code>--igds-base-color-border-focused</code></td></tr>
+                <tr><td>גבול Expanded</td><td>#0068f5</td><td><code>--igds-base-color-border-brand-default</code></td></tr>
+                <tr><td>גבול Error</td><td>#a72223</td><td><code>--igds-base-color-border-failure</code></td></tr>
+                <tr><td>רקע/גבול/טקסט Disabled</td><td>#e0e8ef / #5c697a</td><td><code>--igds-base-color-background-disabled-with-text</code> · <code>-border-disabled</code> · <code>-text-disabled</code></td></tr>
+                <tr><td>placeholder</td><td>#466186</td><td><code>--igds-base-color-text-subtle-secondary</code></td></tr>
+                <tr><td>טקסט נבחר / אפשרות</td><td>#0c3058</td><td><code>--igds-base-color-text-subtle-primary</code></td></tr>
+                <tr><td>צל הרשימה</td><td>#064DAD26 Level2</td><td><code>--igds-shadow-light-level2</code></td></tr>
+                <tr><td>רקע תגית (pill)</td><td>#f2f6fd</td><td><code>--igds-base-color-background-neutral-secondlevel</code></td></tr>
+                <tr><td>פעולות / קישור</td><td>#0068f5</td><td><code>--igds-base-color-button-text-secondary</code></td></tr>
+                <tr><td>radius · padding · gap</td><td>8px · 12/16px · 8px</td><td><code>--igds-ref-border-radius-m</code> · <code>--igds-ref-space-400/500</code> · <code>-space-300</code></td></tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

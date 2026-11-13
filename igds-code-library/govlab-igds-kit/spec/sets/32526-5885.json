@@ -1,0 +1,1322 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "32526:5885",
+  "name": "Step Indicator Horizontal - Mobile - Round",
+  "key": "68c6ed7fe44e75a1c63890d5f0719f4c007f42b1",
+  "defs": {
+   "Title": {
+    "t": "TEXT",
+    "d": "שם השלב הנוכחי"
+   },
+   "Title LTR": {
+    "t": "TEXT",
+    "d": "Current step label"
+   },
+   "Steps": {
+    "t": "VARIANT",
+    "o": [
+     "3",
+     "4"
+    ],
+    "d": "3"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-32526-5885.json",
+   "sha256": "234988844ba7910ba62b7babb5e927478b8932fef001996d600d34720ce16196",
+   "format": "v5-rest",
+   "restResponseSha256": "60ef87cb3d1bad1a132b9a835a7c964327d39af6b6e1257f7476cd199a878047",
+   "filter": null,
+   "offset": 0,
+   "captured": 4,
+   "totalMatching": 4
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 4,
+  "byFilter": {
+   "null": {
+    "totalMatching": 4,
+    "captured": 4
+   }
+  },
+  "detail": {
+   "tree": 4,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-minus100": {
+   "figma": "Space/space-minus100",
+   "css": "--igds-ref-space-minus100",
+   "status": "css-token",
+   "light": {
+    "figma": -2,
+    "css": "-2px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/medium": {
+   "figma": "Typography/font-weight/medium",
+   "css": "--igds-ref-font-weight-medium",
+   "status": "css-token",
+   "light": {
+    "figma": 500,
+    "css": "500",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35409:4478",
+   "name": "Steps=3, RTL=False",
+   "props": {
+    "Steps": "3",
+    "RTL": "False"
+   },
+   "w": 212,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 212,
+    "h": 56,
+    "nid": "35409:4478",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Step Container",
+      "t": "FRAME",
+      "x": 16,
+      "y": 0,
+      "w": 180,
+      "h": 56,
+      "nid": "35409:4479",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Step Label",
+        "t": "TEXT",
+        "x": 36.5,
+        "y": 0,
+        "w": 139,
+        "h": 24,
+        "nid": "35409:4480",
+        "ref": {
+         "characters": "Title LTR#35419:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/medium",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Current step label",
+        "font": [
+         "Rubik",
+         "Medium"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Medium"
+       },
+       {
+        "n": "Step Indicators",
+        "t": "FRAME",
+        "x": 16,
+        "y": 32,
+        "w": 180,
+        "h": 24,
+        "nid": "35409:4481",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": -2,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-minus100"
+        },
+        "c": [
+         {
+          "n": "Step 1",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "35409:4484",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=False"
+          },
+          "mcid": "35395:5834",
+          "cp": {
+           "Status": "Current",
+           "RTL": "False"
+          },
+          "itx": [
+           "1"
+          ]
+         },
+         {
+          "n": "Step 2",
+          "t": "INSTANCE",
+          "x": 94,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "35409:4483",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Not Started, RTL=False"
+          },
+          "mcid": "35395:5828",
+          "cp": {
+           "Status": "Not Started",
+           "RTL": "False"
+          },
+          "itx": [
+           "2"
+          ]
+         },
+         {
+          "n": "Step 3",
+          "t": "INSTANCE",
+          "x": 172,
+          "y": 32,
+          "w": 24,
+          "h": 24,
+          "nid": "35409:4482",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Not Started, RTL=False"
+          },
+          "mcid": "35395:5828",
+          "cp": {
+           "Connector": false,
+           "Status": "Not Started",
+           "RTL": "False"
+          },
+          "itx": [
+           "3"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-32526-5885.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Space/space-500",
+    "Space/space-minus100",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "2382:1069",
+   "name": "Steps=3, RTL=True",
+   "props": {
+    "Steps": "3",
+    "RTL": "True"
+   },
+   "w": 212,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 212,
+    "h": 56,
+    "nid": "2382:1069",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Step Container",
+      "t": "FRAME",
+      "x": 16,
+      "y": 0,
+      "w": 180,
+      "h": 56,
+      "nid": "11509:7268",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Step Label",
+        "t": "TEXT",
+        "x": 49.5,
+        "y": 0,
+        "w": 113,
+        "h": 24,
+        "nid": "11509:7061",
+        "ref": {
+         "characters": "Title#32526:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/medium",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "שם השלב הנוכחי",
+        "font": [
+         "Rubik",
+         "Medium"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Medium"
+       },
+       {
+        "n": "Step Indicators",
+        "t": "FRAME",
+        "x": 16,
+        "y": 32,
+        "w": 180,
+        "h": 24,
+        "nid": "11509:7180",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": -2,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-minus100"
+        },
+        "c": [
+         {
+          "n": "Step 3",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 32,
+          "w": 24,
+          "h": 24,
+          "nid": "31084:32315",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Not Started, RTL=True"
+          },
+          "mcid": "31082:28278",
+          "cp": {
+           "Connector": false,
+           "Status": "Not Started",
+           "RTL": "True"
+          },
+          "itx": [
+           "3"
+          ]
+         },
+         {
+          "n": "Step 2",
+          "t": "INSTANCE",
+          "x": 38,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "31084:32250",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Not Started, RTL=True"
+          },
+          "mcid": "31082:28278",
+          "cp": {
+           "Status": "Not Started",
+           "RTL": "True"
+          },
+          "itx": [
+           "2"
+          ]
+         },
+         {
+          "n": "Step 1",
+          "t": "INSTANCE",
+          "x": 116,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "31084:32185",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=True"
+          },
+          "mcid": "31084:32163",
+          "cp": {
+           "Status": "Current",
+           "RTL": "True"
+          },
+          "itx": [
+           "1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-32526-5885.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Space/space-500",
+    "Space/space-minus100",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35409:4485",
+   "name": "Steps=4, RTL=False",
+   "props": {
+    "Steps": "4",
+    "RTL": "False"
+   },
+   "w": 290,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 56,
+    "nid": "35409:4485",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Step Container",
+      "t": "FRAME",
+      "x": 16,
+      "y": 0,
+      "w": 258,
+      "h": 56,
+      "nid": "35409:4486",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Step Label",
+        "t": "TEXT",
+        "x": 75.5,
+        "y": 0,
+        "w": 139,
+        "h": 24,
+        "nid": "35409:4487",
+        "ref": {
+         "characters": "Title LTR#35419:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/medium",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Current step label",
+        "font": [
+         "Rubik",
+         "Medium"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Medium"
+       },
+       {
+        "n": "Step Indicators",
+        "t": "FRAME",
+        "x": 16,
+        "y": 32,
+        "w": 258,
+        "h": 24,
+        "nid": "35409:4488",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": -2,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-minus100"
+        },
+        "c": [
+         {
+          "n": "Step 1",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "35409:4492",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=False"
+          },
+          "mcid": "35395:5834",
+          "cp": {
+           "Status": "Current",
+           "RTL": "False"
+          },
+          "itx": [
+           "1"
+          ]
+         },
+         {
+          "n": "Step 2",
+          "t": "INSTANCE",
+          "x": 94,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "35409:4491",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=False"
+          },
+          "mcid": "35395:5834",
+          "cp": {
+           "Status": "Current",
+           "RTL": "False"
+          },
+          "itx": [
+           "2"
+          ]
+         },
+         {
+          "n": "Step 3",
+          "t": "INSTANCE",
+          "x": 172,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "35409:4490",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=False"
+          },
+          "mcid": "35395:5834",
+          "cp": {
+           "Status": "Current",
+           "RTL": "False"
+          },
+          "itx": [
+           "3"
+          ]
+         },
+         {
+          "n": "Step 4",
+          "t": "INSTANCE",
+          "x": 250,
+          "y": 32,
+          "w": 24,
+          "h": 24,
+          "nid": "35409:4489",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=False"
+          },
+          "mcid": "35395:5834",
+          "cp": {
+           "Connector": false,
+           "Status": "Current",
+           "RTL": "False"
+          },
+          "itx": [
+           "4"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-32526-5885.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Space/space-500",
+    "Space/space-minus100",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "2382:1073",
+   "name": "Steps=4, RTL=True",
+   "props": {
+    "Steps": "4",
+    "RTL": "True"
+   },
+   "w": 290,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 290,
+    "h": 56,
+    "nid": "2382:1073",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Step Container",
+      "t": "FRAME",
+      "x": 16,
+      "y": 0,
+      "w": 258,
+      "h": 56,
+      "nid": "11509:7537",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Step Label",
+        "t": "TEXT",
+        "x": 88.5,
+        "y": 0,
+        "w": 113,
+        "h": 24,
+        "nid": "11509:7313",
+        "ref": {
+         "characters": "Title#32526:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/medium",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "שם השלב הנוכחי",
+        "font": [
+         "Rubik",
+         "Medium"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Medium"
+       },
+       {
+        "n": "Step Indicators",
+        "t": "FRAME",
+        "x": 16,
+        "y": 32,
+        "w": 258,
+        "h": 24,
+        "nid": "11509:7480",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": -2,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-minus100"
+        },
+        "c": [
+         {
+          "n": "Step 4",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 32,
+          "w": 24,
+          "h": 24,
+          "nid": "31084:33058",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=True"
+          },
+          "mcid": "31084:32163",
+          "cp": {
+           "Connector": false,
+           "Status": "Current",
+           "RTL": "True"
+          },
+          "itx": [
+           "4"
+          ]
+         },
+         {
+          "n": "Step 3",
+          "t": "INSTANCE",
+          "x": 38,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "31084:32842",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=True"
+          },
+          "mcid": "31084:32163",
+          "cp": {
+           "Status": "Current",
+           "RTL": "True"
+          },
+          "itx": [
+           "3"
+          ]
+         },
+         {
+          "n": "Step 2",
+          "t": "INSTANCE",
+          "x": 116,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "31084:32626",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=True"
+          },
+          "mcid": "31084:32163",
+          "cp": {
+           "Status": "Current",
+           "RTL": "True"
+          },
+          "itx": [
+           "2"
+          ]
+         },
+         {
+          "n": "Step 1",
+          "t": "INSTANCE",
+          "x": 194,
+          "y": 32,
+          "w": 80,
+          "h": 24,
+          "nid": "31084:32410",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 8,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300"
+          },
+          "inst": {
+           "set": ".Step Indicator Horizontal - Mobile",
+           "setId": "31084:32184",
+           "variant": "Status=Current, RTL=True"
+          },
+          "mcid": "31084:32163",
+          "cp": {
+           "Status": "Current",
+           "RTL": "True"
+          },
+          "itx": [
+           "1"
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-32526-5885.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Space/space-500",
+    "Space/space-minus100",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

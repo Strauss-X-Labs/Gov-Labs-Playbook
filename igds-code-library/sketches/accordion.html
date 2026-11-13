@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Accordion (כל המצבים)</title>
+    <!-- מקור אמת: טוקנים ומחלקות הדיזיין סיסטם -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- סטייל מעטפת הגלריה (משותף לכל הסקיצות) -->
+    <link rel="stylesheet" href="_gallery.css">
+    <style>
+        /* קו תחתון לכל פריט (נאמן לפיגמה — divider, לא מסגרת) */
+        .sketch .gov-accordion__item {
+            border-bottom: 1px solid var(--igds-base-color-border-divider-default);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Accordion — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): מצבי פריט מ-node <code>522:495</code>,
+            קבוצה מ-node <code>36363:22776</code>, דרך Figma MCP.
+            מבוסס על <code>.gov-accordion</code> והטוקנים ב-<code>styles.css</code>.
+        </p>
+
+        <div class="sketch__grid">
+
+            <!-- Default — Collapsed -->
+            <section>
+                <span class="sketch__state-label">Default · סגור</span>
+                <div class="gov-accordion">
+                    <div class="gov-accordion__item">
+                        <button class="gov-accordion__header" type="button" aria-expanded="false"
+                            aria-controls="p-default">
+                            <span class="gov-accordion__icon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <span class="gov-accordion__title">כותרת הפריט</span>
+                            <span class="gov-accordion__chevron" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="gov-accordion__content" id="p-default" role="region" hidden>
+                            <p>תוכן הפריט מופיע כאן כשהוא פתוח.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Default — Expanded -->
+            <section>
+                <span class="sketch__state-label">Default · פתוח</span>
+                <div class="gov-accordion">
+                    <div class="gov-accordion__item">
+                        <button class="gov-accordion__header" type="button" aria-expanded="true"
+                            aria-controls="p-open">
+                            <span class="gov-accordion__icon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <span class="gov-accordion__title">כותרת הפריט</span>
+                            <span class="gov-accordion__chevron" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <hr class="gov-accordion__divider">
+                        <div class="gov-accordion__content" id="p-open" role="region">
+                            <p>תוכן הפריט מופיע כאן כשהוא פתוח.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hover -->
+            <section>
+                <span class="sketch__state-label">Hover</span>
+                <div class="gov-accordion">
+                    <div class="gov-accordion__item">
+                        <button class="gov-accordion__header" type="button" aria-expanded="false"
+                            aria-controls="p-hover"
+                            style="background-color: var(--igds-base-color-background-neutral-hover);">
+                            <span class="gov-accordion__icon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <span class="gov-accordion__title">כותרת הפריט</span>
+                            <span class="gov-accordion__chevron" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="gov-accordion__content" id="p-hover" role="region" hidden></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Focused -->
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <div class="gov-accordion">
+                    <div class="gov-accordion__item">
+                        <button class="gov-accordion__header" type="button" aria-expanded="false"
+                            aria-controls="p-focus"
+                            style="outline: 2px solid var(--igds-base-color-border-focused); outline-offset: -2px; border-radius: var(--igds-ref-border-radius-xs);">
+                            <span class="gov-accordion__icon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <span class="gov-accordion__title">כותרת הפריט</span>
+                            <span class="gov-accordion__chevron" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="gov-accordion__content" id="p-focus" role="region" hidden></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Disabled -->
+            <section>
+                <span class="sketch__state-label">Disabled</span>
+                <div class="gov-accordion">
+                    <div class="gov-accordion__item">
+                        <button class="gov-accordion__header" type="button" aria-expanded="false" disabled
+                            aria-controls="p-disabled">
+                            <span class="gov-accordion__icon" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <circle cx="12" cy="12" r="9" />
+                                    <path d="M12 8v8M8 12h8" stroke-linecap="round" />
+                                </svg>
+                            </span>
+                            <span class="gov-accordion__title">כותרת הפריט</span>
+                            <span class="gov-accordion__chevron" aria-hidden="true">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="gov-accordion__content" id="p-disabled" role="region" hidden></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- דוגמת קבוצה: AllowMultiple -->
+        <h2 class="sketch__mapping-title">קבוצת אקורדיון (Group · AllowMultiple=True)</h2>
+        <p class="sketch__sub">כמה פריטים יחד — ניתן לפתוח יותר מאחד בו-זמנית.</p>
+        <div class="gov-accordion" style="max-width: 560px;">
+            <div class="gov-accordion__item">
+                <button class="gov-accordion__header" type="button" aria-expanded="true" aria-controls="g-1">
+                    <span class="gov-accordion__title">שאלה ראשונה</span>
+                    <span class="gov-accordion__chevron" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="gov-accordion__content" id="g-1" role="region">
+                    <p>תשובה לשאלה הראשונה.</p>
+                </div>
+            </div>
+            <div class="gov-accordion__item">
+                <button class="gov-accordion__header" type="button" aria-expanded="false" aria-controls="g-2">
+                    <span class="gov-accordion__title">שאלה שנייה</span>
+                    <span class="gov-accordion__chevron" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="gov-accordion__content" id="g-2" role="region" hidden></div>
+            </div>
+            <div class="gov-accordion__item">
+                <button class="gov-accordion__header" type="button" aria-expanded="false" aria-controls="g-3">
+                    <span class="gov-accordion__title">שאלה שלישית</span>
+                    <span class="gov-accordion__chevron" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </span>
+                </button>
+                <div class="gov-accordion__content" id="g-3" role="region" hidden></div>
+            </div>
+        </div>
+
+        <!-- טבלת מיפוי: ערך פיגמה → טוקן ב-styles.css → סטטוס -->
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>רקע כותרת / פריט</td>
+                    <td>#ffffff</td>
+                    <td>--igds-base-color-background-neutral-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רקע Hover</td>
+                    <td>#f2f6fd</td>
+                    <td>--igds-base-color-background-neutral-hover</td>
+                    <td>✓ נוסף (node 522:495)</td>
+                </tr>
+                <tr>
+                    <td>רקע תוכן פתוח</td>
+                    <td>#f2f6fd</td>
+                    <td>--igds-base-color-background-neutral-secondlevel</td>
+                    <td>✓ נוסף (node 522:495)</td>
+                </tr>
+                <tr>
+                    <td>רקע Disabled</td>
+                    <td>#e0e8ef</td>
+                    <td>--igds-base-color-background-disabled-with-text</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט כותרת</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט Disabled</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>קו מפריד</td>
+                    <td>#b5c7e2</td>
+                    <td>--igds-base-color-border-divider-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Focus outline</td>
+                    <td>#0068f5 (2px, border-radius 4px)</td>
+                    <td>--igds-base-color-border-focused / --igds-ref-border-radius-xs</td>
+                    <td>✓ נמצא (node 36632:36155)</td>
+                </tr>
+                <tr>
+                    <td>padding כותרת</td>
+                    <td>16px</td>
+                    <td>--igds-ref-space-500</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רדיוס פריט</td>
+                    <td>4px</td>
+                    <td>--igds-ref-border-radius-xs</td>
+                    <td>✓ נוסף (node 522:495)</td>
+                </tr>
+                <tr>
+                    <td>גודל / משקל טקסט כותרת</td>
+                    <td>16px / 500</td>
+                    <td>--igds-ref-font-size-s / --igds-ref-font-weight-medium</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>אייקון כותרת / chevron</td>
+                    <td>SVG מהפיגמה</td>
+                    <td>currentColor (יורש מהטקסט)</td>
+                    <td>⚠ אייקון placeholder — אין נכס אייקון בדיזיין סיסטם</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

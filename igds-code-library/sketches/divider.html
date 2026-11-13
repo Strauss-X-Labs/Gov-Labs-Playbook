@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Divider (כל הווריאנטים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+    <style>
+        /* עזרי תצוגה לסקיצה בלבד (אינם חלק מהרכיב) */
+        .divider-demo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 140px;
+            padding: var(--space-lg);
+            background: var(--color-background);
+            border: 1px solid var(--igds-base-color-border-divider-default);
+            border-radius: var(--igds-ref-border-radius-m);
+        }
+
+        /* רקע כהה כדי שהקו ה-Inverted (לבן) יהיה גלוי */
+        .divider-demo--dark {
+            background: var(--igds-base-color-text-subtle-primary);
+            border-color: var(--igds-base-color-text-subtle-primary);
+        }
+
+        .divider-demo--horizontal {
+            flex-direction: column;
+        }
+
+        .divider-demo--vertical {
+            height: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Divider — סקיצת כל הווריאנטים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Divider node <code>708:2124</code>,
+            דרך Figma MCP. מבוסס על <code>.gov-divider</code> והטוקנים ב-<code>styles.css</code>.
+            קו מפריד בעובי 1px. 8 וריאנטים: Position (Horizontal/Vertical) ×
+            Style (Default/Inverted) × Width (Full/Inset).
+            הקו ה-Inverted (לבן) מוצג על רקע כהה כדי שיהיה גלוי.
+        </p>
+
+        <h2 class="sketch__mapping-title">Horizontal</h2>
+        <div class="sketch__grid">
+
+            <section>
+                <span class="sketch__state-label">Default · Full</span>
+                <div class="divider-demo divider-demo--horizontal">
+                    <div class="gov-divider gov-divider--horizontal" role="separator" aria-orientation="horizontal">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Default · Inset</span>
+                <div class="divider-demo divider-demo--horizontal">
+                    <div class="gov-divider gov-divider--horizontal gov-divider--inset" role="separator"
+                        aria-orientation="horizontal">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Inverted · Full</span>
+                <div class="divider-demo divider-demo--horizontal divider-demo--dark">
+                    <div class="gov-divider gov-divider--horizontal gov-divider--inverted" role="separator"
+                        aria-orientation="horizontal">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Inverted · Inset</span>
+                <div class="divider-demo divider-demo--horizontal divider-demo--dark">
+                    <div class="gov-divider gov-divider--horizontal gov-divider--inverted gov-divider--inset"
+                        role="separator" aria-orientation="horizontal">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <h2 class="sketch__mapping-title">Vertical</h2>
+        <div class="sketch__grid">
+
+            <section>
+                <span class="sketch__state-label">Default · Full</span>
+                <div class="divider-demo divider-demo--vertical">
+                    <div class="gov-divider gov-divider--vertical" role="separator" aria-orientation="vertical">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Default · Inset</span>
+                <div class="divider-demo divider-demo--vertical">
+                    <div class="gov-divider gov-divider--vertical gov-divider--inset" role="separator"
+                        aria-orientation="vertical">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Inverted · Full</span>
+                <div class="divider-demo divider-demo--vertical divider-demo--dark">
+                    <div class="gov-divider gov-divider--vertical gov-divider--inverted" role="separator"
+                        aria-orientation="vertical">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Inverted · Inset</span>
+                <div class="divider-demo divider-demo--vertical divider-demo--dark">
+                    <div class="gov-divider gov-divider--vertical gov-divider--inverted gov-divider--inset"
+                        role="separator" aria-orientation="vertical">
+                        <div class="gov-divider__line"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מאפיין</th>
+                    <th>ערך Figma</th>
+                    <th>טוקן ב-styles.css</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>צבע קו — Default</td>
+                    <td>#b5c7e2</td>
+                    <td><code>--igds-base-color-border-divider-default</code></td>
+                </tr>
+                <tr>
+                    <td>צבע קו — Inverted</td>
+                    <td>#ffffff</td>
+                    <td><code>--igds-base-color-border-divider-inverted</code></td>
+                </tr>
+                <tr>
+                    <td>עובי קו</td>
+                    <td>1px</td>
+                    <td><code>--igds-ref-border-width-s</code></td>
+                </tr>
+                <tr>
+                    <td>ריווח Inset</td>
+                    <td>16px</td>
+                    <td><code>--igds-ref-space-500</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,793 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "35900:13376",
+  "name": "Date Picker",
+  "key": "ca009cafaced5b7b3b1affe5260b780985e26a63",
+  "defs": {
+   "Open Calender": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "Type": {
+    "t": "VARIANT",
+    "o": [
+     "Date Picker",
+     "Date Field"
+    ],
+    "d": "Date Picker"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-35900-13376.json",
+   "sha256": "ad6531b96e3ffdece43f8e79c1ead9c1875e2f2c3377c10e11381fdc276065f3",
+   "format": "v5-rest",
+   "restResponseSha256": "4f6de7e2d4496373f1d6d06eda1fc5871de33e2d4656688fcf51386139eb9a8d",
+   "filter": null,
+   "offset": 0,
+   "captured": 4,
+   "totalMatching": 4
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 4,
+  "byFilter": {
+   "null": {
+    "totalMatching": 4,
+    "captured": 4
+   }
+  },
+  "detail": {
+   "tree": 4,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35906:10216",
+   "name": "RTL=False, Type=Date Field",
+   "props": {
+    "RTL": "False",
+    "Type": "Date Field"
+   },
+   "w": 191,
+   "h": 80,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 191,
+    "h": 80,
+    "nid": "35906:10216",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 191,
+      "h": 80,
+      "nid": "35906:10217",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=False"
+      },
+      "mcid": "35040:32554",
+      "cp": {
+       "Input Text LRT": "DD/MM/YYYY",
+       "Question tooltip": false,
+       "Help": false,
+       "Icon": false,
+       "Input text": "DD/MM/YYYY",
+       "Tooltip": false,
+       "State": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Lable",
+       "*",
+       "DD/MM/YYYY"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35900-13376.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35900:13377",
+   "name": "RTL=False, Type=Date Picker",
+   "props": {
+    "RTL": "False",
+    "Type": "Date Picker"
+   },
+   "w": 320,
+   "h": 476,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 476,
+    "nid": "35900:13377",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 80,
+      "nid": "35900:13378",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=False"
+      },
+      "mcid": "35040:32554",
+      "cp": {
+       "Input Text LRT": "DD/MM/YYYY",
+       "Question tooltip": false,
+       "Help": false,
+       "Input text": "DD/MM/YYYY",
+       "Tooltip": false,
+       "State": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Lable",
+       "*",
+       "DD/MM/YYYY"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Date Picker Calendar",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 88,
+      "w": 320,
+      "h": 388,
+      "nid": "35900:13379",
+      "ref": {
+       "visible": "Open Calender#35900:0"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        4,
+        8,
+        4
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Date Picker Calendar",
+       "setId": "914:1980",
+       "variant": "RTL=False, Type=Day LTR"
+      },
+      "mcid": "35883:20071",
+      "cp": {
+       "RTL": "False",
+       "Type": "Day LTR"
+      },
+      "itx": [
+       "August",
+       "2024",
+       "Mon",
+       "Tue",
+       "Wed",
+       "Thu",
+       "Fri",
+       "Sat",
+       "Sun",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35900-13376.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35906:10215",
+   "name": "RTL=True, Type=Date Field",
+   "props": {
+    "RTL": "True",
+    "Type": "Date Field"
+   },
+   "w": 160,
+   "h": 80,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 80,
+    "nid": "35906:10215",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 160,
+      "h": 80,
+      "nid": "35900:13061",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=True"
+      },
+      "mcid": "35040:32530",
+      "cp": {
+       "Input text": "DD/MM/YYYY",
+       "Question tooltip": false,
+       "Tooltip": false,
+       "Help": false,
+       "Icon": false,
+       "State": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "*",
+       "תווית",
+       "DD/MM/YYYY"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35900-13376.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35900:13375",
+   "name": "RTL=True, Type=Date Picker",
+   "props": {
+    "RTL": "True",
+    "Type": "Date Picker"
+   },
+   "w": 320,
+   "h": 476,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 476,
+    "nid": "35900:13375",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 80,
+      "nid": "35906:10183",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=True"
+      },
+      "mcid": "35040:32530",
+      "cp": {
+       "Input text": "DD/MM/YYYY",
+       "Question tooltip": false,
+       "Tooltip": false,
+       "Help": false,
+       "State": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "*",
+       "תווית",
+       "DD/MM/YYYY"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Date Picker Calendar",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 88,
+      "w": 320,
+      "h": 388,
+      "nid": "35900:13124",
+      "ref": {
+       "visible": "Open Calender#35900:0"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        4,
+        8,
+        4
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Date Picker Calendar",
+       "setId": "914:1980",
+       "variant": "RTL=True, Type=Day"
+      },
+      "mcid": "1410:1810",
+      "cp": {
+       "RTL": "True",
+       "Type": "Day"
+      },
+      "itx": [
+       "2024",
+       "אוגוסט",
+       "ש׳",
+       "ו׳",
+       "ה׳",
+       "ד׳",
+       "ג׳",
+       "ב׳",
+       "א׳",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00",
+       "00"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35900-13376.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

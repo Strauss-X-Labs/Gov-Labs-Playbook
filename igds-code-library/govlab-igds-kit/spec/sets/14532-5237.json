@@ -1,0 +1,6928 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "14532:5237",
+  "name": "Share via social links",
+  "key": "22cfe8db1b8d627df53e6eb3501045bcca0a5622",
+  "defs": {
+   "Number of links": {
+    "t": "VARIANT",
+    "o": [
+     "5",
+     "4",
+     "3"
+    ],
+    "d": "5"
+   },
+   "Arrow": {
+    "t": "VARIANT",
+    "o": [
+     "Left",
+     "Middle",
+     "Right"
+    ],
+    "d": "Left"
+   },
+   "Position": {
+    "t": "VARIANT",
+    "o": [
+     "Top",
+     "Buttom",
+     "Left",
+     "Right"
+    ],
+    "d": "Top"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-14532-5237.json",
+   "sha256": "be7e80cb675a86427d638ecaae787dff2b9f1482e38983d8f8c458266db3f984",
+   "format": "v5-rest",
+   "restResponseSha256": "4c11fe4e4386b7a551d303f4ca3f708a9eaf5d79805d84522dc864772c506889",
+   "filter": null,
+   "offset": 0,
+   "captured": 24,
+   "totalMatching": 24
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 24,
+  "byFilter": {
+   "null": {
+    "totalMatching": 24,
+    "captured": 24
+   }
+  },
+  "detail": {
+   "tree": 24,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/Inverted/neutral-secondlevel": {
+   "figma": "Colors/Background/Inverted/neutral-secondlevel",
+   "css": "--igds-base-color-background-inverted-neutral-secondlevel",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1b487a",
+    "css": "#1b487a",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "14545:5593",
+   "name": "Number of links=3, Arrow=Left, Position=Buttom",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Left",
+    "Position": "Buttom"
+   },
+   "w": 112,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 48,
+    "nid": "14545:5593",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5594",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5595",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5596",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5597",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5599",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5600",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5262",
+   "name": "Number of links=3, Arrow=Left, Position=Top",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Left",
+    "Position": "Top"
+   },
+   "w": 112,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 48,
+    "nid": "14545:5262",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5263",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5264",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5265",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5266",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5267",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5268",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5662",
+   "name": "Number of links=3, Arrow=Middle, Position=Buttom",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Middle",
+    "Position": "Buttom"
+   },
+   "w": 112,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 48,
+    "nid": "14545:5662",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5663",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5664",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5665",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5666",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 32,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5668",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 48,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5669",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5801",
+   "name": "Number of links=3, Arrow=Middle, Position=Left",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Middle",
+    "Position": "Left"
+   },
+   "w": 120,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 40,
+    "nid": "14545:5801",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 40,
+      "nid": "14545:5802",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 12,
+        "w": 8,
+        "h": 16,
+        "nid": "14545:5803",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5804",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5805",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 52,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5806",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 88,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5807",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5870",
+   "name": "Number of links=3, Arrow=Middle, Position=Right",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Middle",
+    "Position": "Right"
+   },
+   "w": 120,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 120,
+    "h": 40,
+    "nid": "14545:5870",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5871",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5872",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5873",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5874",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 112,
+      "y": 0,
+      "w": 8,
+      "h": 40,
+      "nid": "14545:5876",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 112,
+        "y": 12,
+        "w": 8,
+        "h": 16,
+        "nid": "14545:5877",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5303",
+   "name": "Number of links=3, Arrow=Middle, Position=Top",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Middle",
+    "Position": "Top"
+   },
+   "w": 112,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 48,
+    "nid": "14545:5303",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 32,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5304",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 48,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5305",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5306",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5307",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5308",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5309",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5700",
+   "name": "Number of links=3, Arrow=Right, Position=Buttom",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Right",
+    "Position": "Buttom"
+   },
+   "w": 112,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 48,
+    "nid": "14545:5700",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5701",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5702",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5703",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5704",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 64,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5705",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 80,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5706",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5366",
+   "name": "Number of links=3, Arrow=Right, Position=Top",
+   "props": {
+    "Number of links": "3",
+    "Arrow": "Right",
+    "Position": "Top"
+   },
+   "w": 112,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 48,
+    "nid": "14545:5366",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 64,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5367",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 80,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5368",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 112,
+      "h": 40,
+      "nid": "14545:5369",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5370",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5371",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5372",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5569",
+   "name": "Number of links=4, Arrow=Left, Position=Buttom",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Left",
+    "Position": "Buttom"
+   },
+   "w": 148,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 148,
+    "h": 48,
+    "nid": "14545:5569",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 148,
+      "h": 40,
+      "nid": "14545:5570",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5571",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5572",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5573",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5574",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5576",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5577",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14532:5238",
+   "name": "Number of links=4, Arrow=Left, Position=Top",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Left",
+    "Position": "Top"
+   },
+   "w": 148,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 148,
+    "h": 48,
+    "nid": "14532:5238",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14532:5239",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14532:5240",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 148,
+      "h": 40,
+      "nid": "14532:5241",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:5242",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:5243",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:5244",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:5245",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5638",
+   "name": "Number of links=4, Arrow=Middle, Position=Buttom",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Middle",
+    "Position": "Buttom"
+   },
+   "w": 148,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 148,
+    "h": 48,
+    "nid": "14545:5638",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 148,
+      "h": 40,
+      "nid": "14545:5639",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5640",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5641",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5642",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5643",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 50,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5645",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 66,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5646",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5775",
+   "name": "Number of links=4, Arrow=Middle, Position=Left",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Middle",
+    "Position": "Left"
+   },
+   "w": 156,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 156,
+    "h": 40,
+    "nid": "14545:5775",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 40,
+      "nid": "14545:5776",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 12,
+        "w": 8,
+        "h": 16,
+        "nid": "14545:5777",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 148,
+      "h": 40,
+      "nid": "14545:5778",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5779",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 52,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5780",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 88,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5781",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 124,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5782",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5846",
+   "name": "Number of links=4, Arrow=Middle, Position=Right",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Middle",
+    "Position": "Right"
+   },
+   "w": 156,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 156,
+    "h": 40,
+    "nid": "14545:5846",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 148,
+      "h": 40,
+      "nid": "14545:5847",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5848",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5849",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5850",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5851",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 148,
+      "y": 0,
+      "w": 8,
+      "h": 40,
+      "nid": "14545:5853",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 148,
+        "y": 12,
+        "w": 8,
+        "h": 16,
+        "nid": "14545:5854",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5295",
+   "name": "Number of links=4, Arrow=Middle, Position=Top",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Middle",
+    "Position": "Top"
+   },
+   "w": 148,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 148,
+    "h": 48,
+    "nid": "14545:5295",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 50,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5296",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 66,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5297",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 148,
+      "h": 40,
+      "nid": "14545:5298",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5299",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5300",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5301",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5302",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5692",
+   "name": "Number of links=4, Arrow=Right, Position=Buttom",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Right",
+    "Position": "Buttom"
+   },
+   "w": 148,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 148,
+    "h": 48,
+    "nid": "14545:5692",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 148,
+      "h": 40,
+      "nid": "14545:5693",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5694",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5695",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5696",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5697",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 100,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5698",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 116,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5699",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5358",
+   "name": "Number of links=4, Arrow=Right, Position=Top",
+   "props": {
+    "Number of links": "4",
+    "Arrow": "Right",
+    "Position": "Top"
+   },
+   "w": 148,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 148,
+    "h": 48,
+    "nid": "14545:5358",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 100,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5359",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 116,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5360",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 148,
+      "h": 40,
+      "nid": "14545:5361",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5362",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5363",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5364",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5365",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5545",
+   "name": "Number of links=5, Arrow=Left, Position=Buttom",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Left",
+    "Position": "Buttom"
+   },
+   "w": 184,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 184,
+    "h": 48,
+    "nid": "14545:5545",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 184,
+      "h": 40,
+      "nid": "14545:5548",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5549",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5550",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5551",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5552",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 152,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5553",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5546",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5547",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14532:5236",
+   "name": "Number of links=5, Arrow=Left, Position=Top",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Left",
+    "Position": "Top"
+   },
+   "w": 184,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 184,
+    "h": 48,
+    "nid": "14532:5236",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14532:5232",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14532:5233",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 184,
+      "h": 40,
+      "nid": "14532:4714",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:4690",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:4693",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:4700",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:5087",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 152,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14532:4711",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5614",
+   "name": "Number of links=5, Arrow=Middle, Position=Buttom",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Middle",
+    "Position": "Buttom"
+   },
+   "w": 184,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 184,
+    "h": 48,
+    "nid": "14545:5614",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 184,
+      "h": 40,
+      "nid": "14545:5617",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5618",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5619",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5620",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5621",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 152,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5622",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 68,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5615",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 84,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5616",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5746",
+   "name": "Number of links=5, Arrow=Middle, Position=Left",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Middle",
+    "Position": "Left"
+   },
+   "w": 192,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 192,
+    "h": 40,
+    "nid": "14545:5746",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 40,
+      "nid": "14545:5753",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 12,
+        "w": 8,
+        "h": 16,
+        "nid": "14545:5754",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 184,
+      "h": 40,
+      "nid": "14545:5747",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5748",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 52,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5749",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 88,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5750",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 124,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5751",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 160,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5752",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5822",
+   "name": "Number of links=5, Arrow=Middle, Position=Right",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Middle",
+    "Position": "Right"
+   },
+   "w": 192,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 192,
+    "h": 40,
+    "nid": "14545:5822",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 184,
+      "h": 40,
+      "nid": "14545:5825",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5826",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5827",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5828",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5829",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 152,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5830",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 184,
+      "y": 0,
+      "w": 8,
+      "h": 40,
+      "nid": "14545:5823",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 184,
+        "y": 12,
+        "w": 8,
+        "h": 16,
+        "nid": "14545:5824",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5286",
+   "name": "Number of links=5, Arrow=Middle, Position=Top",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Middle",
+    "Position": "Top"
+   },
+   "w": 184,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 184,
+    "h": 48,
+    "nid": "14545:5286",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 68,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5287",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 84,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5288",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 184,
+      "h": 40,
+      "nid": "14545:5289",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5290",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5291",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5292",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5293",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 152,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5294",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5683",
+   "name": "Number of links=5, Arrow=Right, Position=Buttom",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Right",
+    "Position": "Buttom"
+   },
+   "w": 184,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 184,
+    "h": 48,
+    "nid": "14545:5683",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 184,
+      "h": 40,
+      "nid": "14545:5684",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5685",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5686",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5687",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5688",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 152,
+        "y": 8,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5689",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 136,
+      "y": 40,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5690",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 152,
+        "y": 40,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5691",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "14545:5349",
+   "name": "Number of links=5, Arrow=Right, Position=Top",
+   "props": {
+    "Number of links": "5",
+    "Arrow": "Right",
+    "Position": "Top"
+   },
+   "w": 184,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 184,
+    "h": 48,
+    "nid": "14545:5349",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 136,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "14545:5350",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 152,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "14545:5351",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 29",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 184,
+      "h": 40,
+      "nid": "14545:5352",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 12,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Facebook",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5353",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Facebook",
+         "setId": "14394:13",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:554",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Whatsapp",
+        "t": "INSTANCE",
+        "x": 44,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5354",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Whatsapp",
+         "setId": "14394:561",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:565",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#25d366"
+         }
+        ]
+       },
+       {
+        "n": "Instagram",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5355",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "clip": 1,
+        "inst": {
+         "set": "Instagram",
+         "setId": "14394:912",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14394:916",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#000000"
+         },
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "YouTube",
+        "t": "INSTANCE",
+        "x": 116,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5356",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "YouTube",
+         "setId": "14433:48",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14438:231",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       },
+       {
+        "n": "Pinterest",
+        "t": "INSTANCE",
+        "x": 152,
+        "y": 16,
+        "w": 24,
+        "h": 24,
+        "nid": "14545:5357",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": "Pinterest",
+         "setId": "14445:537",
+         "variant": "Color=Brand, Size=24px"
+        },
+        "mcid": "14445:539",
+        "cp": {
+         "Color": "Brand",
+         "Size": "24px"
+        },
+        "ifill": [
+         {
+          "t": "IMAGE"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-14532-5237.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

@@ -1,0 +1,2195 @@
+{
+  "generatedAt": "2026-11-13T16:37:51.357Z",
+  "generatedBy": "igds-registry/scripts/verify-runtime.mjs",
+  "dataSource": "runtime: official @igds/core-web browser bundle in headless Chromium",
+  "browser": "msedge.exe",
+  "sourcePackages": {
+    "@igds/core-web": "0.1.59",
+    "@igds/tokens": "0.1.59",
+    "typescript": "5.9.3"
+  },
+  "summary": {
+    "components": 73,
+    "registered": 73,
+    "checksPassed": 5,
+    "checksFailed": 0
+  },
+  "loadingOrderProbe": {
+    "scenario": "bundle <script> in <head> without defer",
+    "registeredComponents": 4,
+    "ofTotal": 73,
+    "errors": [
+      "Uncaught TypeError: Failed to execute 'getComputedStyle' on 'Window': parameter 1 is not of type 'Element'."
+    ],
+    "conclusion": "BROKEN — bundle must be loaded with defer or at end of <body>"
+  },
+  "pageErrorsWithDefer": [
+    "Uncaught SyntaxError: Unexpected token 'p', \"probe\" is not valid JSON"
+  ],
+  "checks": {
+    "passed": [
+      {
+        "name": "every registry tag is registered by the official browser bundle",
+        "detail": []
+      },
+      {
+        "name": "observedAttributes exactly equal registry attributes (no missing)",
+        "detail": []
+      },
+      {
+        "name": "observedAttributes exactly equal registry attributes (no extra)",
+        "detail": []
+      },
+      {
+        "name": "every method presented as consumer API exists on the element prototype",
+        "detail": []
+      },
+      {
+        "name": "every slot rendered by default is known to the registry",
+        "detail": []
+      }
+    ],
+    "failed": []
+  },
+  "warnings": [
+    {
+      "tag": "igds-toolbar-item",
+      "kind": "throws-when-rendered-standalone (likely requires a parent/context element)",
+      "error": "Cannot read properties of undefined (reading 'toolbarDisabled')"
+    },
+    {
+      "tag": "igds-icon",
+      "kind": "attribute-rejected-at-runtime",
+      "attribute": "name",
+      "error": "Starting from version 0.1.29, the igds-icon component no longer supports the name property. Use the node property instead. The required icon nodes can be found and imported from the @igds/icons library."
+    }
+  ],
+  "components": [
+    {
+      "tag": "igds-accordion-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "open": false,
+        "disabled": false,
+        "icon": {
+          "undefined": true
+        },
+        "header": {
+          "undefined": true
+        },
+        "onToggle": null
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 7,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-accordion",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "multiexpand": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-anchor-menu",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "header": "",
+        "dir": "rtl"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-anchor",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "anchorId": {
+          "undefined": true
+        },
+        "href": "",
+        "anchorTitle": {
+          "undefined": true
+        },
+        "active": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-animate-height",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "duration": 200,
+        "expand": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-icon",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "name": {
+          "undefined": true
+        },
+        "node": {
+          "undefined": true
+        },
+        "color": "inherit",
+        "accessibleName": "",
+        "size": 24
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": [
+        {
+          "attribute": "name",
+          "warning": "Starting from version 0.1.29, the igds-icon component no longer supports the name property. Use the node property instead. The required icon nodes can be found and imported from the @igds/icons library."
+        }
+      ]
+    },
+    {
+      "tag": "igds-button",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "primary",
+        "size": "medium",
+        "disabled": false,
+        "loading": false,
+        "label": {
+          "undefined": true
+        },
+        "type": "button",
+        "inverted": false,
+        "iconOnly": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 5,
+      "slotsRenderedByDefault": [
+        "icon",
+        "(default)",
+        "second-icon"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-audio-recorder",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "limit": 60000,
+        "disabled": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-badge",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "default",
+        "label": "",
+        "icon": {
+          "undefined": true
+        },
+        "counter": {
+          "undefined": true
+        },
+        "notification": false,
+        "notificationButton": false,
+        "notificationButtonSize": "medium",
+        "notificationButtonVariant": "primary"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-banner",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "text-right",
+        "imgSrc": "",
+        "imageAlt": "",
+        "title": "",
+        "description": "",
+        "actionLabel": {
+          "undefined": true
+        },
+        "footerText": {
+          "undefined": true
+        },
+        "footerActionLabel": {
+          "undefined": true
+        },
+        "footerActionUrl": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-breadcrumb-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "href": "#",
+        "target": {
+          "undefined": true
+        },
+        "rel": "noreferrer noopener"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-popup-menu",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "open": false,
+        "trigger": {
+          "undefined": true
+        },
+        "offset": 4,
+        "selectedItemId": {
+          "undefined": true
+        },
+        "minWidth": 166,
+        "maxWidth": {
+          "undefined": true
+        },
+        "variant": "popup",
+        "placement": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "trigger",
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-popup-menu-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "id": "84dcddd7-5456-4acd-9ab7-dd4ac27f01f0",
+        "icon": {
+          "undefined": true
+        },
+        "iconVariant": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-breadcrumbs",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "label": "Breadcrumbs",
+        "preventDefault": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-card",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "basic",
+        "type": "clickable",
+        "size": {
+          "undefined": true
+        },
+        "direction": "horizontal",
+        "contentCentered": false,
+        "interactive": false,
+        "disabled": false,
+        "title": "",
+        "subtitle": {
+          "undefined": true
+        },
+        "description": {
+          "undefined": true
+        },
+        "imageSrc": "",
+        "imageFit": "fill",
+        "imageAlt": {
+          "undefined": true
+        },
+        "label": {
+          "undefined": true
+        },
+        "favoriteVisible": false,
+        "defaultFavoriteState": false,
+        "favoriteIconStateActive": "<path d=\"M11.9967 21C11.7307 21 11.4767 20.895 11.2887 20.706L3.52169 12.926C1.48569 10.886 1.48569 7.567 3.52169 5.527C4.50469 4.543 5.81769 4 7.21669 4C8.61569 4 9.92869 4.543 10.9117 5.527L11.9967 6.614L13.0807 5.528C14.0647 4.543 15.3777 4 16.7767 4C18.1757 4 19.4887 4.543 20.4717 5.527C22.5077 7.567 22.5077 10.886 20.4727 12.926L12.7047 20.707C12.5167 20.895 12.2627 21 11.9967 21Z\"/>",
+        "favoriteIconStateInactive": "<path d=\"M7.21638 6C6.35238 6 5.54238 6.334 4.93638 6.941C3.67838 8.201 3.67838 10.252 4.93738 11.514L11.9964 18.585L19.0564 11.514C20.3154 10.252 20.3154 8.201 19.0564 6.941C17.8444 5.726 15.7084 5.728 14.4964 6.941L12.7044 8.736C12.3284 9.113 11.6644 9.113 11.2884 8.736L9.49638 6.94C8.89038 6.334 8.08138 6 7.21638 6ZM11.9964 21C11.7314 21 11.4764 20.895 11.2894 20.706L3.52138 12.926C1.48538 10.886 1.48538 7.567 3.52138 5.527C4.50538 4.543 5.81738 4 7.21638 4C8.61538 4 9.92838 4.543 10.9114 5.527L11.9964 6.614L13.0814 5.528C14.0654 4.543 15.3774 4 16.7774 4C18.1754 4 19.4884 4.543 20.4714 5.527C22.5084 7.567 22.5084 10.886 20.4724 12.926L12.7044 20.707C12.5164 20.895 12.2624 21 11.9964 21Z\"/>",
+        "favoriteLabel": "Favorite",
+        "primaryActionLabel": {
+          "undefined": true
+        },
+        "secondaryActionLabel": {
+          "undefined": true
+        },
+        "titleIcon": "<path d=\"M11.9982 4.41981L19.0002 11.6118L18.9902 19.9878H16.0002V12.9878C16.0002 12.4348 15.5522 11.9878 15.0002 11.9878H9.00018C8.44718 11.9878 8.00018 12.4348 8.00018 12.9878V19.9878H5.00018L5.00618 11.5708L11.9982 4.41981ZM14.0002 13.9878V19.9878H10.0002V13.9878H14.0002ZM20.4242 10.1728L12.7152 2.28881C12.3382 1.90381 11.6622 1.90381 11.2852 2.28881L3.57518 10.1738C3.21018 10.5488 3.00018 11.0728 3.00018 11.6118V19.9878C3.00018 21.0908 3.84718 21.9878 4.88818 21.9878H9.00018H15.0002H19.1112C20.1522 21.9878 21.0002 21.0908 21.0002 19.9878V11.6118C21.0002 11.0728 20.7902 10.5488 20.4242 10.1728Z\"/>",
+        "hideTitleIcon": false,
+        "badgeLabel": "תיאור",
+        "hideBadge": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 3,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-carousel",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "title": "",
+        "subtitle": "",
+        "variant": "inline",
+        "slidesPerView": 1,
+        "loop": false,
+        "autoplay": false,
+        "interval": 3000,
+        "autopause": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 28,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-carousel-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {},
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-default-error-box",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "errormessage": null
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 12,
+      "slotsRenderedByDefault": [
+        "error-message"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-checkbox",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": "checkbox",
+        "disabled": false,
+        "required": false,
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": "on",
+        "helpText": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "invalid": false,
+        "indeterminate": false,
+        "name": {
+          "undefined": true
+        },
+        "label": null,
+        "error": {
+          "undefined": true
+        },
+        "onChange": null,
+        "variant": "default",
+        "imageSrc": {
+          "undefined": true
+        },
+        "imageAlt": {
+          "undefined": true
+        },
+        "description": {
+          "undefined": true
+        },
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 4,
+      "slotsRenderedByDefault": [
+        "checkbox-icon",
+        "checkbox-label"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-tooltip",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "content": "",
+        "placement": "top",
+        "type": "standard",
+        "disabled": false,
+        "inverted": false,
+        "shown": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "(default)",
+        "content"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-checkbox-group",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "label": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "disabled": false,
+        "required": false,
+        "invalid": false,
+        "error": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "helpText": {
+          "undefined": true
+        },
+        "tooltip": {
+          "undefined": true
+        },
+        "tooltipQuestion": {
+          "undefined": true
+        },
+        "tooltipIcon": {
+          "undefined": true
+        },
+        "orientation": "vertical",
+        "onGroupChange": null
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-date-picker",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "dir": "rtl",
+        "label": {
+          "undefined": true
+        },
+        "labelIcon": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": {
+          "undefined": true
+        },
+        "dateFormat": "YYYY/MM/DD",
+        "disabled": false,
+        "required": false,
+        "readonly": false,
+        "min": null,
+        "max": null,
+        "minError": {
+          "undefined": true
+        },
+        "maxError": {
+          "undefined": true
+        },
+        "placeholder": {
+          "undefined": true
+        },
+        "withoutCalendar": false,
+        "startWeekOn": "sunday",
+        "invalid": false,
+        "error": {
+          "undefined": true
+        },
+        "withIcon": true,
+        "autoFocus": false,
+        "autocomplete": "off",
+        "openOnFocus": false,
+        "autocorrect": false,
+        "onChange": null,
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 16,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-divider",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "width": "igds-full-divider",
+        "orientation": "igds-horizontal-divider",
+        "inverted": {
+          "undefined": true
+        },
+        "label": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-drawer",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "open": false,
+        "position": "right",
+        "label": {
+          "undefined": true
+        },
+        "hideCloseButton": false,
+        "hideOverlay": false,
+        "disableFocusLock": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-tree-view",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "nodes": [],
+        "selectedNodeId": null,
+        "focusedIndex": {
+          "undefined": true
+        },
+        "expandedId": {
+          "undefined": true
+        },
+        "collapsedId": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-input",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": "input",
+        "dir": "rtl",
+        "type": "text",
+        "label": {
+          "undefined": true
+        },
+        "labelIcon": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": {
+          "undefined": true
+        },
+        "placeholder": {
+          "undefined": true
+        },
+        "disabled": false,
+        "required": false,
+        "readonly": false,
+        "rows": {
+          "undefined": true
+        },
+        "cols": {
+          "undefined": true
+        },
+        "min": {
+          "undefined": true
+        },
+        "max": {
+          "undefined": true
+        },
+        "pattern": {
+          "undefined": true
+        },
+        "maxlength": {
+          "undefined": true
+        },
+        "icon": {
+          "undefined": true
+        },
+        "iconPosition": "left",
+        "helpText": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "tooltip": {
+          "undefined": true
+        },
+        "tooltipQuestion": {
+          "undefined": true
+        },
+        "tooltipIcon": {
+          "undefined": true
+        },
+        "invalid": false,
+        "error": {
+          "undefined": true
+        },
+        "autoFocus": false,
+        "autoComplete": "off",
+        "autoCapitalize": "off",
+        "autocorrect": false,
+        "autoHeight": {
+          "undefined": true
+        },
+        "step": {
+          "undefined": true
+        },
+        "size": "custom",
+        "onChange": null,
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-dropdown",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "label": {
+          "undefined": true
+        },
+        "labelIcon": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "multiple": false,
+        "treeView": false,
+        "form": {
+          "undefined": true
+        },
+        "selected": [],
+        "defaultValue": {
+          "undefined": true
+        },
+        "placeholder": {
+          "undefined": true
+        },
+        "disabled": false,
+        "required": false,
+        "options": [],
+        "filterable": false,
+        "showTags": false,
+        "helpText": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "tooltip": {
+          "undefined": true
+        },
+        "tooltipQuestion": {
+          "undefined": true
+        },
+        "tooltipIcon": {
+          "undefined": true
+        },
+        "invalid": false,
+        "error": {
+          "undefined": true
+        },
+        "dir": "rtl",
+        "onChange": null,
+        "treeNodes": [],
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 8,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-dynamic-icon",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "name": {
+          "undefined": true
+        },
+        "color": "inherit",
+        "size": {
+          "undefined": true
+        },
+        "accessibleName": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-progress-bar",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "type": "line",
+        "color": "--igds-base-color-background-brand-default",
+        "inverted": false,
+        "value": 0,
+        "size": "small",
+        "label": "",
+        "helpText": "",
+        "statusIcon": {
+          "undefined": true
+        },
+        "indeterminate": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-file-uploader",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "heading": "",
+        "helpText": "",
+        "description": "",
+        "acceptedFormats": "*",
+        "maxFileSize": 5,
+        "multiple": false,
+        "fileStates": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "status": "default",
+        "disabled": false,
+        "maxFiles": null,
+        "fileUploadLabel": {
+          "undefined": true
+        },
+        "pendingStatusLabel": {
+          "undefined": true
+        },
+        "successStatusLabel": {
+          "undefined": true
+        },
+        "failStatusLabel": {
+          "undefined": true
+        },
+        "tooLargeFileError": {
+          "undefined": true
+        },
+        "tooManyFilesError": {
+          "undefined": true
+        },
+        "wrongFileFormatError": {
+          "undefined": true
+        },
+        "deleteButtonLabel": "מחק קובץ",
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-horizontal-filter",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "filters": [],
+        "clearLabel": "ניקוי סינון",
+        "applyLabel": {
+          "undefined": true
+        },
+        "dir": "rtl",
+        "disableSubmit": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-vertical-filter",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "filters": [],
+        "clearLabel": "ניקוי סינון",
+        "applyLabel": {
+          "undefined": true
+        },
+        "disableSubmit": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-footer",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "large",
+        "frontPageUrl": "/",
+        "copyright": "© הזכויות כל שמורות למערך הדיגיטל הלאומי,",
+        "logoUrl": {
+          "undefined": true
+        },
+        "darkLogoUrl": {
+          "undefined": true
+        },
+        "logoAlt": "",
+        "aboutUrl": {
+          "undefined": true
+        },
+        "termsUrl": {
+          "undefined": true
+        },
+        "accessibilityUrl": {
+          "undefined": true
+        },
+        "phone": "",
+        "email": "",
+        "contactUs": {
+          "undefined": true
+        },
+        "socialUrls": []
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 5,
+      "slotsRenderedByDefault": [
+        "(default)",
+        "nav"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-footer-navigation",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {},
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-footer-navigation-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "navLinkId": "",
+        "header": "",
+        "links": []
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-header",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "logoUrl": {
+          "undefined": true
+        },
+        "darkLogoUrl": {
+          "undefined": true
+        },
+        "logoAlt": "",
+        "frontPageUrl": "/",
+        "variant": "white",
+        "searchLabel": "לְחַפֵּשׂ"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 4,
+      "slotsRenderedByDefault": [
+        "hamburger",
+        "(default)",
+        "extra-nav",
+        "search",
+        "auth",
+        "bottom"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-list",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "unordered",
+        "droppable": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-list-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "header": {
+          "undefined": true
+        },
+        "subheader": {
+          "undefined": true
+        },
+        "moreText": {
+          "undefined": true
+        },
+        "itemId": {
+          "undefined": true
+        },
+        "moreInfo": {
+          "undefined": true
+        },
+        "icon": {
+          "undefined": true
+        },
+        "draggableItem": true,
+        "imageSrc": {
+          "undefined": true
+        },
+        "imageAlt": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-menu",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "default",
+        "triggerButton": null,
+        "label": {
+          "undefined": true
+        },
+        "open": false,
+        "position": "bottom",
+        "offset": null
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "trigger",
+        "menu-item"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-menu-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": {
+          "undefined": true
+        },
+        "label": {
+          "undefined": true
+        },
+        "header": {
+          "undefined": true
+        },
+        "icon": {
+          "undefined": true
+        },
+        "disabled": false,
+        "subMenu": false,
+        "withDivider": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-modal",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "open": {
+          "undefined": true
+        },
+        "label": {
+          "undefined": true
+        },
+        "type": "default",
+        "top": 0,
+        "start": 0,
+        "imageAutoSize": {
+          "undefined": true
+        },
+        "imageSrc": {
+          "undefined": true
+        },
+        "imageAlt": {
+          "undefined": true
+        },
+        "mobileImageSrc": {
+          "undefined": true
+        },
+        "mobileImageAlt": {
+          "undefined": true
+        },
+        "primaryActionLabel": {
+          "undefined": true
+        },
+        "secondaryActionLabel": {
+          "undefined": true
+        },
+        "animated": {
+          "undefined": true
+        },
+        "disabledFocusLock": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [
+        "(default)",
+        "footer"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-pagination",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "numbered",
+        "current": 1
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 4,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-pagination-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "href": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-profile-picker",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "avatarSize": "small",
+        "username": "שם המשתמש",
+        "userId": "",
+        "avatarUrl": "",
+        "open": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-radio",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "value": {
+          "undefined": true
+        },
+        "checked": false,
+        "componentId": "radio",
+        "disabled": false,
+        "required": false,
+        "form": {
+          "undefined": true
+        },
+        "helpText": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "invalid": false,
+        "name": {
+          "undefined": true
+        },
+        "label": {
+          "undefined": true
+        },
+        "variant": "default",
+        "description": {
+          "undefined": true
+        },
+        "imageSrc": {
+          "undefined": true
+        },
+        "imageAlt": {
+          "undefined": true
+        },
+        "error": {
+          "undefined": true
+        },
+        "tooltip": {
+          "undefined": true
+        },
+        "tooltipIcon": {
+          "undefined": true
+        },
+        "tooltipPlacement": {
+          "undefined": true
+        },
+        "onChange": null
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 3,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-radio-group",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "label": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": "",
+        "value": "",
+        "disabled": false,
+        "required": false,
+        "error": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "helpText": {
+          "undefined": true
+        },
+        "tooltip": {
+          "undefined": true
+        },
+        "tooltipQuestion": {
+          "undefined": true
+        },
+        "tooltipIcon": {
+          "undefined": true
+        },
+        "orientation": "vertical"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-rating",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": "rating",
+        "dir": "rtl",
+        "variant": "star",
+        "readonly": false,
+        "label": "",
+        "ratingGrade": [],
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "onChange": null,
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 4,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-editor-toolbar",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {},
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-toolbar-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "icon": {
+          "undefined": true
+        },
+        "command": {
+          "undefined": true
+        },
+        "label": {
+          "undefined": true
+        }
+      },
+      "renderError": "Cannot read properties of undefined (reading 'toolbarDisabled')",
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-rich-text-editor",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "label": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": {
+          "undefined": true
+        },
+        "placeholder": {
+          "undefined": true
+        },
+        "disabled": false,
+        "required": false,
+        "readonly": false,
+        "helpText": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "tooltipIcon": {
+          "undefined": true
+        },
+        "tooltipQuestion": {
+          "undefined": true
+        },
+        "tooltipAnswer": {
+          "undefined": true
+        },
+        "invalid": false,
+        "error": {
+          "undefined": true
+        },
+        "autoFocus": false,
+        "onChange": null,
+        "maxHeight": {
+          "undefined": true
+        },
+        "linkModalLabel": "הזן כתובת קישור",
+        "linkModalUrlLabel": "כתובת URL",
+        "linkModalTextLabel": "טקסט",
+        "linkModalUrlPlaceholder": "הזן כתובת URL",
+        "linkModalPrimaryActionLabel": "אישור",
+        "linkModalSecondaryActionLabel": "ביטול",
+        "linkPopupEditLabel": "עריכה",
+        "linkPopupRemoveLabel": "הסרת קישור",
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 29,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-link-modal",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {},
+      "updateCompleteResolved": true,
+      "renderMs": 2,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-search-field",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "value": "",
+        "suggestions": [],
+        "filterSuggestions": [],
+        "placeholder": {
+          "undefined": true
+        },
+        "filterPlaceholder": "כל הגופים",
+        "variant": "default",
+        "disabled": false,
+        "showClear": {
+          "undefined": true
+        },
+        "clearable": true,
+        "voiceSearch": false,
+        "dir": "rtl",
+        "filters": [],
+        "showEmptyResultsMessage": true
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 4,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-segmented-control",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "disabled": {
+          "undefined": true
+        },
+        "size": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-segment",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "selected": {
+          "undefined": true
+        },
+        "disabled": {
+          "undefined": true
+        },
+        "id": "5a467db0-c416-4ae1-ba35-f3b91d2084c1"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "icon",
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-sidebar-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": {
+          "undefined": true
+        },
+        "label": {
+          "undefined": true
+        },
+        "disabled": false,
+        "subMenu": false,
+        "icon": {
+          "undefined": true
+        },
+        "isSubMenuItem": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-sidebar",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "default",
+        "label": {
+          "undefined": true
+        },
+        "open": false,
+        "dir": "rtl"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "(default)",
+        "sidebar-item"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-skeleton",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "variant": "rectangular",
+        "radius": 16,
+        "width": "100%",
+        "height": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-slider",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": "slider",
+        "dir": "rtl",
+        "label": {
+          "undefined": true
+        },
+        "variant": "single",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "disabled": false,
+        "icon": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": {
+          "undefined": true
+        },
+        "required": false,
+        "invalid": false,
+        "error": {
+          "undefined": true
+        },
+        "minValueName": {
+          "undefined": true
+        },
+        "maxValueName": {
+          "undefined": true
+        },
+        "onChange": null,
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-spinbox",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": "spin-box",
+        "size": "big",
+        "label": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": {
+          "undefined": true
+        },
+        "disabled": false,
+        "required": false,
+        "min": 0,
+        "max": null,
+        "helpText": {
+          "undefined": true
+        },
+        "helpIcon": {
+          "undefined": true
+        },
+        "tooltip": {
+          "undefined": true
+        },
+        "tooltipQuestion": {
+          "undefined": true
+        },
+        "tooltipIcon": false,
+        "invalid": false,
+        "error": {
+          "undefined": true
+        },
+        "autoFocus": false,
+        "onChange": null,
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 3,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-step-indicator",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "orientation": "horizontal",
+        "current": 1,
+        "flat": false,
+        "compact": false,
+        "flatLabel": "שלב {current} מתוך {total}",
+        "flatFailedLabel": "שלב {current} נכשל"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-step-item",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "label": {
+          "undefined": true
+        },
+        "secondaryLabel": {
+          "undefined": true
+        },
+        "status": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-tabs",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "currentTabId": "",
+        "centered": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-tab",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "id": "",
+        "label": "",
+        "disabled": false,
+        "icon": {
+          "undefined": true
+        },
+        "badge": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-tab-panel",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "tab": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-tag",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "id": {
+          "undefined": true
+        },
+        "size": "medium",
+        "icon": "",
+        "disabled": false,
+        "removable": false
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-tag-group",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {},
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-table",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "selectable": {
+          "undefined": true
+        },
+        "editable": {
+          "undefined": true
+        },
+        "focusable": {
+          "undefined": true
+        },
+        "truncated": {
+          "undefined": true
+        },
+        "actions": {
+          "undefined": true
+        },
+        "droppable": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-table-cell",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {},
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-table-header",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "columns": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-table-row",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "cells": {
+          "undefined": true
+        },
+        "rowId": {
+          "undefined": true
+        },
+        "selected": {
+          "undefined": true
+        },
+        "expandable": {
+          "undefined": true
+        },
+        "expanded": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-toast-container",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "position": "top-end"
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 0,
+      "slotsRenderedByDefault": [
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-toast",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "type": "inline",
+        "variant": "info",
+        "duration": 1000,
+        "inline": false,
+        "autoClose": false,
+        "closable": false,
+        "linkActionLabel": {
+          "undefined": true
+        },
+        "linkActionUrl": {
+          "undefined": true
+        },
+        "closeActionLabel": {
+          "undefined": true
+        },
+        "shown": false,
+        "container": {
+          "undefined": true
+        }
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [
+        "title",
+        "(default)"
+      ],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    },
+    {
+      "tag": "igds-toggle",
+      "registered": true,
+      "attributesMissingAtRuntime": [],
+      "attributesOnlyAtRuntime": [],
+      "methodsMissingAtRuntime": [],
+      "defaults": {
+        "componentId": "toggle",
+        "labelTitle": {
+          "undefined": true
+        },
+        "labelText": {
+          "undefined": true
+        },
+        "name": {
+          "undefined": true
+        },
+        "form": {
+          "undefined": true
+        },
+        "defaultValue": "on",
+        "disabled": false,
+        "onChange": null,
+        "checked": false,
+        "value": ""
+      },
+      "updateCompleteResolved": true,
+      "renderMs": 1,
+      "slotsRenderedByDefault": [],
+      "slotsRenderedButUnknown": [],
+      "attributesRejectedAtRuntime": []
+    }
+  ]
+}

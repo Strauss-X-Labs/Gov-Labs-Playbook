@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- Fixture: must produce ZERO errors and ZERO warnings. -->
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="node_modules/@igds/tokens/lib/index.min.css">
+  <script src="node_modules/@igds/core-web/lib/index.min.js" defer></script>
+  <style>
+    .page { padding: var(--igds-ref-space-500); background: var(--igds-base-color-background-neutral-default); }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <igds-input label="שם פרטי" name="firstName" required help-text="כפי שמופיע בתעודת הזהות"></igds-input>
+    <igds-date-picker label="תאריך לידה" name="birthDate" openonfocus></igds-date-picker>
+    <igds-checkbox-group label="אישורים" orientation="vertical">
+      <igds-checkbox name="terms" value="yes" label="קראתי ואני מסכים/ה לתנאים" required></igds-checkbox>
+    </igds-checkbox-group>
+    <igds-button variant="primary" size="large" type="submit">
+      <span slot="icon"></span>
+      שליחה
+    </igds-button>
+    <igds-footer logourl="/logo.svg"></igds-footer>
+    <igds-dropdown label="עיר" options='[{"label":"ירושלים","value":"jlm"}]'></igds-dropdown>
+  </main>
+  <script>
+    document.querySelector('igds-input').addEventListener('igds-change', (e) => console.log(e.detail.value));
+    document.querySelector('igds-dropdown')?.addEventListener('igds-change', () => {});
+  </script>
+</body>
+</html>

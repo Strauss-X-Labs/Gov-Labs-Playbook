@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Input Field (כל המצבים)</title>
+    <!-- מקור אמת: טוקנים ומחלקות הדיזיין סיסטם -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- סטייל מעטפת הגלריה (משותף לכל הסקיצות) -->
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Input Field — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0, node <code>81:115</code>) דרך Figma MCP.
+            כל המצבים מבוססים על המחלקות הקיימות <code>.gov-input</code> והטוקנים ב-<code>styles.css</code>.
+        </p>
+
+        <div class="sketch__grid">
+
+            <!-- Default -->
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-default">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <input id="f-default" class="gov-input" type="text" value="טקסט" aria-required="true"
+                        aria-describedby="h-default">
+                    <span id="h-default" class="gov-hint">טקסט עזר</span>
+                </div>
+            </section>
+
+            <!-- Hover -->
+            <section>
+                <span class="sketch__state-label">Hover</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-hover">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <input id="f-hover" class="gov-input is-hover" type="text" value="טקסט" aria-required="true"
+                        aria-describedby="h-hover">
+                    <span id="h-hover" class="gov-hint">טקסט עזר</span>
+                </div>
+            </section>
+
+            <!-- Active -->
+            <section>
+                <span class="sketch__state-label">Active</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-active">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <input id="f-active" class="gov-input is-focus" type="text" value="טקסט" aria-required="true"
+                        aria-describedby="h-active">
+                    <span id="h-active" class="gov-hint">טקסט עזר</span>
+                </div>
+            </section>
+
+            <!-- Error -->
+            <section>
+                <span class="sketch__state-label">Error</span>
+                <div class="gov-form-group gov-form-group--error">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-error">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <input id="f-error" class="gov-input gov-input--error" type="text" value="טקסט" aria-required="true"
+                        aria-invalid="true" aria-describedby="e-error">
+                    <span id="e-error" class="sketch__hint-error" role="alert">חובה להזין ערך בשדה</span>
+                </div>
+            </section>
+
+            <!-- ErrorFocused -->
+            <section>
+                <span class="sketch__state-label">ErrorFocused</span>
+                <div class="gov-form-group gov-form-group--error">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-errorfocus">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <input id="f-errorfocus" class="gov-input gov-input--error is-focus" type="text" value="טקסט"
+                        aria-required="true" aria-invalid="true" aria-describedby="e-errorfocus">
+                    <span id="e-errorfocus" class="sketch__hint-error" role="alert">חובה להזין ערך בשדה</span>
+                </div>
+            </section>
+
+            <!-- Disabled -->
+            <section>
+                <span class="sketch__state-label">Disabled</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-disabled">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <span class="sketch__why">למה זה נחוץ?</span>
+                    </div>
+                    <input id="f-disabled" class="gov-input" type="text" value="טקסט" disabled
+                        aria-describedby="h-disabled">
+                    <span id="h-disabled" class="gov-hint">טקסט עזר</span>
+                </div>
+            </section>
+
+            <!-- Focused -->
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-focused">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <input id="f-focused" class="gov-input is-focus" type="text" value="טקסט" aria-required="true"
+                        aria-describedby="h-focused">
+                    <span id="h-focused" class="gov-hint">טקסט עזר</span>
+                </div>
+            </section>
+
+            <!-- Pre-filled -->
+            <section>
+                <span class="sketch__state-label">Pre-filled</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="f-prefilled">תווית <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <input id="f-prefilled" class="gov-input gov-input--prefilled" type="text" value="טקסט"
+                        aria-required="true" aria-describedby="h-prefilled">
+                    <span id="h-prefilled" class="gov-hint">טקסט עזר</span>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- טבלת מיפוי: ערך פיגמה → טוקן ב-styles.css → סטטוס -->
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>רקע שדה</td>
+                    <td>#ffffff</td>
+                    <td>--igds-base-color-background-neutral-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Default</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-border-subtle-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Hover</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-border-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Active / Focused</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-border-focused</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Error</td>
+                    <td>#a72223</td>
+                    <td>--igds-base-color-border-failure</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רקע Disabled</td>
+                    <td>#e0e8ef</td>
+                    <td>--igds-base-color-background-disabled-with-text</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רקע Pre-filled</td>
+                    <td>#ebf3ff</td>
+                    <td>--igds-base-color-background-prefiled-input-field</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Pre-filled</td>
+                    <td>#323b49</td>
+                    <td>--igds-base-color-border-subtle-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט label / קלט</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>placeholder / טקסט משני</td>
+                    <td>#466186</td>
+                    <td>--igds-base-color-text-subtle-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>קישור "למה זה נחוץ?"</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-text-link-primary-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט Disabled</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>radius שדה</td>
+                    <td>8px</td>
+                    <td>--igds-ref-border-radius-m</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding אנכי / אופקי</td>
+                    <td>12px / 16px</td>
+                    <td>--igds-ref-space-400 / --igds-ref-space-500</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גובה שדה</td>
+                    <td>48px</td>
+                    <td>--igds-input-height</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט קלט / hint</td>
+                    <td>16px / 14px</td>
+                    <td>--igds-ref-font-size-s / --igds-ref-font-size-xs</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>אייקונים (shekels / email / lock / info)</td>
+                    <td>SVG assets מהפיגמה</td>
+                    <td>—</td>
+                    <td>⚠ פער: אין טוקן אייקון; הושמטו מהסקיצה (לא קיימים ב-styles.css)</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

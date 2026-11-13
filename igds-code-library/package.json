@@ -1,0 +1,20 @@
+{
+  "name": "igds-kiro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "פרוטוטייפ HTML סטטי הצורך את ספריית הרכיבים IGDS (ללא bundler)",
+  "dependencies": {
+    "@igds/core-web": "0.1.59",
+    "@igds/tokens": "0.1.59"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "igds:refresh": "node igds-registry/scripts/refresh.mjs",
+    "igds:lint": "node igds-registry/scripts/lint-igds.mjs",
+    "igds:verify": "node igds-registry/scripts/verify-runtime.mjs",
+    "igds:figma": "node igds-registry/scripts/build-figma-mapping.mjs && node igds-registry/scripts/build-ai-docs.mjs",
+    "igds:test": "node igds-registry/tests/run-tests.mjs"
+  }
+}

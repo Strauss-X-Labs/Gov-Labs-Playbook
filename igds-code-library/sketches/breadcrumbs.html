@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Breadcrumbs (כל המצבים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Breadcrumbs — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Breadcrumbs bar node <code>53173:56947</code>,
+            atom node <code>35333:33475</code>, דרך Figma MCP.
+            מבוסס על <code>.breadcrumbs</code> והטוקנים ב-<code>styles.css</code>.
+            סרגל ניווט היררכי. פריט = קישור + chevron מפריד. טקסט 14px.
+            <br>Hover / Focused אמיתיים — העבירו עכבר / נווטו ב-Tab על הקישורים.
+        </p>
+
+        <h2 class="sketch__mapping-title">מצבי קישור (Atom)</h2>
+        <div class="sketch__grid">
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <nav class="breadcrumbs" aria-label="דוגמה Default">
+                    <ol>
+                        <li><a href="#">שלב</a></li>
+                    </ol>
+                </nav>
+            </section>
+            <section>
+                <span class="sketch__state-label">Hover</span>
+                <nav class="breadcrumbs" aria-label="דוגמה Hover">
+                    <ol>
+                        <li><a href="#" style="color: var(--igds-base-color-text-link-primary-hover); text-decoration: underline;">שלב</a></li>
+                    </ol>
+                </nav>
+            </section>
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <nav class="breadcrumbs" aria-label="דוגמה Focused">
+                    <ol>
+                        <li><a href="#" style="outline: 2px solid var(--igds-base-color-border-focused); outline-offset: var(--igds-ref-space-100); border-radius: var(--igds-ref-border-radius-xxs);">שלב</a></li>
+                    </ol>
+                </nav>
+            </section>
+            <section>
+                <span class="sketch__state-label">Current page</span>
+                <nav class="breadcrumbs" aria-label="דוגמה Current">
+                    <ol>
+                        <li><span aria-current="page">שלב</span></li>
+                    </ol>
+                </nav>
+            </section>
+        </div>
+
+        <h2 class="sketch__mapping-title">נתיב מלא (Expanded=True)</h2>
+        <p class="sketch__sub">כל הפריטים גלויים. הפריט האחרון הוא העמוד הנוכחי (ללא chevron).</p>
+        <nav class="breadcrumbs" aria-label="מיקומך באתר (מורחב)">
+            <ol>
+                <li>
+                    <a href="#">דף הבית</a>
+                    <span class="breadcrumbs__chevron" aria-hidden="true">
+                        <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z" />
+                        </svg>
+                    </span>
+                </li>
+                <li>
+                    <a href="#">משרד העבודה</a>
+                    <span class="breadcrumbs__chevron" aria-hidden="true">
+                        <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z" />
+                        </svg>
+                    </span>
+                </li>
+                <li>
+                    <a href="#">אגף מעונות יום</a>
+                    <span class="breadcrumbs__chevron" aria-hidden="true">
+                        <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z" />
+                        </svg>
+                    </span>
+                </li>
+                <li><span aria-current="page">הרשמה למעונות יום</span></li>
+            </ol>
+        </nav>
+
+        <h2 class="sketch__mapping-title">נתיב מקופל (Expanded=False · Overflow)</h2>
+        <p class="sketch__sub">
+            פריטי ביניים מקופלים תחת כפתור "...". לחיצה עליו פותחת את הנתיב המלא.
+            לנגישות: <code>aria-label</code> לכפתור הקיפול.
+        </p>
+        <nav class="breadcrumbs" aria-label="מיקומך באתר (מקופל)">
+            <ol>
+                <li>
+                    <a href="#">דף הבית</a>
+                    <span class="breadcrumbs__chevron" aria-hidden="true">
+                        <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z" />
+                        </svg>
+                    </span>
+                </li>
+                <li>
+                    <button class="breadcrumbs__overflow" aria-label="הצגת פריטי הנתיב המקופלים">...</button>
+                    <span class="breadcrumbs__chevron" aria-hidden="true">
+                        <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z" />
+                        </svg>
+                    </span>
+                </li>
+                <li><span aria-current="page">הרשמה למעונות יום</span></li>
+            </ol>
+        </nav>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>קישור Default — טקסט</td>
+                    <td>#466186</td>
+                    <td>--igds-base-color-text-subtle-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>קישור Hover — טקסט</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-text-link-primary-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>קישור Focused — מסגרת</td>
+                    <td>#0068f5 (2px)</td>
+                    <td>--igds-base-color-border-focused</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Current page — טקסט</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>"..." overflow — טקסט</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>radius Focused</td>
+                    <td>2px</td>
+                    <td>--igds-ref-border-radius-xxs</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>offset של focus</td>
+                    <td>2px</td>
+                    <td>--igds-ref-space-100</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט פריט</td>
+                    <td>14px</td>
+                    <td>--igds-ref-font-size-xs</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט "..."</td>
+                    <td>16px</td>
+                    <td>--igds-ref-font-size-s</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מרווח / padding בין פריטים</td>
+                    <td>4px</td>
+                    <td>--igds-ref-space-200</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>chevron מפריד</td>
+                    <td>outline/arrow-left</td>
+                    <td>SVG מהפיגמה (currentColor)</td>
+                    <td>✓ נמשך</td>
+                </tr>
+                <tr>
+                    <td>line-height טקסט פריט</td>
+                    <td>1.6</td>
+                    <td>ערך קבוע (Label/Regular)</td>
+                    <td>— ללא טוקן ייעודי</td>
+                </tr>
+                <tr>
+                    <td>גודל chevron / "..." box</td>
+                    <td>24px / 32px</td>
+                    <td>ערך קבוע</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

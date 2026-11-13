@@ -1,0 +1,2751 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "4912:2597",
+  "name": "Item Edit Modal",
+  "key": "8bae1b9bbacb9f040cdb62f34ef4380543e2b817",
+  "defs": {
+   "Number of Slots": {
+    "t": "VARIANT",
+    "o": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5"
+    ],
+    "d": "1"
+   },
+   "Position": {
+    "t": "VARIANT",
+    "o": [
+     "Top",
+     "Bottom"
+    ],
+    "d": "Bottom"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-4912-2597.json",
+   "sha256": "4c1239bdf136b02e43178aa290740ad7914e330baa5129c6f32d6b41830f1da2",
+   "format": "v5-rest",
+   "restResponseSha256": "f98375a370c496574db69307bbfcaceb1a58a22310f7a1db4381db9399c2ff63",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/space/space-s": {
+   "figma": "Brand/space/space-s",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "4912:2596",
+   "name": "Number of Slots=1, Position=Bottom",
+   "props": {
+    "Number of Slots": "1",
+    "Position": "Bottom"
+   },
+   "w": 48,
+   "h": 25,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 25,
+    "nid": "4912:2596",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 0,
+      "w": 36,
+      "h": 17,
+      "nid": "4912:2592",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 8,
+        "w": 20,
+        "h": 1,
+        "nid": "4912:2591",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 17,
+      "w": 48,
+      "h": 8,
+      "nid": "4912:2593",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 17,
+        "w": 16,
+        "h": 8,
+        "nid": "4912:2594",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4962:13059",
+   "name": "Number of Slots=1, Position=Top",
+   "props": {
+    "Number of Slots": "1",
+    "Position": "Top"
+   },
+   "w": 48,
+   "h": 25,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 25,
+    "nid": "4962:13059",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "4962:13062",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "4962:13063",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 8,
+      "w": 36,
+      "h": 17,
+      "nid": "4962:13060",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 16,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13061",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4912:2598",
+   "name": "Number of Slots=2, Position=Bottom",
+   "props": {
+    "Number of Slots": "2",
+    "Position": "Bottom"
+   },
+   "w": 48,
+   "h": 34,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 34,
+    "nid": "4912:2598",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 0,
+      "w": 36,
+      "h": 26,
+      "nid": "4912:2599",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 8,
+        "w": 20,
+        "h": 1,
+        "nid": "4912:2600",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 17,
+        "w": 20,
+        "h": 1,
+        "nid": "4912:2603",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 26,
+      "w": 48,
+      "h": 8,
+      "nid": "4912:2601",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 26,
+        "w": 16,
+        "h": 8,
+        "nid": "4912:2602",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4962:13073",
+   "name": "Number of Slots=2, Position=Top",
+   "props": {
+    "Number of Slots": "2",
+    "Position": "Top"
+   },
+   "w": 48,
+   "h": 34,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 34,
+    "nid": "4962:13073",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "4962:13077",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "4962:13078",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 8,
+      "w": 36,
+      "h": 26,
+      "nid": "4962:13074",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 16,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13075",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 25,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13076",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4912:2604",
+   "name": "Number of Slots=3, Position=Bottom",
+   "props": {
+    "Number of Slots": "3",
+    "Position": "Bottom"
+   },
+   "w": 48,
+   "h": 43,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 43,
+    "nid": "4912:2604",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 0,
+      "w": 36,
+      "h": 35,
+      "nid": "4912:2605",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 8,
+        "w": 20,
+        "h": 1,
+        "nid": "4912:2606",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 17,
+        "w": 20,
+        "h": 1,
+        "nid": "4912:2609",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 26,
+        "w": 20,
+        "h": 1,
+        "nid": "4912:2610",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 35,
+      "w": 48,
+      "h": 8,
+      "nid": "4912:2607",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 35,
+        "w": 16,
+        "h": 8,
+        "nid": "4912:2608",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4962:13079",
+   "name": "Number of Slots=3, Position=Top",
+   "props": {
+    "Number of Slots": "3",
+    "Position": "Top"
+   },
+   "w": 48,
+   "h": 43,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 43,
+    "nid": "4962:13079",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "4962:13084",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "4962:13085",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 8,
+      "w": 36,
+      "h": 35,
+      "nid": "4962:13080",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 16,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13081",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 25,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13082",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 34,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13083",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4919:2979",
+   "name": "Number of Slots=4, Position=Bottom",
+   "props": {
+    "Number of Slots": "4",
+    "Position": "Bottom"
+   },
+   "w": 48,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 52,
+    "nid": "4919:2979",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 0,
+      "w": 36,
+      "h": 44,
+      "nid": "4919:2980",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 8,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:2981",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 17,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:2984",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 26,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:2985",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 35,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:2986",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 44,
+      "w": 48,
+      "h": 8,
+      "nid": "4919:2982",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 44,
+        "w": 16,
+        "h": 8,
+        "nid": "4919:2983",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4962:13086",
+   "name": "Number of Slots=4, Position=Top",
+   "props": {
+    "Number of Slots": "4",
+    "Position": "Top"
+   },
+   "w": 48,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 52,
+    "nid": "4962:13086",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "4962:13092",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "4962:13093",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 8,
+      "w": 36,
+      "h": 44,
+      "nid": "4962:13087",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 16,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13088",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 25,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13089",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 34,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13090",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 43,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13091",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4919:2993",
+   "name": "Number of Slots=5, Position=Bottom",
+   "props": {
+    "Number of Slots": "5",
+    "Position": "Bottom"
+   },
+   "w": 48,
+   "h": 61,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 61,
+    "nid": "4919:2993",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 0,
+      "w": 36,
+      "h": 53,
+      "nid": "4919:2994",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 8,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:2995",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 17,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:2998",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 26,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:2999",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 35,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:3000",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 44,
+        "w": 20,
+        "h": 1,
+        "nid": "4919:3001",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     },
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 53,
+      "w": 48,
+      "h": 8,
+      "nid": "4919:2996",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 53,
+        "w": 16,
+        "h": 8,
+        "nid": "4919:2997",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "4962:13094",
+   "name": "Number of Slots=5, Position=Top",
+   "props": {
+    "Number of Slots": "5",
+    "Position": "Top"
+   },
+   "w": 48,
+   "h": 61,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 61,
+    "nid": "4962:13094",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Frame 7",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "4962:13101",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "4962:13102",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261158317",
+      "t": "FRAME",
+      "x": 6,
+      "y": 8,
+      "w": 36,
+      "h": 53,
+      "nid": "4962:13095",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        8,
+        8,
+        8,
+        8
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-300",
+       "paddingLeft": "Space/space-300",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 16,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13096",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 25,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13097",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 34,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13098",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 43,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13099",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       },
+       {
+        "n": "Slot for table",
+        "t": "INSTANCE",
+        "x": 14,
+        "y": 52,
+        "w": 20,
+        "h": 1,
+        "nid": "4962:13100",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          10,
+          10,
+          10,
+          10
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff"
+         }
+        ],
+        "clip": 1,
+        "inst": {
+         "set": "Slot for table",
+         "setId": "4912:2585",
+         "variant": null
+        },
+        "mcid": "4912:2585"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-4912-2597.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

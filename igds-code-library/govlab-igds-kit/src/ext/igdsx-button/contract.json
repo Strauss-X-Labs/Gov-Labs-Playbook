@@ -1,0 +1,4157 @@
+{
+ "tag": "igdsx-button",
+ "figma": {
+  "file": "FXkIGvCtnuZZDrMjiSm29r",
+  "setId": "81:1195",
+  "setKey": "3888c662a0a3e52dccc8dcac8416634e448e5fbb",
+  "name": "Button"
+ },
+ "generator": "pipeline/generate/gen-button.mjs",
+ "attributes": {
+  "variant": {
+   "values": [
+    "primary",
+    "secondary",
+    "link-button",
+    "alternative-link-button",
+    "link"
+   ],
+   "default": "primary",
+   "figmaProp": "Type"
+  },
+  "size": {
+   "values": [
+    "large",
+    "medium",
+    "small"
+   ],
+   "default": "small",
+   "figmaProp": "Size"
+  },
+  "intent": {
+   "values": [
+    "default",
+    "danger"
+   ],
+   "default": "default",
+   "figmaProp": "Intent"
+  },
+  "icon-only": {
+   "type": "boolean",
+   "figmaProp": "Icon Button"
+  },
+  "disabled": {
+   "type": "boolean",
+   "figmaProp": "State=Disabled"
+  },
+  "type": {
+   "values": [
+    "button",
+    "submit",
+    "reset"
+   ],
+   "default": "button",
+   "source": "HTML button (required-for-working-component)"
+  },
+  "label": {
+   "type": "string",
+   "source": "accessible name for icon-only (required-for-working-component)"
+  }
+ },
+ "slots": {
+  "(default)": "label text (Figma \"Text\")",
+  "left-icon": "Figma \" Left Icon\" / \"Left Icon op.\"",
+  "right-icon": "Figma \"Right Icon\" / \"Right Icon op.\"",
+  "icon": "icon-only content (Figma \"Icon Op\")"
+ },
+ "states": {
+  "hover": ":hover",
+  "pressed": ":active",
+  "focused": ":focus-visible",
+  "disabled": "[disabled]"
+ },
+ "events": {
+  "click": "native click (from the internal <button>)"
+ },
+ "validCombinations": [
+  {
+   "variant": "alternative-link-button",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "alternative-link-button",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "alternative-link-button",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link-button",
+   "size": "large",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link-button",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link-button",
+   "size": "medium",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link-button",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link-button",
+   "size": "small",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link-button",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "link",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "primary",
+   "size": "large",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "primary",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "primary",
+   "size": "medium",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "primary",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "primary",
+   "size": "small",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "primary",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "secondary",
+   "size": "large",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "secondary",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "secondary",
+   "size": "medium",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "secondary",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "secondary",
+   "size": "small",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "secondary",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "ltr"
+  },
+  {
+   "variant": "alternative-link-button",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "alternative-link-button",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "alternative-link-button",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "alternative-link-button",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "alternative-link-button",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "large",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "medium",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "small",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link-button",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "link",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "large",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "medium",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "small",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "primary",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "large",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "large",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "medium",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "medium",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "small",
+   "intent": "danger",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": false,
+   "dir": "rtl"
+  },
+  {
+   "variant": "secondary",
+   "size": "small",
+   "intent": "default",
+   "iconOnly": true,
+   "dir": "rtl"
+  }
+ ],
+ "matrix": [
+  {
+   "id": "36034:65713",
+   "figmaName": "RTL=False, State=Default, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65683",
+   "figmaName": "RTL=False, State=Default, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "37186:15951",
+   "figmaName": "RTL=False, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161103",
+   "figmaName": "RTL=False, State=Default, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65384",
+   "figmaName": "RTL=False, State=Default, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161098",
+   "figmaName": "RTL=False, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65376",
+   "figmaName": "RTL=False, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161089",
+   "figmaName": "RTL=False, State=Default, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65380",
+   "figmaName": "RTL=False, State=Default, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152488",
+   "figmaName": "RTL=False, State=Default, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152479",
+   "figmaName": "RTL=False, State=Default, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160616",
+   "figmaName": "RTL=False, State=Default, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64884",
+   "figmaName": "RTL=False, State=Default, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160611",
+   "figmaName": "RTL=False, State=Default, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64876",
+   "figmaName": "RTL=False, State=Default, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160606",
+   "figmaName": "RTL=False, State=Default, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64880",
+   "figmaName": "RTL=False, State=Default, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160808",
+   "figmaName": "RTL=False, State=Default, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65136",
+   "figmaName": "RTL=False, State=Default, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160803",
+   "figmaName": "RTL=False, State=Default, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65128",
+   "figmaName": "RTL=False, State=Default, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160798",
+   "figmaName": "RTL=False, State=Default, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65132",
+   "figmaName": "RTL=False, State=Default, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:13775",
+   "figmaName": "RTL=True, State=Default, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:13771",
+   "figmaName": "RTL=True, State=Default, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18119",
+   "figmaName": "RTL=True, State=Default, Type=Alternative Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "37186:15926",
+   "figmaName": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18121",
+   "figmaName": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160978",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5417",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58916:160973",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5414",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "195:1021",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160968",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20585",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20651",
+   "figmaName": "RTL=True, State=Default, Type=Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "52541:152385",
+   "figmaName": "RTL=True, State=Default, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "6075:16000",
+   "figmaName": "RTL=True, State=Default, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58865:12143",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4565",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1477",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58865:12138",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4559",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1471",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58865:12133",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4562",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20061",
+   "figmaName": "RTL=True, State=Default, Type=Primary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58901:160839",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2417",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1801",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58901:160834",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2411",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1797",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58901:160829",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2414",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20402",
+   "figmaName": "RTL=True, State=Default, Type=Secondary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Default",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "36034:65723",
+   "figmaName": "RTL=False, State=Hover, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65693",
+   "figmaName": "RTL=False, State=Hover, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "37186:15956",
+   "figmaName": "RTL=False, State=Hover, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161108",
+   "figmaName": "RTL=False, State=Hover, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65396",
+   "figmaName": "RTL=False, State=Hover, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161113",
+   "figmaName": "RTL=False, State=Hover, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65388",
+   "figmaName": "RTL=False, State=Hover, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161118",
+   "figmaName": "RTL=False, State=Hover, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65392",
+   "figmaName": "RTL=False, State=Hover, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152506",
+   "figmaName": "RTL=False, State=Hover, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152497",
+   "figmaName": "RTL=False, State=Hover, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160631",
+   "figmaName": "RTL=False, State=Hover, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64896",
+   "figmaName": "RTL=False, State=Hover, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160626",
+   "figmaName": "RTL=False, State=Hover, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64888",
+   "figmaName": "RTL=False, State=Hover, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160621",
+   "figmaName": "RTL=False, State=Hover, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64892",
+   "figmaName": "RTL=False, State=Hover, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160813",
+   "figmaName": "RTL=False, State=Hover, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65148",
+   "figmaName": "RTL=False, State=Hover, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160818",
+   "figmaName": "RTL=False, State=Hover, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65140",
+   "figmaName": "RTL=False, State=Hover, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160823",
+   "figmaName": "RTL=False, State=Hover, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65144",
+   "figmaName": "RTL=False, State=Hover, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18053",
+   "figmaName": "RTL=True, State=Hover, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18039",
+   "figmaName": "RTL=True, State=Hover, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18123",
+   "figmaName": "RTL=True, State=Hover, Type=Alternative Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "37186:15931",
+   "figmaName": "RTL=True, State=Hover, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18125",
+   "figmaName": "RTL=True, State=Hover, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:161005",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5420",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58916:161000",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5423",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "195:1024",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160995",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20589",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20659",
+   "figmaName": "RTL=True, State=Hover, Type=Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "52541:152419",
+   "figmaName": "RTL=True, State=Hover, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152402",
+   "figmaName": "RTL=True, State=Hover, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58901:160727",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4574",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1486",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58901:160722",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4568",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1480",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58901:160717",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4571",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20063",
+   "figmaName": "RTL=True, State=Hover, Type=Primary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160866",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2426",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1807",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160861",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2420",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1803",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160856",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2423",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20404",
+   "figmaName": "RTL=True, State=Hover, Type=Secondary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Hover",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "36034:65728",
+   "figmaName": "RTL=False, State=Focused, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65698",
+   "figmaName": "RTL=False, State=Focused, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "37186:15966",
+   "figmaName": "RTL=False, State=Focused, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161138",
+   "figmaName": "RTL=False, State=Focused, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:65420",
+   "figmaName": "RTL=False, State=Focused, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161144",
+   "figmaName": "RTL=False, State=Focused, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:65412",
+   "figmaName": "RTL=False, State=Focused, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161150",
+   "figmaName": "RTL=False, State=Focused, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:65416",
+   "figmaName": "RTL=False, State=Focused, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152542",
+   "figmaName": "RTL=False, State=Focused, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152533",
+   "figmaName": "RTL=False, State=Focused, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160663",
+   "figmaName": "RTL=False, State=Focused, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:64924",
+   "figmaName": "RTL=False, State=Focused, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "58965:160657",
+   "figmaName": "RTL=False, State=Focused, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:64912",
+   "figmaName": "RTL=False, State=Focused, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "58965:160651",
+   "figmaName": "RTL=False, State=Focused, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:64918",
+   "figmaName": "RTL=False, State=Focused, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "58974:160843",
+   "figmaName": "RTL=False, State=Focused, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:65176",
+   "figmaName": "RTL=False, State=Focused, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "58974:160849",
+   "figmaName": "RTL=False, State=Focused, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:65164",
+   "figmaName": "RTL=False, State=Focused, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "58974:160855",
+   "figmaName": "RTL=False, State=Focused, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "36034:65170",
+   "figmaName": "RTL=False, State=Focused, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "9130:18481",
+   "figmaName": "RTL=True, State=Focused, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18469",
+   "figmaName": "RTL=True, State=Focused, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18487",
+   "figmaName": "RTL=True, State=Focused, Type=Alternative Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "37186:15941",
+   "figmaName": "RTL=True, State=Focused, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18489",
+   "figmaName": "RTL=True, State=Focused, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "3239:5432",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58916:161059",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5435",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58916:161054",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "195:1030",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "8164:20597",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58916:161049",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20663",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "6075:16049",
+   "figmaName": "RTL=True, State=Focused, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "6075:16042",
+   "figmaName": "RTL=True, State=Focused, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58901:160783",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "18460:4594",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "81:1504",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon"
+  },
+  {
+   "id": "58901:160777",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "18460:4586",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "81:1498",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon"
+  },
+  {
+   "id": "58901:160771",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "18460:4590",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "8164:20067",
+   "figmaName": "RTL=True, State=Focused, Type=Primary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon"
+  },
+  {
+   "id": "58916:160910",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "18522:2446",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "81:1819",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon"
+  },
+  {
+   "id": "58916:160921",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "18522:2438",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "81:1815",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon"
+  },
+  {
+   "id": "58916:160927",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "18522:2442",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon,text,icon"
+  },
+  {
+   "id": "8164:20408",
+   "figmaName": "RTL=True, State=Focused, Type=Secondary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Focused",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "ring>icon"
+  },
+  {
+   "id": "36034:65733",
+   "figmaName": "RTL=False, State=Pressed, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65703",
+   "figmaName": "RTL=False, State=Pressed, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "37186:15961",
+   "figmaName": "RTL=False, State=Pressed, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161133",
+   "figmaName": "RTL=False, State=Pressed, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65408",
+   "figmaName": "RTL=False, State=Pressed, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161128",
+   "figmaName": "RTL=False, State=Pressed, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65400",
+   "figmaName": "RTL=False, State=Pressed, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161123",
+   "figmaName": "RTL=False, State=Pressed, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65404",
+   "figmaName": "RTL=False, State=Pressed, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152524",
+   "figmaName": "RTL=False, State=Pressed, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152515",
+   "figmaName": "RTL=False, State=Pressed, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160636",
+   "figmaName": "RTL=False, State=Pressed, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64908",
+   "figmaName": "RTL=False, State=Pressed, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160641",
+   "figmaName": "RTL=False, State=Pressed, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64900",
+   "figmaName": "RTL=False, State=Pressed, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160646",
+   "figmaName": "RTL=False, State=Pressed, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64904",
+   "figmaName": "RTL=False, State=Pressed, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160838",
+   "figmaName": "RTL=False, State=Pressed, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65160",
+   "figmaName": "RTL=False, State=Pressed, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160833",
+   "figmaName": "RTL=False, State=Pressed, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65152",
+   "figmaName": "RTL=False, State=Pressed, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160828",
+   "figmaName": "RTL=False, State=Pressed, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65156",
+   "figmaName": "RTL=False, State=Pressed, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18225",
+   "figmaName": "RTL=True, State=Pressed, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18213",
+   "figmaName": "RTL=True, State=Pressed, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18127",
+   "figmaName": "RTL=True, State=Pressed, Type=Alternative Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "37186:15936",
+   "figmaName": "RTL=True, State=Pressed, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18129",
+   "figmaName": "RTL=True, State=Pressed, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:161032",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5429",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58916:161027",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5426",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "195:1027",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:161022",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20593",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20661",
+   "figmaName": "RTL=True, State=Pressed, Type=Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "6075:16035",
+   "figmaName": "RTL=True, State=Pressed, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "6075:16028",
+   "figmaName": "RTL=True, State=Pressed, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58901:160754",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4583",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1495",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58901:160749",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4577",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1489",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58901:160744",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4580",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20065",
+   "figmaName": "RTL=True, State=Pressed, Type=Primary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160893",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2435",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1813",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160888",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2429",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1809",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58916:160883",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2432",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20406",
+   "figmaName": "RTL=True, State=Pressed, Type=Secondary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Pressed",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "36034:65718",
+   "figmaName": "RTL=False, State=Disabled, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65688",
+   "figmaName": "RTL=False, State=Disabled, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "37186:15971",
+   "figmaName": "RTL=False, State=Disabled, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161166",
+   "figmaName": "RTL=False, State=Disabled, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65434",
+   "figmaName": "RTL=False, State=Disabled, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161161",
+   "figmaName": "RTL=False, State=Disabled, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65424",
+   "figmaName": "RTL=False, State=Disabled, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:161156",
+   "figmaName": "RTL=False, State=Disabled, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65429",
+   "figmaName": "RTL=False, State=Disabled, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152560",
+   "figmaName": "RTL=False, State=Disabled, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "52541:152551",
+   "figmaName": "RTL=False, State=Disabled, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160669",
+   "figmaName": "RTL=False, State=Disabled, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64938",
+   "figmaName": "RTL=False, State=Disabled, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160674",
+   "figmaName": "RTL=False, State=Disabled, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64930",
+   "figmaName": "RTL=False, State=Disabled, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160679",
+   "figmaName": "RTL=False, State=Disabled, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:64934",
+   "figmaName": "RTL=False, State=Disabled, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160871",
+   "figmaName": "RTL=False, State=Disabled, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65190",
+   "figmaName": "RTL=False, State=Disabled, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160866",
+   "figmaName": "RTL=False, State=Disabled, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65182",
+   "figmaName": "RTL=False, State=Disabled, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58974:160861",
+   "figmaName": "RTL=False, State=Disabled, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "36034:65186",
+   "figmaName": "RTL=False, State=Disabled, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "False",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18581",
+   "figmaName": "RTL=True, State=Disabled, Type=Alternative Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18565",
+   "figmaName": "RTL=True, State=Disabled, Type=Alternative Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18569",
+   "figmaName": "RTL=True, State=Disabled, Type=Alternative Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "37186:15946",
+   "figmaName": "RTL=True, State=Disabled, Type=Alternative Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "9130:18571",
+   "figmaName": "RTL=True, State=Disabled, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Alternative Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58965:160583",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5441",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:160578",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "3239:5438",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "195:1033",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58965:160573",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20601",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20665",
+   "figmaName": "RTL=True, State=Disabled, Type=Link Button, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link Button",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "6075:16063",
+   "figmaName": "RTL=True, State=Disabled, Type=Link, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "6075:16056",
+   "figmaName": "RTL=True, State=Disabled, Type=Link, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Link",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "58965:11838",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4604",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1513",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58965:11833",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4598",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1507",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58965:11828",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18460:4601",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20070",
+   "figmaName": "RTL=True, State=Disabled, Type=Primary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Primary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58965:160556",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Large, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2456",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Large, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1825",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Large, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Large",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58965:160551",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Medium, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2450",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Medium, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "81:1821",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Medium, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Medium",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  },
+  {
+   "id": "58965:160546",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Small, Icon Button=False, Intent=Danger",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Danger"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "18522:2453",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Small, Icon Button=False, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "False",
+    "Intent": "Default"
+   },
+   "shape": "icon,text,icon"
+  },
+  {
+   "id": "8164:20411",
+   "figmaName": "RTL=True, State=Disabled, Type=Secondary, Size=Small, Icon Button=True, Intent=Default",
+   "props": {
+    "RTL": "True",
+    "State": "Disabled",
+    "Type": "Secondary",
+    "Size": "Small",
+    "Icon Button": "True",
+    "Intent": "Default"
+   },
+   "shape": "icon"
+  }
+ ],
+ "decisions": [
+  {
+   "rule": "R-DUP-SYMMETRY",
+   "variantId": "58916:161059",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Large, Icon Button=False, Intent=Default",
+   "treatedAs": "Intent=Danger",
+   "status": "resolved-from-data, review requested"
+  },
+  {
+   "rule": "R-DUP-SYMMETRY",
+   "variantId": "58916:161054",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default",
+   "treatedAs": "Intent=Danger",
+   "status": "resolved-from-data, review requested"
+  },
+  {
+   "rule": "R-DUP-SYMMETRY",
+   "variantId": "58916:161049",
+   "figmaName": "RTL=True, State=Focused, Type=Link Button, Size=Small, Icon Button=False, Intent=Default",
+   "treatedAs": "Intent=Danger",
+   "status": "resolved-from-data, review requested"
+  }
+ ],
+ "igdsxTokens": {
+  "--igdsx-color-button-danger-primary": {
+   "light": "#c93435",
+   "dark": "#ff5e5f",
+   "figma": "Colors/Button/Danger-primary"
+  },
+  "--igdsx-color-button-danger-hover": {
+   "light": "#a72223",
+   "dark": "#ff8283",
+   "figma": "Colors/Button/Danger-Hover"
+  },
+  "--igdsx-color-text-icon-inverted-subtle-primary": {
+   "light": "#f5f9ff",
+   "dark": "#f5f9ff",
+   "figma": "Colors/Text & Icon/Inverted/subtle-primary"
+  },
+  "--igdsx-color-button-danger-pressed": {
+   "light": "#851414",
+   "dark": "#ff8283",
+   "figma": "Colors/Button/Danger-Pressed"
+  }
+ }
+}

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Checkbox (כל המצבים)</title>
+    <!-- מקור אמת: טוקנים ומחלקות הדיזיין סיסטם -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- סטייל מעטפת הגלריה (משותף לכל הסקיצות) -->
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Checkbox — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0, node <code>35216:29603</code> —
+            <code>.Checkbox+Label+Input</code>, אטום <code>700:1526</code>) דרך Figma MCP.
+            כל המצבים מבוססים על המחלקות <code>.gov-checkbox</code> והטוקנים ב-<code>styles.css</code>.
+        </p>
+
+        <div class="sketch__grid">
+
+            <!-- Default — לא מסומן -->
+            <section>
+                <span class="sketch__state-label">Default (לא מסומן)</span>
+                <label class="gov-checkbox">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-default">
+                    <span class="gov-checkbox__box"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Default — מסומן -->
+            <section>
+                <span class="sketch__state-label">Default (מסומן)</span>
+                <label class="gov-checkbox">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-checked" checked>
+                    <span class="gov-checkbox__box"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Indeterminate — Selected=Neutral -->
+            <section>
+                <span class="sketch__state-label">Indeterminate (ביניים)</span>
+                <label class="gov-checkbox">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-indeterminate"
+                        aria-checked="mixed">
+                    <span class="gov-checkbox__box"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Hover — לא מסומן -->
+            <section>
+                <span class="sketch__state-label">Hover</span>
+                <label class="gov-checkbox">
+                    <!-- :hover מופעל ידנית בעמוד; במציאות דרך העכבר -->
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-hover">
+                    <span class="gov-checkbox__box" style="border-color: var(--igds-base-color-border-brand-hover);"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Focused — לא מסומן -->
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <label class="gov-checkbox">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-focused">
+                    <span class="gov-checkbox__box"
+                        style="outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused); outline-offset: var(--igds-ref-space-100);"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Focused — מסומן -->
+            <section>
+                <span class="sketch__state-label">Focused (מסומן)</span>
+                <label class="gov-checkbox">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-focused-checked" checked>
+                    <span class="gov-checkbox__box"
+                        style="outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused); outline-offset: var(--igds-ref-space-100);"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Disabled — לא מסומן -->
+            <section>
+                <span class="sketch__state-label">Disabled (לא מסומן)</span>
+                <label class="gov-checkbox">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-disabled" disabled>
+                    <span class="gov-checkbox__box"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Disabled — מסומן -->
+            <section>
+                <span class="sketch__state-label">Disabled (מסומן)</span>
+                <label class="gov-checkbox">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-disabled-checked" checked
+                        disabled>
+                    <span class="gov-checkbox__box"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+            </section>
+
+            <!-- Error -->
+            <section>
+                <span class="sketch__state-label">Error</span>
+                <label class="gov-checkbox gov-checkbox--error">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-error" aria-invalid="true"
+                        aria-describedby="cb-error-msg">
+                    <span class="gov-checkbox__box"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+                <span id="cb-error-msg" class="gov-checkbox-group__error" role="alert">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 7.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="12" cy="16" r="1" fill="currentColor" />
+                    </svg>
+                    יש לבצע בחירה
+                </span>
+            </section>
+
+            <!-- ErrorFocused -->
+            <section>
+                <span class="sketch__state-label">ErrorFocused</span>
+                <label class="gov-checkbox gov-checkbox--error">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-error-focus"
+                        aria-invalid="true" aria-describedby="cb-error-focus-msg">
+                    <span class="gov-checkbox__box"
+                        style="outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused); outline-offset: var(--igds-ref-space-100);"></span>
+                    <span class="gov-checkbox__label">תווית</span>
+                </label>
+                <span id="cb-error-focus-msg" class="gov-checkbox-group__error" role="alert">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 7.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="12" cy="16" r="1" fill="currentColor" />
+                    </svg>
+                    יש לבצע בחירה
+                </span>
+            </section>
+
+        </div>
+
+        <!-- וריאנט Input Text (Type=Input Text מהפיגמה) — צ'קבוק + שדה קלט -->
+        <h2 class="sketch__mapping-title">וריאנט — צ'קבוק עם שדה קלט (Input Text)</h2>
+        <p class="sketch__sub">
+            דפוס "אחר": צ'קבוק המשויך לשדה קלט. השדה הוא רכיב <code>.gov-input</code> הקיים —
+            אותם טוקנים, ללא שכפול.
+        </p>
+        <div class="sketch__grid">
+
+            <!-- Input Text — Default -->
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <div class="gov-checkbox gov-checkbox--with-input">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-input-default"
+                        aria-label="אפשרות אחר">
+                    <span class="gov-checkbox__box"></span>
+                    <input class="gov-input" type="text" value="אחר" aria-label="פירוט אחר">
+                </div>
+            </section>
+
+            <!-- Input Text — Focused -->
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <div class="gov-checkbox gov-checkbox--with-input">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-input-focused" checked
+                        aria-label="אפשרות אחר">
+                    <span class="gov-checkbox__box"
+                        style="outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused); outline-offset: var(--igds-ref-space-100);"></span>
+                    <input class="gov-input is-focus" type="text" value="אחר" aria-label="פירוט אחר">
+                </div>
+            </section>
+
+            <!-- Input Text — Disabled -->
+            <section>
+                <span class="sketch__state-label">Disabled</span>
+                <div class="gov-checkbox gov-checkbox--with-input">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-input-disabled" disabled
+                        aria-label="אפשרות אחר">
+                    <span class="gov-checkbox__box"></span>
+                    <input class="gov-input" type="text" value="אחר" disabled aria-label="פירוט אחר">
+                </div>
+            </section>
+
+            <!-- Input Text — Error -->
+            <section>
+                <span class="sketch__state-label">Error</span>
+                <div class="gov-checkbox gov-checkbox--with-input gov-checkbox--error">
+                    <input class="gov-checkbox__input" type="checkbox" id="cb-input-error"
+                        aria-invalid="true" aria-describedby="cb-input-error-msg" aria-label="אפשרות אחר">
+                    <span class="gov-checkbox__box"></span>
+                    <input class="gov-input gov-input--error" type="text" value="אחר"
+                        aria-label="פירוט אחר">
+                </div>
+                <span id="cb-input-error-msg" class="gov-checkbox-group__error" role="alert">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 7.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="12" cy="16" r="1" fill="currentColor" />
+                    </svg>
+                    חובה להזין ערך בשדה
+                </span>
+            </section>
+
+        </div>
+
+        <!-- דוגמת קבוצה אנכית עם כותרת, חובה והודעת שגיאה -->
+        <h2 class="sketch__mapping-title">קבוצת צ'קבוקסים — אנכית (Vertical)</h2>
+        <fieldset class="gov-checkbox-group" style="border: none; padding: 0; margin: 0;">
+            <legend class="gov-checkbox-group__title">
+                כותרת <span class="gov-checkbox-group__required" aria-hidden="true">*</span>
+            </legend>
+            <label class="gov-checkbox">
+                <input class="gov-checkbox__input" type="checkbox" name="g1" value="1">
+                <span class="gov-checkbox__box"></span>
+                <span class="gov-checkbox__label">תווית</span>
+            </label>
+            <label class="gov-checkbox">
+                <input class="gov-checkbox__input" type="checkbox" name="g1" value="2" checked>
+                <span class="gov-checkbox__box"></span>
+                <span class="gov-checkbox__label">תווית</span>
+            </label>
+            <label class="gov-checkbox">
+                <input class="gov-checkbox__input" type="checkbox" name="g1" value="3">
+                <span class="gov-checkbox__box"></span>
+                <span class="gov-checkbox__label">תווית</span>
+            </label>
+        </fieldset>
+
+        <!-- דוגמת קבוצה אופקית -->
+        <h2 class="sketch__mapping-title">קבוצת צ'קבוקסים — אופקית (Horizontal)</h2>
+        <div class="gov-checkbox-group gov-checkbox-group--horizontal">
+            <label class="gov-checkbox">
+                <input class="gov-checkbox__input" type="checkbox" name="g2" value="1">
+                <span class="gov-checkbox__box"></span>
+                <span class="gov-checkbox__label">תווית</span>
+            </label>
+            <label class="gov-checkbox">
+                <input class="gov-checkbox__input" type="checkbox" name="g2" value="2">
+                <span class="gov-checkbox__box"></span>
+                <span class="gov-checkbox__label">תווית</span>
+            </label>
+            <label class="gov-checkbox">
+                <input class="gov-checkbox__input" type="checkbox" name="g2" value="3">
+                <span class="gov-checkbox__box"></span>
+                <span class="gov-checkbox__label">תווית</span>
+            </label>
+        </div>
+
+        <!-- וריאנט Checkbox Card (node 35207:4353) — כרטיס נבחר -->
+        <h2 class="sketch__mapping-title">וריאנט — כרטיס נבחר (Checkbox Card)</h2>
+        <p class="sketch__sub">
+            כרטיס לחיץ המכיל צ'קבוק (פינה עליונה) + מדיה + כותרת + תיאור. עוטף את
+            <code>.gov-checkbox</code> הקיים — ללא שכפול.
+        </p>
+        <div class="sketch__grid">
+
+            <!-- Default -->
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <label class="gov-checkbox-card">
+                    <div class="gov-checkbox">
+                        <input class="gov-checkbox__input" type="checkbox" aria-label="בחירת אפשרות">
+                        <span class="gov-checkbox__box"></span>
+                    </div>
+                    <div class="gov-checkbox-card__media">Image</div>
+                    <span class="gov-checkbox-card__title">תיאור הבחירה</span>
+                    <span class="gov-checkbox-card__description">טקסט פירוט הבחירה...</span>
+                </label>
+            </section>
+
+            <!-- Selected -->
+            <section>
+                <span class="sketch__state-label">Selected (מסומן)</span>
+                <label class="gov-checkbox-card">
+                    <div class="gov-checkbox">
+                        <input class="gov-checkbox__input" type="checkbox" checked
+                            aria-label="בחירת אפשרות">
+                        <span class="gov-checkbox__box"></span>
+                    </div>
+                    <div class="gov-checkbox-card__media">Image</div>
+                    <span class="gov-checkbox-card__title">תיאור הבחירה</span>
+                    <span class="gov-checkbox-card__description">טקסט פירוט הבחירה...</span>
+                </label>
+            </section>
+
+            <!-- Focused -->
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <label class="gov-checkbox-card">
+                    <div class="gov-checkbox">
+                        <input class="gov-checkbox__input" type="checkbox" checked
+                            style="outline: none;" aria-label="בחירת אפשרות">
+                        <span class="gov-checkbox__box"
+                            style="outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused); outline-offset: var(--igds-ref-space-100);"></span>
+                    </div>
+                    <div class="gov-checkbox-card__media">Image</div>
+                    <span class="gov-checkbox-card__title"
+                        style="color: var(--igds-base-color-button-text-secondary);">תיאור הבחירה</span>
+                    <span class="gov-checkbox-card__description">טקסט פירוט הבחירה...</span>
+                </label>
+            </section>
+
+            <!-- Disabled -->
+            <section>
+                <span class="sketch__state-label">Disabled</span>
+                <label class="gov-checkbox-card">
+                    <div class="gov-checkbox">
+                        <input class="gov-checkbox__input" type="checkbox" disabled
+                            aria-label="בחירת אפשרות">
+                        <span class="gov-checkbox__box"></span>
+                    </div>
+                    <div class="gov-checkbox-card__media">Image</div>
+                    <span class="gov-checkbox-card__title">תיאור הבחירה</span>
+                    <span class="gov-checkbox-card__description">טקסט פירוט הבחירה...</span>
+                </label>
+            </section>
+
+            <!-- Disabled + Selected -->
+            <section>
+                <span class="sketch__state-label">Disabled (מסומן)</span>
+                <label class="gov-checkbox-card">
+                    <div class="gov-checkbox">
+                        <input class="gov-checkbox__input" type="checkbox" checked disabled
+                            aria-label="בחירת אפשרות">
+                        <span class="gov-checkbox__box"></span>
+                    </div>
+                    <div class="gov-checkbox-card__media">Image</div>
+                    <span class="gov-checkbox-card__title">תיאור הבחירה</span>
+                    <span class="gov-checkbox-card__description">טקסט פירוט הבחירה...</span>
+                </label>
+            </section>
+
+            <!-- Error -->
+            <section>
+                <span class="sketch__state-label">Error</span>
+                <label class="gov-checkbox-card gov-checkbox-card--error">
+                    <div class="gov-checkbox">
+                        <input class="gov-checkbox__input" type="checkbox" aria-invalid="true"
+                            aria-describedby="card-error-msg" aria-label="בחירת אפשרות">
+                        <span class="gov-checkbox__box"></span>
+                    </div>
+                    <div class="gov-checkbox-card__media">Image</div>
+                    <span class="gov-checkbox-card__title">תיאור הבחירה</span>
+                    <span class="gov-checkbox-card__description">טקסט פירוט הבחירה...</span>
+                </label>
+                <span id="card-error-msg" class="gov-checkbox-group__error" role="alert">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                        <path d="M12 7.5v5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="12" cy="16" r="1" fill="currentColor" />
+                    </svg>
+                    יש לבצע בחירה
+                </span>
+            </section>
+
+            <!-- Mobile -->
+            <section>
+                <span class="sketch__state-label">Mobile (מסומן)</span>
+                <label class="gov-checkbox-card gov-checkbox-card--mobile">
+                    <div class="gov-checkbox">
+                        <input class="gov-checkbox__input" type="checkbox" checked
+                            aria-label="בחירת אפשרות">
+                        <span class="gov-checkbox__box"></span>
+                    </div>
+                    <div class="gov-checkbox-card__media">Image</div>
+                    <span class="gov-checkbox-card__title">תיאור הבחירה</span>
+                    <span class="gov-checkbox-card__description">טקסט פירוט הבחירה...</span>
+                </label>
+            </section>
+
+        </div>
+
+        <!-- טבלת מיפוי: ערך פיגמה → טוקן ב-styles.css → סטטוס -->
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>רקע תיבה Default</td>
+                    <td>#ffffff</td>
+                    <td>--igds-base-color-background-neutral-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Default (1px)</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-border-subtle-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Hover</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-border-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מילוי מסומן (Selected=True)</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-button-background-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>סימן הווי (checkmark)</td>
+                    <td>#f5f9ff</td>
+                    <td>--igds-base-color-text-subtle-primary-inverted</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Focused (2px)</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-border-focused</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Error</td>
+                    <td>#a72223</td>
+                    <td>--igds-base-color-border-failure</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רקע Disabled (לא מסומן)</td>
+                    <td>#e0e8ef</td>
+                    <td>--igds-base-color-button-background-disabled</td>
+                    <td>➕ נוסף (ערך קיים כבר כ-background-disabled-with-text)</td>
+                </tr>
+                <tr>
+                    <td>רקע Disabled (מסומן)</td>
+                    <td>#ced7e0</td>
+                    <td>--igds-base-color-background-disabled-without-text</td>
+                    <td>➕ נוסף (ערך חדש, באישור המשתמש)</td>
+                </tr>
+                <tr>
+                    <td>גבול / טקסט Disabled</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-border-disabled / --igds-base-color-text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט תווית / כותרת</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>סימון חובה (*) / הודעת שגיאה</td>
+                    <td>#a72223</td>
+                    <td>--igds-base-color-text-failure</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>radius תיבה</td>
+                    <td>4px</td>
+                    <td>--igds-ref-border-radius-xs</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל תיבה</td>
+                    <td>24px</td>
+                    <td>— (מידה קבועה מהפיגמה)</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>gap תיבה-תווית / padding</td>
+                    <td>8px / 2px</td>
+                    <td>--igds-ref-space-300 / --igds-ref-space-100</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מרווח בין פריטי קבוצה</td>
+                    <td>16px</td>
+                    <td>--igds-ref-space-500</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט תווית / כותרת (size)</td>
+                    <td>16px</td>
+                    <td>--igds-ref-font-size-s</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>משקל תווית / כותרת</td>
+                    <td>400 / 500</td>
+                    <td>--igds-ref-font-weight-regular / --igds-ref-font-weight-medium</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>הודעת שגיאה (size)</td>
+                    <td>14px</td>
+                    <td>--igds-ref-font-size-xs</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>כרטיס — רקע מדיה</td>
+                    <td>#f2f6fd</td>
+                    <td>--igds-base-color-background-neutral-secondlevel</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>כרטיס — hover רקע</td>
+                    <td>#f2f6fd</td>
+                    <td>--igds-base-color-background-neutral-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>כרטיס — גבול/כותרת מסומן</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-border-active / --igds-base-color-button-text-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>כרטיס — radius ErrorFocused</td>
+                    <td>16px</td>
+                    <td>--igds-ref-border-radius-l</td>
+                    <td>➕ נוסף (ערך חדש, באישור)</td>
+                </tr>
+                <tr>
+                    <td>כרטיס — רקע Disabled+מסומן</td>
+                    <td>#8596af</td>
+                    <td>--igds-base-color-background-disabled-without-text-hover</td>
+                    <td>➕ נוסף (ערך חדש, באישור)</td>
+                </tr>
+                <tr>
+                    <td>כרטיס — טקסט Disabled</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-button-text-disabled</td>
+                    <td>➕ נוסף (alias, ערך זהה ל-text-disabled)</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        // Indeterminate (Selected=Neutral) לא ניתן להגדרה דרך HTML — נקבע ב-JS
+        document.getElementById('cb-indeterminate').indeterminate = true;
+    </script>
+</body>
+
+</html>

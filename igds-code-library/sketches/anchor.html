@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Anchor (כל המצבים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Anchor — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Anchor node <code>26540:5240</code>,
+            Atom node <code>7363:2159</code>, דרך Figma MCP.
+            מבוסס על <code>.gov-anchor</code> והטוקנים ב-<code>styles.css</code>.
+        </p>
+
+        <div class="sketch__grid">
+
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <nav class="gov-anchor" aria-label="דוגמה Default">
+                    <a class="gov-anchor__link" href="#s1">קישור לחלק</a>
+                </nav>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Hover</span>
+                <nav class="gov-anchor" aria-label="דוגמה Hover">
+                    <a class="gov-anchor__link"
+                        style="color: var(--igds-base-color-text-link-primary-hover);" href="#s1">קישור לחלק</a>
+                </nav>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Pressed</span>
+                <nav class="gov-anchor" aria-label="דוגמה Pressed">
+                    <a class="gov-anchor__link gov-anchor__link--pressed" href="#s1">קישור לחלק</a>
+                </nav>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <nav class="gov-anchor" aria-label="דוגמה Focused">
+                    <a class="gov-anchor__link gov-anchor__link--focused" href="#s1">קישור לחלק</a>
+                </nav>
+            </section>
+
+        </div>
+
+        <h2 class="sketch__mapping-title">דוגמת ניווט עוגן (Desktop)</h2>
+        <p class="sketch__sub">רשימת קישורים לסקשנים — הפריט הפעיל מסומן ב-<code>aria-current</code>.</p>
+        <nav class="gov-anchor" aria-label="ניווט בעמוד" style="max-width: 320px;">
+            <a class="gov-anchor__link" aria-current="true" href="#intro">מבוא</a>
+            <a class="gov-anchor__link" href="#eligibility">זכאות</a>
+            <a class="gov-anchor__link" href="#how">איך מגישים</a>
+            <a class="gov-anchor__link" href="#docs">מסמכים נדרשים</a>
+            <a class="gov-anchor__link" href="#contact">יצירת קשר</a>
+        </nav>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>טקסט Default</td>
+                    <td>#466186</td>
+                    <td>--igds-base-color-text-subtle-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט Hover</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-text-link-primary-hover</td>
+                    <td>✓ נוסף (node 7363:2159)</td>
+                </tr>
+                <tr>
+                    <td>טקסט Pressed / Focused</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-text-link-primary-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>קו צדדי Pressed</td>
+                    <td>#0068f5 (2px)</td>
+                    <td>--igds-base-color-border-brand-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מסגרת Focused</td>
+                    <td>#0068f5 (2px)</td>
+                    <td>--igds-base-color-border-focused</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>radius Default/Hover/Focused</td>
+                    <td>8px</td>
+                    <td>--igds-ref-border-radius-m</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding פריט</td>
+                    <td>12px</td>
+                    <td>--igds-ref-space-400</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מרווח בין פריטים</td>
+                    <td>4px</td>
+                    <td>--igds-ref-space-200</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט</td>
+                    <td>16px</td>
+                    <td>--igds-ref-font-size-s</td>
+                    <td>✓ נמצא</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

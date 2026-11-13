@@ -1,0 +1,2090 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "1646:12",
+  "name": "Badge",
+  "key": "c315b127bd24e8b0824aabe1e7e76568e4488a99",
+  "defs": {
+   "Show Icon": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Text": {
+    "t": "TEXT",
+    "d": "תיאור"
+   },
+   "Text LTR": {
+    "t": "TEXT",
+    "d": "Text"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "Type": {
+    "t": "VARIANT",
+    "o": [
+     "Failure",
+     "Success",
+     "In-Progress",
+     "Informative",
+     "Warning"
+    ],
+    "d": "Failure"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-1646-12.json",
+   "sha256": "0cf661b2f943baf28718c630ea1b94b96cfb97a0823cc9e0498cd7a1fe18665d",
+   "format": "v5-rest",
+   "restResponseSha256": "64b447e2ba00f7e5278db40025de0756ba2b3dee78931ba3862cf93f321243cf",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Brand/space/space-3xs": {
+   "figma": "Brand/space/space-3xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/failure-without-border": {
+   "figma": "Colors/Background/failure-without-border",
+   "css": "--igds-base-color-background-failure-without-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffcbcb",
+    "css": "#ffcbcb",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#851414",
+    "css": "#851414",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-badge": {
+   "figma": "Colors/Background/neutral-badge",
+   "css": "--igds-base-color-background-neutral-badge",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": "#e8f0fc",
+    "css": "#f2f6fd",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1b487a",
+    "css": "#1b487a",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/success-without-border": {
+   "figma": "Colors/Background/success-without-border",
+   "css": "--igds-base-color-background-success-without-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#ddffcd",
+    "css": "#ddffcd",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#347314",
+    "css": "#347314",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/warning-without-border": {
+   "figma": "Colors/Background/warning-without-border",
+   "css": "--igds-base-color-background-warning-without-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffecc2",
+    "css": "#ffecc2",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#a35200",
+    "css": "#a35200",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/failure": {
+   "figma": "Colors/Text & Icon/failure",
+   "css": "--igds-base-color-text-failure",
+   "status": "css-token",
+   "light": {
+    "figma": "#a72223",
+    "css": "#a72223",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ffa6a7",
+    "css": "#ffa6a7",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/success": {
+   "figma": "Colors/Text & Icon/success",
+   "css": "--igds-base-color-text-success",
+   "status": "css-token",
+   "light": {
+    "figma": "#347314",
+    "css": "#347314",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#c6ffaa",
+    "css": "#c6ffaa",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/warning-text": {
+   "figma": "Colors/Text & Icon/warning-text",
+   "css": "--igds-base-color-text-warning-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#a35200",
+    "css": "#a35200",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ffd36d",
+    "css": "#ffd36d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "36504:17807",
+   "name": "RTL=False, Type=Failure",
+   "props": {
+    "RTL": "False",
+    "Type": "Failure"
+   },
+   "w": 80,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 80,
+    "h": 32,
+    "nid": "36504:17807",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffcbcb",
+      "v": "Colors/Background/failure-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "block",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36504:17810",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "block",
+       "setId": "138:827",
+       "variant": null
+      },
+      "mcid": "138:827",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#a72223",
+        "v": "Colors/Text & Icon/failure"
+       }
+      ]
+     },
+     {
+      "n": "Frame 5",
+      "t": "FRAME",
+      "x": 32,
+      "y": 0,
+      "w": 40,
+      "h": 32,
+      "nid": "36504:17808",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-3xs",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-3xs"
+      },
+      "c": [
+       {
+        "n": "Text",
+        "t": "TEXT",
+        "x": 36,
+        "y": 4,
+        "w": 32,
+        "h": 24,
+        "nid": "36504:17809",
+        "ref": {
+         "characters": "Text LTR#36504:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Text",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/failure-without-border",
+    "Colors/Text & Icon/failure",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36504:25999",
+   "name": "RTL=False, Type=In-Progress",
+   "props": {
+    "RTL": "False",
+    "Type": "In-Progress"
+   },
+   "w": 80,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 80,
+    "h": 32,
+    "nid": "36504:25999",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "in-progress",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36504:26002",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "in-progress",
+       "setId": "138:830",
+       "variant": null
+      },
+      "mcid": "138:830",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Frame 4",
+      "t": "FRAME",
+      "x": 32,
+      "y": 4,
+      "w": 40,
+      "h": 24,
+      "nid": "36504:26000",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Text",
+        "t": "TEXT",
+        "x": 36,
+        "y": 4,
+        "w": 32,
+        "h": 24,
+        "nid": "36504:26001",
+        "ref": {
+         "characters": "Text LTR#36504:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Text",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-badge",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36504:26003",
+   "name": "RTL=False, Type=Informative",
+   "props": {
+    "RTL": "False",
+    "Type": "Informative"
+   },
+   "w": 80,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 80,
+    "h": 32,
+    "nid": "36504:26003",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Info",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36504:26006",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "Info",
+       "setId": "138:1119",
+       "variant": "Style=Outline"
+      },
+      "mcid": "138:1120",
+      "cp": {
+       "Style": "Outline"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Text",
+      "t": "FRAME",
+      "x": 32,
+      "y": 4,
+      "w": 40,
+      "h": 24,
+      "nid": "36504:26004",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Text",
+        "t": "TEXT",
+        "x": 36,
+        "y": 4,
+        "w": 32,
+        "h": 24,
+        "nid": "36504:26005",
+        "ref": {
+         "characters": "Text LTR#36504:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Text",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-badge",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36504:25995",
+   "name": "RTL=False, Type=Success",
+   "props": {
+    "RTL": "False",
+    "Type": "Success"
+   },
+   "w": 80,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 80,
+    "h": 32,
+    "nid": "36504:25995",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ddffcd",
+      "v": "Colors/Background/success-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Success",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36504:25998",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": "Success",
+       "setId": "138:852",
+       "variant": "Filled=true"
+      },
+      "mcid": "138:856",
+      "cp": {
+       "Filled": "true"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#347314",
+        "v": "Colors/Text & Icon/success"
+       }
+      ]
+     },
+     {
+      "n": "Frame 4",
+      "t": "FRAME",
+      "x": 32,
+      "y": 4,
+      "w": 40,
+      "h": 24,
+      "nid": "36504:25996",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Text",
+        "t": "TEXT",
+        "x": 36,
+        "y": 4,
+        "w": 32,
+        "h": 24,
+        "nid": "36504:25997",
+        "ref": {
+         "characters": "Text LTR#36504:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Text",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/success-without-border",
+    "Colors/Text & Icon/success",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36504:25991",
+   "name": "RTL=False, Type=Warning",
+   "props": {
+    "RTL": "False",
+    "Type": "Warning"
+   },
+   "w": 80,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 80,
+    "h": 32,
+    "nid": "36504:25991",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffecc2",
+      "v": "Colors/Background/warning-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Alert-Circle",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36504:25994",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": "Alert-Circle",
+       "setId": "138:842",
+       "variant": "Style=Filled"
+      },
+      "mcid": "138:846",
+      "cp": {
+       "Style": "Filled"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#a35200",
+        "v": "Colors/Text & Icon/warning-text"
+       }
+      ]
+     },
+     {
+      "n": "Frame 4",
+      "t": "FRAME",
+      "x": 32,
+      "y": 4,
+      "w": 40,
+      "h": 24,
+      "nid": "36504:25992",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Text",
+        "t": "TEXT",
+        "x": 36,
+        "y": 4,
+        "w": 32,
+        "h": 24,
+        "nid": "36504:25993",
+        "ref": {
+         "characters": "Text LTR#36504:0"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Text",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/warning-without-border",
+    "Colors/Text & Icon/warning-text",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1646:15",
+   "name": "RTL=True, Type=Failure",
+   "props": {
+    "RTL": "True",
+    "Type": "Failure"
+   },
+   "w": 85,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 85,
+    "h": 32,
+    "nid": "1646:15",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffcbcb",
+      "v": "Colors/Background/failure-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Frame 5",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 45,
+      "h": 32,
+      "nid": "1652:224",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-3xs",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-3xs"
+      },
+      "c": [
+       {
+        "n": "תיאור",
+        "t": "TEXT",
+        "x": 12,
+        "y": 4,
+        "w": 37,
+        "h": 24,
+        "nid": "1646:256",
+        "ref": {
+         "characters": "Text#1728:5"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a72223",
+          "v": "Colors/Text & Icon/failure"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "תיאור",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "block",
+      "t": "INSTANCE",
+      "x": 53,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "1652:2435",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "block",
+       "setId": "138:827",
+       "variant": null
+      },
+      "mcid": "138:827",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#a72223",
+        "v": "Colors/Text & Icon/failure"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/failure-without-border",
+    "Colors/Text & Icon/failure",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1652:396",
+   "name": "RTL=True, Type=In-Progress",
+   "props": {
+    "RTL": "True",
+    "Type": "In-Progress"
+   },
+   "w": 85,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 85,
+    "h": 32,
+    "nid": "1652:396",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Frame 4",
+      "t": "FRAME",
+      "x": 8,
+      "y": 4,
+      "w": 45,
+      "h": 24,
+      "nid": "1652:398",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "תיאור",
+        "t": "TEXT",
+        "x": 12,
+        "y": 4,
+        "w": 37,
+        "h": 24,
+        "nid": "1652:399",
+        "ref": {
+         "characters": "Text#1728:5"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "תיאור",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "in-progress",
+      "t": "INSTANCE",
+      "x": 53,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "1652:2418",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "in-progress",
+       "setId": "138:830",
+       "variant": null
+      },
+      "mcid": "138:830",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-badge",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "38750:23571",
+   "name": "RTL=True, Type=Informative",
+   "props": {
+    "RTL": "True",
+    "Type": "Informative"
+   },
+   "w": 85,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 85,
+    "h": 32,
+    "nid": "38750:23571",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Text",
+      "t": "FRAME",
+      "x": 8,
+      "y": 4,
+      "w": 45,
+      "h": 24,
+      "nid": "38750:23572",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "תיאור",
+        "t": "TEXT",
+        "x": 12,
+        "y": 4,
+        "w": 37,
+        "h": 24,
+        "nid": "38750:23573",
+        "ref": {
+         "characters": "Text#1728:5"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "תיאור",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Info",
+      "t": "INSTANCE",
+      "x": 53,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "38750:23574",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "Info",
+       "setId": "138:1119",
+       "variant": "Style=Outline"
+      },
+      "mcid": "138:1120",
+      "cp": {
+       "Style": "Outline"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-badge",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1652:52",
+   "name": "RTL=True, Type=Success",
+   "props": {
+    "RTL": "True",
+    "Type": "Success"
+   },
+   "w": 85,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 85,
+    "h": 32,
+    "nid": "1652:52",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ddffcd",
+      "v": "Colors/Background/success-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Frame 4",
+      "t": "FRAME",
+      "x": 8,
+      "y": 4,
+      "w": 45,
+      "h": 24,
+      "nid": "1652:203",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "תיאור",
+        "t": "TEXT",
+        "x": 12,
+        "y": 4,
+        "w": 37,
+        "h": 24,
+        "nid": "1652:54",
+        "ref": {
+         "characters": "Text#1728:5"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#347314",
+          "v": "Colors/Text & Icon/success"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "תיאור",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Success",
+      "t": "INSTANCE",
+      "x": 53,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "1652:2431",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": "Success",
+       "setId": "138:852",
+       "variant": "Filled=true"
+      },
+      "mcid": "138:856",
+      "cp": {
+       "Filled": "true"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#347314",
+        "v": "Colors/Text & Icon/success"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/success-without-border",
+    "Colors/Text & Icon/success",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "2128:7476",
+   "name": "RTL=True, Type=Warning",
+   "props": {
+    "RTL": "True",
+    "Type": "Warning"
+   },
+   "w": 85,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 85,
+    "h": 32,
+    "nid": "2128:7476",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      8,
+      0,
+      8
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     32,
+     null
+    ],
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffecc2",
+      "v": "Colors/Background/warning-without-border"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Frame 4",
+      "t": "FRAME",
+      "x": 8,
+      "y": 4,
+      "w": 45,
+      "h": 24,
+      "nid": "2128:7477",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        4,
+        0,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-3xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-3xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "תיאור",
+        "t": "TEXT",
+        "x": 12,
+        "y": 4,
+        "w": 37,
+        "h": 24,
+        "nid": "2128:7478",
+        "ref": {
+         "characters": "Text#1728:5"
+        },
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#a35200",
+          "v": "Colors/Text & Icon/warning-text"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "תיאור",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Alert-Circle",
+      "t": "INSTANCE",
+      "x": 53,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "2128:7479",
+      "ref": {
+       "visible": "Show Icon#1728:0"
+      },
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": "Alert-Circle",
+       "setId": "138:842",
+       "variant": "Style=Filled"
+      },
+      "mcid": "138:846",
+      "cp": {
+       "Style": "Filled"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#a35200",
+        "v": "Colors/Text & Icon/warning-text"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1646-12.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/warning-without-border",
+    "Colors/Text & Icon/warning-text",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

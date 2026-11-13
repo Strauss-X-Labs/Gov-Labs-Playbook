@@ -1,0 +1,99 @@
+<!doctype html>
+<!--
+  IGDS reference example — "a government form per IGDS", written ONLY from ai/IGDS-COMPONENTS.md + ai/IGDS-TOKENS.md.
+  Validated by: npm run igds:lint (0 errors / 0 warnings) and rendered in a real browser.
+  Every element is an official igds-* component; layout uses --igds-* tokens only; no hard-coded values.
+-->
+<html dir="rtl" lang="he">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>בקשה לרישום לגן ילדים — דוגמת IGDS</title>
+  <!-- RULES §2: tokens first, then the browser bundle with defer -->
+  <link rel="stylesheet" href="../../node_modules/@igds/tokens/lib/index.min.css">
+  <script src="../../node_modules/@igds/core-web/lib/index.min.js" defer></script>
+  <style>
+    body { margin: 0; background: var(--igds-base-color-background-neutral-secondlevel); }
+    .page { max-width: var(--igds-ref-device-width-tablet); margin-inline: auto; padding: var(--igds-ref-space-800) var(--igds-ref-space-500); }
+    .page__title { font: var(--igds-base-type-display-page); color: var(--igds-base-color-text-subtle-primary); margin: 0 0 var(--igds-ref-space-300); }
+    .page__lead { font: var(--igds-base-type-body-regular); color: var(--igds-base-color-text-subtle-secondary); margin: 0 0 var(--igds-ref-space-700); }
+    .card { background: var(--igds-base-color-background-neutral-default); border-radius: var(--igds-ref-border-radius-m); padding: var(--igds-ref-space-700); margin-block-end: var(--igds-ref-space-600); }
+    .card__title { font: var(--igds-base-type-title-large); color: var(--igds-base-color-text-subtle-primary); margin: 0 0 var(--igds-ref-space-500); }
+    .stack { display: grid; gap: var(--igds-ref-space-600); }
+    .actions { display: flex; gap: var(--igds-ref-space-400); justify-content: flex-start; }
+  </style>
+</head>
+<body>
+  <!--
+    IGDS-GAP
+    need:     government header with the State of Israel logo
+    closest:  <igds-header logourl="…" logoalt="מדינת ישראל"> (verified: renders a broken image without logourl)
+    missing:  an official logo asset — none ships in @igds/core-web, @igds/tokens or @igds/icons 0.1.59
+    proposal: add <igds-header variant="white" logourl="<approved logo URL>" logoalt="מדינת ישראל"> once the asset URL is approved
+  -->
+
+  <main class="page">
+    <h1 class="page__title">בקשה לרישום לגן ילדים</h1>
+    <p class="page__lead">מלאו את פרטי הילד/ה וההורה. שדות חובה מסומנים.</p>
+
+    <igds-step-indicator current="1">
+      <igds-step-item label="פרטי הילד/ה"></igds-step-item>
+      <igds-step-item label="פרטי הורה"></igds-step-item>
+      <igds-step-item label="אישור ושליחה"></igds-step-item>
+    </igds-step-indicator>
+
+    <form id="registration" novalidate>
+      <section class="card" aria-labelledby="child-title">
+        <h2 class="card__title" id="child-title">פרטי הילד/ה</h2>
+        <div class="stack">
+          <igds-input name="childFirstName" label="שם פרטי" required autocomplete="off"></igds-input>
+          <igds-input name="childLastName" label="שם משפחה" required></igds-input>
+          <igds-input name="childId" label="מספר תעודת זהות" required pattern="[0-9]{9}" maxlength="9"
+                      help-text="9 ספרות, כולל ספרת ביקורת"></igds-input>
+          <igds-date-picker name="childBirthDate" label="תאריך לידה" required openonfocus></igds-date-picker>
+          <igds-radio-group name="kindergartenType" label="סוג גן מבוקש" required orientation="vertical">
+            <igds-radio name="kindergartenType" value="municipal" label="גן עירוני"></igds-radio>
+            <igds-radio name="kindergartenType" value="state-religious" label="גן ממלכתי-דתי"></igds-radio>
+            <igds-radio name="kindergartenType" value="special" label="גן חינוך מיוחד"></igds-radio>
+          </igds-radio-group>
+          <igds-dropdown name="city" label="יישוב" required filterable placeholder="בחרו יישוב"
+                         options='[{"label":"ירושלים","value":"jerusalem"},{"label":"תל אביב-יפו","value":"tel-aviv"},{"label":"חיפה","value":"haifa"},{"label":"באר שבע","value":"beer-sheva"}]'></igds-dropdown>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="parent-title">
+        <h2 class="card__title" id="parent-title">פרטי הורה</h2>
+        <div class="stack">
+          <igds-input name="parentName" label="שם מלא" required></igds-input>
+          <igds-input name="parentEmail" type="email" label="דוא״ל" required help-text="לשם יישלח אישור הבקשה"></igds-input>
+          <igds-input name="notes" type="textarea" rows="4" label="הערות (לא חובה)"></igds-input>
+          <igds-checkbox-group label="אישורים" required>
+            <igds-checkbox name="declaration" value="yes" label="אני מצהיר/ה שהפרטים נכונים" required></igds-checkbox>
+            <igds-checkbox name="updates" value="yes" label="אשמח לקבל עדכונים בדוא״ל"></igds-checkbox>
+          </igds-checkbox-group>
+        </div>
+      </section>
+
+      <div class="actions">
+        <igds-button id="submit" type="submit" variant="primary" size="large">שליחת הבקשה</igds-button>
+        <igds-button id="save" variant="secondary" size="large">שמירה כטיוטה</igds-button>
+      </div>
+    </form>
+  </main>
+
+  <!-- variant="small": "large"/"medium" include a newsletter sign-up form and a logo (verified in footer.js + render) -->
+  <igds-footer variant="small" frontpageurl="/"></igds-footer>
+
+  <script>
+    // Events per the catalog: CustomEvent, read event.detail.value. Validation via the components' own checkValidity().
+    const form = document.getElementById('registration');
+    document.getElementById('submit').addEventListener('igds-click', () => {
+      const fields = [...form.querySelectorAll('igds-input, igds-checkbox, igds-radio')];
+      const firstInvalid = fields.find((el) => typeof el.checkValidity === 'function' && !el.checkValidity());
+      if (firstInvalid) { firstInvalid.reportValidity(); return; }
+      console.log('form data', Object.fromEntries(new FormData(form)));
+    });
+    form.querySelector('igds-dropdown').addEventListener('igds-change', (e) => console.log('city', e.detail.value));
+  </script>
+</body>
+</html>

@@ -1,0 +1,1617 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "35262:11268",
+  "name": "Tabs ",
+  "key": "3e50f34bc91f2d520f2a894647a533f9efb5fd0e",
+  "defs": {
+   "Direction": {
+    "t": "VARIANT",
+    "o": [
+     "Horizontal",
+     "Vertical"
+    ],
+    "d": "Horizontal"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-35262-11268.json",
+   "sha256": "904f91e1dd60779e7630db81c22bc994e2a4adca3e6b725e6e2a34d1afb401a1",
+   "format": "v5-rest",
+   "restResponseSha256": "d4853d2772076575803f77fc5b8c1164507be5dde81cbf1718882c2554a73aab",
+   "filter": null,
+   "offset": 0,
+   "captured": 4,
+   "totalMatching": 4
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 4,
+  "byFilter": {
+   "null": {
+    "totalMatching": 4,
+    "captured": 4
+   }
+  },
+  "detail": {
+   "tree": 4,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Brand/border/radius-none": {
+   "figma": "Brand/border/radius-none",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-2xs": {
+   "figma": "Brand/space/space-2xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-minus50": {
+   "figma": "Space/space-minus50",
+   "css": "--igds-ref-space-minus50",
+   "status": "css-token",
+   "light": {
+    "figma": -1,
+    "css": "-1px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "36698:58691",
+   "name": "Direction=Horizontal, RTL=False",
+   "props": {
+    "Direction": "Horizontal",
+    "RTL": "False"
+   },
+   "w": 852,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 852,
+    "h": 48,
+    "nid": "36698:58691",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "mm": [
+     null,
+     null,
+     48,
+     null
+    ],
+    "r": [
+     8,
+     8,
+     0,
+     0
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500",
+     "topLeftRadius": "Brand/space/space-2xs",
+     "topRightRadius": "Brand/space/space-2xs",
+     "bottomLeftRadius": "Brand/border/radius-none",
+     "bottomRightRadius": "Brand/border/radius-none"
+    },
+    "c": [
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 16,
+      "y": 0,
+      "w": 164,
+      "h": 48,
+      "nid": "36698:58692",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "35283:7637",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 180,
+      "y": 0,
+      "w": 164,
+      "h": 48,
+      "nid": "36698:58693",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "35283:7637",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 344,
+      "y": 0,
+      "w": 164,
+      "h": 48,
+      "nid": "36698:58694",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "35283:7637",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 508,
+      "y": 0,
+      "w": 164,
+      "h": 48,
+      "nid": "36698:58695",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "35283:7637",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 672,
+      "y": 0,
+      "w": 164,
+      "h": 48,
+      "nid": "36698:58696",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "35283:7637",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35262-11268.json"
+   ],
+   "vars": [
+    "Brand/border/radius-none",
+    "Brand/space/space-2xs",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Space/space-minus50"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35262:11281",
+   "name": "Direction=Horizontal, RTL=True",
+   "props": {
+    "Direction": "Horizontal",
+    "RTL": "True"
+   },
+   "w": 677,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 677,
+    "h": 48,
+    "nid": "35262:11281",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "mm": [
+     null,
+     null,
+     48,
+     null
+    ],
+    "r": [
+     8,
+     8,
+     0,
+     0
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500",
+     "topLeftRadius": "Brand/space/space-2xs",
+     "topRightRadius": "Brand/space/space-2xs",
+     "bottomLeftRadius": "Brand/border/radius-none",
+     "bottomRightRadius": "Brand/border/radius-none"
+    },
+    "c": [
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 16,
+      "y": 0,
+      "w": 129,
+      "h": 48,
+      "nid": "35262:11282",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "35283:7617",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 145,
+      "y": 0,
+      "w": 129,
+      "h": 48,
+      "nid": "35262:11283",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "35283:7617",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 274,
+      "y": 0,
+      "w": 129,
+      "h": 48,
+      "nid": "35262:11284",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "35283:7617",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 403,
+      "y": 0,
+      "w": 129,
+      "h": 48,
+      "nid": "35262:11285",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "35283:7617",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Tab item ",
+      "t": "INSTANCE",
+      "x": 532,
+      "y": 0,
+      "w": 129,
+      "h": 48,
+      "nid": "35262:11286",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab item ",
+       "setId": "35262:16807",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "35283:7617",
+      "cp": {
+       "Label": "טקסט",
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35262-11268.json"
+   ],
+   "vars": [
+    "Brand/border/radius-none",
+    "Brand/space/space-2xs",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Space/space-minus50"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "41832:10107",
+   "name": "Direction=Vertical, RTL=False",
+   "props": {
+    "Direction": "Vertical",
+    "RTL": "False"
+   },
+   "w": 177,
+   "h": 288,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 177,
+    "h": 288,
+    "nid": "41832:10107",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:10108",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "41636:7232",
+      "cp": {
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 48,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:10109",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "41636:7232",
+      "cp": {
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 96,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:10110",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "41636:7232",
+      "cp": {
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 144,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:10111",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "41636:7232",
+      "cp": {
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 192,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:10112",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "41636:7232",
+      "cp": {
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 240,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:10113",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=False"
+      },
+      "mcid": "41636:7232",
+      "cp": {
+       "Status": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Text Lable",
+       "9"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35262-11268.json"
+   ],
+   "vars": [
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-minus50"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "41832:9622",
+   "name": "Direction=Vertical, RTL=True",
+   "props": {
+    "Direction": "Vertical",
+    "RTL": "True"
+   },
+   "w": 177,
+   "h": 288,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 177,
+    "h": 288,
+    "nid": "41832:9622",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:9439",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "41636:7218",
+      "cp": {
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט לשונית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 48,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:9401",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "41636:7218",
+      "cp": {
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט לשונית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 96,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:9415",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "41636:7218",
+      "cp": {
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט לשונית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 144,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:9427",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "41636:7218",
+      "cp": {
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט לשונית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 192,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:9452",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "41636:7218",
+      "cp": {
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט לשונית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".Tab Vertical item  ",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 240,
+      "w": 177,
+      "h": 48,
+      "nid": "41832:9610",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": -1,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       null,
+       null,
+       48,
+       null
+      ],
+      "v": {
+       "itemSpacing": "Space/space-minus50"
+      },
+      "inst": {
+       "set": ".Tab Vertical item  ",
+       "setId": "41636:7217",
+       "variant": "Status=Default, RTL=True"
+      },
+      "mcid": "41636:7218",
+      "cp": {
+       "Status": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "9",
+       "טקסט לשונית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35262-11268.json"
+   ],
+   "vars": [
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-minus50"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

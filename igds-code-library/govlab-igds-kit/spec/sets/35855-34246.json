@@ -1,0 +1,2765 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "35855:34246",
+  "name": "Segmented Control Default",
+  "key": "149b779ff59a176bc56a5bf6cf8f88d4f85b4dad",
+  "defs": {
+   "Size": {
+    "t": "VARIANT",
+    "o": [
+     "Big",
+     "Small"
+    ],
+    "d": "Big"
+   },
+   "Segments": {
+    "t": "VARIANT",
+    "o": [
+     "3",
+     "4",
+     "5",
+     "2"
+    ],
+    "d": "5"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-35855-34246.json",
+   "sha256": "3e3928f727bc245d0ec2b2b941f9c48adec003911825f254303b0a19bb60c416",
+   "format": "v5-rest",
+   "restResponseSha256": "e2c12171ec11ab95dfcc980e22945d457422d391e8c43374c94c8148657e2f23",
+   "filter": null,
+   "offset": 0,
+   "captured": 8,
+   "totalMatching": 8
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 8,
+  "byFilter": {
+   "null": {
+    "totalMatching": 8,
+    "captured": 8
+   }
+  },
+  "detail": {
+   "tree": 8,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/subtle-default": {
+   "figma": "Colors/Border/subtle-default",
+   "css": "--igds-base-color-border-subtle-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35855:34262",
+   "name": "Size=Big, Segments=2",
+   "props": {
+    "Size": "Big",
+    "Segments": "2"
+   },
+   "w": 214,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 214,
+    "h": 48,
+    "nid": "35855:34262",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     48,
+     48
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34263",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       48
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4378",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34264",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       48
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9619:354",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35855:34258",
+   "name": "Size=Big, Segments=3",
+   "props": {
+    "Size": "Big",
+    "Segments": "3"
+   },
+   "w": 321,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 321,
+    "h": 48,
+    "nid": "35855:34258",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     48,
+     48
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34259",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4378",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34260",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4346",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 214,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34261",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9619:354",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35855:34253",
+   "name": "Size=Big, Segments=4",
+   "props": {
+    "Size": "Big",
+    "Segments": "4"
+   },
+   "w": 428,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 428,
+    "h": 48,
+    "nid": "35855:34253",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     48,
+     48
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "48762:2016",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4378",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34255",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 16,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4346",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 214,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34256",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 16,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4346",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 321,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34257",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FIXED"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9619:354",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35855:34247",
+   "name": "Size=Big, Segments=5",
+   "props": {
+    "Size": "Big",
+    "Segments": "5"
+   },
+   "w": 535,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 535,
+    "h": 48,
+    "nid": "35855:34247",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     48,
+     48
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34248",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4378",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34249",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 16,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4346",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 214,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34250",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 16,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4346",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 321,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34251",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 16,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9621:4346",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 428,
+      "y": 0,
+      "w": 107,
+      "h": 48,
+      "nid": "35855:34252",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FIXED"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       48,
+       null
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Big, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9619:354",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Big",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35855:34298",
+   "name": "Size=Small, Segments=2",
+   "props": {
+    "Size": "Small",
+    "Segments": "2"
+   },
+   "w": 214,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 214,
+    "h": 40,
+    "nid": "35855:34298",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     40,
+     40
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34299",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:315",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34300",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9789:608",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35855:34294",
+   "name": "Size=Small, Segments=3",
+   "props": {
+    "Size": "Small",
+    "Segments": "3"
+   },
+   "w": 321,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 321,
+    "h": 40,
+    "nid": "35855:34294",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     40,
+     40
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34295",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:315",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34296",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:225",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 214,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34297",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9789:608",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35855:34289",
+   "name": "Size=Small, Segments=4",
+   "props": {
+    "Size": "Small",
+    "Segments": "4"
+   },
+   "w": 428,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 428,
+    "h": 40,
+    "nid": "35855:34289",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     40,
+     40
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34290",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:315",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34291",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:225",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 214,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34292",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:225",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 321,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34293",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FIXED"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9789:608",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35855:34283",
+   "name": "Size=Small, Segments=5",
+   "props": {
+    "Size": "Small",
+    "Segments": "5"
+   },
+   "w": 535,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 535,
+    "h": 40,
+    "nid": "35855:34283",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     40,
+     40
+    ],
+    "c": [
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34284",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       40
+      ],
+      "r": [
+       8,
+       0,
+       0,
+       8
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       1
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Left, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:315",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Left",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 107,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34285",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:225",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 214,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34286",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:225",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 321,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34287",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       0,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Middle, State=Default, Selected=False, RTL=True"
+      },
+      "mcid": "9792:225",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Middle",
+       "State": "Default",
+       "Selected": "False",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     },
+     {
+      "n": ".Segmented Control Items",
+      "t": "INSTANCE",
+      "x": 428,
+      "y": 0,
+      "w": 107,
+      "h": 40,
+      "nid": "35855:34288",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        4,
+        4,
+        4
+       ],
+       "g": 4,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FIXED"
+      },
+      "grow": 1,
+      "mm": [
+       107,
+       null,
+       40,
+       null
+      ],
+      "r": [
+       0,
+       8,
+       8,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": [
+       1,
+       1,
+       1,
+       0
+      ],
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-200",
+       "paddingLeft": "Space/space-200",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-200",
+       "paddingBottom": "Space/space-200",
+       "topRightRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Segmented Control Items",
+       "setId": "9612:347",
+       "variant": "Size=Small, Position=Right, State=Default, Selected=True, RTL=True"
+      },
+      "mcid": "9789:608",
+      "cp": {
+       "Show Icon": false,
+       "Size": "Small",
+       "Position": "Right",
+       "State": "Default",
+       "Selected": "True",
+       "RTL": "True"
+      },
+      "itx": [
+       "אפשרות"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35855-34246.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

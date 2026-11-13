@@ -1,0 +1,6195 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "3168:1715",
+  "name": "Vertical Filter Item",
+  "key": "673af8f3980d7a8fcf9194a8e18f1361e475341a",
+  "defs": {
+   "Header": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Hover",
+     "Focused",
+     "Disabled"
+    ],
+    "d": "Default"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "Second Level": {
+    "t": "VARIANT",
+    "o": [
+     "False",
+     "True"
+    ],
+    "d": "False"
+   },
+   "Expanded": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "False"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-3168-1715.json",
+   "sha256": "77ff73f15bef2e0335ead1054cdcc824ecdca663c412f1859560098118629550",
+   "format": "v5-rest",
+   "restResponseSha256": "28dc9896e9f43db6d4e834545782cfcf8564cb466d66500435d424758bfb8c83",
+   "filter": null,
+   "offset": 0,
+   "captured": 24,
+   "totalMatching": 24
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 24,
+  "byFilter": {
+   "null": {
+    "totalMatching": 24,
+    "captured": 24
+   }
+  },
+  "detail": {
+   "tree": 24,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-secondlevel": {
+   "figma": "Colors/Background/neutral-secondlevel",
+   "css": "--igds-base-color-background-neutral-secondlevel",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": null,
+    "css": "#f2f6fd",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Button/background-disabled": {
+   "figma": "Colors/Button/background-disabled",
+   "css": "--igds-base-color-button-background-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#e0e8ef",
+    "css": "#e0e8ef",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/disabled": {
+   "figma": "Colors/Text & Icon/disabled",
+   "css": "--igds-base-color-text-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-secondary": {
+   "figma": "Colors/Text & Icon/subtle-secondary",
+   "css": "--igds-base-color-text-subtle-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#466186",
+    "css": "#466186",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#99c2fb",
+    "css": "#99c2fb",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-100": {
+   "figma": "Space/space-100",
+   "css": "--igds-ref-space-100",
+   "status": "css-token",
+   "light": {
+    "figma": 2,
+    "css": "2px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-700": {
+   "figma": "Space/space-700",
+   "css": "--igds-ref-space-700",
+   "status": "css-token",
+   "light": {
+    "figma": 32,
+    "css": "32px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35735:41371",
+   "name": "State=Default, RTL=False, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Default",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41371",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41372",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41376",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Default, Type=Label"
+        },
+        "mcid": "35216:29604",
+        "cp": {
+         "RTL": "False",
+         "State": "Default",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41373",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41374",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41375",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41377",
+   "name": "State=Default, RTL=False, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Default",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41377",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41378",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41382",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Default, Type=Label"
+        },
+        "mcid": "35216:29604",
+        "cp": {
+         "RTL": "False",
+         "State": "Default",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41379",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41380",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41381",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41383",
+   "name": "State=Default, RTL=False, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Default",
+    "RTL": "False",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41383",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:41384",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:41386",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Default, Type=Label"
+        },
+        "mcid": "35216:29604",
+        "cp": {
+         "RTL": "False",
+         "State": "Default",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 176,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41385",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3214:3646",
+   "name": "State=Default, RTL=True, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Default",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "3214:3646",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:34047",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:40982",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "3214:3648",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "3214:3649",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:33978",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Default, Type=Label"
+        },
+        "mcid": "35216:29607",
+        "cp": {
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:35055",
+   "name": "State=Default, RTL=True, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Default",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:35055",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:35056",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:35096",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:35057",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:35058",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:35059",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Default, Type=Label"
+        },
+        "mcid": "35216:29607",
+        "cp": {
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:40817",
+   "name": "State=Default, RTL=True, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Default",
+    "RTL": "True",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:40817",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:40818",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:40819",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 48,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:40822",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Default, Type=Label"
+        },
+        "mcid": "35216:29607",
+        "cp": {
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41419",
+   "name": "State=Disabled, RTL=False, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Disabled",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41419",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41420",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41424",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Disabled, Type=Label"
+        },
+        "mcid": "35216:29624",
+        "cp": {
+         "RTL": "False",
+         "State": "Disabled",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#e0e8ef",
+          "v": "Colors/Button/background-disabled"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41421",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41422",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41423",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Text & Icon/disabled"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Button/background-disabled",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41425",
+   "name": "State=Disabled, RTL=False, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Disabled",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41425",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41426",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41430",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Disabled, Type=Label"
+        },
+        "mcid": "35216:29624",
+        "cp": {
+         "RTL": "False",
+         "State": "Disabled",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#e0e8ef",
+          "v": "Colors/Button/background-disabled"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41427",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41428",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41429",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Text & Icon/disabled"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Button/background-disabled",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41431",
+   "name": "State=Disabled, RTL=False, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Disabled",
+    "RTL": "False",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41431",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:41432",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:41434",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Disabled, Type=Label"
+        },
+        "mcid": "35216:29624",
+        "cp": {
+         "RTL": "False",
+         "State": "Disabled",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#e0e8ef",
+          "v": "Colors/Button/background-disabled"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 176,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41433",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Button/background-disabled",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:34917",
+   "name": "State=Disabled, RTL=True, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Disabled",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:34917",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:34918",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41019",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:34919",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:34920",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Text & Icon/disabled"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:34921",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Disabled, Type=Label"
+        },
+        "mcid": "35216:29627",
+        "cp": {
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#e0e8ef",
+          "v": "Colors/Button/background-disabled"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Button/background-disabled",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:35070",
+   "name": "State=Disabled, RTL=True, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Disabled",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:35070",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:35071",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:35101",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:35072",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:35073",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5c697a",
+            "v": "Colors/Text & Icon/disabled"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:35074",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Disabled, Type=Label"
+        },
+        "mcid": "35216:29627",
+        "cp": {
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#e0e8ef",
+          "v": "Colors/Button/background-disabled"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Button/background-disabled",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:40835",
+   "name": "State=Disabled, RTL=True, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Disabled",
+    "RTL": "True",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:40835",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:40836",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:40837",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 48,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:40840",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Disabled, Type=Label"
+        },
+        "mcid": "35216:29627",
+        "cp": {
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#e0e8ef",
+          "v": "Colors/Button/background-disabled"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Button/background-disabled",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41403",
+   "name": "State=Focused, RTL=False, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Focused",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41403",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41404",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41408",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "r": 4,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100",
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Focused, Type=Label"
+        },
+        "mcid": "35216:29616",
+        "cp": {
+         "RTL": "False",
+         "State": "Focused",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41405",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41406",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41407",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41409",
+   "name": "State=Focused, RTL=False, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Focused",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41409",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41410",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41414",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "r": 4,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100",
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Focused, Type=Label"
+        },
+        "mcid": "35216:29616",
+        "cp": {
+         "RTL": "False",
+         "State": "Focused",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41411",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41412",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41413",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41415",
+   "name": "State=Focused, RTL=False, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Focused",
+    "RTL": "False",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41415",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:41416",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:41418",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "r": 4,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100",
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Focused, Type=Label"
+        },
+        "mcid": "35216:29616",
+        "cp": {
+         "RTL": "False",
+         "State": "Focused",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 176,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41417",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:34907",
+   "name": "State=Focused, RTL=True, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Focused",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:34907",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:34908",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41018",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:34909",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:34910",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:34911",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "r": 4,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100",
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Focused, Type=Label"
+        },
+        "mcid": "35216:29620",
+        "cp": {
+         "RTL": "True",
+         "State": "Focused",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:35065",
+   "name": "State=Focused, RTL=True, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Focused",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:35065",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:35066",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:35100",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:35067",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:35068",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:35069",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "r": 4,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100",
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Focused, Type=Label"
+        },
+        "mcid": "35216:29620",
+        "cp": {
+         "RTL": "True",
+         "State": "Focused",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:40829",
+   "name": "State=Focused, RTL=True, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Focused",
+    "RTL": "True",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:40829",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:40830",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:40831",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 48,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:40834",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "r": 4,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100",
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Focused, Type=Label"
+        },
+        "mcid": "35216:29620",
+        "cp": {
+         "RTL": "True",
+         "State": "Focused",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41387",
+   "name": "State=Hover, RTL=False, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Hover",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41387",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41388",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41392",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Hover, Type=Label"
+        },
+        "mcid": "35216:29610",
+        "cp": {
+         "RTL": "False",
+         "State": "Hover",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41389",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41390",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41391",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41393",
+   "name": "State=Hover, RTL=False, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Hover",
+    "RTL": "False",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41393",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:41394",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:41398",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Hover, Type=Label"
+        },
+        "mcid": "35216:29610",
+        "cp": {
+         "RTL": "False",
+         "State": "Hover",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 168,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41395",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 208,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:41396",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 208,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:41397",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:41399",
+   "name": "State=Hover, RTL=False, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Hover",
+    "RTL": "False",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:41399",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:41400",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:41402",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=False, State=Hover, Type=Label"
+        },
+        "mcid": "35216:29610",
+        "cp": {
+         "RTL": "False",
+         "State": "Hover",
+         "Type": "Label"
+        },
+        "itx": [
+         "Label"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       },
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 176,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41401",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:34827",
+   "name": "State=Hover, RTL=True, Second Level=False, Expanded=False",
+   "props": {
+    "State": "Hover",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "False"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:34827",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:34828",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:41000",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:34829",
+        "ref": {
+         "visible": "Header#35735:25"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:34830",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=down"
+          },
+          "mcid": "138:773",
+          "cp": {
+           "Direction": "down"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:34831",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Hover, Type=Label"
+        },
+        "mcid": "35216:29613",
+        "cp": {
+         "RTL": "True",
+         "State": "Hover",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:35060",
+   "name": "State=Hover, RTL=True, Second Level=False, Expanded=True",
+   "props": {
+    "State": "Hover",
+    "RTL": "True",
+    "Second Level": "False",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:35060",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      8,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 224,
+      "h": 28,
+      "nid": "35735:35061",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:35099",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 48,
+        "y": 14,
+        "w": 24,
+        "h": 24,
+        "nid": "35735:35062",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Chevron",
+          "t": "INSTANCE",
+          "x": 48,
+          "y": 14,
+          "w": 24,
+          "h": 24,
+          "nid": "35735:35063",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Chevron",
+           "setId": "23064:341",
+           "variant": "Direction=up"
+          },
+          "mcid": "138:771",
+          "cp": {
+           "Direction": "up"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 80,
+        "y": 12,
+        "w": 152,
+        "h": 28,
+        "nid": "35735:35064",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Hover, Type=Label"
+        },
+        "mcid": "35216:29613",
+        "cp": {
+         "RTL": "True",
+         "State": "Hover",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35735:40823",
+   "name": "State=Hover, RTL=True, Second Level=True, Expanded=True",
+   "props": {
+    "State": "Hover",
+    "RTL": "True",
+    "Second Level": "True",
+    "Expanded": "True"
+   },
+   "w": 240,
+   "h": 52,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 240,
+    "h": 52,
+    "nid": "35735:40823",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      32,
+      12,
+      8
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#b5c7e2",
+      "v": "Colors/Divider/default"
+     }
+    ],
+    "sw": [
+     0,
+     0,
+     1,
+     0
+    ],
+    "sa": "INSIDE",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-700",
+     "paddingBottom": "Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 12,
+      "w": 200,
+      "h": 28,
+      "nid": "35735:40824",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Value",
+        "t": "TEXT",
+        "x": 8,
+        "y": 14,
+        "w": 32,
+        "h": 24,
+        "nid": "35735:40825",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "000",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": ".Checkbox+Label+Input",
+        "t": "INSTANCE",
+        "x": 48,
+        "y": 12,
+        "w": 160,
+        "h": 28,
+        "nid": "35735:40828",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          2,
+          2,
+          2,
+          2
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-100",
+         "paddingTop": "Space/space-100",
+         "paddingRight": "Space/space-100",
+         "paddingBottom": "Space/space-100"
+        },
+        "inst": {
+         "set": ".Checkbox+Label+Input",
+         "setId": "35216:29603",
+         "variant": "RTL=True, State=Hover, Type=Label"
+        },
+        "mcid": "35216:29613",
+        "cp": {
+         "RTL": "True",
+         "State": "Hover",
+         "Type": "Label"
+        },
+        "itx": [
+         "תווית"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3168-1715.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Background/neutral-secondlevel",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-100",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-700",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

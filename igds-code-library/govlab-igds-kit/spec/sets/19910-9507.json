@@ -1,0 +1,618 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "19910:9507",
+  "name": "Error message",
+  "key": "5a5385c3d4fd6c74278e7fe6b579ef1854c7b1ed",
+  "defs": {
+   "Media": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "Format": {
+    "t": "VARIANT",
+    "o": [
+     "Desktop",
+     "Mobile"
+    ],
+    "d": "Desktop"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-19910-9507.json",
+   "sha256": "e2e9edc382fefab175d095c9a8d99a1d20f9bf16632afe53a34a4fe89b6daa19",
+   "format": "v5-rest",
+   "restResponseSha256": "21898b5fee528a78acdb28b4a3be6eb479680774dd9447305ca546cb71dd0305",
+   "filter": null,
+   "offset": 0,
+   "captured": 4,
+   "totalMatching": 4
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 4,
+  "byFilter": {
+   "null": {
+    "totalMatching": 4,
+    "captured": 4
+   }
+  },
+  "detail": {
+   "tree": 4,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-550": {
+   "figma": "Space/space-550",
+   "css": "--igds-ref-space-550",
+   "status": "css-token",
+   "light": {
+    "figma": 20,
+    "css": "20px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "36640:85960",
+   "name": "RTL=False, Format=Desktop",
+   "props": {
+    "RTL": "False",
+    "Format": "Desktop"
+   },
+   "w": 740,
+   "h": 726,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 740,
+    "h": 726,
+    "nid": "36640:85960",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 20,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-550"
+    },
+    "c": [
+     {
+      "n": ".Media Place Holder",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 740,
+      "h": 448,
+      "nid": "36657:139598",
+      "ref": {
+       "visible": "Media#36640:15"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "clip": 1,
+      "inst": {
+       "set": ".Media Place Holder",
+       "setId": "36524:27170",
+       "variant": "Size=Large, Proportion=16:9"
+      },
+      "mcid": "36524:27167",
+      "cp": {
+       "Size": "Large",
+       "Proportion": "16:9"
+      }
+     },
+     {
+      "n": "Frame 1261158137",
+      "t": "INSTANCE",
+      "x": 105.5,
+      "y": 468,
+      "w": 529,
+      "h": 258,
+      "nid": "36640:85966",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        16,
+        16,
+        16,
+        16
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-500"
+      },
+      "inst": {
+       "set": ".Details",
+       "setId": "36640:85663",
+       "variant": "RTL=False, Mobile=False"
+      },
+      "mcid": "36640:85664",
+      "cp": {
+       "RTL": "False",
+       "Mobile": "False"
+      },
+      "itx": [
+       "A title describing the error message",
+       "Further explanation describing the reason for the message",
+       "Relevant navigation for the message"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-19910-9507.json"
+   ],
+   "vars": [
+    "Space/space-500",
+    "Space/space-550"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36640:85987",
+   "name": "RTL=False, Format=Mobile",
+   "props": {
+    "RTL": "False",
+    "Format": "Mobile"
+   },
+   "w": 320,
+   "h": 450,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 450,
+    "nid": "36640:85987",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 20,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-550"
+    },
+    "c": [
+     {
+      "n": ".Media Place Holder",
+      "t": "INSTANCE",
+      "x": 60,
+      "y": 0,
+      "w": 200,
+      "h": 200,
+      "nid": "36657:139612",
+      "ref": {
+       "visible": "Media#36640:15"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "f": [
+       {
+        "t": "IMAGE"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Brand/space/space-zero"
+      },
+      "inst": {
+       "set": ".Media Place Holder",
+       "setId": "36524:27170",
+       "variant": "Size=Medium, Proportion=1:1"
+      },
+      "mcid": "36524:27164",
+      "cp": {
+       "Size": "Medium",
+       "Proportion": "1:1"
+      }
+     },
+     {
+      "n": "Frame 1261158137",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 220,
+      "w": 320,
+      "h": 230,
+      "nid": "36640:85989",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        16,
+        16,
+        16,
+        16
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-500"
+      },
+      "inst": {
+       "set": ".Details",
+       "setId": "36640:85663",
+       "variant": "RTL=False, Mobile=True"
+      },
+      "mcid": "36640:85768",
+      "cp": {
+       "RTL": "False",
+       "Mobile": "True"
+      },
+      "itx": [
+       "A title describing the error message",
+       "Further explanation describing the reason for the message",
+       "Relevant navigation for the message"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-19910-9507.json"
+   ],
+   "vars": [
+    "Brand/space/space-zero",
+    "Space/space-500",
+    "Space/space-550"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19809:999",
+   "name": "RTL=True, Format=Desktop",
+   "props": {
+    "RTL": "True",
+    "Format": "Desktop"
+   },
+   "w": 740,
+   "h": 653,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 740,
+    "h": 653,
+    "nid": "19809:999",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 20,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-550"
+    },
+    "c": [
+     {
+      "n": ".Media Place Holder",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 740,
+      "h": 448,
+      "nid": "36657:139561",
+      "ref": {
+       "visible": "Media#36640:15"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "clip": 1,
+      "inst": {
+       "set": ".Media Place Holder",
+       "setId": "36524:27170",
+       "variant": "Size=Large, Proportion=16:9"
+      },
+      "mcid": "36524:27167",
+      "cp": {
+       "Size": "Large",
+       "Proportion": "16:9"
+      }
+     },
+     {
+      "n": "Frame 1261158137",
+      "t": "INSTANCE",
+      "x": 105.5,
+      "y": 468,
+      "w": 529,
+      "h": 185,
+      "nid": "36640:85777",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        16,
+        16,
+        16,
+        16
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-500"
+      },
+      "inst": {
+       "set": ".Details",
+       "setId": "36640:85663",
+       "variant": "RTL=True, Mobile=False"
+      },
+      "mcid": "36640:85662",
+      "cp": {
+       "RTL": "True",
+       "Mobile": "False"
+      },
+      "itx": [
+       "כותרת המתארת את הודעת השגיאה",
+       "הסבר נוסף שמתאר את הסיבה להודעה",
+       "ניווט רלוונטי להודעה"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-19910-9507.json"
+   ],
+   "vars": [
+    "Space/space-500",
+    "Space/space-550"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19910:9508",
+   "name": "RTL=True, Format=Mobile",
+   "props": {
+    "RTL": "True",
+    "Format": "Mobile"
+   },
+   "w": 320,
+   "h": 427,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 427,
+    "nid": "19910:9508",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 20,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-550"
+    },
+    "c": [
+     {
+      "n": ".Media Place Holder",
+      "t": "INSTANCE",
+      "x": 60,
+      "y": 0,
+      "w": 200,
+      "h": 200,
+      "nid": "36657:139606",
+      "ref": {
+       "visible": "Media#36640:15"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "f": [
+       {
+        "t": "IMAGE"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Brand/space/space-zero"
+      },
+      "inst": {
+       "set": ".Media Place Holder",
+       "setId": "36524:27170",
+       "variant": "Size=Medium, Proportion=1:1"
+      },
+      "mcid": "36524:27164",
+      "cp": {
+       "Size": "Medium",
+       "Proportion": "1:1"
+      }
+     },
+     {
+      "n": "Frame 1261158137",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 220,
+      "w": 320,
+      "h": 207,
+      "nid": "36640:85894",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        16,
+        16,
+        16,
+        16
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500",
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-500"
+      },
+      "inst": {
+       "set": ".Details",
+       "setId": "36640:85663",
+       "variant": "RTL=True, Mobile=True"
+      },
+      "mcid": "36640:85670",
+      "cp": {
+       "RTL": "True",
+       "Mobile": "True"
+      },
+      "itx": [
+       "כותרת המתארת את הודעת השגיאה",
+       "הסבר נוסף שמתאר את הסיבה להודעה",
+       "ניווט רלוונטי להודעה"
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-19910-9507.json"
+   ],
+   "vars": [
+    "Brand/space/space-zero",
+    "Space/space-500",
+    "Space/space-550"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

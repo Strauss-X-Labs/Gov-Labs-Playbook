@@ -1,0 +1,30 @@
+node_modules/
+
+# אישור CA של רשת ארגונית — מקומי למכונה, לא נכנס ל-repo
+corp-ca.pem
+
+# לוגים זמניים
+*.log
+
+# IGDS registry — previous generation kept only for local diffs
+igds-registry/.previous/
+
+# ---- govlab-igds-kit ----
+# Raw Figma REST responses (176 MB). Regenerable with FIGMA_TOKEN (pipeline/figma-rest/extract-all.mjs);
+# NOT needed for generation or verification: the normalized specs in spec/sets + spec/raw* are committed.
+govlab-igds-kit/spec/rest-cache/
+
+# Test build artefacts and temporary browser pages written by verify/*.mjs (rebuilt on every run)
+govlab-igds-kit/verify/out/_*.bundle.js
+govlab-igds-kit/verify/out/_*.html
+govlab-igds-kit/verify/out/l2-*/
+
+# Local debugging scripts (not part of the pipeline)
+govlab-igds-kit/verify/_dbg*.mjs
+govlab-igds-kit/verify/_probe*.mjs
+
+# Secrets must never be committed: tokens come only from environment variables / CI secrets
+.env
+.env.*
+*.pem
+*.key

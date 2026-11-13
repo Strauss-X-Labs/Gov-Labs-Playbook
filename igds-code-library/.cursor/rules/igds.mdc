@@ -1,0 +1,19 @@
+---
+description: IGDS (Israeli Government Design System) — mandatory rules for any UI work
+globs:
+alwaysApply: true
+---
+
+# IGDS — Cursor adapter
+
+The binding rules are shared across all AI tools: @igds-registry/ai/IGDS-RULES.md
+
+Generated catalogs (from the installed packages — do not edit by hand):
+- Components: @igds-registry/ai/IGDS-COMPONENTS.md
+- Tokens: @igds-registry/ai/IGDS-TOKENS.md
+
+Summary (the rules file wins on any conflict):
+- Use only official `igds-*` elements, their listed attributes/values/slots/events, and listed `--igds-*` tokens.
+- Do not use `.gov-*` classes, `styles.css` or `design.md` as a source — legacy hand-made prototype.
+- No official solution → write an `IGDS-GAP` report and stop; do not invent.
+- Before finishing: `npm run igds:lint -- <path>` must pass.

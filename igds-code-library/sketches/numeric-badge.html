@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Numeric Badge (כל המצבים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Numeric Badge — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Numeric Badge node <code>2078:3425</code>,
+            דרך Figma MCP. מבוסס על <code>.gov-numeric-badge</code> והטוקנים ב-<code>styles.css</code>.
+            תגית מספרית קטנה בצורת גלולה (מונה התראות). 2 מצבים.
+        </p>
+
+        <div class="sketch__grid">
+
+            <section>
+                <span class="sketch__state-label">Notification = True</span>
+                <span class="gov-numeric-badge gov-numeric-badge--notification">9</span>
+            </section>
+
+            <section>
+                <span class="sketch__state-label">Notification = False</span>
+                <span class="gov-numeric-badge gov-numeric-badge--count">9</span>
+            </section>
+
+        </div>
+
+        <h2 class="sketch__mapping-title">דוגמאות ערכים (ספרה / מספר דו-ספרתי)</h2>
+        <p class="sketch__sub">הרכיב מתרחב אוטומטית עד רוחב מקסימלי של 42px. ספרה בודדת מתעגלת (16×16).</p>
+        <div style="display: flex; gap: var(--space-lg); flex-wrap: wrap; align-items: center;">
+            <span class="gov-numeric-badge gov-numeric-badge--notification">1</span>
+            <span class="gov-numeric-badge gov-numeric-badge--notification">9</span>
+            <span class="gov-numeric-badge gov-numeric-badge--notification">12</span>
+            <span class="gov-numeric-badge gov-numeric-badge--notification">99</span>
+            <span class="gov-numeric-badge gov-numeric-badge--count">1</span>
+            <span class="gov-numeric-badge gov-numeric-badge--count">9</span>
+            <span class="gov-numeric-badge gov-numeric-badge--count">12</span>
+            <span class="gov-numeric-badge gov-numeric-badge--count">99</span>
+        </div>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Notification=True — טקסט</td>
+                    <td>#f5f9ff</td>
+                    <td>--igds-base-color-text-subtle-primary-inverted</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Notification=True — רקע</td>
+                    <td>#c93435</td>
+                    <td>--igds-base-color-background-numeric-badge</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>Notification=False — טקסט</td>
+                    <td>#466186</td>
+                    <td>--igds-base-color-text-subtle-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Notification=False — רקע</td>
+                    <td>#b7d6ff</td>
+                    <td>--igds-base-color-background-brand-sidebar-pressed</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>radius (צורת גלולה)</td>
+                    <td>100px</td>
+                    <td>--igds-ref-border-radius-full</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding אופקי</td>
+                    <td>4px</td>
+                    <td>--igds-ref-space-200</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט</td>
+                    <td>12px</td>
+                    <td>--igds-ref-font-size-2xs</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>משקל טקסט</td>
+                    <td>400</td>
+                    <td>--igds-ref-font-weight-regular</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>line-height</td>
+                    <td>1.6</td>
+                    <td>ערך קבוע (Badge/Regular)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+                <tr>
+                    <td>גובה / רוחב מינימלי</td>
+                    <td>16px</td>
+                    <td>ערך קבוע (height / min-width / min-height)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+                <tr>
+                    <td>רוחב מקסימלי</td>
+                    <td>42px</td>
+                    <td>ערך קבוע (max-width)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

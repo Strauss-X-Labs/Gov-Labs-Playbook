@@ -1,0 +1,1249 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "3421:32781",
+  "name": ".Progress Bar/Track Item",
+  "key": "4576c74b5fa1802aff05b2926d0407fd93e28c7f",
+  "defs": {
+   "Progress": {
+    "t": "VARIANT",
+    "o": [
+     "0%",
+     "25%",
+     "50%",
+     "75%",
+     "Indeterminate",
+     "100%"
+    ],
+    "d": "0%"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-3421-32781.json",
+   "sha256": "7fc3ca60dc970a7099e887d2d5dc57d08aeef5052f10356e3593f95331ca7eb1",
+   "format": "v5-rest",
+   "restResponseSha256": "5fa59c0f2b7900ddcc96697066c79c674bfed9387003d107a9d568b999d0aa02",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/brand-default": {
+   "figma": "Colors/Background/brand-default",
+   "css": "--igds-base-color-background-brand-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-badge": {
+   "figma": "Colors/Background/neutral-badge",
+   "css": "--igds-base-color-background-neutral-badge",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": "#e8f0fc",
+    "css": "#f2f6fd",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1b487a",
+    "css": "#1b487a",
+    "equal": true,
+    "how": "exact"
+   }
+  }
+ },
+ "variants": [
+  {
+   "id": "3421:32780",
+   "name": "Progress=0%, RTL=True",
+   "props": {
+    "Progress": "0%",
+    "RTL": "True"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "3421:32780",
+    "v": {
+     "itemSpacing": "Brand/space/space-zero",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Track",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 220,
+      "h": 8,
+      "nid": "3421:32777",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#e8f0fc",
+        "v": "Colors/Background/neutral-badge"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "38430:5797",
+   "name": "Progress=100%, RTL=False",
+   "props": {
+    "Progress": "100%",
+    "RTL": "False"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "38430:5797",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Background/brand-default"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Spacer 4",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 220,
+      "h": 8,
+      "nid": "38430:5798",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "38430:5788",
+   "name": "Progress=100%, RTL=True",
+   "props": {
+    "Progress": "100%",
+    "RTL": "True"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "38430:5788",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Background/brand-default"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Spacer 4",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 220,
+      "h": 8,
+      "nid": "38430:5789",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36478:69270",
+   "name": "Progress=25%, RTL=False",
+   "props": {
+    "Progress": "25%",
+    "RTL": "False"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "36478:69270",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "25%",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69274",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "Spacer 3",
+      "t": "RECTANGLE",
+      "x": 55,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69271",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "Spacer 2",
+      "t": "RECTANGLE",
+      "x": 110,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69272",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "Spacer 1",
+      "t": "RECTANGLE",
+      "x": 165,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69273",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3421:32782",
+   "name": "Progress=25%, RTL=True",
+   "props": {
+    "Progress": "25%",
+    "RTL": "True"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "3421:32782",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Spacer 3",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "3421:32784",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "Spacer 2",
+      "t": "RECTANGLE",
+      "x": 55,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "27512:36548",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "Spacer 1",
+      "t": "RECTANGLE",
+      "x": 110,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "27512:36553",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "25%",
+      "t": "RECTANGLE",
+      "x": 165,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "27512:36560",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36478:69275",
+   "name": "Progress=50%, RTL=False",
+   "props": {
+    "Progress": "50%",
+    "RTL": "False"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "36478:69275",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "50%",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 110,
+      "h": 8,
+      "nid": "36478:69277",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "Spacer 1",
+      "t": "RECTANGLE",
+      "x": 110,
+      "y": 0,
+      "w": 110,
+      "h": 8,
+      "nid": "36478:69276",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3421:32787",
+   "name": "Progress=50%, RTL=True",
+   "props": {
+    "Progress": "50%",
+    "RTL": "True"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "3421:32787",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Spacer 1",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 110,
+      "h": 8,
+      "nid": "3421:32789",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "50%",
+      "t": "RECTANGLE",
+      "x": 110,
+      "y": 0,
+      "w": 110,
+      "h": 8,
+      "nid": "27512:36569",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36478:69278",
+   "name": "Progress=75%, RTL=False",
+   "props": {
+    "Progress": "75%",
+    "RTL": "False"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "36478:69278",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "75%",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69280",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": [
+       4,
+       0,
+       0,
+       4
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "50%",
+      "t": "RECTANGLE",
+      "x": 55,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69281",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "25%",
+      "t": "RECTANGLE",
+      "x": 110,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69282",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": [
+       0,
+       4,
+       4,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topRightRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "Spacer 4",
+      "t": "RECTANGLE",
+      "x": 165,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "36478:69279",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3421:32790",
+   "name": "Progress=75%, RTL=True",
+   "props": {
+    "Progress": "75%",
+    "RTL": "True"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "3421:32790",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Spacer 4",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "27512:36596",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": 4,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "75%",
+      "t": "RECTANGLE",
+      "x": 55,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "27512:36594",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": [
+       4,
+       0,
+       0,
+       4
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs"
+      }
+     },
+     {
+      "n": "50%",
+      "t": "RECTANGLE",
+      "x": 110,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "27512:36595",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "25%",
+      "t": "RECTANGLE",
+      "x": 165,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "3421:32792",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "grow": 1,
+      "r": [
+       0,
+       4,
+       4,
+       0
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topRightRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3421:32793",
+   "name": "Progress=Indeterminate, RTL=True",
+   "props": {
+    "Progress": "Indeterminate",
+    "RTL": "True"
+   },
+   "w": 220,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 220,
+    "h": 8,
+    "nid": "3421:32793",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      55,
+      0,
+      55
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#e8f0fc",
+      "v": "Colors/Background/neutral-badge"
+     }
+    ],
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Track",
+      "t": "RECTANGLE",
+      "x": 110,
+      "y": 0,
+      "w": 55,
+      "h": 8,
+      "nid": "3421:32795",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3421-32781.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

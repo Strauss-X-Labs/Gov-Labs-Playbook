@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- Fixture: every line marked with an expectation must be reported. Used by tests/run-tests.mjs -->
+<html dir="rtl" lang="he">
+<head>
+  <link rel="stylesheet" href="node_modules/@igds/tokens/lib/index.min.css">
+  <script src="node_modules/@igds/core-web/lib/index.min.js"></script> <!-- EXPECT E-BUNDLE -->
+  <style>
+    .x { color: var(--igds-base-color-text-primary); }           /* EXPECT E-TOKEN (in official README, does not exist) */
+    .y { padding: var(--igds-light-ref-space-500); }              /* EXPECT W-TOKEN-TIER */
+    .z { color: var(--igds-ref-israel-blue-500); }                /* EXPECT W-TOKEN-TIER */
+    .w { color: #1a56c4; }                                         /* EXPECT W-RAW-COLOR */
+  </style>
+</head>
+<body>
+  <igds-text-field label="שם"></igds-text-field>                  <!-- EXPECT E-TAG -->
+  <igds-button variant="danger">מחק</igds-button>                 <!-- EXPECT E-VALUE -->
+  <igds-button disabled="false">שלח</igds-button>                 <!-- EXPECT E-BOOL-FALSE -->
+  <igds-footer logo-url="/logo.svg"></igds-footer>                 <!-- EXPECT E-ATTR (real: logourl) -->
+  <igds-checkbox indeterminate label="x"></igds-checkbox>          <!-- EXPECT E-ATTR (JS-only property) -->
+  <igds-dropdown options="a,b"></igds-dropdown>                    <!-- EXPECT E-JSON -->
+  <igds-button><span slot="prefix">x</span></igds-button>          <!-- EXPECT E-SLOT -->
+  <div class="gov-button gov-button--primary">legacy</div>         <!-- EXPECT W-LEGACY -->
+  <script>
+    document.querySelector('igds-input').addEventListener('igds-changed', () => {}); // EXPECT E-EVENT
+  </script>
+</body>
+</html>

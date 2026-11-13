@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGDS — ספריית רכיבים למעצבים</title>
+    <!-- מקור אמת: טוקנים ומחלקות הדיזיין סיסטם -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- סטייל מעטפת הגלריה (משותף לכל הסקיצות) -->
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <h1 class="sketch__title">ספריית רכיבים — IGDS</h1>
+        <p class="sketch__sub">
+            גלריית סקיצות HTML של רכיבי הדיזיין סיסטם, לכל רכיב כל המצבים (states) שלו.
+            כל הסקיצות נבנות מתוך הטוקנים והמחלקות ב-<code>styles.css</code> ונמשכות מ-Figma דרך Figma MCP.
+        </p>
+
+        <ul class="gallery-cards">
+            <li>
+                <a class="gallery-card" href="input-field.html">
+                    <span class="gallery-card__name">Input Field</span>
+                    <span class="gallery-card__desc">שדה קלט — 8 מצבים (Default, Hover, Active, Error,
+                        ErrorFocused, Disabled, Focused, Pre-filled)</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="checkbox.html">
+                    <span class="gallery-card__name">Checkbox</span>
+                    <span class="gallery-card__desc">תיבת סימון — 6 מצבים (Default, Hover, Focused,
+                        Disabled, Error, ErrorFocused) × מסומן / ביניים (indeterminate) · וריאנטים
+                        Label, Input Text ו-Card (Desktop/Mobile) · קבוצה אנכית/אופקית</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="date-picker.html">
+                    <span class="gallery-card__name">Date Picker</span>
+                    <span class="gallery-card__desc">בורר תאריך — <strong>נצרך ישירות מספריית IGDS</strong>
+                        (@igds/core-web), לא נבנה מחדש · Default, Required, Pre-filled, Min/Max,
+                        Error, Disabled, Read-only · לוח שנה פתוח (Day/Month/Year)</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="date-range.html">
+                    <span class="gallery-card__name">Date Range</span>
+                    <span class="gallery-card__desc">בורר טווח תאריכים — <strong>gap-fill מקומי</strong>
+                        (לא קיים ב-@igds/core-web 0.1.59) · לוח חי עם בחירת התחלה/סיום · מצבי
+                        Start/End/Range · Today, Hover, Focused, Disabled</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="text-area.html">
+                    <span class="gallery-card__name">Text Area</span>
+                    <span class="gallery-card__desc">אזור טקסט רב-שורתי — 6 מצבים (Default, Hover, Active,
+                        Error, Disabled, Focused) עם scrollbar מותאם ומונה תווים</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="accordion.html">
+                    <span class="gallery-card__name">Accordion</span>
+                    <span class="gallery-card__desc">אקורדיון — מצבי פריט (Default, Hover, Focused, Disabled ×
+                        פתוח/סגור) ודוגמת קבוצה (AllowMultiple)</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="anchor.html">
+                    <span class="gallery-card__name">Anchor</span>
+                    <span class="gallery-card__desc">ניווט עוגן — 4 מצבים (Default, Hover, Pressed, Focused)
+                        ודוגמת ניווט בעמוד</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="badge.html">
+                    <span class="gallery-card__name">Badge</span>
+                    <span class="gallery-card__desc">תגית סטטוס — 5 סוגים (Failure, Warning, Success,
+                        In-Progress, Informative) עם אייקון אופציונלי</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="numeric-badge.html">
+                    <span class="gallery-card__name">Numeric Badge</span>
+                    <span class="gallery-card__desc">תגית מספרית (מונה התראות) — 2 מצבים
+                        (Notification True/False)</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="notification-button.html">
+                    <span class="gallery-card__name">Notification Button</span>
+                    <span class="gallery-card__desc">כפתור אייקון עם תגית התראה — 3 סוגים (Link,
+                        Secondary, Primary) × 3 גדלים (Small, Medium, Large)</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="button.html">
+                    <span class="gallery-card__name">Button</span>
+                    <span class="gallery-card__desc">כפתור — 4 סוגים (Primary, Secondary, Link,
+                        Alternative Link) × 3 גדלים × 5 מצבים, עם אייקון וכפתור אייקון</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="breadcrumbs.html">
+                    <span class="gallery-card__name">Breadcrumbs</span>
+                    <span class="gallery-card__desc">סרגל ניווט היררכי — מצבי קישור (Default, Hover,
+                        Focused, Current) ונתיב מקופל (overflow)</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="floating-button.html">
+                    <span class="gallery-card__name">Floating Button (FAB)</span>
+                    <span class="gallery-card__desc">כפתור פעולה צף — Primary/Secondary ·
+                        אייקון-בלבד / Label · Mobile/Desktop · 5 מצבים עם צל משתנה</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="timed-button.html">
+                    <span class="gallery-card__name">Timed Button</span>
+                    <span class="gallery-card__desc">כפתור מתוזמן עם מונה וסרגל התקדמות (press &amp; hold)
+                        — Default, Hover, Pressed 0–100%, Focused, Disabled</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="split-button.html">
+                    <span class="gallery-card__name">Split Button</span>
+                    <span class="gallery-card__desc">כפתור מפוצל עם תפריט — Primary/Secondary ·
+                        Small/Medium/Large · מצב פתוח/סגור עם רשימת אפשרויות</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="card.html">
+                    <span class="gallery-card__name">Card</span>
+                    <span class="gallery-card__desc">כרטיס — Clickable/CTA/Not pressable ·
+                        Small/Large · Vertical/Horizontal · 5 מצבים · media, badge, CTA, מועדפים</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="carousel.html">
+                    <span class="gallery-card__name">Carousel</span>
+                    <span class="gallery-card__desc">קרוסלה — כרטיסים גדולים/קטנים · עם/בלי חצים ·
+                        מובייל · כותרת, נקודות עימוד וחצי ניווט</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="divider.html">
+                    <span class="gallery-card__name">Divider</span>
+                    <span class="gallery-card__desc">קו מפריד — 8 וריאנטים: Position (Horizontal/Vertical)
+                        × Style (Default/Inverted) × Width (Full/Inset)</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="dropdown.html">
+                    <span class="gallery-card__name">Dropdown</span>
+                    <span class="gallery-card__desc">תפריט בחירה מותאם (combobox) — 4 סוגים (Default,
+                        Active Filterable, Active Unfilterable, Tags) × 6 מצבים (Default, Hover,
+                        Focused, Error, ErrorFocused, Disabled) עם רשימה צפה ותגיות</span>
+                </a>
+            </li>
+            <li>
+                <a class="gallery-card" href="filter.html">
+                    <span class="gallery-card__name">Horizontal Filter</span>
+                    <span class="gallery-card__desc">רכיב פילטור אופקי — <strong>קומפוזיציה</strong> של רכיבים
+                        קיימים: 2 שורות של 5 Dropdowns, קבוצת צ'קבוקסים אופקית, ושורת כפתורים
+                        (החל סינון / ניקוי סינון). פריסה דרך <code>.gov-filter</code> בטוקנים בלבד</span>
+                </a>
+            </li>
+            <!-- רכיבים נוספים יתווספו כאן אוטומטית ע"י הסקיל DS-Component-figma-sketch -->
+        </ul>
+    </main>
+</body>
+
+</html>

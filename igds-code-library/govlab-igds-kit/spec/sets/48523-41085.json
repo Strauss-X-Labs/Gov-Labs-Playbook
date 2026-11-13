@@ -1,0 +1,603 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "48523:41085",
+  "name": "Success",
+  "key": "14c2b38c84d12d1a6f0b791addd8532178f3d171",
+  "defs": {
+   "Tile": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Large",
+     "Off"
+    ],
+    "d": "Off"
+   },
+   "Fill": {
+    "t": "VARIANT",
+    "o": [
+     "off",
+     "On"
+    ],
+    "d": "off"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-48523-41085.json",
+   "sha256": "9beb72fab0b58b1968d1043087fdea835fc1f5ad69eed262180dbcc742cf029e",
+   "format": "v5-rest",
+   "restResponseSha256": "ee56a7df76c1468a9215efccc057fa1f25eb8053f44513f116e083d8bcf2e84c",
+   "filter": null,
+   "offset": 0,
+   "captured": 6,
+   "totalMatching": 6
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 6,
+  "byFilter": {
+   "null": {
+    "totalMatching": 6,
+    "captured": 6
+   }
+  },
+  "detail": {
+   "tree": 6,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "[remote]Colors/Background/neutral-secondlevel": {
+   "figma": "Colors/Background/neutral-secondlevel",
+   "css": "--igds-base-color-background-neutral-secondlevel",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": null,
+    "css": "#f2f6fd",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  },
+  "[remote]Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  },
+  "[remote]Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  },
+  "[remote]Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "48523:41094",
+   "name": "Tile=Default, Fill=On",
+   "props": {
+    "Tile": "Default",
+    "Fill": "On"
+   },
+   "w": 40,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 40,
+    "nid": "48523:41094",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 4,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f1f5fb",
+      "v": "[remote]Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "[remote]Space/space-300",
+     "paddingTop": "[remote]Space/space-300",
+     "paddingRight": "[remote]Space/space-300",
+     "paddingBottom": "[remote]Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Success",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 8,
+      "w": 24,
+      "h": 24,
+      "nid": "48523:41095",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": "Success",
+       "setId": "45309:19811",
+       "variant": "Tile=Off, Fill=On"
+      },
+      "mcid": "45309:19815",
+      "cp": {
+       "Tile": "Off",
+       "Fill": "On"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48523-41085.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "[remote]Colors/Background/neutral-secondlevel",
+    "[remote]Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48523:41092",
+   "name": "Tile=Default, Fill=off",
+   "props": {
+    "Tile": "Default",
+    "Fill": "off"
+   },
+   "w": 40,
+   "h": 40,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 40,
+    "h": 40,
+    "nid": "48523:41092",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 4,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f1f5fb",
+      "v": "[remote]Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "[remote]Space/space-300",
+     "paddingTop": "[remote]Space/space-300",
+     "paddingRight": "[remote]Space/space-300",
+     "paddingBottom": "[remote]Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Success",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 8,
+      "w": 24,
+      "h": 24,
+      "nid": "48523:41093",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "Success",
+       "setId": "45309:19811",
+       "variant": "Tile=Off, Fill=off"
+      },
+      "mcid": "45309:19812",
+      "cp": {
+       "Tile": "Off",
+       "Fill": "off"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48523-41085.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "[remote]Colors/Background/neutral-secondlevel",
+    "[remote]Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48523:41098",
+   "name": "Tile=Large, Fill=On",
+   "props": {
+    "Tile": "Large",
+    "Fill": "On"
+   },
+   "w": 48,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 48,
+    "nid": "48523:41098",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      12,
+      12,
+      12,
+      12
+     ],
+     "g": 4,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f1f5fb",
+      "v": "[remote]Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "[remote]Space/space-400",
+     "paddingTop": "[remote]Space/space-400",
+     "paddingRight": "[remote]Space/space-400",
+     "paddingBottom": "[remote]Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Success",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 12,
+      "w": 24,
+      "h": 24,
+      "nid": "48523:41099",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": "Success",
+       "setId": "45309:19811",
+       "variant": "Tile=Off, Fill=On"
+      },
+      "mcid": "45309:19815",
+      "cp": {
+       "Tile": "Off",
+       "Fill": "On"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48523-41085.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "[remote]Colors/Background/neutral-secondlevel",
+    "[remote]Space/space-400"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48523:41096",
+   "name": "Tile=Large, Fill=off",
+   "props": {
+    "Tile": "Large",
+    "Fill": "off"
+   },
+   "w": 48,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 48,
+    "nid": "48523:41096",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      12,
+      12,
+      12,
+      12
+     ],
+     "g": 4,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f1f5fb",
+      "v": "[remote]Colors/Background/neutral-secondlevel"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "paddingLeft": "[remote]Space/space-400",
+     "paddingTop": "[remote]Space/space-400",
+     "paddingRight": "[remote]Space/space-400",
+     "paddingBottom": "[remote]Space/space-400"
+    },
+    "c": [
+     {
+      "n": "Success",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 12,
+      "w": 24,
+      "h": 24,
+      "nid": "48523:41097",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "Success",
+       "setId": "45309:19811",
+       "variant": "Tile=Off, Fill=off"
+      },
+      "mcid": "45309:19812",
+      "cp": {
+       "Tile": "Off",
+       "Fill": "off"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48523-41085.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "[remote]Colors/Background/neutral-secondlevel",
+    "[remote]Space/space-400"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48523:41089",
+   "name": "Tile=Off, Fill=On",
+   "props": {
+    "Tile": "Off",
+    "Fill": "On"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "48523:41089",
+    "c": [
+     {
+      "n": "outline/success",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "48523:41090",
+      "c": [
+       {
+        "n": "🎨-Icon-Сolor",
+        "t": "VECTOR",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "48523:41091",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "[remote]Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48523-41085.json"
+   ],
+   "vars": [
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48523:41086",
+   "name": "Tile=Off, Fill=off",
+   "props": {
+    "Tile": "Off",
+    "Fill": "off"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "48523:41086",
+    "clip": 1,
+    "c": [
+     {
+      "n": "outline/checkmark-circle",
+      "t": "GROUP",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "48523:41087",
+      "c": [
+       {
+        "n": "🎨-Icon-Сolor",
+        "t": "VECTOR",
+        "x": 2,
+        "y": 2,
+        "w": 20,
+        "h": 20,
+        "nid": "48523:41088",
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "[remote]Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48523-41085.json"
+   ],
+   "vars": [
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

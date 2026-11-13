@@ -1,0 +1,536 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "35413:17121",
+  "name": "Unnumbered Pagination - carousel",
+  "key": "db0c07fc956879fd7e356605e354e8a0016cf9fb",
+  "defs": {
+   "Arrows": {
+    "t": "BOOLEAN",
+    "d": true
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-35413-17121.json",
+   "sha256": "94aee352370ed9145103160ac28ce9618165bfdac39bf020ee06d08177702e4f",
+   "format": "v5-rest",
+   "restResponseSha256": "1cba6abfba9416e6a00ee513c4859a6de7fec194dbdad12c1bae4d848034addb",
+   "filter": null,
+   "offset": 0,
+   "captured": 1,
+   "totalMatching": 1
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 1,
+  "byFilter": {
+   "null": {
+    "totalMatching": 1,
+    "captured": 1
+   }
+  },
+  "detail": {
+   "tree": 1,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Button/text-hover-pressed": {
+   "figma": "Colors/Button/text-hover-pressed",
+   "css": "--igds-base-color-button-text-hover-pressed",
+   "status": "css-token",
+   "light": {
+    "figma": "#0045a3",
+    "css": "#0045a3",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/link-primary-default": {
+   "figma": "Colors/Text & Icon/link-primary-default",
+   "css": "--igds-base-color-text-link-primary-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "35413:17121",
+   "name": "Unnumbered Pagination - carousel",
+   "props": {},
+   "w": 198,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 198,
+    "h": 32,
+    "nid": "35413:17121",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 8,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "[remote]Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "nid": "35752:54566",
+      "ref": {
+       "visible": "Arrows#35752:39"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        16,
+        4,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Default, Type=Link Button, Size=Small, Icon Button=True, Intent=Default"
+      },
+      "mcid": "8164:20651",
+      "cp": {
+       "Icon Op": "138:769",
+       "RTL": "True",
+       "State": "Default",
+       "Type": "Link Button",
+       "Size": "Small",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261158224",
+      "t": "FRAME",
+      "x": 40,
+      "y": 0,
+      "w": 118,
+      "h": 32,
+      "nid": "35413:17123",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Ellipse carousel ",
+        "t": "INSTANCE",
+        "x": 40,
+        "y": 11,
+        "w": 10,
+        "h": 10,
+        "nid": "35413:17124",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": ".Ellipse carousel ",
+         "setId": "35413:17098",
+         "variant": "State=Default"
+        },
+        "mcid": "35413:17099",
+        "cp": {
+         "State": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Ellipse 96",
+        "t": "INSTANCE",
+        "x": 58,
+        "y": 11,
+        "w": 10,
+        "h": 10,
+        "nid": "35413:17125",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": ".Ellipse carousel ",
+         "setId": "35413:17098",
+         "variant": "State=Default"
+        },
+        "mcid": "35413:17099",
+        "cp": {
+         "State": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Ellipse 97",
+        "t": "INSTANCE",
+        "x": 76,
+        "y": 11,
+        "w": 10,
+        "h": 10,
+        "nid": "35413:17126",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": ".Ellipse carousel ",
+         "setId": "35413:17098",
+         "variant": "State=Default"
+        },
+        "mcid": "35413:17099",
+        "cp": {
+         "State": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Ellipse 98",
+        "t": "INSTANCE",
+        "x": 94,
+        "y": 11,
+        "w": 10,
+        "h": 10,
+        "nid": "35413:17127",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": ".Ellipse carousel ",
+         "setId": "35413:17098",
+         "variant": "State=Default"
+        },
+        "mcid": "35413:17099",
+        "cp": {
+         "State": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Ellipse 99",
+        "t": "INSTANCE",
+        "x": 112,
+        "y": 11,
+        "w": 10,
+        "h": 10,
+        "nid": "35413:17128",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": ".Ellipse carousel ",
+         "setId": "35413:17098",
+         "variant": "State=Default"
+        },
+        "mcid": "35413:17099",
+        "cp": {
+         "State": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Ellipse 100",
+        "t": "INSTANCE",
+        "x": 130,
+        "y": 11,
+        "w": 10,
+        "h": 10,
+        "nid": "35413:17129",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": ".Ellipse carousel ",
+         "setId": "35413:17098",
+         "variant": "State=Default"
+        },
+        "mcid": "35413:17099",
+        "cp": {
+         "State": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Ellipse 101",
+        "t": "INSTANCE",
+        "x": 148,
+        "y": 11,
+        "w": 10,
+        "h": 10,
+        "nid": "35413:17130",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "inst": {
+         "set": ".Ellipse carousel ",
+         "setId": "35413:17098",
+         "variant": "State=Current"
+        },
+        "mcid": "35413:17101",
+        "cp": {
+         "State": "Current"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Button/text-hover-pressed"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 166,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "nid": "35752:54470",
+      "ref": {
+       "visible": "Arrows#35752:39"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        4,
+        16,
+        4,
+        16
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-200",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-200",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Default, Type=Link Button, Size=Small, Icon Button=True, Intent=Default"
+      },
+      "mcid": "8164:20651",
+      "cp": {
+       "Icon Op": "138:767",
+       "RTL": "True",
+       "State": "Default",
+       "Type": "Link Button",
+       "Size": "Small",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35413-17121.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Space/space-200",
+    "Space/space-500",
+    "[remote]Space/space-300"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

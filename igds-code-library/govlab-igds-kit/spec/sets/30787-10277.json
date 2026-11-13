@@ -1,0 +1,796 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "30787:10277",
+  "name": ".Sub-Steps",
+  "key": "9ff92aff7e325b52c311f7de3ee53bc7f967ae4c",
+  "defs": {
+   "Sub-Step 4": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Sub-Step 5": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Sub-Step 3": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-30787-10277.json",
+   "sha256": "c84f142f085f26f1be21689f931d987982bdd94f343de363102b830dfd1ba8ab",
+   "format": "v5-rest",
+   "restResponseSha256": "bdc1aa597650b1b604ced647b2b0f894ab74cd011d1dde75c6e52627ccc8ad7a",
+   "filter": null,
+   "offset": 0,
+   "captured": 2,
+   "totalMatching": 2
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 2,
+  "byFilter": {
+   "null": {
+    "totalMatching": 2,
+    "captured": 2
+   }
+  },
+  "detail": {
+   "tree": 2,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Colors/Background/disabled-without-border": {
+   "figma": "Colors/Background/disabled-without-border",
+   "css": "--igds-base-color-background-disabled-without-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#ced7e0",
+    "css": "#ced7e0",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#495a73",
+    "css": "#495a73",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/disabled-without-text": {
+   "figma": "Colors/Background/disabled-without-text",
+   "css": "--igds-base-color-background-disabled-without-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#ced7e0",
+    "css": "#ced7e0",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#495a73",
+    "css": "#495a73",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/background-primary": {
+   "figma": "Colors/Button/background-primary",
+   "css": "--igds-base-color-button-background-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-minus300": {
+   "figma": "Space/space-minus300",
+   "css": "--igds-ref-space-minus300",
+   "status": "css-token",
+   "light": {
+    "figma": -8,
+    "css": "-8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35404:4708",
+   "name": "RTL=False",
+   "props": {
+    "RTL": "False"
+   },
+   "w": 112,
+   "h": 226,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 112,
+    "h": 226,
+    "nid": "35404:4708",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": -8,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-minus300"
+    },
+    "c": [
+     {
+      "n": "First Connector",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 26,
+      "nid": "35404:4709",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Connecting Track",
+        "t": "INSTANCE",
+        "x": 15,
+        "y": 0,
+        "w": 2,
+        "h": 26,
+        "nid": "35404:4710",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          8,
+          8,
+          8,
+          8
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "inst": {
+         "set": ".Connecting Track",
+         "setId": "29393:2223",
+         "variant": "State=Unactive, Step=Second"
+        },
+        "mcid": "29393:2248",
+        "cp": {
+         "State": "Unactive",
+         "Step": "Second"
+        }
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 1",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 18,
+      "w": 112,
+      "h": 48,
+      "nid": "35404:4711",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Current, RTL=False"
+      },
+      "mcid": "35395:5780",
+      "cp": {
+       "State": "Current",
+       "RTL": "False"
+      },
+      "itx": [
+       "Stage Name"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Button/background-primary"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 2",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 58,
+      "w": 112,
+      "h": 48,
+      "nid": "35404:4712",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=False"
+      },
+      "mcid": "35395:5786",
+      "cp": {
+       "State": "Not started",
+       "RTL": "False"
+      },
+      "itx": [
+       "Stage Name"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 3",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 98,
+      "w": 112,
+      "h": 48,
+      "nid": "35404:4713",
+      "ref": {
+       "visible": "Sub-Step 3#31157:0"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=False"
+      },
+      "mcid": "35395:5786",
+      "cp": {
+       "State": "Not started",
+       "RTL": "False"
+      },
+      "itx": [
+       "Stage Name"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 4",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 138,
+      "w": 112,
+      "h": 48,
+      "nid": "35404:4714",
+      "ref": {
+       "visible": "Sub-Step 4#30787:17"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=False"
+      },
+      "mcid": "35395:5786",
+      "cp": {
+       "State": "Not started",
+       "RTL": "False"
+      },
+      "itx": [
+       "Stage Name"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 5",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 178,
+      "w": 112,
+      "h": 48,
+      "nid": "35404:4715",
+      "ref": {
+       "visible": "Sub-Step 5#30787:20"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=False"
+      },
+      "mcid": "35395:5786",
+      "cp": {
+       "State": "Not started",
+       "RTL": "False"
+      },
+      "itx": [
+       "Stage Name"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-30787-10277.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-without-border",
+    "Colors/Background/disabled-without-text",
+    "Colors/Button/background-primary",
+    "Space/space-minus300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "30787:10278",
+   "name": "RTL=True",
+   "props": {
+    "RTL": "True"
+   },
+   "w": 88,
+   "h": 226,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 88,
+    "h": 226,
+    "nid": "30787:10278",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": -8,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-minus300"
+    },
+    "c": [
+     {
+      "n": "First Connector",
+      "t": "FRAME",
+      "x": 56,
+      "y": 0,
+      "w": 32,
+      "h": 26,
+      "nid": "30787:23261",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Connecting Track",
+        "t": "INSTANCE",
+        "x": 71,
+        "y": 0,
+        "w": 2,
+        "h": 26,
+        "nid": "30787:23260",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          8,
+          8,
+          8,
+          8
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "inst": {
+         "set": ".Connecting Track",
+         "setId": "29393:2223",
+         "variant": "State=Unactive, Step=Second"
+        },
+        "mcid": "29393:2248",
+        "cp": {
+         "State": "Unactive",
+         "Step": "Second"
+        }
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 1",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 18,
+      "w": 88,
+      "h": 48,
+      "nid": "30787:10314",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MAX",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Current, RTL=True"
+      },
+      "mcid": "30762:3282",
+      "cp": {
+       "State": "Current",
+       "RTL": "True"
+      },
+      "itx": [
+       "שם השלב"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Button/background-primary"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 2",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 58,
+      "w": 88,
+      "h": 48,
+      "nid": "30787:10322",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MAX",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=True"
+      },
+      "mcid": "30762:3281",
+      "cp": {
+       "State": "Not started",
+       "RTL": "True"
+      },
+      "itx": [
+       "שם השלב"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 3",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 98,
+      "w": 88,
+      "h": 48,
+      "nid": "30787:10330",
+      "ref": {
+       "visible": "Sub-Step 3#31157:0"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MAX",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=True"
+      },
+      "mcid": "30762:3281",
+      "cp": {
+       "State": "Not started",
+       "RTL": "True"
+      },
+      "itx": [
+       "שם השלב"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 4",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 138,
+      "w": 88,
+      "h": 48,
+      "nid": "30787:10338",
+      "ref": {
+       "visible": "Sub-Step 4#30787:17"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MAX",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=True"
+      },
+      "mcid": "30762:3281",
+      "cp": {
+       "State": "Not started",
+       "RTL": "True"
+      },
+      "itx": [
+       "שם השלב"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     },
+     {
+      "n": "Sub-Step 5",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 178,
+      "w": 88,
+      "h": 48,
+      "nid": "30787:12241",
+      "ref": {
+       "visible": "Sub-Step 5#30787:20"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MAX",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": ".Sub Step Uncklickble",
+       "setId": "30762:3283",
+       "variant": "State=Not started, RTL=True"
+      },
+      "mcid": "30762:3281",
+      "cp": {
+       "State": "Not started",
+       "RTL": "True"
+      },
+      "itx": [
+       "שם השלב"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-border"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-30787-10277.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-without-border",
+    "Colors/Background/disabled-without-text",
+    "Colors/Button/background-primary",
+    "Space/space-minus300"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

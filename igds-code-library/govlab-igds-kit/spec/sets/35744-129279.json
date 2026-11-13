@@ -1,0 +1,603 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "35744:129279",
+  "name": "Star Rating",
+  "key": "4961f8a165b98fc3d03dfe609ae299325bd0fc84",
+  "defs": {
+   "Property 1": {
+    "t": "VARIANT",
+    "o": [
+     "Default"
+    ],
+    "d": "Default"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-35744-129279.json",
+   "sha256": "87463d8d178e573e6a4f3d6cd64b1c5bdb5253ec6057bedd3fd72401a50450bc",
+   "format": "v5-rest",
+   "restResponseSha256": "4bf13cf7da68174e15f67f2201fe46654c61632e46490a664ce58ed86ddf9a67",
+   "filter": null,
+   "offset": 0,
+   "captured": 2,
+   "totalMatching": 2
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 2,
+  "byFilter": {
+   "null": {
+    "totalMatching": 2,
+    "captured": 2
+   }
+  },
+  "detail": {
+   "tree": 2,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/xs": {
+   "figma": "Typography/font-size/xs",
+   "css": "--igds-ref-font-size-xs",
+   "status": "css-token",
+   "light": {
+    "figma": 14,
+    "css": "14px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35744:129298",
+   "name": "Property 1=Default, RTL=False",
+   "props": {
+    "Property 1": "Default",
+    "RTL": "False"
+   },
+   "w": 136,
+   "h": 54,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 54,
+    "nid": "35744:129298",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Frame 1",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 136,
+      "h": 24,
+      "nid": "35744:129299",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 4,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-200"
+      },
+      "c": [
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "35744:129300",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 28,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "35744:129301",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 56,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "35744:129302",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 84,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "35744:129303",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 112,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "35744:129304",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       }
+      ]
+     },
+     {
+      "n": "Rating Score",
+      "t": "TEXT",
+      "x": 0,
+      "y": 32,
+      "w": 136,
+      "h": 22,
+      "nid": "35744:129305",
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Rating Score",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "CENTER"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-35744-129279.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "15064:3064",
+   "name": "Property 1=Default, RTL=True",
+   "props": {
+    "Property 1": "Default",
+    "RTL": "True"
+   },
+   "w": 136,
+   "h": 54,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 136,
+    "h": 54,
+    "nid": "15064:3064",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 8,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Frame 1",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 136,
+      "h": 24,
+      "nid": "15064:3057",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 4,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-200"
+      },
+      "c": [
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "15064:3039",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 28,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "15064:3045",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 56,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "15064:3048",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 84,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "15064:3051",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       },
+       {
+        "n": ".star-rating",
+        "t": "INSTANCE",
+        "x": 112,
+        "y": 0,
+        "w": 24,
+        "h": 24,
+        "nid": "15064:3054",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "clip": 1,
+        "inst": {
+         "set": ".star-rating",
+         "setId": "15204:8855",
+         "variant": "States=Default, Chosen=False"
+        },
+        "mcid": "15204:8854",
+        "cp": {
+         "States": "Default",
+         "Chosen": "False"
+        }
+       }
+      ]
+     },
+     {
+      "n": "ציון הדירוג",
+      "t": "TEXT",
+      "x": 0,
+      "y": 32,
+      "w": 136,
+      "h": 22,
+      "nid": "15064:3062",
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "ציון הדירוג",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "CENTER"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-35744-129279.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

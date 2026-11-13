@@ -1,0 +1,202 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "18691:19955",
+  "name": "Avatar Profile/Large/Pressed",
+  "key": "07eadc92f748188b6bfd9c65b5043c37da18d2b9",
+  "defs": {}
+ },
+ "sources": [
+  {
+   "file": "rest-18691-19955.json",
+   "sha256": "1e920cd22cd4b7d1a1c49aaa3b6741c2788363949634ccdbe43b5e4ab1227bb6",
+   "format": "v5-rest",
+   "restResponseSha256": "8a68383021d26d331f87a3bee599acf53d87a7912111979a2104fc609a354edb",
+   "filter": null,
+   "offset": 0,
+   "captured": 1,
+   "totalMatching": 1
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 1,
+  "byFilter": {
+   "null": {
+    "totalMatching": 1,
+    "captured": 1
+   }
+  },
+  "detail": {
+   "tree": 1,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Colors/Background/brand-sidebar-pressed": {
+   "figma": "Colors/Background/brand-sidebar-pressed",
+   "css": "--igds-base-color-background-brand-sidebar-pressed",
+   "status": "css-token",
+   "light": {
+    "figma": "#b7d6ff",
+    "css": "#b7d6ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#00347b",
+    "css": "#00347b",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "18691:19955",
+   "name": "Avatar Profile/Large/Pressed",
+   "props": {},
+   "w": 48,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 48,
+    "nid": "18691:19955",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      12,
+      12,
+      12
+     ],
+     "g": 10,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#b7d6ff",
+      "v": "Colors/Background/brand-sidebar-pressed"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-400",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-400",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Person",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 12,
+      "w": 24,
+      "h": 24,
+      "nid": "18691:19956",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "Person",
+       "setId": "6239:322",
+       "variant": "Person=single, Fill=on"
+      },
+      "mcid": "6042:2760",
+      "cp": {
+       "Person": "single",
+       "Fill": "on"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-18691-19955.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/brand-sidebar-pressed",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

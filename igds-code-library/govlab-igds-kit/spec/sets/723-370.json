@@ -1,0 +1,960 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "723:370",
+  "name": "Radio Button/atom",
+  "key": "bf0a5d9276762009cce1c7d83b378c04e69fde9d",
+  "defs": {
+   "state": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Hover",
+     "Focused",
+     "Disabled",
+     "Error",
+     "ErrorFocused"
+    ],
+    "d": "Default"
+   },
+   "Selected": {
+    "t": "VARIANT",
+    "o": [
+     "False",
+     "True"
+    ],
+    "d": "False"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-723-370.json",
+   "sha256": "ca42cabf60e83c5fc72bae8681d8a09d2f6945fa3acc28e4f45e209a0ad2239c",
+   "format": "v5-rest",
+   "restResponseSha256": "e575f201067cd68b866a11769d13994277e5ec797dc37a6a78289ed859b62dc2",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-xl": {
+   "figma": "Border/radius-xl",
+   "css": "--igds-ref-border-radius-xl",
+   "status": "css-token",
+   "light": {
+    "figma": 32,
+    "css": "32px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/brand-default": {
+   "figma": "Colors/Background/brand-default",
+   "css": "--igds-base-color-background-brand-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/brand-hover": {
+   "figma": "Colors/Background/brand-hover",
+   "css": "--igds-base-color-background-brand-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#0057cc",
+    "css": "#0057cc",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#30639c",
+    "css": "#30639c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/disabled-without-text-hover": {
+   "figma": "Colors/Background/disabled-without-text-hover",
+   "css": "--igds-base-color-background-disabled-without-text-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/brand-default": {
+   "figma": "Colors/Border/brand-default",
+   "css": "--igds-base-color-border-brand-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#2e87ff",
+    "css": "#2e87ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/brand-hover": {
+   "figma": "Colors/Border/brand-hover",
+   "css": "--igds-base-color-border-brand-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#0045a3",
+    "css": "#0045a3",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#30639c",
+    "css": "#30639c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/disabled": {
+   "figma": "Colors/Border/disabled",
+   "css": "--igds-base-color-border-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#344a69",
+    "css": "#344a69",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/failure": {
+   "figma": "Colors/Border/failure",
+   "css": "--igds-base-color-border-failure",
+   "status": "css-token",
+   "light": {
+    "figma": "#a72223",
+    "css": "#a72223",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ff8283",
+    "css": "#ff8283",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/focused": {
+   "figma": "Colors/Border/focused",
+   "css": "--igds-base-color-border-focused",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/subtle-default": {
+   "figma": "Colors/Border/subtle-default",
+   "css": "--igds-base-color-border-subtle-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/background-disabled": {
+   "figma": "Colors/Button/background-disabled",
+   "css": "--igds-base-color-button-background-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#e0e8ef",
+    "css": "#e0e8ef",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/border-disabled": {
+   "figma": "Colors/Button/border-disabled",
+   "css": "--igds-base-color-button-border-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#8091a9",
+    "css": "#8091a9",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#b6c0cc",
+    "css": "#b6c0cc",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-100": {
+   "figma": "Space/space-100",
+   "css": "--igds-ref-space-100",
+   "status": "css-token",
+   "light": {
+    "figma": 2,
+    "css": "2px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "723:369",
+   "name": "state=Default, Selected=False",
+   "props": {
+    "state": "Default",
+    "Selected": "False"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:369",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:251",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:365",
+   "name": "state=Default, Selected=True",
+   "props": {
+    "state": "Default",
+    "Selected": "True"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:365",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "VECTOR",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:236",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Border/brand-default"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 5",
+      "t": "ELLIPSE",
+      "x": 7,
+      "y": 7,
+      "w": 10,
+      "h": 10,
+      "nid": "723:237",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-default",
+    "Colors/Border/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:361",
+   "name": "state=Disabled, Selected=False",
+   "props": {
+    "state": "Disabled",
+    "Selected": "False"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:361",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:260",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#e0e8ef",
+        "v": "Colors/Button/background-disabled"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#8091a9",
+        "v": "Colors/Button/border-disabled"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Button/background-disabled",
+    "Colors/Button/border-disabled"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:366",
+   "name": "state=Disabled, Selected=True",
+   "props": {
+    "state": "Disabled",
+    "Selected": "True"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:366",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:241",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#e0e8ef",
+        "v": "Colors/Button/background-disabled"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/disabled"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 5",
+      "t": "ELLIPSE",
+      "x": 7,
+      "y": 7,
+      "w": 10,
+      "h": 10,
+      "nid": "723:242",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#8596af",
+        "v": "Colors/Background/disabled-without-text-hover"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-without-text-hover",
+    "Colors/Border/disabled",
+    "Colors/Button/background-disabled"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:362",
+   "name": "state=Error, Selected=False",
+   "props": {
+    "state": "Error",
+    "Selected": "False"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:362",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:359",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#a72223",
+        "v": "Colors/Border/failure"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Border/failure"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53727:82985",
+   "name": "state=ErrorFocused, Selected=False",
+   "props": {
+    "state": "ErrorFocused",
+    "Selected": "False"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "53727:82985",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      2,
+      2,
+      2,
+      2
+     ],
+     "g": 10,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 32,
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "OUTSIDE",
+    "v": {
+     "paddingLeft": "Space/space-100",
+     "paddingTop": "Space/space-100",
+     "paddingRight": "Space/space-100",
+     "paddingBottom": "Space/space-100",
+     "topLeftRadius": "Border/radius-xl",
+     "topRightRadius": "Border/radius-xl",
+     "bottomLeftRadius": "Border/radius-xl",
+     "bottomRightRadius": "Border/radius-xl"
+    },
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "53727:82986",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#a72223",
+        "v": "Colors/Border/failure"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Border/radius-xl",
+    "Colors/Background/neutral-default",
+    "Colors/Border/failure",
+    "Colors/Border/focused",
+    "Space/space-100"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:363",
+   "name": "state=Focused, Selected=False",
+   "props": {
+    "state": "Focused",
+    "Selected": "False"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:363",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:268",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Border/focused"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Border/focused"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:367",
+   "name": "state=Focused, Selected=True",
+   "props": {
+    "state": "Focused",
+    "Selected": "True"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:367",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:255",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 5",
+      "t": "ELLIPSE",
+      "x": 7,
+      "y": 7,
+      "w": 10,
+      "h": 10,
+      "nid": "723:256",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Background/brand-default"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:364",
+   "name": "state=Hover, Selected=False",
+   "props": {
+    "state": "Hover",
+    "Selected": "False"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:364",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:264",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Border/brand-hover"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Border/brand-hover"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "723:368",
+   "name": "state=Hover, Selected=True",
+   "props": {
+    "state": "Hover",
+    "Selected": "True"
+   },
+   "w": 24,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 24,
+    "nid": "723:368",
+    "c": [
+     {
+      "n": "Ellipse 4",
+      "t": "ELLIPSE",
+      "x": 2,
+      "y": 2,
+      "w": 20,
+      "h": 20,
+      "nid": "723:246",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Border/brand-hover"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 5",
+      "t": "ELLIPSE",
+      "x": 7,
+      "y": 7,
+      "w": 10,
+      "h": 10,
+      "nid": "723:247",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0057cc",
+        "v": "Colors/Background/brand-hover"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-723-370.json"
+   ],
+   "vars": [
+    "Colors/Background/brand-hover",
+    "Colors/Background/neutral-default",
+    "Colors/Border/brand-hover"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

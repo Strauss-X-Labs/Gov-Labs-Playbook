@@ -1,0 +1,4602 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "5951:6247",
+  "name": "Tags lines",
+  "key": "89dd1997bb76e8bbb32a5a93f9414b5343b36759",
+  "defs": {
+   "2 Lines": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Delete": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "icon": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Text": {
+    "t": "TEXT",
+    "d": "תיאור"
+   },
+   "Text LTR": {
+    "t": "TEXT",
+    "d": "Lable"
+   },
+   "": {
+    "t": "VARIANT",
+    "o": [
+     "1",
+     "2",
+     "3",
+     "4",
+     "5",
+     "2 lines"
+    ],
+    "d": "1"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-5951-6247.json",
+   "sha256": "e4c5272a4f938be6dd1220c3c6c94f59e35dc2ee68d0c0fc46218dde89611697",
+   "format": "v5-rest",
+   "restResponseSha256": "b92e7e90a2de0afc1dedbbd4fee104415f4f748b44336df9b1f3dbf508f05126",
+   "filter": null,
+   "offset": 0,
+   "captured": 12,
+   "totalMatching": 12
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 12,
+  "byFilter": {
+   "null": {
+    "totalMatching": 12,
+    "captured": 12
+   }
+  },
+  "detail": {
+   "tree": 12,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-secondary": {
+   "figma": "Colors/Text & Icon/subtle-secondary",
+   "css": "--igds-base-color-text-subtle-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#466186",
+    "css": "#466186",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#99c2fb",
+    "css": "#99c2fb",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "36726:14601",
+   "name": "# of tags=1, RTL=False",
+   "props": {
+    "# of tags": "1",
+    "RTL": "False"
+   },
+   "w": 113,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 113,
+    "h": 36,
+    "nid": "36726:14601",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 113,
+      "h": 36,
+      "nid": "36726:14602",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14603",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "51523:62693",
+   "name": "# of tags=1, RTL=True",
+   "props": {
+    "# of tags": "1",
+    "RTL": "True"
+   },
+   "w": 109,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 109,
+    "h": 36,
+    "nid": "51523:62693",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": ".Tag",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 109,
+      "h": 36,
+      "nid": "51523:62696",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        6,
+        8,
+        6,
+        8
+       ],
+       "g": 0,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#466186",
+        "v": "Colors/Text & Icon/subtle-secondary"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "clip": 1,
+      "v": {
+       "paddingLeft": "Space/space-300",
+       "paddingRight": "Space/space-300",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "inst": {
+       "set": ".Tag",
+       "setId": "35297:24549",
+       "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+      },
+      "mcid": "35297:24787",
+      "cp": {
+       "State": "Default",
+       "Size": "Medium",
+       "RTL": "True",
+       "Dropdown": "False"
+      },
+      "itx": [
+       "תיאור"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#466186",
+        "v": "Colors/Text & Icon/subtle-secondary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36726:14626",
+   "name": "# of tags=2 lines, RTL=False",
+   "props": {
+    "# of tags": "2 lines",
+    "RTL": "False"
+   },
+   "w": 629,
+   "h": 88,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 629,
+    "h": 88,
+    "nid": "36726:14626",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 629,
+      "h": 36,
+      "nid": "36726:14627",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14628",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 129,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14629",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 258,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14630",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 387,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14631",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 516,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14632",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 52,
+      "w": 629,
+      "h": 36,
+      "nid": "36726:14633",
+      "ref": {
+       "visible": "2 Lines#35302:21"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 52,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14634",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 129,
+        "y": 52,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14635",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 258,
+        "y": 52,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14636",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 387,
+        "y": 52,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14637",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 516,
+        "y": 52,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14638",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "5951:6220",
+   "name": "# of tags=2 lines, RTL=True",
+   "props": {
+    "# of tags": "2 lines",
+    "RTL": "True"
+   },
+   "w": 609,
+   "h": 88,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 609,
+    "h": 88,
+    "nid": "5951:6220",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 609,
+      "h": 36,
+      "nid": "5951:6128",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26154",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 125,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26143",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 250,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26132",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 375,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26121",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 500,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26110",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 52,
+      "w": 609,
+      "h": 36,
+      "nid": "5951:6134",
+      "ref": {
+       "visible": "2 Lines#35302:21"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 52,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26209",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 125,
+        "y": 52,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26198",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 250,
+        "y": 52,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26187",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 375,
+        "y": 52,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26176",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 500,
+        "y": 52,
+        "w": 109,
+        "h": 36,
+        "nid": "35319:26165",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36726:14604",
+   "name": "# of tags=2, RTL=False",
+   "props": {
+    "# of tags": "2",
+    "RTL": "False"
+   },
+   "w": 242,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 242,
+    "h": 36,
+    "nid": "36726:14604",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 242,
+      "h": 36,
+      "nid": "36726:14605",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14606",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 129,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14607",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35420:10393",
+   "name": "# of tags=2, RTL=True",
+   "props": {
+    "# of tags": "2",
+    "RTL": "True"
+   },
+   "w": 234,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 234,
+    "h": 36,
+    "nid": "35420:10393",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 234,
+      "h": 36,
+      "nid": "35420:10394",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10396",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 125,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10397",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36726:14615",
+   "name": "# of tags=3, RTL=False",
+   "props": {
+    "# of tags": "3",
+    "RTL": "False"
+   },
+   "w": 371,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 371,
+    "h": 36,
+    "nid": "36726:14615",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 371,
+      "h": 36,
+      "nid": "36726:14616",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14617",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 129,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14618",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 258,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14619",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35420:10319",
+   "name": "# of tags=3, RTL=True",
+   "props": {
+    "# of tags": "3",
+    "RTL": "True"
+   },
+   "w": 359,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 359,
+    "h": 36,
+    "nid": "35420:10319",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 359,
+      "h": 36,
+      "nid": "35420:10320",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10322",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 125,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10323",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 250,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10324",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36726:14620",
+   "name": "# of tags=4, RTL=False",
+   "props": {
+    "# of tags": "4",
+    "RTL": "False"
+   },
+   "w": 500,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 500,
+    "h": 36,
+    "nid": "36726:14620",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 500,
+      "h": 36,
+      "nid": "36726:14621",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14622",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 129,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14623",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 258,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14624",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 387,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14625",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35420:10216",
+   "name": "# of tags=4, RTL=True",
+   "props": {
+    "# of tags": "4",
+    "RTL": "True"
+   },
+   "w": 484,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 484,
+    "h": 36,
+    "nid": "35420:10216",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 484,
+      "h": 36,
+      "nid": "35420:10217",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10218",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 125,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10219",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 250,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10220",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 375,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10221",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36726:14608",
+   "name": "# of tags=5, RTL=False",
+   "props": {
+    "# of tags": "5",
+    "RTL": "False"
+   },
+   "w": 629,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 629,
+    "h": 36,
+    "nid": "36726:14608",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 629,
+      "h": 36,
+      "nid": "36726:14609",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14610",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 129,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14611",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 258,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14612",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 387,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14613",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 516,
+        "y": 0,
+        "w": 113,
+        "h": 36,
+        "nid": "36726:14614",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=False, Dropdown=False"
+        },
+        "mcid": "35297:24550",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "False",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "Lable"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35420:10061",
+   "name": "# of tags=5, RTL=True",
+   "props": {
+    "# of tags": "5",
+    "RTL": "True"
+   },
+   "w": 609,
+   "h": 36,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 609,
+    "h": 36,
+    "nid": "35420:10061",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 16,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Tags",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 609,
+      "h": 36,
+      "nid": "35420:10062",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "c": [
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10063",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 125,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10064",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 250,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10065",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 375,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10066",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       },
+       {
+        "n": ".Tag",
+        "t": "INSTANCE",
+        "x": 500,
+        "y": 0,
+        "w": 109,
+        "h": 36,
+        "nid": "35420:10067",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          6,
+          8,
+          6,
+          8
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "r": 100,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "s": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "sw": 1,
+        "sa": "INSIDE",
+        "clip": 1,
+        "v": {
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "topLeftRadius": "Border/radius-full",
+         "topRightRadius": "Border/radius-full",
+         "bottomLeftRadius": "Border/radius-full",
+         "bottomRightRadius": "Border/radius-full"
+        },
+        "inst": {
+         "set": ".Tag",
+         "setId": "35297:24549",
+         "variant": "State=Default, Size=Medium, RTL=True, Dropdown=False"
+        },
+        "mcid": "35297:24787",
+        "cp": {
+         "State": "Default",
+         "Size": "Medium",
+         "RTL": "True",
+         "Dropdown": "False"
+        },
+        "itx": [
+         "תיאור"
+        ],
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-5951-6247.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

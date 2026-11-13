@@ -1,0 +1,660 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "48406:13136",
+  "name": "Divider",
+  "key": "20ae0ea209e3c24e2d39293a15c396ad96edae8e",
+  "defs": {
+   "Position": {
+    "t": "VARIANT",
+    "o": [
+     "Vertical",
+     "Horizontal"
+    ],
+    "d": "Vertical"
+   },
+   "Style": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Inverted"
+    ],
+    "d": "Default"
+   },
+   "Width": {
+    "t": "VARIANT",
+    "o": [
+     "Full",
+     "Inset"
+    ],
+    "d": "Full"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-48406-13136.json",
+   "sha256": "099ee451a47304eb65270a34e54294aab3589b4657cd5ebed99950df71614996",
+   "format": "v5-rest",
+   "restResponseSha256": "12fb1fb50c4ab5c589cb60d575402af7242ceffb00606981350a72c25fe28cb2",
+   "filter": null,
+   "offset": 0,
+   "captured": 8,
+   "totalMatching": 8
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 8,
+  "byFilter": {
+   "null": {
+    "totalMatching": 8,
+    "captured": 8
+   }
+  },
+  "detail": {
+   "tree": 8,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Brand/border/radius-none": {
+   "figma": "Brand/border/radius-none",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Divider/inverted": {
+   "figma": "Colors/Divider/inverted",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/white/000",
+    "Dark IGDS": "→Brand/dawn-blue/900",
+    "כבאות והצלה": "→Brand/white/000",
+    "ביטוח לאומי": "→Brand/white/000"
+   }
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "48406:13139",
+   "name": "Position=Horizontal, Style=Default, Width=Full",
+   "props": {
+    "Position": "Horizontal",
+    "Style": "Default",
+    "Width": "Full"
+   },
+   "w": 320,
+   "h": 1,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 1,
+    "nid": "48406:13139",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 1,
+      "nid": "48406:13140",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Colors/Divider/default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48406:13143",
+   "name": "Position=Horizontal, Style=Default, Width=Inset",
+   "props": {
+    "Position": "Horizontal",
+    "Style": "Default",
+    "Width": "Inset"
+   },
+   "w": 320,
+   "h": 1,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 1,
+    "nid": "48406:13143",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 16,
+      "y": 0,
+      "w": 288,
+      "h": 1,
+      "nid": "48406:13144",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Colors/Divider/default",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48406:13141",
+   "name": "Position=Horizontal, Style=Inverted, Width=Full",
+   "props": {
+    "Position": "Horizontal",
+    "Style": "Inverted",
+    "Width": "Full"
+   },
+   "w": 320,
+   "h": 1,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 1,
+    "nid": "48406:13141",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 320,
+      "h": 1,
+      "nid": "48406:13142",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Divider/inverted"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Colors/Divider/inverted"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48406:13145",
+   "name": "Position=Horizontal, Style=Inverted, Width=Inset",
+   "props": {
+    "Position": "Horizontal",
+    "Style": "Inverted",
+    "Width": "Inset"
+   },
+   "w": 320,
+   "h": 1,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 320,
+    "h": 1,
+    "nid": "48406:13145",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      16,
+      0,
+      16
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingRight": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 16,
+      "y": 0,
+      "w": 288,
+      "h": 1,
+      "nid": "48406:13146",
+      "sz": [
+       "FILL",
+       "FIXED"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Divider/inverted"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Colors/Divider/inverted",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48406:13137",
+   "name": "Position=Vertical, Style=Default, Width=Full",
+   "props": {
+    "Position": "Vertical",
+    "Style": "Default",
+    "Width": "Full"
+   },
+   "w": 1,
+   "h": 120,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1,
+    "h": 120,
+    "nid": "48406:13137",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 1,
+      "h": 120,
+      "nid": "48406:13138",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Brand/border/radius-none",
+       "topRightRadius": "Brand/border/radius-none",
+       "bottomLeftRadius": "Brand/border/radius-none",
+       "bottomRightRadius": "Brand/border/radius-none"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Brand/border/radius-none",
+    "Colors/Divider/default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48406:13149",
+   "name": "Position=Vertical, Style=Default, Width=Inset",
+   "props": {
+    "Position": "Vertical",
+    "Style": "Default",
+    "Width": "Inset"
+   },
+   "w": 1,
+   "h": 120,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1,
+    "h": 120,
+    "nid": "48406:13149",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      16,
+      0,
+      16,
+      0
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "clip": 1,
+    "v": {
+     "paddingTop": "Space/space-500",
+     "paddingBottom": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 16,
+      "w": 1,
+      "h": 88,
+      "nid": "48406:13150",
+      "sz": [
+       "FIXED",
+       "FILL"
+      ],
+      "grow": 1,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Brand/border/radius-none",
+       "topRightRadius": "Brand/border/radius-none",
+       "bottomLeftRadius": "Brand/border/radius-none",
+       "bottomRightRadius": "Brand/border/radius-none"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Brand/border/radius-none",
+    "Colors/Divider/default",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48406:13147",
+   "name": "Position=Vertical, Style=Inverted, Width=Full",
+   "props": {
+    "Position": "Vertical",
+    "Style": "Inverted",
+    "Width": "Full"
+   },
+   "w": 1,
+   "h": 120,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1,
+    "h": 120,
+    "nid": "48406:13147",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 0,
+      "w": 1,
+      "h": 120,
+      "nid": "48406:13148",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Divider/inverted"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Brand/border/radius-none",
+       "topRightRadius": "Brand/border/radius-none",
+       "bottomLeftRadius": "Brand/border/radius-none",
+       "bottomRightRadius": "Brand/border/radius-none"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Brand/border/radius-none",
+    "Colors/Divider/inverted"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "48406:13151",
+   "name": "Position=Vertical, Style=Inverted, Width=Inset",
+   "props": {
+    "Position": "Vertical",
+    "Style": "Inverted",
+    "Width": "Inset"
+   },
+   "w": 1,
+   "h": 120,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1,
+    "h": 120,
+    "nid": "48406:13151",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      16,
+      0,
+      16,
+      0
+     ],
+     "g": 0,
+     "pa": "CENTER",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "clip": 1,
+    "v": {
+     "paddingTop": "Space/space-500",
+     "paddingBottom": "Space/space-500"
+    },
+    "c": [
+     {
+      "n": "Rectangle 145",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 16,
+      "w": 1,
+      "h": 88,
+      "nid": "48406:13152",
+      "sz": [
+       "FIXED",
+       "FILL"
+      ],
+      "grow": 1,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Divider/inverted"
+       }
+      ],
+      "v": {
+       "topLeftRadius": "Brand/border/radius-none",
+       "topRightRadius": "Brand/border/radius-none",
+       "bottomLeftRadius": "Brand/border/radius-none",
+       "bottomRightRadius": "Brand/border/radius-none"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-48406-13136.json"
+   ],
+   "vars": [
+    "Brand/border/radius-none",
+    "Colors/Divider/inverted",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

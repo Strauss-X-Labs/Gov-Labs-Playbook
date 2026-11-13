@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Carousel (כל הוריאנטים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+    <style>
+        /* עטיפת רוחב לסקיצה בלבד — להדגמת ה-viewport וההצצה לכרטיס הבא */
+        .carousel-demo { max-width: 860px; }
+        .carousel-demo--mobile { max-width: 360px; }
+    </style>
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Carousel — סקיצת כל הוריאנטים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): carousel node <code>36417:70941</code>, דרך Figma MCP.
+            מבוסס על <code>.gov-carousel</code> והטוקנים ב-<code>styles.css</code>.
+            מבנה: כותרת + שורת כרטיסים (שימוש חוזר ב-<code>.gov-card</code>) + ניווט (נקודות + חצים אופציונליים).
+            וריאנטים: cards / small cards (+ with arrow) / Mobile.
+            <br>הגלילה אופקית (גררו/החליקו); החצים והנקודות אינטראקטיביים.
+        </p>
+
+        <h2 class="sketch__mapping-title">cards (כרטיסים גדולים)</h2>
+        <section class="gov-carousel carousel-demo" aria-roledescription="קרוסלה" aria-label="כרטיסים נבחרים">
+            <header class="gov-carousel__header">
+                <h3 class="gov-carousel__title">כותרת</h3>
+                <p class="gov-carousel__subtitle">כותרת משנה או תיאור</p>
+            </header>
+            <div class="gov-carousel__viewport">
+                <div class="gov-carousel__track" id="track-1" tabindex="0" role="group" aria-label="רשימת כרטיסים">
+                    <!-- כרטיס 1 -->
+                    <a href="#" class="gov-card gov-card--clickable" style="width: 300px; flex: 0 0 300px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 300 169" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="169" fill="#e8f0fc"/><circle cx="150" cy="84" r="36" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content">
+                            <span class="gov-card__title"><span class="gov-card__title-text">כותרת הכרטיס</span></span>
+                            <span class="gov-badge gov-badge--informative"><span class="gov-badge__text">תגית</span><span class="gov-badge__icon" aria-hidden="true"><svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z"/><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z"/><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z"/></svg></span></span>
+                            <span class="gov-card__description">הסבר קצר על נושא הכרטיס, עד 120 תווים.</span>
+                            <span class="gov-card__label">תווית</span>
+                        </span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--clickable" style="width: 300px; flex: 0 0 300px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 300 169" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="169" fill="#e8f0fc"/><circle cx="150" cy="84" r="36" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content">
+                            <span class="gov-card__title"><span class="gov-card__title-text">כותרת הכרטיס</span></span>
+                            <span class="gov-card__description">הסבר קצר על נושא הכרטיס.</span>
+                            <span class="gov-card__label">תווית</span>
+                        </span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--clickable" style="width: 300px; flex: 0 0 300px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 300 169" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="169" fill="#e8f0fc"/><circle cx="150" cy="84" r="36" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content">
+                            <span class="gov-card__title"><span class="gov-card__title-text">כותרת הכרטיס</span></span>
+                            <span class="gov-card__description">הסבר קצר על נושא הכרטיס.</span>
+                            <span class="gov-card__label">תווית</span>
+                        </span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--clickable" style="width: 300px; flex: 0 0 300px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 300 169" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="300" height="169" fill="#e8f0fc"/><circle cx="150" cy="84" r="36" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content">
+                            <span class="gov-card__title"><span class="gov-card__title-text">כותרת הכרטיס</span></span>
+                            <span class="gov-card__description">הסבר קצר על נושא הכרטיס.</span>
+                            <span class="gov-card__label">תווית</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <nav class="gov-carousel__nav" aria-label="ניווט קרוסלה">
+                <ul class="gov-carousel__dots">
+                    <li><button class="gov-carousel__dot" aria-current="true" aria-label="עמוד 1"></button></li>
+                    <li><button class="gov-carousel__dot" aria-label="עמוד 2"></button></li>
+                    <li><button class="gov-carousel__dot" aria-label="עמוד 3"></button></li>
+                    <li><button class="gov-carousel__dot" aria-label="עמוד 4"></button></li>
+                </ul>
+            </nav>
+        </section>
+
+        <h2 class="sketch__mapping-title">Cards with Arrow (כרטיסים + חצים)</h2>
+        <section class="gov-carousel carousel-demo" aria-roledescription="קרוסלה" aria-label="כרטיסים עם חצים">
+            <header class="gov-carousel__header">
+                <h3 class="gov-carousel__title">כותרת</h3>
+                <p class="gov-carousel__subtitle">כותרת משנה או תיאור</p>
+            </header>
+            <div class="gov-carousel__viewport">
+                <div class="gov-carousel__track" id="track-2" tabindex="0" role="group" aria-label="רשימת כרטיסים">
+                    <a href="#" class="gov-card gov-card--small gov-card--clickable" style="flex: 0 0 200px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="112" fill="#e8f0fc"/><circle cx="100" cy="56" r="28" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content"><span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span><span class="gov-card__label">תווית</span></span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--small gov-card--clickable" style="flex: 0 0 200px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="112" fill="#e8f0fc"/><circle cx="100" cy="56" r="28" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content"><span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span><span class="gov-card__label">תווית</span></span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--small gov-card--clickable" style="flex: 0 0 200px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="112" fill="#e8f0fc"/><circle cx="100" cy="56" r="28" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content"><span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span><span class="gov-card__label">תווית</span></span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--small gov-card--clickable" style="flex: 0 0 200px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="112" fill="#e8f0fc"/><circle cx="100" cy="56" r="28" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content"><span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span><span class="gov-card__label">תווית</span></span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--small gov-card--clickable" style="flex: 0 0 200px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="112" fill="#e8f0fc"/><circle cx="100" cy="56" r="28" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content"><span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span><span class="gov-card__label">תווית</span></span>
+                    </a>
+                </div>
+            </div>
+            <nav class="gov-carousel__nav" aria-label="ניווט קרוסלה">
+                <!-- חץ: לאחור (בכיוון RTL — ימינה) -->
+                <button class="gov-carousel__arrow" data-dir="prev" data-track="track-2" aria-label="הקודם">
+                    <svg viewBox="0 0 8.18259 13.9999" style="transform: scaleX(-1);" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                </button>
+                <ul class="gov-carousel__dots">
+                    <li><button class="gov-carousel__dot" aria-current="true" aria-label="עמוד 1"></button></li>
+                    <li><button class="gov-carousel__dot" aria-label="עמוד 2"></button></li>
+                    <li><button class="gov-carousel__dot" aria-label="עמוד 3"></button></li>
+                </ul>
+                <!-- חץ: קדימה (בכיוון RTL — שמאלה) -->
+                <button class="gov-carousel__arrow" data-dir="next" data-track="track-2" aria-label="הבא">
+                    <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg"><path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z"/></svg>
+                </button>
+            </nav>
+        </section>
+
+        <h2 class="sketch__mapping-title">Mobile</h2>
+        <section class="gov-carousel carousel-demo--mobile" aria-roledescription="קרוסלה" aria-label="קרוסלה מובייל">
+            <header class="gov-carousel__header">
+                <h3 class="gov-carousel__title">כותרת</h3>
+                <p class="gov-carousel__subtitle">כותרת משנה או תיאור</p>
+            </header>
+            <div class="gov-carousel__viewport">
+                <div class="gov-carousel__track" tabindex="0" role="group" aria-label="רשימת כרטיסים">
+                    <a href="#" class="gov-card gov-card--clickable" style="flex: 0 0 280px; width: 280px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 280 157" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="157" fill="#e8f0fc"/><circle cx="140" cy="78" r="34" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content"><span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span><span class="gov-card__description">כרטיס במובייל, רוחב מותאם.</span><span class="gov-card__label">תווית</span></span>
+                    </a>
+                    <a href="#" class="gov-card gov-card--clickable" style="flex: 0 0 280px; width: 280px;">
+                        <span class="gov-card__media" aria-hidden="true"><svg viewBox="0 0 280 157" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="280" height="157" fill="#e8f0fc"/><circle cx="140" cy="78" r="34" fill="#b5c7e2"/></svg></span>
+                        <span class="gov-card__content"><span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span><span class="gov-card__description">כרטיס שני.</span><span class="gov-card__label">תווית</span></span>
+                    </a>
+                </div>
+            </div>
+            <nav class="gov-carousel__nav" aria-label="ניווט קרוסלה">
+                <ul class="gov-carousel__dots">
+                    <li><button class="gov-carousel__dot" aria-current="true" aria-label="עמוד 1"></button></li>
+                    <li><button class="gov-carousel__dot" aria-label="עמוד 2"></button></li>
+                </ul>
+            </nav>
+        </section>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>חלק / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>כותרת</td>
+                    <td>#0c3058 (32px Bold)</td>
+                    <td>--igds-base-color-text-subtle-primary / --igds-ref-font-size-2xl / --igds-ref-font-weight-bold</td>
+                    <td>✓ (2xl + bold נוספו)</td>
+                </tr>
+                <tr>
+                    <td>כותרת משנה</td>
+                    <td>#466186 (20px Medium)</td>
+                    <td>--igds-base-color-text-subtle-secondary / --igds-ref-font-size-l</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>נקודה פעילה</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-text-link-primary-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>נקודה לא פעילה</td>
+                    <td>#b5c7e2</td>
+                    <td>--igds-base-color-border-divider-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>חץ — צבע / hover</td>
+                    <td>#0068f5 / #0045a3</td>
+                    <td>--igds-base-color-text-link-primary-default / -button-text-hover-pressed</td>
+                    <td>✓ (hover-pressed נוסף)</td>
+                </tr>
+                <tr>
+                    <td>מרווח בין סקשנים</td>
+                    <td>32px</td>
+                    <td>--igds-ref-space-700</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מרווח בין כרטיסים</td>
+                    <td>16px</td>
+                    <td>--igds-ref-space-500</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מרווח נקודות / ניווט</td>
+                    <td>8px</td>
+                    <td>--igds-ref-space-300</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>הכרטיסים עצמם</td>
+                    <td>Card (Large / Small)</td>
+                    <td>.gov-card (שימוש חוזר)</td>
+                    <td>✓ שימוש חוזר</td>
+                </tr>
+                <tr>
+                    <td>גודל נקודה / כפתור חץ</td>
+                    <td>10px / 32px</td>
+                    <td>ערך קבוע</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        // ניווט קרוסלה: חצים גוללים את הרצועה; נקודות גוללות לעמוד
+        (function () {
+            // חצים
+            document.querySelectorAll('.gov-carousel__arrow').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var track = document.getElementById(btn.getAttribute('data-track'));
+                    if (!track) return;
+                    var amount = Math.round(track.clientWidth * 0.8);
+                    // ב-RTL גלילה "קדימה" היא לכיוון שלילי
+                    var sign = btn.getAttribute('data-dir') === 'next' ? -1 : 1;
+                    track.scrollBy({ left: sign * amount, behavior: 'smooth' });
+                });
+            });
+            // נקודות — סימון פעיל (הדגמה)
+            document.querySelectorAll('.gov-carousel__dots').forEach(function (dots) {
+                dots.querySelectorAll('.gov-carousel__dot').forEach(function (dot) {
+                    dot.addEventListener('click', function () {
+                        dots.querySelectorAll('.gov-carousel__dot').forEach(function (d) { d.removeAttribute('aria-current'); });
+                        dot.setAttribute('aria-current', 'true');
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>

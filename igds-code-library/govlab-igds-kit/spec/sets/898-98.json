@@ -1,0 +1,8283 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "898:98",
+  "name": "Tooltips",
+  "key": "0044a0a3b76e75670512a239e39ba217d7043fd9",
+  "defs": {
+   "Text": {
+    "t": "TEXT",
+    "d": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים"
+   },
+   "Close Button": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Text LTR": {
+    "t": "TEXT",
+    "d": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text."
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "Position": {
+    "t": "VARIANT",
+    "o": [
+     "Top",
+     "Left",
+     "Bottom",
+     "Right"
+    ],
+    "d": "Top"
+   },
+   "Arrow": {
+    "t": "VARIANT",
+    "o": [
+     "Right",
+     "Left",
+     "Middle",
+     "Top",
+     "Bottom"
+    ],
+    "d": "Left"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-898-98.json",
+   "sha256": "176d85e8dc3760b6d6e7dd040102c08d8d65e5282ad4579fe8abb27080a6dbcc",
+   "format": "v5-rest",
+   "restResponseSha256": "4ec1c0c6f33f55a8bb5e9c452fdf079d6a06e81aedcb6646268f70a27514631b",
+   "filter": null,
+   "offset": 0,
+   "captured": 24,
+   "totalMatching": 24
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 24,
+  "byFilter": {
+   "null": {
+    "totalMatching": 24,
+    "captured": 24
+   }
+  },
+  "detail": {
+   "tree": 24,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/space/space-2xs": {
+   "figma": "Brand/space/space-2xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-3xs": {
+   "figma": "Brand/space/space-3xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-s": {
+   "figma": "Brand/space/space-s",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/Inverted/neutral-secondlevel": {
+   "figma": "Colors/Background/Inverted/neutral-secondlevel",
+   "css": "--igds-base-color-background-inverted-neutral-secondlevel",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1b487a",
+    "css": "#1b487a",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/link-primary-dark": {
+   "figma": "Colors/Button/link-primary-dark",
+   "css": "--igds-base-color-button-link-primary-dark",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#dbecff",
+    "css": "#dbecff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/xs": {
+   "figma": "Typography/font-size/xs",
+   "css": "--igds-ref-font-size-xs",
+   "status": "css-token",
+   "light": {
+    "figma": 14,
+    "css": "14px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35259:4941",
+   "name": "RTL=False, Position=Bottom, Arrow=Left",
+   "props": {
+    "RTL": "False",
+    "Position": "Bottom",
+    "Arrow": "Left"
+   },
+   "w": 294,
+   "h": 124,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 124,
+    "nid": "35259:4941",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4942",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4943",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4945",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4946",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4944",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 116,
+      "w": 48,
+      "h": 8,
+      "nid": "35259:4947",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 116,
+        "w": 16,
+        "h": 8,
+        "nid": "35259:4948",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4909",
+   "name": "RTL=False, Position=Bottom, Arrow=Middle",
+   "props": {
+    "RTL": "False",
+    "Position": "Bottom",
+    "Arrow": "Middle"
+   },
+   "w": 294,
+   "h": 124,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 124,
+    "nid": "35259:4909",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4910",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "counterAxisSpacing": "Brand/space/space-zero",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4911",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4913",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4914",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4912",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 123,
+      "y": 116,
+      "w": 48,
+      "h": 8,
+      "nid": "35259:4915",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 139,
+        "y": 116,
+        "w": 16,
+        "h": 8,
+        "nid": "35259:4916",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4925",
+   "name": "RTL=False, Position=Bottom, Arrow=Right",
+   "props": {
+    "RTL": "False",
+    "Position": "Bottom",
+    "Arrow": "Right"
+   },
+   "w": 294,
+   "h": 124,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 124,
+    "nid": "35259:4925",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4926",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4927",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4929",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4930",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4928",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 246,
+      "y": 116,
+      "w": 48,
+      "h": 8,
+      "nid": "35259:4931",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 262,
+        "y": 116,
+        "w": 16,
+        "h": 8,
+        "nid": "35259:4932",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4949",
+   "name": "RTL=False, Position=Left, Arrow=Bottom",
+   "props": {
+    "RTL": "False",
+    "Position": "Left",
+    "Arrow": "Bottom"
+   },
+   "w": 302,
+   "h": 116,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 116,
+    "nid": "35259:4949",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 84,
+      "w": 8,
+      "h": 32,
+      "nid": "35259:4950",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 92,
+        "w": 8,
+        "h": 16,
+        "nid": "35259:4951",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4952",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 20,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4953",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4955",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 28,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4956",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 266,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4954",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4901",
+   "name": "RTL=False, Position=Left, Arrow=Middle",
+   "props": {
+    "RTL": "False",
+    "Position": "Left",
+    "Arrow": "Middle"
+   },
+   "w": 302,
+   "h": 116,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 116,
+    "nid": "35259:4901",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 42,
+      "w": 8,
+      "h": 32,
+      "nid": "35259:4902",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 50,
+        "w": 8,
+        "h": 16,
+        "nid": "35259:4903",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4904",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 20,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4905",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Brand/space/space-zero"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4907",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 28,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4908",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 266,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4906",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4957",
+   "name": "RTL=False, Position=Left, Arrow=Top",
+   "props": {
+    "RTL": "False",
+    "Position": "Left",
+    "Arrow": "Top"
+   },
+   "w": 302,
+   "h": 116,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 116,
+    "nid": "35259:4957",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 32,
+      "nid": "35259:4958",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 8,
+        "w": 8,
+        "h": 16,
+        "nid": "35259:4959",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4960",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 20,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4961",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4963",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 28,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4964",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "grow": 1,
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 266,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4962",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4973",
+   "name": "RTL=False, Position=Right, Arrow=Bottom",
+   "props": {
+    "RTL": "False",
+    "Position": "Right",
+    "Arrow": "Bottom"
+   },
+   "w": 302,
+   "h": 116,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 116,
+    "nid": "35259:4973",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4974",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4975",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4977",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4978",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4976",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 294,
+      "y": 84,
+      "w": 8,
+      "h": 32,
+      "nid": "35259:4979",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 294,
+        "y": 92,
+        "w": 8,
+        "h": 16,
+        "nid": "35259:4980",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4933",
+   "name": "RTL=False, Position=Right, Arrow=Middle",
+   "props": {
+    "RTL": "False",
+    "Position": "Right",
+    "Arrow": "Middle"
+   },
+   "w": 302,
+   "h": 116,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 116,
+    "nid": "35259:4933",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4934",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4935",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4937",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4938",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4936",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 294,
+      "y": 42,
+      "w": 8,
+      "h": 32,
+      "nid": "35259:4939",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 294,
+        "y": 50,
+        "w": 8,
+        "h": 16,
+        "nid": "35259:4940",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4965",
+   "name": "RTL=False, Position=Right, Arrow=Top",
+   "props": {
+    "RTL": "False",
+    "Position": "Right",
+    "Arrow": "Top"
+   },
+   "w": 302,
+   "h": 116,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 116,
+    "nid": "35259:4965",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4966",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4967",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 8,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4969",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 12,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4970",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4968",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 294,
+      "y": 0,
+      "w": 8,
+      "h": 32,
+      "nid": "35259:4971",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 294,
+        "y": 8,
+        "w": 8,
+        "h": 16,
+        "nid": "35259:4972",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4885",
+   "name": "RTL=False, Position=Top, Arrow=Left",
+   "props": {
+    "RTL": "False",
+    "Position": "Top",
+    "Arrow": "Left"
+   },
+   "w": 294,
+   "h": 124,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 124,
+    "nid": "35259:4885",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "35259:4886",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "35259:4887",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4888",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 16,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4889",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 16,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4891",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 20,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4892",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4890",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4917",
+   "name": "RTL=False, Position=Top, Arrow=Middle",
+   "props": {
+    "RTL": "False",
+    "Position": "Top",
+    "Arrow": "Middle"
+   },
+   "w": 294,
+   "h": 124,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 124,
+    "nid": "35259:4917",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 123,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "35259:4918",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 139,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "35259:4919",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4920",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "counterAxisSpacing": "Brand/space/space-zero",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 16,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4921",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 16,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4923",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 20,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4924",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4922",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35259:4893",
+   "name": "RTL=False, Position=Top, Arrow=Right",
+   "props": {
+    "RTL": "False",
+    "Position": "Top",
+    "Arrow": "Right"
+   },
+   "w": 294,
+   "h": 124,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 124,
+    "nid": "35259:4893",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 246,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "35259:4894",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 262,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "35259:4895",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 294,
+      "h": 116,
+      "nid": "35259:4896",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 16,
+        "w": 270,
+        "h": 100,
+        "nid": "35259:4897",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Brand/space/space-zero"
+        },
+        "c": [
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 12,
+          "y": 16,
+          "w": 246,
+          "h": 100,
+          "nid": "35259:4899",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 20,
+            "y": 20,
+            "w": 230,
+            "h": 88,
+            "nid": "35259:4900",
+            "ref": {
+             "characters": "Text LTR#35259:0"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "Text should be added that adds information to the existing information in the interface and avoid repeating existing text.",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 258,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "35259:4898",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1388",
+   "name": "RTL=True, Position=Bottom, Arrow=Left",
+   "props": {
+    "RTL": "True",
+    "Position": "Bottom",
+    "Arrow": "Left"
+   },
+   "w": 294,
+   "h": 102,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 102,
+    "nid": "1347:1388",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1391",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1374:517",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1374:520",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1374:518",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1374:519",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 94,
+      "w": 48,
+      "h": 8,
+      "nid": "1347:1389",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 94,
+        "w": 16,
+        "h": 8,
+        "nid": "1347:1390",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1421",
+   "name": "RTL=True, Position=Bottom, Arrow=Middle",
+   "props": {
+    "RTL": "True",
+    "Position": "Bottom",
+    "Arrow": "Middle"
+   },
+   "w": 294,
+   "h": 102,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 102,
+    "nid": "1347:1421",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1422",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "counterAxisSpacing": "Brand/space/space-zero",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1374:524",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1374:527",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1374:525",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1374:526",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 123,
+      "y": 94,
+      "w": 48,
+      "h": 8,
+      "nid": "1347:1427",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 139,
+        "y": 94,
+        "w": 16,
+        "h": 8,
+        "nid": "1347:1428",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1432",
+   "name": "RTL=True, Position=Bottom, Arrow=Right",
+   "props": {
+    "RTL": "True",
+    "Position": "Bottom",
+    "Arrow": "Right"
+   },
+   "w": 294,
+   "h": 102,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 102,
+    "nid": "1347:1432",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1433",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1374:531",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1374:534",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1374:532",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1374:533",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 246,
+      "y": 94,
+      "w": 48,
+      "h": 8,
+      "nid": "1347:1438",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 262,
+        "y": 94,
+        "w": 16,
+        "h": 8,
+        "nid": "1347:1439",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1498",
+   "name": "RTL=True, Position=Left, Arrow=Bottom",
+   "props": {
+    "RTL": "True",
+    "Position": "Left",
+    "Arrow": "Bottom"
+   },
+   "w": 302,
+   "h": 94,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 94,
+    "nid": "1347:1498",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 62,
+      "w": 8,
+      "h": 32,
+      "nid": "1347:1499",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 70,
+        "w": 8,
+        "h": 16,
+        "nid": "1347:1500",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1501",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 20,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1347:1502",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 20,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1347:1503",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 44,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1347:1504",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 52,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1347:1505",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1487",
+   "name": "RTL=True, Position=Left, Arrow=Middle",
+   "props": {
+    "RTL": "True",
+    "Position": "Left",
+    "Arrow": "Middle"
+   },
+   "w": 302,
+   "h": 94,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 94,
+    "nid": "1347:1487",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 31,
+      "w": 8,
+      "h": 32,
+      "nid": "1347:1488",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 39,
+        "w": 8,
+        "h": 16,
+        "nid": "1347:1489",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1490",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 20,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1347:1491",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Brand/space/space-zero"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 20,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1347:1492",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 44,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1347:1493",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 52,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1347:1494",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1448",
+   "name": "RTL=True, Position=Left, Arrow=Top",
+   "props": {
+    "RTL": "True",
+    "Position": "Left",
+    "Arrow": "Top"
+   },
+   "w": 302,
+   "h": 94,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 94,
+    "nid": "1347:1448",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 8,
+      "h": 32,
+      "nid": "1347:1449",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 0,
+        "y": 8,
+        "w": 8,
+        "h": 16,
+        "nid": "1347:1450",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1451",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 20,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1374:571",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 20,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1374:574",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 44,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1374:572",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 52,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1374:573",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "grow": 1,
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1531",
+   "name": "RTL=True, Position=Right, Arrow=Bottom",
+   "props": {
+    "RTL": "True",
+    "Position": "Right",
+    "Arrow": "Bottom"
+   },
+   "w": 302,
+   "h": 94,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 94,
+    "nid": "1347:1531",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1532",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1347:1533",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1347:1534",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1347:1535",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1347:1536",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 294,
+      "y": 62,
+      "w": 8,
+      "h": 32,
+      "nid": "1347:1537",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 294,
+        "y": 70,
+        "w": 8,
+        "h": 16,
+        "nid": "1347:1538",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1520",
+   "name": "RTL=True, Position=Right, Arrow=Middle",
+   "props": {
+    "RTL": "True",
+    "Position": "Right",
+    "Arrow": "Middle"
+   },
+   "w": 302,
+   "h": 94,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 94,
+    "nid": "1347:1520",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1521",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1347:1522",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1347:1523",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1347:1524",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1347:1525",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 294,
+      "y": 31,
+      "w": 8,
+      "h": 32,
+      "nid": "1347:1526",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 294,
+        "y": 39,
+        "w": 8,
+        "h": 16,
+        "nid": "1347:1527",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1475",
+   "name": "RTL=True, Position=Right, Arrow=Top",
+   "props": {
+    "RTL": "True",
+    "Position": "Right",
+    "Arrow": "Top"
+   },
+   "w": 302,
+   "h": 94,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 302,
+    "h": 94,
+    "nid": "1347:1475",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1476",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 8,
+        "w": 270,
+        "h": 78,
+        "nid": "1347:1480",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 8,
+          "w": 24,
+          "h": 24,
+          "nid": "1347:1481",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            4,
+            4,
+            4
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-3xs",
+           "paddingTop": "Brand/space/space-3xs",
+           "paddingRight": "Brand/space/space-3xs",
+           "paddingBottom": "Brand/space/space-3xs",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 8,
+          "w": 246,
+          "h": 78,
+          "nid": "1347:1482",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 12,
+            "w": 230,
+            "h": 66,
+            "nid": "1347:1483",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 294,
+      "y": 0,
+      "w": 8,
+      "h": 32,
+      "nid": "1347:1478",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        8,
+        0,
+        8
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-2xs",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-2xs",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 294,
+        "y": 8,
+        "w": 8,
+        "h": 16,
+        "nid": "1347:1479",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-3xs",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1294",
+   "name": "RTL=True, Position=Top, Arrow=Left",
+   "props": {
+    "RTL": "True",
+    "Position": "Top",
+    "Arrow": "Left"
+   },
+   "w": 294,
+   "h": 102,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 102,
+    "nid": "1347:1294",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "1347:1295",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 16,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "1347:1296",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1297",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 16,
+        "w": 270,
+        "h": 78,
+        "nid": "1347:1307",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "1347:1308",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 16,
+          "w": 246,
+          "h": 78,
+          "nid": "1347:1309",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 20,
+            "w": 230,
+            "h": 66,
+            "nid": "1347:1310",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1333",
+   "name": "RTL=True, Position=Top, Arrow=Middle",
+   "props": {
+    "RTL": "True",
+    "Position": "Top",
+    "Arrow": "Middle"
+   },
+   "w": 294,
+   "h": 102,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 102,
+    "nid": "1347:1333",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 123,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "1347:1334",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 139,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "1347:1335",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1336",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "counterAxisSpacing": "Brand/space/space-zero",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 16,
+        "w": 270,
+        "h": 78,
+        "nid": "1374:489",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "1374:492",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 16,
+          "w": 246,
+          "h": 78,
+          "nid": "1374:490",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 20,
+            "w": 230,
+            "h": 66,
+            "nid": "1374:491",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1347:1344",
+   "name": "RTL=True, Position=Top, Arrow=Right",
+   "props": {
+    "RTL": "True",
+    "Position": "Top",
+    "Arrow": "Right"
+   },
+   "w": 294,
+   "h": 102,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 294,
+    "h": 102,
+    "nid": "1347:1344",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 24,
+      "c": "#0068f5",
+      "a": 0.15,
+      "o": [
+       0,
+       10
+      ]
+     }
+    ],
+    "es": "Shadow-dark/Level3",
+    "c": [
+     {
+      "n": "Tooltip Arrow Container",
+      "t": "FRAME",
+      "x": 246,
+      "y": 0,
+      "w": 48,
+      "h": 8,
+      "nid": "1347:1345",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        16
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-s",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-s",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "c": [
+       {
+        "n": "Polygon 1",
+        "t": "VECTOR",
+        "x": 262,
+        "y": 0,
+        "w": 16,
+        "h": 8,
+        "nid": "1347:1346",
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/Inverted/neutral-secondlevel"
+         }
+        ],
+        "vec": 1
+       }
+      ]
+     },
+     {
+      "n": "Tooltip Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 8,
+      "w": 294,
+      "h": 94,
+      "nid": "1347:1347",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        8,
+        12,
+        8,
+        12
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "HUG",
+       "sv": "HUG",
+       "wr": 1,
+       "cg": 0
+      },
+      "mm": [
+       48,
+       null,
+       null,
+       null
+      ],
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/Inverted/neutral-secondlevel"
+       }
+      ],
+      "v": {
+       "paddingLeft": "Space/space-400",
+       "paddingTop": "Space/space-300",
+       "paddingRight": "Space/space-400",
+       "paddingBottom": "Space/space-300",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "c": [
+       {
+        "n": "Tooltip Content",
+        "t": "FRAME",
+        "x": 12,
+        "y": 16,
+        "w": 270,
+        "h": 78,
+        "nid": "1374:510",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Brand/space/space-zero"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 12,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "1374:513",
+          "ref": {
+           "visible": "Close Button#35202:0"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Brand/space/space-zero",
+           "paddingTop": "Brand/space/space-zero",
+           "paddingRight": "Brand/space/space-zero",
+           "paddingBottom": "Brand/space/space-zero",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+          },
+          "mcid": "195:1021",
+          "cp": {
+           "Icon Op": "138:1012",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Link Button",
+           "Size": "Medium",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/link-primary-dark"
+           }
+          ]
+         },
+         {
+          "n": "Tooltip Text Container",
+          "t": "FRAME",
+          "x": 36,
+          "y": 16,
+          "w": 246,
+          "h": 78,
+          "nid": "1374:511",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "paddingLeft": "Space/space-300",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-300",
+           "paddingBottom": "Space/space-300"
+          },
+          "c": [
+           {
+            "n": "Tooltip Text",
+            "t": "TEXT",
+            "x": 44,
+            "y": 20,
+            "w": 230,
+            "h": 66,
+            "nid": "1374:512",
+            "ref": {
+             "characters": "Text#901:38"
+            },
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             60,
+             230,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/xs"
+            },
+            "tx": "יש להוסיף טקסט המוסיף מידע למידע הקיים בממשק ולהימנע מחזרה על הטקסט הקיים",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 14,
+            "lh": [
+             160,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Label/Regular"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-898-98.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-s",
+    "Brand/space/space-zero",
+    "Colors/Background/Inverted/neutral-secondlevel",
+    "Colors/Button/link-primary-dark",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

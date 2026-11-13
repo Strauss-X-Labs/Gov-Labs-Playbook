@@ -1,0 +1,5617 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "583:2458",
+  "name": ".list",
+  "key": "7944c94bc3840f2bd63268d2970186adc9c3548f",
+  "defs": {
+   "Scroller": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Select/Remove All": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Type": {
+    "t": "VARIANT",
+    "o": [
+     "Single Selection",
+     "Multi Selection",
+     "No options found",
+     "Multi-Select With Tags",
+     "Interactive Search Selector",
+     "Per-filter - Multi Selection"
+    ],
+    "d": "Single Selection"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-583-2458.json",
+   "sha256": "03a5cf7e34aef5d69a97786bcc911d3170e342b41929704c53e8957326f0ac7a",
+   "format": "v5-rest",
+   "restResponseSha256": "26c164efe073cf3a6202477786f06b595333603390d0fdc0734fe55c632ae8ea",
+   "filter": null,
+   "offset": 0,
+   "captured": 12,
+   "totalMatching": 12
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 12,
+  "byFilter": {
+   "null": {
+    "totalMatching": 12,
+    "captured": 12
+   }
+  },
+  "detail": {
+   "tree": 12,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/space/space-2xs": {
+   "figma": "Brand/space/space-2xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/State/default": {
+   "figma": "Colors/Background/State/default",
+   "css": "--igds-base-color-background-state-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/scroller": {
+   "figma": "Colors/Background/scroller",
+   "css": "--igds-base-color-background-scroller",
+   "status": "css-token",
+   "light": {
+    "figma": "#8091a9",
+    "css": "#8091a9",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-secondary": {
+   "figma": "Colors/Text & Icon/subtle-secondary",
+   "css": "--igds-base-color-text-subtle-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#466186",
+    "css": "#466186",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#99c2fb",
+    "css": "#99c2fb",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-100": {
+   "figma": "Space/space-100",
+   "css": "--igds-ref-space-100",
+   "status": "css-token",
+   "light": {
+    "figma": 2,
+    "css": "2px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  },
+  "[remote]Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   },
+   "remote": true
+  },
+  "[remote]Colors/Text & Icon/link-primary-default": {
+   "figma": "Colors/Text & Icon/link-primary-default",
+   "css": "--igds-base-color-text-link-primary-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  },
+  "[remote]Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  },
+  "[remote]Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "35069:22179",
+   "name": "Type=Interactive Search Selector, RTL=False",
+   "props": {
+    "Type": "Interactive Search Selector",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 241,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 241,
+    "nid": "35069:22179",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 49,
+      "nid": "35069:22180",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "[remote]Colors/Background/neutral-default"
+       }
+      ],
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Interactive Search Selector, RTL=False"
+      },
+      "mcid": "35069:23720",
+      "cp": {
+       "Type": "Interactive Search Selector",
+       "RTL": "False"
+      },
+      "itx": [
+       "Results by previous search"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Text & Icon/link-primary-default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "[remote]Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 49,
+      "w": 288,
+      "h": 192,
+      "nid": "35069:22181",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 49,
+        "w": 272,
+        "h": 192,
+        "nid": "35069:22184",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 49,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20830",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 97,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20841",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 145,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20852",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 193,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20863",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 272,
+        "y": 49,
+        "w": 16,
+        "h": 69,
+        "nid": "35069:22182",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 276,
+          "y": 69,
+          "w": 8,
+          "h": 29,
+          "nid": "35069:22183",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400",
+    "[remote]Colors/Background/neutral-default",
+    "[remote]Colors/Divider/default",
+    "[remote]Colors/Text & Icon/link-primary-default",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "26094:9371",
+   "name": "Type=Interactive Search Selector, RTL=True",
+   "props": {
+    "Type": "Interactive Search Selector",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 241,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 241,
+    "nid": "26094:9371",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 49,
+      "nid": "26094:10201",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "[remote]Colors/Background/neutral-default"
+       }
+      ],
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Interactive Search Selector, RTL=True"
+      },
+      "mcid": "26094:9370",
+      "cp": {
+       "Type": "Interactive Search Selector",
+       "RTL": "True"
+      },
+      "itx": [
+       "רשימת תוצאות לפי חיפוש קודם"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Text & Icon/link-primary-default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "[remote]Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 49,
+      "w": 288,
+      "h": 192,
+      "nid": "26094:9373",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 49,
+        "w": 16,
+        "h": 69,
+        "nid": "26094:9374",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 4,
+          "y": 69,
+          "w": 8,
+          "h": 29,
+          "nid": "26094:9375",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 49,
+        "w": 272,
+        "h": 192,
+        "nid": "26094:9376",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 49,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20874",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 97,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20893",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 145,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20912",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 193,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20930",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400",
+    "[remote]Colors/Background/neutral-default",
+    "[remote]Colors/Divider/default",
+    "[remote]Colors/Text & Icon/link-primary-default",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35069:22155",
+   "name": "Type=Multi Selection, RTL=False",
+   "props": {
+    "Type": "Multi Selection",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 241,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 241,
+    "nid": "35069:22155",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 49,
+      "nid": "35069:22156",
+      "ref": {
+       "visible": "Select/Remove All#1044:3"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Brand/space/space-zero",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-zero",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Select / Remove All, RTL=False"
+      },
+      "mcid": "35069:23705",
+      "cp": {
+       "Type": "Select / Remove All",
+       "RTL": "False"
+      },
+      "itx": [
+       "select All",
+       "Remove All"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 49,
+      "w": 288,
+      "h": 192,
+      "nid": "35069:22157",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 49,
+        "w": 272,
+        "h": 192,
+        "nid": "35069:22160",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 49,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31429",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 97,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31456",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 145,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31467",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 193,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31478",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 272,
+        "y": 49,
+        "w": 16,
+        "h": 69,
+        "nid": "35069:22158",
+        "ref": {
+         "visible": "Scroller#751:7"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 276,
+          "y": 69,
+          "w": 8,
+          "h": 29,
+          "nid": "35069:22159",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-zero",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "583:2459",
+   "name": "Type=Multi Selection, RTL=True",
+   "props": {
+    "Type": "Multi Selection",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 241,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 241,
+    "nid": "583:2459",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 49,
+      "nid": "1044:2935",
+      "ref": {
+       "visible": "Select/Remove All#1044:3"
+      },
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingLeft": "Brand/space/space-zero",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-zero",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Select / Remove All, RTL=True"
+      },
+      "mcid": "1044:2920",
+      "cp": {
+       "Type": "Select / Remove All",
+       "RTL": "True"
+      },
+      "itx": [
+       "הסרת הכל",
+       "בחירת הכל"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 49,
+      "w": 288,
+      "h": 192,
+      "nid": "751:10395",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 49,
+        "w": 16,
+        "h": 69,
+        "nid": "751:5640",
+        "ref": {
+         "visible": "Scroller#751:7"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 4,
+          "y": 69,
+          "w": 8,
+          "h": 29,
+          "nid": "751:5641",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 49,
+        "w": 272,
+        "h": 192,
+        "nid": "751:9864",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 49,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:30937",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 97,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31060",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 145,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31183",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 193,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31306",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-zero",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35069:22168",
+   "name": "Type=Multi-Select With Tags, RTL=False",
+   "props": {
+    "Type": "Multi-Select With Tags",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 329,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 329,
+    "nid": "35069:22168",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 49,
+      "nid": "35069:22169",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Brand/space/space-zero",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-zero",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Select / Remove All, RTL=False"
+      },
+      "mcid": "35069:23705",
+      "cp": {
+       "Type": "Select / Remove All",
+       "RTL": "False"
+      },
+      "itx": [
+       "Select All",
+       "Remove All"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 49,
+      "w": 288,
+      "h": 88,
+      "nid": "35069:22170",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Tags, RTL=False"
+      },
+      "mcid": "35069:23710",
+      "cp": {
+       "Type": "Tags",
+       "RTL": "False"
+      },
+      "itx": [
+       "Lable",
+       "Lable",
+       "Lable",
+       "Lable",
+       "Lable",
+       "Lable"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#466186",
+        "v": "Colors/Text & Icon/subtle-secondary"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 137,
+      "w": 288,
+      "h": 192,
+      "nid": "35069:22171",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 137,
+        "w": 272,
+        "h": 192,
+        "nid": "35069:22174",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 137,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20777",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 185,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20797",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 233,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20808",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 281,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20819",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 272,
+        "y": 137,
+        "w": 16,
+        "h": 69,
+        "nid": "35069:22172",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 276,
+          "y": 157,
+          "w": 8,
+          "h": 29,
+          "nid": "35069:22173",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-zero",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "25655:15967",
+   "name": "Type=Multi-Select With Tags, RTL=True",
+   "props": {
+    "Type": "Multi-Select With Tags",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 329,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 329,
+    "nid": "25655:15967",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 49,
+      "nid": "30897:4068",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "v": {
+       "paddingLeft": "Brand/space/space-zero",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-zero",
+       "paddingBottom": "Brand/space/space-zero"
+      },
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Select / Remove All, RTL=True"
+      },
+      "mcid": "1044:2920",
+      "cp": {
+       "Type": "Select / Remove All",
+       "RTL": "True"
+      },
+      "itx": [
+       "הסרת הכל",
+       "בחירת הכל"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": ".List Header",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 49,
+      "w": 288,
+      "h": 88,
+      "nid": "25879:11382",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "inst": {
+       "set": ".List Header",
+       "setId": "35020:7570",
+       "variant": "Type=Tags, RTL=True"
+      },
+      "mcid": "25879:11369",
+      "cp": {
+       "Type": "Tags",
+       "RTL": "True"
+      },
+      "itx": [
+       "תיאור",
+       "תיאור",
+       "תיאור",
+       "תיאור",
+       "תיאור",
+       "תיאור"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#466186",
+        "v": "Colors/Text & Icon/subtle-secondary"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 137,
+      "w": 288,
+      "h": 192,
+      "nid": "25655:15796",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 137,
+        "w": 16,
+        "h": 69,
+        "nid": "25655:15797",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 4,
+          "y": 157,
+          "w": 8,
+          "h": 29,
+          "nid": "25655:15798",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 137,
+        "w": 272,
+        "h": 192,
+        "nid": "25655:15799",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 137,
+          "w": 272,
+          "h": 48,
+          "nid": "36528:31489",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 185,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:10089",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 233,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:13818",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 281,
+          "w": 272,
+          "h": 48,
+          "nid": "36531:20734",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-zero",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35069:22165",
+   "name": "Type=No options found, RTL=False",
+   "props": {
+    "Type": "No options found",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 48,
+    "nid": "35069:22165",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     null,
+     48
+    ],
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 16,
+      "y": 0,
+      "w": 272,
+      "h": 48,
+      "nid": "35069:22166",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": ".List Item ",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 0,
+        "w": 256,
+        "h": 48,
+        "nid": "35069:22167",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          8,
+          8,
+          8,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingTop": "Space/space-300",
+         "paddingRight": "Space/space-300",
+         "paddingBottom": "Space/space-300",
+         "topLeftRadius": "Brand/space/space-2xs",
+         "topRightRadius": "Brand/space/space-2xs",
+         "bottomLeftRadius": "Brand/space/space-2xs",
+         "bottomRightRadius": "Brand/space/space-2xs"
+        },
+        "inst": {
+         "set": ".List Item ",
+         "setId": "583:1041",
+         "variant": "State=Default, Multi Selection=False, Checked=False, Second level=False, Indent=False, Indent x 2=False"
+        },
+        "mcid": "574:1135",
+        "cp": {
+         "Icon": false,
+         "List Item Text": "No options found.",
+         "State": "Default",
+         "Multi Selection": "False",
+         "Checked": "False",
+         "Second level": "False",
+         "Indent": "False",
+         "Indent x 2": "False"
+        },
+        "itx": [
+         "No options found."
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1052:15006",
+   "name": "Type=No options found, RTL=True",
+   "props": {
+    "Type": "No options found",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 48,
+    "nid": "1052:15006",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     null,
+     null,
+     null,
+     48
+    ],
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 16,
+      "y": 0,
+      "w": 272,
+      "h": 48,
+      "nid": "1052:15009",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        16,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "v": {
+       "paddingRight": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": ".List Item ",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 0,
+        "w": 256,
+        "h": 48,
+        "nid": "1052:15010",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          8,
+          0,
+          8,
+          8
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ffffff",
+          "v": "Colors/Background/neutral-default"
+         }
+        ],
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-300",
+         "paddingTop": "Space/space-300",
+         "paddingRight": "Brand/space/space-zero",
+         "paddingBottom": "Space/space-300",
+         "topLeftRadius": "Brand/space/space-2xs",
+         "topRightRadius": "Brand/space/space-2xs",
+         "bottomLeftRadius": "Brand/space/space-2xs",
+         "bottomRightRadius": "Brand/space/space-2xs"
+        },
+        "inst": {
+         "set": ".List Item ",
+         "setId": "583:1041",
+         "variant": "State=Default, Multi Selection=False, Checked=False, Second level=False, Indent=False, Indent x 2=False"
+        },
+        "mcid": "574:1135",
+        "cp": {
+         "Icon": false,
+         "List Item Text": "לא נמצאו אפשרויות",
+         "State": "Default",
+         "Multi Selection": "False",
+         "Checked": "False",
+         "Second level": "False",
+         "Indent": "False",
+         "Indent x 2": "False"
+        },
+        "itx": [
+         "לא נמצאו אפשרויות"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Space/space-300",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "38610:20866",
+   "name": "Type=Per-filter - Multi Selection, RTL=False",
+   "props": {
+    "Type": "Per-filter - Multi Selection",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 237,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 237,
+    "nid": "38610:20866",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 192,
+      "nid": "38610:20868",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 272,
+        "h": 192,
+        "nid": "38610:20869",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 0,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20870",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 48,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20871",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 96,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20872",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 144,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20873",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 272,
+        "y": 0,
+        "w": 16,
+        "h": 69,
+        "nid": "38610:20874",
+        "ref": {
+         "visible": "Scroller#751:7"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 276,
+          "y": 20,
+          "w": 8,
+          "h": 29,
+          "nid": "38610:20875",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": ".List Footer",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 192,
+      "w": 288,
+      "h": 45,
+      "nid": "38613:21137",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        2,
+        0
+       ],
+       "g": 2,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-100",
+       "paddingBottom": "Space/space-100"
+      },
+      "inst": {
+       "set": ".List Footer",
+       "setId": "38610:21106",
+       "variant": "RTL=False"
+      },
+      "mcid": "38613:21125",
+      "cp": {
+       "RTL": "False"
+      },
+      "itx": [
+       "Apply"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-100",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "38610:20876",
+   "name": "Type=Per-filter - Multi Selection, RTL=True",
+   "props": {
+    "Type": "Per-filter - Multi Selection",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 237,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 237,
+    "nid": "38610:20876",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 192,
+      "nid": "38610:20878",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 69,
+        "nid": "38610:20879",
+        "ref": {
+         "visible": "Scroller#751:7"
+        },
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 4,
+          "y": 20,
+          "w": 8,
+          "h": 29,
+          "nid": "38610:20880",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 0,
+        "w": 272,
+        "h": 192,
+        "nid": "38610:20881",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 0,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20882",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 48,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20883",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 96,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20884",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 144,
+          "w": 272,
+          "h": 48,
+          "nid": "38610:20885",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": ".List Footer",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 192,
+      "w": 288,
+      "h": 45,
+      "nid": "38613:21161",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        2,
+        0
+       ],
+       "g": 2,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-100",
+       "paddingBottom": "Space/space-100"
+      },
+      "inst": {
+       "set": ".List Footer",
+       "setId": "38610:21106",
+       "variant": "RTL=True"
+      },
+      "mcid": "38610:21105",
+      "cp": {
+       "RTL": "True"
+      },
+      "itx": [
+       "החלה"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-100",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36674:48636",
+   "name": "Type=Single Selection, RTL=False",
+   "props": {
+    "Type": "Single Selection",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 240,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 240,
+    "nid": "36674:48636",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 240,
+      "nid": "36674:48637",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 272,
+        "h": 240,
+        "nid": "36674:48640",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 0,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:48641",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 48,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:48642",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 96,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:48643",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 144,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:48644",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 192,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:48645",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=False"
+          },
+          "mcid": "36363:9256",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "False"
+          },
+          "itx": [
+           "Option"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 272,
+        "y": 0,
+        "w": 16,
+        "h": 69,
+        "nid": "36674:48638",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 276,
+          "y": 20,
+          "w": 8,
+          "h": 29,
+          "nid": "36674:48639",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36674:47174",
+   "name": "Type=Single Selection, RTL=True",
+   "props": {
+    "Type": "Single Selection",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 240,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 240,
+    "nid": "36674:47174",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 240,
+      "nid": "36674:47176",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 16,
+        "h": 69,
+        "nid": "36674:47177",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          20,
+          4,
+          20,
+          4
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "clip": 1,
+        "c": [
+         {
+          "n": "Icon",
+          "t": "RECTANGLE",
+          "x": 4,
+          "y": 20,
+          "w": 8,
+          "h": 29,
+          "nid": "36674:47178",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#8091a9",
+            "v": "Colors/Background/scroller"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 16,
+        "y": 0,
+        "w": 272,
+        "h": 240,
+        "nid": "36674:47179",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 0,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:47180",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 48,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:47181",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 96,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:47182",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 144,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:47183",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".List Item Atom",
+          "t": "INSTANCE",
+          "x": 16,
+          "y": 192,
+          "w": 272,
+          "h": 48,
+          "nid": "36674:47221",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            12,
+            16,
+            12,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/State/default"
+           }
+          ],
+          "v": {
+           "itemSpacing": "[remote]Space/space-300",
+           "paddingLeft": "[remote]Space/space-500",
+           "paddingTop": "Space/space-400",
+           "paddingRight": "[remote]Space/space-500",
+           "paddingBottom": "Space/space-400"
+          },
+          "inst": {
+           "set": ".List Item Atom",
+           "setId": "36363:9250",
+           "variant": "State=Default, Level=1, RTL=True"
+          },
+          "mcid": "36363:9251",
+          "cp": {
+           "Icon#36528:0": "138:962",
+           "Multi Selection": false,
+           "Header": false,
+           "State": "Default",
+           "Level": "1",
+           "RTL": "True"
+          },
+          "itx": [
+           "אפשרות"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-583-2458.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/State/default",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

@@ -1,0 +1,891 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "35945:25813",
+  "name": "Time Picker",
+  "key": "a69c598cce9544e6000746cceaf151ed9b80d047",
+  "defs": {
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Closed",
+     "Open",
+     "Time field",
+     "Time field LTR"
+    ],
+    "d": "Closed"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-35945-25813.json",
+   "sha256": "d354b613907f90f3a4721740ea2d60f503f111b23c01ca0e69925b38c11a5c9c",
+   "format": "v5-rest",
+   "restResponseSha256": "7ef258d461777430a207c40a841d2a1e4e2911376b5018764fa91b1b0818c585",
+   "filter": null,
+   "offset": 0,
+   "captured": 6,
+   "totalMatching": 6
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 6,
+  "byFilter": {
+   "null": {
+    "totalMatching": 6,
+    "captured": 6
+   }
+  },
+  "detail": {
+   "tree": 6,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/scroller": {
+   "figma": "Colors/Background/scroller",
+   "css": "--igds-base-color-background-scroller",
+   "status": "css-token",
+   "light": {
+    "figma": "#8091a9",
+    "css": "#8091a9",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "35945:95011",
+   "name": "RTL=False, State=Closed",
+   "props": {
+    "RTL": "False",
+    "State": "Closed"
+   },
+   "w": 160,
+   "h": 80,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 80,
+    "nid": "35945:95011",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 160,
+      "h": 80,
+      "nid": "35945:95012",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=False"
+      },
+      "mcid": "35040:32554",
+      "cp": {
+       "Question tooltip": false,
+       "Help": false,
+       "Input text": "HH:MM",
+       "Tooltip": false,
+       "State": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Lable",
+       "*",
+       "Text"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35945-25813.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35945:95094",
+   "name": "RTL=False, State=Open",
+   "props": {
+    "RTL": "False",
+    "State": "Open"
+   },
+   "w": 160,
+   "h": 340,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 340,
+    "nid": "35945:95094",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 160,
+      "h": 80,
+      "nid": "35945:95095",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=False"
+      },
+      "mcid": "35040:32554",
+      "cp": {
+       "Question tooltip": false,
+       "Help": false,
+       "Input text": "HH:MM",
+       "Tooltip": false,
+       "State": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Lable",
+       "*",
+       "Text"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Time Picker List",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 84,
+      "w": 160,
+      "h": 256,
+      "nid": "35945:95096",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 12,
+       "pa": "SPACE_BETWEEN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Time Picker List",
+       "setId": "35952:27805",
+       "variant": "RTL=False"
+      },
+      "mcid": "35952:27806",
+      "cp": {
+       "RTL": "False"
+      },
+      "itx": [
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#8091a9",
+        "v": "Colors/Background/scroller"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35945-25813.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35945:25817",
+   "name": "RTL=True, State=Closed",
+   "props": {
+    "RTL": "True",
+    "State": "Closed"
+   },
+   "w": 160,
+   "h": 80,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 80,
+    "nid": "35945:25817",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 160,
+      "h": 80,
+      "nid": "35945:25854",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=True"
+      },
+      "mcid": "35040:32530",
+      "cp": {
+       "Input text": "HH:MM",
+       "Question tooltip": false,
+       "Tooltip": false,
+       "Help": false,
+       "State": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "*",
+       "תווית",
+       "HH:MM"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35945-25813.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35945:25814",
+   "name": "RTL=True, State=Open",
+   "props": {
+    "RTL": "True",
+    "State": "Open"
+   },
+   "w": 160,
+   "h": 340,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 160,
+    "h": 340,
+    "nid": "35945:25814",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 160,
+      "h": 80,
+      "nid": "35945:25880",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "mm": [
+       160,
+       null,
+       null,
+       null
+      ],
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=True"
+      },
+      "mcid": "35040:32530",
+      "cp": {
+       "Input text": "HH:MM",
+       "Question tooltip": false,
+       "Tooltip": false,
+       "Help": false,
+       "State": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "*",
+       "תווית",
+       "HH:MM"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": ".Time Picker List",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 84,
+      "w": 160,
+      "h": 256,
+      "nid": "35945:25816",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 12,
+       "pa": "SPACE_BETWEEN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Time Picker List",
+       "setId": "35952:27805",
+       "variant": "RTL=True"
+      },
+      "mcid": "17726:66336",
+      "cp": {
+       "RTL": "True"
+      },
+      "itx": [
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM",
+       "HH:MM"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#8091a9",
+        "v": "Colors/Background/scroller"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35945-25813.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Background/scroller",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35952:9851",
+   "name": "RTL=True, State=Time field",
+   "props": {
+    "RTL": "True",
+    "State": "Time field"
+   },
+   "w": 100,
+   "h": 80,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 80,
+    "nid": "35952:9851",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 80,
+      "nid": "35952:9852",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=True"
+      },
+      "mcid": "35040:32530",
+      "cp": {
+       "Input text": "HH:MM",
+       "Question tooltip": false,
+       "Tooltip": false,
+       "Help": false,
+       "Icon": false,
+       "State": "Default",
+       "RTL": "True"
+      },
+      "itx": [
+       "*",
+       "תווית",
+       "HH:MM"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35945-25813.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35952:27687",
+   "name": "RTL=True, State=Time field LTR",
+   "props": {
+    "RTL": "True",
+    "State": "Time field LTR"
+   },
+   "w": 100,
+   "h": 80,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 100,
+    "h": 80,
+    "nid": "35952:27687",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Input Field",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "h": 80,
+      "nid": "35952:27688",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": "Input Field",
+       "setId": "81:115",
+       "variant": "State=Default, RTL=False"
+      },
+      "mcid": "35040:32554",
+      "cp": {
+       "Input Text LRT": "HH:MM",
+       "Question tooltip": false,
+       "Help": false,
+       "Icon": false,
+       "Input text": "HH:MM",
+       "Tooltip": false,
+       "State": "Default",
+       "RTL": "False"
+      },
+      "itx": [
+       "Lable",
+       "*",
+       "HH:MM"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-35945-25813.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

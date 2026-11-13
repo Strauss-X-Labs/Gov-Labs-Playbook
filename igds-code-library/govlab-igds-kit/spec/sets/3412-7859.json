@@ -1,0 +1,328 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "3412:7859",
+  "name": "Scroll",
+  "key": "1927086c8d3befce1f3213af9ad811dc779e2def",
+  "defs": {
+   "Size": {
+    "t": "VARIANT",
+    "o": [
+     "Small",
+     "Medium",
+     "Large"
+    ],
+    "d": "Small"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-3412-7859.json",
+   "sha256": "ff2c0d93abf60c1355a37c41faa9df708eb6551367daabd51f7e78a58fdc3618",
+   "format": "v5-rest",
+   "restResponseSha256": "6220ed4855af439598a168cd513a1b6d9c25fea90cbb0ebedaddd0b76443cbb8",
+   "filter": null,
+   "offset": 0,
+   "captured": 3,
+   "totalMatching": 3
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 3,
+  "byFilter": {
+   "null": {
+    "totalMatching": 3,
+    "captured": 3
+   }
+  },
+  "detail": {
+   "tree": 3,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Colors/Background/scroller": {
+   "figma": "Colors/Background/scroller",
+   "css": "--igds-base-color-background-scroller",
+   "status": "css-token",
+   "light": {
+    "figma": "#8091a9",
+    "css": "#8091a9",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "3412:7863",
+   "name": "Size=Large",
+   "props": {
+    "Size": "Large"
+   },
+   "w": 16,
+   "h": 224,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 16,
+    "h": 224,
+    "nid": "3412:7863",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      8,
+      4,
+      8,
+      4
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": ".Scrollbar Height",
+      "t": "INSTANCE",
+      "x": 4,
+      "y": 8,
+      "w": 8,
+      "h": 160,
+      "nid": "3412:7864",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": ".Scrollbar Height",
+       "setId": "3412:2067",
+       "variant": "Height=Large"
+      },
+      "mcid": "3412:2070",
+      "cp": {
+       "Height": "Large"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#8091a9",
+        "v": "Colors/Background/scroller"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-7859.json"
+   ],
+   "vars": [
+    "Colors/Background/scroller",
+    "Space/space-200",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:7860",
+   "name": "Size=Medium",
+   "props": {
+    "Size": "Medium"
+   },
+   "w": 16,
+   "h": 224,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 16,
+    "h": 224,
+    "nid": "3412:7860",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      8,
+      4,
+      8,
+      4
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": ".Scrollbar Height",
+      "t": "INSTANCE",
+      "x": 4,
+      "y": 8,
+      "w": 8,
+      "h": 96,
+      "nid": "3412:7861",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": ".Scrollbar Height",
+       "setId": "3412:2067",
+       "variant": "Height=Medium"
+      },
+      "mcid": "3412:2068",
+      "cp": {
+       "Height": "Medium"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#8091a9",
+        "v": "Colors/Background/scroller"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-7859.json"
+   ],
+   "vars": [
+    "Colors/Background/scroller",
+    "Space/space-200",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:7838",
+   "name": "Size=Small",
+   "props": {
+    "Size": "Small"
+   },
+   "w": 12,
+   "h": 224,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 12,
+    "h": 224,
+    "nid": "3412:7838",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      8,
+      4,
+      8,
+      4
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "clip": 1,
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": ".Scrollbar Height",
+      "t": "INSTANCE",
+      "x": 2,
+      "y": 8,
+      "w": 8,
+      "h": 32,
+      "nid": "3412:7835",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "inst": {
+       "set": ".Scrollbar Height",
+       "setId": "3412:2067",
+       "variant": "Height=Small 0p"
+      },
+      "mcid": "3412:2066",
+      "cp": {
+       "Height": "Small 0p"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#8091a9",
+        "v": "Colors/Background/scroller"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-7859.json"
+   ],
+   "vars": [
+    "Colors/Background/scroller",
+    "Space/space-200",
+    "Space/space-300"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

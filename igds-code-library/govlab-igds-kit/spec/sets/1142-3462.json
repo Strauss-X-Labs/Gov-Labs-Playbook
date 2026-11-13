@@ -1,0 +1,3832 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "1142:3462",
+  "name": "Search Field Hero",
+  "key": "d31073ed8cbd2981b49c72632b1a0b38b2ce99ee",
+  "defs": {
+   "Field Text": {
+    "t": "TEXT",
+    "d": "חיפוש"
+   },
+   "Filled": {
+    "t": "BOOLEAN",
+    "d": false
+   },
+   "Field Text LTR": {
+    "t": "TEXT",
+    "d": "Search"
+   },
+   "Open List Options": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Hover",
+     "Focused",
+     "Active",
+     "Disabled"
+    ],
+    "d": "Default"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-1142-3462.json",
+   "sha256": "5521fd7ec35ceb03644bc68f5ba19fab15f9d54aea8a69e6dbc615cda4d8a5cd",
+   "format": "v5-rest",
+   "restResponseSha256": "607e41a53d10c648b1018c0a4050e260a1d555403753b0d29d2f4073720a5f55",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/border/radius-full": {
+   "figma": "Brand/border/radius-full",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-2xs": {
+   "figma": "Brand/space/space-2xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/disabled-with-text": {
+   "figma": "Colors/Background/disabled-with-text",
+   "css": "--igds-base-color-background-disabled-with-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#e0e8ef",
+    "css": "#e0e8ef",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1a283c",
+    "css": "#1a283c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/disabled-without-text": {
+   "figma": "Colors/Background/disabled-without-text",
+   "css": "--igds-base-color-background-disabled-without-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#ced7e0",
+    "css": "#ced7e0",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#495a73",
+    "css": "#495a73",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/active": {
+   "figma": "Colors/Border/active",
+   "css": "--igds-base-color-border-active",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/brand-hover": {
+   "figma": "Colors/Border/brand-hover",
+   "css": "--igds-base-color-border-brand-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#0045a3",
+    "css": "#0045a3",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#30639c",
+    "css": "#30639c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/disabled": {
+   "figma": "Colors/Border/disabled",
+   "css": "--igds-base-color-border-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#344a69",
+    "css": "#344a69",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/focused": {
+   "figma": "Colors/Border/focused",
+   "css": "--igds-base-color-border-focused",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/subtle-default": {
+   "figma": "Colors/Border/subtle-default",
+   "css": "--igds-base-color-border-subtle-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#6ba3e0",
+    "css": "#6ba3e0",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/background-primary": {
+   "figma": "Colors/Button/background-primary",
+   "css": "--igds-base-color-button-background-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/Inverted/subtle-primary": {
+   "figma": "Colors/Text & Icon/Inverted/subtle-primary",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/mist-blue/50",
+    "Dark IGDS": "→Brand/mist-blue/50",
+    "כבאות והצלה": "→Brand/mist-blue/50",
+    "ביטוח לאומי": "→Brand/mist-blue/50"
+   }
+  },
+  "Colors/Text & Icon/disabled": {
+   "figma": "Colors/Text & Icon/disabled",
+   "css": "--igds-base-color-text-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/link-tertiary-default": {
+   "figma": "Colors/Text & Icon/link-tertiary-default",
+   "css": "--igds-base-color-text-link-tertiary-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#d7e8ff",
+    "css": "#d7e8ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-secondary": {
+   "figma": "Colors/Text & Icon/subtle-secondary",
+   "css": "--igds-base-color-text-subtle-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#466186",
+    "css": "#466186",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#99c2fb",
+    "css": "#99c2fb",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-550": {
+   "figma": "Space/space-550",
+   "css": "--igds-ref-space-550",
+   "status": "css-token",
+   "light": {
+    "figma": 20,
+    "css": "20px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "35784:17602",
+   "name": "State=Active, RTL=False",
+   "props": {
+    "State": "Active",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 364,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 364,
+    "nid": "35784:17602",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "35784:17603",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Border/active"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Cursor",
+        "t": "TEXT",
+        "x": 20,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "35784:17608",
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "|",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 228,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "35784:17604",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 228,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "35784:17607",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         },
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 228,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "35784:17605",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 236,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "35784:17606",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": ".Search Field List",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 76,
+      "w": 288,
+      "h": 288,
+      "nid": "35784:17609",
+      "ref": {
+       "visible": "Open List Options#41187:0"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Search Field List",
+       "setId": "1093:8727",
+       "variant": "RTL=False, No options found=False"
+      },
+      "mcid": "35784:14222",
+      "cp": {
+       "RTL": "False",
+       "No options found": "False"
+      },
+      "itx": [
+       "Option",
+       "Option",
+       "Option",
+       "Option",
+       "Option",
+       "Option"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "[remote]Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#466186",
+        "v": "Colors/Text & Icon/subtle-secondary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Border/active",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1142:3484",
+   "name": "State=Active, RTL=True",
+   "props": {
+    "State": "Active",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 364,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 364,
+    "nid": "1142:3484",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "1142:3485",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Border/active"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 20,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "26740:3589",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "2180:12587",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 28,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "2180:12588",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 64,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "26740:3585",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         }
+        ]
+       },
+       {
+        "n": "Cursor",
+        "t": "TEXT",
+        "x": 72,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "1142:3487",
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "|",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": ".Search Field List",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 76,
+      "w": 288,
+      "h": 288,
+      "nid": "1142:3489",
+      "ref": {
+       "visible": "Open List Options#41187:0"
+      },
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": ".Search Field List",
+       "setId": "1093:8727",
+       "variant": "RTL=True, No options found=False"
+      },
+      "mcid": "1093:2352",
+      "cp": {
+       "RTL": "True",
+       "No options found": "False"
+      },
+      "itx": [
+       "אפשרות",
+       "אפשרות",
+       "אפשרות",
+       "אפשרות",
+       "אפשרות",
+       "אפשרות"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#466186",
+        "v": "Colors/Text & Icon/subtle-secondary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Colors/Background/neutral-default",
+    "Colors/Border/active",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35784:17624",
+   "name": "State=Default, RTL=False",
+   "props": {
+    "State": "Default",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "35784:17624",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "35784:17625",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 20,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "35784:17630",
+        "ref": {
+         "characters": "Field Text LTR#35784:70"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Search",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 228,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "35784:17626",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 228,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "35784:17629",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         },
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 228,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "35784:17627",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 236,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "35784:17628",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1142:3500",
+   "name": "State=Default, RTL=True",
+   "props": {
+    "State": "Default",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "1142:3500",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "1142:3501",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/subtle-default"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 20,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "26736:27590",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "2180:12575",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 28,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "2180:12576",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 64,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "26736:27585",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         }
+        ]
+       },
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 72,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "1142:3503",
+        "ref": {
+         "characters": "Field Text#1093:91"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "חיפוש",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Colors/Border/subtle-default",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35784:17631",
+   "name": "State=Disabled, RTL=False",
+   "props": {
+    "State": "Disabled",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "35784:17631",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "35784:17632",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#e0e8ef",
+        "v": "Colors/Background/disabled-with-text"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/disabled"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 20,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "35784:17637",
+        "ref": {
+         "characters": "Field Text LTR#35784:70"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Search",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 228,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "35784:17633",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 228,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "35784:17636",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         },
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 228,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "35784:17634",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ced7e0",
+            "v": "Colors/Background/disabled-without-text"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 236,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "35784:17635",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/disabled-with-text",
+    "Colors/Background/disabled-without-text",
+    "Colors/Border/disabled",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/disabled",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1142:3505",
+   "name": "State=Disabled, RTL=True",
+   "props": {
+    "State": "Disabled",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "1142:3505",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "1142:3506",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#e0e8ef",
+        "v": "Colors/Background/disabled-with-text"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Border/disabled"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 20,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "35784:17181",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "35784:17182",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ced7e0",
+            "v": "Colors/Background/disabled-without-text"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 28,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "35784:17183",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 64,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "35784:17184",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         }
+        ]
+       },
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 72,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "1142:3507",
+        "ref": {
+         "characters": "Field Text#1093:91"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "חיפוש",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/disabled-with-text",
+    "Colors/Background/disabled-without-text",
+    "Colors/Border/disabled",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/disabled",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35784:17610",
+   "name": "State=Focused, RTL=False",
+   "props": {
+    "State": "Focused",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "35784:17610",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "35784:17611",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Border/focused"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 20,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "35784:17616",
+        "ref": {
+         "characters": "Field Text LTR#35784:70"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Search",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 228,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "35784:17612",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 228,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "35784:17615",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         },
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 228,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "35784:17613",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 236,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "35784:17614",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Colors/Border/focused",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1142:3490",
+   "name": "State=Focused, RTL=True",
+   "props": {
+    "State": "Focused",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "1142:3490",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "1142:3491",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Border/focused"
+       }
+      ],
+      "sw": 2,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 20,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "26740:3590",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "2180:12583",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 28,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "2180:12584",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 64,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "26740:3581",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         }
+        ]
+       },
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 72,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "1142:3493",
+        "ref": {
+         "characters": "Field Text#1093:91"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "חיפוש",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Colors/Border/focused",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "35784:17617",
+   "name": "State=Hover, RTL=False",
+   "props": {
+    "State": "Hover",
+    "RTL": "False"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "35784:17617",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "35784:17618",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Border/brand-hover"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 20,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "35784:17623",
+        "ref": {
+         "characters": "Field Text LTR#35784:70"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "Search",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "LEFT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 228,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "35784:17619",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 228,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "35784:17622",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         },
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 228,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "35784:17620",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 236,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "35784:17621",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Colors/Border/brand-hover",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "1142:3495",
+   "name": "State=Hover, RTL=True",
+   "props": {
+    "State": "Hover",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 72,
+    "nid": "1142:3495",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Brand/space/space-zero",
+     "paddingTop": "Brand/space/space-zero",
+     "paddingRight": "Brand/space/space-zero",
+     "paddingBottom": "Brand/space/space-zero"
+    },
+    "c": [
+     {
+      "n": "Frame",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 288,
+      "h": 72,
+      "nid": "1142:3496",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        16,
+        20,
+        16,
+        20
+       ],
+       "g": 12,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "s": [
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Border/brand-hover"
+       }
+      ],
+      "sw": 1,
+      "sa": "INSIDE",
+      "v": {
+       "itemSpacing": "Space/space-400",
+       "paddingLeft": "Space/space-550",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-550",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "c": [
+       {
+        "n": "Button Container",
+        "t": "FRAME",
+        "x": 20,
+        "y": 16,
+        "w": 40,
+        "h": 40,
+        "nid": "26740:3591",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Icon Container",
+          "t": "FRAME",
+          "x": 20,
+          "y": 16,
+          "w": 40,
+          "h": 40,
+          "nid": "2180:12579",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            8,
+            8,
+            8,
+            8
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "r": 100,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Button/background-primary"
+           }
+          ],
+          "v": {
+           "paddingLeft": "Brand/space/space-2xs",
+           "paddingTop": "Brand/space/space-2xs",
+           "paddingRight": "Brand/space/space-2xs",
+           "paddingBottom": "Brand/space/space-2xs",
+           "topLeftRadius": "Brand/border/radius-full",
+           "topRightRadius": "Brand/border/radius-full",
+           "bottomLeftRadius": "Brand/border/radius-full",
+           "bottomRightRadius": "Brand/border/radius-full"
+          },
+          "c": [
+           {
+            "n": "Search Icon",
+            "t": "INSTANCE",
+            "x": 28,
+            "y": 24,
+            "w": 24,
+            "h": 24,
+            "nid": "2180:12580",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": " search",
+             "setId": "138:1086",
+             "variant": null
+            },
+            "mcid": "138:1086",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#f5f9ff",
+              "v": "Colors/Text & Icon/Inverted/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 64,
+          "y": 20,
+          "w": 32,
+          "h": 32,
+          "nid": "26740:3576",
+          "ref": {
+           "visible": "Filled#35784:57"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "35235:4128",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ],
+          "hid": 1
+         }
+        ]
+       },
+       {
+        "n": "Search Text",
+        "t": "TEXT",
+        "x": 72,
+        "y": 24,
+        "w": 196,
+        "h": 24,
+        "nid": "1142:3498",
+        "ref": {
+         "characters": "Field Text#1093:91"
+        },
+        "sz": [
+         "FILL",
+         "HUG"
+        ],
+        "grow": 1,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#466186",
+          "v": "Colors/Text & Icon/subtle-secondary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "חיפוש",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-1142-3462.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Border/radius-m",
+    "Brand/border/radius-full",
+    "Brand/space/space-2xs",
+    "Brand/space/space-zero",
+    "Colors/Background/neutral-default",
+    "Colors/Border/brand-hover",
+    "Colors/Button/background-primary",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-secondary",
+    "Space/space-200",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

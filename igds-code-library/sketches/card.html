@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Card (כל הוריאנטים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Card — סקיצת כל הוריאנטים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Card node <code>1140:935</code>,
+            Card full picture node <code>43124:36813</code>, Card full picture+name node <code>11657:21926</code>, דרך Figma MCP.
+            מבוסס על <code>.gov-card</code> והטוקנים ב-<code>styles.css</code>.
+            סוגים Clickable / CTA / Not pressable · גדלים Small/Large · כיוון Vertical/Horizontal ·
+            מצבים Default, Hover, Focused, Pressed, Disabled · גרסת תמונה מלאה (Light/Dark).
+            <br>הערה: אזור ה-media מודגם עם איור placeholder (SVG); בפועל ממקמים תמונה/איור אמיתי.
+            התגית היא רכיב ה-Badge (Informative) עם אייקון, כפי שבפיגמה.
+        </p>
+
+        <h2 class="sketch__mapping-title">Vertical · Large — Clickable (Default) · CTA · Not pressable</h2>
+        <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; align-items: flex-start;">
+            <!-- Clickable -->
+            <a href="#" class="gov-card gov-card--clickable">
+                <span class="gov-card__media" aria-hidden="true">
+                    <svg viewBox="0 0 416 234" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="416" height="234" fill="#e8f0fc" />
+                        <circle cx="208" cy="117" r="48" fill="#b5c7e2" />
+                        <rect x="150" y="150" width="116" height="12" rx="6" fill="#b5c7e2" />
+                    </svg>
+                    <span class="gov-card__favorite" role="img" aria-label="הוספה למועדפים">
+                        <svg viewBox="0 0 20.0049 17" xmlns="http://www.w3.org/2000/svg"><path d="M5.222 2C4.358 2 3.548 2.334 2.942 2.941C1.684 4.201 1.684 6.252 2.943 7.514L10.002 14.585L17.062 7.514C18.321 6.252 18.321 4.201 17.062 2.941C15.85 1.726 13.714 1.728 12.502 2.941L10.71 4.736C10.334 5.113 9.67 5.113 9.294 4.736L7.502 2.94C6.896 2.334 6.087 2 5.222 2ZM10.002 17C9.737 17 9.482 16.895 9.295 16.706L1.527 8.926C-0.509 6.886 -0.509 3.567 1.527 1.527C2.511 0.543 3.823 0 5.222 0C6.621 0 7.934 0.543 8.917 1.527L10.002 2.614L11.087 1.528C12.071 0.543 13.383 0 14.783 0C16.181 0 17.494 0.543 18.477 1.527C20.514 3.567 20.514 6.886 18.478 8.926L10.71 16.707C10.522 16.895 10.268 17 10.002 17Z" /></svg>
+                    </span>
+                </span>
+                <span class="gov-card__content">
+                    <span class="gov-card__title">
+                        <span class="gov-card__title-icon" aria-hidden="true">
+                            <svg viewBox="0 0 18 19.9878" xmlns="http://www.w3.org/2000/svg"><path d="M8.998 2.41975L16 9.61175L15.99 17.9878H13V10.9878C13 10.4348 12.552 9.98775 12 9.98775H6C5.447 9.98775 5 10.4348 5 10.9878V17.9878H2L2.006 9.57075L8.998 2.41975ZM11 11.9878V17.9878H7V11.9878H11ZM17.424 8.17275L9.715 0.28875C9.338 -0.09625 8.662 -0.09625 8.285 0.28875L0.575 8.17375C0.21 8.54875 0 9.07275 0 9.61175V17.9878C0 19.0908 0.847 19.9878 1.888 19.9878H6H12H16.111C17.152 19.9878 18 19.0908 18 17.9878V9.61175C18 9.07275 17.79 8.54875 17.424 8.17275Z" /></svg>
+                        </span>
+                        <span class="gov-card__title-text">כותרת הכרטיס שיכולה להיות ארוכה ולהישבר לשתי שורות</span>
+                    </span>
+                    <span class="gov-badge gov-badge--informative">
+                        <span class="gov-badge__text">תגית</span>
+                        <span class="gov-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z" /><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z" /><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z" /></svg>
+                        </span>
+                    </span>
+                    <span class="gov-card__description">הסבר נוסף שנועד לספק הרחבה על נושא הכרטיסיה או הצצה לתוכן שאליו הכרטיס מפנה. על הטקסט להיות באורך של עד 120 תווים, והוא נחתך בעדינות אחרי שלוש שורות.</span>
+                    <span class="gov-card__label">תווית</span>
+                </span>
+            </a>
+
+            <!-- CTA -->
+            <div class="gov-card">
+                <div class="gov-card__media" aria-hidden="true">
+                    <svg viewBox="0 0 416 234" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="416" height="234" fill="#e8f0fc" />
+                        <circle cx="208" cy="117" r="48" fill="#b5c7e2" />
+                        <rect x="150" y="150" width="116" height="12" rx="6" fill="#b5c7e2" />
+                    </svg>
+                </div>
+                <div class="gov-card__content">
+                    <h3 class="gov-card__title"><span class="gov-card__title-text">כותרת הכרטיס</span></h3>
+                    <span class="gov-badge gov-badge--informative">
+                        <span class="gov-badge__text">תגית</span>
+                        <span class="gov-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z" /><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z" /><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z" /></svg>
+                        </span>
+                    </span>
+                    <p class="gov-card__description">כרטיס מסוג CTA כולל כפתור פעולה בתחתית. הטקסט מתאר את מטרת הכרטיס.</p>
+                    <p class="gov-card__label">תווית</p>
+                    <div class="gov-card__cta">
+                        <button class="gov-button gov-button--primary">מעבר לפרטים</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Not pressable -->
+            <div class="gov-card gov-card--static">
+                <div class="gov-card__media" aria-hidden="true">
+                    <svg viewBox="0 0 416 234" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="416" height="234" fill="#e8f0fc" />
+                        <circle cx="208" cy="117" r="48" fill="#b5c7e2" />
+                        <rect x="150" y="150" width="116" height="12" rx="6" fill="#b5c7e2" />
+                    </svg>
+                </div>
+                <div class="gov-card__content">
+                    <h3 class="gov-card__title"><span class="gov-card__title-text">כותרת הכרטיס</span></h3>
+                    <p class="gov-card__description">כרטיס לא לחיץ (Not pressable) להצגת מידע בלבד, ללא אינטראקציה.</p>
+                    <p class="gov-card__label">תווית</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="sketch__mapping-title">Vertical · Small</h2>
+        <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; align-items: flex-start;">
+            <a href="#" class="gov-card gov-card--small gov-card--clickable">
+                <span class="gov-card__media" aria-hidden="true">
+                    <svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="200" height="112" fill="#e8f0fc" />
+                        <circle cx="100" cy="56" r="28" fill="#b5c7e2" />
+                    </svg>
+                </span>
+                <span class="gov-card__content">
+                    <span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span>
+                    <span class="gov-card__description">תיאור קצר של תוכן הכרטיס.</span>
+                    <span class="gov-card__label">תווית</span>
+                </span>
+            </a>
+        </div>
+
+        <h2 class="sketch__mapping-title">Horizontal · Large / Small</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-xl); align-items: flex-start;">
+            <a href="#" class="gov-card gov-card--horizontal gov-card--clickable">
+                <span class="gov-card__media" aria-hidden="true">
+                    <svg viewBox="0 0 183 240" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="183" height="240" fill="#e8f0fc" />
+                        <circle cx="91" cy="120" r="40" fill="#b5c7e2" />
+                    </svg>
+                </span>
+                <span class="gov-card__content">
+                    <span class="gov-card__title"><span class="gov-card__title-text">כותרת הכרטיס</span></span>
+                    <span class="gov-badge gov-badge--informative">
+                        <span class="gov-badge__text">תגית</span>
+                        <span class="gov-badge__icon" aria-hidden="true">
+                            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18ZM10 0C4.477 0 0 4.477 0 10C0 15.523 4.477 20 10 20C15.523 20 20 15.523 20 10C20 4.477 15.523 0 10 0Z" /><path d="M9 6C9 6.552 9.448 7 10 7C10.552 7 11 6.552 11 6C11 5.448 10.552 5 10 5C9.448 5 9 5.448 9 6Z" /><path d="M9 14C9 14.552 9.448 15 10 15C10.552 15 11 14.552 11 14L11 9C11 8.448 10.552 8 10 8C9.448 8 9 8.448 9 9L9 14Z" /></svg>
+                        </span>
+                    </span>
+                    <span class="gov-card__description">כרטיס אופקי — ה-media בצד והתוכן לידו. מתאים לרשימות ולתצוגות דחוסות.</span>
+                    <span class="gov-card__label">תווית</span>
+                </span>
+            </a>
+
+            <a href="#" class="gov-card gov-card--horizontal gov-card--small gov-card--clickable">
+                <span class="gov-card__media" aria-hidden="true">
+                    <svg viewBox="0 0 96 120" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="96" height="120" fill="#e8f0fc" />
+                        <circle cx="48" cy="60" r="22" fill="#b5c7e2" />
+                    </svg>
+                </span>
+                <span class="gov-card__content">
+                    <span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span>
+                    <span class="gov-card__description">כרטיס אופקי קטן.</span>
+                    <span class="gov-card__label">תווית</span>
+                </span>
+            </a>
+        </div>
+
+        <h2 class="sketch__mapping-title">Card full picture (תמונה מלאה) — Light / Dark</h2>
+        <p class="sketch__sub">תמונת רקע מלאה עם scrim (gradient) והתוכן על גביה. Light = scrim לבן · Dark = scrim כהה + טקסט לבן.</p>
+        <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; align-items: flex-start;">
+            <!-- Light -->
+            <a href="#" class="gov-card gov-card--full-picture gov-card--light gov-card--clickable"
+                style="width: 416px; min-height: 344px; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22416%22 height=%22344%22%3E%3Crect width=%22416%22 height=%22344%22 fill=%22%238aa6cf%22/%3E%3C/svg%3E');">
+                <span class="gov-card__favorite" role="img" aria-label="הוספה למועדפים">
+                    <svg viewBox="0 0 20.0049 17" xmlns="http://www.w3.org/2000/svg"><path d="M5.222 2C4.358 2 3.548 2.334 2.942 2.941C1.684 4.201 1.684 6.252 2.943 7.514L10.002 14.585L17.062 7.514C18.321 6.252 18.321 4.201 17.062 2.941C15.85 1.726 13.714 1.728 12.502 2.941L10.71 4.736C10.334 5.113 9.67 5.113 9.294 4.736L7.502 2.94C6.896 2.334 6.087 2 5.222 2ZM10.002 17C9.737 17 9.482 16.895 9.295 16.706L1.527 8.926C-0.509 6.886 -0.509 3.567 1.527 1.527C2.511 0.543 3.823 0 5.222 0C6.621 0 7.934 0.543 8.917 1.527L10.002 2.614L11.087 1.528C12.071 0.543 13.383 0 14.783 0C16.181 0 17.494 0.543 18.477 1.527C20.514 3.567 20.514 6.886 18.478 8.926L10.71 16.707C10.522 16.895 10.268 17 10.002 17Z" /></svg>
+                </span>
+                <span class="gov-card__content">
+                    <span class="gov-card__title"><span class="gov-card__title-text">כותרת על תמונה</span></span>
+                    <span class="gov-card__description">תוכן הכרטיס מופיע על תמונת רקע מלאה עם הבהרה בתחתית לקריאוּת.</span>
+                    <span class="gov-card__label">תווית</span>
+                </span>
+            </a>
+
+            <!-- Dark -->
+            <a href="#" class="gov-card gov-card--full-picture gov-card--dark gov-card--clickable"
+                style="width: 416px; min-height: 344px; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22416%22 height=%22344%22%3E%3Crect width=%22416%22 height=%22344%22 fill=%22%235878a4%22/%3E%3C/svg%3E');">
+                <span class="gov-card__favorite" role="img" aria-label="הוספה למועדפים">
+                    <svg viewBox="0 0 20.0049 17" xmlns="http://www.w3.org/2000/svg"><path d="M5.222 2C4.358 2 3.548 2.334 2.942 2.941C1.684 4.201 1.684 6.252 2.943 7.514L10.002 14.585L17.062 7.514C18.321 6.252 18.321 4.201 17.062 2.941C15.85 1.726 13.714 1.728 12.502 2.941L10.71 4.736C10.334 5.113 9.67 5.113 9.294 4.736L7.502 2.94C6.896 2.334 6.087 2 5.222 2ZM10.002 17C9.737 17 9.482 16.895 9.295 16.706L1.527 8.926C-0.509 6.886 -0.509 3.567 1.527 1.527C2.511 0.543 3.823 0 5.222 0C6.621 0 7.934 0.543 8.917 1.527L10.002 2.614L11.087 1.528C12.071 0.543 13.383 0 14.783 0C16.181 0 17.494 0.543 18.477 1.527C20.514 3.567 20.514 6.886 18.478 8.926L10.71 16.707C10.522 16.895 10.268 17 10.002 17Z" /></svg>
+                </span>
+                <span class="gov-card__content">
+                    <span class="gov-card__title"><span class="gov-card__title-text">כותרת על תמונה</span></span>
+                    <span class="gov-card__description">גרסת Dark — scrim כהה בתחתית וטקסט לבן, לתמונות בהירות.</span>
+                    <span class="gov-card__label">תווית</span>
+                </span>
+            </a>
+        </div>
+
+        <h2 class="sketch__mapping-title">Card full picture + name (כותרת ממורכזת) — Light / Dark</h2>
+        <p class="sketch__sub">גרסה פשוטה — רק כותרת ממורכזת על תמונת רקע מלאה.</p>
+        <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; align-items: flex-start;">
+            <a href="#" class="gov-card gov-card--full-picture gov-card--picture-name gov-card--light gov-card--clickable"
+                style="width: 416px; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22416%22 height=%22280%22%3E%3Crect width=%22416%22 height=%22280%22 fill=%22%238aa6cf%22/%3E%3C/svg%3E');">
+                <span class="gov-card__picture-title">שם הכרטיס</span>
+            </a>
+            <a href="#" class="gov-card gov-card--full-picture gov-card--picture-name gov-card--dark gov-card--clickable"
+                style="width: 416px; background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22416%22 height=%22280%22%3E%3Crect width=%22416%22 height=%22280%22 fill=%22%235878a4%22/%3E%3C/svg%3E');">
+                <span class="gov-card__picture-title">שם הכרטיס</span>
+            </a>
+        </div>
+
+        <h2 class="sketch__mapping-title">מצבים (Clickable · Small Vertical)</h2>
+        <p class="sketch__sub">Default / Disabled מוצגים ישירות. Hover / Pressed / Focused אמיתיים דרך אינטראקציה.</p>
+        <div style="display: flex; gap: var(--space-xl); flex-wrap: wrap; align-items: flex-start;">
+            <span>
+                <span class="sketch__state-label">Default</span><br>
+                <a href="#" class="gov-card gov-card--small gov-card--clickable">
+                    <span class="gov-card__media" aria-hidden="true">
+                        <svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="112" fill="#e8f0fc" /><circle cx="100" cy="56" r="28" fill="#b5c7e2" /></svg>
+                    </span>
+                    <span class="gov-card__content">
+                        <span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span>
+                        <span class="gov-card__label">תווית</span>
+                    </span>
+                </a>
+            </span>
+            <span>
+                <span class="sketch__state-label">Disabled</span><br>
+                <span class="gov-card gov-card--small gov-card--clickable gov-card--disabled" aria-disabled="true">
+                    <span class="gov-card__media" aria-hidden="true">
+                        <svg viewBox="0 0 200 112" preserveAspectRatio="xMidYMid slice" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="112" fill="#e0e8ef" /><circle cx="100" cy="56" r="28" fill="#b5c7e2" /></svg>
+                    </span>
+                    <span class="gov-card__content">
+                        <span class="gov-card__title"><span class="gov-card__title-text">כותרת</span></span>
+                        <span class="gov-card__label">תווית</span>
+                    </span>
+                </span>
+            </span>
+        </div>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>חלק / מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>רקע כרטיס</td>
+                    <td>#ffffff</td>
+                    <td>--igds-base-color-background-neutral-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רקע אזור media</td>
+                    <td>#f2f6fd</td>
+                    <td>--igds-base-color-background-neutral-secondlevel</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>צל Default</td>
+                    <td>Shadow-light/Level1</td>
+                    <td>--igds-shadow-light-level1</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>צל Hover</td>
+                    <td>Shadow/Level2</td>
+                    <td>--igds-shadow-light-level2</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>צל Pressed</td>
+                    <td>Shadow-dark/Level3</td>
+                    <td>--igds-shadow-dark-level3</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Focused — מסגרת</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-border-focused</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Disabled — רקע / טקסט</td>
+                    <td>#e0e8ef / #5c697a</td>
+                    <td>--igds-base-color-background-disabled-with-text / -text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>תגית בכרטיס (Badge Informative + אייקון)</td>
+                    <td>#e8f0fc / #0c3058</td>
+                    <td>.gov-badge--informative (שימוש חוזר)</td>
+                    <td>✓ שימוש חוזר</td>
+                </tr>
+                <tr>
+                    <td>כותרת — טקסט</td>
+                    <td>#0c3058 (20px Medium)</td>
+                    <td>--igds-base-color-text-subtle-primary / --igds-ref-font-size-l</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>תיאור — טקסט (עד 120 תווים, עטיפה רגילה)</td>
+                    <td>#0c3058 (16px)</td>
+                    <td>--igds-base-color-text-subtle-primary / --igds-ref-font-size-s</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>תווית — טקסט</td>
+                    <td>#466186 (14px)</td>
+                    <td>--igds-base-color-text-subtle-secondary / --igds-ref-font-size-xs</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Full picture — scrim Light</td>
+                    <td>gradient → #ffffff</td>
+                    <td>--igds-base-color-background-neutral-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Full picture — scrim Dark + טקסט</td>
+                    <td>gradient → #0c3058 / טקסט #f5f9ff</td>
+                    <td>--igds-base-color-text-subtle-primary / -text-subtle-primary-inverted</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Full picture+name — כותרת</td>
+                    <td>24px Medium</td>
+                    <td>--igds-ref-font-size-xl</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>כפתור מועדפים — רקע / צל</td>
+                    <td>#ffffff / Level2</td>
+                    <td>--igds-base-color-background-neutral-default / --igds-shadow-light-level2</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>radius / padding תוכן / gap</td>
+                    <td>8px / 16px / 12px</td>
+                    <td>--igds-ref-border-radius-m / --igds-ref-space-500 / --igds-ref-space-400</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רוחב Large / Small (vertical)</td>
+                    <td>416px / 200px</td>
+                    <td>ערך קבוע (width)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

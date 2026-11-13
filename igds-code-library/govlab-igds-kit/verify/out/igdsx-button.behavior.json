@@ -1,0 +1,165 @@
+{
+ "tag": "igdsx-button",
+ "generatedAt": "2026-11-13T16:37:29.191Z",
+ "behavior": [
+  {
+   "name": "Tab focuses the button and :focus-visible applies (Figma ON_KEY_DOWN -> Focused)",
+   "source": "documented",
+   "ok": true
+  },
+  {
+   "name": "Enter and Space activate click (native button)",
+   "source": "required-for-working-component",
+   "ok": true
+  },
+  {
+   "name": "Pointer click fires one click event",
+   "source": "documented",
+   "ok": true
+  },
+  {
+   "name": "disabled: not focusable by Tab and no click event",
+   "source": "documented",
+   "ok": true
+  },
+  {
+   "name": "type=submit submits the parent form (form-associated)",
+   "source": "required-for-working-component",
+   "ok": true
+  },
+  {
+   "name": "type=button (default) does not submit the form",
+   "source": "required-for-working-component",
+   "ok": true
+  },
+  {
+   "name": "icon-only exposes the label attribute as accessible name",
+   "source": "required-for-working-component",
+   "ok": true
+  },
+  {
+   "name": "Empty icon slots are not rendered (Figma boolean off = hidden)",
+   "source": "documented",
+   "ok": true
+  },
+  {
+   "name": "Combination not present in Figma is reported (console warning)",
+   "source": "documented",
+   "ok": true
+  }
+ ],
+ "axe": {
+  "runs": 112,
+  "withViolations": 6,
+  "violations": [
+   {
+    "theme": "dark",
+    "combo": {
+     "variant": "primary",
+     "size": "large",
+     "intent": "danger",
+     "iconOnly": false,
+     "dir": "ltr"
+    },
+    "violations": [
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 1,
+      "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #f5f9ff, background color: #ff5e5f, font size: 15.0pt (20px), font weight: normal). Expected contrast rat"
+     }
+    ]
+   },
+   {
+    "theme": "dark",
+    "combo": {
+     "variant": "primary",
+     "size": "medium",
+     "intent": "danger",
+     "iconOnly": false,
+     "dir": "ltr"
+    },
+    "violations": [
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 1,
+      "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #f5f9ff, background color: #ff5e5f, font size: 12.0pt (16px), font weight: normal). Expected contrast rat"
+     }
+    ]
+   },
+   {
+    "theme": "dark",
+    "combo": {
+     "variant": "primary",
+     "size": "small",
+     "intent": "danger",
+     "iconOnly": false,
+     "dir": "ltr"
+    },
+    "violations": [
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 1,
+      "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #f5f9ff, background color: #ff5e5f, font size: 12.0pt (16px), font weight: normal). Expected contrast rat"
+     }
+    ]
+   },
+   {
+    "theme": "dark",
+    "combo": {
+     "variant": "primary",
+     "size": "large",
+     "intent": "danger",
+     "iconOnly": false,
+     "dir": "rtl"
+    },
+    "violations": [
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 1,
+      "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #f5f9ff, background color: #ff5e5f, font size: 15.0pt (20px), font weight: normal). Expected contrast rat"
+     }
+    ]
+   },
+   {
+    "theme": "dark",
+    "combo": {
+     "variant": "primary",
+     "size": "medium",
+     "intent": "danger",
+     "iconOnly": false,
+     "dir": "rtl"
+    },
+    "violations": [
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 1,
+      "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #f5f9ff, background color: #ff5e5f, font size: 12.0pt (16px), font weight: normal). Expected contrast rat"
+     }
+    ]
+   },
+   {
+    "theme": "dark",
+    "combo": {
+     "variant": "primary",
+     "size": "small",
+     "intent": "danger",
+     "iconOnly": false,
+     "dir": "rtl"
+    },
+    "violations": [
+     {
+      "id": "color-contrast",
+      "impact": "serious",
+      "nodes": 1,
+      "summary": "Fix any of the following:\n  Element has insufficient color contrast of 2.83 (foreground color: #f5f9ff, background color: #ff5e5f, font size: 12.0pt (16px), font weight: normal). Expected contrast rat"
+     }
+    ]
+   }
+  ]
+ }
+}

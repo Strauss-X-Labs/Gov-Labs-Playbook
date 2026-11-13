@@ -1,0 +1,531 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "40231:29533",
+  "name": "Mega Menu Atoms",
+  "key": "9ab5192f1b5086547b9db317b7e667758ce3b012",
+  "defs": {
+   "Type": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Cards",
+     "Media"
+    ],
+    "d": "Default"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-40231-29533.json",
+   "sha256": "fc02d687489a42158d9ab74dbb45e59c12e29f92ca0007d351a4704a2132c70d",
+   "format": "v5-rest",
+   "restResponseSha256": "8f11ea17e4ff424c72fe84b2ac61969227a27c5b476871393398e6f327575868",
+   "filter": null,
+   "offset": 0,
+   "captured": 3,
+   "totalMatching": 3
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 3,
+  "byFilter": {
+   "null": {
+    "totalMatching": 3,
+    "captured": 3
+   }
+  },
+  "detail": {
+   "tree": 3,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-550": {
+   "figma": "Space/space-550",
+   "css": "--igds-ref-space-550",
+   "status": "css-token",
+   "light": {
+    "figma": 20,
+    "css": "20px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "37478:41050",
+   "name": "Type=Cards",
+   "props": {
+    "Type": "Cards"
+   },
+   "w": 200,
+   "h": 396,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 200,
+    "h": 396,
+    "nid": "37478:41050",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 20,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-550"
+    },
+    "c": [
+     {
+      "n": "Card full picture+name",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 200,
+      "h": 188,
+      "nid": "40231:14320",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        16,
+        16,
+        16,
+        16
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#b6c0cc"
+       },
+       {
+        "t": "GRADIENT_LINEAR",
+        "stops": [
+         [
+          "#ffffff",
+          0.5,
+          0
+         ],
+         [
+          "#ffffff",
+          1,
+          1
+         ]
+        ],
+        "gh": [
+         [
+          0.5,
+          0
+         ],
+         [
+          0.5,
+          1
+         ],
+         [
+          0,
+          0
+         ]
+        ]
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Card full picture+name/True/Default/Small/Clickable/Light",
+       "setId": "11657:22213",
+       "variant": null
+      },
+      "mcid": "11657:22213",
+      "itx": [
+       "כותרת",
+       "תיאור",
+       "כותרת משנית",
+       "תווית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Card full picture+name",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 208,
+      "w": 200,
+      "h": 188,
+      "nid": "40231:14355",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        16,
+        16,
+        16,
+        16
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "r": 8,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#b6c0cc"
+       },
+       {
+        "t": "GRADIENT_LINEAR",
+        "stops": [
+         [
+          "#ffffff",
+          0.5,
+          0
+         ],
+         [
+          "#ffffff",
+          1,
+          1
+         ]
+        ],
+        "gh": [
+         [
+          0.5,
+          0
+         ],
+         [
+          0.5,
+          1
+         ],
+         [
+          0,
+          0
+         ]
+        ]
+       }
+      ],
+      "fx": [
+       {
+        "t": "DROP_SHADOW",
+        "rad": 12,
+        "c": "#064dad",
+        "a": 0.15,
+        "o": [
+         0,
+         4
+        ]
+       }
+      ],
+      "es": "Shadow-light/Level2",
+      "v": {
+       "paddingLeft": "Space/space-500",
+       "paddingTop": "Space/space-500",
+       "paddingRight": "Space/space-500",
+       "paddingBottom": "Space/space-500",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Card full picture+name/True/Default/Small/Clickable/Light",
+       "setId": "11657:22213",
+       "variant": null
+      },
+      "mcid": "11657:22213",
+      "itx": [
+       "כותרת",
+       "תיאור",
+       "כותרת משנית",
+       "תווית"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-40231-29533.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500",
+    "Space/space-550"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "40231:29532",
+   "name": "Type=Default",
+   "props": {
+    "Type": "Default"
+   },
+   "w": 289,
+   "h": 320,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 289,
+    "h": 320,
+    "nid": "40231:29532",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Mega Menu Atom",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 289,
+      "h": 320,
+      "nid": "40231:29451",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MAX",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "inst": {
+       "set": "Mega Menu Atom",
+       "setId": "37471:34289",
+       "variant": "RTL=True"
+      },
+      "mcid": "37443:15875",
+      "cp": {
+       "RTL": "True"
+      },
+      "itx": [
+       "תת כותרת",
+       "אפשרות",
+       "אפשרות",
+       "אפשרות",
+       "אפשרות",
+       "אפשרות",
+       "אפשרות"
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-40231-29533.json"
+   ],
+   "vars": [
+    "Colors/Divider/default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "40231:20190",
+   "name": "Type=Media",
+   "props": {
+    "Type": "Media"
+   },
+   "w": 270,
+   "h": 320,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 270,
+    "h": 320,
+    "nid": "40231:20190",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": ".Media Place Holder",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 270,
+      "h": 320,
+      "nid": "40231:12265",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FILL"
+      },
+      "grow": 1,
+      "f": [
+       {
+        "t": "IMAGE"
+       }
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Media Place Holder",
+       "setId": "36524:27170",
+       "variant": "Size=Large, Proportion=1:1"
+      },
+      "mcid": "36524:27169",
+      "cp": {
+       "Size": "Large",
+       "Proportion": "1:1"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-40231-29533.json"
+   ],
+   "vars": [],
+   "provenance": "figma"
+  }
+ ]
+}

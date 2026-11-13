@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Text Area (כל המצבים)</title>
+    <!-- מקור אמת: טוקנים ומחלקות הדיזיין סיסטם -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- סטייל מעטפת הגלריה (משותף לכל הסקיצות) -->
+    <link rel="stylesheet" href="_gallery.css">
+    <style>
+        /* גובה קבוע לאזור הטקסט לצורכי הסקיצה (תואם 186px מהפיגמה) — נשען על טוקן space */
+        .sketch .gov-textarea {
+            height: 120px;
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Text Area — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0, node <code>3519:2599</code>) דרך Figma MCP.
+            ה-scrollbar מסונכרן מרכיב <code>Scroll</code> (node <code>3412:7859</code>).
+            כל המצבים מבוססים על <code>.gov-textarea</code> והטוקנים ב-<code>styles.css</code>.
+        </p>
+
+        <div class="sketch__grid">
+
+            <!-- Default -->
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="t-default">כותרת <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <textarea id="t-default" class="gov-textarea" aria-required="true"
+                        aria-describedby="c-default">כאן ניתן למלא תשובה במשפט או שניים.</textarea>
+                    <div class="gov-textarea-footer">
+                        <span id="c-default" class="gov-textarea-count">00/00</span>
+                        <span class="gov-hint">טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hover -->
+            <section>
+                <span class="sketch__state-label">Hover</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="t-hover">כותרת <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <textarea id="t-hover" class="gov-textarea is-hover" aria-required="true"
+                        aria-describedby="c-hover">כאן ניתן למלא תשובה במשפט או שניים.</textarea>
+                    <div class="gov-textarea-footer">
+                        <span id="c-hover" class="gov-textarea-count">00/00</span>
+                        <span class="gov-hint">טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Active -->
+            <section>
+                <span class="sketch__state-label">Active</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="t-active">כותרת <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <textarea id="t-active" class="gov-textarea is-focus" aria-required="true"
+                        aria-describedby="c-active">כאן ניתן למלא תשובה במשפט או שניים.</textarea>
+                    <div class="gov-textarea-footer">
+                        <span id="c-active" class="gov-textarea-count">00/00</span>
+                        <span class="gov-hint">טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Error -->
+            <section>
+                <span class="sketch__state-label">Error</span>
+                <div class="gov-form-group gov-form-group--error">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="t-error">כותרת <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <textarea id="t-error" class="gov-textarea gov-textarea--error" aria-required="true"
+                        aria-invalid="true" aria-describedby="e-error">כאן ניתן למלא תשובה במשפט או שניים.</textarea>
+                    <div class="gov-textarea-footer gov-textarea-footer--error">
+                        <span class="gov-textarea-count">00/00</span>
+                        <span id="e-error" class="sketch__hint-error" role="alert">חובה להזין ערך בשדה</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Disabled -->
+            <section>
+                <span class="sketch__state-label">Disabled</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="t-disabled">כותרת <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <span class="sketch__why">למה זה נחוץ?</span>
+                    </div>
+                    <textarea id="t-disabled" class="gov-textarea" disabled
+                        aria-describedby="c-disabled">כאן ניתן למלא תשובה במשפט או שניים.</textarea>
+                    <div class="gov-textarea-footer gov-textarea-footer--disabled">
+                        <span id="c-disabled" class="gov-textarea-count">00/00</span>
+                        <span class="gov-hint">טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Focused -->
+            <section>
+                <span class="sketch__state-label">Focused</span>
+                <div class="gov-form-group">
+                    <div class="sketch__label-row">
+                        <label class="gov-label" for="t-focused">כותרת <span class="gov-required"
+                                aria-hidden="true">*</span></label>
+                        <a class="sketch__why" href="#">למה זה נחוץ?</a>
+                    </div>
+                    <textarea id="t-focused" class="gov-textarea is-focus" aria-required="true"
+                        aria-describedby="c-focused">כאן ניתן למלא תשובה במשפט או שניים.</textarea>
+                    <div class="gov-textarea-footer">
+                        <span id="c-focused" class="gov-textarea-count">00/00</span>
+                        <span class="gov-hint">טקסט עזר</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- טבלת מיפוי: ערך פיגמה → טוקן ב-styles.css → סטטוס -->
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>רקע שדה</td>
+                    <td>#ffffff</td>
+                    <td>--igds-base-color-background-neutral-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Default</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-border-subtle-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Hover</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-border-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Active / Focused</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-border-active / -focused</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גבול Error</td>
+                    <td>#a72223</td>
+                    <td>--igds-base-color-border-failure</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רקע Disabled</td>
+                    <td>#e0e8ef</td>
+                    <td>--igds-base-color-background-disabled-with-text</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט כותרת / קלט</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט placeholder / מונה</td>
+                    <td>#466186</td>
+                    <td>--igds-base-color-text-subtle-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט Disabled</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>קישור "למה זה נחוץ?"</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-text-link-primary-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>ידית scrollbar</td>
+                    <td>#8091a9</td>
+                    <td>--igds-base-color-background-scroller</td>
+                    <td>✓ נוסף (מרכיב Scroll 3412:7859)</td>
+                </tr>
+                <tr>
+                    <td>radius ידית scrollbar</td>
+                    <td>100px</td>
+                    <td>--igds-ref-border-radius-full</td>
+                    <td>✓ נוסף (מרכיב Scroll 3412:7859)</td>
+                </tr>
+                <tr>
+                    <td>radius שדה</td>
+                    <td>8px</td>
+                    <td>--igds-ref-border-radius-m</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding אנכי / אופקי</td>
+                    <td>12px / 16px</td>
+                    <td>--igds-ref-space-400 / --igds-ref-space-500</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט קלט / מונה</td>
+                    <td>16px / 14px</td>
+                    <td>--igds-ref-font-size-s / --igds-ref-font-size-xs</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>אייקונים (help / info / alert)</td>
+                    <td>SVG assets מהפיגמה</td>
+                    <td>—</td>
+                    <td>⚠ פער: אין טוקן אייקון; הושמטו מהסקיצה</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,7357 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "2366:1460",
+  "name": "Multiple Files Upload-Added File",
+  "key": "a03511820b3a9976ae86b320a98e4350e5ea7261",
+  "defs": {
+   "שם הקובץ שהועלה": {
+    "t": "TEXT",
+    "d": "שם הקובץ.Format"
+   },
+   "Selected file name.format": {
+    "t": "TEXT",
+    "d": "Selected file name.format"
+   },
+   "Show Image": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Hover",
+     "Focused"
+    ],
+    "d": "Default"
+   },
+   "Type": {
+    "t": "VARIANT",
+    "o": [
+     "Failed",
+     "Loading",
+     "Uploaded"
+    ],
+    "d": "Loading"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-2366-1460.json",
+   "sha256": "d6db2450c0f61fb18c92ba80fca60b89ce485c03c1d3db22b71510923f163c90",
+   "format": "v5-rest",
+   "restResponseSha256": "17be8349b3e6f8b3b15b0752f47858791e18bf122a0eb46ed418626fecd0597b",
+   "filter": null,
+   "offset": 0,
+   "captured": 18,
+   "totalMatching": 18
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 18,
+  "byFilter": {
+   "null": {
+    "totalMatching": 18,
+    "captured": 18
+   }
+  },
+  "detail": {
+   "tree": 18,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Border/radius-s": {
+   "figma": "Border/radius-s",
+   "css": "--igds-ref-border-radius-s",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 6,
+    "css": "4px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/brand-default": {
+   "figma": "Colors/Background/brand-default",
+   "css": "--igds-base-color-background-brand-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/failure-with-border": {
+   "figma": "Colors/Background/failure-with-border",
+   "css": "--igds-base-color-background-failure-with-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#fff5f5",
+    "css": "#fff5f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#851414",
+    "css": "#851414",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-hover": {
+   "figma": "Colors/Background/neutral-hover",
+   "css": "--igds-base-color-background-neutral-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#f2f6fd",
+    "css": "#f2f6fd",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1a283c",
+    "css": "#1a283c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/brand-default": {
+   "figma": "Colors/Border/brand-default",
+   "css": "--igds-base-color-border-brand-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#2e87ff",
+    "css": "#2e87ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/failure": {
+   "figma": "Colors/Border/failure",
+   "css": "--igds-base-color-border-failure",
+   "status": "css-token",
+   "light": {
+    "figma": "#a72223",
+    "css": "#a72223",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ff8283",
+    "css": "#ff8283",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/failure": {
+   "figma": "Colors/Text & Icon/failure",
+   "css": "--igds-base-color-text-failure",
+   "status": "css-token",
+   "light": {
+    "figma": "#a72223",
+    "css": "#a72223",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#ffa6a7",
+    "css": "#ffa6a7",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/link-tertiary-default": {
+   "figma": "Colors/Text & Icon/link-tertiary-default",
+   "css": "--igds-base-color-text-link-tertiary-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#d7e8ff",
+    "css": "#d7e8ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/success": {
+   "figma": "Colors/Text & Icon/success",
+   "css": "--igds-base-color-text-success",
+   "status": "css-token",
+   "light": {
+    "figma": "#347314",
+    "css": "#347314",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#c6ffaa",
+    "css": "#c6ffaa",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Stroke/weight-l": {
+   "figma": "Stroke/weight-l",
+   "css": "--igds-ref-border-width-l",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 2,
+    "css": "4px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  },
+  "[remote]Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "57482:71927",
+   "name": "State=Default, Type=Failed, RTL=False",
+   "props": {
+    "State": "Default",
+    "Type": "Failed",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71927",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#a72223",
+      "v": "Colors/Text & Icon/failure"
+     }
+    ],
+    "sw": 1,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38616",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38617",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "alert-circle",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38633",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "alert-circle",
+           "setId": "2366:630",
+           "variant": "Style=Outline",
+           "remote": 1
+          },
+          "mcid": "2366:631",
+          "cp": {
+           "Style": "Outline"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#a72223",
+            "v": "Colors/Text & Icon/failure"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38619",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#a72223",
+            "v": "Colors/Text & Icon/failure"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38620",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38621",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38622",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38623",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38624",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/failure-with-border",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71543",
+   "name": "State=Default, Type=Failed, RTL=True",
+   "props": {
+    "State": "Default",
+    "Type": "Failed",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57482:71543",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#a72223",
+      "v": "Colors/Border/failure"
+     }
+    ],
+    "sw": 1,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57577:38037",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:38038",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:38039",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57577:38040",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38041",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57577:38042",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57577:38043",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57577:38044",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57577:38045",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#a72223",
+              "v": "Colors/Text & Icon/failure"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "alert-circle",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38055",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "alert-circle",
+             "setId": "2366:630",
+             "variant": "Style=Outline",
+             "remote": 1
+            },
+            "mcid": "2366:631",
+            "cp": {
+             "Style": "Outline"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#a72223",
+              "v": "Colors/Text & Icon/failure"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/failure-with-border",
+    "Colors/Border/failure",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71900",
+   "name": "State=Default, Type=Loading, RTL=False",
+   "props": {
+    "State": "Default",
+    "Type": "Loading",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71900",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158410",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57482:71834",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57482:71828",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Loader",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57482:71829",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Loader",
+           "setId": "138:818",
+           "variant": null
+          },
+          "mcid": "138:818",
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57482:71830",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "[remote]Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38184",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57518:22219",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57518:22220",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57518:22221",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57482:71809",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71226",
+   "name": "State=Default, Type=Loading, RTL=True",
+   "props": {
+    "State": "Default",
+    "Type": "Loading",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57482:71226",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "[remote]Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57482:71216",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:35827",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:34569",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57482:71217",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57505:17284",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57505:17285",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57505:17286",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57482:71218",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57482:71219",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "[remote]Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "Loader",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57482:71220",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Loader",
+             "setId": "138:818",
+             "variant": null
+            },
+            "mcid": "138:818",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Background/neutral-default",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71909",
+   "name": "State=Default, Type=Uploaded, RTL=False",
+   "props": {
+    "State": "Default",
+    "Type": "Uploaded",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71909",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38595",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38596",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Success",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38612",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Success",
+           "setId": "2366:622",
+           "variant": "Style=Outline",
+           "remote": 1
+          },
+          "mcid": "2366:623",
+          "cp": {
+           "Style": "Outline"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#347314",
+            "v": "Colors/Text & Icon/success"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38598",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "[remote]Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38599",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38600",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38601",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38602",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38603",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/success",
+    "Space/space-200",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71525",
+   "name": "State=Default, Type=Uploaded, RTL=True",
+   "props": {
+    "State": "Default",
+    "Type": "Uploaded",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57482:71525",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "[remote]Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57577:37924",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:37925",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:37926",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57577:37927",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:37928",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57577:37929",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57577:37930",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57577:37931",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57577:37932",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "[remote]Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "Success",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:37959",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Success",
+             "setId": "2366:622",
+             "variant": "Style=Outline",
+             "remote": 1
+            },
+            "mcid": "2366:623",
+            "cp": {
+             "Style": "Outline"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#347314",
+              "v": "Colors/Text & Icon/success"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/success",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Background/neutral-default",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:72005",
+   "name": "State=Focused, Type=Failed, RTL=False",
+   "props": {
+    "State": "Focused",
+    "Type": "Failed",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:72005",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/brand-default"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "strokeTopWeight": "Stroke/weight-l",
+     "strokeBottomWeight": "Stroke/weight-l",
+     "strokeLeftWeight": "Stroke/weight-l",
+     "strokeRightWeight": "Stroke/weight-l",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38773",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38774",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "alert-circle",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38775",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "alert-circle",
+           "setId": "2366:630",
+           "variant": "Style=Outline",
+           "remote": 1
+          },
+          "mcid": "2366:631",
+          "cp": {
+           "Style": "Outline"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#a72223",
+            "v": "Colors/Text & Icon/failure"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38776",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#a72223",
+            "v": "Colors/Text & Icon/failure"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38777",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38778",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38779",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38780",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38781",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/failure-with-border",
+    "Colors/Border/brand-default",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Stroke/weight-l",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57577:38118",
+   "name": "State=Focused, Type=Failed, RTL=True",
+   "props": {
+    "State": "Focused",
+    "Type": "Failed",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57577:38118",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/brand-default"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "strokeTopWeight": "Stroke/weight-l",
+     "strokeBottomWeight": "Stroke/weight-l",
+     "strokeLeftWeight": "Stroke/weight-l",
+     "strokeRightWeight": "Stroke/weight-l",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57577:38119",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:38120",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:38121",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57577:38122",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38123",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57577:38124",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57577:38125",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57577:38126",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57577:38127",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#a72223",
+              "v": "Colors/Text & Icon/failure"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "alert-circle",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38128",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "alert-circle",
+             "setId": "2366:630",
+             "variant": "Style=Outline",
+             "remote": 1
+            },
+            "mcid": "2366:631",
+            "cp": {
+             "Style": "Outline"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#a72223",
+              "v": "Colors/Text & Icon/failure"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/failure-with-border",
+    "Colors/Border/brand-default",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Stroke/weight-l",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71991",
+   "name": "State=Focused, Type=Loading, RTL=False",
+   "props": {
+    "State": "Focused",
+    "Type": "Loading",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71991",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/brand-default"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "strokeTopWeight": "Stroke/weight-l",
+     "strokeBottomWeight": "Stroke/weight-l",
+     "strokeLeftWeight": "Stroke/weight-l",
+     "strokeRightWeight": "Stroke/weight-l",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38739",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38740",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Loader",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38741",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Loader",
+           "setId": "138:818",
+           "variant": null
+          },
+          "mcid": "138:818",
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38742",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "[remote]Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38743",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38744",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38745",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38746",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38747",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/neutral-default",
+    "Colors/Border/brand-default",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Stroke/weight-l",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57577:38096",
+   "name": "State=Focused, Type=Loading, RTL=True",
+   "props": {
+    "State": "Focused",
+    "Type": "Loading",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57577:38096",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "[remote]Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/brand-default"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "strokeTopWeight": "Stroke/weight-l",
+     "strokeBottomWeight": "Stroke/weight-l",
+     "strokeLeftWeight": "Stroke/weight-l",
+     "strokeRightWeight": "Stroke/weight-l",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57577:38097",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:38098",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:38099",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57577:38100",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38101",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57577:38102",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57577:38103",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57577:38104",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57577:38105",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "[remote]Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "Loader",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38106",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Loader",
+             "setId": "138:818",
+             "variant": null
+            },
+            "mcid": "138:818",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Border/brand-default",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Stroke/weight-l",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Background/neutral-default",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71998",
+   "name": "State=Focused, Type=Uploaded, RTL=False",
+   "props": {
+    "State": "Focused",
+    "Type": "Uploaded",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71998",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Background/brand-default"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "strokeTopWeight": "Stroke/weight-l",
+     "strokeBottomWeight": "Stroke/weight-l",
+     "strokeLeftWeight": "Stroke/weight-l",
+     "strokeRightWeight": "Stroke/weight-l",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38756",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38757",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Success",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38758",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Success",
+           "setId": "2366:622",
+           "variant": "Style=Outline",
+           "remote": 1
+          },
+          "mcid": "2366:623",
+          "cp": {
+           "Style": "Outline"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#347314",
+            "v": "Colors/Text & Icon/success"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38759",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "[remote]Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38760",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38761",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38762",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38763",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38764",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/success",
+    "Space/space-200",
+    "Space/space-500",
+    "Stroke/weight-l",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57577:38107",
+   "name": "State=Focused, Type=Uploaded, RTL=True",
+   "props": {
+    "State": "Focused",
+    "Type": "Uploaded",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57577:38107",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "[remote]Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/brand-default"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "strokeTopWeight": "Stroke/weight-l",
+     "strokeBottomWeight": "Stroke/weight-l",
+     "strokeLeftWeight": "Stroke/weight-l",
+     "strokeRightWeight": "Stroke/weight-l",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57577:38108",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:38109",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:38110",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57577:38111",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38112",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57577:38113",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57577:38114",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57577:38115",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57577:38116",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "[remote]Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "Success",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38117",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "Success",
+             "setId": "2366:622",
+             "variant": "Style=Outline",
+             "remote": 1
+            },
+            "mcid": "2366:623",
+            "cp": {
+             "Style": "Outline"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#347314",
+              "v": "Colors/Text & Icon/success"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Border/brand-default",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/success",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Stroke/weight-l",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Background/neutral-default",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71977",
+   "name": "State=Hover, Type=Failed, RTL=False",
+   "props": {
+    "State": "Hover",
+    "Type": "Failed",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71977",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#a72223",
+      "v": "Colors/Text & Icon/failure"
+     }
+    ],
+    "sw": 1,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38722",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38723",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "alert-circle",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38724",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "alert-circle",
+           "setId": "2366:630",
+           "variant": "Style=Outline",
+           "remote": 1
+          },
+          "mcid": "2366:631",
+          "cp": {
+           "Style": "Outline"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#a72223",
+            "v": "Colors/Text & Icon/failure"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38725",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#a72223",
+            "v": "Colors/Text & Icon/failure"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38726",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38727",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38728",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38729",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38730",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/failure-with-border",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57577:38077",
+   "name": "State=Hover, Type=Failed, RTL=True",
+   "props": {
+    "State": "Hover",
+    "Type": "Failed",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57577:38077",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#fff5f5",
+      "v": "Colors/Background/failure-with-border"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#a72223",
+      "v": "Colors/Border/failure"
+     }
+    ],
+    "sw": 1,
+    "sa": "INSIDE",
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57577:38078",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:38079",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:38080",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57577:38081",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38082",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57577:38083",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57577:38084",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57577:38085",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57577:38086",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#a72223",
+              "v": "Colors/Text & Icon/failure"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "alert-circle",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38087",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "clip": 1,
+            "inst": {
+             "set": "alert-circle",
+             "setId": "2366:630",
+             "variant": "Style=Outline",
+             "remote": 1
+            },
+            "mcid": "2366:631",
+            "cp": {
+             "Style": "Outline"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#a72223",
+              "v": "Colors/Text & Icon/failure"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/failure-with-border",
+    "Colors/Border/failure",
+    "Colors/Text & Icon/failure",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71945",
+   "name": "State=Hover, Type=Loading, RTL=False",
+   "props": {
+    "State": "Hover",
+    "Type": "Loading",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71945",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38654",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38655",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Loader",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38656",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "inst": {
+           "set": "Loader",
+           "setId": "138:818",
+           "variant": null
+          },
+          "mcid": "138:818",
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38657",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "[remote]Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38658",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38659",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38660",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38661",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38662",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71561",
+   "name": "State=Hover, Type=Loading, RTL=True",
+   "props": {
+    "State": "Hover",
+    "Type": "Loading",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57482:71561",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57577:37872",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158412",
+        "t": "FRAME",
+        "x": 4,
+        "y": 4,
+        "w": 276,
+        "h": 48,
+        "nid": "57577:37873",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 12,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "c": [
+         {
+          "n": "Frame 1261158411",
+          "t": "FRAME",
+          "x": 4,
+          "y": 4,
+          "w": 93,
+          "h": 48,
+          "nid": "57577:37874",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 13,
+           "pa": "MIN",
+           "ca": "CENTER",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "c": [
+           {
+            "n": "Button",
+            "t": "INSTANCE",
+            "x": 4,
+            "y": 12,
+            "w": 32,
+            "h": 32,
+            "nid": "57577:37875",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              4,
+              16,
+              4,
+              16
+             ],
+             "g": 0,
+             "pa": "CENTER",
+             "ca": "CENTER",
+             "sh": "FIXED",
+             "sv": "FIXED"
+            },
+            "r": 8,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-200",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-200",
+             "topLeftRadius": "Border/radius-m",
+             "topRightRadius": "Border/radius-m",
+             "bottomLeftRadius": "Border/radius-m",
+             "bottomRightRadius": "Border/radius-m"
+            },
+            "inst": {
+             "set": "Button",
+             "setId": "81:1195",
+             "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+            },
+            "mcid": "9130:18121",
+            "cp": {
+             "Icon Op": "36645:87664",
+             "RTL": "True",
+             "State": "Default",
+             "Type": "Alternative Link Button",
+             "Size": "Small",
+             "Icon Button": "True",
+             "Intent": "Default"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/link-tertiary-default"
+             }
+            ]
+           },
+           {
+            "n": "Group 1261152258",
+            "t": "GROUP",
+            "x": 49,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:37876",
+            "ref": {
+             "visible": "Show Image#57482:73"
+            },
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "v": {
+             "cornerRadius": "Border/radius-s"
+            },
+            "c": [
+             {
+              "n": "Rectangle 1",
+              "t": "RECTANGLE",
+              "x": 49,
+              "y": 4,
+              "w": 48,
+              "h": 48,
+              "nid": "57577:37877",
+              "r": 4,
+              "f": [
+               {
+                "t": "SOLID",
+                "c": "#d9d9d9"
+               }
+              ],
+              "v": {
+               "topLeftRadius": "Border/radius-xs",
+               "topRightRadius": "Border/radius-xs",
+               "bottomLeftRadius": "Border/radius-xs",
+               "bottomRightRadius": "Border/radius-xs"
+              }
+             },
+             {
+              "n": "Image",
+              "t": "INSTANCE",
+              "x": 61,
+              "y": 16,
+              "w": 24,
+              "h": 24,
+              "nid": "57577:37878",
+              "clip": 1,
+              "inst": {
+               "set": "Image",
+               "setId": "45309:19104",
+               "variant": "Fill=off, Tile=Off, Tile size=Off"
+              },
+              "mcid": "45309:19105",
+              "cp": {
+               "Fill": "off",
+               "Tile": "Off",
+               "Tile size": "Off"
+              },
+              "ifill": [
+               {
+                "t": "SOLID",
+                "c": "#0c3058",
+                "v": "Colors/Text & Icon/subtle-primary"
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "File Info",
+          "t": "FRAME",
+          "x": 109,
+          "y": 16,
+          "w": 171,
+          "h": 24,
+          "nid": "57577:37879",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            16
+           ],
+           "g": 8,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-300",
+           "paddingLeft": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": "File Name",
+            "t": "TEXT",
+            "x": 125,
+            "y": 16,
+            "w": 123,
+            "h": 24,
+            "nid": "57577:37880",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "mm": [
+             null,
+             200,
+             null,
+             null
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "[remote]Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/regular",
+             "fontSize": "Typography/font-size/s"
+            },
+            "tx": "שם הקובץ.Format",
+            "font": [
+             "Rubik",
+             "Regular"
+            ],
+            "fsz": 16,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "TOP"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Component/Label/Regular"
+           },
+           {
+            "n": "Loader",
+            "t": "INSTANCE",
+            "x": 256,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:37881",
+            "sz": [
+             "FIXED",
+             "FIXED"
+            ],
+            "inst": {
+             "set": "Loader",
+             "setId": "138:818",
+             "variant": null
+            },
+            "mcid": "138:818",
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71959",
+   "name": "State=Hover, Type=Uploaded, RTL=False",
+   "props": {
+    "State": "Hover",
+    "Type": "Uploaded",
+    "RTL": "False"
+   },
+   "w": 327,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 327,
+    "h": 56,
+    "nid": "57482:71959",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 73,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Frame 1261158411",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 319,
+      "h": 48,
+      "nid": "57577:38688",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Frame 1261158409",
+        "t": "FRAME",
+        "x": 4,
+        "y": 16,
+        "w": 223,
+        "h": 24,
+        "nid": "57577:38689",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Success",
+          "t": "INSTANCE",
+          "x": 4,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57577:38690",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Success",
+           "setId": "2366:622",
+           "variant": "Style=Outline",
+           "remote": 1
+          },
+          "mcid": "2366:623",
+          "cp": {
+           "Style": "Outline"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#347314",
+            "v": "Colors/Text & Icon/success"
+           }
+          ]
+         },
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 36,
+          "y": 16,
+          "w": 191,
+          "h": 24,
+          "nid": "57577:38691",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "[remote]Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "Selected file name.format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         }
+        ]
+       },
+       {
+        "n": "Frame 1261158413",
+        "t": "FRAME",
+        "x": 235,
+        "y": 4,
+        "w": 88,
+        "h": 48,
+        "nid": "57577:38692",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "c": [
+         {
+          "n": "Group 1261152258",
+          "t": "GROUP",
+          "x": 235,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57577:38693",
+          "ref": {
+           "visible": "Show Image#57482:73"
+          },
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "v": {
+           "cornerRadius": "Border/radius-s"
+          },
+          "c": [
+           {
+            "n": "Rectangle 1",
+            "t": "RECTANGLE",
+            "x": 235,
+            "y": 4,
+            "w": 48,
+            "h": 48,
+            "nid": "57577:38694",
+            "r": 4,
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#d9d9d9"
+             }
+            ],
+            "v": {
+             "topLeftRadius": "Border/radius-xs",
+             "topRightRadius": "Border/radius-xs",
+             "bottomLeftRadius": "Border/radius-xs",
+             "bottomRightRadius": "Border/radius-xs"
+            }
+           },
+           {
+            "n": "Image",
+            "t": "INSTANCE",
+            "x": 247,
+            "y": 16,
+            "w": 24,
+            "h": 24,
+            "nid": "57577:38695",
+            "clip": 1,
+            "inst": {
+             "set": "Image",
+             "setId": "45309:19104",
+             "variant": "Fill=off, Tile=Off, Tile size=Off"
+            },
+            "mcid": "45309:19105",
+            "cp": {
+             "Fill": "off",
+             "Tile": "Off",
+             "Tile size": "Off"
+            },
+            "ifill": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ]
+           }
+          ]
+         },
+         {
+          "n": "Button",
+          "t": "INSTANCE",
+          "x": 291,
+          "y": 12,
+          "w": 32,
+          "h": 32,
+          "nid": "57577:38696",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            4,
+            16,
+            4,
+            16
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "r": 8,
+          "v": {
+           "paddingLeft": "Space/space-500",
+           "paddingTop": "Space/space-200",
+           "paddingRight": "Space/space-500",
+           "paddingBottom": "Space/space-200",
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Button",
+           "setId": "81:1195",
+           "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+          },
+          "mcid": "9130:18121",
+          "cp": {
+           "Icon Op": "36645:87664",
+           "RTL": "True",
+           "State": "Default",
+           "Type": "Alternative Link Button",
+           "Size": "Small",
+           "Icon Button": "True",
+           "Intent": "Default"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/link-tertiary-default"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/success",
+    "Space/space-200",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "57482:71630",
+   "name": "State=Hover, Type=Uploaded, RTL=True",
+   "props": {
+    "State": "Hover",
+    "Type": "Uploaded",
+    "RTL": "True"
+   },
+   "w": 288,
+   "h": 56,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 288,
+    "h": 56,
+    "nid": "57482:71630",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      4,
+      8,
+      4,
+      4
+     ],
+     "g": 16,
+     "pa": "SPACE_BETWEEN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-200",
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Icon",
+      "t": "FRAME",
+      "x": 4,
+      "y": 4,
+      "w": 276,
+      "h": 48,
+      "nid": "57482:71631",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 73,
+       "pa": "SPACE_BETWEEN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 4,
+        "y": 12,
+        "w": 32,
+        "h": 32,
+        "nid": "57482:71632",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          4,
+          16,
+          4,
+          16
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-500",
+         "paddingTop": "Space/space-200",
+         "paddingRight": "Space/space-500",
+         "paddingBottom": "Space/space-200",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Alternative Link Button, Size=Small, Icon Button=True, Intent=Default"
+        },
+        "mcid": "9130:18121",
+        "cp": {
+         "Icon Op": "36645:87664",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Alternative Link Button",
+         "Size": "Small",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/link-tertiary-default"
+         }
+        ]
+       },
+       {
+        "n": "Group 1261152258",
+        "t": "GROUP",
+        "x": 48.5,
+        "y": 4,
+        "w": 48,
+        "h": 48,
+        "nid": "57518:22189",
+        "ref": {
+         "visible": "Show Image#57482:73"
+        },
+        "sz": [
+         "FIXED",
+         "FIXED"
+        ],
+        "v": {
+         "cornerRadius": "Border/radius-s"
+        },
+        "c": [
+         {
+          "n": "Rectangle 1",
+          "t": "RECTANGLE",
+          "x": 48.5,
+          "y": 4,
+          "w": 48,
+          "h": 48,
+          "nid": "57518:22190",
+          "r": 4,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#d9d9d9"
+           }
+          ],
+          "v": {
+           "topLeftRadius": "Border/radius-xs",
+           "topRightRadius": "Border/radius-xs",
+           "bottomLeftRadius": "Border/radius-xs",
+           "bottomRightRadius": "Border/radius-xs"
+          }
+         },
+         {
+          "n": "Image",
+          "t": "INSTANCE",
+          "x": 60.5,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57518:22191",
+          "clip": 1,
+          "inst": {
+           "set": "Image",
+           "setId": "45309:19104",
+           "variant": "Fill=off, Tile=Off, Tile size=Off"
+          },
+          "mcid": "45309:19105",
+          "cp": {
+           "Fill": "off",
+           "Tile": "Off",
+           "Tile size": "Off"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "File Info",
+        "t": "FRAME",
+        "x": 109,
+        "y": 16,
+        "w": 171,
+        "h": 24,
+        "nid": "57482:71634",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          16
+         ],
+         "g": 8,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-300",
+         "paddingLeft": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "File Name",
+          "t": "TEXT",
+          "x": 125,
+          "y": 16,
+          "w": 123,
+          "h": 24,
+          "nid": "57482:71635",
+          "sz": [
+           "HUG",
+           "HUG"
+          ],
+          "mm": [
+           null,
+           200,
+           null,
+           null
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "[remote]Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/regular",
+           "fontSize": "Typography/font-size/s"
+          },
+          "tx": "שם הקובץ.Format",
+          "font": [
+           "Rubik",
+           "Regular"
+          ],
+          "fsz": 16,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "RIGHT",
+           "TOP"
+          ],
+          "tar": "WIDTH_AND_HEIGHT",
+          "ts": "Component/Label/Regular"
+         },
+         {
+          "n": "Success",
+          "t": "INSTANCE",
+          "x": 256,
+          "y": 16,
+          "w": 24,
+          "h": 24,
+          "nid": "57482:71636",
+          "sz": [
+           "FIXED",
+           "FIXED"
+          ],
+          "clip": 1,
+          "inst": {
+           "set": "Success",
+           "setId": "2366:622",
+           "variant": "Style=Outline",
+           "remote": 1
+          },
+          "mcid": "2366:623",
+          "cp": {
+           "Style": "Outline"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#347314",
+            "v": "Colors/Text & Icon/success"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-2366-1460.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Border/radius-s",
+    "Border/radius-xs",
+    "Colors/Background/neutral-hover",
+    "Colors/Text & Icon/link-tertiary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Colors/Text & Icon/success",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/s",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

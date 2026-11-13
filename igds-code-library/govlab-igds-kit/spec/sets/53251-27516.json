@@ -1,0 +1,998 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "53251:27516",
+  "name": "Dots / Option 01",
+  "key": "13c03b36a14cd05ea5745a1c8de8b64d1c0a475f",
+  "defs": {
+   "Frame": {
+    "t": "VARIANT",
+    "o": [
+     "Start (01)",
+     "02",
+     "End (03)",
+     "Frame5",
+     "Frame6",
+     "Frame7",
+     "Frame9",
+     "Frame10",
+     "Frame11",
+     "Frame12"
+    ],
+    "d": "Start (01)"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-53251-27516.json",
+   "sha256": "d676c9d8319f04be7817e0c6be95f13d7fb1fb7a9de0ecc1b6feaa2e97bf270c",
+   "format": "v5-rest",
+   "restResponseSha256": "60f935250ad7950b503c004a88a111b14baceb30f305bdbe8c4f1df4fd28eecf",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "[remote]Colors/Background/brand-default": {
+   "figma": "Colors/Background/brand-default",
+   "css": "--igds-base-color-background-brand-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  },
+  "[remote]Colors/Background/neutral-badge": {
+   "figma": "Colors/Background/neutral-badge",
+   "css": "--igds-base-color-background-neutral-badge",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": "#e8f0fc",
+    "css": "#f2f6fd",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1b487a",
+    "css": "#1b487a",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "53251:27521",
+   "name": "Frame=02",
+   "props": {
+    "Frame": "02"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=End (03)"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27521",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Ellipse 1",
+      "t": "ELLIPSE",
+      "x": 0,
+      "y": 0,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27522",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 2",
+      "t": "ELLIPSE",
+      "x": 9,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27523",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 3",
+      "t": "ELLIPSE",
+      "x": 18,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27524",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default",
+    "[remote]Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27525",
+   "name": "Frame=End (03)",
+   "props": {
+    "Frame": "End (03)"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Frame5"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27525",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Ellipse 1",
+      "t": "ELLIPSE",
+      "x": 0,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27526",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 2",
+      "t": "ELLIPSE",
+      "x": 9,
+      "y": 0,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27527",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 3",
+      "t": "ELLIPSE",
+      "x": 18,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27528",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default",
+    "[remote]Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27545",
+   "name": "Frame=Frame10",
+   "props": {
+    "Frame": "Frame10"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Frame11"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27545",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Rectangle 1",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27546",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 2",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 3,
+      "w": 24,
+      "h": 6,
+      "nid": "53251:27547",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 3",
+      "t": "RECTANGLE",
+      "x": 20,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "nid": "53251:27548",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27549",
+   "name": "Frame=Frame11",
+   "props": {
+    "Frame": "Frame11"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Frame12"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27549",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Rectangle 1",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "nid": "53251:27550",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 3",
+      "t": "RECTANGLE",
+      "x": 18,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27551",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 2",
+      "t": "RECTANGLE",
+      "x": 18,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27552",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default",
+    "[remote]Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27553",
+   "name": "Frame=Frame12",
+   "props": {
+    "Frame": "Frame12"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Start (01)"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27553",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Rectangle 1",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "nid": "53251:27554",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 2",
+      "t": "RECTANGLE",
+      "x": 18,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27555",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 3",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 3,
+      "w": 24,
+      "h": 6,
+      "nid": "53251:27556",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27529",
+   "name": "Frame=Frame5",
+   "props": {
+    "Frame": "Frame5"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Frame6"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27529",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Ellipse 1",
+      "t": "ELLIPSE",
+      "x": 0,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27530",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 2",
+      "t": "ELLIPSE",
+      "x": 9,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27531",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 3",
+      "t": "ELLIPSE",
+      "x": 18,
+      "y": 0,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27532",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27533",
+   "name": "Frame=Frame6",
+   "props": {
+    "Frame": "Frame6"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Frame7"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27533",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Ellipse 1",
+      "t": "ELLIPSE",
+      "x": 0,
+      "y": 0,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27534",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 2",
+      "t": "ELLIPSE",
+      "x": 9,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27535",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 3",
+      "t": "ELLIPSE",
+      "x": 18,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27536",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27537",
+   "name": "Frame=Frame7",
+   "props": {
+    "Frame": "Frame7"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Frame9"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27537",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Ellipse 1",
+      "t": "ELLIPSE",
+      "x": 0,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27538",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 2",
+      "t": "ELLIPSE",
+      "x": 9,
+      "y": 0,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27539",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 3",
+      "t": "ELLIPSE",
+      "x": 18,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27540",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27541",
+   "name": "Frame=Frame9",
+   "props": {
+    "Frame": "Frame9"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=Frame10"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27541",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Rectangle 1",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27542",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 2",
+      "t": "RECTANGLE",
+      "x": 0,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27543",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ]
+     },
+     {
+      "n": "Rectangle 3",
+      "t": "RECTANGLE",
+      "x": 20,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "nid": "53251:27544",
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default",
+    "[remote]Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "53251:27517",
+   "name": "Frame=Start (01)",
+   "props": {
+    "Frame": "Start (01)"
+   },
+   "w": 24,
+   "h": 9,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Frame=02"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 24,
+    "h": 9,
+    "nid": "53251:27517",
+    "sz": [
+     "FIXED",
+     "FIXED"
+    ],
+    "clip": 1,
+    "c": [
+     {
+      "n": "Ellipse 1",
+      "t": "ELLIPSE",
+      "x": 0,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27518",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 2",
+      "t": "ELLIPSE",
+      "x": 9,
+      "y": 3,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27519",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#f1f5fb",
+        "v": "[remote]Colors/Background/neutral-badge"
+       }
+      ],
+      "vec": 1
+     },
+     {
+      "n": "Ellipse 3",
+      "t": "ELLIPSE",
+      "x": 18,
+      "y": 0,
+      "w": 6,
+      "h": 6,
+      "nid": "53251:27520",
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "[remote]Colors/Background/brand-default"
+       }
+      ],
+      "vec": 1
+     }
+    ]
+   },
+   "sources": [
+    "rest-53251-27516.json"
+   ],
+   "vars": [
+    "[remote]Colors/Background/brand-default",
+    "[remote]Colors/Background/neutral-badge"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

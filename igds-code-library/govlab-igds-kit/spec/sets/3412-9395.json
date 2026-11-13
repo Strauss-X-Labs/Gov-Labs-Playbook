@@ -1,0 +1,509 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "3412:9395",
+  "name": ".Skeleton animation",
+  "key": "7d0022277f20da33e27bf21c93d3fb099da86787",
+  "defs": {
+   "Animation": {
+    "t": "VARIANT",
+    "o": [
+     "Left",
+     "Default",
+     "Right"
+    ],
+    "d": "Left"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-3412-9395.json",
+   "sha256": "aff4cc9384001ba1545459f9f5f1f82da5d9587b51de064a82503ef8e86f548b",
+   "format": "v5-rest",
+   "restResponseSha256": "4597e03d21b45ce1269a5db693368883f5d64dc997e5717302bc507ffc319252",
+   "filter": null,
+   "offset": 0,
+   "captured": 3,
+   "totalMatching": 3
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 3,
+  "byFilter": {
+   "null": {
+    "totalMatching": 3,
+    "captured": 3
+   }
+  },
+  "detail": {
+   "tree": 3,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Brand/space/space-3xs": {
+   "figma": "Brand/space/space-3xs",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Brand/space/space-zero": {
+   "figma": "Brand/space/space-zero",
+   "css": null,
+   "status": "unknown-variable"
+  },
+  "Colors/Background/disabled-without-text": {
+   "figma": "Colors/Background/disabled-without-text",
+   "css": "--igds-base-color-background-disabled-without-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#ced7e0",
+    "css": "#ced7e0",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#495a73",
+    "css": "#495a73",
+    "equal": true,
+    "how": "exact"
+   }
+  }
+ },
+ "variants": [
+  {
+   "id": "3412:9396",
+   "name": "Animation=Default",
+   "props": {
+    "Animation": "Default"
+   },
+   "w": 146,
+   "h": 32,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Animation=Right"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 146,
+    "h": 32,
+    "nid": "3412:9396",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ced7e0",
+      "v": "Colors/Background/disabled-without-text"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Skeleton",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 146,
+      "h": 32,
+      "nid": "3412:9398",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        10,
+        10,
+        10,
+        10
+       ],
+       "g": 10,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "FILL"
+      },
+      "grow": 1,
+      "r": 4,
+      "f": [
+       {
+        "t": "GRADIENT_LINEAR",
+        "stops": [
+         [
+          "#ffffff",
+          0,
+          0
+         ],
+         [
+          "#ffffff",
+          0.2,
+          0.25
+         ],
+         [
+          "#ffffff",
+          0.3,
+          0.5
+         ],
+         [
+          "#ffffff",
+          0.2,
+          0.75
+         ],
+         [
+          "#ffffff",
+          0,
+          1
+         ]
+        ],
+        "gh": [
+         [
+          0,
+          0.5
+         ],
+         [
+          1,
+          0.5
+         ],
+         [
+          0,
+          1.1166
+         ]
+        ]
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Brand/space/space-3xs",
+       "topRightRadius": "Brand/space/space-3xs",
+       "bottomLeftRadius": "Brand/space/space-3xs",
+       "bottomRightRadius": "Brand/space/space-3xs"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9395.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Brand/space/space-3xs",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:9394",
+   "name": "Animation=Left",
+   "props": {
+    "Animation": "Left"
+   },
+   "w": 146,
+   "h": 32,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Animation=Default"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 146,
+    "h": 32,
+    "nid": "3412:9394",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ced7e0",
+      "v": "Colors/Background/disabled-without-text"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Skeleton",
+      "t": "FRAME",
+      "x": -147,
+      "y": 0,
+      "w": 146,
+      "h": 32,
+      "nid": "3492:111",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "abs": 1,
+      "f": [
+       {
+        "t": "GRADIENT_LINEAR",
+        "stops": [
+         [
+          "#ffffff",
+          0,
+          0
+         ],
+         [
+          "#ffffff",
+          0.2,
+          0.25
+         ],
+         [
+          "#ffffff",
+          0.7,
+          0.53
+         ],
+         [
+          "#ffffff",
+          0.2,
+          0.75
+         ],
+         [
+          "#ffffff",
+          0,
+          1
+         ]
+        ],
+        "gh": [
+         [
+          0,
+          0.5
+         ],
+         [
+          1,
+          0.5
+         ],
+         [
+          0,
+          1.1166
+         ]
+        ]
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "itemSpacing": "Brand/space/space-zero",
+       "paddingLeft": "Brand/space/space-zero",
+       "paddingTop": "Brand/space/space-zero",
+       "paddingRight": "Brand/space/space-zero",
+       "paddingBottom": "Brand/space/space-zero"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9395.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Brand/space/space-zero",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:9399",
+   "name": "Animation=Right",
+   "props": {
+    "Animation": "Right"
+   },
+   "w": 146,
+   "h": 32,
+   "reactions": [
+    [
+     "AFTER_TIMEOUT",
+     "NODE",
+     "Animation=Left"
+    ]
+   ],
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 146,
+    "h": 32,
+    "nid": "3412:9399",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "FIXED"
+    },
+    "r": 4,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ced7e0",
+      "v": "Colors/Background/disabled-without-text"
+     }
+    ],
+    "clip": 1,
+    "v": {
+     "topLeftRadius": "Border/radius-xs",
+     "topRightRadius": "Border/radius-xs",
+     "bottomLeftRadius": "Border/radius-xs",
+     "bottomRightRadius": "Border/radius-xs"
+    },
+    "c": [
+     {
+      "n": "Skeleton",
+      "t": "FRAME",
+      "x": 145,
+      "y": 0,
+      "w": 146,
+      "h": 32,
+      "nid": "3412:9401",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        10,
+        10,
+        10,
+        10
+       ],
+       "g": 10,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "abs": 1,
+      "f": [
+       {
+        "t": "GRADIENT_LINEAR",
+        "stops": [
+         [
+          "#ffffff",
+          0,
+          0
+         ],
+         [
+          "#ffffff",
+          0.2,
+          0.25
+         ],
+         [
+          "#ffffff",
+          0.7,
+          0.53
+         ],
+         [
+          "#ffffff",
+          0.2,
+          0.75
+         ],
+         [
+          "#ffffff",
+          0,
+          1
+         ]
+        ],
+        "gh": [
+         [
+          0,
+          0.5
+         ],
+         [
+          1,
+          0.5
+         ],
+         [
+          0,
+          1.1166
+         ]
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9395.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

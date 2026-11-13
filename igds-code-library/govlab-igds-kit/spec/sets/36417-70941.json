@@ -1,0 +1,7333 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "36417:70941",
+  "name": "carousel",
+  "key": "abb2026a8d6ce4cc7ecea82f3efa4d68e70d2626",
+  "defs": {
+   "Arrows": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "TRUE",
+     "False"
+    ],
+    "d": "TRUE"
+   },
+   "Property": {
+    "t": "VARIANT",
+    "o": [
+     "cards",
+     "small cards",
+     "Mobile",
+     "Cards with Arrow",
+     "Small cards with arrow"
+    ],
+    "d": "Cards with Arrow"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-36417-70941.json",
+   "sha256": "8eb8b27ea92152bc84227fe53932836a2ef129ba8c8a252c236584b29f1adcbd",
+   "format": "v5-rest",
+   "restResponseSha256": "b4e813219df8196baba6a563f5465b8e64ebd08f629ba149f66ce5bb84f30350",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Button/text-hover-pressed": {
+   "figma": "Colors/Button/text-hover-pressed",
+   "css": "--igds-base-color-button-text-hover-pressed",
+   "status": "css-token",
+   "light": {
+    "figma": "#0045a3",
+    "css": "#0045a3",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/link-primary-default": {
+   "figma": "Colors/Text & Icon/link-primary-default",
+   "css": "--igds-base-color-text-link-primary-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-600": {
+   "figma": "Space/space-600",
+   "css": "--igds-ref-space-600",
+   "status": "css-token",
+   "light": {
+    "figma": 24,
+    "css": "24px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-700": {
+   "figma": "Space/space-700",
+   "css": "--igds-ref-space-700",
+   "status": "css-token",
+   "light": {
+    "figma": 32,
+    "css": "32px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/2xl": {
+   "figma": "Typography/font-size/2xl",
+   "css": "--igds-ref-font-size-2xl",
+   "status": "css-token",
+   "light": {
+    "figma": 32,
+    "css": "32px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/l": {
+   "figma": "Typography/font-size/l",
+   "css": "--igds-ref-font-size-l",
+   "status": "css-token",
+   "light": {
+    "figma": 20,
+    "css": "20px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/bold": {
+   "figma": "Typography/font-weight/bold",
+   "css": "--igds-ref-font-weight-bold",
+   "status": "css-token",
+   "light": {
+    "figma": 700,
+    "css": "700",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/medium": {
+   "figma": "Typography/font-weight/medium",
+   "css": "--igds-ref-font-weight-medium",
+   "status": "css-token",
+   "light": {
+    "figma": 500,
+    "css": "500",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Colors/Text & Icon/subtle-secondary": {
+   "figma": "Colors/Text & Icon/subtle-secondary",
+   "css": "--igds-base-color-text-subtle-secondary",
+   "status": "css-token",
+   "light": {
+    "figma": "#466186",
+    "css": "#466186",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#99c2fb",
+    "css": "#99c2fb",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  },
+  "[remote]Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  },
+  "[remote]Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "36417:71981",
+   "name": "RTL=False, Property=Cards with Arrow",
+   "props": {
+    "RTL": "False",
+    "Property": "Cards with Arrow"
+   },
+   "w": 1387,
+   "h": 673,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1387,
+    "h": 673,
+    "nid": "36417:71981",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "text and support",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1387,
+      "h": 77,
+      "nid": "36417:72374",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Text",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1387,
+        "h": 77,
+        "nid": "36417:72375",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          50,
+          0,
+          50
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Title",
+          "t": "TEXT",
+          "x": 50,
+          "y": 0,
+          "w": 1287,
+          "h": 48,
+          "nid": "36417:72376",
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/bold",
+           "fontSize": "Typography/font-size/2xl"
+          },
+          "tx": "Title",
+          "font": [
+           "Rubik",
+           "Bold"
+          ],
+          "fsz": 32,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "CENTER"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Title/Large/Bold"
+         },
+         {
+          "n": "Description",
+          "t": "TEXT",
+          "x": 50,
+          "y": 52,
+          "w": 1287,
+          "h": 25,
+          "nid": "36417:72377",
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/medium",
+           "fontSize": "Typography/font-size/l"
+          },
+          "tx": "Subtitle or description",
+          "font": [
+           "Rubik",
+           "Medium"
+          ],
+          "fsz": 20,
+          "lh": [
+           125,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "CENTER"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Title/Subtitle/Large"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Card Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 101,
+      "w": 1387,
+      "h": 572,
+      "nid": "36417:71987",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 24,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-600"
+      },
+      "c": [
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 101,
+        "w": 1387,
+        "h": 516,
+        "nid": "36417:71988",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 341,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:71989",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Next"
+          },
+          "mcid": "6237:38242",
+          "cp": {
+           "State": "Default",
+           "Direction": "Next"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 52,
+          "y": 101,
+          "w": 416,
+          "h": 516,
+          "nid": "36417:71990",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16574",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Text",
+           "An additional explanation, intended to provide an expansion of the card's topic or to provide a glimpse into the text or article the card refers to. The text must be up to 120 characters long.",
+           "Label",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 484,
+          "y": 101,
+          "w": 416,
+          "h": 516,
+          "nid": "36417:71991",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16574",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Text",
+           "An additional explanation, intended to provide an expansion of the card's topic or to provide a glimpse into the text or article the card refers to. The text must be up to 120 characters long.",
+           "Label",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 916,
+          "y": 101,
+          "w": 416,
+          "h": 516,
+          "nid": "36417:71992",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16574",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Text",
+           "An additional explanation, intended to provide an expansion of the card's topic or to provide a glimpse into the text or article the card refers to. The text must be up to 120 characters long.",
+           "Label",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 1348,
+          "y": 341,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:71993",
+          "ref": {
+           "visible": "Arrows#36410:13"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Back"
+          },
+          "mcid": "6237:38248",
+          "cp": {
+           "State": "Default",
+           "Direction": "Back"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Pagination",
+        "t": "INSTANCE",
+        "x": 634.5,
+        "y": 641,
+        "w": 118,
+        "h": 32,
+        "nid": "36417:71994",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-300"
+        },
+        "inst": {
+         "set": "Unnumbered Pagination - carousel",
+         "setId": "35413:17121",
+         "variant": null
+        },
+        "mcid": "35413:17121",
+        "cp": {
+         "Arrows": false
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         },
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Button/text-hover-pressed"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Colors/Text & Icon/subtle-secondary",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:72012",
+   "name": "RTL=False, Property=Mobile",
+   "props": {
+    "RTL": "False",
+    "Property": "Mobile"
+   },
+   "w": 360,
+   "h": 533,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 533,
+    "nid": "36417:72012",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 32,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "clip": 1,
+    "v": {
+     "itemSpacing": "Space/space-700"
+    },
+    "c": [
+     {
+      "n": "Card Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 360,
+      "h": 469,
+      "nid": "36417:72013",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 32,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-700"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 77,
+        "nid": "36417:72014",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          8,
+          0,
+          8
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500",
+         "paddingLeft": "Space/space-300",
+         "paddingRight": "Space/space-300"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 8,
+          "y": 0,
+          "w": 344,
+          "h": 77,
+          "nid": "36417:72015",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MIN",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 8,
+            "y": 0,
+            "w": 73,
+            "h": 48,
+            "nid": "36417:72016",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 8,
+            "y": 52,
+            "w": 216,
+            "h": 25,
+            "nid": "36417:72017",
+            "sz": [
+             "HUG",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "Subtitle or description",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "WIDTH_AND_HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 109,
+        "w": 360,
+        "h": 360,
+        "nid": "36417:72018",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": -136,
+          "y": 109,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72019",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 80,
+          "y": 109,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72020",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 296,
+          "y": 109,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72021",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Pagination",
+      "t": "INSTANCE",
+      "x": 121,
+      "y": 501,
+      "w": 118,
+      "h": 32,
+      "nid": "36417:72022",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-300"
+      },
+      "inst": {
+       "set": "Unnumbered Pagination - carousel",
+       "setId": "35413:17121",
+       "variant": null
+      },
+      "mcid": "35413:17121",
+      "cp": {
+       "Arrows": false
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Button/text-hover-pressed"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-500",
+    "Space/space-700",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:71995",
+   "name": "RTL=False, Property=Small cards with arrow",
+   "props": {
+    "RTL": "False",
+    "Property": "Small cards with arrow"
+   },
+   "w": 1387,
+   "h": 517,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1387,
+    "h": 517,
+    "nid": "36417:71995",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "text and support",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1387,
+      "h": 77,
+      "nid": "36417:72395",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        50,
+        0,
+        50
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Text",
+        "t": "FRAME",
+        "x": 50,
+        "y": 0,
+        "w": 1287,
+        "h": 77,
+        "nid": "36417:72396",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Title",
+          "t": "TEXT",
+          "x": 50,
+          "y": 0,
+          "w": 1287,
+          "h": 48,
+          "nid": "36417:72397",
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/bold",
+           "fontSize": "Typography/font-size/2xl"
+          },
+          "tx": "Title",
+          "font": [
+           "Rubik",
+           "Bold"
+          ],
+          "fsz": 32,
+          "lh": [
+           150,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "CENTER"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Title/Large/Bold"
+         },
+         {
+          "n": "Description",
+          "t": "TEXT",
+          "x": 50,
+          "y": 52,
+          "w": 1287,
+          "h": 25,
+          "nid": "36417:72398",
+          "sz": [
+           "FILL",
+           "HUG"
+          ],
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ],
+          "v": {
+           "fontWeight": "Typography/font-weight/medium",
+           "fontSize": "Typography/font-size/l"
+          },
+          "tx": "Subtitle or description",
+          "font": [
+           "Rubik",
+           "Medium"
+          ],
+          "fsz": 20,
+          "lh": [
+           125,
+           "PERCENT"
+          ],
+          "ls": [
+           0,
+           "PIXELS"
+          ],
+          "ta": [
+           "LEFT",
+           "CENTER"
+          ],
+          "tar": "HEIGHT",
+          "ts": "Title/Subtitle/Large"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Card Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 101,
+      "w": 1387,
+      "h": 416,
+      "nid": "36417:72001",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 24,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-600"
+      },
+      "c": [
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 101,
+        "w": 1387,
+        "h": 360,
+        "nid": "36417:72002",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 263,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:72003",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Next"
+          },
+          "mcid": "6237:38242",
+          "cp": {
+           "State": "Default",
+           "Direction": "Next"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 52,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72004",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 268,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72005",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 484,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72006",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 700,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72007",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 916,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72008",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 1132,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:72009",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 1348,
+          "y": 263,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:72010",
+          "ref": {
+           "visible": "Arrows#36410:13"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Back"
+          },
+          "mcid": "6237:38248",
+          "cp": {
+           "State": "Default",
+           "Direction": "Back"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Pagination",
+        "t": "INSTANCE",
+        "x": 634.5,
+        "y": 485,
+        "w": 118,
+        "h": 32,
+        "nid": "36417:72011",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-300"
+        },
+        "inst": {
+         "set": "Unnumbered Pagination - carousel",
+         "setId": "35413:17121",
+         "variant": null
+        },
+        "mcid": "35413:17121",
+        "cp": {
+         "Arrows": false
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         },
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Button/text-hover-pressed"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:71956",
+   "name": "RTL=False, Property=cards",
+   "props": {
+    "RTL": "False",
+    "Property": "cards"
+   },
+   "w": 1280,
+   "h": 681,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1280,
+    "h": 681,
+    "nid": "36417:71956",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "Header",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 625,
+      "nid": "36417:71957",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 32,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-700"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 77,
+        "nid": "36417:71958",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 77,
+          "nid": "36417:71959",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 48,
+            "nid": "36417:71960",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 0,
+            "y": 52,
+            "w": 1280,
+            "h": 25,
+            "nid": "36417:71961",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "Subtitle or description",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 109,
+        "w": 1280,
+        "h": 516,
+        "nid": "36417:71962",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 109,
+          "w": 416,
+          "h": 516,
+          "nid": "36417:71963",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16574",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Text",
+           "An additional explanation, intended to provide an expansion of the card's topic or to provide a glimpse into the text or article the card refers to. The text must be up to 120 characters long.",
+           "Label",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 432,
+          "y": 109,
+          "w": 416,
+          "h": 516,
+          "nid": "36417:71964",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16574",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Text",
+           "An additional explanation, intended to provide an expansion of the card's topic or to provide a glimpse into the text or article the card refers to. The text must be up to 120 characters long.",
+           "Label",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 864,
+          "y": 109,
+          "w": 416,
+          "h": 516,
+          "nid": "36417:71965",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16574",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Text",
+           "An additional explanation, intended to provide an expansion of the card's topic or to provide a glimpse into the text or article the card refers to. The text must be up to 120 characters long.",
+           "Label",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Pagination",
+      "t": "INSTANCE",
+      "x": 541,
+      "y": 649,
+      "w": 198,
+      "h": 32,
+      "nid": "36417:71966",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-300"
+      },
+      "inst": {
+       "set": "Unnumbered Pagination - carousel",
+       "setId": "35413:17121",
+       "variant": null
+      },
+      "mcid": "35413:17121",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Button/text-hover-pressed"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Space/space-700",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Colors/Text & Icon/subtle-secondary",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:71967",
+   "name": "RTL=False, Property=small cards",
+   "props": {
+    "RTL": "False",
+    "Property": "small cards"
+   },
+   "w": 1280,
+   "h": 517,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1280,
+    "h": 517,
+    "nid": "36417:71967",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "Header",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 461,
+      "nid": "36417:71968",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 24,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-600"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 77,
+        "nid": "36417:72379",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 77,
+          "nid": "36417:72380",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 48,
+            "nid": "36417:72381",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "Title",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 0,
+            "y": 52,
+            "w": 1280,
+            "h": 25,
+            "nid": "36417:72382",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "Subtitle or description",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "LEFT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 101,
+        "w": 1280,
+        "h": 360,
+        "nid": "36417:71973",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:71974",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 216,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:71975",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 432,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:71976",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 648,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:71977",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 864,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:71978",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 1080,
+          "y": 101,
+          "w": 200,
+          "h": 360,
+          "nid": "36417:71979",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=False, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "36215:16622",
+          "cp": {
+           "RTL": "False",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "Title",
+           "Subtitle",
+           "Label",
+           "Text"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Pagination",
+      "t": "INSTANCE",
+      "x": 541,
+      "y": 485,
+      "w": 198,
+      "h": 32,
+      "nid": "36417:71980",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-300"
+      },
+      "inst": {
+       "set": "Unnumbered Pagination - carousel",
+       "setId": "35413:17121",
+       "variant": null
+      },
+      "mcid": "35413:17121",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Button/text-hover-pressed"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:71352",
+   "name": "RTL=TRUE, Property=Cards with Arrow",
+   "props": {
+    "RTL": "TRUE",
+    "Property": "Cards with Arrow"
+   },
+   "w": 1387,
+   "h": 657,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1387,
+    "h": 657,
+    "nid": "36417:71352",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "Header",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1387,
+      "h": 77,
+      "nid": "36417:71353",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        50,
+        0,
+        50
+       ],
+       "g": 32,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-700"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 780,
+        "y": 0,
+        "w": 557,
+        "h": 77,
+        "nid": "36417:71354",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 780,
+          "y": 0,
+          "w": 557,
+          "h": 77,
+          "nid": "36417:71355",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 780,
+            "y": 0,
+            "w": 557,
+            "h": 48,
+            "nid": "36417:71356",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "כותרת",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 780,
+            "y": 52,
+            "w": 557,
+            "h": 25,
+            "nid": "36417:71357",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "כותרת משנה או תיאור",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Card Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 101,
+      "w": 1387,
+      "h": 556,
+      "nid": "36417:71358",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 24,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-600"
+      },
+      "c": [
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 101,
+        "w": 1387,
+        "h": 500,
+        "nid": "36417:71359",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 333,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:71360",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Next"
+          },
+          "mcid": "6237:38242",
+          "cp": {
+           "State": "Default",
+           "Direction": "Next"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 52,
+          "y": 101,
+          "w": 416,
+          "h": 500,
+          "nid": "36417:71447",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:936",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "הסבר נוסף, הנועד לספק הרחבה על נושא הכרטיסיה או לספק הצצה לתוך הטקסט או הכתבה שהכרטיס מפנה אליו.\nעל הטקסט להיות באורך של עד 120 תווים. ",
+           "תווית",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 484,
+          "y": 101,
+          "w": 416,
+          "h": 500,
+          "nid": "36417:71465",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:936",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "הסבר נוסף, הנועד לספק הרחבה על נושא הכרטיסיה או לספק הצצה לתוך הטקסט או הכתבה שהכרטיס מפנה אליו.\nעל הטקסט להיות באורך של עד 120 תווים. ",
+           "תווית",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 916,
+          "y": 101,
+          "w": 416,
+          "h": 500,
+          "nid": "36417:71483",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:936",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "הסבר נוסף, הנועד לספק הרחבה על נושא הכרטיסיה או לספק הצצה לתוך הטקסט או הכתבה שהכרטיס מפנה אליו.\nעל הטקסט להיות באורך של עד 120 תווים. ",
+           "תווית",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 1348,
+          "y": 333,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:71367",
+          "ref": {
+           "visible": "Arrows#36410:13"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Back"
+          },
+          "mcid": "6237:38248",
+          "cp": {
+           "State": "Default",
+           "Direction": "Back"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Pagination",
+        "t": "INSTANCE",
+        "x": 634.5,
+        "y": 625,
+        "w": 118,
+        "h": 32,
+        "nid": "36417:71368",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-300"
+        },
+        "inst": {
+         "set": "Unnumbered Pagination - carousel",
+         "setId": "35413:17121",
+         "variant": null
+        },
+        "mcid": "35413:17121",
+        "cp": {
+         "Arrows": false
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         },
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Button/text-hover-pressed"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Space/space-700",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Colors/Text & Icon/subtle-secondary",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:70998",
+   "name": "RTL=TRUE, Property=Mobile",
+   "props": {
+    "RTL": "TRUE",
+    "Property": "Mobile"
+   },
+   "w": 360,
+   "h": 529,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 360,
+    "h": 529,
+    "nid": "36417:70998",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 32,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "clip": 1,
+    "v": {
+     "itemSpacing": "Space/space-700"
+    },
+    "c": [
+     {
+      "n": "Card Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 360,
+      "h": 465,
+      "nid": "36417:70999",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 32,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-700"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 360,
+        "h": 77,
+        "nid": "36417:71000",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          150,
+          0,
+          150
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 150,
+          "y": 0,
+          "w": 182,
+          "h": 77,
+          "nid": "36417:71001",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "HUG",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 150,
+            "y": 0,
+            "w": 182,
+            "h": 48,
+            "nid": "36417:71002",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "כותרת",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 150,
+            "y": 52,
+            "w": 182,
+            "h": 25,
+            "nid": "36417:71003",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "כותרת משנה או תיאור",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 109,
+        "w": 360,
+        "h": 356,
+        "nid": "36417:71004",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": -136,
+          "y": 109,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:71005",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 80,
+          "y": 109,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:71006",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 296,
+          "y": 109,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:71007",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Pagination",
+      "t": "INSTANCE",
+      "x": 121,
+      "y": 497,
+      "w": 118,
+      "h": 32,
+      "nid": "36417:71008",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-300"
+      },
+      "inst": {
+       "set": "Unnumbered Pagination - carousel",
+       "setId": "35413:17121",
+       "variant": null
+      },
+      "mcid": "35413:17121",
+      "cp": {
+       "Arrows": false
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Button/text-hover-pressed"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-700",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:70981",
+   "name": "RTL=TRUE, Property=Small cards with arrow",
+   "props": {
+    "RTL": "TRUE",
+    "Property": "Small cards with arrow"
+   },
+   "w": 1387,
+   "h": 513,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1387,
+    "h": 513,
+    "nid": "36417:70981",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "Header",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1387,
+      "h": 77,
+      "nid": "36417:70982",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        50,
+        0,
+        50
+       ],
+       "g": 32,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-700"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 780,
+        "y": 0,
+        "w": 557,
+        "h": 77,
+        "nid": "36417:70983",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 780,
+          "y": 0,
+          "w": 557,
+          "h": 77,
+          "nid": "36417:70984",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 780,
+            "y": 0,
+            "w": 557,
+            "h": 48,
+            "nid": "36417:70985",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "כותרת",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 780,
+            "y": 52,
+            "w": 557,
+            "h": 25,
+            "nid": "36417:70986",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "כותרת משנה או תיאור",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Card Container",
+      "t": "FRAME",
+      "x": 0,
+      "y": 101,
+      "w": 1387,
+      "h": 412,
+      "nid": "36417:70987",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 24,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-600"
+      },
+      "c": [
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 101,
+        "w": 1387,
+        "h": 356,
+        "nid": "36417:70988",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 261,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:70989",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Next"
+          },
+          "mcid": "6237:38242",
+          "cp": {
+           "State": "Default",
+           "Direction": "Next"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 52,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70990",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 268,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70991",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 484,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70992",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 700,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70993",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 916,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70994",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 1132,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70995",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": ".arrows carousel",
+          "t": "INSTANCE",
+          "x": 1348,
+          "y": 261,
+          "w": 36,
+          "h": 36,
+          "nid": "36417:70996",
+          "ref": {
+           "visible": "Arrows#36410:13"
+          },
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 10,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "FIXED"
+          },
+          "inst": {
+           "set": ".arrows carousel",
+           "setId": "6237:38241",
+           "variant": "State=Default, Direction=Back"
+          },
+          "mcid": "6237:38248",
+          "cp": {
+           "State": "Default",
+           "Direction": "Back"
+          },
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0068f5",
+            "v": "Colors/Text & Icon/link-primary-default"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Pagination",
+        "t": "INSTANCE",
+        "x": 634.5,
+        "y": 481,
+        "w": 118,
+        "h": 32,
+        "nid": "36417:70997",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 8,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-300"
+        },
+        "inst": {
+         "set": "Unnumbered Pagination - carousel",
+         "setId": "35413:17121",
+         "variant": null
+        },
+        "mcid": "35413:17121",
+        "cp": {
+         "Arrows": false
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         },
+         {
+          "t": "SOLID",
+          "c": "#0045a3",
+          "v": "Colors/Button/text-hover-pressed"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Space/space-700",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:70942",
+   "name": "RTL=TRUE, Property=cards",
+   "props": {
+    "RTL": "TRUE",
+    "Property": "cards"
+   },
+   "w": 1280,
+   "h": 665,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1280,
+    "h": 665,
+    "nid": "36417:70942",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "Header",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 609,
+      "nid": "36417:70943",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 32,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-700"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 77,
+        "nid": "36417:70944",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 77,
+          "nid": "36417:70945",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 48,
+            "nid": "36417:70946",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "כותרת",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 0,
+            "y": 52,
+            "w": 1280,
+            "h": 25,
+            "nid": "36417:70947",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "כותרת משנה או תיאור",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 109,
+        "w": 1280,
+        "h": 500,
+        "nid": "36417:70948",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 109,
+          "w": 416,
+          "h": 500,
+          "nid": "36417:70949",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:936",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "הסבר נוסף, הנועד לספק הרחבה על נושא הכרטיסיה או לספק הצצה לתוך הטקסט או הכתבה שהכרטיס מפנה אליו.\nעל הטקסט להיות באורך של עד 120 תווים. ",
+           "תווית",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 432,
+          "y": 109,
+          "w": 416,
+          "h": 500,
+          "nid": "36417:70950",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:936",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "הסבר נוסף, הנועד לספק הרחבה על נושא הכרטיסיה או לספק הצצה לתוך הטקסט או הכתבה שהכרטיס מפנה אליו.\nעל הטקסט להיות באורך של עד 120 תווים. ",
+           "תווית",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 864,
+          "y": 109,
+          "w": 416,
+          "h": 500,
+          "nid": "36417:70951",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           288,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Large, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:936",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Large",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "הסבר נוסף, הנועד לספק הרחבה על נושא הכרטיסיה או לספק הצצה לתוך הטקסט או הכתבה שהכרטיס מפנה אליו.\nעל הטקסט להיות באורך של עד 120 תווים. ",
+           "תווית",
+           "Slot Placeholder"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#5878a4",
+            "v": "[remote]Colors/Text & Icon/subtle-secondary"
+           },
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Pagination",
+      "t": "INSTANCE",
+      "x": 541,
+      "y": 633,
+      "w": 198,
+      "h": 32,
+      "nid": "36417:70952",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-300"
+      },
+      "inst": {
+       "set": "Unnumbered Pagination - carousel",
+       "setId": "35413:17121",
+       "variant": null
+      },
+      "mcid": "35413:17121",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Button/text-hover-pressed"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Space/space-700",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Colors/Text & Icon/subtle-secondary",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36417:70953",
+   "name": "RTL=TRUE, Property=small cards",
+   "props": {
+    "RTL": "TRUE",
+    "Property": "small cards"
+   },
+   "w": 1280,
+   "h": 513,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1280,
+    "h": 513,
+    "nid": "36417:70953",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 24,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-600"
+    },
+    "c": [
+     {
+      "n": "Header",
+      "t": "FRAME",
+      "x": 0,
+      "y": 0,
+      "w": 1280,
+      "h": 457,
+      "nid": "36417:70954",
+      "al": {
+       "m": "VERTICAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 24,
+       "pa": "MIN",
+       "ca": "MAX",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-600"
+      },
+      "c": [
+       {
+        "n": "text and support",
+        "t": "FRAME",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 77,
+        "nid": "36417:70955",
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "MAX",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "[remote]Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Text",
+          "t": "FRAME",
+          "x": 0,
+          "y": 0,
+          "w": 1280,
+          "h": 77,
+          "nid": "36417:70956",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 4,
+           "pa": "MIN",
+           "ca": "MAX",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "v": {
+           "itemSpacing": "Space/space-200"
+          },
+          "c": [
+           {
+            "n": "Title",
+            "t": "TEXT",
+            "x": 0,
+            "y": 0,
+            "w": 1280,
+            "h": 48,
+            "nid": "36417:70957",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/bold",
+             "fontSize": "Typography/font-size/2xl"
+            },
+            "tx": "כותרת",
+            "font": [
+             "Rubik",
+             "Bold"
+            ],
+            "fsz": 32,
+            "lh": [
+             150,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Large/Bold"
+           },
+           {
+            "n": "Description",
+            "t": "TEXT",
+            "x": 0,
+            "y": 52,
+            "w": 1280,
+            "h": 25,
+            "nid": "36417:70958",
+            "sz": [
+             "FILL",
+             "HUG"
+            ],
+            "f": [
+             {
+              "t": "SOLID",
+              "c": "#0c3058",
+              "v": "Colors/Text & Icon/subtle-primary"
+             }
+            ],
+            "v": {
+             "fontWeight": "Typography/font-weight/medium",
+             "fontSize": "Typography/font-size/l"
+            },
+            "tx": "כותרת משנה או תיאור",
+            "font": [
+             "Rubik",
+             "Medium"
+            ],
+            "fsz": 20,
+            "lh": [
+             125,
+             "PERCENT"
+            ],
+            "ls": [
+             0,
+             "PIXELS"
+            ],
+            "ta": [
+             "RIGHT",
+             "CENTER"
+            ],
+            "tar": "HEIGHT",
+            "ts": "Title/Subtitle/Large"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Card Row",
+        "t": "FRAME",
+        "x": 0,
+        "y": 101,
+        "w": 1280,
+        "h": 356,
+        "nid": "36417:70959",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 16,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "v": {
+         "itemSpacing": "Space/space-500"
+        },
+        "c": [
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 0,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70960",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 216,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70961",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 432,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70962",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 648,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70963",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 864,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70964",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         },
+         {
+          "n": "Card",
+          "t": "INSTANCE",
+          "x": 1080,
+          "y": 101,
+          "w": 200,
+          "h": 356,
+          "nid": "36417:70965",
+          "al": {
+           "m": "VERTICAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 0,
+           "pa": "CENTER",
+           "ca": "CENTER",
+           "sh": "FIXED",
+           "sv": "HUG"
+          },
+          "mm": [
+           136,
+           null,
+           null,
+           null
+          ],
+          "r": 8,
+          "f": [
+           {
+            "t": "SOLID",
+            "c": "#ffffff",
+            "v": "Colors/Background/neutral-default"
+           }
+          ],
+          "fx": [
+           {
+            "t": "DROP_SHADOW",
+            "rad": 8,
+            "c": "#064dad",
+            "a": 0.1,
+            "o": [
+             0,
+             2
+            ]
+           }
+          ],
+          "es": "Shadow-light/Level1",
+          "clip": 1,
+          "v": {
+           "topLeftRadius": "Border/radius-m",
+           "topRightRadius": "Border/radius-m",
+           "bottomLeftRadius": "Border/radius-m",
+           "bottomRightRadius": "Border/radius-m"
+          },
+          "inst": {
+           "set": "Card",
+           "setId": "1140:935",
+           "variant": "RTL=True, State=Default, Size=Small, Direction=Vertical, Type=Clickable"
+          },
+          "mcid": "1140:1075",
+          "cp": {
+           "RTL": "True",
+           "State": "Default",
+           "Size": "Small",
+           "Direction": "Vertical",
+           "Type": "Clickable"
+          },
+          "itx": [
+           "כותרת",
+           "תיאור",
+           "כותרת משנית",
+           "תווית"
+          ],
+          "ifill": [
+           {
+            "t": "SOLID",
+            "c": "#0c3058",
+            "v": "Colors/Text & Icon/subtle-primary"
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Pagination",
+      "t": "INSTANCE",
+      "x": 541,
+      "y": 481,
+      "w": 198,
+      "h": 32,
+      "nid": "36417:70966",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "[remote]Space/space-300"
+      },
+      "inst": {
+       "set": "Unnumbered Pagination - carousel",
+       "setId": "35413:17121",
+       "variant": null
+      },
+      "mcid": "35413:17121",
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       },
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Button/text-hover-pressed"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36417-70941.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Button/text-hover-pressed",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-500",
+    "Space/space-600",
+    "Typography/font-size/2xl",
+    "Typography/font-size/l",
+    "Typography/font-weight/bold",
+    "Typography/font-weight/medium",
+    "[remote]Space/space-300",
+    "[remote]Space/space-500"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

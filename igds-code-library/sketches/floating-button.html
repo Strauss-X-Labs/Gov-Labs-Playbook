@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Floating Button (כל המצבים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Floating Button (FAB) — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): Floating Button node <code>1798:2270</code>,
+            דרך Figma MCP, ומבוסס על <code>floating-button.md</code>.
+            מבוסס על <code>.gov-fab</code> והטוקנים ב-<code>styles.css</code>.
+            כפתור פעולה צף. סוגים Primary/Secondary · גרסאות אייקון-בלבד / Label · גדלים Mobile/Desktop.
+            <br>Hover / Pressed / Focused אמיתיים — העבירו עכבר / לחצו / נווטו ב-Tab.
+        </p>
+
+        <h2 class="sketch__mapping-title">אייקון בלבד — גדלים × סוגים</h2>
+        <div style="display: flex; gap: var(--space-2xl); flex-wrap: wrap; align-items: flex-end;">
+            <span>
+                <span class="sketch__state-label">Primary · Desktop</span><br>
+                <button class="gov-fab gov-fab--primary gov-fab--icon-only gov-fab--desktop" aria-label="הוספה">
+                    <span class="gov-fab__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                        </svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Primary · Mobile</span><br>
+                <button class="gov-fab gov-fab--primary gov-fab--icon-only gov-fab--mobile" aria-label="הוספה">
+                    <span class="gov-fab__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                        </svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Secondary · Desktop</span><br>
+                <button class="gov-fab gov-fab--secondary gov-fab--icon-only gov-fab--desktop" aria-label="הוספה">
+                    <span class="gov-fab__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                        </svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Secondary · Mobile</span><br>
+                <button class="gov-fab gov-fab--secondary gov-fab--icon-only gov-fab--mobile" aria-label="הוספה">
+                    <span class="gov-fab__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                        </svg>
+                    </span>
+                </button>
+            </span>
+        </div>
+
+        <h2 class="sketch__mapping-title">Label (מורחב) — Primary</h2>
+        <div style="display: flex; gap: var(--space-2xl); flex-wrap: wrap; align-items: center;">
+            <span>
+                <span class="sketch__state-label">Desktop</span><br>
+                <button class="gov-fab gov-fab--primary gov-fab--label gov-fab--desktop">
+                    <span class="gov-fab__label">הוספת פנייה</span>
+                    <span class="gov-fab__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                        </svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Mobile</span><br>
+                <button class="gov-fab gov-fab--primary gov-fab--label gov-fab--mobile">
+                    <span class="gov-fab__label">הוספת פנייה</span>
+                    <span class="gov-fab__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                        </svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">טקסט בלבד</span><br>
+                <button class="gov-fab gov-fab--primary gov-fab--label gov-fab--desktop">
+                    <span class="gov-fab__label">חזרה למעלה</span>
+                </button>
+            </span>
+        </div>
+
+        <h2 class="sketch__mapping-title">מצבים (Icon-Only · Desktop)</h2>
+        <p class="sketch__sub">
+            Default / Disabled מוצגים ישירות. Hover / Pressed / Focused אמיתיים דרך אינטראקציה.
+            הצל משתנה לפי מצב (Level3 → Level4 ב-hover, Level2 ב-disabled).
+        </p>
+        <table class="sketch__mapping" style="margin-top: var(--space-md);">
+            <thead>
+                <tr>
+                    <th>State \ Type</th>
+                    <th>Primary</th>
+                    <th>Secondary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Default</strong></td>
+                    <td>
+                        <button class="gov-fab gov-fab--primary gov-fab--icon-only gov-fab--desktop" aria-label="הוספה">
+                            <span class="gov-fab__icon" aria-hidden="true">
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                                </svg>
+                            </span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="gov-fab gov-fab--secondary gov-fab--icon-only gov-fab--desktop" aria-label="הוספה">
+                            <span class="gov-fab__icon" aria-hidden="true">
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                                </svg>
+                            </span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Disabled</strong></td>
+                    <td>
+                        <button class="gov-fab gov-fab--primary gov-fab--icon-only gov-fab--desktop" aria-label="הוספה" disabled>
+                            <span class="gov-fab__icon" aria-hidden="true">
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                                </svg>
+                            </span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="gov-fab gov-fab--secondary gov-fab--icon-only gov-fab--desktop" aria-label="הוספה" disabled>
+                            <span class="gov-fab__icon" aria-hidden="true">
+                                <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" />
+                                </svg>
+                            </span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>סוג / מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Primary — רקע / אייקון+טקסט</td>
+                    <td>#0068f5 / #f5f9ff</td>
+                    <td>--igds-base-color-button-background-primary / -text-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Primary — רקע Hover</td>
+                    <td>#0057cc</td>
+                    <td>--igds-base-color-background-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Primary — רקע Pressed</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-background-brand-pressed</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Secondary — רקע / גבול / טקסט</td>
+                    <td>#ffffff / #0068f5 / #0068f5</td>
+                    <td>--igds-base-color-background-neutral-default / -button-border-primary / -button-text-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Secondary — טקסט/גבול Hover+Pressed</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-border-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Disabled — רקע Primary / טקסט</td>
+                    <td>#e0e8ef / #5c697a</td>
+                    <td>--igds-base-color-background-disabled-with-text / -text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Disabled — גבול Secondary</td>
+                    <td>#8091a9</td>
+                    <td>--igds-base-color-button-border-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>צל Default / Pressed</td>
+                    <td>Shadow-dark/Level3</td>
+                    <td>--igds-shadow-dark-level3</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>צל Hover</td>
+                    <td>Shadow-dark/Level4</td>
+                    <td>--igds-shadow-dark-level4</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>צל Disabled</td>
+                    <td>Shadow-light/Level2</td>
+                    <td>--igds-shadow-light-level2</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>radius (עיגול / pill)</td>
+                    <td>100px</td>
+                    <td>--igds-ref-border-radius-full</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding Label Desktop</td>
+                    <td>16px / 20px</td>
+                    <td>--igds-ref-space-500 / --igds-ref-space-550</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט Label Desktop / Mobile</td>
+                    <td>24px / 16px</td>
+                    <td>--igds-ref-font-size-xl / --igds-ref-font-size-s</td>
+                    <td>✓ (xl נוסף)</td>
+                </tr>
+                <tr>
+                    <td>משקל טקסט</td>
+                    <td>500</td>
+                    <td>--igds-ref-font-weight-medium</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל אייקון-בלבד Desktop / Mobile</td>
+                    <td>60px / 48px</td>
+                    <td>ערך קבוע (width/height)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+                <tr>
+                    <td>גודל אייקון</td>
+                    <td>24px (SVG 16px)</td>
+                    <td>ערך קבוע (אייקון בסיס 24px)</td>
+                    <td>— מוסכמת אייקונים</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

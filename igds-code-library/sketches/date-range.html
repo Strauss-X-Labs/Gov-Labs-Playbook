@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Date Range (gap-fill מקומי)</title>
+    <!-- IGDS: טוקנים נטענים ראשון (R-IGDS-07) -->
+    <link rel="stylesheet" href="../node_modules/@igds/tokens/lib/index.min.css">
+    <!-- מקור אמת: טוקנים ומחלקות הדיזיין סיסטם -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- סטייל מעטפת הגלריה (משותף לכל הסקיצות) -->
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Date Range — בורר טווח תאריכים</h1>
+        <p class="sketch__sub">
+            <strong>gap-fill מקומי:</strong> רכיב זה <strong>אינו קיים ב-@igds/core-web 0.1.59</strong>
+            (הגרסה האחרונה). נבנה מקומית מאבני הבניין בפיגמה (Date Range node <code>35903:11333</code>,
+            תאי יום <code>.Building Blocks/Day</code> node <code>880:387</code>), כולל מצבי
+            <code>Start Range</code> / <code>End range</code> / <code>Range</code>. כל הערכים דרך טוקני
+            <code>--igds-*</code> ב-<code>styles.css</code>. כשתפורסם רכיב רשמי — ייצרך במקומו (R-COMP-04).
+        </p>
+
+        <div class="sketch__grid">
+            <section>
+                <span class="sketch__state-label">לוח חי — בחרו תאריך התחלה ואז סיום</span>
+                <div class="gov-date-range" id="dr" role="group" aria-label="בחירת טווח תאריכים">
+                    <div class="gov-date-range__header">
+                        <div class="gov-date-range__nav">
+                            <button class="gov-date-range__arrow" type="button" id="dr-prev"
+                                aria-label="חודש קודם">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M15 6l-6 6 6 6" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="gov-date-range__arrow" type="button" id="dr-next"
+                                aria-label="חודש הבא">
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M9 6l6 6-6 6" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="gov-date-range__title" type="button" id="dr-title"></button>
+                    </div>
+                    <div class="gov-date-range__weekdays" id="dr-weekdays"></div>
+                    <div class="gov-date-range__grid" id="dr-grid"></div>
+                    <div class="gov-date-range__footer" id="dr-footer">בחרו תאריך התחלה</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- טבלת מיפוי טוקנים -->
+        <h2 class="sketch__mapping-title">מיפוי מצבי תא יום (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב (Figma)</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Day Default — טקסט</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Day Hover — רקע</td>
+                    <td>#f9fcff</td>
+                    <td>--igds-base-color-background-full-screen-default</td>
+                    <td>➕ נוסף (ערך חדש)</td>
+                </tr>
+                <tr>
+                    <td>Day Focused — גבול</td>
+                    <td>#0068f5 (2px)</td>
+                    <td>--igds-base-color-border-focused</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Today — גבול/טקסט</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-background-brand-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Selected / Start / End — רקע</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-background-brand-default</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Selected — טקסט</td>
+                    <td>#f5f9ff</td>
+                    <td>--igds-base-color-text-subtle-primary-inverted</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Selected Hover — רקע</td>
+                    <td>#0057cc</td>
+                    <td>--igds-base-color-background-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Range (ביניים) — רקע</td>
+                    <td>#b7d6ff</td>
+                    <td>--igds-base-color-background-brand-sidebar-pressed</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Range (ביניים) — טקסט</td>
+                    <td>#0c3058</td>
+                    <td>--igds-base-color-text-subtle-primary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Disabled — טקסט</td>
+                    <td>#5c697a</td>
+                    <td>--igds-base-color-text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Prev/Next (ימי חודש סמוך) — טקסט</td>
+                    <td>#466186</td>
+                    <td>--igds-base-color-text-subtle-secondary</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>תא יום / תיבה פנימית</td>
+                    <td>44px / 40px, radius 8px</td>
+                    <td>— (מידות מהפיגמה) / --igds-ref-border-radius-m</td>
+                    <td>✓</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        (function () {
+            const MONTHS = ['ינואר', 'פברואר', 'מרץ', 'אפריל', 'מאי', 'יוני', 'יולי',
+                'אוגוסט', 'ספטמבר', 'אוקטובר', 'נובמבר', 'דצמבר'];
+            const WEEKDAYS = ['א׳', 'ב׳', 'ג׳', 'ד׳', 'ה׳', 'ו׳', 'ש׳']; // sunday-first
+
+            const grid = document.getElementById('dr-grid');
+            const title = document.getElementById('dr-title');
+            const weekdays = document.getElementById('dr-weekdays');
+            const footer = document.getElementById('dr-footer');
+
+            let view = new Date(2026, 8, 1); // ספטמבר 2026
+            let start = null;
+            let end = null;
+
+            const iso = (d) => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') +
+                '-' + String(d.getDate()).padStart(2, '0');
+            const sameDay = (a, b) => a && b && a.getTime() === b.getTime();
+            const dayOnly = (d) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
+            const today = dayOnly(new Date());
+
+            WEEKDAYS.forEach(function (w) {
+                const el = document.createElement('div');
+                el.className = 'gov-date-range__weekday';
+                el.textContent = w;
+                weekdays.appendChild(el);
+            });
+
+            function onPick(d) {
+                if (!start || (start && end)) {
+                    start = d; end = null;
+                } else if (d < start) {
+                    end = start; start = d;
+                } else {
+                    end = d;
+                }
+                render();
+            }
+
+            function render() {
+                title.textContent = MONTHS[view.getMonth()] + ' ' + view.getFullYear();
+                grid.innerHTML = '';
+
+                const firstDay = new Date(view.getFullYear(), view.getMonth(), 1).getDay();
+                const daysInMonth = new Date(view.getFullYear(), view.getMonth() + 1, 0).getDate();
+
+                // תאים ריקים (Null) עד תחילת החודש
+                for (let i = 0; i < firstDay; i++) {
+                    const cell = document.createElement('span');
+                    cell.className = 'gov-date-range__day gov-date-range__day--null';
+                    grid.appendChild(cell);
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const d = new Date(view.getFullYear(), view.getMonth(), day);
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.className = 'gov-date-range__day';
+                    const span = document.createElement('span');
+                    span.textContent = day;
+                    btn.appendChild(span);
+
+                    if (sameDay(d, today)) btn.classList.add('gov-date-range__day--today');
+
+                    const isStart = sameDay(d, start);
+                    const isEnd = sameDay(d, end);
+                    const inRange = start && end && d > start && d < end;
+
+                    if (start && end && isStart) {
+                        btn.classList.add('gov-date-range__day--start');
+                    } else if (start && end && isEnd) {
+                        btn.classList.add('gov-date-range__day--end');
+                    } else if (isStart || isEnd) {
+                        btn.classList.add('gov-date-range__day--selected');
+                    } else if (inRange) {
+                        btn.classList.add('gov-date-range__day--in-range');
+                    }
+
+                    if (isStart || isEnd) btn.setAttribute('aria-current', 'date');
+                    btn.setAttribute('aria-label', iso(d));
+                    btn.addEventListener('click', function () { onPick(d); });
+                    grid.appendChild(btn);
+                }
+
+                if (start && end) {
+                    footer.textContent = 'טווח נבחר: ' + iso(start) + ' – ' + iso(end);
+                } else if (start) {
+                    footer.textContent = 'תאריך התחלה: ' + iso(start) + ' — בחרו תאריך סיום';
+                } else {
+                    footer.textContent = 'בחרו תאריך התחלה';
+                }
+            }
+
+            document.getElementById('dr-prev').addEventListener('click', function () {
+                view = new Date(view.getFullYear(), view.getMonth() - 1, 1); render();
+            });
+            document.getElementById('dr-next').addEventListener('click', function () {
+                view = new Date(view.getFullYear(), view.getMonth() + 1, 1); render();
+            });
+
+            render();
+        })();
+    </script>
+</body>
+
+</html>

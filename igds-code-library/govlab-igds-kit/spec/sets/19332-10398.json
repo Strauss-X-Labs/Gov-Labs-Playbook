@@ -1,0 +1,6313 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "19332:10398",
+  "name": "Updates/horizontal",
+  "key": "487682bfeeb64ff31a671c958f0f02bffb9a4846",
+  "defs": {
+   "Show date": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Date": {
+    "t": "TEXT",
+    "d": "01/01/25"
+   },
+   "וUpdate position": {
+    "t": "VARIANT",
+    "o": [
+     "1/4",
+     "2/4",
+     "3/4",
+     "Last",
+     "First",
+     "Middle",
+     "4/4"
+    ],
+    "d": "1/4"
+   },
+   "Format": {
+    "t": "VARIANT",
+    "o": [
+     "Desktop",
+     "Mobile"
+    ],
+    "d": "Desktop"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "TRUE",
+     "False"
+    ],
+    "d": "TRUE"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "batch-updates-a.json",
+   "sha256": "68ec237ffc4cf340de6974023e680c1afb3a0855df7529d2527a63cd7895c575",
+   "format": "v2-tree",
+   "filter": null,
+   "offset": 0,
+   "captured": 5,
+   "totalMatching": 14
+  },
+  {
+   "file": "batch-updates-b-daterange.json",
+   "sha256": "52352f9076a53d2398430cdc69aaacc0045c00293c431361a7dd31a917f32931",
+   "format": "v3-delta",
+   "filter": null,
+   "offset": 5,
+   "captured": 9,
+   "totalMatching": 14
+  },
+  {
+   "file": "rest-19332-10398.json",
+   "sha256": "e9cabd284e21fee4b3487c9024800520392752d4670783a7ea6423e7fefc7484",
+   "format": "v5-rest",
+   "restResponseSha256": "f00697567cab533d18996253b7c97bead900850476ce70867283086e831ef089",
+   "filter": null,
+   "offset": 0,
+   "captured": 14,
+   "totalMatching": 14
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 14,
+  "byFilter": {
+   "null": {
+    "totalMatching": 14,
+    "captured": 28
+   }
+  },
+  "detail": {
+   "tree": 14,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/header-brand-left": {
+   "figma": "Colors/Background/header-brand-left",
+   "css": "--igds-base-color-background-header-brand-left",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#070f19",
+    "css": "#070f19",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/Inverted/disabled": {
+   "figma": "Colors/Text & Icon/Inverted/disabled",
+   "css": "--igds-base-color-text-inverted-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/Inverted/subtle-primary": {
+   "figma": "Colors/Text & Icon/Inverted/subtle-primary",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/mist-blue/50",
+    "Dark IGDS": "→Brand/mist-blue/50",
+    "כבאות והצלה": "→Brand/mist-blue/50",
+    "ביטוח לאומי": "→Brand/mist-blue/50"
+   }
+  },
+  "Colors/Text & Icon/disabled": {
+   "figma": "Colors/Text & Icon/disabled",
+   "css": "--igds-base-color-text-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/link-primary-default": {
+   "figma": "Colors/Text & Icon/link-primary-default",
+   "css": "--igds-base-color-text-link-primary-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-550": {
+   "figma": "Space/space-550",
+   "css": "--igds-ref-space-550",
+   "status": "css-token",
+   "light": {
+    "figma": 20,
+    "css": "20px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-600": {
+   "figma": "Space/space-600",
+   "css": "--igds-ref-space-600",
+   "status": "css-token",
+   "light": {
+    "figma": 24,
+    "css": "24px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/l": {
+   "figma": "Typography/font-size/l",
+   "css": "--igds-ref-font-size-l",
+   "status": "css-token",
+   "light": {
+    "figma": 20,
+    "css": "20px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/medium": {
+   "figma": "Typography/font-weight/medium",
+   "css": "--igds-ref-font-weight-medium",
+   "status": "css-token",
+   "light": {
+    "figma": 500,
+    "css": "500",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "[remote]Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "remote": true
+  },
+  "[remote]Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  },
+  "[remote]Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null,
+   "remote": true
+  }
+ },
+ "variants": [
+  {
+   "id": "36951:4512",
+   "name": "וUpdate position=1/4, Format=Desktop, RTL=False",
+   "props": {
+    "וUpdate position": "1/4",
+    "Format": "Desktop",
+    "RTL": "False"
+   },
+   "w": 590,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 590,
+    "h": 72,
+    "nid": "36951:4512",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 16,
+      "y": 23.5,
+      "w": 81,
+      "h": 25,
+      "nid": "36966:4023",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "Updates",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     },
+     {
+      "n": "Pagination Info",
+      "t": "FRAME",
+      "x": 113,
+      "y": 12,
+      "w": 174,
+      "h": 48,
+      "nid": "36951:4517",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 113,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4518",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ]
+       },
+       {
+        "n": "Pagination Text",
+        "t": "TEXT",
+        "x": 169,
+        "y": 24,
+        "w": 62,
+        "h": 24,
+        "nid": "36951:4519",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "1 from 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 239,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4520",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Date and Details",
+      "t": "FRAME",
+      "x": 303,
+      "y": 16,
+      "w": 271,
+      "h": 40,
+      "nid": "36951:4513",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Date Text",
+        "t": "TEXT",
+        "x": 303,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "36951:4516",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 399,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "36951:4515",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 416,
+        "y": 12,
+        "w": 158,
+        "h": 48,
+        "nid": "36951:4514",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "Update Details",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "Update Details"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-a.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19332:10399",
+   "name": "וUpdate position=1/4, Format=Desktop, RTL=TRUE",
+   "props": {
+    "וUpdate position": "1/4",
+    "Format": "Desktop",
+    "RTL": "TRUE"
+   },
+   "w": 615,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 615,
+    "h": 72,
+    "nid": "19332:10399",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 16,
+      "y": 16,
+      "w": 311,
+      "h": 40,
+      "nid": "19332:10404",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 12,
+        "w": 198,
+        "h": 48,
+        "nid": "36951:3621",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "כאן מפרטים את העדכון",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "כאן מפרטים את העדכון"
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 230,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "19332:10406",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Date",
+        "t": "TEXT",
+        "x": 247,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "19332:10407",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 343,
+      "y": 12,
+      "w": 174,
+      "h": 48,
+      "nid": "19332:10400",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 343,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "19332:10401",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       },
+       {
+        "n": "Pagination",
+        "t": "TEXT",
+        "x": 399,
+        "y": 24,
+        "w": 62,
+        "h": 24,
+        "nid": "19332:10402",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "1 מתוך 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 469,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "19332:10403",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 533,
+      "y": 23.5,
+      "w": 66,
+      "h": 25,
+      "nid": "36966:3958",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "עדכונים",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-a.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36951:4522",
+   "name": "וUpdate position=2/4, Format=Desktop, RTL=False",
+   "props": {
+    "וUpdate position": "2/4",
+    "Format": "Desktop",
+    "RTL": "False"
+   },
+   "w": 591,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 591,
+    "h": 72,
+    "nid": "36951:4522",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 16,
+      "y": 23.5,
+      "w": 81,
+      "h": 25,
+      "nid": "36966:4147",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "Updates",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     },
+     {
+      "n": "Navigation",
+      "t": "FRAME",
+      "x": 113,
+      "y": 12,
+      "w": 175,
+      "h": 48,
+      "nid": "36951:4527",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 113,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4528",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       },
+       {
+        "n": "Progress",
+        "t": "TEXT",
+        "x": 169,
+        "y": 24,
+        "w": 63,
+        "h": 24,
+        "nid": "36951:4529",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "2 from 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 240,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4530",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Details",
+      "t": "FRAME",
+      "x": 304,
+      "y": 16,
+      "w": 271,
+      "h": 40,
+      "nid": "36951:4614",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Date",
+        "t": "TEXT",
+        "x": 304,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "36951:4615",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 400,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "36951:4616",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 417,
+        "y": 12,
+        "w": 158,
+        "h": 48,
+        "nid": "36951:4617",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "Update Details",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "Update Details"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-a.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19457:37728",
+   "name": "וUpdate position=2/4, Format=Desktop, RTL=TRUE",
+   "props": {
+    "וUpdate position": "2/4",
+    "Format": "Desktop",
+    "RTL": "TRUE"
+   },
+   "w": 615,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 615,
+    "h": 72,
+    "nid": "19457:37728",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Link Button",
+      "t": "FRAME",
+      "x": 16,
+      "y": 16,
+      "w": 311,
+      "h": 40,
+      "nid": "19457:37729",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 12,
+        "w": 198,
+        "h": 48,
+        "nid": "36951:3672",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "כאן מפרטים את העדכון",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "כאן מפרטים את העדכון"
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 230,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "19457:37731",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Date",
+        "t": "TEXT",
+        "x": 247,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "19457:37732",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Navigation Container",
+      "t": "FRAME",
+      "x": 343,
+      "y": 12,
+      "w": 174,
+      "h": 48,
+      "nid": "19457:37733",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 343,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36949:9251",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       },
+       {
+        "n": "Pagination",
+        "t": "TEXT",
+        "x": 399,
+        "y": 24,
+        "w": 62,
+        "h": 24,
+        "nid": "19457:37735",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "2 מתוך 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 469,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36949:9268",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 533,
+      "y": 23.5,
+      "w": 66,
+      "h": 25,
+      "nid": "36966:3969",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "עדכונים",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-a.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36951:4532",
+   "name": "וUpdate position=3/4, Format=Desktop, RTL=False",
+   "props": {
+    "וUpdate position": "3/4",
+    "Format": "Desktop",
+    "RTL": "False"
+   },
+   "w": 591,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 591,
+    "h": 72,
+    "nid": "36951:4532",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 16,
+      "y": 23.5,
+      "w": 81,
+      "h": 25,
+      "nid": "36966:4204",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "Updates",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     },
+     {
+      "n": "Navigation",
+      "t": "FRAME",
+      "x": 113,
+      "y": 12,
+      "w": 175,
+      "h": 48,
+      "nid": "36951:4537",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 113,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4538",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       },
+       {
+        "n": "Progress",
+        "t": "TEXT",
+        "x": 169,
+        "y": 24,
+        "w": 63,
+        "h": 24,
+        "nid": "36951:4539",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "[remote]Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "[remote]Typography/font-weight/regular",
+         "fontSize": "[remote]Typography/font-size/s"
+        },
+        "tx": "3 from 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 240,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4540",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Date Container",
+      "t": "FRAME",
+      "x": 304,
+      "y": 16,
+      "w": 271,
+      "h": 40,
+      "nid": "36951:4628",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Date",
+        "t": "TEXT",
+        "x": 304,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "36951:4629",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 400,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "36951:4630",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 417,
+        "y": 12,
+        "w": 158,
+        "h": 48,
+        "nid": "36951:4631",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "Update Details",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "Update Details"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular",
+    "[remote]Colors/Text & Icon/subtle-primary",
+    "[remote]Typography/font-size/s",
+    "[remote]Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19457:37750",
+   "name": "וUpdate position=3/4, Format=Desktop, RTL=TRUE",
+   "props": {
+    "וUpdate position": "3/4",
+    "Format": "Desktop",
+    "RTL": "TRUE"
+   },
+   "w": 615,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 615,
+    "h": 72,
+    "nid": "19457:37750",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Link Button",
+      "t": "FRAME",
+      "x": 16,
+      "y": 16,
+      "w": 311,
+      "h": 40,
+      "nid": "19457:37751",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 12,
+        "w": 198,
+        "h": 48,
+        "nid": "36951:3678",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "כאן מפרטים את העדכון",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "כאן מפרטים את העדכון"
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 230,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "19457:37753",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Date",
+        "t": "TEXT",
+        "x": 247,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "19457:37754",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Navigation Container",
+      "t": "FRAME",
+      "x": 343,
+      "y": 12,
+      "w": 174,
+      "h": 48,
+      "nid": "19457:37755",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 343,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36949:9256",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       },
+       {
+        "n": "Page Indicator",
+        "t": "TEXT",
+        "x": 399,
+        "y": 24,
+        "w": 62,
+        "h": 24,
+        "nid": "19457:37757",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "3 מתוך 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 469,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36949:9261",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 533,
+      "y": 23.5,
+      "w": 66,
+      "h": 25,
+      "nid": "36966:3971",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "עדכונים",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-a.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36951:4542",
+   "name": "וUpdate position=4/4, Format=Desktop, RTL=False",
+   "props": {
+    "וUpdate position": "4/4",
+    "Format": "Desktop",
+    "RTL": "False"
+   },
+   "w": 591,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 591,
+    "h": 72,
+    "nid": "36951:4542",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 16,
+      "y": 23.5,
+      "w": 81,
+      "h": 25,
+      "nid": "36966:4232",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "Updates",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     },
+     {
+      "n": "Navigation",
+      "t": "FRAME",
+      "x": 113,
+      "y": 12,
+      "w": 175,
+      "h": 48,
+      "nid": "36951:4547",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 113,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4548",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       },
+       {
+        "n": "Progress",
+        "t": "TEXT",
+        "x": 169,
+        "y": 24,
+        "w": 63,
+        "h": 24,
+        "nid": "36951:4612",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "4 from 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 240,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4550",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Date and Details",
+      "t": "FRAME",
+      "x": 304,
+      "y": 16,
+      "w": 271,
+      "h": 40,
+      "nid": "36951:4642",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Date",
+        "t": "TEXT",
+        "x": 304,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "36951:4643",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 400,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "36951:4644",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 417,
+        "y": 12,
+        "w": 158,
+        "h": 48,
+        "nid": "36951:4645",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "Update Details",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "Update Details"
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19457:37769",
+   "name": "וUpdate position=4/4, Format=Desktop, RTL=TRUE",
+   "props": {
+    "וUpdate position": "4/4",
+    "Format": "Desktop",
+    "RTL": "TRUE"
+   },
+   "w": 615,
+   "h": 72,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 615,
+    "h": 72,
+    "nid": "19457:37769",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      16,
+      12,
+      16
+     ],
+     "g": 16,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-500",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "Link Button",
+      "t": "FRAME",
+      "x": 16,
+      "y": 16,
+      "w": 311,
+      "h": 40,
+      "nid": "19457:37770",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "FIXED"
+      },
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 16,
+        "y": 12,
+        "w": 198,
+        "h": 48,
+        "nid": "36951:3684",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          20,
+          12,
+          20
+         ],
+         "g": 4,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "HUG",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "itemSpacing": "Space/space-200",
+         "paddingLeft": "Space/space-550",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-550",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=False, Intent=Default"
+        },
+        "mcid": "3239:5414",
+        "cp": {
+         "Text": "כאן מפרטים את העדכון",
+         " Left Icon": false,
+         "Right Icon": false,
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "False",
+         "Intent": "Default"
+        },
+        "itx": [
+         "כאן מפרטים את העדכון"
+        ]
+       },
+       {
+        "n": "Divider",
+        "t": "INSTANCE",
+        "x": 230,
+        "y": 16,
+        "w": 1,
+        "h": 40,
+        "nid": "19457:37772",
+        "ref": {
+         "visible": "Show date#19332:2"
+        },
+        "al": {
+         "m": "VERTICAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "MIN",
+         "sh": "FIXED",
+         "sv": "FILL"
+        },
+        "inst": {
+         "set": "Divider",
+         "setId": "708:2124",
+         "variant": "Position=Vertical, Style=Default, Width=Full"
+        },
+        "mcid": "708:2123",
+        "cp": {
+         "Position": "Vertical",
+         "Style": "Default",
+         "Width": "Full"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#b5c7e2",
+          "v": "Colors/Divider/default"
+         }
+        ]
+       },
+       {
+        "n": "Date",
+        "t": "TEXT",
+        "x": 247,
+        "y": 24,
+        "w": 80,
+        "h": 24,
+        "nid": "19457:37773",
+        "ref": {
+         "visible": "Show date#19332:2",
+         "characters": "Date#19332:3"
+        },
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "01/01/25",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Navigation Controls",
+      "t": "FRAME",
+      "x": 343,
+      "y": 12,
+      "w": 174,
+      "h": 48,
+      "nid": "19457:37774",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MIN",
+       "ca": "CENTER",
+       "sh": "HUG",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 343,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36949:9278",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ]
+       },
+       {
+        "n": "Page Indicator",
+        "t": "TEXT",
+        "x": 399,
+        "y": 24,
+        "w": 62,
+        "h": 24,
+        "nid": "19457:37776",
+        "sz": [
+         "FIXED",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/s"
+        },
+        "tx": "4 מתוך 4",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 16,
+        "lh": [
+         150,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "CENTER",
+         "CENTER"
+        ],
+        "tar": "HEIGHT",
+        "ts": "Component/Label/Regular"
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 469,
+        "y": 12,
+        "w": 48,
+        "h": 48,
+        "nid": "36949:9273",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Default, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1021",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Default",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Text & Icon/link-primary-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 533,
+      "y": 23.5,
+      "w": 66,
+      "h": 25,
+      "nid": "36966:3973",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0068f5",
+        "v": "Colors/Text & Icon/link-primary-default"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/l"
+      },
+      "tx": "עדכונים",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 20,
+      "lh": [
+       125,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Title/Subtitle/Large"
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/disabled",
+    "Colors/Text & Icon/link-primary-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-550",
+    "Space/space-600",
+    "Typography/font-size/l",
+    "Typography/font-size/s",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36951:4694",
+   "name": "וUpdate position=First, Format=Mobile, RTL=False",
+   "props": {
+    "וUpdate position": "First",
+    "Format": "Mobile",
+    "RTL": "False"
+   },
+   "w": 332,
+   "h": 64,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 332,
+    "h": 64,
+    "nid": "36951:4694",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0c3058",
+      "v": "Colors/Background/header-brand-left"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 8,
+      "y": 8,
+      "w": 260,
+      "h": 48,
+      "nid": "36951:4696",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 8,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4700",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:769",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#8596af",
+          "v": "Colors/Text & Icon/Inverted/disabled"
+         }
+        ]
+       },
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 64,
+        "y": 12,
+        "w": 204,
+        "h": 40,
+        "nid": "36951:4697",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 64,
+          "y": 12,
+          "w": 204,
+          "h": 40,
+          "nid": "36951:4698",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": ".Update text",
+            "t": "INSTANCE",
+            "x": 64,
+            "y": 12,
+            "w": 204,
+            "h": 40,
+            "nid": "36951:4699",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              8,
+              16,
+              8,
+              16
+             ],
+             "g": 10,
+             "pa": "MAX",
+             "ca": "CENTER",
+             "sh": "FILL",
+             "sv": "HUG"
+            },
+            "grow": 1,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-300",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-300"
+            },
+            "inst": {
+             "set": ".Update text",
+             "setId": "19332:11494",
+             "variant": "State=Default, Format=Mobile, RTL=TRUE"
+            },
+            "mcid": "19457:32836",
+            "cp": {
+             "State": "Default",
+             "Format": "Mobile",
+             "RTL": "TRUE"
+            },
+            "itx": [
+             "Update Details"
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 276,
+      "y": 8,
+      "w": 48,
+      "h": 48,
+      "nid": "36951:4695",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        12,
+        24,
+        12,
+        24
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-600",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-600",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+      },
+      "mcid": "195:1033",
+      "cp": {
+       "Icon Op": "138:767",
+       "RTL": "True",
+       "State": "Disabled",
+       "Type": "Link Button",
+       "Size": "Medium",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#f5f9ff",
+        "v": "Colors/Text & Icon/Inverted/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/header-brand-left",
+    "Colors/Text & Icon/Inverted/disabled",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-600"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19332:10664",
+   "name": "וUpdate position=First, Format=Mobile, RTL=TRUE",
+   "props": {
+    "וUpdate position": "First",
+    "Format": "Mobile",
+    "RTL": "TRUE"
+   },
+   "w": 332,
+   "h": 64,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 332,
+    "h": 64,
+    "nid": "19332:10664",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0c3058",
+      "v": "Colors/Background/header-brand-left"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 8,
+      "w": 48,
+      "h": 48,
+      "nid": "36951:4150",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        12,
+        24,
+        12,
+        24
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-600",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-600",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+      },
+      "mcid": "195:1033",
+      "cp": {
+       "Icon Op": "138:769",
+       "RTL": "True",
+       "State": "Disabled",
+       "Type": "Link Button",
+       "Size": "Medium",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#f5f9ff",
+        "v": "Colors/Text & Icon/Inverted/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 64,
+      "y": 8,
+      "w": 260,
+      "h": 48,
+      "nid": "19457:379",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 64,
+        "y": 12,
+        "w": 204,
+        "h": 40,
+        "nid": "19332:10681",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 64,
+          "y": 12,
+          "w": 204,
+          "h": 40,
+          "nid": "19332:10665",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": ".Update text",
+            "t": "INSTANCE",
+            "x": 64,
+            "y": 12,
+            "w": 204,
+            "h": 40,
+            "nid": "19332:10666",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              8,
+              16,
+              8,
+              16
+             ],
+             "g": 10,
+             "pa": "MAX",
+             "ca": "CENTER",
+             "sh": "FILL",
+             "sv": "HUG"
+            },
+            "grow": 1,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-300",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-300"
+            },
+            "inst": {
+             "set": ".Update text",
+             "setId": "19332:11494",
+             "variant": "State=Default, Format=Mobile, RTL=TRUE"
+            },
+            "mcid": "19457:32836",
+            "cp": {
+             "State": "Default",
+             "Format": "Mobile",
+             "RTL": "TRUE"
+            },
+            "itx": [
+             "כאן מפרטים את העדכון"
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 276,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4114",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#5c697a",
+          "v": "Colors/Text & Icon/disabled"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/header-brand-left",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/disabled",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-600"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36951:4708",
+   "name": "וUpdate position=Last, Format=Mobile, RTL=False",
+   "props": {
+    "וUpdate position": "Last",
+    "Format": "Mobile",
+    "RTL": "False"
+   },
+   "w": 332,
+   "h": 64,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 332,
+    "h": 64,
+    "nid": "36951:4708",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0c3058",
+      "v": "Colors/Background/header-brand-left"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 8,
+      "w": 48,
+      "h": 48,
+      "nid": "36951:4709",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        12,
+        24,
+        12,
+        24
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-600",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-600",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+      },
+      "mcid": "195:1033",
+      "cp": {
+       "Icon Op": "138:769",
+       "RTL": "True",
+       "State": "Disabled",
+       "Type": "Link Button",
+       "Size": "Medium",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#f5f9ff",
+        "v": "Colors/Text & Icon/Inverted/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Frame 1261158131",
+      "t": "FRAME",
+      "x": 64,
+      "y": 8,
+      "w": 260,
+      "h": 48,
+      "nid": "36951:4710",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Frame 4",
+        "t": "FRAME",
+        "x": 64,
+        "y": 12,
+        "w": 204,
+        "h": 40,
+        "nid": "36951:4711",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Frame 3",
+          "t": "FRAME",
+          "x": 64,
+          "y": 12,
+          "w": 204,
+          "h": 40,
+          "nid": "36951:4712",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": ".Update text",
+            "t": "INSTANCE",
+            "x": 64,
+            "y": 12,
+            "w": 204,
+            "h": 40,
+            "nid": "36951:4713",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              8,
+              16,
+              8,
+              16
+             ],
+             "g": 10,
+             "pa": "MAX",
+             "ca": "CENTER",
+             "sh": "FILL",
+             "sv": "HUG"
+            },
+            "grow": 1,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-300",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-300"
+            },
+            "inst": {
+             "set": ".Update text",
+             "setId": "19332:11494",
+             "variant": "State=Default, Format=Mobile, RTL=TRUE"
+            },
+            "mcid": "19457:32836",
+            "cp": {
+             "State": "Default",
+             "Format": "Mobile",
+             "RTL": "TRUE"
+            },
+            "itx": [
+             "Update Details"
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 276,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4714",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#8596af",
+          "v": "Colors/Text & Icon/Inverted/disabled"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/header-brand-left",
+    "Colors/Text & Icon/Inverted/disabled",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-600"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19457:35984",
+   "name": "וUpdate position=Last, Format=Mobile, RTL=TRUE",
+   "props": {
+    "וUpdate position": "Last",
+    "Format": "Mobile",
+    "RTL": "TRUE"
+   },
+   "w": 332,
+   "h": 64,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 332,
+    "h": 64,
+    "nid": "19457:35984",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0c3058",
+      "v": "Colors/Background/header-brand-left"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 8,
+      "w": 48,
+      "h": 48,
+      "nid": "36951:4143",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        12,
+        24,
+        12,
+        24
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-600",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-600",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+      },
+      "mcid": "195:1033",
+      "cp": {
+       "Icon Op": "138:769",
+       "RTL": "True",
+       "State": "Disabled",
+       "Type": "Link Button",
+       "Size": "Medium",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Text & Icon/disabled"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 64,
+      "y": 8,
+      "w": 260,
+      "h": 48,
+      "nid": "19457:35986",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 64,
+        "y": 12,
+        "w": 204,
+        "h": 40,
+        "nid": "19457:35987",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 64,
+          "y": 12,
+          "w": 204,
+          "h": 40,
+          "nid": "19457:35988",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": ".Update text",
+            "t": "INSTANCE",
+            "x": 64,
+            "y": 12,
+            "w": 204,
+            "h": 40,
+            "nid": "19457:35989",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              8,
+              16,
+              8,
+              16
+             ],
+             "g": 10,
+             "pa": "MAX",
+             "ca": "CENTER",
+             "sh": "FILL",
+             "sv": "HUG"
+            },
+            "grow": 1,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-300",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-300"
+            },
+            "inst": {
+             "set": ".Update text",
+             "setId": "19332:11494",
+             "variant": "State=Default, Format=Mobile, RTL=TRUE"
+            },
+            "mcid": "19457:32836",
+            "cp": {
+             "State": "Default",
+             "Format": "Mobile",
+             "RTL": "TRUE"
+            },
+            "itx": [
+             "כאן מפרטים את העדכון"
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 276,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4205",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#f5f9ff",
+          "v": "Colors/Text & Icon/Inverted/subtle-primary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/header-brand-left",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Colors/Text & Icon/disabled",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-600"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36951:4701",
+   "name": "וUpdate position=Middle, Format=Mobile, RTL=False",
+   "props": {
+    "וUpdate position": "Middle",
+    "Format": "Mobile",
+    "RTL": "False"
+   },
+   "w": 332,
+   "h": 64,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 332,
+    "h": 64,
+    "nid": "36951:4701",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0c3058",
+      "v": "Colors/Background/header-brand-left"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 8,
+      "w": 48,
+      "h": 48,
+      "nid": "36951:4702",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        12,
+        24,
+        12,
+        24
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-600",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-600",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+      },
+      "mcid": "195:1033",
+      "cp": {
+       "Icon Op": "138:769",
+       "RTL": "True",
+       "State": "Disabled",
+       "Type": "Link Button",
+       "Size": "Medium",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#f5f9ff",
+        "v": "Colors/Text & Icon/Inverted/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 64,
+      "y": 8,
+      "w": 260,
+      "h": 48,
+      "nid": "36951:4703",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 64,
+        "y": 12,
+        "w": 204,
+        "h": 40,
+        "nid": "36951:4704",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 64,
+          "y": 12,
+          "w": 204,
+          "h": 40,
+          "nid": "36951:4705",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": ".Update text",
+            "t": "INSTANCE",
+            "x": 64,
+            "y": 12,
+            "w": 204,
+            "h": 40,
+            "nid": "36951:4706",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              8,
+              16,
+              8,
+              16
+             ],
+             "g": 10,
+             "pa": "MAX",
+             "ca": "CENTER",
+             "sh": "FILL",
+             "sv": "HUG"
+            },
+            "grow": 1,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-300",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-300"
+            },
+            "inst": {
+             "set": ".Update text",
+             "setId": "19332:11494",
+             "variant": "State=Default, Format=Mobile, RTL=TRUE"
+            },
+            "mcid": "19457:32836",
+            "cp": {
+             "State": "Default",
+             "Format": "Mobile",
+             "RTL": "TRUE"
+            },
+            "itx": [
+             "Update Details"
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 276,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4707",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#f5f9ff",
+          "v": "Colors/Text & Icon/Inverted/subtle-primary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/header-brand-left",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-600"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "19457:35943",
+   "name": "וUpdate position=Middle, Format=Mobile, RTL=TRUE",
+   "props": {
+    "וUpdate position": "Middle",
+    "Format": "Mobile",
+    "RTL": "TRUE"
+   },
+   "w": 332,
+   "h": 64,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 332,
+    "h": 64,
+    "nid": "19457:35943",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      8,
+      8,
+      8
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "mm": [
+     288,
+     null,
+     null,
+     null
+    ],
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#0c3058",
+      "v": "Colors/Background/header-brand-left"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 12,
+      "c": "#064dad",
+      "a": 0.15,
+      "o": [
+       0,
+       4
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level2",
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-300",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-300",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "Button",
+      "t": "INSTANCE",
+      "x": 8,
+      "y": 8,
+      "w": 48,
+      "h": 48,
+      "nid": "36951:4193",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        12,
+        24,
+        12,
+        24
+       ],
+       "g": 0,
+       "pa": "CENTER",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 8,
+      "v": {
+       "paddingLeft": "Space/space-600",
+       "paddingTop": "Space/space-400",
+       "paddingRight": "Space/space-600",
+       "paddingBottom": "Space/space-400",
+       "topLeftRadius": "Border/radius-m",
+       "topRightRadius": "Border/radius-m",
+       "bottomLeftRadius": "Border/radius-m",
+       "bottomRightRadius": "Border/radius-m"
+      },
+      "inst": {
+       "set": "Button",
+       "setId": "81:1195",
+       "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+      },
+      "mcid": "195:1033",
+      "cp": {
+       "Icon Op": "138:769",
+       "RTL": "True",
+       "State": "Disabled",
+       "Type": "Link Button",
+       "Size": "Medium",
+       "Icon Button": "True",
+       "Intent": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#f5f9ff",
+        "v": "Colors/Text & Icon/Inverted/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Container",
+      "t": "FRAME",
+      "x": 64,
+      "y": 8,
+      "w": 260,
+      "h": 48,
+      "nid": "19457:35945",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "grow": 1,
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Container",
+        "t": "FRAME",
+        "x": 64,
+        "y": 12,
+        "w": 204,
+        "h": 40,
+        "nid": "19457:35946",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 4,
+         "pa": "MAX",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "v": {
+         "itemSpacing": "Space/space-200"
+        },
+        "c": [
+         {
+          "n": "Container",
+          "t": "FRAME",
+          "x": 64,
+          "y": 12,
+          "w": 204,
+          "h": 40,
+          "nid": "19457:35947",
+          "al": {
+           "m": "HORIZONTAL",
+           "p": [
+            0,
+            0,
+            0,
+            0
+           ],
+           "g": 16,
+           "pa": "MAX",
+           "ca": "CENTER",
+           "sh": "FILL",
+           "sv": "HUG"
+          },
+          "grow": 1,
+          "v": {
+           "itemSpacing": "Space/space-500"
+          },
+          "c": [
+           {
+            "n": ".Update text",
+            "t": "INSTANCE",
+            "x": 64,
+            "y": 12,
+            "w": 204,
+            "h": 40,
+            "nid": "19457:35948",
+            "al": {
+             "m": "HORIZONTAL",
+             "p": [
+              8,
+              16,
+              8,
+              16
+             ],
+             "g": 10,
+             "pa": "MAX",
+             "ca": "CENTER",
+             "sh": "FILL",
+             "sv": "HUG"
+            },
+            "grow": 1,
+            "v": {
+             "paddingLeft": "Space/space-500",
+             "paddingTop": "Space/space-300",
+             "paddingRight": "Space/space-500",
+             "paddingBottom": "Space/space-300"
+            },
+            "inst": {
+             "set": ".Update text",
+             "setId": "19332:11494",
+             "variant": "State=Default, Format=Mobile, RTL=TRUE"
+            },
+            "mcid": "19457:32836",
+            "cp": {
+             "State": "Default",
+             "Format": "Mobile",
+             "RTL": "TRUE"
+            },
+            "itx": [
+             "כאן מפרטים את העדכון"
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "n": "Button",
+        "t": "INSTANCE",
+        "x": 276,
+        "y": 8,
+        "w": 48,
+        "h": 48,
+        "nid": "36951:4198",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          12,
+          24,
+          12,
+          24
+         ],
+         "g": 0,
+         "pa": "CENTER",
+         "ca": "CENTER",
+         "sh": "FIXED",
+         "sv": "FIXED"
+        },
+        "r": 8,
+        "v": {
+         "paddingLeft": "Space/space-600",
+         "paddingTop": "Space/space-400",
+         "paddingRight": "Space/space-600",
+         "paddingBottom": "Space/space-400",
+         "topLeftRadius": "Border/radius-m",
+         "topRightRadius": "Border/radius-m",
+         "bottomLeftRadius": "Border/radius-m",
+         "bottomRightRadius": "Border/radius-m"
+        },
+        "inst": {
+         "set": "Button",
+         "setId": "81:1195",
+         "variant": "RTL=True, State=Disabled, Type=Link Button, Size=Medium, Icon Button=True, Intent=Default"
+        },
+        "mcid": "195:1033",
+        "cp": {
+         "Icon Op": "138:767",
+         "RTL": "True",
+         "State": "Disabled",
+         "Type": "Link Button",
+         "Size": "Medium",
+         "Icon Button": "True",
+         "Intent": "Default"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#f5f9ff",
+          "v": "Colors/Text & Icon/Inverted/subtle-primary"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "batch-updates-b-daterange.json",
+    "rest-19332-10398.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/header-brand-left",
+    "Colors/Text & Icon/Inverted/subtle-primary",
+    "Space/space-200",
+    "Space/space-300",
+    "Space/space-400",
+    "Space/space-500",
+    "Space/space-600"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

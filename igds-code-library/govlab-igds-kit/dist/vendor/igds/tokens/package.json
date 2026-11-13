@@ -1,0 +1,35 @@
+{
+  "name": "@igds/tokens",
+  "version": "0.1.59",
+  "description": "IGDS Design Tokens",
+  "main": "lib/index.min.css",
+  "style": "lib/index.min.css",
+  "exports": {
+    ".": "./lib/index.min.css",
+    "./local.css": "./lib/local.css",
+    "./library-fonts.css": "./lib/library-fonts.css",
+    "./no-side-effects.css": "./lib/no-side-effects.css",
+    "./no-globals.css": "./lib/no-globals.css"
+  },
+  "devDependencies": {
+    "sass": "1.79.3",
+    "stylelint": "16.7.0"
+  },
+  "publishConfig": {
+    "@igds:registry": "https://gitlab.com/api/v4/projects/60048869/packages/npm/"
+  },
+  "dependencies": {
+    "normalize.css": "8.0.1"
+  },
+  "files": [
+    "README.md",
+    "lib/*",
+    "lib/fonts/*",
+    "package.json"
+  ],
+  "scripts": {
+    "lint": "stylelint \"src/**/*.scss\"",
+    "build": "node scripts/generate-no-globals.mjs && node scripts/generate-no-side-effects.mjs && sass src/index.scss:lib/index.min.css --style compressed && sass src/library-fonts.scss:lib/library-fonts.css --style compressed && sass src/local.scss:lib/local.css --style compressed && sass src/no-side-effects.scss:lib/no-side-effects.css --style compressed && sass src/no-globals.scss:lib/no-globals.css --style compressed && node scripts/copy-fonts.mjs",
+    "release": "pnpm view $npm_package_name@$npm_package_version version >/dev/null 2>&1 && echo \"Version $npm_package_name@$npm_package_version already exists in registry. Skipping.\" || pnpm publish --no-git-checks"
+  }
+}

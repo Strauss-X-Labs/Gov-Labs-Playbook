@@ -1,0 +1,783 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "17726:66256",
+  "name": ".Time Picker List Atom",
+  "key": "22993ad9a599f132494a0a331a56a7db4978eaa7",
+  "defs": {
+   "State": {
+    "t": "VARIANT",
+    "o": [
+     "Default",
+     "Hover",
+     "Focused",
+     "Disabled",
+     "Selected"
+    ],
+    "d": "Default"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-17726-66256.json",
+   "sha256": "ffd95ce98d3ee201eb1188b5fbc8265b814a1c557b0a1ce9a9f19bb642cfe5d7",
+   "format": "v5-rest",
+   "restResponseSha256": "c02b7ab96d2d7ff04b25a00f5a5b13ad32bc3ffe1c5947323ea8583120f15165",
+   "filter": null,
+   "offset": 0,
+   "captured": 5,
+   "totalMatching": 5
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 5,
+  "byFilter": {
+   "null": {
+    "totalMatching": 5,
+    "captured": 5
+   }
+  },
+  "detail": {
+   "tree": 5,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-m": {
+   "figma": "Border/radius-m",
+   "css": "--igds-ref-border-radius-m",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/brand-pressed": {
+   "figma": "Colors/Background/brand-pressed",
+   "css": "--igds-base-color-background-brand-pressed",
+   "status": "css-token",
+   "light": {
+    "figma": "#0045a3",
+    "css": "#0045a3",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#91bcf8",
+    "css": "#91bcf8",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/disabled-with-border": {
+   "figma": "Colors/Background/disabled-with-border",
+   "css": "--igds-base-color-background-disabled-with-border",
+   "status": "css-token",
+   "light": {
+    "figma": "#f0f3f6",
+    "css": "#f0f3f6",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1b487a",
+    "css": "#1b487a",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/neutral-hover": {
+   "figma": "Colors/Background/neutral-hover",
+   "css": "--igds-base-color-background-neutral-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#f2f6fd",
+    "css": "#f2f6fd",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1a283c",
+    "css": "#1a283c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/secondary-button-pressed": {
+   "figma": "Colors/Background/secondary-button-pressed",
+   "css": "--igds-base-color-background-secondary-button-pressed",
+   "status": "css-token",
+   "light": {
+    "figma": "#ebf3ff",
+    "css": "#ebf3ff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#30639c",
+    "css": "#30639c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Border/focused": {
+   "figma": "Colors/Border/focused",
+   "css": "--igds-base-color-border-focused",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/disabled": {
+   "figma": "Colors/Text & Icon/disabled",
+   "css": "--igds-base-color-text-disabled",
+   "status": "css-token",
+   "light": {
+    "figma": "#5c697a",
+    "css": "#5c697a",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#8596af",
+    "css": "#8596af",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/xs": {
+   "figma": "Typography/font-size/xs",
+   "css": "--igds-ref-font-size-xs",
+   "status": "css-token",
+   "light": {
+    "figma": 14,
+    "css": "14px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "17726:66255",
+   "name": "State=Default",
+   "props": {
+    "State": "Default"
+   },
+   "w": 78,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 78,
+    "h": 32,
+    "nid": "17726:66255",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      16,
+      8,
+      16
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "HH:MM",
+      "t": "TEXT",
+      "x": 16,
+      "y": 5,
+      "w": 46,
+      "h": 22,
+      "nid": "17726:66092",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "HH:MM",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-17726-66256.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "17726:66252",
+   "name": "State=Disabled",
+   "props": {
+    "State": "Disabled"
+   },
+   "w": 78,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 78,
+    "h": 32,
+    "nid": "17726:66252",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      16,
+      8,
+      16
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f0f3f6",
+      "v": "Colors/Background/disabled-with-border"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "HH:MM",
+      "t": "TEXT",
+      "x": 16,
+      "y": 5,
+      "w": 46,
+      "h": 22,
+      "nid": "17726:66095",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#5c697a",
+        "v": "Colors/Text & Icon/disabled"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "HH:MM",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-17726-66256.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-with-border",
+    "Colors/Text & Icon/disabled",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "17726:66253",
+   "name": "State=Focused",
+   "props": {
+    "State": "Focused"
+   },
+   "w": 78,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 78,
+    "h": 32,
+    "nid": "17726:66253",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      16,
+      8,
+      16
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "r": 8,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ffffff",
+      "v": "Colors/Background/neutral-default"
+     }
+    ],
+    "s": [
+     {
+      "t": "SOLID",
+      "c": "#0068f5",
+      "v": "Colors/Border/focused"
+     }
+    ],
+    "sw": 2,
+    "sa": "INSIDE",
+    "v": {
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-300",
+     "topLeftRadius": "Border/radius-m",
+     "topRightRadius": "Border/radius-m",
+     "bottomLeftRadius": "Border/radius-m",
+     "bottomRightRadius": "Border/radius-m"
+    },
+    "c": [
+     {
+      "n": "HH:MM",
+      "t": "TEXT",
+      "x": 16,
+      "y": 5,
+      "w": 46,
+      "h": 22,
+      "nid": "17726:66108",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "HH:MM",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-17726-66256.json"
+   ],
+   "vars": [
+    "Border/radius-m",
+    "Colors/Background/neutral-default",
+    "Colors/Border/focused",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "17726:66251",
+   "name": "State=Hover",
+   "props": {
+    "State": "Hover"
+   },
+   "w": 78,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 78,
+    "h": 32,
+    "nid": "17726:66251",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      16,
+      8,
+      16
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "HH:MM",
+      "t": "TEXT",
+      "x": 16,
+      "y": 5,
+      "w": 46,
+      "h": 22,
+      "nid": "17726:66098",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "HH:MM",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-17726-66256.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-hover",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "17726:66254",
+   "name": "State=Selected",
+   "props": {
+    "State": "Selected"
+   },
+   "w": 78,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 78,
+    "h": 32,
+    "nid": "17726:66254",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      8,
+      16,
+      8,
+      16
+     ],
+     "g": 8,
+     "pa": "MAX",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "FIXED"
+    },
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#ebf3ff",
+      "v": "Colors/Background/secondary-button-pressed"
+     }
+    ],
+    "v": {
+     "itemSpacing": "Space/space-300",
+     "paddingLeft": "Space/space-500",
+     "paddingTop": "Space/space-300",
+     "paddingRight": "Space/space-500",
+     "paddingBottom": "Space/space-300"
+    },
+    "c": [
+     {
+      "n": "HH:MM",
+      "t": "TEXT",
+      "x": 16,
+      "y": 5,
+      "w": 46,
+      "h": 22,
+      "nid": "17726:66104",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0045a3",
+        "v": "Colors/Background/brand-pressed"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "HH:MM",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-17726-66256.json"
+   ],
+   "vars": [
+    "Colors/Background/brand-pressed",
+    "Colors/Background/secondary-button-pressed",
+    "Space/space-300",
+    "Space/space-500",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

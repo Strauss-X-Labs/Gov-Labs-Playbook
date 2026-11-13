@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Date Picker (נצרך מספריית IGDS)</title>
+    <!-- IGDS: טוקנים נטענים ראשון (R-IGDS-07) -->
+    <link rel="stylesheet" href="../node_modules/@igds/tokens/lib/index.min.css">
+    <!-- מקור אמת: טוקנים ומחלקות הדיזיין סיסטם -->
+    <link rel="stylesheet" href="../styles.css">
+    <!-- סטייל מעטפת הגלריה (משותף לכל הסקיצות) -->
+    <link rel="stylesheet" href="_gallery.css">
+    <!-- IGDS: bundle הדפדפן (ללא bundler, R-BUILD-03) — רושם אוטומטית את igds-date-picker -->
+    <script src="../node_modules/@igds/core-web/lib/index.min.js" defer></script>
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Date Picker — נצרך מספריית IGDS</h1>
+        <p class="sketch__sub">
+            בניגוד לשאר הסקיצות, הרכיב הזה <strong>לא נבנה מחדש ב-HTML/CSS</strong> — הוא
+            <strong>נצרך ישירות מספריית הרכיבים הרשמית</strong> (<code>@igds/core-web</code>, גרסה 0.1.59)
+            דרך ה-browser bundle, לפי כללי הצריכה (R-FORM-01 / R-COMP-04 / R-BUILD-03).
+            הטוקנים נטענים מ-<code>@igds/tokens</code>.
+            לוח השנה הפתוח (node <code>914:1980</code> — <code>.Date Picker Calendar</code>, תצוגות
+            Day/Month/Year × RTL/LTR) הוא ה-popup המובנה של הרכיב — נפתח בלחיצה על השדה או ב-focus.
+            תצוגות החודש והשנה הן מצבי־פנים של אותו לוח, שנפתחים בלחיצה על כותרת החודש/השנה — לא
+            משוכפל ב-HTML.
+        </p>
+
+        <div class="sketch__grid">
+
+            <!-- Default -->
+            <section>
+                <span class="sketch__state-label">Default</span>
+                <igds-date-picker label="תאריך" dir="rtl"></igds-date-picker>
+            </section>
+
+            <!-- Required -->
+            <section>
+                <span class="sketch__state-label">Required</span>
+                <igds-date-picker label="תאריך לידה" dir="rtl" required></igds-date-picker>
+            </section>
+
+            <!-- Pre-filled (defaultValue) -->
+            <section>
+                <span class="sketch__state-label">Pre-filled</span>
+                <igds-date-picker label="תאריך תחילה" dir="rtl" default-value="2026-09-01"></igds-date-picker>
+            </section>
+
+            <!-- With placeholder -->
+            <section>
+                <span class="sketch__state-label">Placeholder</span>
+                <igds-date-picker label="תאריך יעד" dir="rtl" placeholder="dd/mm/yyyy"></igds-date-picker>
+            </section>
+
+            <!-- Min / Max -->
+            <section>
+                <span class="sketch__state-label">Min / Max</span>
+                <igds-date-picker label="בטווח מותר" dir="rtl" min="2026-01-01" max="2026-12-31"></igds-date-picker>
+            </section>
+
+            <!-- Error -->
+            <section>
+                <span class="sketch__state-label">Error</span>
+                <igds-date-picker label="תאריך" dir="rtl" invalid error="חובה להזין תאריך"></igds-date-picker>
+            </section>
+
+            <!-- Disabled -->
+            <section>
+                <span class="sketch__state-label">Disabled</span>
+                <igds-date-picker label="תאריך" dir="rtl" disabled></igds-date-picker>
+            </section>
+
+            <!-- Read-only -->
+            <section>
+                <span class="sketch__state-label">Read-only</span>
+                <igds-date-picker label="תאריך" dir="rtl" readonly default-value="2026-09-01"></igds-date-picker>
+            </section>
+
+            <!-- With icon -->
+            <section>
+                <span class="sketch__state-label">With icon</span>
+                <igds-date-picker label="תאריך" dir="rtl" with-icon></igds-date-picker>
+            </section>
+
+            <!-- Open on focus -->
+            <section>
+                <span class="sketch__state-label">Open on focus</span>
+                <igds-date-picker label="פתיחת לוח ב-focus" dir="rtl" open-on-focus></igds-date-picker>
+            </section>
+
+        </div>
+
+        <!-- לוח השנה (node 914:1980) — ה-popup המובנה של הרכיב, שלוש תצוגות -->
+        <h2 class="sketch__mapping-title">לוח השנה הפתוח — תצוגות Day / Month / Year (node 914:1980)</h2>
+        <p class="sketch__sub">
+            לוח השנה אינו רכיב נפרד — הוא ה-popup המובנה של <code>igds-date-picker</code>. שלוש התצוגות
+            בפיגמה (Day / Month / Year) הן <strong>תצוגות־פנים של אותו לוח</strong>, לא מאפיין שמוגדר
+            מראש: הרכיב נפתח תמיד בתצוגת היום (<code>mode=date</code>), והמעבר לתצוגת חודש או שנה נעשה
+            <strong>בלחיצה על כותרת החודש/השנה בתוך הלוח</strong> (<code>openMonthPicker()</code> /
+            <code>openYearPicker()</code>, שמחליפים את ה-<code>mode</code> הפנימי).
+        </p>
+        <ul class="sketch__sub" style="padding-inline-start: var(--space-lg);">
+            <li><strong>Day (תצוגת יום):</strong> רשת ימי החודש — תצוגת הפתיחה. לחיצה על יום בוחרת תאריך.</li>
+            <li><strong>Month (תצוגת חודש):</strong> לחיצה על שם החודש בכותרת הלוח פותחת בחירת חודש (רשת 12 חודשים).</li>
+            <li><strong>Year (תצוגת שנה):</strong> לחיצה על השנה בכותרת הלוח פותחת בחירת שנה (רשת שנים, 20 שנה לתצוגה).</li>
+        </ul>
+        <p class="sketch__sub">
+            להמחשה חיה: פתחו את השדה למטה (נפתח ב-focus), ואז לחצו על <em>שם החודש</em> בכותרת כדי לעבור
+            לתצוגת חודש, או על <em>השנה</em> כדי לעבור לתצוגת שנה. הכול מנוהל פנימית ברכיב — ללא שכפול.
+        </p>
+        <div class="sketch__grid">
+            <section>
+                <span class="sketch__state-label">לוח פתוח (Day → Month → Year)</span>
+                <igds-date-picker label="פתחו ולחצו על החודש/השנה בכותרת" dir="rtl" open-on-focus
+                    with-icon></igds-date-picker>
+            </section>
+        </div>
+
+        <!-- Date Range — פער ספרייה (node 35903:11333) -->
+        <h2 class="sketch__mapping-title">Date Range — פער ספרייה (node 35903:11333)</h2>
+        <div style="border: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-failure);
+                    border-radius: var(--igds-ref-border-radius-m);
+                    padding: var(--space-lg);
+                    background-color: var(--color-background);">
+            <p class="sketch__sub" style="margin: 0;">
+                בחירת טווח תאריכים (<strong>Date Range</strong>) קיימת בפיגמה (node
+                <code>35903:11333</code>, כולל ה-<code>.Building Blocks/Day</code> עם מצבי
+                <code>Start Range</code> / <code>End range</code> / <code>Range</code>),
+                אך <strong>אינה קיימת בספריית הרכיבים הרשמית</strong>: הגרסה המותקנת
+                <code>@igds/core-web 0.1.59</code> היא <strong>הגרסה האחרונה שפורסמה</strong> (מתוך 51 גרסאות),
+                ואין בה רכיב <code>date-range</code> ולא תמיכת range ב-<code>igds-date-picker</code>
+                (אין מאפייני start/end/range ב-API).
+            </p>
+            <p class="sketch__sub" style="margin: var(--space-md) 0 0;">
+                בהתאם לכלל <strong>R-COMP-04</strong> — רכיב חסר בספרייה מדווחים ל-maintainers של
+                <code>@igds/core-web</code>, <strong>ולא בונים look-alike ב-HTML/CSS</strong>.
+                כשתפורסם גרסה עם תמיכת טווח — נצרוך אותה כאן (upgrade + צריכה), בלי בנייה מחדש.
+            </p>
+        </div>
+
+        <!-- טבלת מיפוי: במקום מיפוי ערך→טוקן ידני, מתועד שהרכיב מגיע מהספרייה -->
+        <h2 class="sketch__mapping-title">מקור הרכיב (צריכה מהספרייה)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>היבט</th>
+                    <th>ערך</th>
+                    <th>מקור / כלל</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>רכיב</td>
+                    <td><code>&lt;igds-date-picker&gt;</code></td>
+                    <td>@igds/core-web 0.1.59 (R-FORM-01 / R-COMP-04)</td>
+                    <td>✓ נצרך מהספרייה</td>
+                </tr>
+                <tr>
+                    <td>טעינה</td>
+                    <td><code>lib/index.min.js</code> (IIFE)</td>
+                    <td>פרויקט ללא bundler (R-BUILD-03)</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>טוקנים</td>
+                    <td><code>@igds/tokens/lib/index.min.css</code></td>
+                    <td>נטען ראשון, לפני styles.css (R-IGDS-07)</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>צבעים / מרווחים / radius</td>
+                    <td>מנוהל פנימית ע"י הרכיב</td>
+                    <td>הרכיב משתמש בטוקני @igds/tokens (R-IGDS-03)</td>
+                    <td>✓ ללא ערכים קשיחים</td>
+                </tr>
+                <tr>
+                    <td>נגישות / RTL</td>
+                    <td>ARIA, ניהול focus, ניווט מקלדת, dir=rtl</td>
+                    <td>מובנה ברכיב הספרייה (R-A11Y-* / R-RTL-*)</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>לוח שנה פתוח (node 914:1980)</td>
+                    <td>popup מובנה — <code>is-popup-open</code> / <code>toggle-popup()</code></td>
+                    <td>מנוהל ע"י הרכיב (R-COMP-04 — לא משוכפל)</td>
+                    <td>✓ נצרך מהספרייה</td>
+                </tr>
+                <tr>
+                    <td>תצוגות Day / Month / Year</td>
+                    <td>מצב פנימי <code>mode</code> (date→month→year)</td>
+                    <td>נשלט בלחיצה על כותרת הלוח (openMonthPicker/openYearPicker) — לא מאפיין HTML</td>
+                    <td>✓ מנוהל ברכיב</td>
+                </tr>
+                <tr>
+                    <td>תחילת שבוע</td>
+                    <td><code>start-week-on="sunday | monday"</code></td>
+                    <td>IGDS_START_WEEK_ON</td>
+                    <td>✓ מאפיין אמיתי</td>
+                </tr>
+                <tr>
+                    <td>אייקון / פתיחה ב-focus</td>
+                    <td><code>with-icon</code> · <code>open-on-focus</code></td>
+                    <td>מאפייני הרכיב (date-picker.d.ts)</td>
+                    <td>✓ מאפיין אמיתי</td>
+                </tr>
+                <tr>
+                    <td>Date Range (node 35903:11333)</td>
+                    <td>אין רכיב / אין מאפייני range</td>
+                    <td>לא קיים ב-@igds/core-web 0.1.59 (האחרונה) — פער לדיווח (R-COMP-04)</td>
+                    <td>⚠ פער ספרייה — לא משוכפל</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+</body>
+
+</html>

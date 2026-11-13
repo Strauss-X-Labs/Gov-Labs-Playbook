@@ -1,0 +1,1421 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "36681:10084",
+  "name": ".Face rating",
+  "key": "158649cce7d569d329c94390848c931210362c97",
+  "defs": {
+   "Label": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "Rating": {
+    "t": "VARIANT",
+    "o": [
+     "Bad",
+     "Not Good",
+     "Okey",
+     "Good",
+     "Excellent"
+    ],
+    "d": "Bad"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-36681-10084.json",
+   "sha256": "af606db44332345ce9eb0418cd0f50b29c6bba911c6e37fe67401e54e00e6180",
+   "format": "v5-rest",
+   "restResponseSha256": "cbf60a4abee22b9a3dc25aa0a351e628bbda1ed59a8f46d9e18f56d3639ba9ef",
+   "filter": null,
+   "offset": 0,
+   "captured": 10,
+   "totalMatching": 10
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 10,
+  "byFilter": {
+   "null": {
+    "totalMatching": 10,
+    "captured": 10
+   }
+  },
+  "detail": {
+   "tree": 10,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-200": {
+   "figma": "Space/space-200",
+   "css": "--igds-ref-space-200",
+   "status": "css-token",
+   "light": {
+    "figma": 4,
+    "css": "4px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/xs": {
+   "figma": "Typography/font-size/xs",
+   "css": "--igds-ref-font-size-xs",
+   "status": "css-token",
+   "light": {
+    "figma": 14,
+    "css": "14px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "36681:35933",
+   "name": "RTL=False, Rating=Bad",
+   "props": {
+    "RTL": "False",
+    "Rating": "Bad"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:35933",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:35934",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Terrible, chosen=False, State=Default"
+      },
+      "mcid": "15096:285",
+      "cp": {
+       "Rating": "Terrible",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Bad",
+      "t": "TEXT",
+      "x": 11,
+      "y": 32,
+      "w": 26,
+      "h": 22,
+      "nid": "36681:35935",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Bad",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:35945",
+   "name": "RTL=False, Rating=Excellent",
+   "props": {
+    "RTL": "False",
+    "Rating": "Excellent"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:35945",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:35946",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Excellent, chosen=False, State=Default"
+      },
+      "mcid": "15096:250",
+      "cp": {
+       "Rating": "Excellent",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Excellent",
+      "t": "TEXT",
+      "x": -6,
+      "y": 32,
+      "w": 60,
+      "h": 22,
+      "nid": "36681:35947",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Excellent",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:35942",
+   "name": "RTL=False, Rating=Good",
+   "props": {
+    "RTL": "False",
+    "Rating": "Good"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:35942",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:35943",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Good, chosen=False, State=Default"
+      },
+      "mcid": "15096:244",
+      "cp": {
+       "Rating": "Good",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Good",
+      "t": "TEXT",
+      "x": 7,
+      "y": 32,
+      "w": 34,
+      "h": 22,
+      "nid": "36681:35944",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Good",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:35936",
+   "name": "RTL=False, Rating=Not Good",
+   "props": {
+    "RTL": "False",
+    "Rating": "Not Good"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:35936",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:35937",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Not good, chosen=False, State=Default"
+      },
+      "mcid": "15110:299",
+      "cp": {
+       "Rating": "Not good",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Poor",
+      "t": "TEXT",
+      "x": 8.5,
+      "y": 32,
+      "w": 31,
+      "h": 22,
+      "nid": "36681:35938",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Poor",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:35939",
+   "name": "RTL=False, Rating=Okey",
+   "props": {
+    "RTL": "False",
+    "Rating": "Okey"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:35939",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:35940",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Okay, chosen=False, State=Default"
+      },
+      "mcid": "15096:235",
+      "cp": {
+       "Rating": "Okay",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "Okey",
+      "t": "TEXT",
+      "x": 8,
+      "y": 32,
+      "w": 32,
+      "h": 22,
+      "nid": "36681:35941",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Okey",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:10085",
+   "name": "RTL=True, Rating=Bad",
+   "props": {
+    "RTL": "True",
+    "Rating": "Bad"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:10085",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:10086",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Terrible, chosen=False, State=Default"
+      },
+      "mcid": "15096:285",
+      "cp": {
+       "Rating": "Terrible",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "רע",
+      "t": "TEXT",
+      "x": 16,
+      "y": 32,
+      "w": 16,
+      "h": 22,
+      "nid": "36681:10087",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "רע",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:10100",
+   "name": "RTL=True, Rating=Excellent",
+   "props": {
+    "RTL": "True",
+    "Rating": "Excellent"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:10100",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:10101",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Excellent, chosen=False, State=Default"
+      },
+      "mcid": "15096:250",
+      "cp": {
+       "Rating": "Excellent",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "מצוין",
+      "t": "TEXT",
+      "x": 10.5,
+      "y": 32,
+      "w": 27,
+      "h": 22,
+      "nid": "36681:10102",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "מצוין",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:10097",
+   "name": "RTL=True, Rating=Good",
+   "props": {
+    "RTL": "True",
+    "Rating": "Good"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:10097",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:10098",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Good, chosen=False, State=Default"
+      },
+      "mcid": "15096:244",
+      "cp": {
+       "Rating": "Good",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "טוב",
+      "t": "TEXT",
+      "x": 14,
+      "y": 32,
+      "w": 20,
+      "h": 22,
+      "nid": "36681:10099",
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טוב",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:10091",
+   "name": "RTL=True, Rating=Not Good",
+   "props": {
+    "RTL": "True",
+    "Rating": "Not Good"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:10091",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:10092",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Not good, chosen=False, State=Default"
+      },
+      "mcid": "15110:299",
+      "cp": {
+       "Rating": "Not good",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "לא טוב",
+      "t": "TEXT",
+      "x": 4.5,
+      "y": 32,
+      "w": 39,
+      "h": 22,
+      "nid": "36681:10093",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "לא טוב",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36681:10094",
+   "name": "RTL=True, Rating=Okey",
+   "props": {
+    "RTL": "True",
+    "Rating": "Okey"
+   },
+   "w": 48,
+   "h": 58,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 58,
+    "nid": "36681:10094",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      4,
+      4,
+      4,
+      4
+     ],
+     "g": 4,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "v": {
+     "itemSpacing": "Space/space-200",
+     "paddingLeft": "Space/space-200",
+     "paddingTop": "Space/space-200",
+     "paddingRight": "Space/space-200",
+     "paddingBottom": "Space/space-200"
+    },
+    "c": [
+     {
+      "n": ".Atom Face-rating",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 4,
+      "w": 24,
+      "h": 24,
+      "nid": "36681:10095",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": ".Atom Face-rating",
+       "setId": "15096:234",
+       "variant": "Rating=Okay, chosen=False, State=Default"
+      },
+      "mcid": "15096:235",
+      "cp": {
+       "Rating": "Okay",
+       "chosen": "False",
+       "State": "Default"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     },
+     {
+      "n": "בסדר",
+      "t": "TEXT",
+      "x": 8,
+      "y": 32,
+      "w": 32,
+      "h": 22,
+      "nid": "36681:10096",
+      "ref": {
+       "visible": "Label#36681:0"
+      },
+      "sz": [
+       "HUG",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "בסדר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "CENTER"
+      ],
+      "tar": "WIDTH_AND_HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-36681-10084.json"
+   ],
+   "vars": [
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-200",
+    "Typography/font-size/xs",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

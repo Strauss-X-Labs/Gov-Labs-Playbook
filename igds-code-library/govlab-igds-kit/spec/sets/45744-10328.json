@@ -1,0 +1,5596 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "45744:10328",
+  "name": "progress bar",
+  "key": "ab3143bb30d33b98f7fbbf561064374883be57f6",
+  "defs": {
+   "Show Label": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Show Help Text": {
+    "t": "BOOLEAN",
+    "d": true
+   },
+   "Text RTL": {
+    "t": "TEXT",
+    "d": "כותרת"
+   },
+   "Text RTL2": {
+    "t": "TEXT",
+    "d": "טקסט עזר"
+   },
+   "Text LTR": {
+    "t": "TEXT",
+    "d": "Lable"
+   },
+   "Text LTR2": {
+    "t": "TEXT",
+    "d": "Help Text"
+   },
+   "RTL": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   },
+   "Progress": {
+    "t": "VARIANT",
+    "o": [
+     "0%",
+     "100%",
+     "75%",
+     "50%",
+     "25%"
+    ],
+    "d": "100%"
+   },
+   "Text": {
+    "t": "VARIANT",
+    "o": [
+     "Right",
+     "Middle",
+     "Left"
+    ],
+    "d": "Right"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-45744-10328.json",
+   "sha256": "1b55f39746b104d3946456036e87d0b17b3af710b73c226e407a77ae03aa95ac",
+   "format": "v5-rest",
+   "restResponseSha256": "90c8081bd101532c487555c385925786f24664cd5f29cce53ede1c81bd00b09c",
+   "filter": null,
+   "offset": 0,
+   "captured": 20,
+   "totalMatching": 20
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 20,
+  "byFilter": {
+   "null": {
+    "totalMatching": 20,
+    "captured": 20
+   }
+  },
+  "detail": {
+   "tree": 20,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/brand-default": {
+   "figma": "Colors/Background/brand-default",
+   "css": "--igds-base-color-background-brand-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#0068f5",
+    "css": "#0068f5",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#5ca1ff",
+    "css": "#5ca1ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Background/disabled-without-text": {
+   "figma": "Colors/Background/disabled-without-text",
+   "css": "--igds-base-color-background-disabled-without-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#ced7e0",
+    "css": "#ced7e0",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#495a73",
+    "css": "#495a73",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-300": {
+   "figma": "Space/space-300",
+   "css": "--igds-ref-space-300",
+   "status": "css-token",
+   "light": {
+    "figma": 8,
+    "css": "8px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/s": {
+   "figma": "Typography/font-size/s",
+   "css": "--igds-ref-font-size-s",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-size/xs": {
+   "figma": "Typography/font-size/xs",
+   "css": "--igds-ref-font-size-xs",
+   "status": "css-token",
+   "light": {
+    "figma": 14,
+    "css": "14px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/medium": {
+   "figma": "Typography/font-weight/medium",
+   "css": "--igds-ref-font-weight-medium",
+   "status": "css-token",
+   "light": {
+    "figma": 500,
+    "css": "500",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Typography/font-weight/regular": {
+   "figma": "Typography/font-weight/regular",
+   "css": "--igds-ref-font-weight-regular",
+   "status": "css-token",
+   "light": {
+    "figma": 400,
+    "css": "400",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "45744:10550",
+   "name": "RTL=False, Progress=0%, Text=Left",
+   "props": {
+    "RTL": "False",
+    "Progress": "0%",
+    "Text": "Left"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10550",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10551",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10552",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 452,
+        "h": 8,
+        "nid": "45744:10553",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=0%, RTL=True"
+        },
+        "mcid": "45684:6868",
+        "cp": {
+         "Progress": "0%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 460,
+        "y": 24,
+        "w": 20,
+        "h": 22,
+        "nid": "45744:10554",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "0%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10557",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10643",
+   "name": "RTL=False, Progress=0%, Text=Middle",
+   "props": {
+    "RTL": "False",
+    "Progress": "0%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10643",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10644",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10645",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 452,
+        "h": 8,
+        "nid": "45744:10646",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=0%, RTL=True"
+        },
+        "mcid": "45684:6868",
+        "cp": {
+         "Progress": "0%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 460,
+        "y": 24,
+        "w": 20,
+        "h": 22,
+        "nid": "45744:10647",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "0%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10650",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10500",
+   "name": "RTL=False, Progress=100%, Text=Left",
+   "props": {
+    "RTL": "False",
+    "Progress": "100%",
+    "Text": "Left"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10500",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10501",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10502",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 437,
+        "h": 8,
+        "nid": "45744:10504",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=100%, RTL=True"
+        },
+        "mcid": "45684:6893",
+        "cp": {
+         "Progress": "100%",
+         "RTL": "True"
+        }
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 445,
+        "y": 24,
+        "w": 35,
+        "h": 22,
+        "nid": "45744:10503",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "100%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10507",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10611",
+   "name": "RTL=False, Progress=100%, Text=Middle",
+   "props": {
+    "RTL": "False",
+    "Progress": "100%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10611",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10612",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10613",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 437,
+        "h": 8,
+        "nid": "45744:10614",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=100%, RTL=True"
+        },
+        "mcid": "45684:6893",
+        "cp": {
+         "Progress": "100%",
+         "RTL": "True"
+        }
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 445,
+        "y": 24,
+        "w": 35,
+        "h": 22,
+        "nid": "45744:10615",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "100%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10618",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10540",
+   "name": "RTL=False, Progress=25%, Text=Left",
+   "props": {
+    "RTL": "False",
+    "Progress": "25%",
+    "Text": "Left"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10540",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10541",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10542",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:10543",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=50%, RTL=False"
+        },
+        "mcid": "45684:6885",
+        "cp": {
+         "Progress": "50%",
+         "RTL": "False"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 452,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:10544",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "25%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10547",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10635",
+   "name": "RTL=False, Progress=25%, Text=Middle",
+   "props": {
+    "RTL": "False",
+    "Progress": "25%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10635",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10636",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10637",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:10638",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=50%, RTL=False"
+        },
+        "mcid": "45684:6885",
+        "cp": {
+         "Progress": "50%",
+         "RTL": "False"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 452,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:10639",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "25%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10642",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10526",
+   "name": "RTL=False, Progress=50%, Text=Left",
+   "props": {
+    "RTL": "False",
+    "Progress": "50%",
+    "Text": "Left"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10526",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10527",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10528",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:10529",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=50%, RTL=False"
+        },
+        "mcid": "45684:6885",
+        "cp": {
+         "Progress": "50%",
+         "RTL": "False"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 452,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:10530",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "50%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10533",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10627",
+   "name": "RTL=False, Progress=50%, Text=Middle",
+   "props": {
+    "RTL": "False",
+    "Progress": "50%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10627",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10628",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10629",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:10630",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=50%, RTL=False"
+        },
+        "mcid": "45684:6885",
+        "cp": {
+         "Progress": "50%",
+         "RTL": "False"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 452,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:10631",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "50%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10634",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10509",
+   "name": "RTL=False, Progress=75%, Text=Left",
+   "props": {
+    "RTL": "False",
+    "Progress": "75%",
+    "Text": "Left"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10509",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10510",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10511",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 445,
+        "h": 8,
+        "nid": "45744:10512",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=75%, RTL=False"
+        },
+        "mcid": "45684:6897",
+        "cp": {
+         "Progress": "75%",
+         "RTL": "False"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 453,
+        "y": 24,
+        "w": 27,
+        "h": 22,
+        "nid": "45744:10513",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "75%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10516",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "LEFT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10619",
+   "name": "RTL=False, Progress=75%, Text=Middle",
+   "props": {
+    "RTL": "False",
+    "Progress": "75%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10619",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10620",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text LTR#45744:131"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "Lable",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10621",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 0,
+        "y": 31,
+        "w": 445,
+        "h": 8,
+        "nid": "45744:10622",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MIN",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=75%, RTL=False"
+        },
+        "mcid": "45684:6897",
+        "cp": {
+         "Progress": "75%",
+         "RTL": "False"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       },
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 453,
+        "y": 24,
+        "w": 27,
+        "h": 22,
+        "nid": "45744:10623",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "75%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10626",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text LTR2#45744:143"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "Help Text",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10491",
+   "name": "RTL=True, Progress=0%, Text=Middle",
+   "props": {
+    "RTL": "True",
+    "Progress": "0%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10491",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10492",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10493",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 20,
+        "h": 22,
+        "nid": "45744:10494",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "0%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 28,
+        "y": 31,
+        "w": 452,
+        "h": 8,
+        "nid": "45744:10495",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=0%, RTL=True"
+        },
+        "mcid": "45684:6868",
+        "cp": {
+         "Progress": "0%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10498",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text RTL2#45744:121"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10329",
+   "name": "RTL=True, Progress=0%, Text=Right",
+   "props": {
+    "RTL": "True",
+    "Progress": "0%",
+    "Text": "Right"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10329",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10330",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10331",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 20,
+        "h": 22,
+        "nid": "45744:10332",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "0%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 28,
+        "y": 31,
+        "w": 452,
+        "h": 8,
+        "nid": "45744:10333",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 10,
+         "pa": "MIN",
+         "ca": "CENTER",
+         "sh": "FILL",
+         "sv": "HUG"
+        },
+        "grow": 1,
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=0%, RTL=True"
+        },
+        "mcid": "45684:6868",
+        "cp": {
+         "Progress": "0%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10336",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text RTL2#45744:121"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10397",
+   "name": "RTL=True, Progress=100%, Text=Middle",
+   "props": {
+    "RTL": "True",
+    "Progress": "100%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10397",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10398",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10399",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 35,
+        "h": 22,
+        "nid": "45744:10400",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "100%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 43,
+        "y": 31,
+        "w": 437,
+        "h": 8,
+        "nid": "45744:10401",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=100%, RTL=True"
+        },
+        "mcid": "45684:6893",
+        "cp": {
+         "Progress": "100%",
+         "RTL": "True"
+        }
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10404",
+      "ref": {
+       "visible": "Show Help Text#45744:105"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:9955",
+   "name": "RTL=True, Progress=100%, Text=Right",
+   "props": {
+    "RTL": "True",
+    "Progress": "100%",
+    "Text": "Right"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:9955",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:9929",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:9930",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 35,
+        "h": 22,
+        "nid": "45744:9931",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "100%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 43,
+        "y": 31,
+        "w": 437,
+        "h": 8,
+        "nid": "45744:9949",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=100%, RTL=True"
+        },
+        "mcid": "45684:6893",
+        "cp": {
+         "Progress": "100%",
+         "RTL": "True"
+        }
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:9953",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text RTL2#45744:121"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10421",
+   "name": "RTL=True, Progress=25%, Text=Middle",
+   "props": {
+    "RTL": "True",
+    "Progress": "25%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10421",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10422",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10423",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:10424",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "25%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 36,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:10425",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=25%, RTL=True"
+        },
+        "mcid": "45684:6870",
+        "cp": {
+         "Progress": "25%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10428",
+      "ref": {
+       "visible": "Show Help Text#45744:105"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10030",
+   "name": "RTL=True, Progress=25%, Text=Right",
+   "props": {
+    "RTL": "True",
+    "Progress": "25%",
+    "Text": "Right"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10030",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10017",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10018",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:10019",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "25%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 36,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:10020",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=25%, RTL=True"
+        },
+        "mcid": "45684:6870",
+        "cp": {
+         "Progress": "25%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10023",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text RTL2#45744:121"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10413",
+   "name": "RTL=True, Progress=50%, Text=Middle",
+   "props": {
+    "RTL": "True",
+    "Progress": "50%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10413",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10414",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10415",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:10416",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "50%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 36,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:10417",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=50%, RTL=True"
+        },
+        "mcid": "45684:6882",
+        "cp": {
+         "Progress": "50%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10420",
+      "ref": {
+       "visible": "Show Help Text#45744:105"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10005",
+   "name": "RTL=True, Progress=50%, Text=Right",
+   "props": {
+    "RTL": "True",
+    "Progress": "50%",
+    "Text": "Right"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10005",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:9992",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:9993",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 28,
+        "h": 22,
+        "nid": "45744:9994",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "50%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 36,
+        "y": 31,
+        "w": 444,
+        "h": 8,
+        "nid": "45744:9995",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=50%, RTL=True"
+        },
+        "mcid": "45684:6882",
+        "cp": {
+         "Progress": "50%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:9998",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text RTL2#45744:121"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:10405",
+   "name": "RTL=True, Progress=75%, Text=Middle",
+   "props": {
+    "RTL": "True",
+    "Progress": "75%",
+    "Text": "Middle"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:10405",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:10406",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10407",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 27,
+        "h": 22,
+        "nid": "45744:10408",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "75%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 35,
+        "y": 31,
+        "w": 445,
+        "h": 8,
+        "nid": "45744:10409",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=75%, RTL=True"
+        },
+        "mcid": "45684:6888",
+        "cp": {
+         "Progress": "75%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:10412",
+      "ref": {
+       "visible": "Show Help Text#45744:105"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "CENTER",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "45744:9978",
+   "name": "RTL=True, Progress=75%, Text=Right",
+   "props": {
+    "RTL": "True",
+    "Progress": "75%",
+    "Text": "Right"
+   },
+   "w": 480,
+   "h": 68,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 480,
+    "h": 68,
+    "nid": "45744:9978",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MIN",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 0,
+      "w": 480,
+      "h": 24,
+      "nid": "45744:9966",
+      "ref": {
+       "visible": "Show Label#45744:99",
+       "characters": "Text RTL#45744:111"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/medium",
+       "fontSize": "Typography/font-size/s"
+      },
+      "tx": "כותרת",
+      "font": [
+       "Rubik",
+       "Medium"
+      ],
+      "fsz": 16,
+      "lh": [
+       150,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Component/Label/Medium"
+     },
+     {
+      "n": "progress bar",
+      "t": "FRAME",
+      "x": 0,
+      "y": 24,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:9967",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 8,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "v": {
+       "itemSpacing": "Space/space-300"
+      },
+      "c": [
+       {
+        "n": "Number",
+        "t": "TEXT",
+        "x": 0,
+        "y": 24,
+        "w": 27,
+        "h": 22,
+        "nid": "45744:9968",
+        "sz": [
+         "HUG",
+         "HUG"
+        ],
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#0c3058",
+          "v": "Colors/Text & Icon/subtle-primary"
+         }
+        ],
+        "v": {
+         "fontWeight": "Typography/font-weight/regular",
+         "fontSize": "Typography/font-size/xs"
+        },
+        "tx": "75%",
+        "font": [
+         "Rubik",
+         "Regular"
+        ],
+        "fsz": 14,
+        "lh": [
+         160,
+         "PERCENT"
+        ],
+        "ls": [
+         0,
+         "PIXELS"
+        ],
+        "ta": [
+         "RIGHT",
+         "TOP"
+        ],
+        "tar": "WIDTH_AND_HEIGHT",
+        "ts": "Label/Regular"
+       },
+       {
+        "n": ".Progress Bar/Track Item",
+        "t": "INSTANCE",
+        "x": 35,
+        "y": 31,
+        "w": 445,
+        "h": 8,
+        "nid": "45744:9969",
+        "al": {
+         "m": "HORIZONTAL",
+         "p": [
+          0,
+          0,
+          0,
+          0
+         ],
+         "g": 0,
+         "pa": "MAX",
+         "ca": "MIN",
+         "sh": "FILL",
+         "sv": "FIXED"
+        },
+        "grow": 1,
+        "r": 4,
+        "f": [
+         {
+          "t": "SOLID",
+          "c": "#ced7e0",
+          "v": "Colors/Background/disabled-without-text"
+         }
+        ],
+        "v": {
+         "topLeftRadius": "Border/radius-xs",
+         "topRightRadius": "Border/radius-xs",
+         "bottomLeftRadius": "Border/radius-xs",
+         "bottomRightRadius": "Border/radius-xs"
+        },
+        "inst": {
+         "set": ".Progress Bar/Track Item",
+         "setId": "45684:6867",
+         "variant": "Progress=75%, RTL=True"
+        },
+        "mcid": "45684:6888",
+        "cp": {
+         "Progress": "75%",
+         "RTL": "True"
+        },
+        "ifill": [
+         {
+          "t": "SOLID",
+          "c": "#0068f5",
+          "v": "Colors/Background/brand-default"
+         }
+        ]
+       }
+      ]
+     },
+     {
+      "n": "Title",
+      "t": "TEXT",
+      "x": 0,
+      "y": 46,
+      "w": 480,
+      "h": 22,
+      "nid": "45744:9972",
+      "ref": {
+       "visible": "Show Help Text#45744:105",
+       "characters": "Text RTL2#45744:121"
+      },
+      "sz": [
+       "FILL",
+       "HUG"
+      ],
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ],
+      "v": {
+       "fontWeight": "Typography/font-weight/regular",
+       "fontSize": "Typography/font-size/xs"
+      },
+      "tx": "טקסט עזר",
+      "font": [
+       "Rubik",
+       "Regular"
+      ],
+      "fsz": 14,
+      "lh": [
+       160,
+       "PERCENT"
+      ],
+      "ls": [
+       0,
+       "PIXELS"
+      ],
+      "ta": [
+       "RIGHT",
+       "TOP"
+      ],
+      "tar": "HEIGHT",
+      "ts": "Label/Regular"
+     }
+    ]
+   },
+   "sources": [
+    "rest-45744-10328.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/brand-default",
+    "Colors/Background/disabled-without-text",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-300",
+    "Typography/font-size/s",
+    "Typography/font-size/xs",
+    "Typography/font-weight/medium",
+    "Typography/font-weight/regular"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

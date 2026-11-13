@@ -1,0 +1,140 @@
+/* ===========================
+   IGDS Component Gallery — סטייל מעטפת בלבד
+   משותף לכל קבצי הסקיצה ב-sketches/.
+   אין כאן עיצוב של הרכיבים עצמם — אלה מגיעים מ-../styles.css (מקור אמת).
+   כאן רק פריסת הגלריה, תוויות המצב וטבלת המיפוי.
+   =========================== */
+
+.sketch {
+    max-width: 960px;
+    margin-inline: auto;
+    padding: var(--space-xl);
+}
+
+.sketch__title {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--space-xs);
+}
+
+.sketch__sub {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-2xl);
+}
+
+.sketch__back {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    color: var(--color-link);
+    margin-bottom: var(--space-lg);
+}
+
+.sketch__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-2xl) var(--space-xl);
+}
+
+.sketch__state-label {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--space-md);
+}
+
+.sketch__label-row {
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+}
+
+.sketch__why {
+    font-size: var(--igds-ref-font-size-xs);
+    color: var(--igds-base-color-text-link-primary-default);
+    margin-inline-start: auto;
+}
+
+.sketch__hint-error {
+    display: block;
+    font-size: var(--igds-ref-font-size-xs);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-failure);
+    margin-top: var(--igds-ref-space-300);
+}
+
+/* הדמיית Hover ו-Focus סטטית לצורכי תצוגה בלבד (אין :hover/:focus בסקיצה סטטית).
+   משתמשות באותם טוקנים של המצבים האמיתיים ב-styles.css. */
+.is-hover {
+    border-color: var(--igds-base-color-border-brand-hover) !important;
+}
+
+.is-focus {
+    border-color: var(--igds-base-color-border-focused) !important;
+    border-width: 2px !important;
+}
+
+/* טבלת מיפוי טוקנים (Figma → styles.css) */
+.sketch__mapping {
+    margin-top: var(--space-2xl);
+    border-collapse: collapse;
+    width: 100%;
+    font-size: var(--font-size-sm);
+}
+
+.sketch__mapping th,
+.sketch__mapping td {
+    border: 1px solid var(--igds-base-color-border-divider-default);
+    padding: var(--space-sm) var(--space-md);
+    text-align: right;
+}
+
+.sketch__mapping th {
+    background: var(--color-background-page);
+}
+
+.sketch__mapping-title {
+    margin-top: var(--space-2xl);
+    font-size: var(--font-size-xl);
+}
+
+/* ===== עמוד שער (index) ===== */
+.gallery-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-lg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.gallery-card {
+    display: block;
+    padding: var(--space-lg);
+    border: 1px solid var(--igds-base-color-border-divider-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    background: var(--color-background);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery-card:hover {
+    border-color: var(--igds-base-color-border-brand-hover);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.gallery-card__name {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+}
+
+.gallery-card__desc {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}

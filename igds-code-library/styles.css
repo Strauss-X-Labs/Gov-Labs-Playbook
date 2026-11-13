@@ -1,0 +1,3473 @@
+/* ===========================
+   Israeli Government Design System (IGDS) Inspired Styles
+   RTL Hebrew Layout
+   =========================== */
+
+/* --- Design Tokens --- */
+:root {
+    /* Colors */
+    --color-primary: #1a56c4;
+    --color-primary-hover: #143f94;
+    --color-primary-light: #e8f0fe;
+    --color-secondary: #4a4a4a;
+    --color-text: #1a1a1a;
+    --color-text-secondary: #4a4a4a;
+    --color-error: #d4351c;
+    --color-error-bg: #fef3f0;
+    --color-success: #00703c;
+    --color-border: #b1b4b6;
+    --color-border-focus: #ffdd00;
+    --color-background: #ffffff;
+    --color-background-page: #f3f4f6;
+    --color-header: #1a1a1a;
+    --color-footer: #f3f4f6;
+    --color-link: #1a56c4;
+    --color-link-hover: #143f94;
+
+    /* Typography */
+    --font-family: 'Rubik', 'Assistant', 'Segoe UI', Tahoma, Arial, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-md: 1.125rem;
+    --font-size-lg: 1.25rem;
+    --font-size-xl: 1.5rem;
+    --font-size-2xl: 2rem;
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+
+    /* Borders */
+    --border-radius: 4px;
+    --border-width: 2px;
+    --border-width-thick: 4px;
+
+    /* Focus */
+    --focus-outline: 3px solid var(--color-border-focus);
+    --focus-outline-offset: 0;
+
+    /* --- IGDS Figma Tokens (מסונכרן מקובץ הפיגמה) --- */
+    /* צבעים — טקסט */
+    --igds-base-color-text-subtle-primary: #0c3058;
+    --igds-base-color-text-subtle-secondary: #466186;
+    --igds-base-color-text-failure: #a72223;
+    --igds-base-color-text-disabled: #5c697a;
+    --igds-base-color-text-link-primary-default: #0068f5;
+    --igds-base-color-text-link-primary-hover: #0045a3;
+    --igds-base-color-text-success: #347314;
+    --igds-base-color-text-warning: #a35200;
+    --igds-base-color-text-subtle-primary-inverted: #f5f9ff;
+    --igds-base-color-button-text-primary: #f5f9ff;
+    --igds-base-color-button-text-secondary: #0068f5;
+    --igds-base-color-button-text-hover-pressed-inverted: #f5f9ff;
+    --igds-base-color-button-text-hover-pressed: #0045a3;
+    --igds-base-color-text-link-tertiary-default: #0c3058;
+    --igds-base-color-text-link-tertiary-hover: #0045a3;
+    /* צבעים — גבולות */
+    --igds-base-color-border-divider-default: #b5c7e2;
+    --igds-base-color-border-divider-inverted: #ffffff;
+    --igds-base-color-border-subtle-default: #5c697a;
+    --igds-base-color-border-subtle-hover: #323b49;
+    --igds-base-color-border-brand-default: #0068f5;
+    --igds-base-color-border-brand-hover: #0045a3;
+    --igds-base-color-border-active: #0068f5;
+    --igds-base-color-border-focused: #0068f5;
+    --igds-base-color-border-failure: #a72223;
+    --igds-base-color-border-disabled: #5c697a;
+    /* צבעים — רקעים */
+    --igds-base-color-background-neutral-default: #ffffff;
+    --igds-base-color-background-disabled-with-text: #e0e8ef;
+    --igds-base-color-button-background-disabled: #e0e8ef;
+    --igds-base-color-background-disabled-without-text: #ced7e0;
+    --igds-base-color-background-disabled-without-text-hover: #8596af;
+    --igds-base-color-button-text-disabled: #5c697a;
+    --igds-base-color-background-full-screen-default: #f9fcff;
+    --igds-base-color-background-prefiled-input-field: #ebf3ff;
+    --igds-base-color-background-scroller: #8091a9;
+    --igds-base-color-background-neutral-hover: #f2f6fd;
+    --igds-base-color-background-neutral-secondlevel: #f2f6fd;
+    --igds-base-color-background-neutral-badge: #e8f0fc;
+    --igds-base-color-background-failure-without-border: #ffcbcb;
+    --igds-base-color-background-warning-without-border: #ffecc2;
+    --igds-base-color-background-success-without-border: #ddffcd;
+    --igds-base-color-background-numeric-badge: #c93435;
+    --igds-base-color-background-brand-sidebar-pressed: #b7d6ff;
+    --igds-base-color-button-background-primary: #0068f5;
+    --igds-base-color-background-brand-default: #0068f5;
+    --igds-base-color-background-brand-hover: #0057cc;
+    --igds-base-color-background-brand-pressed: #0045a3;
+    --igds-base-color-background-secondary-button-pressed: #ebf3ff;
+    --igds-base-color-background-state-default: #ffffff;
+    /* צבעים — גבולות (כפתור) */
+    --igds-base-color-button-border-primary: #0068f5;
+    --igds-base-color-button-border-disabled: #8091a9;
+    /* מרווחים */
+    --igds-ref-space-100: 2px;
+    --igds-ref-space-200: 4px;
+    --igds-ref-space-300: 8px;
+    --igds-ref-space-400: 12px;
+    --igds-ref-space-500: 16px;
+    --igds-ref-space-550: 20px;
+    --igds-ref-space-600: 24px;
+    --igds-space-2xs: 8px;
+    /* רדיוס */
+    --igds-ref-border-radius-m: 8px;
+    --igds-ref-border-radius-l: 16px;
+    --igds-ref-border-radius-full: 100px;
+    --igds-ref-border-radius-xs: 4px;
+    --igds-ref-border-radius-xxs: 2px;
+    /* עובי גבול */
+    --igds-ref-border-width-s: 1px;
+    --igds-ref-border-width-l: 2px;
+    /* טיפוגרפיה */
+    --igds-ref-font-size-2xs: 12px;
+    --igds-ref-font-size-xs: 14px;
+    --igds-ref-font-size-s: 16px;
+    --igds-ref-font-size-l: 20px;
+    --igds-ref-font-size-xl: 24px;
+    --igds-ref-font-size-2xl: 32px;
+    --igds-ref-font-weight-regular: 400;
+    --igds-ref-font-weight-medium: 500;
+    --igds-ref-font-weight-bold: 700;
+    /* צללים (Figma Shadow effects) */
+    --igds-shadow-light-level1: 0 2px 8px rgba(6, 77, 173, 0.1);
+    --igds-shadow-light-level2: 0 4px 12px rgba(6, 77, 173, 0.15);
+    --igds-shadow-dark-level3: 0 10px 24px rgba(0, 104, 245, 0.15);
+    --igds-shadow-dark-level4: 0 16px 36px rgba(0, 104, 245, 0.2);
+    /* מידות רכיב */
+    --igds-input-height: 48px;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background-page);
+    direction: rtl;
+}
+
+/* --- Import Google Font --- */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
+
+/* --- Focus styles --- */
+:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: var(--focus-outline-offset);
+    box-shadow: 0 0 0 4px var(--color-background);
+}
+
+/* --- Container --- */
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+}
+
+/* --- Header --- */
+.gov-header {
+    background-color: var(--color-header);
+    padding: var(--space-md) 0;
+    border-bottom: 4px solid var(--color-primary);
+}
+
+.gov-header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.gov-header__symbol {
+    font-size: var(--font-size-xl);
+}
+
+.gov-header__title {
+    color: #ffffff;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+}
+
+/* --- Breadcrumbs --- */
+/* מסונכרן מקומפוננטת Breadcrumbs בפיגמה (node 53173:56947, atom 35333:33475).
+   סרגל ניווט היררכי. פריט = קישור + chevron מפריד (outline/arrow-left).
+   טקסט 14px Regular, line-height 1.6. תמיכה ב-overflow (קיפול עם "...").
+   מצבי קישור: Default, Hover, Focused, Current page. */
+.breadcrumbs {
+    margin: var(--space-lg) 0;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    padding: var(--igds-ref-space-200);
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+}
+
+.breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+}
+
+/* chevron מפריד (אייקון מהפיגמה, יורש צבע) — מופיע לפני כל פריט שאינו הראשון ב-RTL */
+.breadcrumbs__chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+.breadcrumbs__chevron svg {
+    width: 8px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* קישור פריט */
+.breadcrumbs a {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--igds-ref-space-200) 0;
+    font-size: var(--igds-ref-font-size-xs);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-subtle-secondary);
+    text-decoration: none;
+    border-radius: var(--igds-ref-border-radius-xxs);
+}
+
+.breadcrumbs a:hover {
+    color: var(--igds-base-color-text-link-primary-hover);
+    text-decoration: underline;
+}
+
+.breadcrumbs a:focus-visible {
+    outline: 2px solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+    border-radius: var(--igds-ref-border-radius-xxs);
+}
+
+/* העמוד הנוכחי — לא קישור, צבע כהה */
+.breadcrumbs [aria-current="page"] {
+    font-size: var(--igds-ref-font-size-xs);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-subtle-primary);
+    text-decoration: none;
+}
+
+/* כפתור "..." לקיפול פריטים (overflow) */
+.breadcrumbs__overflow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: var(--igds-ref-font-size-s);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-disabled);
+    cursor: pointer;
+    border-radius: var(--igds-ref-border-radius-xxs);
+}
+
+.breadcrumbs__overflow:hover {
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+.breadcrumbs__overflow:focus-visible {
+    outline: 2px solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+}
+
+/* --- Page Content --- */
+.form-page {
+    background-color: var(--color-background);
+    padding: var(--space-xl) var(--space-2xl);
+    margin: var(--space-lg) 0;
+    border-radius: var(--border-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.page-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin: 0 0 var(--space-md) 0;
+    color: var(--color-text);
+    line-height: 1.3;
+}
+
+.page-description {
+    font-size: var(--font-size-md);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--space-2xl) 0;
+}
+
+/* --- Form --- */
+.gov-form {
+    max-width: 640px;
+}
+
+/* --- Fieldset --- */
+.gov-fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 var(--space-2xl) 0;
+}
+
+.gov-fieldset__legend {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-sm);
+    border-bottom: 2px solid var(--color-primary);
+    width: 100%;
+}
+
+.gov-fieldset--inline {
+    margin-bottom: 0;
+}
+
+/* --- Form Group --- */
+.gov-form-group {
+    margin-bottom: var(--space-xl);
+}
+
+.gov-form-group--error {
+    border-right: var(--border-width-thick) solid var(--color-error);
+    padding-right: var(--space-md);
+}
+
+/* --- Label (מותאם לפיגמה: Component/Label/Medium) --- */
+.gov-label {
+    display: block;
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    margin-bottom: var(--igds-ref-space-300);
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-required {
+    color: var(--igds-base-color-text-failure);
+    margin-right: var(--space-xs);
+}
+
+/* --- Hint / Help text (מותאם לפיגמה: Label/Regular 14px) --- */
+.gov-hint {
+    display: block;
+    font-size: var(--igds-ref-font-size-xs);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-subtle-primary);
+    margin-bottom: var(--igds-ref-space-300);
+}
+
+/* --- Input (מסונכרן מפיגמה node 81:115 Input Field) --- */
+.gov-input {
+    display: block;
+    width: 100%;
+    height: var(--igds-input-height);
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+    font-size: var(--igds-ref-font-size-s);
+    font-family: var(--font-family);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    border: 1px solid var(--igds-base-color-border-subtle-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-text-subtle-primary);
+    transition: border-color 0.2s ease;
+}
+
+.gov-input::placeholder {
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+.gov-input:hover {
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-input:focus {
+    border-color: var(--igds-base-color-border-focused);
+    border-width: 2px;
+    outline: none;
+    padding: calc(var(--igds-ref-space-400) - 1px) calc(var(--igds-ref-space-500) - 1px);
+}
+
+.gov-input--error {
+    border-color: var(--igds-base-color-border-failure);
+}
+
+.gov-input--error:focus {
+    outline: 2px solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+    border-color: var(--igds-base-color-border-failure);
+    border-width: 1px;
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+}
+
+.gov-input:disabled,
+.gov-input[disabled] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    border-color: var(--igds-base-color-border-disabled);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+.gov-input--prefilled {
+    background-color: var(--igds-base-color-background-prefiled-input-field);
+    border-color: var(--igds-base-color-border-subtle-hover);
+}
+
+.gov-input--width-10 {
+    max-width: 14rem;
+}
+
+/* --- Select (מותאם לפיגמה Input Field) --- */
+.gov-select {
+    display: block;
+    width: 100%;
+    height: var(--igds-input-height);
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+    font-size: var(--igds-ref-font-size-s);
+    font-family: var(--font-family);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    border: 1px solid var(--igds-base-color-border-subtle-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-text-subtle-primary);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M6 8L0 0h12z' fill='%234a4a4a'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: left var(--igds-ref-space-500) center;
+    padding-left: var(--space-2xl);
+    transition: border-color 0.2s ease;
+}
+
+.gov-select:hover {
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-select:focus {
+    border-color: var(--igds-base-color-border-focused);
+    border-width: 2px;
+    outline: none;
+    padding: calc(var(--igds-ref-space-400) - 1px) calc(var(--igds-ref-space-500) - 1px);
+    padding-left: calc(var(--space-2xl) - 1px);
+}
+
+.gov-select--error {
+    border-color: var(--igds-base-color-border-failure);
+}
+
+/* --- Textarea (מותאם לפיגמה Input Field) --- */
+.gov-textarea {
+    display: block;
+    width: 100%;
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+    font-size: var(--igds-ref-font-size-s);
+    font-family: var(--font-family);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    border: 1px solid var(--igds-base-color-border-subtle-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-text-subtle-primary);
+    resize: vertical;
+    min-height: 80px;
+    transition: border-color 0.2s ease;
+}
+
+.gov-textarea:hover {
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-textarea:focus {
+    border-color: var(--igds-base-color-border-focused);
+    border-width: 2px;
+    outline: none;
+    padding: calc(var(--igds-ref-space-400) - 1px) calc(var(--igds-ref-space-500) - 1px);
+}
+
+.gov-textarea--error {
+    border-color: var(--igds-base-color-border-failure);
+}
+
+.gov-textarea:disabled,
+.gov-textarea[disabled] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    border-color: var(--igds-base-color-border-disabled);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* Scrollbar מותאם — מסונכרן מרכיב Scroll בפיגמה (node 3412:7859) */
+.gov-textarea::-webkit-scrollbar {
+    width: 12px;
+}
+
+.gov-textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.gov-textarea::-webkit-scrollbar-thumb {
+    background-color: var(--igds-base-color-background-scroller);
+    border-radius: var(--igds-ref-border-radius-full);
+    border: var(--igds-ref-space-200) solid transparent;
+    background-clip: padding-box;
+}
+
+/* Firefox */
+.gov-textarea {
+    scrollbar-width: thin;
+    scrollbar-color: var(--igds-base-color-background-scroller) transparent;
+}
+
+/* שורת תחתית: מונה תווים + help text (מסונכרן מהפיגמה Text Area node 3519:2599) */
+.gov-textarea-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--igds-ref-space-300);
+}
+
+.gov-textarea-count {
+    font-size: var(--igds-ref-font-size-xs);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+.gov-textarea-footer--error .gov-textarea-count,
+.gov-textarea-footer--disabled .gov-textarea-count {
+    color: var(--igds-base-color-text-disabled);
+}
+
+/* --- Radio Buttons --- */
+.gov-radios {
+    display: flex;
+    gap: var(--space-xl);
+    margin-top: var(--space-sm);
+}
+
+.gov-radios__item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.gov-radios__input {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+}
+
+.gov-radios__label {
+    font-size: var(--font-size-base);
+    cursor: pointer;
+}
+
+/* --- Checkboxes --- */
+.gov-checkboxes__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+}
+
+.gov-checkboxes__input {
+    width: 20px;
+    height: 20px;
+    margin-top: 2px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.gov-checkboxes__label {
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   Checkbox (מסונכרן מהפיגמה: Israeli Government DS 3.0, node 46109:38643,
+   אטום .Checkbox/atom node 700:1526) — כל הערכים דרך טוקני --igds-*.
+   מבנה: .gov-checkbox > input[type=checkbox] (מוסתר ויזואלית) +
+         .gov-checkbox__box (תיבה מותאמת) + .gov-checkbox__label (תווית).
+   מצבים: Default, Hover, Focused, Disabled, Error, ErrorFocused ×
+          checked / indeterminate (Selected=True / Neutral).
+   ========================================================================== */
+.gov-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--igds-ref-space-300);
+    /* padding 2px סביב — תואם ל-p-[space-100] בפיגמה */
+    padding: var(--igds-ref-space-100);
+    position: relative;
+    cursor: pointer;
+}
+
+/* ה-input האמיתי — נגיש אך מוסתר ויזואלית (התיבה המותאמת מציגה את המצב) */
+.gov-checkbox__input {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    /* ממוקם מעל התיבה כדי לשמר אזור לחיצה ו-Tab תקין */
+    inset-inline-start: var(--igds-ref-space-100);
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* התיבה המותאמת — 24px, radius 4px (--igds-ref-border-radius-xs) */
+.gov-checkbox__box {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--igds-ref-border-radius-xs);
+    background-color: var(--igds-base-color-background-neutral-default);
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-subtle-default);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 150ms ease, border-color 200ms ease;
+}
+
+/* סימן הווי (checkmark) — וי לבן בתוך התיבה כשהיא מסומנת.
+   נבנה משני גבולות CSS מסובבים, בצבע הטוקן text-subtle-primary-inverted (#f5f9ff ~ לבן).
+   מוסתר כברירת מחדל, מוצג כאשר ה-input מסומן. */
+.gov-checkbox__box::after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 11px;
+    border: solid var(--igds-base-color-text-subtle-primary-inverted);
+    border-width: 0 2px 2px 0;
+    transform: translateY(-1px) rotate(45deg);
+    opacity: 0;
+}
+
+/* --- Checked (Selected=True) --- */
+.gov-checkbox__input:checked ~ .gov-checkbox__box {
+    background-color: var(--igds-base-color-button-background-primary);
+    border-color: var(--igds-base-color-button-background-primary);
+}
+
+.gov-checkbox__input:checked ~ .gov-checkbox__box::after {
+    opacity: 1;
+}
+
+/* --- Indeterminate (Selected=Neutral) — קו אמצעי --- */
+.gov-checkbox__input:indeterminate ~ .gov-checkbox__box {
+    background-color: var(--igds-base-color-button-background-primary);
+    border-color: var(--igds-base-color-button-background-primary);
+}
+
+.gov-checkbox__input:indeterminate ~ .gov-checkbox__box::after {
+    width: 10px;
+    height: 2px;
+    border: none;
+    border-radius: 1px;
+    background-color: var(--igds-base-color-text-subtle-primary-inverted);
+    transform: none;
+    opacity: 1;
+}
+
+/* --- Hover --- */
+.gov-checkbox:hover .gov-checkbox__input:not(:disabled) ~ .gov-checkbox__box {
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+/* --- Focused (outline כחול מהפיגמה: border-focused #0068f5) --- */
+.gov-checkbox__input:focus-visible ~ .gov-checkbox__box {
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+}
+
+/* --- Label --- */
+.gov-checkbox__label {
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    cursor: pointer;
+}
+
+/* --- Error (Selected=False) — גבול failure.
+   נתמך דרך המודיפיקטור .gov-checkbox--error וגם דרך aria-invalid (ולידציית טופס). --- */
+.gov-checkbox--error .gov-checkbox__box,
+.gov-checkbox__input[aria-invalid="true"] ~ .gov-checkbox__box {
+    border-color: var(--igds-base-color-border-failure);
+}
+
+/* ErrorFocused — גבול failure + outline כחול ממוקד */
+.gov-checkbox--error .gov-checkbox__input:focus-visible ~ .gov-checkbox__box,
+.gov-checkbox__input[aria-invalid="true"]:focus-visible ~ .gov-checkbox__box {
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+}
+
+/* --- Disabled --- */
+.gov-checkbox__input:disabled {
+    cursor: not-allowed;
+}
+
+.gov-checkbox__input:disabled ~ .gov-checkbox__box {
+    background-color: var(--igds-base-color-button-background-disabled);
+    border-color: var(--igds-base-color-border-disabled);
+    cursor: not-allowed;
+}
+
+/* Disabled + מסומן — רקע disabled-without-text, הווי בצבע text-disabled */
+.gov-checkbox__input:disabled:checked ~ .gov-checkbox__box,
+.gov-checkbox__input:disabled:indeterminate ~ .gov-checkbox__box {
+    background-color: var(--igds-base-color-background-disabled-without-text);
+    border-color: var(--igds-base-color-border-disabled);
+}
+
+.gov-checkbox__input:disabled:checked ~ .gov-checkbox__box::after {
+    border-color: var(--igds-base-color-text-disabled);
+}
+
+.gov-checkbox__input:disabled:indeterminate ~ .gov-checkbox__box::after {
+    background-color: var(--igds-base-color-text-disabled);
+}
+
+.gov-checkbox__input:disabled ~ .gov-checkbox__label {
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* --- קבוצת צ'קבוקסים (Vertical / Horizontal) --- */
+.gov-checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-500);
+    align-items: flex-start;
+}
+
+.gov-checkbox-group--horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* כותרת הקבוצה + סימון חובה */
+.gov-checkbox-group__title {
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    margin-bottom: var(--igds-ref-space-300);
+}
+
+.gov-checkbox-group__required {
+    color: var(--igds-base-color-text-failure);
+}
+
+/* הודעת שגיאה לקבוצה (מיושר עם .gov-error-message הקיים) */
+.gov-checkbox-group__error {
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+    font-size: var(--igds-ref-font-size-xs);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-failure);
+    margin-top: var(--igds-ref-space-300);
+}
+
+/* --- וריאנט Input Text (Type=Input Text מהפיגמה, node 35216:29603) ---
+   צ'קבוק המשויך לשדה קלט (דפוס "אחר"). השדה הוא רכיב .gov-input הקיים —
+   אותם טוקנים, ללא שכפול. התיבה והשדה מיושרים אנכית למרכז. */
+.gov-checkbox--with-input {
+    align-items: center;
+    gap: var(--igds-ref-space-300);
+}
+
+.gov-checkbox--with-input .gov-input {
+    flex: 1 1 auto;
+    min-width: 160px;
+}
+
+/* ==========================================================================
+   Checkbox Card (וריאנט כרטיס נבחר — מהפיגמה node 35207:4353).
+   כרטיס לחיץ המכיל צ'קבוק (פינה עליונה) + מדיה + כותרת + תיאור.
+   עוטף את .gov-checkbox הקיים — ללא שכפול לוגיקת הצ'קבוק.
+   מצבים: Default, Hover, Focused, Disabled, Error, ErrorFocused × מסומן.
+   גדלים: Desktop (ברירת מחדל) / Mobile (--mobile).
+   ========================================================================== */
+.gov-checkbox-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-300);
+    width: 224px;
+    padding: var(--igds-ref-space-500);
+    background-color: var(--igds-base-color-background-neutral-default);
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-subtle-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    cursor: pointer;
+    transition: border-color 200ms ease, background-color 150ms ease, box-shadow 200ms ease;
+}
+
+.gov-checkbox-card--mobile {
+    width: 176px;
+    padding: var(--igds-ref-space-300);
+}
+
+/* הצ'קבוק ממוקם בפינה המובילה העליונה (ימין ב-RTL דרך inset-inline-start) */
+.gov-checkbox-card .gov-checkbox {
+    position: absolute;
+    inset-block-start: var(--igds-ref-space-500);
+    inset-inline-start: var(--igds-ref-space-500);
+    padding: 0;
+}
+
+.gov-checkbox-card--mobile .gov-checkbox {
+    inset-block-start: var(--igds-ref-space-300);
+    inset-inline-start: var(--igds-ref-space-300);
+}
+
+/* אזור מדיה/תמונה */
+.gov-checkbox-card__media {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 16 / 9;
+    background-color: var(--igds-base-color-background-neutral-secondlevel);
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-subtle-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    color: var(--igds-base-color-text-subtle-primary);
+    font-size: var(--igds-ref-font-size-xs);
+    overflow: hidden;
+}
+
+.gov-checkbox-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* תוכן טקסטואלי */
+.gov-checkbox-card__title {
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-checkbox-card__description {
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-xs);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+/* --- Hover --- */
+.gov-checkbox-card:hover {
+    border-color: var(--igds-base-color-border-brand-hover);
+    background-color: var(--igds-base-color-background-neutral-hover);
+}
+
+/* --- Selected (מסומן) — גבול brand + כותרת כחולה + צל Level1 --- */
+.gov-checkbox-card:has(.gov-checkbox__input:checked) {
+    border-color: var(--igds-base-color-border-active);
+    box-shadow: var(--igds-shadow-light-level1);
+}
+
+.gov-checkbox-card:has(.gov-checkbox__input:checked) .gov-checkbox-card__title {
+    color: var(--igds-base-color-button-text-secondary);
+}
+
+/* --- Focused — ה-focus מגיע מהצ'קבוק הפנימי; מסגרת כחולה סביב הכרטיס --- */
+.gov-checkbox-card:has(.gov-checkbox__input:focus-visible) {
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+}
+
+/* --- Error --- */
+.gov-checkbox-card--error {
+    border-color: var(--igds-base-color-border-failure);
+}
+
+/* ErrorFocused — radius גדול (16px) + מסגרת כחולה ממוקדת */
+.gov-checkbox-card--error:has(.gov-checkbox__input:focus-visible) {
+    border-radius: var(--igds-ref-border-radius-l);
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+}
+
+/* --- Disabled --- */
+.gov-checkbox-card:has(.gov-checkbox__input:disabled) {
+    background-color: var(--igds-base-color-button-background-disabled);
+    border-color: var(--igds-base-color-border-disabled);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.gov-checkbox-card:has(.gov-checkbox__input:disabled:checked) {
+    background-color: var(--igds-base-color-background-disabled-without-text-hover);
+}
+
+.gov-checkbox-card:has(.gov-checkbox__input:disabled) .gov-checkbox-card__title,
+.gov-checkbox-card:has(.gov-checkbox__input:disabled) .gov-checkbox-card__description,
+.gov-checkbox-card:has(.gov-checkbox__input:disabled) .gov-checkbox-card__media {
+    color: var(--igds-base-color-button-text-disabled);
+}
+
+/* --- Error Message (מותאם לפיגמה: text-failure #a72223) --- */
+.gov-error-message {
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+    font-size: var(--igds-ref-font-size-xs);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-failure);
+    font-weight: var(--igds-ref-font-weight-regular);
+    margin-top: var(--igds-ref-space-300);
+}
+
+.gov-error-message[hidden] {
+    display: none;
+}
+
+/* --- Buttons --- */
+.gov-form__actions {
+    display: flex;
+    gap: var(--space-md);
+    margin-top: var(--space-2xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+}
+
+/* מסונכרן מקומפוננטת Button בפיגמה (node 81:1195) עם טוקני --igds-*.
+   סוגים: Primary, Secondary, Link Button, Alternative Link Button.
+   גדלים: Small / Medium (ברירת מחדל) / Large.
+   מצבים: Default, Hover, Pressed (:active), Focused, Disabled.
+   תמיכה באייקון (left/right) ובכפתור אייקון בלבד (--icon). */
+.gov-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--igds-ref-space-200);
+    box-sizing: border-box;
+    height: 48px;
+    /* ברירת מחדל: Medium */
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-550);
+    font-size: var(--igds-ref-font-size-s);
+    font-family: var(--font-family);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    text-align: center;
+    border: var(--igds-ref-border-width-s) solid transparent;
+    border-radius: var(--igds-ref-border-radius-m);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* אייקון בתוך כפתור (24px, יורש צבע הטקסט) */
+.gov-button__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+}
+
+.gov-button__icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* --- גדלים --- */
+.gov-button--small {
+    height: 32px;
+    padding: var(--igds-ref-space-200) var(--igds-ref-space-300);
+}
+
+.gov-button--large {
+    height: 56px;
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+    font-size: var(--igds-ref-font-size-l);
+    line-height: 1.25;
+}
+
+/* כפתור אייקון בלבד — ריבועי */
+.gov-button--icon {
+    padding: var(--igds-ref-space-400);
+    width: 48px;
+}
+
+.gov-button--icon.gov-button--small {
+    padding: var(--igds-ref-space-200);
+    width: 32px;
+}
+
+.gov-button--icon.gov-button--large {
+    padding: var(--igds-ref-space-500);
+    width: 56px;
+}
+
+/* --- Primary --- */
+.gov-button--primary {
+    background-color: var(--igds-base-color-button-background-primary);
+    color: var(--igds-base-color-button-text-primary);
+    border-color: var(--igds-base-color-button-background-primary);
+    font-weight: var(--igds-ref-font-weight-medium);
+}
+
+.gov-button--primary:hover {
+    background-color: var(--igds-base-color-background-brand-hover);
+    border-color: var(--igds-base-color-background-brand-hover);
+    color: var(--igds-base-color-button-text-hover-pressed-inverted);
+}
+
+.gov-button--primary:active {
+    background-color: var(--igds-base-color-background-brand-pressed);
+    border-color: var(--igds-base-color-background-brand-pressed);
+    color: var(--igds-base-color-button-text-hover-pressed-inverted);
+}
+
+.gov-button--primary:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-button--primary:disabled,
+.gov-button--primary[disabled],
+.gov-button--primary[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    border-color: var(--igds-base-color-background-disabled-with-text);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* --- Secondary --- */
+.gov-button--secondary {
+    background-color: transparent;
+    color: var(--igds-base-color-button-text-secondary);
+    border-color: var(--igds-base-color-button-border-primary);
+}
+
+.gov-button--secondary:hover {
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-button--secondary:active {
+    background-color: var(--igds-base-color-background-secondary-button-pressed);
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-button--secondary:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-button--secondary:disabled,
+.gov-button--secondary[disabled],
+.gov-button--secondary[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-text-disabled);
+    border-color: var(--igds-base-color-button-border-disabled);
+    cursor: not-allowed;
+}
+
+/* --- Link Button (טקסט כחול ללא רקע/גבול) --- */
+.gov-button--link {
+    background-color: transparent;
+    color: var(--igds-base-color-button-text-secondary);
+    border-color: transparent;
+}
+
+.gov-button--link:hover {
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+.gov-button--link:active {
+    background-color: var(--igds-base-color-background-secondary-button-pressed);
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+.gov-button--link:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-button--link:disabled,
+.gov-button--link[disabled],
+.gov-button--link[aria-disabled="true"] {
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* --- Alternative Link Button (טקסט כהה ללא רקע/גבול) --- */
+.gov-button--alt-link {
+    background-color: transparent;
+    color: var(--igds-base-color-text-link-tertiary-default);
+    border-color: transparent;
+}
+
+.gov-button--alt-link:hover {
+    color: var(--igds-base-color-text-link-tertiary-hover);
+}
+
+.gov-button--alt-link:active {
+    background-color: var(--igds-base-color-background-secondary-button-pressed);
+    color: var(--igds-base-color-text-link-tertiary-hover);
+}
+
+.gov-button--alt-link:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-button--alt-link:disabled,
+.gov-button--alt-link[disabled],
+.gov-button--alt-link[aria-disabled="true"] {
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* --- Links --- */
+.gov-link {
+    color: var(--color-link);
+    text-decoration: underline;
+}
+
+.gov-link:hover {
+    color: var(--color-link-hover);
+    text-decoration-thickness: 3px;
+}
+
+.gov-link--footer {
+    color: var(--color-text-secondary);
+}
+
+.gov-link--footer:hover {
+    color: var(--color-text);
+}
+
+/* --- Footer --- */
+.gov-footer {
+    background-color: var(--color-footer);
+    border-top: 4px solid var(--color-primary);
+    padding: var(--space-xl) 0;
+    margin-top: var(--space-2xl);
+}
+
+.gov-footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+}
+
+.gov-footer p {
+    margin: 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.gov-footer nav {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+/* --- Error Summary --- */
+.gov-error-summary {
+    border: var(--border-width-thick) solid var(--color-error);
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    margin-bottom: var(--space-xl);
+    background-color: var(--color-error-bg);
+}
+
+.gov-error-summary__title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-error);
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.gov-error-summary__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.gov-error-summary__list li {
+    margin-bottom: var(--space-xs);
+}
+
+.gov-error-summary__list a {
+    color: var(--color-error);
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+/* --- Success Message --- */
+.gov-success-panel {
+    border: var(--border-width-thick) solid var(--color-success);
+    border-radius: var(--border-radius);
+    padding: var(--space-xl);
+    background-color: #f0fff4;
+    text-align: center;
+}
+
+.gov-success-panel__title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--color-success);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.gov-success-panel__body {
+    font-size: var(--font-size-md);
+    color: var(--color-text);
+}
+
+/* --- Accordion --- */
+/* מסונכרן מקומפוננטת Accordion בפיגמה (node 36363:22776) */
+.gov-accordion {
+    width: 100%;
+    background-color: var(--igds-base-color-background-neutral-default);
+}
+
+.gov-accordion__item {
+    width: 100%;
+    background-color: var(--igds-base-color-background-neutral-default);
+}
+
+/* כותרת הפריט — הכפתור שפותח/סוגר */
+.gov-accordion__header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--igds-space-2xs);
+    width: 100%;
+    padding: var(--igds-ref-space-500);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    text-align: right;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+/* Focused (מהפיגמה node 36632:36155 — border כחול #0068f5, לא צהוב) */
+.gov-accordion__header:focus-visible {
+    outline: 2px solid var(--igds-base-color-border-focused);
+    outline-offset: -2px;
+    border-radius: var(--igds-ref-border-radius-xs);
+}
+
+/* Hover (מהפיגמה node 522:495) */
+.gov-accordion__header:hover {
+    background-color: var(--igds-base-color-background-neutral-hover);
+}
+
+/* Disabled */
+.gov-accordion__header:disabled,
+.gov-accordion__header[aria-disabled="true"] {
+    color: var(--igds-base-color-text-disabled);
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    cursor: not-allowed;
+}
+
+.gov-accordion__header:disabled .gov-accordion__title,
+.gov-accordion__header[aria-disabled="true"] .gov-accordion__title,
+.gov-accordion__header:disabled .gov-accordion__chevron,
+.gov-accordion__header[aria-disabled="true"] .gov-accordion__chevron,
+.gov-accordion__header:disabled .gov-accordion__icon,
+.gov-accordion__header[aria-disabled="true"] .gov-accordion__icon {
+    color: var(--igds-base-color-text-disabled);
+}
+
+/* Chevron (משמאל ב-RTL) */
+.gov-accordion__chevron {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--igds-base-color-text-subtle-primary);
+    transition: transform 0.2s ease;
+}
+
+/* סיבוב ה-chevron במצב פתוח */
+.gov-accordion__header[aria-expanded="true"] .gov-accordion__chevron {
+    transform: rotate(180deg);
+}
+
+/* טקסט הכותרת */
+.gov-accordion__title {
+    flex: 1 0 0;
+    min-width: 0;
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    text-align: right;
+    word-break: break-word;
+    margin: 0;
+}
+
+/* אייקון תמונה (מימין) */
+.gov-accordion__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+/* קו מפריד תחתון */
+.gov-accordion__divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--igds-base-color-border-divider-default);
+    border: none;
+    margin: 0;
+}
+
+/* תוכן נפתח (רקע second-level מהפיגמה node 522:495) */
+.gov-accordion__content {
+    padding: 0 var(--igds-ref-space-500) var(--igds-ref-space-500);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    background-color: var(--igds-base-color-background-neutral-secondlevel);
+}
+
+.gov-accordion__content[hidden] {
+    display: none;
+}
+
+/* --- Anchor (ניווט עוגן) --- */
+/* מסונכרן מקומפוננטת Anchor בפיגמה (node 26540:5240, atom node 7363:2159) */
+.gov-anchor {
+    display: flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-200);
+}
+
+/* פריט עוגן בודד (Anchor Atom) — 4 מצבים */
+.gov-anchor__link {
+    display: flex;
+    align-items: center;
+    padding: var(--igds-ref-space-400);
+    border: 2px solid transparent;
+    border-radius: var(--igds-ref-border-radius-m);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover — טקסט כחול כהה */
+.gov-anchor__link:hover {
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+/* Pressed/Active — טקסט כחול + קו צדדי (מימין ב-RTL) */
+.gov-anchor__link:active,
+.gov-anchor__link--pressed {
+    color: var(--igds-base-color-text-link-primary-default);
+    border-radius: 0;
+    border-inline-start: 2px solid var(--igds-base-color-border-brand-default);
+}
+
+/* Focused — טקסט כחול + מסגרת מלאה כחולה */
+.gov-anchor__link:focus-visible,
+.gov-anchor__link--focused {
+    outline: none;
+    color: var(--igds-base-color-text-link-primary-default);
+    border-color: var(--igds-base-color-border-focused);
+    border-radius: var(--igds-ref-border-radius-m);
+}
+
+/* Current — העוגן של הסקשן הפעיל */
+.gov-anchor__link[aria-current="true"] {
+    color: var(--igds-base-color-text-link-primary-default);
+    font-weight: var(--igds-ref-font-weight-medium);
+}
+
+/* --- Badge (תגית סטטוס) --- */
+/* מסונכרן מקומפוננטת Badge בפיגמה (node 1646:12).
+   5 סוגים (Failure, Warning, Success, In-Progress, Informative) × RTL.
+   צורת גלולה (radius-full), טקסט 16px Regular, אייקון אופציונלי 24px.
+   צבע האייקון יורש מצבע הטקסט של הסוג (currentColor). */
+.gov-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 32px;
+    padding: 0 var(--igds-ref-space-300);
+    border-radius: var(--igds-ref-border-radius-full);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    overflow: hidden;
+}
+
+/* טקסט התגית (בלוק פנימי עם padding 4px) */
+.gov-badge__text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--igds-ref-space-200);
+    white-space: nowrap;
+    word-break: break-word;
+}
+
+/* אייקון התגית — תיבת 24px, ה-SVG יורש את צבע הטקסט */
+.gov-badge__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+}
+
+.gov-badge__icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* --- Badge variants (סוג × צבע טקסט + רקע מהפיגמה) --- */
+.gov-badge--failure {
+    color: var(--igds-base-color-text-failure);
+    background-color: var(--igds-base-color-background-failure-without-border);
+}
+
+.gov-badge--warning {
+    color: var(--igds-base-color-text-warning);
+    background-color: var(--igds-base-color-background-warning-without-border);
+}
+
+.gov-badge--success {
+    color: var(--igds-base-color-text-success);
+    background-color: var(--igds-base-color-background-success-without-border);
+}
+
+.gov-badge--in-progress {
+    color: var(--igds-base-color-text-subtle-primary);
+    background-color: var(--igds-base-color-background-neutral-badge);
+}
+
+.gov-badge--informative {
+    color: var(--igds-base-color-text-subtle-primary);
+    background-color: var(--igds-base-color-background-neutral-badge);
+}
+
+/* --- Numeric Badge (תגית מספרית / התראה) --- */
+/* מסונכרן מקומפוננטת Numeric Badge בפיגמה (node 2078:3425).
+   צורת גלולה קטנה למספרים (מונה התראות). 2 variants: Notification True/False.
+   טקסט 12px Regular, גובה 16px, רוחב מינימלי 16px (עיגול למספר ספרה אחת),
+   רוחב מקסימלי 42px. */
+.gov-numeric-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    max-width: 42px;
+    padding: 0 var(--igds-ref-space-200);
+    border-radius: var(--igds-ref-border-radius-full);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-2xs);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.6;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Notification=True — בועת התראה אדומה (ברירת מחדל) */
+.gov-numeric-badge--notification {
+    color: var(--igds-base-color-text-subtle-primary-inverted);
+    background-color: var(--igds-base-color-background-numeric-badge);
+}
+
+/* Notification=False — מונה כחול בהיר (מצב ניטרלי) */
+.gov-numeric-badge--count {
+    color: var(--igds-base-color-text-subtle-secondary);
+    background-color: var(--igds-base-color-background-brand-sidebar-pressed);
+}
+
+/* --- Notification Button (כפתור אייקון עם תגית התראה) --- */
+/* מסונכרן מקומפוננטת Notification Button בפיגמה (node 8372:6620).
+   כפתור אייקון (פעמון) עם Numeric Badge צף בפינה העליונה.
+   3 סוגים (Link, Secondary, Primary) × 3 גדלים (Small, Medium, Large).
+   משתמש מחדש ברכיב .gov-numeric-badge הקיים. */
+.gov-notification-button {
+    position: relative;
+    display: inline-flex;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+/* הכפתור עצמו — תיבה ריבועית מרוכזת סביב האייקון */
+.gov-notification-button__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--igds-ref-border-width-s) solid transparent;
+    border-radius: var(--igds-ref-border-radius-m);
+    background: transparent;
+    color: currentColor;
+    cursor: pointer;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* אייקון הפעמון (24px, יורש צבע) */
+.gov-notification-button__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+}
+
+.gov-notification-button__icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* התגית הצפה — ממוקמת בפינה העליונה המובילה (שמאל ב-RTL) */
+.gov-notification-button__badge {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    z-index: 1;
+}
+
+/* --- Notification Button — סוגים + מצבים --- */
+/* מיושר לרכיב Button (node 81:1195): אותם טוקני מצב לכל סוג
+   (Default, Hover, Pressed, Disabled). הכפתור הוא כפתור אייקון בלבד. */
+
+/* Primary */
+.gov-notification-button--primary .gov-notification-button__btn {
+    background-color: var(--igds-base-color-button-background-primary);
+    color: var(--igds-base-color-button-text-primary);
+}
+
+.gov-notification-button--primary .gov-notification-button__btn:hover {
+    background-color: var(--igds-base-color-background-brand-hover);
+    color: var(--igds-base-color-button-text-hover-pressed-inverted);
+}
+
+.gov-notification-button--primary .gov-notification-button__btn:active {
+    background-color: var(--igds-base-color-background-brand-pressed);
+    color: var(--igds-base-color-button-text-hover-pressed-inverted);
+}
+
+.gov-notification-button--primary .gov-notification-button__btn:disabled,
+.gov-notification-button--primary .gov-notification-button__btn[disabled],
+.gov-notification-button--primary .gov-notification-button__btn[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* Secondary */
+.gov-notification-button--secondary .gov-notification-button__btn {
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-button-border-primary);
+    color: var(--igds-base-color-button-text-secondary);
+}
+
+.gov-notification-button--secondary .gov-notification-button__btn:hover {
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-notification-button--secondary .gov-notification-button__btn:active {
+    background-color: var(--igds-base-color-background-secondary-button-pressed);
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-notification-button--secondary .gov-notification-button__btn:disabled,
+.gov-notification-button--secondary .gov-notification-button__btn[disabled],
+.gov-notification-button--secondary .gov-notification-button__btn[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-text-disabled);
+    border-color: var(--igds-base-color-button-border-disabled);
+    cursor: not-allowed;
+}
+
+/* Link */
+.gov-notification-button--link .gov-notification-button__btn {
+    color: var(--igds-base-color-button-text-secondary);
+}
+
+.gov-notification-button--link .gov-notification-button__btn:hover {
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+.gov-notification-button--link .gov-notification-button__btn:active {
+    background-color: var(--igds-base-color-background-secondary-button-pressed);
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+.gov-notification-button--link .gov-notification-button__btn:disabled,
+.gov-notification-button--link .gov-notification-button__btn[disabled],
+.gov-notification-button--link .gov-notification-button__btn[aria-disabled="true"] {
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* --- Notification Button — גדלים --- */
+.gov-notification-button--large .gov-notification-button__btn {
+    width: 56px;
+    height: 56px;
+    padding: var(--igds-ref-space-500);
+}
+
+.gov-notification-button--medium .gov-notification-button__btn {
+    width: 48px;
+    height: 48px;
+    padding: var(--igds-ref-space-400);
+}
+
+.gov-notification-button--small .gov-notification-button__btn {
+    width: 32px;
+    height: 32px;
+    padding: var(--igds-ref-space-200);
+}
+
+/* פוקוס גלוי (נגישות) */
+.gov-notification-button__btn:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+/* --- Floating Action Button (כפתור צף) --- */
+/* מסונכרן מקומפוננטת Floating Button בפיגמה (node 1798:2270) + floating-button.md.
+   סוגים: Primary / Secondary. גרסאות: Icon-Only (עיגול) / Label (pill מורחב).
+   גדלים: Mobile (48px) / Desktop (60px).
+   מצבים: Default, Hover, Pressed, Focused, Disabled (צל משתנה לפי מצב). */
+.gov-fab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--igds-ref-space-200);
+    box-sizing: border-box;
+    border: var(--igds-ref-border-width-s) solid transparent;
+    border-radius: var(--igds-ref-border-radius-full);
+    font-family: var(--font-family);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    cursor: pointer;
+    box-shadow: var(--igds-shadow-dark-level3);
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* אייקון (24px, יורש צבע) */
+.gov-fab__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+}
+
+.gov-fab__icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* טקסט (בלוק פנימי עם padding 4px) */
+.gov-fab__label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--igds-ref-space-200);
+    white-space: nowrap;
+}
+
+/* --- גרסת אייקון בלבד (עיגול) — ברירת מחדל Desktop 60px --- */
+.gov-fab--icon-only {
+    padding: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.gov-fab--icon-only.gov-fab--mobile {
+    width: 48px;
+    height: 48px;
+}
+
+/* --- גרסת Label (מורחב, pill) — ברירת מחדל Desktop --- */
+.gov-fab--label {
+    height: 60px;
+    padding: var(--igds-ref-space-500) var(--igds-ref-space-550);
+    font-size: var(--igds-ref-font-size-xl);
+}
+
+.gov-fab--label.gov-fab--mobile {
+    height: 48px;
+    padding: 0 var(--igds-ref-space-550);
+    font-size: var(--igds-ref-font-size-s);
+}
+
+/* --- Primary --- */
+.gov-fab--primary {
+    background-color: var(--igds-base-color-button-background-primary);
+    color: var(--igds-base-color-button-text-primary);
+    border-color: var(--igds-base-color-button-background-primary);
+}
+
+.gov-fab--primary:hover {
+    background-color: var(--igds-base-color-background-brand-hover);
+    border-color: var(--igds-base-color-background-brand-hover);
+    color: var(--igds-base-color-button-text-hover-pressed-inverted);
+    box-shadow: var(--igds-shadow-dark-level4);
+}
+
+.gov-fab--primary:active {
+    background-color: var(--igds-base-color-background-brand-pressed);
+    border-color: var(--igds-base-color-background-brand-pressed);
+    color: var(--igds-base-color-button-text-hover-pressed-inverted);
+    box-shadow: var(--igds-shadow-dark-level3);
+}
+
+.gov-fab--primary:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-fab--primary:disabled,
+.gov-fab--primary[disabled],
+.gov-fab--primary[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    border-color: var(--igds-base-color-background-disabled-with-text);
+    color: var(--igds-base-color-text-disabled);
+    box-shadow: var(--igds-shadow-light-level2);
+    cursor: not-allowed;
+}
+
+/* --- Secondary --- */
+.gov-fab--secondary {
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-button-text-secondary);
+    border-color: var(--igds-base-color-button-border-primary);
+}
+
+.gov-fab--secondary:hover {
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+    box-shadow: var(--igds-shadow-dark-level4);
+}
+
+.gov-fab--secondary:active {
+    background-color: var(--igds-base-color-background-secondary-button-pressed);
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+    box-shadow: var(--igds-shadow-dark-level3);
+}
+
+.gov-fab--secondary:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-fab--secondary:disabled,
+.gov-fab--secondary[disabled],
+.gov-fab--secondary[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-text-disabled);
+    border-color: var(--igds-base-color-button-border-disabled);
+    box-shadow: var(--igds-shadow-light-level2);
+    cursor: not-allowed;
+}
+
+/* --- Timed Button (כפתור מתוזמן עם סרגל התקדמות) --- */
+/* מסונכרן מקומפוננטת .progress timed button בפיגמה (node 36406:73837).
+   כפתור Primary עם טיימר (00:00) וסרגל התקדמות (press-and-hold).
+   מצב Pressed ממלא את הכפתור מ-0% ל-100% בצבע brand-pressed.
+   מצבים: Default, Hover, Pressed (עם Success %), Focused, Disabled.
+   אחוז ההתקדמות נשלט ע"י המשתנה --timed-progress (ברירת מחדל 0%). */
+.gov-timed-button {
+    --timed-progress: 0%;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--igds-ref-space-200);
+    box-sizing: border-box;
+    height: 56px;
+    padding: var(--igds-ref-space-500) var(--igds-ref-space-550);
+    border: none;
+    border-radius: var(--igds-ref-border-radius-m);
+    background-color: var(--igds-base-color-background-brand-default);
+    color: var(--igds-base-color-text-subtle-primary-inverted);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-l);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.25;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.15s ease;
+}
+
+/* שכבת סרגל ההתקדמות — נמתחת מההתחלה (ימין ב-RTL) עד --timed-progress */
+.gov-timed-button::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    width: var(--timed-progress);
+    background-color: var(--igds-base-color-background-brand-pressed);
+    transition: width 0.1s linear;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* התוכן מעל שכבת ההתקדמות */
+.gov-timed-button__icon,
+.gov-timed-button__content {
+    position: relative;
+    z-index: 1;
+}
+
+/* אייקון (24px, יורש צבע) */
+.gov-timed-button__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+}
+
+.gov-timed-button__icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* בלוק התוכן — טיימר + טקסט (מרווח 8px, padding 4px) */
+.gov-timed-button__content {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--igds-ref-space-300);
+    padding: 0 var(--igds-ref-space-200);
+    white-space: nowrap;
+}
+
+/* מונה הזמן (00:00) */
+.gov-timed-button__timer {
+    font-variant-numeric: tabular-nums;
+}
+
+/* --- מצבים --- */
+.gov-timed-button:hover {
+    background-color: var(--igds-base-color-background-brand-hover);
+}
+
+.gov-timed-button:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-timed-button:disabled,
+.gov-timed-button[disabled],
+.gov-timed-button[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* במצב מושבת אין סרגל התקדמות */
+.gov-timed-button:disabled::before,
+.gov-timed-button[disabled]::before,
+.gov-timed-button[aria-disabled="true"]::before {
+    width: 0;
+}
+
+/* --- Split Button (כפתור מפוצל עם תפריט) --- */
+/* מסונכרן מקומפוננטת Split Button בפיגמה (node 20260:10392).
+   כפתור פעולה ראשי מחובר לכפתור toggle (chevron) שפותח תפריט אפשרויות.
+   סוגים: Primary / Secondary. גדלים: Small / Medium / Large. מצב Open True/False. */
+.gov-split-button {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--igds-ref-space-200);
+}
+
+/* שורת הכפתורים — פעולה + toggle, מופרדים ב-2px */
+.gov-split-button__bar {
+    display: inline-flex;
+    align-items: stretch;
+    gap: var(--igds-ref-space-100);
+}
+
+/* כפתור הפעולה הראשי */
+.gov-split-button__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--igds-ref-space-300);
+    box-sizing: border-box;
+    height: 48px;
+    padding: 0 var(--igds-ref-space-600) 0 var(--igds-ref-space-550);
+    border: var(--igds-ref-border-width-s) solid transparent;
+    /* פינות מעוגלות בצד ההתחלה (ימין ב-RTL) */
+    border-start-start-radius: var(--igds-ref-border-radius-m);
+    border-end-start-radius: var(--igds-ref-border-radius-m);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* כפתור ה-toggle (chevron) */
+.gov-split-button__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    padding: var(--igds-ref-space-400);
+    border: var(--igds-ref-border-width-s) solid transparent;
+    /* פינות מעוגלות בצד הסיום (שמאל ב-RTL) */
+    border-start-end-radius: var(--igds-ref-border-radius-m);
+    border-end-end-radius: var(--igds-ref-border-radius-m);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+/* אייקון בתוך כפתורי ה-split (24px, יורש צבע) */
+.gov-split-button__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: currentColor;
+}
+
+.gov-split-button__action .gov-split-button__icon svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* ה-chevron מצביע למטה כברירת מחדל, ומסתובב למעלה כשפתוח */
+.gov-split-button__chevron svg {
+    width: 8px;
+    height: 14px;
+    fill: currentColor;
+    transform: rotate(-90deg);
+    transition: transform 0.2s ease;
+}
+
+.gov-split-button[aria-expanded="true"] .gov-split-button__chevron svg,
+.gov-split-button__toggle[aria-expanded="true"] .gov-split-button__chevron svg {
+    transform: rotate(90deg);
+}
+
+/* --- גדלים --- */
+.gov-split-button--small .gov-split-button__action {
+    height: 32px;
+    padding: 0 var(--igds-ref-space-400) 0 var(--igds-ref-space-300);
+}
+
+.gov-split-button--small .gov-split-button__toggle {
+    width: 32px;
+    height: 32px;
+    padding: var(--igds-ref-space-200);
+}
+
+.gov-split-button--large .gov-split-button__action {
+    height: 56px;
+    padding: 0 var(--igds-ref-space-600) 0 var(--igds-ref-space-550);
+}
+
+.gov-split-button--large .gov-split-button__toggle {
+    width: 56px;
+    height: 56px;
+    padding: var(--igds-ref-space-500);
+}
+
+/* --- Primary --- */
+.gov-split-button--primary .gov-split-button__action,
+.gov-split-button--primary .gov-split-button__toggle {
+    background-color: var(--igds-base-color-background-brand-default);
+    color: var(--igds-base-color-text-subtle-primary-inverted);
+    border-color: var(--igds-base-color-background-brand-default);
+}
+
+.gov-split-button--primary .gov-split-button__action:hover,
+.gov-split-button--primary .gov-split-button__toggle:hover {
+    background-color: var(--igds-base-color-background-brand-hover);
+    border-color: var(--igds-base-color-background-brand-hover);
+}
+
+.gov-split-button--primary .gov-split-button__action:active,
+.gov-split-button--primary .gov-split-button__toggle:active,
+.gov-split-button--primary .gov-split-button__toggle[aria-expanded="true"] {
+    background-color: var(--igds-base-color-background-brand-pressed);
+    border-color: var(--igds-base-color-background-brand-pressed);
+}
+
+/* --- Secondary --- */
+.gov-split-button--secondary .gov-split-button__action,
+.gov-split-button--secondary .gov-split-button__toggle {
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-button-text-secondary);
+    border-color: var(--igds-base-color-button-border-primary);
+}
+
+.gov-split-button--secondary .gov-split-button__action:hover,
+.gov-split-button--secondary .gov-split-button__toggle:hover {
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+.gov-split-button--secondary .gov-split-button__action:active,
+.gov-split-button--secondary .gov-split-button__toggle:active,
+.gov-split-button--secondary .gov-split-button__toggle[aria-expanded="true"] {
+    background-color: var(--igds-base-color-background-secondary-button-pressed);
+    color: var(--igds-base-color-border-brand-hover);
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+/* פוקוס גלוי לשני הכפתורים */
+.gov-split-button__action:focus-visible,
+.gov-split-button__toggle:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+    z-index: 1;
+}
+
+/* מצב מושבת */
+.gov-split-button--primary .gov-split-button__action:disabled,
+.gov-split-button--primary .gov-split-button__toggle:disabled {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    border-color: var(--igds-base-color-background-disabled-with-text);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+.gov-split-button--secondary .gov-split-button__action:disabled,
+.gov-split-button--secondary .gov-split-button__toggle:disabled {
+    background-color: var(--igds-base-color-background-neutral-default);
+    border-color: var(--igds-base-color-button-border-disabled);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* --- התפריט הנפתח --- */
+.gov-split-button__menu {
+    display: none;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    min-width: 100%;
+    border-radius: var(--igds-ref-border-radius-m);
+    background-color: var(--igds-base-color-background-state-default);
+    box-shadow: var(--igds-shadow-light-level2);
+    overflow: hidden;
+}
+
+/* פתוח — כאשר הרכיב מסומן כמורחב */
+.gov-split-button[aria-expanded="true"] .gov-split-button__menu,
+.gov-split-button--open .gov-split-button__menu {
+    display: flex;
+}
+
+/* פריט בתפריט */
+.gov-split-button__item {
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-300);
+    width: 100%;
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+    border: none;
+    background-color: var(--igds-base-color-background-state-default);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    text-align: start;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.gov-split-button__item:hover {
+    background-color: var(--igds-base-color-background-neutral-hover);
+}
+
+.gov-split-button__item:focus-visible {
+    outline: 2px solid var(--igds-base-color-border-focused);
+    outline-offset: -2px;
+}
+
+.gov-split-button__item-text {
+    flex: 1 0 0;
+    min-width: 0;
+}
+
+.gov-split-button__item .gov-split-button__icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* --- Card (כרטיס) --- */
+/* מסונכרן מקומפוננטת Card בפיגמה (node 1140:935).
+   סוגים: Clickable / CTA / Not pressable. גדלים: Small / Large.
+   כיוון: Vertical / Horizontal. מצבים (Clickable): Default, Hover, Focused, Pressed, Disabled.
+   מבנה: media (תמונה/איור) + content (כותרת, badge, תיאור, תווית) + slot/CTA + favorite. */
+.gov-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 416px;
+    min-width: 288px;
+    max-width: 100%;
+    background-color: var(--igds-base-color-background-neutral-default);
+    border: var(--igds-ref-border-width-s) solid transparent;
+    border-radius: var(--igds-ref-border-radius-m);
+    box-shadow: var(--igds-shadow-light-level1);
+    overflow: hidden;
+    text-align: start;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* גודל Small (vertical) */
+.gov-card--small {
+    width: 200px;
+    min-width: 160px;
+}
+
+/* כיוון אופקי — media בצד, תוכן לידו */
+.gov-card--horizontal {
+    flex-direction: row;
+    width: 632px;
+    align-items: stretch;
+}
+
+.gov-card--horizontal.gov-card--small {
+    width: 308px;
+}
+
+/* --- Media (אזור תמונה/איור) --- */
+.gov-card__media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: var(--igds-base-color-background-neutral-secondlevel);
+    flex-shrink: 0;
+}
+
+/* media אנכי — יחס 16:9 ברוחב מלא */
+.gov-card:not(.gov-card--horizontal) .gov-card__media {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+}
+
+/* media אופקי — ריבוע בצד */
+.gov-card--horizontal .gov-card__media {
+    width: 183px;
+    align-self: stretch;
+}
+
+.gov-card--horizontal.gov-card--small .gov-card__media {
+    width: 96px;
+}
+
+.gov-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* כפתור מועדפים (לב) צף בפינה העליונה המובילה */
+.gov-card__favorite {
+    position: absolute;
+    top: var(--igds-ref-space-500);
+    inset-inline-start: var(--igds-ref-space-500);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: var(--igds-ref-space-400);
+    border: none;
+    border-radius: var(--igds-ref-border-radius-full);
+    background-color: var(--igds-base-color-background-neutral-default);
+    color: var(--igds-base-color-text-subtle-secondary);
+    box-shadow: var(--igds-shadow-light-level2);
+    cursor: pointer;
+}
+
+.gov-card__favorite svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.gov-card__favorite[aria-pressed="true"] {
+    color: var(--igds-base-color-text-failure);
+}
+
+/* --- Content (אזור תוכן) --- */
+.gov-card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--igds-ref-space-400);
+    padding: var(--igds-ref-space-500);
+    min-height: 128px;
+    flex: 1 0 0;
+    min-width: 0;
+}
+
+/* התגית בתוך כרטיס — חובקת את תוכנה (לא נמתחת לרוחב הכרטיס) */
+.gov-card__content .gov-badge {
+    align-self: flex-start;
+    width: auto;
+    flex: 0 0 auto;
+}
+
+/* בלוקים טקסטואליים ממלאים את רוחב התוכן */
+.gov-card__content .gov-card__title,
+.gov-card__content .gov-card__description,
+.gov-card__content .gov-card__label {
+    align-self: stretch;
+}
+
+/* כותרת (עם אייקון אופציונלי) */
+.gov-card__title {
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    font-size: var(--igds-ref-font-size-l);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    word-break: break-word;
+}
+
+/* טקסט הכותרת גדל וממלא, לא נחתך */
+.gov-card__title-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.gov-card__title-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-card__title-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* תיאור — נשבר לשורות במלואו (עד ~120 תווים לפי ההנחיה), ללא חיתוך */
+.gov-card__description {
+    margin: 0;
+    width: 100%;
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* תווית (meta) — תמיד מוצגת במלואה */
+.gov-card__label {
+    margin: 0;
+    width: 100%;
+    font-size: var(--igds-ref-font-size-xs);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-subtle-secondary);
+    word-break: break-word;
+}
+
+/* אזור CTA תחתון */
+.gov-card__cta {
+    margin-top: var(--igds-ref-space-300);
+}
+
+/* --- מצבים (Clickable) — על עטיפת <a>/<button> או הורה אינטראקטיבי --- */
+.gov-card--clickable {
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.gov-card--clickable:hover {
+    box-shadow: var(--igds-shadow-light-level2);
+}
+
+.gov-card--clickable:active {
+    box-shadow: var(--igds-shadow-dark-level3);
+}
+
+.gov-card--clickable:focus-visible {
+    outline: none;
+    border-color: var(--igds-base-color-border-focused);
+    box-shadow: 0 0 0 1px var(--igds-base-color-border-focused), var(--igds-shadow-light-level2);
+}
+
+/* מושבת */
+.gov-card--disabled,
+.gov-card[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    color: var(--igds-base-color-text-disabled);
+    box-shadow: var(--igds-shadow-light-level1);
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.gov-card--disabled .gov-card__title,
+.gov-card[aria-disabled="true"] .gov-card__title,
+.gov-card--disabled .gov-card__description,
+.gov-card[aria-disabled="true"] .gov-card__description,
+.gov-card--disabled .gov-card__label,
+.gov-card[aria-disabled="true"] .gov-card__label {
+    color: var(--igds-base-color-text-disabled);
+}
+
+/* --- Not pressable — ללא אינטראקציה (סטטי) --- */
+.gov-card--static {
+    cursor: default;
+}
+
+/* --- Card full picture (כרטיס תמונה מלאה) --- */
+/* מסונכרן מהפיגמה: Card full picture (node 43124:36813) + Card full picture+name (node 11657:21926).
+   תמונת רקע מלאה עם scrim (gradient) והתוכן על גבי התמונה.
+   Color=Light (scrim לבן) / Dark (scrim כהה + טקסט לבן). */
+.gov-card--full-picture {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    /* רקע: תמונה (מוגדר ב-inline style או background-image) */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ה-scrim מעל התמונה — מבהיר/מכהה את התחתית לקריאוּת הטקסט */
+.gov-card--full-picture::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Light — scrim לבן (שקוף למעלה, לבן מלא למטה) */
+.gov-card--full-picture.gov-card--light::before {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--igds-base-color-background-neutral-default) 100%);
+}
+
+/* Dark — scrim כהה (שקוף למעלה, כחול כהה למטה) */
+.gov-card--full-picture.gov-card--dark::before {
+    background: linear-gradient(180deg, rgba(12, 48, 88, 0) 0%, var(--igds-base-color-text-subtle-primary) 100%);
+}
+
+/* התוכן והכפתורים מעל ה-scrim */
+.gov-card--full-picture .gov-card__content,
+.gov-card--full-picture .gov-card__favorite,
+.gov-card--full-picture .gov-card__picture-title {
+    position: relative;
+    z-index: 1;
+}
+
+/* כפתור המועדפים בכרטיס תמונה מלאה — בפינה העליונה */
+.gov-card--full-picture .gov-card__favorite {
+    top: var(--igds-ref-space-500);
+    inset-inline-start: var(--igds-ref-space-500);
+}
+
+/* Dark — טקסט התוכן הופך ללבן */
+.gov-card--full-picture.gov-card--dark .gov-card__title,
+.gov-card--full-picture.gov-card--dark .gov-card__title-icon,
+.gov-card--full-picture.gov-card--dark .gov-card__description {
+    color: var(--igds-base-color-text-subtle-primary-inverted);
+}
+
+.gov-card--full-picture.gov-card--dark .gov-card__label {
+    color: var(--igds-base-color-background-neutral-secondlevel);
+}
+
+/* --- Card full picture + name (רק כותרת ממורכזת על התמונה) --- */
+.gov-card--picture-name {
+    min-height: 280px;
+    align-items: center;
+    justify-content: center;
+    padding: var(--igds-ref-space-500);
+    text-align: center;
+}
+
+.gov-card--picture-name.gov-card--small {
+    min-height: 155px;
+    width: 222px;
+}
+
+/* הכותרת הממורכזת */
+.gov-card__picture-title {
+    margin: 0;
+    font-size: var(--igds-ref-font-size-xl);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    text-align: center;
+    word-break: break-word;
+}
+
+.gov-card--full-picture.gov-card--light .gov-card__picture-title {
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-card--full-picture.gov-card--dark .gov-card__picture-title {
+    color: var(--igds-base-color-text-subtle-primary-inverted);
+}
+
+/* --- Carousel (קרוסלה) --- */
+/* מסונכרן מקומפוננטת carousel בפיגמה (node 36417:70941).
+   מבנה: כותרת + שורת כרטיסים (שימוש חוזר ב-.gov-card) + ניווט (נקודות + חצים אופציונליים).
+   וריאנטים: cards / small cards (+ with arrow) / Mobile. */
+.gov-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-700);
+    width: 100%;
+}
+
+/* כותרת הקרוסלה */
+.gov-carousel__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-200);
+    text-align: start;
+}
+
+.gov-carousel__title {
+    margin: 0;
+    font-size: var(--igds-ref-font-size-2xl);
+    font-weight: var(--igds-ref-font-weight-bold);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-carousel__subtitle {
+    margin: 0;
+    font-size: var(--igds-ref-font-size-l);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.25;
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+/* אזור הכרטיסים — שורה אופקית נגללת, מציגה הצצה לכרטיס הבא */
+.gov-carousel__viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.gov-carousel__track {
+    display: flex;
+    gap: var(--igds-ref-space-500);
+    align-items: stretch;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    padding-bottom: var(--igds-ref-space-200);
+}
+
+.gov-carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+/* כל כרטיס ברצועה נצמד ואינו מתכווץ */
+.gov-carousel__track > .gov-card {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+}
+
+/* --- ניווט (נקודות + חצים) --- */
+.gov-carousel__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--igds-ref-space-300);
+}
+
+/* נקודות עימוד */
+.gov-carousel__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--igds-ref-space-300);
+    height: 32px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.gov-carousel__dot {
+    width: 10px;
+    height: 10px;
+    padding: 0;
+    border: none;
+    border-radius: var(--igds-ref-border-radius-full);
+    background-color: var(--igds-base-color-border-divider-default);
+    cursor: pointer;
+    transition: background-color 0.15s ease, width 0.15s ease;
+}
+
+.gov-carousel__dot:hover {
+    background-color: var(--igds-base-color-text-subtle-secondary);
+}
+
+.gov-carousel__dot[aria-current="true"] {
+    background-color: var(--igds-base-color-text-link-primary-default);
+}
+
+.gov-carousel__dot:focus-visible {
+    outline: 2px solid var(--igds-base-color-border-focused);
+    outline-offset: 2px;
+}
+
+/* כפתורי חץ */
+.gov-carousel__arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: var(--igds-ref-border-radius-m);
+    background: transparent;
+    color: var(--igds-base-color-text-link-primary-default);
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.gov-carousel__arrow:hover {
+    color: var(--igds-base-color-button-text-hover-pressed);
+}
+
+.gov-carousel__arrow:focus-visible {
+    outline: var(--focus-outline);
+    outline-offset: 2px;
+}
+
+.gov-carousel__arrow:disabled,
+.gov-carousel__arrow[disabled] {
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+.gov-carousel__arrow svg {
+    width: 8px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .form-page {
+        padding: var(--space-lg);
+        margin: var(--space-md) 0;
+    }
+
+    .page-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .gov-form__actions {
+        flex-direction: column;
+    }
+
+    .gov-button {
+        width: 100%;
+    }
+
+    .gov-footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gov-radios {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    /* כרטיסים — רוחב מלא במובייל */
+    .gov-card,
+    .gov-card--small,
+    .gov-card--horizontal,
+    .gov-card--horizontal.gov-card--small {
+        width: 100%;
+    }
+}
+
+/* ==========================================================================
+   Date Range Calendar — gap-fill מקומי (מהפיגמה: Date Range node 35903:11333,
+   אבני בניין .Building Blocks/Day node 880:387). רכיב זה אינו קיים ב-@igds/core-web
+   0.1.59 (הגרסה האחרונה); נבנה מקומית עד שתפורסם גרסה רשמית עם תמיכת טווח (R-COMP-04).
+   כל הערכים דרך טוקני --igds-*.
+   ========================================================================== */
+.gov-date-range {
+    display: inline-flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-500);
+    width: 316px;
+    padding: var(--igds-ref-space-500);
+    background-color: var(--igds-base-color-background-neutral-default);
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-divider-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    box-shadow: var(--igds-shadow-light-level1);
+    font-family: var(--font-family);
+}
+
+/* כותרת הלוח — ניווט חודש/שנה + חצים */
+.gov-date-range__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--igds-ref-space-300);
+}
+
+.gov-date-range__title {
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-medium);
+    color: var(--igds-base-color-text-subtle-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--igds-ref-space-200) var(--igds-ref-space-300);
+    border-radius: var(--igds-ref-border-radius-xs);
+}
+
+.gov-date-range__title:hover {
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+.gov-date-range__title:focus-visible {
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: var(--igds-ref-space-100);
+}
+
+.gov-date-range__nav {
+    display: flex;
+    gap: var(--igds-ref-space-200);
+}
+
+.gov-date-range__arrow {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    border-radius: var(--igds-ref-border-radius-m);
+    color: var(--igds-base-color-text-subtle-secondary);
+    cursor: pointer;
+}
+
+.gov-date-range__arrow:hover {
+    background-color: var(--igds-base-color-background-full-screen-default);
+    color: var(--igds-base-color-text-link-primary-hover);
+}
+
+.gov-date-range__arrow:focus-visible {
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: calc(-1 * var(--igds-ref-border-width-l));
+}
+
+.gov-date-range__arrow svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+}
+
+/* שמות ימי השבוע */
+.gov-date-range__weekdays,
+.gov-date-range__grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.gov-date-range__weekday {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: var(--igds-ref-font-size-xs);
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+/* תא יום — בסיס (Type=Day, State=Default) */
+.gov-date-range__day {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background: none;
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+    cursor: pointer;
+}
+
+/* תיבת היום הפנימית (40px) — נושאת רקע/גבול/radius לפי המצב */
+.gov-date-range__day::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--igds-ref-border-radius-m);
+    z-index: 0;
+    transition: background-color 150ms ease;
+}
+
+.gov-date-range__day > span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Hover (Type=Day, State=Hover) — רקע full-screen */
+.gov-date-range__day:hover:not(:disabled)::before {
+    background-color: var(--igds-base-color-background-full-screen-default);
+}
+
+/* Focused */
+.gov-date-range__day:focus-visible {
+    outline: none;
+}
+
+.gov-date-range__day:focus-visible::before {
+    border: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+}
+
+/* Today (Type=Today) — גבול כחול + טקסט כחול */
+.gov-date-range__day--today::before {
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-background-brand-default);
+}
+
+.gov-date-range__day--today {
+    color: var(--igds-base-color-background-brand-default);
+}
+
+/* Disabled (Type=Day/Today, State=Disabled) */
+.gov-date-range__day:disabled,
+.gov-date-range__day--disabled {
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+/* Prev/Next (ימי חודש סמוך) — טקסט משני */
+.gov-date-range__day--adjacent {
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+/* Null (תא ריק) */
+.gov-date-range__day--null {
+    visibility: hidden;
+    cursor: default;
+}
+
+/* Range (ביניים, State=Range) — פס מלא ברוחב התא בצבע sidebar-pressed */
+.gov-date-range__day--in-range::before {
+    width: 100%;
+    height: 44px;
+    border-radius: 0;
+    background-color: var(--igds-base-color-background-brand-sidebar-pressed);
+}
+
+.gov-date-range__day--in-range {
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+/* נקודות קצה (Start/End Range, Selected) — רקע brand מלא + טקסט לבן */
+.gov-date-range__day--start::before,
+.gov-date-range__day--end::before,
+.gov-date-range__day--selected::before {
+    width: 100%;
+    height: 44px;
+    border-radius: 0;
+    background-color: var(--igds-base-color-background-brand-default);
+}
+
+/* נקודת התחלה — פינות מעוגלות בצד ההתחלה (ימין ב-RTL) */
+.gov-date-range__day--start::before {
+    border-start-start-radius: var(--igds-ref-border-radius-m);
+    border-end-start-radius: var(--igds-ref-border-radius-m);
+}
+
+/* נקודת סיום — פינות מעוגלות בצד הסיום (שמאל ב-RTL) */
+.gov-date-range__day--end::before {
+    border-start-end-radius: var(--igds-ref-border-radius-m);
+    border-end-end-radius: var(--igds-ref-border-radius-m);
+}
+
+/* בחירה בודדת (לא טווח) — ריבוע מלא מעוגל */
+.gov-date-range__day--selected::before {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--igds-ref-border-radius-m);
+}
+
+.gov-date-range__day--start,
+.gov-date-range__day--end,
+.gov-date-range__day--selected {
+    color: var(--igds-base-color-text-subtle-primary-inverted);
+    font-weight: var(--igds-ref-font-weight-regular);
+}
+
+.gov-date-range__day--start:hover::before,
+.gov-date-range__day--end:hover::before,
+.gov-date-range__day--selected:hover::before {
+    background-color: var(--igds-base-color-background-brand-hover);
+}
+
+/* שורת תחתית — טקסט הטווח שנבחר */
+.gov-date-range__footer {
+    font-size: var(--igds-ref-font-size-xs);
+    color: var(--igds-base-color-text-subtle-secondary);
+    padding-top: var(--igds-ref-space-300);
+    border-top: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-divider-default);
+}
+
+/* ==========================================================================
+   Divider (קו מפריד — מסונכרן מהפיגמה: Israeli Government DS 3.0,
+   Divider node 708:2124). כל הערכים דרך טוקני --igds-*.
+   8 וריאנטים: Position (Horizontal/Vertical) × Style (Default/Inverted)
+   × Width (Full/Inset).
+   - עובי הקו תמיד 1px.
+   - Default: צבע --igds-base-color-border-divider-default (#b5c7e2).
+   - Inverted: צבע --igds-base-color-border-divider-inverted (#ffffff) — לרקע כהה.
+   - Inset: ריווח --igds-ref-space-500 (16px) בשני הקצוות (אופקי בקו אופקי,
+     אנכי בקו אנכי), כך שהקו עצמו קצר יותר מהמיכל.
+   מבנה: .gov-divider (מיכל) > .gov-divider__line (הקו עצמו).
+   ========================================================================== */
+.gov-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* הקו עצמו — יורש את צבעו מהמיכל דרך currentColor כדי לא לשכפל ערכים */
+.gov-divider__line {
+    flex-shrink: 0;
+    background-color: currentColor;
+}
+
+/* --- Position: Horizontal (ברירת מחדל) --- */
+.gov-divider--horizontal {
+    width: 100%;
+    color: var(--igds-base-color-border-divider-default);
+}
+
+.gov-divider--horizontal .gov-divider__line {
+    width: 100%;
+    height: var(--igds-ref-border-width-s);
+}
+
+/* --- Position: Vertical --- */
+.gov-divider--vertical {
+    display: inline-flex;
+    flex-direction: column;
+    height: 100%;
+    color: var(--igds-base-color-border-divider-default);
+}
+
+.gov-divider--vertical .gov-divider__line {
+    width: var(--igds-ref-border-width-s);
+    height: 100%;
+}
+
+/* --- Style: Inverted (קו לבן לרקע כהה) --- */
+.gov-divider--inverted {
+    color: var(--igds-base-color-border-divider-inverted);
+}
+
+/* --- Width: Inset (ריווח 16px בשני הקצוות) --- */
+.gov-divider--horizontal.gov-divider--inset {
+    padding-inline: var(--igds-ref-space-500);
+}
+
+.gov-divider--vertical.gov-divider--inset {
+    padding-block: var(--igds-ref-space-500);
+}
+
+/* ==========================================================================
+   Dropdown (תפריט בחירה מותאם / combobox — מסונכרן מהפיגמה:
+   Israeli Government DS 3.0, Dropdown node 35069:17714). כל הערכים דרך טוקני --igds-*.
+   רכיב בחירה מתקדם (combobox) הנבדל מ-.gov-select הנייטיב: תומך בסינון תוך כדי
+   הקלדה, בחירה מרובה עם תגיות (Tags), ורשימת אפשרויות צפה.
+
+   מבנה:
+   .gov-dropdown (מיכל)
+     > .gov-dropdown__label (Field Label: תווית + * חובה + אייקון עזר + "למה זה נחוץ?")
+     > .gov-dropdown__field (עטיפת שדה — נדרשת רק ל-ErrorFocused עם טבעת כפולה)
+         > .gov-dropdown__header (השדה הלחיץ: chevron + טקסט + אייקון ימני)
+         > .gov-dropdown__list (רשימת האפשרויות הצפה)
+     > .gov-dropdown__help (טקסט עזר / הודעת שגיאה + אייקון)
+
+   4 סוגים: Default, Active Filterable, Active Unfilterable, Tags.
+   6 מצבים (על ה-header): Default, Hover, Focused, Error, ErrorFocused, Disabled.
+   ========================================================================== */
+.gov-dropdown {
+    display: flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-300);
+    width: 288px;
+    max-width: 100%;
+}
+
+/* --- Field Label (תווית + חובה + אייקונים) --- */
+.gov-dropdown__label {
+    display: flex;
+    align-items: flex-end;
+    gap: var(--igds-ref-space-300);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-medium);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+/* סימון חובה (*) */
+.gov-dropdown__required {
+    color: var(--igds-base-color-text-failure);
+}
+
+/* קישור "למה זה נחוץ?" */
+.gov-dropdown__why {
+    font-size: var(--igds-ref-font-size-xs);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-link-primary-default);
+    text-decoration: none;
+    margin-inline-start: auto;
+}
+
+.gov-dropdown__why:hover {
+    text-decoration: underline;
+}
+
+/* אייקון 24px בתוך label / help (יורש צבע דרך currentColor) */
+.gov-dropdown__label-icon,
+.gov-dropdown__help-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.gov-dropdown__label-icon svg,
+.gov-dropdown__help-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* --- עטיפת שדה (ברירת מחדל שקופה; מקבלת טבעת רק ב-ErrorFocused) --- */
+.gov-dropdown__field {
+    border-radius: var(--igds-ref-border-radius-m);
+}
+
+/* --- Header (השדה הלחיץ) --- */
+.gov-dropdown__header {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-300);
+    width: 100%;
+    min-height: var(--igds-input-height);
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    text-align: start;
+    background-color: var(--igds-base-color-background-neutral-default);
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-subtle-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    color: var(--igds-base-color-text-subtle-primary);
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+/* chevron (24px, יורש צבע). מסתובב ב-expanded */
+.gov-dropdown__chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--igds-base-color-text-subtle-primary);
+    transition: transform 0.2s ease;
+}
+
+.gov-dropdown__chevron svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+/* טקסט השדה — תופס את הרוחב, placeholder בצבע משני */
+.gov-dropdown__value {
+    flex: 1 0 0;
+    min-width: 0;
+    text-align: start;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-dropdown__value--placeholder {
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+/* אייקון ימני אופציונלי (24px, יורש צבע משני) */
+.gov-dropdown__field-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+.gov-dropdown__field-icon svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* --- Help text (ברירת מחדל) --- */
+.gov-dropdown__help {
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-xs);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.6;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-dropdown__help-icon {
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+/* ==========================================================================
+   States (מצבי ה-header)
+   ========================================================================== */
+
+/* --- Hover --- */
+.gov-dropdown:not(.gov-dropdown--disabled) .gov-dropdown__header:hover,
+.gov-dropdown--hover .gov-dropdown__header {
+    border-color: var(--igds-base-color-border-brand-hover);
+}
+
+/* --- Focused (גבול 2px כחול; padding מתכווץ ב-1px כדי לשמר גובה) --- */
+.gov-dropdown__header:focus-visible,
+.gov-dropdown--focused .gov-dropdown__header {
+    outline: none;
+    border-width: var(--igds-ref-border-width-l);
+    border-color: var(--igds-base-color-border-focused);
+    padding: calc(var(--igds-ref-space-400) - 1px) calc(var(--igds-ref-space-500) - 1px);
+}
+
+/* --- Expanded (כאשר הרשימה פתוחה: גבול brand כחול 1px) --- */
+.gov-dropdown--expanded .gov-dropdown__header {
+    border-color: var(--igds-base-color-border-brand-default);
+}
+
+/* chevron מצביע מעלה כאשר פתוח */
+.gov-dropdown--expanded .gov-dropdown__chevron {
+    transform: rotate(180deg);
+}
+
+/* --- Error --- */
+.gov-dropdown--error .gov-dropdown__header {
+    border-color: var(--igds-base-color-border-failure);
+}
+
+.gov-dropdown--error .gov-dropdown__help {
+    color: var(--igds-base-color-text-failure);
+}
+
+.gov-dropdown--error .gov-dropdown__help-icon {
+    color: var(--igds-base-color-text-failure);
+}
+
+/* --- ErrorFocused (טבעת כפולה: עטיפה כחולה 2px + גבול failure פנימי) --- */
+.gov-dropdown--error-focused .gov-dropdown__field {
+    padding: var(--igds-ref-space-200);
+    border: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-brand-default);
+    border-radius: 10px;
+}
+
+.gov-dropdown--error-focused .gov-dropdown__header {
+    border-color: var(--igds-base-color-border-failure);
+}
+
+.gov-dropdown--error-focused .gov-dropdown__help {
+    color: var(--igds-base-color-text-failure);
+}
+
+.gov-dropdown--error-focused .gov-dropdown__help-icon {
+    color: var(--igds-base-color-text-failure);
+}
+
+/* --- Disabled --- */
+.gov-dropdown--disabled .gov-dropdown__header,
+.gov-dropdown__header:disabled,
+.gov-dropdown__header[disabled],
+.gov-dropdown__header[aria-disabled="true"] {
+    background-color: var(--igds-base-color-background-disabled-with-text);
+    border-color: var(--igds-base-color-border-disabled);
+    color: var(--igds-base-color-text-disabled);
+    cursor: not-allowed;
+}
+
+.gov-dropdown--disabled .gov-dropdown__chevron,
+.gov-dropdown--disabled .gov-dropdown__value,
+.gov-dropdown--disabled .gov-dropdown__value--placeholder,
+.gov-dropdown--disabled .gov-dropdown__field-icon {
+    color: var(--igds-base-color-text-disabled);
+}
+
+.gov-dropdown--disabled .gov-dropdown__label,
+.gov-dropdown--disabled .gov-dropdown__required,
+.gov-dropdown--disabled .gov-dropdown__why,
+.gov-dropdown--disabled .gov-dropdown__help,
+.gov-dropdown--disabled .gov-dropdown__help-icon {
+    color: var(--igds-base-color-text-disabled);
+}
+
+/* ==========================================================================
+   List (רשימת האפשרויות הצפה)
+   ========================================================================== */
+.gov-dropdown__list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: var(--igds-ref-space-200);
+    background-color: var(--igds-base-color-background-neutral-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    box-shadow: var(--igds-shadow-light-level2);
+    overflow: hidden;
+}
+
+/* פריט ברשימה (.List Item Atom) — טקסט + אייקון אופציונלי (+ checkbox ב-Tags) */
+.gov-dropdown__option {
+    display: flex;
+    align-items: center;
+    gap: var(--igds-ref-space-300);
+    width: 100%;
+    padding: var(--igds-ref-space-400) var(--igds-ref-space-500);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    text-align: start;
+    background-color: var(--igds-base-color-background-state-default);
+    color: var(--igds-base-color-text-subtle-primary);
+    border: none;
+    cursor: pointer;
+}
+
+.gov-dropdown__option:hover {
+    background-color: var(--igds-base-color-background-neutral-hover);
+}
+
+.gov-dropdown__option:focus-visible {
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: calc(-1 * var(--igds-ref-border-width-l));
+}
+
+/* טקסט האפשרות תופס את הרוחב */
+.gov-dropdown__option-text {
+    flex: 1 0 0;
+    min-width: 0;
+    text-align: start;
+}
+
+/* אייקון אפשרות (24px, יורש צבע) */
+.gov-dropdown__option-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    color: var(--igds-base-color-text-subtle-primary);
+}
+
+.gov-dropdown__option-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* --- שורת פעולות Tags (בחירת הכל / הסרת הכל) --- */
+.gov-dropdown__actions {
+    display: flex;
+    align-items: center;
+    background-color: var(--igds-base-color-background-neutral-default);
+}
+
+.gov-dropdown__action {
+    flex: 1 0 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: var(--igds-input-height);
+    padding: var(--igds-ref-space-300) var(--igds-ref-space-400);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    background: transparent;
+    border: none;
+    border-radius: var(--igds-ref-border-radius-m);
+    color: var(--igds-base-color-button-text-secondary);
+    cursor: pointer;
+}
+
+.gov-dropdown__action:hover {
+    background-color: var(--igds-base-color-background-neutral-hover);
+}
+
+.gov-dropdown__action:focus-visible {
+    outline: var(--igds-ref-border-width-l) solid var(--igds-base-color-border-focused);
+    outline-offset: calc(-1 * var(--igds-ref-border-width-l));
+}
+
+/* --- אזור התגיות הנבחרות (Tags) --- */
+.gov-dropdown__tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--igds-ref-space-300) var(--igds-ref-space-200);
+    padding: var(--igds-ref-space-400);
+    background-color: var(--igds-base-color-background-neutral-default);
+}
+
+/* תגית בודדת (pill) — מסונכרן מ-Tag (node 51517:152977) */
+.gov-dropdown__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--igds-ref-space-200);
+    padding: var(--igds-ref-space-100) var(--igds-ref-space-300);
+    background-color: var(--igds-base-color-background-neutral-secondlevel);
+    border-radius: var(--igds-ref-border-radius-full);
+    font-family: var(--font-family);
+    font-size: var(--igds-ref-font-size-s);
+    font-weight: var(--igds-ref-font-weight-regular);
+    line-height: 1.5;
+    color: var(--igds-base-color-text-subtle-secondary);
+}
+
+/* כפתור הסרת תגית (אייקון close) */
+.gov-dropdown__tag-remove {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    color: var(--igds-base-color-text-subtle-secondary);
+    cursor: pointer;
+}
+
+.gov-dropdown__tag-remove svg {
+    width: 8px;
+    height: 8px;
+    fill: currentColor;
+}
+
+/* תיבת checkbox קטנה בפריט Tags (ויזואלית בלבד; מבוססת על אטום הצ'קבוק מהפיגמה) */
+.gov-dropdown__option-check {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: var(--igds-ref-border-radius-xs);
+    background-color: var(--igds-base-color-background-neutral-default);
+    border: var(--igds-ref-border-width-s) solid var(--igds-base-color-border-subtle-default);
+}
+
+/* ===================================================================
+   Horizontal Filter — רכיב פילטור אופקי
+   מסונכרן מהפיגמה: Israeli Government DS 3.0, node 35782:43322
+   (Horizontal Filter, RTL=True node 3164:824) דרך Figma MCP.
+
+   רכיב קומפוזיציה בלבד — מרכיב רכיבי IGDS קיימים (.gov-dropdown,
+   .gov-checkbox, .gov-button) בפריסה. אין כאן ערכי מראה קשיחים:
+   כל המרווחים דרך טוקני --igds-ref-space-*. המראה של כל שדה/כפתור/
+   צ'קבוק מגיע מהרכיב הקיים שלו.
+
+   מידות מהפיגמה (מופו לטוקנים):
+   - gap בין שדות בשורה: 16px → --igds-ref-space-500
+   - gap בין שורות הפילטר: 16px → --igds-ref-space-500
+   - gap בין שורת הפילטר לשורת הכפתורים: 16px → --igds-ref-space-500
+   - gap בין הכפתורים: 16px → --igds-ref-space-500
+   =================================================================== */
+
+/* מיכל הפילטר — פריים מסביב (מהפיגמה node 3164:824):
+   רקע לבן, radius 8px, padding 24px, צל Shadow-light/Level1.
+   מסדר אנכית: שורות שדות, צ'קבוקסים, שורת כפתורים */
+.gov-filter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--igds-ref-space-500);
+    width: 100%;
+    box-sizing: border-box;
+    padding: var(--igds-ref-space-600);
+    background-color: var(--igds-base-color-background-neutral-default);
+    border-radius: var(--igds-ref-border-radius-m);
+    box-shadow: var(--igds-shadow-light-level1);
+}
+
+/* שורת שדות — עד 5 Dropdowns בגריד שווה-רוחב, נשבר למובייל */
+.gov-filter__row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--igds-ref-space-500);
+    align-items: start;
+}
+
+/* איפוס שוליים של ה-Dropdown בתוך הפילטר (הרכיב עומד בפני עצמו) */
+.gov-filter__row .gov-dropdown {
+    width: 100%;
+}
+
+/* קבוצת צ'קבוקסים אופקית מתחת לשורות השדות — מיושרת לסוף (ימין ב-RTL) */
+.gov-filter__checkboxes {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* שורת הכפתורים — פעולה ראשית + משנית, בתחילת השורה (ימין ב-RTL) */
+.gov-filter__actions {
+    display: flex;
+    gap: var(--igds-ref-space-500);
+    align-items: center;
+}
+
+/* רספונסיביות — במסך צר השדות נערמים */
+@media (max-width: 768px) {
+    .gov-filter__row {
+        grid-template-columns: 1fr;
+    }
+
+    .gov-filter__checkboxes {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: var(--igds-ref-space-500);
+    }
+}

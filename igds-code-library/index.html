@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הרשמה למעונות יום</title>
+    <!-- IGDS: טוקנים נטענים ראשון (R-IGDS-07) -->
+    <link rel="stylesheet" href="node_modules/@igds/tokens/lib/index.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <!-- IGDS: bundle הדפדפן (ללא bundler, R-BUILD-03) — רושם אוטומטית את igds-date-picker וכל רכיבי IGDS -->
+    <script src="node_modules/@igds/core-web/lib/index.min.js" defer></script>
+</head>
+<body>
+    <header class="gov-header">
+        <div class="container">
+            <div class="gov-header__logo">
+                <span class="gov-header__symbol">🇮🇱</span>
+                <span class="gov-header__title">ממשלת ישראל</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="form-page">
+            <nav class="breadcrumbs" aria-label="מיקומך באתר">
+                <ol>
+                    <li>
+                        <a href="#">דף הבית</a>
+                        <span class="breadcrumbs__chevron" aria-hidden="true">
+                            <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z" />
+                            </svg>
+                        </span>
+                    </li>
+                    <li>
+                        <a href="#">משרד העבודה</a>
+                        <span class="breadcrumbs__chevron" aria-hidden="true">
+                            <svg viewBox="0 0 8.18259 13.9999" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.44146 7.00523L7.97399 12.3918C8.5052 13.1868 7.85421 13.7438 7.85421 13.7438C7.85421 13.7438 7.26356 14.2942 6.5314 13.7813C6.5314 13.7813 0.851559 8.2435 0.294171 7.71177C-3.8147e-06 7.39975 0 7.00522 0 7.00522C0 7.00522 -3.8147e-06 6.60678 0.294171 6.29452C0.609371 6.00912 6.24219 0.505261 6.5664 0.20446C7.07812 -0.17055 7.63948 0.0331421 7.90633 0.313842C8.17318 0.594542 8.3047 1.11071 7.98445 1.60288C7.06257 2.52477 2.44146 7.00523 2.44146 7.00523Z" />
+                            </svg>
+                        </span>
+                    </li>
+                    <li><span aria-current="page">הרשמה למעונות יום</span></li>
+                </ol>
+            </nav>
+
+            <h1 class="page-title">הרשמה למעונות יום לשנת הלימודים תשפ"ז</h1>
+            <p class="page-description">
+                מלאו את הטופס להלן כדי לרשום את ילדכם/ילדתכם למעון יום מוכר. שדות המסומנים בכוכבית (*) הם שדות חובה.
+            </p>
+
+            <form class="gov-form" id="daycare-form" novalidate>
+                <!-- פרטי ההורה / האפוטרופוס -->
+                <fieldset class="gov-fieldset">
+                    <legend class="gov-fieldset__legend">פרטי ההורה / האפוטרופוס</legend>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="parent-first-name">
+                            שם פרטי
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <input class="gov-input" type="text" id="parent-first-name" name="parentFirstName"
+                               required aria-required="true" autocomplete="given-name">
+                        <span class="gov-error-message" id="parent-first-name-error" role="alert" hidden>
+                            נא להזין שם פרטי
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="parent-last-name">
+                            שם משפחה
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <input class="gov-input" type="text" id="parent-last-name" name="parentLastName"
+                               required aria-required="true" autocomplete="family-name">
+                        <span class="gov-error-message" id="parent-last-name-error" role="alert" hidden>
+                            נא להזין שם משפחה
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="parent-id">
+                            תעודת זהות
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <span class="gov-hint" id="parent-id-hint">9 ספרות, כולל ספרת ביקורת</span>
+                        <input class="gov-input gov-input--width-10" type="text" id="parent-id" name="parentId"
+                               required aria-required="true" aria-describedby="parent-id-hint"
+                               pattern="\d{9}" maxlength="9" inputmode="numeric">
+                        <span class="gov-error-message" id="parent-id-error" role="alert" hidden>
+                            נא להזין מספר תעודת זהות תקין (9 ספרות)
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="parent-email">
+                            דואר אלקטרוני
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <input class="gov-input" type="email" id="parent-email" name="parentEmail"
+                               required aria-required="true" autocomplete="email" dir="ltr">
+                        <span class="gov-error-message" id="parent-email-error" role="alert" hidden>
+                            נא להזין כתובת דואר אלקטרוני תקינה
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="parent-phone">
+                            טלפון נייד
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <span class="gov-hint" id="parent-phone-hint">לדוגמה: 050-1234567</span>
+                        <input class="gov-input gov-input--width-10" type="tel" id="parent-phone" name="parentPhone"
+                               required aria-required="true" aria-describedby="parent-phone-hint"
+                               autocomplete="tel" dir="ltr">
+                        <span class="gov-error-message" id="parent-phone-error" role="alert" hidden>
+                            נא להזין מספר טלפון תקין
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="parent-address">
+                            כתובת מגורים
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <span class="gov-hint" id="parent-address-hint">רחוב, מספר בית, עיר</span>
+                        <input class="gov-input" type="text" id="parent-address" name="parentAddress"
+                               required aria-required="true" aria-describedby="parent-address-hint"
+                               autocomplete="street-address">
+                        <span class="gov-error-message" id="parent-address-error" role="alert" hidden>
+                            נא להזין כתובת מגורים
+                        </span>
+                    </div>
+                </fieldset>
+
+                <!-- פרטי הילד/ה -->
+                <fieldset class="gov-fieldset">
+                    <legend class="gov-fieldset__legend">פרטי הילד/ה</legend>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="child-first-name">
+                            שם פרטי של הילד/ה
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <input class="gov-input" type="text" id="child-first-name" name="childFirstName"
+                               required aria-required="true">
+                        <span class="gov-error-message" id="child-first-name-error" role="alert" hidden>
+                            נא להזין שם פרטי של הילד/ה
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="child-id">
+                            תעודת זהות של הילד/ה
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <span class="gov-hint" id="child-id-hint">9 ספרות</span>
+                        <input class="gov-input gov-input--width-10" type="text" id="child-id" name="childId"
+                               required aria-required="true" aria-describedby="child-id-hint"
+                               pattern="\d{9}" maxlength="9" inputmode="numeric">
+                        <span class="gov-error-message" id="child-id-error" role="alert" hidden>
+                            נא להזין מספר תעודת זהות תקין (9 ספרות)
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <!-- נצרך מספריית IGDS: igds-date-picker (R-FORM-01 / R-COMP-04) — התווית מגיעה מהרכיב עצמו -->
+                        <igds-date-picker id="child-birth-date" name="childBirthDate"
+                                          label="תאריך לידה" dir="rtl" required></igds-date-picker>
+                        <span class="gov-error-message" id="child-birth-date-error" role="alert" hidden>
+                            נא להזין תאריך לידה
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <fieldset class="gov-fieldset gov-fieldset--inline">
+                            <legend class="gov-label">
+                                מין הילד/ה
+                                <span class="gov-required" aria-hidden="true">*</span>
+                            </legend>
+                            <div class="gov-radios">
+                                <div class="gov-radios__item">
+                                    <input class="gov-radios__input" type="radio" id="gender-female"
+                                           name="childGender" value="female">
+                                    <label class="gov-radios__label" for="gender-female">נקבה</label>
+                                </div>
+                                <div class="gov-radios__item">
+                                    <input class="gov-radios__input" type="radio" id="gender-male"
+                                           name="childGender" value="male">
+                                    <label class="gov-radios__label" for="gender-male">זכר</label>
+                                </div>
+                            </div>
+                            <span class="gov-error-message" id="child-gender-error" role="alert" hidden>
+                                נא לבחור מין
+                            </span>
+                        </fieldset>
+                    </div>
+                </fieldset>
+
+                <!-- העדפות מעון -->
+                <fieldset class="gov-fieldset">
+                    <legend class="gov-fieldset__legend">העדפות מעון</legend>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="daycare-area">
+                            אזור מגורים מבוקש
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <select class="gov-select" id="daycare-area" name="daycareArea" required aria-required="true">
+                            <option value="">בחרו אזור</option>
+                            <option value="north">צפון</option>
+                            <option value="haifa">חיפה והקריות</option>
+                            <option value="center">מרכז</option>
+                            <option value="tel-aviv">תל אביב והמרכז</option>
+                            <option value="jerusalem">ירושלים והסביבה</option>
+                            <option value="south">דרום</option>
+                        </select>
+                        <span class="gov-error-message" id="daycare-area-error" role="alert" hidden>
+                            נא לבחור אזור מגורים
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="framework-type">
+                            סוג מסגרת מבוקשת
+                            <span class="gov-required" aria-hidden="true">*</span>
+                        </label>
+                        <select class="gov-select" id="framework-type" name="frameworkType" required aria-required="true">
+                            <option value="">בחרו סוג מסגרת</option>
+                            <option value="daycare">מעון יום</option>
+                            <option value="family">משפחתון</option>
+                            <option value="toddler">פעוטון</option>
+                        </select>
+                        <span class="gov-error-message" id="framework-type-error" role="alert" hidden>
+                            נא לבחור סוג מסגרת
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <!-- נצרך מספריית IGDS: igds-date-picker (R-FORM-01 / R-COMP-04) — התווית מגיעה מהרכיב עצמו -->
+                        <igds-date-picker id="start-date" name="startDate"
+                                          label="תאריך תחילה מבוקש" dir="rtl" required></igds-date-picker>
+                        <span class="gov-error-message" id="start-date-error" role="alert" hidden>
+                            נא להזין תאריך תחילה
+                        </span>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <fieldset class="gov-fieldset gov-fieldset--inline">
+                            <legend class="gov-label">היקף שהייה מבוקש</legend>
+                            <div class="gov-radios">
+                                <div class="gov-radios__item">
+                                    <input class="gov-radios__input" type="radio" id="scope-full"
+                                           name="attendanceScope" value="full" checked>
+                                    <label class="gov-radios__label" for="scope-full">יום מלא</label>
+                                </div>
+                                <div class="gov-radios__item">
+                                    <input class="gov-radios__input" type="radio" id="scope-half"
+                                           name="attendanceScope" value="half">
+                                    <label class="gov-radios__label" for="scope-half">חצי יום</label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </fieldset>
+
+                <!-- מידע נוסף -->
+                <fieldset class="gov-fieldset">
+                    <legend class="gov-fieldset__legend">מידע נוסף</legend>
+
+                    <div class="gov-form-group">
+                        <label class="gov-label" for="medical-notes">
+                            הערות רפואיות / אלרגיות
+                        </label>
+                        <span class="gov-hint" id="medical-notes-hint">לדוגמה: אלרגיה לבוטנים, רגישות למזון</span>
+                        <textarea class="gov-textarea" id="medical-notes" name="medicalNotes" rows="3"
+                                  aria-describedby="medical-notes-hint"></textarea>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-checkbox">
+                            <input class="gov-checkbox__input" type="checkbox" id="special-needs"
+                                   name="specialNeeds" value="yes">
+                            <span class="gov-checkbox__box"></span>
+                            <span class="gov-checkbox__label">לילד/ה יש צרכים מיוחדים הדורשים התאמה</span>
+                        </label>
+                    </div>
+
+                    <div class="gov-form-group">
+                        <label class="gov-checkbox">
+                            <input class="gov-checkbox__input" type="checkbox" id="sibling-priority"
+                                   name="siblingPriority" value="yes">
+                            <span class="gov-checkbox__box"></span>
+                            <span class="gov-checkbox__label">יש אח/אחות הרשומים כבר למסגרת (זכאות לעדיפות)</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- הצהרה -->
+                <fieldset class="gov-fieldset">
+                    <legend class="gov-fieldset__legend">הצהרה</legend>
+
+                    <div class="gov-form-group">
+                        <label class="gov-checkbox">
+                            <input class="gov-checkbox__input" type="checkbox" id="terms" name="terms"
+                                   required aria-required="true" aria-describedby="terms-error">
+                            <span class="gov-checkbox__box"></span>
+                            <span class="gov-checkbox__label">
+                                אני מצהיר/ה כי הפרטים שמסרתי נכונים ומאשר/ת שקראתי את
+                                <a href="#" class="gov-link">תקנון ההרשמה</a>
+                                ומסכים/ה לתנאיו
+                                <span class="gov-required" aria-hidden="true">*</span>
+                            </span>
+                        </label>
+                        <span class="gov-error-message" id="terms-error" role="alert" hidden>
+                            יש לאשר את תקנון ההרשמה
+                        </span>
+                    </div>
+                </fieldset>
+
+                <div class="gov-form__actions">
+                    <button type="submit" class="gov-button gov-button--primary">שליחת הרשמה</button>
+                    <button type="reset" class="gov-button gov-button--secondary">ניקוי טופס</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="gov-footer">
+        <div class="container">
+            <p>© כל הזכויות שמורות למדינת ישראל</p>
+            <nav aria-label="קישורים נוספים">
+                <a href="#" class="gov-link gov-link--footer">הצהרת נגישות</a>
+                <a href="#" class="gov-link gov-link--footer">מדיניות פרטיות</a>
+                <a href="#" class="gov-link gov-link--footer">תנאי שימוש</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

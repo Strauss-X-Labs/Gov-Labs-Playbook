@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סקיצה — Timed Button (כל המצבים)</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="_gallery.css">
+</head>
+
+<body>
+    <main class="sketch">
+        <a class="sketch__back" href="index.html">← חזרה לספריית הרכיבים</a>
+        <h1 class="sketch__title">Timed Button — סקיצת כל המצבים</h1>
+        <p class="sketch__sub">
+            נמשך מ-Figma (Israeli Government DS 3.0): .progress timed button node <code>36406:73837</code>,
+            דרך Figma MCP. מבוסס על <code>.gov-timed-button</code> והטוקנים ב-<code>styles.css</code>.
+            כפתור Primary עם מונה זמן <code>(00:00)</code> וסרגל התקדמות שמתמלא בלחיצה ארוכה (press-and-hold).
+            <br>Hover / Focused אמיתיים — העבירו עכבר / נווטו ב-Tab. סרגל ההתקדמות נשלט ע"י <code>--timed-progress</code>.
+        </p>
+
+        <h2 class="sketch__mapping-title">מצבים</h2>
+        <div style="display: flex; flex-direction: column; gap: var(--space-lg); max-width: 320px;">
+            <span>
+                <span class="sketch__state-label">Default</span><br>
+                <button class="gov-timed-button">
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                    <span class="gov-timed-button__content">
+                        <span class="gov-timed-button__timer">(00:00)</span>
+                        <span>טקסט</span>
+                    </span>
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Pressed · Success 50%</span><br>
+                <button class="gov-timed-button" style="--timed-progress: 50%;">
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                    <span class="gov-timed-button__content">
+                        <span class="gov-timed-button__timer">(00:05)</span>
+                        <span>טקסט</span>
+                    </span>
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Pressed · Success 100%</span><br>
+                <button class="gov-timed-button" style="--timed-progress: 100%;">
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                    <span class="gov-timed-button__content">
+                        <span class="gov-timed-button__timer">(00:10)</span>
+                        <span>טקסט</span>
+                    </span>
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                </button>
+            </span>
+            <span>
+                <span class="sketch__state-label">Disabled</span><br>
+                <button class="gov-timed-button" disabled>
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                    <span class="gov-timed-button__content">
+                        <span class="gov-timed-button__timer">(00:00)</span>
+                        <span>טקסט</span>
+                    </span>
+                    <span class="gov-timed-button__icon" aria-hidden="true">
+                        <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                    </span>
+                </button>
+            </span>
+        </div>
+
+        <h2 class="sketch__mapping-title">הדגמה חיה — לחיצה ארוכה (press & hold)</h2>
+        <p class="sketch__sub">לחצו והחזיקו את הכפתור 3 שניות — סרגל ההתקדמות מתמלא עד 100% והמונה סופר לאחור.</p>
+        <div style="max-width: 320px;">
+            <button class="gov-timed-button" id="demo-timed">
+                <span class="gov-timed-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                </span>
+                <span class="gov-timed-button__content">
+                    <span class="gov-timed-button__timer" id="demo-timer">(00:03)</span>
+                    <span>החזק לאישור</span>
+                </span>
+                <span class="gov-timed-button__icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M15 7H9V1C9 0.447 8.552 0 8 0C7.448 0 7 0.447 7 1V7H1C0.448 7 0 7.447 0 8C0 8.553 0.448 9 1 9H7V15C7 15.553 7.448 16 8 16C8.552 16 9 15.553 9 15V9H15C15.552 9 16 8.553 16 8C16 7.447 15.552 7 15 7Z" /></svg>
+                </span>
+            </button>
+        </div>
+
+        <h2 class="sketch__mapping-title">מיפוי טוקנים (Figma → styles.css)</h2>
+        <table class="sketch__mapping">
+            <thead>
+                <tr>
+                    <th>מצב / מאפיין</th>
+                    <th>ערך פיגמה</th>
+                    <th>טוקן ב-styles.css</th>
+                    <th>סטטוס</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>רקע Default</td>
+                    <td>#0068f5</td>
+                    <td>--igds-base-color-background-brand-default</td>
+                    <td>✓ נוסף</td>
+                </tr>
+                <tr>
+                    <td>סרגל התקדמות (Pressed)</td>
+                    <td>#0045a3</td>
+                    <td>--igds-base-color-background-brand-pressed</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>רקע Hover</td>
+                    <td>#0057cc</td>
+                    <td>--igds-base-color-background-brand-hover</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>טקסט + אייקון</td>
+                    <td>#f5f9ff</td>
+                    <td>--igds-base-color-text-subtle-primary-inverted</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Disabled — רקע / טקסט</td>
+                    <td>#e0e8ef / #5c697a</td>
+                    <td>--igds-base-color-background-disabled-with-text / -text-disabled</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>Focused — outline</td>
+                    <td>צהוב 3px</td>
+                    <td>--focus-outline</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>radius</td>
+                    <td>8px</td>
+                    <td>--igds-ref-border-radius-m</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>padding</td>
+                    <td>16px / 20px</td>
+                    <td>--igds-ref-space-500 / --igds-ref-space-550</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גודל טקסט</td>
+                    <td>20px</td>
+                    <td>--igds-ref-font-size-l</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>משקל טקסט</td>
+                    <td>500</td>
+                    <td>--igds-ref-font-weight-medium</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>מרווח טיימר-טקסט</td>
+                    <td>8px</td>
+                    <td>--igds-ref-space-300</td>
+                    <td>✓ נמצא</td>
+                </tr>
+                <tr>
+                    <td>גובה</td>
+                    <td>56px</td>
+                    <td>ערך קבוע (height)</td>
+                    <td>— ללא טוקן ייעודי בפיגמה</td>
+                </tr>
+                <tr>
+                    <td>גודל אייקון</td>
+                    <td>24px (SVG 16px)</td>
+                    <td>ערך קבוע (אייקון בסיס 24px)</td>
+                    <td>— מוסכמת אייקונים</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        // הדגמה: לחיצה ארוכה ממלאת את סרגל ההתקדמות (press & hold) למשך 3 שניות
+        (function () {
+            var btn = document.getElementById('demo-timed');
+            var timerEl = document.getElementById('demo-timer');
+            var raf = null, start = 0;
+            var DURATION = 3000;
+
+            function fmt(ms) {
+                var s = Math.max(0, Math.ceil(ms / 1000));
+                return '(00:' + String(s).padStart(2, '0') + ')';
+            }
+            function tick(now) {
+                var elapsed = now - start;
+                var pct = Math.min(100, (elapsed / DURATION) * 100);
+                btn.style.setProperty('--timed-progress', pct + '%');
+                timerEl.textContent = fmt(DURATION - elapsed);
+                if (pct < 100) {
+                    raf = requestAnimationFrame(tick);
+                } else {
+                    timerEl.textContent = '(00:00)';
+                }
+            }
+            function begin() {
+                cancelAnimationFrame(raf);
+                start = performance.now();
+                raf = requestAnimationFrame(tick);
+            }
+            function reset() {
+                cancelAnimationFrame(raf);
+                var cur = parseFloat(getComputedStyle(btn).getPropertyValue('--timed-progress')) || 0;
+                if (cur < 100) {
+                    btn.style.setProperty('--timed-progress', '0%');
+                    timerEl.textContent = fmt(DURATION);
+                }
+            }
+            btn.addEventListener('mousedown', begin);
+            btn.addEventListener('touchstart', function (e) { e.preventDefault(); begin(); }, { passive: false });
+            btn.addEventListener('mouseup', reset);
+            btn.addEventListener('mouseleave', reset);
+            btn.addEventListener('touchend', reset);
+            // תמיכה במקלדת: רווח/Enter מתחיל, שחרור מאפס
+            btn.addEventListener('keydown', function (e) { if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); begin(); } });
+            btn.addEventListener('keyup', function (e) { if (e.key === ' ' || e.key === 'Enter') reset(); });
+        })();
+    </script>
+</body>
+
+</html>

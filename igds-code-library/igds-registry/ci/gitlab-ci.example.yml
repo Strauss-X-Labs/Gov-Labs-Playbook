@@ -1,0 +1,27 @@
+# Example GitLab CI for an organization-level IGDS registry repository (adapt image/tags to your runners).
+# Trigger: Renovate/Dependabot MR that bumps @igds/core-web or @igds/tokens, or a nightly schedule.
+# NPM_TOKEN / NODE_EXTRA_CA_CERTS come from CI variables — never commit them; never disable TLS verification.
+
+igds-registry:refresh:
+  image: mcr.microsoft.com/playwright:v1.49.1-noble   # any image with Node 20+ and Chromium; set IGDS_BROWSER if not auto-detected
+  variables:
+    IGDS_BROWSER: /ms-playwright/chromium-1148/chrome-linux/chrome
+  script:
+    - npm ci
+    - npm run igds:refresh            # exit 1 = extraction/verification failed · exit 3 = breaking API change
+  artifacts:
+    when: always
+    paths:
+      - igds-registry/*.generated.json
+      - igds-registry/ai/
+      - igds-registry/figma/figma-gaps.generated.md
+      - igds-registry/extraction-report.md
+      - igds-registry/registry-changes.md
+  allow_failure:
+    exit_codes: [3]                   # breaking change → MR stays open for human review, not a red pipeline
+
+# In every CONSUMING project (the quality gate for AI-generated UI):
+# igds:lint:
+#   script:
+#     - npm ci
+#     - npm run igds:lint -- src

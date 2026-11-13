@@ -1,0 +1,898 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "36363:22776",
+  "name": "Accordion",
+  "key": "dab3a8102f99931e2f3043b92652e452d9780663",
+  "defs": {
+   "Group": {
+    "t": "VARIANT",
+    "o": [
+     "False",
+     "True"
+    ],
+    "d": "False"
+   },
+   "AllowMultiple": {
+    "t": "VARIANT",
+    "o": [
+     "True",
+     "False"
+    ],
+    "d": "True"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-36363-22776.json",
+   "sha256": "da1ce065bb238ebd0e56541dc21d3a62d79d1527f3dfea5a27db86a892765d68",
+   "format": "v5-rest",
+   "restResponseSha256": "404c68ac847966726a3e4c962214847776d5938100671a165b7209be770e44a7",
+   "filter": null,
+   "offset": 0,
+   "captured": 3,
+   "totalMatching": 3
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 3,
+  "byFilter": {
+   "null": {
+    "totalMatching": 3,
+    "captured": 3
+   }
+  },
+  "detail": {
+   "tree": 3,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Colors/Background/neutral-default": {
+   "figma": "Colors/Background/neutral-default",
+   "css": "--igds-base-color-background-neutral-default",
+   "status": "css-token",
+   "light": {
+    "figma": "#ffffff",
+    "css": "#ffffff",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#141e2d",
+    "css": "#141e2d",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Divider/default": {
+   "figma": "Colors/Divider/default",
+   "css": null,
+   "status": "no-css-token",
+   "figmaModes": {
+    "מותג ממשלתי ראשי": "→Brand/bright-grey/300",
+    "Dark IGDS": "→Brand/dawn-blue/500",
+    "כבאות והצלה": "→Brand/disco-gray/300",
+    "ביטוח לאומי": "→Brand/bright-grey/300"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-500": {
+   "figma": "Space/space-500",
+   "css": "--igds-ref-space-500",
+   "status": "css-token",
+   "light": {
+    "figma": 16,
+    "css": "16px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "36363:22775",
+   "name": "Group=False, AllowMultiple=True",
+   "props": {
+    "Group": "False",
+    "AllowMultiple": "True"
+   },
+   "w": 1000,
+   "h": 57,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 57,
+    "nid": "36363:22775",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MAX",
+     "ca": "MIN",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": ".accordion-item",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 57,
+      "nid": "36363:22763",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FIXED",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36363-22776.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "38059:12477",
+   "name": "Group=True, AllowMultiple=False",
+   "props": {
+    "Group": "True",
+    "AllowMultiple": "False"
+   },
+   "w": 1000,
+   "h": 285,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 285,
+    "nid": "38059:12477",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Accordion 01",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 57,
+      "nid": "38059:12478",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 02",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 57,
+      "w": 1000,
+      "h": 57,
+      "nid": "38059:12479",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 03",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 114,
+      "w": 1000,
+      "h": 57,
+      "nid": "38059:12480",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 04",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 171,
+      "w": 1000,
+      "h": 57,
+      "nid": "38059:12481",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 05",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 228,
+      "w": 1000,
+      "h": 57,
+      "nid": "38059:12482",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36363-22776.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "36363:22777",
+   "name": "Group=True, AllowMultiple=True",
+   "props": {
+    "Group": "True",
+    "AllowMultiple": "True"
+   },
+   "w": 1000,
+   "h": 285,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 1000,
+    "h": 285,
+    "nid": "36363:22777",
+    "al": {
+     "m": "VERTICAL",
+     "p": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "g": 0,
+     "pa": "MIN",
+     "ca": "MAX",
+     "sh": "FIXED",
+     "sv": "HUG"
+    },
+    "c": [
+     {
+      "n": "Accordion 01",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 57,
+      "nid": "36363:22855",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 02",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 57,
+      "w": 1000,
+      "h": 57,
+      "nid": "36363:22867",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 03",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 114,
+      "w": 1000,
+      "h": 57,
+      "nid": "36363:22879",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 04",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 171,
+      "w": 1000,
+      "h": 57,
+      "nid": "36363:22891",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     },
+     {
+      "n": "Accordion 05",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 228,
+      "w": 1000,
+      "h": 57,
+      "nid": "36363:22903",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 16,
+       "pa": "MAX",
+       "ca": "CENTER",
+       "sh": "FILL",
+       "sv": "HUG"
+      },
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ffffff",
+        "v": "Colors/Background/neutral-default"
+       }
+      ],
+      "v": {
+       "itemSpacing": "Space/space-500"
+      },
+      "inst": {
+       "set": ".accordion-item",
+       "setId": "522:495",
+       "variant": "RTL=True, State=Default, Expanded=False"
+      },
+      "mcid": "36632:35940",
+      "cp": {
+       "RTL": "True",
+       "State": "Default",
+       "Expanded": "False"
+      },
+      "itx": [
+       "כותרת "
+      ],
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       },
+       {
+        "t": "SOLID",
+        "c": "#b5c7e2",
+        "v": "Colors/Divider/default"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-36363-22776.json"
+   ],
+   "vars": [
+    "Colors/Background/neutral-default",
+    "Colors/Divider/default",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-500"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

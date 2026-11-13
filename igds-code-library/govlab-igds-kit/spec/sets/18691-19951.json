@@ -1,0 +1,202 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "18691:19951",
+  "name": "Avatar Profile/Size3/Hover",
+  "key": "8830c83dd203292b3c2a97ef83e0b3ab3b538f4f",
+  "defs": {}
+ },
+ "sources": [
+  {
+   "file": "rest-18691-19951.json",
+   "sha256": "d97a9010423419d805be52db984174b7dbd829096ba167ddb1d4534d2b1af8e8",
+   "format": "v5-rest",
+   "restResponseSha256": "3867305000390f3a0589aae6a8cb01e5b34fbad3aabd9aff5f5521d278344f5d",
+   "filter": null,
+   "offset": 0,
+   "captured": 1,
+   "totalMatching": 1
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 1,
+  "byFilter": {
+   "null": {
+    "totalMatching": 1,
+    "captured": 1
+   }
+  },
+  "detail": {
+   "tree": 1,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Colors/Background/neutral-hover": {
+   "figma": "Colors/Background/neutral-hover",
+   "css": "--igds-base-color-background-neutral-hover",
+   "status": "css-token",
+   "light": {
+    "figma": "#f2f6fd",
+    "css": "#f2f6fd",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#1a283c",
+    "css": "#1a283c",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Colors/Text & Icon/subtle-primary": {
+   "figma": "Colors/Text & Icon/subtle-primary",
+   "css": "--igds-base-color-text-subtle-primary",
+   "status": "css-token",
+   "light": {
+    "figma": "#0c3058",
+    "css": "#0c3058",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#f5f9ff",
+    "css": "#f5f9ff",
+    "equal": true,
+    "how": "exact"
+   }
+  },
+  "Space/space-400": {
+   "figma": "Space/space-400",
+   "css": "--igds-ref-space-400",
+   "status": "css-token",
+   "light": {
+    "figma": 12,
+    "css": "12px",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": null
+  }
+ },
+ "variants": [
+  {
+   "id": "18691:19951",
+   "name": "Avatar Profile/Size3/Hover",
+   "props": {},
+   "w": 48,
+   "h": 48,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 48,
+    "h": 48,
+    "nid": "18691:19951",
+    "al": {
+     "m": "HORIZONTAL",
+     "p": [
+      12,
+      12,
+      12,
+      12
+     ],
+     "g": 10,
+     "pa": "MIN",
+     "ca": "CENTER",
+     "sh": "HUG",
+     "sv": "HUG"
+    },
+    "r": 100,
+    "f": [
+     {
+      "t": "SOLID",
+      "c": "#f2f6fd",
+      "v": "Colors/Background/neutral-hover"
+     }
+    ],
+    "fx": [
+     {
+      "t": "DROP_SHADOW",
+      "rad": 8,
+      "c": "#064dad",
+      "a": 0.1,
+      "o": [
+       0,
+       2
+      ]
+     }
+    ],
+    "es": "Shadow-light/Level1",
+    "v": {
+     "paddingLeft": "Space/space-400",
+     "paddingTop": "Space/space-400",
+     "paddingRight": "Space/space-400",
+     "paddingBottom": "Space/space-400",
+     "topLeftRadius": "Border/radius-full",
+     "topRightRadius": "Border/radius-full",
+     "bottomLeftRadius": "Border/radius-full",
+     "bottomRightRadius": "Border/radius-full"
+    },
+    "c": [
+     {
+      "n": "Person",
+      "t": "INSTANCE",
+      "x": 12,
+      "y": 12,
+      "w": 24,
+      "h": 24,
+      "nid": "18691:19952",
+      "sz": [
+       "FIXED",
+       "FIXED"
+      ],
+      "clip": 1,
+      "inst": {
+       "set": "Person",
+       "setId": "6239:322",
+       "variant": "Person=single, Fill=on"
+      },
+      "mcid": "6042:2760",
+      "cp": {
+       "Person": "single",
+       "Fill": "on"
+      },
+      "ifill": [
+       {
+        "t": "SOLID",
+        "c": "#0c3058",
+        "v": "Colors/Text & Icon/subtle-primary"
+       }
+      ]
+     }
+    ]
+   },
+   "sources": [
+    "rest-18691-19951.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/neutral-hover",
+    "Colors/Text & Icon/subtle-primary",
+    "Space/space-400"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}

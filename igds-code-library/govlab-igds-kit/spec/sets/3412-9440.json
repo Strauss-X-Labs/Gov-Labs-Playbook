@@ -1,0 +1,468 @@
+{
+ "schema": "igdsx-spec/1",
+ "normalizerVersion": 2,
+ "figmaFile": "FXkIGvCtnuZZDrMjiSm29r",
+ "set": {
+  "id": "3412:9440",
+  "name": "Skeleton",
+  "key": "0282bbb2dac3da7363f747582d307f7e0a51a93f",
+  "defs": {
+   "Shape": {
+    "t": "VARIANT",
+    "o": [
+     "Body Text",
+     "Rectangle (defult)",
+     "Circle",
+     "Title",
+     "Subtitle"
+    ],
+    "d": "Circle"
+   }
+  }
+ },
+ "sources": [
+  {
+   "file": "rest-3412-9440.json",
+   "sha256": "945917b64fba9a869c4ca4a8498d1c0d5d240bf6567589f2d1ba058d30b68b05",
+   "format": "v5-rest",
+   "restResponseSha256": "4c24b73975a8b29a8d55c2e07531b3ce33ad41bda95821018281b20e6444c4f1",
+   "filter": null,
+   "offset": 0,
+   "captured": 5,
+   "totalMatching": 5
+  }
+ ],
+ "coverage": {
+  "uniqueVariants": 5,
+  "byFilter": {
+   "null": {
+    "totalMatching": 5,
+    "captured": 5
+   }
+  },
+  "detail": {
+   "tree": 5,
+   "summary": 0
+  }
+ },
+ "variables": {
+  "Border/radius-full": {
+   "figma": "Border/radius-full",
+   "css": "--igds-ref-border-radius-full",
+   "status": "css-token",
+   "light": {
+    "figma": 100,
+    "css": "calc(infinity * 1px)",
+    "equal": true,
+    "how": "both = fully rounded"
+   },
+   "dark": null
+  },
+  "Border/radius-xs": {
+   "figma": "Border/radius-xs",
+   "css": "--igds-ref-border-radius-xs",
+   "status": "css-token-value-differs",
+   "light": {
+    "figma": 4,
+    "css": "2px",
+    "equal": false,
+    "how": "exact"
+   },
+   "dark": null
+  },
+  "Colors/Background/disabled-without-text": {
+   "figma": "Colors/Background/disabled-without-text",
+   "css": "--igds-base-color-background-disabled-without-text",
+   "status": "css-token",
+   "light": {
+    "figma": "#ced7e0",
+    "css": "#ced7e0",
+    "equal": true,
+    "how": "exact"
+   },
+   "dark": {
+    "figma": "#495a73",
+    "css": "#495a73",
+    "equal": true,
+    "how": "exact"
+   }
+  }
+ },
+ "variants": [
+  {
+   "id": "3412:9436",
+   "name": "Shape=Body Text",
+   "props": {
+    "Shape": "Body Text"
+   },
+   "w": 186,
+   "h": 8,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 186,
+    "h": 8,
+    "nid": "3412:9436",
+    "c": [
+     {
+      "n": ".Skeleton animation",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 186,
+      "h": 8,
+      "nid": "3412:9433",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-text"
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "inst": {
+       "set": ".Skeleton animation",
+       "setId": "3412:9395",
+       "variant": "Animation=Left"
+      },
+      "mcid": "3412:9394",
+      "cp": {
+       "Animation": "Left"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9440.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:9435",
+   "name": "Shape=Circle",
+   "props": {
+    "Shape": "Circle"
+   },
+   "w": 32,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 32,
+    "h": 32,
+    "nid": "3412:9435",
+    "c": [
+     {
+      "n": ".Skeleton animation",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "nid": "3412:9427",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 100,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-text"
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-full",
+       "topRightRadius": "Border/radius-full",
+       "bottomLeftRadius": "Border/radius-full",
+       "bottomRightRadius": "Border/radius-full"
+      },
+      "inst": {
+       "set": ".Skeleton animation",
+       "setId": "3412:9395",
+       "variant": "Animation=Left"
+      },
+      "mcid": "3412:9394",
+      "cp": {
+       "Animation": "Left"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9440.json"
+   ],
+   "vars": [
+    "Border/radius-full",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:9439",
+   "name": "Shape=Rectangle (defult)",
+   "props": {
+    "Shape": "Rectangle (defult)"
+   },
+   "w": 32,
+   "h": 32,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 32,
+    "h": 32,
+    "nid": "3412:9439",
+    "c": [
+     {
+      "n": ".Skeleton animation",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 32,
+      "h": 32,
+      "nid": "3412:9424",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-text"
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "inst": {
+       "set": ".Skeleton animation",
+       "setId": "3412:9395",
+       "variant": "Animation=Left"
+      },
+      "mcid": "3412:9394",
+      "cp": {
+       "Animation": "Left"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9440.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:9437",
+   "name": "Shape=Subtitle",
+   "props": {
+    "Shape": "Subtitle"
+   },
+   "w": 80,
+   "h": 16,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 80,
+    "h": 16,
+    "nid": "3412:9437",
+    "c": [
+     {
+      "n": ".Skeleton animation",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 80,
+      "h": 16,
+      "nid": "3412:9431",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-text"
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "inst": {
+       "set": ".Skeleton animation",
+       "setId": "3412:9395",
+       "variant": "Animation=Left"
+      },
+      "mcid": "3412:9394",
+      "cp": {
+       "Animation": "Left"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9440.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  },
+  {
+   "id": "3412:9438",
+   "name": "Shape=Title",
+   "props": {
+    "Shape": "Title"
+   },
+   "w": 126,
+   "h": 24,
+   "detail": "tree",
+   "tree": {
+    "t": "COMPONENT",
+    "x": 0,
+    "y": 0,
+    "w": 126,
+    "h": 24,
+    "nid": "3412:9438",
+    "c": [
+     {
+      "n": ".Skeleton animation",
+      "t": "INSTANCE",
+      "x": 0,
+      "y": 0,
+      "w": 126,
+      "h": 24,
+      "nid": "3412:9429",
+      "al": {
+       "m": "HORIZONTAL",
+       "p": [
+        0,
+        0,
+        0,
+        0
+       ],
+       "g": 0,
+       "pa": "MIN",
+       "ca": "MIN",
+       "sh": "FIXED",
+       "sv": "FIXED"
+      },
+      "r": 4,
+      "f": [
+       {
+        "t": "SOLID",
+        "c": "#ced7e0",
+        "v": "Colors/Background/disabled-without-text"
+       }
+      ],
+      "clip": 1,
+      "v": {
+       "topLeftRadius": "Border/radius-xs",
+       "topRightRadius": "Border/radius-xs",
+       "bottomLeftRadius": "Border/radius-xs",
+       "bottomRightRadius": "Border/radius-xs"
+      },
+      "inst": {
+       "set": ".Skeleton animation",
+       "setId": "3412:9395",
+       "variant": "Animation=Left"
+      },
+      "mcid": "3412:9394",
+      "cp": {
+       "Animation": "Left"
+      }
+     }
+    ]
+   },
+   "sources": [
+    "rest-3412-9440.json"
+   ],
+   "vars": [
+    "Border/radius-xs",
+    "Colors/Background/disabled-without-text"
+   ],
+   "provenance": "figma"
+  }
+ ]
+}
