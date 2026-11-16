@@ -1,0 +1,29 @@
+name: בדיקת תקינות קבצים
+
+# רץ על כל PR ועל כל מיזוג ל-main. נכשל אם יש frontmatter שבור
+# בקובץ Markdown (כולל SKILL.md), או קובץ JSON / TOML לא תקין.
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: YAML / JSON / TOML
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: התקנת PyYAML
+        run: pip install --quiet "pyyaml>=6,<7"
+
+      - name: בדיקת frontmatter, JSON ו-TOML
+        run: python3 .github/scripts/check_config_files.py
