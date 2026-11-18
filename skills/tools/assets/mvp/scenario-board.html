@@ -11,24 +11,25 @@
   example: true רק בדוגמה (מציג פס "דוגמה") · question: שאלת ה-MVP, מילה במילה · status: "הצעה" (ברירת מחדל) / "אחרי עריכה"
   persona: name, who (שורה) — הפרסונה שהתרחיש שלה
   actors: id (אות — A, S, B), name, ai (true לסוכן / ל-AI; אחרת אדם), persona (true לשחקן שהוא הפרסונה)
-  components: id, name, value — הרכיבים שנבחרו (עד 5), מסעיף 2 במפרט ה-MVP. רק הם.
-  steps: id, actor (מזהה שחקן), text (מה קורה — במשפט), components (מזהי רכיבים), behavior (true לשלב שבו קורית ההתנהגות שהשאלה בודקת),
+  components: id, name, value — הרכיבים שנבחרו (עד 5), מסעיף 2 במפרט ה-MVP, בשמות שלהם בלוח הרכיבים. רק הם.
+  steps: id, actor (מזהה שחקן), text (מה קורה — במשפט), components (מזהי רכיבים),
          open (רשות — מה שהסוכן החליט לבד בשלב הזה, ולמה; מוצג כפתק "פתוח")
   branches: kind ("לא רלוונטי" / "שאלה" / "אין תגובה" / "פנייה לאדם"), text
   open: מה שהסוכן החליט לבד על התרחיש כולו, ולמה — רשימה
-  ההצעה היא מצע לדיון: הצוות עורך, מוסיף, מוריד ומזיז. ההודעות מתעדכנות בכל שינוי. עריכות נשמרות בדפדפן; "העתקת סיכום" מחזירה Markdown לסוכן, עם מה שהצוות שינה בהצעה.
+  השלבים זורמים מימין לשמאל, ויורדים שורה כשצריך. בין כל שני שלבים — חץ, ועליו "+ הוסף שלב".
+  ההצעה היא מצע לדיון: הצוות עורך הכול בכרטיס, מזיז (לפני / אחרי), מסיר, ומוסיף שלב בכל מקום. ההודעות מתעדכנות בכל שינוי. עריכות נשמרות בדפדפן; "העתקת סיכום" מחזירה Markdown לסוכן, עם מה שהצוות שינה בהצעה.
   לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* Layout: header + context (question, persona, actors, chosen components with live coverage), sticky bar, live messages, step cubes in reading order, branches, open items. Light theme only. */
+  /* Layout: header + context (question, persona, actors, chosen components with live coverage), sticky bar, live messages, step cards flowing right to left and wrapping to new rows, an arrow with "+ הוסף שלב" before every card, branches, open items. Light theme only. */
   :root {
     color-scheme: light;
     --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
     --navy: #1b2a4a; --navy-soft: #e8ecf3; --sel: #1e7a45; --sel-bg: #e3f4ea;
     --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
-    --open: #8a5a00; --open-bg: #fff6dc; --open-line: #f0d48a; --star: #c27c00;
+    --open: #8a5a00; --open-bg: #fff6dc; --open-line: #f0d48a;
     --ai: #1f5f8b; --ai-bg: #e2eef8; --hu: #7a3f96; --hu-bg: #f1e8f7; --focus: #1a5fd0;
   }
   * { box-sizing: border-box; }
@@ -61,7 +62,6 @@
   button.badge:hover { filter: brightness(0.95); }
   .persona-tag { font-size: 0.75em; color: var(--muted); font-weight: 700; }
   .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
-  .legend .star { color: var(--star); font-weight: 800; }
   .legend .opentag { background: var(--open-bg); border: 1px solid var(--open-line); color: var(--open); font-weight: 800; border-radius: 6px; padding: 0 0.5em; }
   .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
   .count { font-weight: 800; font-size: 1.15em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
@@ -75,10 +75,10 @@
   .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
   .msg.ok { background: var(--sel-bg); border-color: var(--sel); color: #14532d; }
   .msg b { font-weight: 800; }
-  .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(19em, 1fr)); gap: 1em; align-items: start; }
-  .step { --c: var(--hu); background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 12px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.5em; min-width: 0; }
+  .steps { display: flex; flex-wrap: wrap; align-items: stretch; row-gap: 1em; }
+  .unit { display: flex; align-items: stretch; flex: 1 1 24em; min-width: 22em; max-width: 30em; }
+  .step { --c: var(--hu); flex: 1 1 auto; background: var(--paper); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 12px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.5em; min-width: 0; }
   .step.ai { --c: var(--ai); }
-  .step.beh { box-shadow: 0 0 0 2px var(--star) inset; border-color: var(--star); }
   .step .head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5em; align-items: center; }
   .num { width: 1.9em; height: 1.9em; border-radius: 50%; background: color-mix(in srgb, var(--c) 14%, #fff); color: var(--c); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.95em; }
   .step select { min-width: 0; width: 100%; border: 1px solid var(--line); border-radius: 6px; padding: 0.15em 0.3em; background: var(--paper); font-weight: 700; color: var(--ink); }
@@ -89,7 +89,6 @@
   .toggles { display: flex; gap: 0.3em; flex-wrap: wrap; }
   .tg { font-size: 0.8em; font-weight: 700; padding: 0.08em 0.55em; border-radius: 999px; background: var(--paper); border: 1px dashed var(--line); color: var(--muted); overflow-wrap: anywhere; text-align: start; }
   .tg[aria-pressed="true"] { background: var(--navy-soft); border: 1px solid var(--navy); color: var(--navy); }
-  .tg.star[aria-pressed="true"] { background: #fff1d1; border-color: var(--star); color: #6b4300; }
   .note { background: var(--open-bg); border: 1px solid var(--open-line); border-radius: 8px; padding: 0.35em 0.6em; font-size: 0.9em; display: grid; gap: 0.25em; }
   .note .lbl { color: var(--open); }
   .note .ntext { overflow-wrap: anywhere; }
@@ -98,7 +97,15 @@
   .mini { background: none; border: 1px solid transparent; color: var(--muted); font-size: 0.85em; padding: 0.05em 0.35em; border-radius: 6px; }
   .mini:hover { border-color: var(--line); color: var(--ink); }
   .mini[disabled] { opacity: 0.35; cursor: default; }
-  .add { background: none; border: 1.5px dashed color-mix(in srgb, var(--navy) 45%, var(--line)); border-radius: 12px; padding: 0.8em; color: var(--navy); font-weight: 800; min-height: 4em; }
+  .link { flex: 0 0 4.6em; position: relative; display: flex; align-items: center; justify-content: center; }
+  .link::before { content: ""; position: absolute; left: 0.35em; right: 0.35em; top: calc(50% - 1px); height: 2px; background: color-mix(in srgb, var(--navy) 25%, var(--line)); }
+  .link::after { content: ""; position: absolute; left: 0.2em; top: calc(50% - 6px); border-style: solid; border-width: 6px 8px 6px 0; border-color: transparent color-mix(in srgb, var(--navy) 25%, var(--line)) transparent transparent; }
+  .link.first::before, .link.first::after { display: none; }
+  .ins { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: 0.15em; background: var(--bg); border: none; padding: 0.2em 0.1em; color: var(--navy); font-weight: 700; font-size: 0.78em; line-height: 1.15; border-radius: 8px; }
+  .ins .pl { width: 1.9em; height: 1.9em; border-radius: 50%; border: 1.5px dashed color-mix(in srgb, var(--navy) 45%, var(--line)); display: inline-flex; align-items: center; justify-content: center; font-size: 1.15em; font-weight: 800; background: var(--paper); }
+  .ins:hover .pl, .ins:focus-visible .pl { border-style: solid; border-color: var(--navy); background: var(--navy); color: #fff; }
+  .add { flex: 0 1 12em; min-width: 9em; margin-inline-start: 4.6em; background: none; border: 1.5px dashed color-mix(in srgb, var(--navy) 45%, var(--line)); border-radius: 12px; padding: 0.8em; color: var(--navy); font-weight: 800; min-height: 4em; }
+  .add:hover, .add:focus-visible { border-style: solid; background: var(--paper); }
   .addactor { background: none; border: 1px dashed var(--line); border-radius: 999px; padding: 0.05em 0.6em; color: var(--muted); font-weight: 700; font-size: 0.85em; }
   h2.sec { font-size: 1.2em; margin: 1.6em 0 0.5em; }
   .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.8em 1em; }
@@ -115,8 +122,8 @@
   details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
   .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
   .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
-  @media (max-width: 640px) { .steps { grid-template-columns: 1fr; } }
-  @media print { .bar .tools, .foot, .add, .addactor, .toast, details.out, .note button { display: none !important; } body { background: #fff; } .step { break-inside: avoid; } }
+  @media (max-width: 640px) { .unit { flex-basis: 100%; min-width: 0; max-width: none; } .link { flex-basis: 3.6em; } .add { margin-inline-start: 0; flex-basis: 100%; } }
+  @media print { .bar .tools, .foot, .add, .ins, .addactor, .toast, details.out, .note button { display: none !important; } body { background: #fff; } .step { break-inside: avoid; } }
 </style>
 </head>
 <body>
@@ -137,7 +144,6 @@
 </div>
 <div class="legend">
   <span><span class="badge ai">AI</span> / <span class="badge hu">אדם</span> מי עושה את השלב</span>
-  <span><span class="star">★</span> ההתנהגות שהשאלה בודקת</span>
   <span><span class="opentag">פתוח</span> מה שה-AI החליט לבד — מכריעים, או משאירים פתוח</span>
 </div>
 
@@ -179,11 +185,11 @@
     { "id": "B", "name": "הפקיד", "ai": false }
   ],
   "components": [
-    { "id": "c1", "name": "התראה יזומה על מסמך חסר", "value": "פשטות" },
-    { "id": "c2", "name": "העלאה בלחיצה מההודעה", "value": "פשטות" },
-    { "id": "c3", "name": "הסבר מה להעלות ולמה", "value": "פשטות" },
+    { "id": "c1", "name": "התראות", "value": "פשטות" },
+    { "id": "c2", "name": "העלאת מסמכים", "value": "פשטות" },
+    { "id": "c3", "name": "הסבר על המסמך", "value": "פשטות" },
     { "id": "c4", "name": "תווית מקור", "value": "אמון" },
-    { "id": "c5", "name": "תזכורת לפני המועד", "value": "ליווי" }
+    { "id": "c5", "name": "תזכורות", "value": "ליווי" }
   ],
   "steps": [
     { "id": "s1", "actor": "B", "text": "מסמן בבקשה של מירב שחסר אישור תושבות", "components": [], "open": "ב-MVP הזיהוי ידני (מפרט ה-MVP, סעיף 3) — לכן הפקיד מסמן. אם הזיהוי אוטומטי, השלב עובר לסוכן." },
@@ -191,13 +197,13 @@
     { "id": "s3", "actor": "B", "text": "מאשר את הנוסח בלחיצה", "components": ["c4"], "open": "הנחתי שפקיד מאשר כל הודעה — בגלל תווית המקור. אם לא, השלב יורד." },
     { "id": "s4", "actor": "S", "text": "שולח למירב התראה לטלפון, עם \"נוסח ע\"י הסוכן · אושר ע\"י [הפקיד]\"", "components": ["c1", "c4"] },
     { "id": "s5", "actor": "A", "text": "פותחת את ההודעה, וקוראת מה להעלות ולמה", "components": ["c3"] },
-    { "id": "s6", "actor": "A", "text": "מצלמת את המסמך ומעלה, ישר מההודעה", "components": ["c2"], "behavior": true },
+    { "id": "s6", "actor": "A", "text": "מצלמת את המסמך ומעלה, ישר מההודעה", "components": ["c2"] },
     { "id": "s7", "actor": "S", "text": "בודק שהקובץ קריא, ומאשר למירב שהתקבל", "components": [], "open": "הוספתי כדי לסגור את המסלול — זו יכולת (קליטת קובץ), לא רכיב שנבחר." },
     { "id": "s8", "actor": "S", "text": "למי שלא העלתה — תזכורת יום לפני המועד", "components": ["c5"] }
   ],
   "branches": [
     { "kind": "לא רלוונטי", "text": "מירב עונה שהמסמך כבר הוגש — הסוכן מעביר לפקיד לבדיקה" },
-    { "kind": "שאלה", "text": "מירב לא מבינה מה זה אישור תושבות — [לא נבחר] שאלה בשפה חופשית; ב-MVP: קישור להסבר" },
+    { "kind": "שאלה", "text": "מירב לא מבינה מה זה אישור תושבות — [לא נבחר] צ'אט עם הסוכן; ב-MVP: קישור להסבר" },
     { "kind": "אין תגובה", "text": "תזכורת יום לפני המועד (שלב 8)" },
     { "kind": "פנייה לאדם", "text": "\"לדבר עם פקיד\" — הפקיד מקבל את הבקשה ואת ההודעה" }
   ],
@@ -222,7 +228,7 @@
   function fresh() {
     return {
       actors: clone((d.actors || []).filter(function (a) { return a && a.id; })),
-      steps: clone((d.steps || []).filter(function (s) { return s; })).map(function (s, i) { s.id = s.id || "s" + (i + 1); s.components = s.components || []; s.open = s.open || ""; s.behavior = !!s.behavior; return s; }),
+      steps: clone((d.steps || []).filter(function (s) { return s; })).map(function (s, i) { s.id = s.id || "s" + (i + 1); s.components = s.components || []; s.open = s.open || ""; delete s.behavior; return s; }),
       branches: clone((d.branches || []).filter(function (b) { return b; })).map(function (b, i) { b.id = b.id || "b" + (i + 1); b.text = b.text || ""; return b; }),
       open: (d.open || []).filter(Boolean).map(function (t) { return { text: t, done: false }; }),
       seq: 0
@@ -293,7 +299,7 @@
 
   function stepCard(s, i) {
     var a = actor(s.actor), ai = a && a.ai;
-    var k = el("article", "step" + (ai ? " ai" : "") + (s.behavior ? " beh" : "")); k.dataset.id = s.id;
+    var k = el("article", "step" + (ai ? " ai" : "")); k.dataset.id = s.id;
     var head = el("div", "head");
     head.append(el("span", "num", String(i + 1)));
     var sel = el("select"); sel.setAttribute("aria-label", "מי עושה את שלב " + (i + 1));
@@ -315,9 +321,6 @@
       });
       k.append(tg);
     }
-    var star = el("button", "tg star", "★ ההתנהגות שהשאלה בודקת"); star.type = "button"; star.setAttribute("aria-pressed", s.behavior ? "true" : "false");
-    star.addEventListener("click", function () { s.behavior = !s.behavior; save(); render(); });
-    k.append(star);
     if (s.open) {
       var note = el("div", "note");
       note.append(el("span", "lbl", "פתוח"));
@@ -334,19 +337,32 @@
     var dn = el("button", "mini", "אחרי ←"); dn.type = "button"; dn.disabled = i === state.steps.length - 1; dn.setAttribute("aria-label", "הזזת שלב " + (i + 1) + " קדימה");
     dn.addEventListener("click", function () { move(i, 1); });
     mv.append(up, dn);
-    var ins = el("button", "mini", "+ שלב אחרי"); ins.type = "button";
-    ins.addEventListener("click", function () { addStep(i + 1); });
     var rm = el("button", "mini", "הסרה"); rm.type = "button";
     rm.addEventListener("click", function () { removeStep(i); });
-    foot.append(mv, ins, rm);
+    foot.append(mv, rm);
     k.append(foot);
     return k;
   }
 
+  // לפני כל כרטיס — חץ, ועליו "+ הוסף שלב": שלב חדש בדיוק שם, בין השלב הקודם לזה. ובסוף — "+ הוסף שלב".
+  function link(at) {
+    var w = el("div", "link" + (at === 0 ? " first" : ""));
+    var b = el("button", "ins"); b.type = "button";
+    b.setAttribute("aria-label", at === 0 ? "הוסף שלב לפני שלב 1" : "הוסף שלב בין שלב " + at + " לשלב " + (at + 1));
+    b.append(el("span", "pl", "+"), el("span", null, "הוסף"), el("span", null, "שלב"));
+    b.addEventListener("click", function () { addStep(at); });
+    w.append(b);
+    return w;
+  }
   function renderSteps() {
     var box = document.getElementById("steps"); box.textContent = "";
-    state.steps.forEach(function (s, i) { box.append(stepCard(s, i)); });
-    var add = el("button", "add", "+ שלב בסוף"); add.type = "button";
+    state.steps.forEach(function (s, i) {
+      var u = el("div", "unit");
+      u.append(link(i), stepCard(s, i));
+      box.append(u);
+    });
+    var add = el("button", "add", "+ הוסף שלב"); add.type = "button";
+    add.setAttribute("aria-label", "הוסף שלב בסוף");
     add.addEventListener("click", function () { addStep(state.steps.length); });
     box.append(add);
   }
@@ -382,8 +398,6 @@
   function messages() {
     var out = [], u = used();
     comps.forEach(function (c) { if (!u[c.id]) out.push(["warn", "<b>«" + esc(c.name) + "»</b> לא מופיע באף שלב. איפה הפרסונה פוגשת אותו? אם לא — למה בחרתם בו?"]); });
-    var beh = state.steps.filter(function (s) { return s.behavior; });
-    if (state.steps.length && !beh.length) out.push(["warn", "אף שלב לא מסומן <b>★</b>. איפה קורית ההתנהגות שהשאלה בודקת?"]);
     state.steps.forEach(function (s, i) {
       if (!s.text) out.push(["warn", "שלב <b>" + (i + 1) + "</b> ריק — מה קורה בו?"]);
       else if (!actor(s.actor)) out.push(["warn", "בשלב <b>" + (i + 1) + "</b> לא ברור מי עושה — AI או אדם?"]);
@@ -397,7 +411,7 @@
     if (!changes().length && !after) out.push(["info", "התרחיש זהה להצעה. זו החלטה שלכם? מה קורה אצל הפרסונה אחרת?"]);
     var allIn = comps.every(function (c) { return u[c.id]; });
     var allActors = state.steps.every(function (s) { return s.text && actor(s.actor); });
-    if (state.steps.length && allIn && beh.length && allActors) out.push(["ok", "כל הרכיבים שנבחרו מופיעים, בכל שלב ברור מי עושה, וההתנהגות שהשאלה בודקת מסומנת."]);
+    if (state.steps.length && allIn && allActors) out.push(["ok", "כל הרכיבים שנבחרו מופיעים, ובכל שלב ברור מי עושה."]);
     return out;
   }
 
@@ -415,7 +429,6 @@
       if (s.actor !== b.actor) L.push("- שלב " + n + " — מי עושה: " + aname(b.actor) + " ← " + aname(s.actor));
       var bc = (b.components || []).slice().sort().join(","), sc = s.components.slice().sort().join(",");
       if (bc !== sc) L.push("- שלב " + n + " — רכיבים: " + (s.components.map(cname).filter(Boolean).join(", ") || "—"));
-      if (!!s.behavior !== !!b.behavior) L.push("- שלב " + n + (s.behavior ? " סומן ★ — ההתנהגות שהשאלה בודקת" : " — הורד הסימון ★"));
       if (b.open && !s.open) L.push("- הוכרע (שלב " + n + '): "' + b.open + '"');
       else if (b.open && s.open !== b.open) L.push("- שלב " + n + ' — "פתוח" נערך: "' + s.open + '"');
     });
@@ -448,10 +461,8 @@
     L.push("", "### התרחיש — " + state.steps.length + " שלבים", "", "| # | מי | AI / אדם | מה קורה | רכיב |", "|---|---|---|---|---|");
     state.steps.forEach(function (s, i) {
       var a = actor(s.actor);
-      L.push("| " + (i + 1) + " | " + cell(aname(s.actor)) + " | " + (a ? (a.ai ? "AI" : "אדם") : "?") + " | " + (s.behavior ? "★ " : "") + cell(s.text || "—") + " | " + cell(s.components.map(cname).filter(Boolean).join(", ") || "—") + " |");
+      L.push("| " + (i + 1) + " | " + cell(aname(s.actor)) + " | " + (a ? (a.ai ? "AI" : "אדם") : "?") + " | " + cell(s.text || "—") + " | " + cell(s.components.map(cname).filter(Boolean).join(", ") || "—") + " |");
     });
-    var beh = []; state.steps.forEach(function (s, i) { if (s.behavior) beh.push(i + 1); });
-    L.push("", "**ההתנהגות שהשאלה בודקת:** " + (beh.length ? "שלב " + beh.join(", ") : "⚠ לא סומנה"));
     var br = state.branches.filter(function (b) { return b.text; });
     if (br.length) { L.push("", "### הסתעפויות"); br.forEach(function (b) { L.push("- **" + (b.kind || "—") + ":** " + b.text); }); }
     var op = [];
@@ -489,7 +500,7 @@
   }
   function addStep(at) {
     var prev = state.steps[at - 1];
-    var s = { id: "t" + seq(), actor: prev ? prev.actor : (state.actors[0] ? state.actors[0].id : ""), text: "", components: [], behavior: false, open: "" };
+    var s = { id: "t" + seq(), actor: prev ? prev.actor : (state.actors[0] ? state.actors[0].id : ""), text: "", components: [], open: "" };
     state.steps.splice(at, 0, s); save(); render();
     var n = document.querySelector('[data-id="' + s.id + '"] .text'); if (n) n.focus();
   }

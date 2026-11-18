@@ -6,24 +6,28 @@
 <meta name="color-scheme" content="light">
 <title>לוח הרכיבים</title>
 <!--
-  תבנית לוח בחירת הרכיבים — נשמר במיזם כ-מפרט-MVP-רכיבים.html, ליד מפרט-MVP.md, ונגזר מהנספח שלו (הרשימה המדורגת).
+  תבנית לוח בחירת הרכיבים — נשמר במיזם כ-מפרט-MVP-רכיבים.html, ליד מפרט-MVP.md, ונגזר מסעיף 5 שלו (כל הרכיבים בלוח).
   הסוכן ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
   example: true רק בדוגמה (מציג פס "דוגמה") · question: שאלת ה-MVP שנבחרה, מילה במילה · max: כמה רכיבים בוחרים (5)
   parts: חלקי השאלה שה-MVP צריך לבדוק — id, text (קצר, במילים של השאלה)
   values: id, name (שם הערך, מילה במילה), meaning (שורה, רשות)
-  components: id, rank (מספר הדירוג; null לרכיב שהצוות העלה), name, does, why (למה הוא חשוב לשאלה),
-              values (מזהי ערכים — הראשון קובע את העמודה), tests (מזהי חלקי השאלה שהרכיב בודק), type ("ממשק" / "התנהגות של סוכן", רשות),
-              recommended (true לחמשת הרכיבים שה-Playbook ממליץ עליהם — תגית "מומלץ"), overlap (true אם הופיע גם ברשימות האישיות),
-              source ("team" לרכיב שהצוות העלה), selected (true אחרי שהצוות בחר; אם אף רכיב לא סומן — הלוח נפתח עם ההמלצה בחורה)
-  capabilities: name, does, for (מזהי הרכיבים שנשענים עליה) — לתצוגה בלבד
-  ההמלצה היא המלצה: הצוות מוסיף, מוריד ובוחר. ההודעות מתעדכנות לפי הבחירה. עריכות נשמרות בדפדפן; "העתקת סיכום" מחזירה Markdown לסוכן.
+  components: id, rank (מספר הדירוג; null לרכיב שהצוות העלה),
+              name — שם הרכיב: קצר וכללי, סוג רכיב ("התראות", "צ'אט עם הסוכן"), לא מקרה ("התראה על שינוי בתמהיל המים")
+              example — דוגמה במשפט: איך זה נראה אצל המשתמש ("התראה שמודיעה למגדל על שינוי ב...")
+              checks — מה זה בודק: במשפט, בהקשר של שאלת ה-MVP
+              values (מזהי ערכים — הראשון קובע את העמודה), tests (מזהי חלקי השאלה — לא מוצג בכרטיס, משמש לכיסוי ולהודעות),
+              recommended (true לחמשת המומלצים), overlap (true אם הופיע גם ברשימות האישיות), source ("team" לרכיב שהצוות העלה),
+              selected (true אחרי שהצוות בחר; אם אף רכיב לא סומן — הלוח נפתח עם ההמלצה בחורה)
+  יכולות מאחורי הקלעים — לא בלוח. הן במפרט, סעיף 3.
+  ההמלצה היא המלצה: הצוות מוסיף, מוריד, משנה ובוחר. ההודעות מתעדכנות לפי הבחירה. עריכות נשמרות בדפדפן.
+  "העתקת סיכום" מחזירה Markdown של כל הלוח — מה נבחר, ומה לא נבחר (לבקלוג), ומה השתנה.
   לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
   הדוגמה מפורסמת: https://claude.ai/artifact/D69YExRMvKqxb6zWXF68Ez — עדכון התבנית: מפרסמים את הקובץ הזה לאותו קישור.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-  /* Layout: header + question with live part coverage, sticky selection bar, live messages, one column per value. Light theme only. */
+  /* Layout: header + question with live part coverage, sticky selection bar, live messages, one column per value, simple cards. Light theme only. */
   :root {
     color-scheme: light;
     --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
@@ -73,14 +77,16 @@
   .colhead h2 { margin: 0; font-size: 1.3em; color: var(--c); overflow-wrap: anywhere; }
   .colhead p { margin: 0.1em 0 0; color: var(--muted); font-size: 0.92em; }
   .cards { display: flex; flex-direction: column; gap: 0.6em; }
-  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.45em; min-width: 0; position: relative; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.7em 0.8em; display: flex; flex-direction: column; gap: 0.5em; min-width: 0; }
   .card.rec { border-color: var(--rec-bg); }
   .card.sel { box-shadow: 0 0 0 2px var(--sel) inset; border-color: var(--sel); }
-  .card .head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5em; align-items: start; }
+  .card .head { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.5em; align-items: center; }
   .rank { width: 1.9em; height: 1.9em; border-radius: 50%; background: color-mix(in srgb, var(--c) 14%, #fff); color: var(--c); display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.9em; }
   .rank.team { background: var(--team-bg); color: var(--team); }
-  .name { margin: 0; font-size: 1.08em; font-weight: 800; overflow-wrap: anywhere; }
-  .does { margin: 0; overflow-wrap: anywhere; }
+  .name { margin: 0; font-size: 1.15em; font-weight: 800; overflow-wrap: anywhere; }
+  .field { display: grid; gap: 0.05em; }
+  .flbl { font-size: 0.78em; font-weight: 700; color: var(--muted); }
+  .field p { margin: 0; overflow-wrap: anywhere; }
   .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
   .ed:hover { background: var(--navy-soft); }
   .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
@@ -88,20 +94,12 @@
   .pick input { width: 1.15em; height: 1.15em; accent-color: var(--sel); cursor: pointer; }
   .card.sel .pick { color: var(--sel); }
   .rectag { align-self: flex-start; background: var(--rec-bg); color: #3b2a00; font-weight: 800; font-size: 0.82em; border-radius: 6px; padding: 0.1em 0.6em; letter-spacing: 0.02em; }
-  .why { font-size: 0.92em; color: var(--muted); overflow-wrap: anywhere; }
-  .why b { color: var(--ink); font-weight: 700; }
-  .chips { display: flex; gap: 0.3em; flex-wrap: wrap; }
-  .chip { font-size: 0.8em; font-weight: 700; padding: 0.08em 0.55em; border-radius: 999px; background: var(--navy-soft); color: var(--navy); }
-  .chip.test { background: var(--paper); border: 1px solid var(--line); color: var(--ink); }
-  .chip.team { background: var(--team-bg); color: var(--team); }
-  .rm { align-self: flex-end; background: none; border: none; color: var(--muted); font-size: 0.85em; padding: 0.1em 0.3em; text-decoration: underline; }
+  .foot { display: flex; align-items: center; justify-content: space-between; gap: 0.5em; }
+  .src { font-size: 0.8em; font-weight: 700; color: var(--team); }
+  .rm { margin-inline-start: auto; background: none; border: none; color: var(--muted); font-size: 0.85em; padding: 0.1em 0.3em; text-decoration: underline; }
   .add { background: none; border: 1.5px dashed color-mix(in srgb, var(--c) 45%, var(--line)); border-radius: 10px; padding: 0.45em; color: var(--c); font-weight: 800; }
   .board.only .card:not(.sel), .board.only .add { display: none; }
   .empty { color: var(--muted); font-style: italic; }
-  h2.sec { font-size: 1.2em; margin: 1.6em 0 0.5em; }
-  .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.8em 1em; }
-  .caps { margin: 0; padding-inline-start: 1.2em; } .caps li { margin: 0.3em 0; overflow-wrap: anywhere; }
-  .caps .for { color: var(--muted); font-size: 0.9em; }
   details.out { margin-top: 1em; }
   details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
   details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
@@ -122,9 +120,9 @@
 </header>
 <div class="question" id="qbox">
   <div><div class="lbl">שאלת ה-MVP</div><div class="q" id="question"></div></div>
-  <div id="partsbox"><div class="lbl">מה הרכיבים צריכים לבדוק — וכמה מזה מכוסה בבחירה שלכם</div><div class="parts" id="parts"></div></div>
+  <div id="partsbox"><div class="lbl">מה הרכיבים צריכים לבדוק</div><div class="parts" id="parts"></div></div>
 </div>
-<div class="legend"><span class="rectag">מומלץ</span><span>אחד מחמשת הרכיבים שה-Playbook ממליץ עליהם. הלוח נפתח עם ההמלצה בחורה — מוסיפים, מורידים ומחליטים.</span></div>
+<div class="legend"><span class="rectag">מומלץ</span><span>אחד מחמשת הרכיבים שה-AI ממליץ עליהם. הלוח נפתח כשהם בחורים — מוסיפים, מורידים ומחליטים.</span></div>
 
 <div class="bar" id="bar">
   <span class="count" id="count" aria-live="polite"></span>
@@ -139,12 +137,7 @@
 
 <main class="board" id="board"></main>
 
-<section id="capsec" hidden>
-  <h2 class="sec">יכולות מאחורי הקלעים — לא לבחירה</h2>
-  <div class="panel"><ul class="caps" id="caps"></ul></div>
-</section>
-
-<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+<details class="out" id="out"><summary>הסיכום, כ-Markdown — כל הרכיבים בלוח</summary><pre id="summary"></pre></details>
 <div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
 
 <script type="application/json" id="data">
@@ -165,20 +158,15 @@
     { "id": "v3", "name": "ליווי", "meaning": "אני לא נשאר לבד" }
   ],
   "components": [
-    { "id": "c1", "rank": 1, "name": "התראה יזומה על מסמך חסר", "does": "הסוכן פונה ראשון: מה חסר, ועד מתי", "why": "בלעדיה אין מה לבדוק — זו ההודעה שהשאלה מדברת עליה", "values": ["v1"], "tests": ["p1"], "type": "התנהגות של סוכן", "recommended": true, "overlap": true },
-    { "id": "c2", "rank": 2, "name": "העלאה בלחיצה מההודעה", "does": "צילום או קובץ, ישר מההודעה", "why": "זו ההתנהגות שהשאלה מודדת", "values": ["v1"], "tests": ["p3"], "type": "ממשק", "recommended": true },
-    { "id": "c3", "rank": 3, "name": "הסבר מה להעלות ולמה", "does": "איזה מסמך, איך הוא נראה, ולמה צריך אותו", "why": "חלק מהשאלה: \"עם הסבר מה להעלות\"", "values": ["v1", "v2"], "tests": ["p2"], "type": "ממשק", "recommended": true },
-    { "id": "c4", "rank": 4, "name": "תווית מקור", "does": "\"נוסח ע\"י הסוכן · אושר ע\"י [הפקיד]\"", "why": "השאלה היא על הודעה מהסוכן מול פקיד", "values": ["v2"], "tests": ["p1"], "type": "ממשק", "recommended": true },
-    { "id": "c5", "rank": 5, "name": "תזכורת לפני המועד", "does": "למי שלא העלה — תזכורת יום לפני", "why": "\"לפני המועד\" — בלי תזכורת, חלק לא יעלו גם אם רצו", "values": ["v3"], "tests": ["p3"], "type": "התנהגות של סוכן", "recommended": true },
-    { "id": "c6", "rank": 6, "name": "שאלה בשפה חופשית", "does": "התושב שואל במילים שלו, ומקבל תשובה מיד", "why": "מי שלא הבין מה להעלות — לא יעלה", "values": ["v3"], "tests": ["p2"], "type": "התנהגות של סוכן" },
-    { "id": "c7", "rank": 7, "name": "תור אישור לפקיד", "does": "הסוכן מנסח, הפקיד מאשר בלחיצה, מתקן, או כותב", "why": "Common Sense — רוב ההודעות לא צריכות פקיד שיכתוב אותן", "values": ["v2"], "tests": ["p1"], "type": "התנהגות של סוכן" },
-    { "id": "c8", "rank": 8, "name": "חוות דעת שנייה מפקיד", "does": "התושב מבקש פקיד, והפקיד מקבל את כל ההקשר", "why": "", "values": ["v3"], "tests": [], "type": "התנהגות של סוכן" },
-    { "id": "c9", "rank": 9, "name": "סטטוס הבקשה", "does": "איפה הבקשה עומדת אחרי ההעלאה", "why": "", "values": ["v2"], "tests": [], "type": "ממשק" }
-  ],
-  "capabilities": [
-    { "name": "זיהוי מסמך חסר", "does": "ב-MVP — הזנה ידנית", "for": ["c1"] },
-    { "name": "ניסוח ההודעה ע\"י הסוכן", "does": "לפי סוג המסמך", "for": ["c1", "c7"] },
-    { "name": "קליטת קובץ ובדיקה שהוא קריא", "does": "", "for": ["c2"] }
+    { "id": "c1", "rank": 1, "name": "התראות", "example": "התראה לטלפון: \"חסר אישור תושבות לבקשה שלך. אפשר להעלות עד ה-20 בחודש.\"", "checks": "אם הודעה יזומה מהסוכן מספיקה כדי שהתושב יפעל, בלי שפקיד יתקשר אליו.", "values": ["v1"], "tests": ["p1"], "recommended": true, "overlap": true },
+    { "id": "c2", "rank": 2, "name": "העלאת מסמכים", "example": "צילום או קובץ, בלחיצה אחת מתוך ההודעה.", "checks": "את ההתנהגות עצמה: האם התושב מעלה את המסמך, ומתי.", "values": ["v1"], "tests": ["p3"], "recommended": true },
+    { "id": "c3", "rank": 3, "name": "הסבר על המסמך", "example": "איזה מסמך צריך, איך הוא נראה, ולמה הוא נדרש.", "checks": "אם מה שחסר לתושב הוא הסבר ברור — החלק בשאלה על \"הסבר מה להעלות\".", "values": ["v1", "v2"], "tests": ["p2"], "recommended": true },
+    { "id": "c4", "rank": 4, "name": "תווית מקור", "example": "מתחת להודעה: \"נוסח ע\"י הסוכן · אושר ע\"י [שם הפקיד]\".", "checks": "אם התושב סומך על הודעה מהסוכן, כשברור שאדם אישר אותה.", "values": ["v2"], "tests": ["p1"], "recommended": true },
+    { "id": "c5", "rank": 5, "name": "תזכורות", "example": "יום לפני המועד, למי שעוד לא העלה.", "checks": "אם תזכורת אחת מגדילה את מספר המעלים לפני המועד.", "values": ["v3"], "tests": ["p3"], "recommended": true },
+    { "id": "c6", "rank": 6, "name": "צ'אט עם הסוכן", "example": "התושב שואל \"איזה אישור זה?\" ומקבל תשובה מיד.", "checks": "אם מי שלא הבין את ההסבר מצליח להעלות אחרי שאלה אחת.", "values": ["v3"], "tests": ["p2"] },
+    { "id": "c7", "rank": 7, "name": "אישור פקיד", "example": "הסוכן מנסח את ההודעה, והפקיד מאשר בלחיצה, מתקן, או כותב בעצמו.", "checks": "אם פקיד יכול לאשר את ההודעות של הסוכן בקצב שהשירות צריך.", "values": ["v2"], "tests": ["p1"] },
+    { "id": "c8", "rank": 8, "name": "פנייה לפקיד", "example": "כפתור \"לדבר עם פקיד\" — והפקיד רואה את הבקשה ואת ההודעה.", "checks": "לא בודק את השאלה עצמה. רשת ביטחון למי שנתקע — כדי שלא יוותר.", "values": ["v3"], "tests": [] },
+    { "id": "c9", "rank": 9, "name": "מעקב אחרי הבקשה", "example": "מה קורה עם הבקשה אחרי שהמסמך הועלה.", "checks": "לא בודק את השאלה. שימושי אחרי ה-MVP, כשבודקים את כל התהליך.", "values": ["v2"], "tests": [] }
   ]
 }
 </script>
@@ -192,7 +180,14 @@
   var vIndex = {}; values.forEach(function (v, i) { vIndex[v.id] = i; });
   var parts = (d.parts || []).filter(function (p) { return p && p.text; });
   var pIndex = {}; parts.forEach(function (p, i) { pIndex[p.id] = i; });
-  var baseComps = (d.components || []).filter(function (c) { return c && c.name; });
+  // תאימות לאחור: לוחות שנבנו עם does / why
+  var baseComps = (d.components || []).filter(function (c) { return c && c.name; }).map(function (c) {
+    var o = JSON.parse(JSON.stringify(c));
+    if (o.example == null) o.example = o.does || "";
+    if (o.checks == null) o.checks = o.why || "";
+    delete o.does; delete o.why; delete o.type;
+    return o;
+  });
   var anySelected = baseComps.some(function (c) { return c.selected; });
   var KEY = "mvp-board:" + hash(raw);
   var onlySel = false, toastTimer = null;
@@ -215,11 +210,12 @@
   function partNames(ids) { return (ids || []).filter(function (id) { return id in pIndex; }).map(function (id) { return "«" + parts[pIndex[id]].text + "»"; }).join(", "); }
   function names(list) { return list.map(function (c) { return "«" + (c.name || "רכיב") + "»"; }).join(", "); }
   function selected() { return state.comps.filter(function (c) { return c.selected; }).sort(byRank); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); }
 
   if (d.example) document.getElementById("example").hidden = false;
   document.title = "לוח הרכיבים — " + (d.venture || "");
   document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
-  document.getElementById("meta").textContent = [d.date, "בוחרים עד " + MAX + " רכיבים", "הדירוג הוא סדר, ההמלצה היא המלצה"].filter(Boolean).join(" · ");
+  document.getElementById("meta").textContent = [d.date, "בוחרים עד " + MAX + " רכיבים", "מה שלא נבחר נשמר לבקלוג"].filter(Boolean).join(" · ");
   if (d.question) document.getElementById("question").textContent = d.question; else document.getElementById("qbox").hidden = true;
   if (!parts.length) document.getElementById("partsbox").hidden = true;
 
@@ -243,6 +239,11 @@
     n.addEventListener("blur", function () { var t = n.textContent.replace(/\s+/g, " ").trim(); n.textContent = t; set(t); save(); update(); });
     return n;
   }
+  function field(label, cls, text, ph, set) {
+    var f = el("div", "field");
+    f.append(el("span", "flbl", label), editable("p", cls, text, ph, set));
+    return f;
+  }
 
   function card(c) {
     var k = el("article", "card" + (c.selected ? " sel" : "") + (c.recommended ? " rec" : ""));
@@ -250,7 +251,7 @@
     var head = el("div", "head");
     var team = c.rank == null;
     var rank = el("span", "rank" + (team ? " team" : ""), team ? "+" : String(c.rank));
-    rank.title = team ? "רכיב שהצוות העלה" : "דירוג " + c.rank;
+    rank.title = team ? "רכיב שהצוות הוסיף" : "מקום " + c.rank + " בדירוג";
     var name = editable("h3", "name", c.name, "שם הרכיב", function (t) { c.name = t; });
     var pick = el("label", "pick"), cb = el("input");
     cb.type = "checkbox"; cb.id = "pick-" + c.id; cb.checked = !!c.selected; cb.setAttribute("aria-label", "בחירה: " + (c.name || "רכיב"));
@@ -258,19 +259,16 @@
     pick.append(cb, el("span", null, "בחירה"));
     head.append(rank, name, pick);
     k.append(head);
-    if (c.recommended) { var t = el("span", "rectag", "מומלץ"); t.title = "המלצת ה-Playbook. הצוות מחליט."; k.append(t); }
-    k.append(editable("p", "does", c.does, "מה הרכיב עושה", function (t) { c.does = t; }));
-    if (c.why) { var w = el("div", "why"); w.append(el("b", null, "למה לשאלה: "), document.createTextNode(c.why)); k.append(w); }
-    var chips = el("div", "chips");
-    (c.tests || []).filter(function (id) { return id in pIndex; }).forEach(function (id) { chips.append(el("span", "chip test", "בודק: " + parts[pIndex[id]].text)); });
-    (c.values || []).filter(function (id) { return id in vIndex && id !== primary(c); }).forEach(function (id) { chips.append(el("span", "chip", "גם: " + values[vIndex[id]].name)); });
-    if (c.type) chips.append(el("span", "chip", c.type));
-    if (c.overlap) chips.append(el("span", "chip team", "גם ברשימות של הצוות"));
-    if (c.source === "team" || team) chips.append(el("span", "chip team", "מהצוות"));
-    if (chips.childNodes.length) k.append(chips);
+    if (c.recommended) { var t = el("span", "rectag", "מומלץ"); t.title = "המלצת ה-AI. הצוות מחליט."; k.append(t); }
+    k.append(field("דוגמה", "ex", c.example, "איך זה נראה אצל המשתמש", function (t) { c.example = t; }));
+    k.append(field("מה זה בודק", "chk", c.checks, "מה זה בודק בשאלת ה-MVP", function (t) { c.checks = t; }));
+    var foot = el("div", "foot");
+    var src = c.source === "team" || team ? "הצוות הוסיף" : (c.overlap ? "גם ברשימות של הצוות" : "");
+    if (src) foot.append(el("span", "src", src));
     var rm = el("button", "rm", "הסרה"); rm.type = "button";
     rm.addEventListener("click", function () { removeComp(c); });
-    k.append(rm);
+    foot.append(rm);
+    k.append(foot);
     return k;
   }
 
@@ -284,7 +282,7 @@
     if (!mine.length) list.append(el("div", "empty", "אין רכיבים לערך הזה"));
     col.append(list);
     if (id !== "_none") {
-      var add = el("button", "add", "+ רכיב"); add.type = "button";
+      var add = el("button", "add", "+ הוספת רכיב"); add.type = "button";
       add.addEventListener("click", function () { addComp(id); });
       col.append(add);
     }
@@ -294,42 +292,32 @@
   function render() {
     board.textContent = "";
     values.forEach(function (v, i) { board.append(column(v.id, v.name, v.meaning, COLORS[i % COLORS.length])); });
-    if (state.comps.some(function (c) { return primary(c) === "_none"; })) board.append(column("_none", "בלי ערך", "רכיב בלי ערך — שאלה לצוות", "#5d6878"));
-    var caps = (d.capabilities || []).filter(function (x) { return x && x.name; });
-    var ul = document.getElementById("caps"); ul.textContent = "";
-    caps.forEach(function (x) {
-      var li = el("li"); li.append(el("b", null, x.name));
-      if (x.does) li.append(document.createTextNode(" — " + x.does));
-      var f = (x.for || []).map(function (id) { var c = state.comps.filter(function (y) { return y.id === id; })[0]; return c ? c.name : null; }).filter(Boolean);
-      if (f.length) li.append(el("span", "for", " · נשענים עליה: " + f.join(", ")));
-      ul.append(li);
-    });
-    document.getElementById("capsec").hidden = !caps.length;
+    if (state.comps.some(function (c) { return primary(c) === "_none"; })) board.append(column("_none", "בלי ערך", "לאיזה ערך הרכיב הזה שייך?", "#5d6878"));
     update();
   }
 
-  // ההודעות — מתעדכנות בכל שינוי בבחירה. אזהרה: משהו שהבחירה משאירה פתוח. מידע: משהו ששווה לשים לב אליו. אישור: הבחירה מכסה את השאלה.
+  // ההודעות — מתעדכנות בכל שינוי בבחירה. אזהרה: משהו שהבחירה משאירה פתוח. מידע: ששווה לשים לב. אישור: הבחירה מכסה את השאלה.
   function messages() {
     var sel = selected(), out = [];
     var covered = {}; sel.forEach(function (c) { (c.tests || []).forEach(function (p) { covered[p] = true; }); });
-    if (sel.length > MAX) out.push(["warn", "נבחרו <b>" + sel.length + "</b> רכיבים — מעל " + MAX + ". איזה מהם הכי פחות מוכיח את השאלה?"]);
+    if (sel.length > MAX) out.push(["warn", "בחרתם <b>" + sel.length + "</b> רכיבים — יותר מ-" + MAX + ". איזה מהם הכי פחות חשוב לשאלה?"]);
     parts.forEach(function (p) {
       if (covered[p.id]) return;
       var can = state.comps.filter(function (c) { return !c.selected && (c.tests || []).indexOf(p.id) !== -1; }).sort(byRank);
       var droppedRec = can.filter(function (c) { return c.recommended; });
       var t = "אף רכיב שבחרתם לא בודק את <b>«" + esc(p.text) + "»</b>";
       if (droppedRec.length) t += " — הורדתם את " + esc(names(droppedRec)) + ", שבודק את זה";
-      else if (can.length) t += ". בודקים את זה: " + esc(names(can));
+      else if (can.length) t += ". רכיבים שבודקים את זה: " + esc(names(can));
       out.push(["warn", t + "."]);
     });
     state.comps.filter(function (c) { return c.recommended && !c.selected; }).sort(byRank).forEach(function (c) {
       var still = (c.tests || []).filter(function (p) { return covered[p]; });
-      if ((c.tests || []).length && still.length === c.tests.length) out.push(["info", "הורדתם את <b>" + esc("«" + c.name + "»") + "</b> מההמלצה. מה שהוא בודק (" + esc(partNames(c.tests)) + ") עדיין מכוסה ברכיב אחר."]);
+      if ((c.tests || []).length && still.length === c.tests.length) out.push(["info", "הורדתם את <b>" + esc("«" + c.name + "»") + "</b> מההמלצה. מה שהוא בודק עדיין מכוסה ברכיב אחר."]);
       else if (!(c.tests || []).length) out.push(["info", "הורדתם את <b>" + esc("«" + c.name + "»") + "</b> מההמלצה."]);
     });
     sel.filter(function (c) { return !c.recommended; }).forEach(function (c) {
       if (!(c.tests || []).length) out.push(["warn", "<b>" + esc("«" + (c.name || "רכיב") + "»") + "</b> לא בודק אף חלק בשאלה. למה הוא ב-MVP?"]);
-      else out.push(["info", "בחרתם את <b>" + esc("«" + (c.name || "רכיב") + "»") + "</b>, שלא בהמלצה. הוא בודק את " + esc(partNames(c.tests)) + "."]);
+      else out.push(["info", "בחרתם את <b>" + esc("«" + (c.name || "רכיב") + "»") + "</b>, שלא היה בהמלצה."]);
     });
     values.forEach(function (v) {
       if (!sel.some(function (c) { return (c.values || []).indexOf(v.id) !== -1; })) out.push(["info", "הערך <b>«" + esc(v.name) + "»</b> לא מיוצג באף רכיב שבחרתם."]);
@@ -337,16 +325,15 @@
     var rec = state.comps.filter(function (c) { return c.recommended; });
     var same = rec.length && sel.length === rec.length && rec.every(function (c) { return c.selected; });
     var allCovered = parts.every(function (p) { return covered[p.id]; });
-    if (same) out.push(["info", "הבחירה זהה להמלצה. זו החלטה שלכם? מה מהרשימות האישיות לא נכנס, ולמה?"]);
-    if (allCovered && sel.length && sel.length <= MAX) out.push(["ok", "כל חלקי השאלה מכוסים ברכיבים שבחרתם."]);
+    if (same) out.push(["info", "הבחירה זהה להמלצה. זו ההחלטה שלכם? מה מהרשימות האישיות לא נכנס, ולמה?"]);
+    if (allCovered && sel.length && sel.length <= MAX) out.push(["ok", "כל חלקי השאלה מכוסים."]);
     return { list: out, covered: covered };
   }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch]; }); }
 
   function update() {
     var sel = selected(), m = messages();
     var bar = document.getElementById("bar");
-    document.getElementById("count").textContent = "נבחרו " + sel.length + " / " + MAX;
+    document.getElementById("count").textContent = "נבחרו " + sel.length + " מתוך " + MAX;
     bar.classList.toggle("over", sel.length > MAX);
     var ch = document.getElementById("chosen"); ch.textContent = "";
     sel.forEach(function (c) { ch.append(el("span", c.recommended ? "rec" : null, c.name || "רכיב")); });
@@ -360,7 +347,7 @@
 
   function addComp(vid) {
     state.seq = (state.seq || 0) + 1;
-    var c = { id: "t" + Date.now().toString(36) + state.seq, rank: null, name: "", does: "", why: "", values: [vid], tests: [], source: "team", selected: false };
+    var c = { id: "t" + Date.now().toString(36) + state.seq, rank: null, name: "", example: "", checks: "", values: [vid], tests: [], source: "team", selected: false };
     state.comps.push(c); save(); render();
     var n = board.querySelector('[data-id="' + c.id + '"] .name'); if (n) n.focus();
   }
@@ -371,16 +358,30 @@
     toast('"' + (c.name || "רכיב") + '" הוסר', "ביטול", function () { state.comps.splice(i, 0, c); save(); render(); });
   }
 
+  function line(c, i) {
+    var bits = [];
+    if (c.example) bits.push("דוגמה: " + c.example);
+    if (c.checks) bits.push("מה זה בודק: " + c.checks);
+    var vs = valueNames(c), ts = partNames(c.tests);
+    if (vs) bits.push("ערך: " + vs);
+    if (ts) bits.push("חלק בשאלה: " + ts);
+    var tags = [];
+    if (c.recommended) tags.push("מומלץ");
+    if (c.rank == null || c.source === "team") tags.push("הצוות הוסיף"); else tags.push("מקום " + c.rank);
+    if (c.overlap) tags.push("גם ברשימות של הצוות");
+    return (i != null ? (i + 1) + ". " : "- ") + "**" + (c.name || "רכיב") + "**" + (bits.length ? " — " + bits.join(" · ") : "") + " · " + tags.join(" · ");
+  }
+
   function summary(m) {
-    var sel = selected();
+    var sel = selected(), rest = state.comps.filter(function (c) { return !c.selected; }).sort(byRank);
     var L = [];
     if (d.question) L.push("**שאלת ה-MVP:** " + d.question, "");
-    L.push("### הרכיבים שנבחרו (" + sel.length + "/" + MAX + ")");
+    L.push("### נבחרו ל-MVP (" + sel.length + " מתוך " + MAX + ")");
     if (!sel.length) L.push("- —");
-    sel.forEach(function (c, i) {
-      var vs = valueNames(c), ts = partNames(c.tests);
-      L.push((i + 1) + ". **" + (c.name || "רכיב") + "**" + (c.does ? " — " + c.does : "") + (vs ? " · ערך: " + vs : "") + (ts ? " · בודק: " + ts : "") + (c.recommended ? " · מומלץ" : "") + (c.rank == null ? " · מהצוות" : " · דירוג " + c.rank));
-    });
+    sel.forEach(function (c, i) { L.push(line(c, i)); });
+    L.push("", "### לא נבחרו — לבקלוג (" + rest.length + ")");
+    if (!rest.length) L.push("- —");
+    rest.forEach(function (c) { L.push(line(c)); });
     if (parts.length) {
       L.push("", "### חלקי השאלה");
       parts.forEach(function (p) { L.push("- " + (m.covered[p.id] ? "✓ " : "⚠ לא מכוסה: ") + p.text); });
@@ -395,16 +396,16 @@
     var changes = [];
     baseComps.forEach(function (b) {
       var c = state.comps.filter(function (x) { return x.id === b.id; })[0];
-      if (!c) { changes.push('- הוסר מהרשימה: "' + b.name + '"'); return; }
+      if (!c) { changes.push('- הוסר מהלוח: "' + b.name + '"'); return; }
       if ((c.name || "") !== (b.name || "")) changes.push('- שם: "' + b.name + '" ← "' + c.name + '"');
-      if ((c.does || "") !== (b.does || "")) changes.push('- "מה הוא עושה" ב"' + (c.name || b.name) + '": ' + (c.does || "—"));
+      if ((c.example || "") !== (b.example || "")) changes.push('- דוגמה ב"' + (c.name || b.name) + '": ' + (c.example || "—"));
+      if ((c.checks || "") !== (b.checks || "")) changes.push('- "מה זה בודק" ב"' + (c.name || b.name) + '": ' + (c.checks || "—"));
     });
     state.comps.forEach(function (c) {
       if (baseComps.some(function (b) { return b.id === c.id; })) return;
-      var vs = valueNames(c);
-      changes.push('- נוסף: "' + (c.name || "רכיב") + '"' + (c.does ? " — " + c.does : "") + (vs ? " · ערך: " + vs : ""));
+      changes.push('- הצוות הוסיף: "' + (c.name || "רכיב") + '"' + (valueNames(c) ? " · ערך: " + valueNames(c) : ""));
     });
-    if (changes.length) { L.push("", "### שינויים ברשימה"); L = L.concat(changes); }
+    if (changes.length) { L.push("", "### מה השתנה בלוח"); L = L.concat(changes); }
     return L.join("\n");
   }
 
