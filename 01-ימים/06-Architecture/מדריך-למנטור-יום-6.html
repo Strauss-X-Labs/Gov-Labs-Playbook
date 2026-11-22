@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>יום הארכיטקטורה והבקלוג</title>
+<meta name="description" content="מדריך למנטור ליום 6 של Gov-Labs 2.0: מהלך היום שלב אחר שלב, הקבצים, ומה מבקשים מהמוח בכל שלב.">
+<!--
+  מדריך למנטור ליום 6 — מקור הדף. נגזר מ: סקירה.md · היערכות-למפגש.md · תהליכים/1–5 · 02-תוצרים-וטמפלטים (חבילת יום 6)
+  שפה גרפית: שטראוס אסטרטגיה — אותה שפה כמו המדריך ליום 4. גופן: Calibri בלבד.
+  הדף המפורסם (לשיתוף): טרם פורסם.
+  עדכון: עורכים את הקובץ הזה ומפרסמים מחדש לאותו לינק. אחרי כל עדכון — קומיט ו-PR כמו כל שינוי בפלייבוק.
+-->
+<style>
+:root {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --ink: #242840;
+  --plum: #362B48;
+  --blue: #14246B;
+  --muted: #6B7280;
+  --rule: #D9D9D9;
+  --soft: #F4F5F7;
+  --amber: #FDB415;
+  --amber-soft: #FFF6DC;
+  --amber-ink: #8A5A00;
+  --teal: #39A28F;
+  --teal-soft: #E6F4F1;
+  --teal-ink: #1F6D60;
+  --navy-soft: #E8ECF1;
+  --font: Calibri, "Carlito", "Segoe UI", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16.5px; line-height: 1.5; }
+.page { max-width: 1120px; margin: 0 auto; padding: 36px 20px 72px; }
+a { color: var(--blue); }
+p { margin: 0 0 10px; }
+h1, h2, h3, h4 { font-family: var(--font); color: var(--plum); margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 42px); font-weight: 700; margin-bottom: 10px; }
+h2 { font-size: 27px; font-weight: 700; margin-bottom: 4px; position: relative; padding-inline-start: 16px; }
+h2::before { content: ""; position: absolute; inset-inline-start: 0; top: 6px; bottom: 6px; width: 5px; border-radius: 3px; background: var(--amber); }
+h3 { font-size: 19px; font-weight: 700; }
+.eyebrow { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--amber-ink); font-weight: 700; margin-bottom: 8px; }
+.lead { font-size: 18px; color: var(--muted); max-width: 72ch; margin-bottom: 16px; }
+.meta { color: var(--muted); font-size: 15px; margin-bottom: 14px; max-width: 76ch; }
+section { margin-top: 48px; scroll-margin-top: 16px; }
+
+/* עקרונות */
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.principle { background: var(--plum); color: #fff; border-radius: 12px; padding: 14px 16px; font-size: 15px; line-height: 1.45; }
+.principle b { display: block; color: var(--amber); font-size: 16px; margin-bottom: 3px; }
+
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; font-size: 14px; }
+nav.jump a { text-decoration: none; color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; }
+nav.jump a:hover { border-color: var(--amber); background: var(--amber-soft); }
+
+/* שלושה דברים */
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.card { border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px; font-size: 15px; line-height: 1.5; }
+.card h4 { font-size: 16px; margin-bottom: 6px; }
+.card ul { margin: 0; padding-inline-start: 16px; }
+.card li { margin-bottom: 3px; }
+.tree { font-size: 14.5px; line-height: 1.6; background: var(--soft); border-radius: 8px; padding: 8px 12px; margin: 6px 0 8px; }
+.tree div { display: flex; justify-content: space-between; gap: 10px; }
+.tree .t { color: var(--teal-ink); font-weight: 700; }
+.tree .m { color: var(--amber-ink); font-weight: 700; }
+.tree small { color: var(--muted); font-size: 13.5px; }
+.say { background: var(--soft); border-inline-start: 3px solid var(--amber); border-radius: 6px; padding: 6px 10px; font-size: 14.5px; margin: 6px 0; }
+.say b { color: var(--amber-ink); margin-inline-end: 4px; }
+.roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 14px; }
+.roles span { background: var(--navy-soft); border-radius: 999px; padding: 3px 12px; }
+.roles span b { color: var(--blue); }
+
+/* רצועת סדר היום */
+.strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; margin: 14px 0 4px; }
+.strip a { text-decoration: none; color: var(--ink); font-size: 13.5px; line-height: 1.3; border: 1px solid var(--rule); border-top: 3px solid var(--blue); border-radius: 8px; padding: 6px 10px; display: grid; gap: 1px; align-content: start; }
+.strip a.pre, .strip a.post { border-top-color: var(--rule); background: var(--soft); }
+.strip a:hover { border-color: var(--amber); }
+.strip .tm { font-size: 12px; color: var(--muted); white-space: nowrap; unicode-bidi: isolate; }
+.rng { direction: ltr; unicode-bidi: isolate; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 10px 0 18px; font-size: 13.5px; color: var(--muted); }
+.legend .k::before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-inline-end: 5px; vertical-align: -1px; border: 1px solid; }
+.legend .manual::before { background: var(--navy-soft); border-color: var(--blue); }
+.legend .input::before { background: var(--soft); border-color: var(--muted); }
+.legend .team::before { background: var(--teal-soft); border-color: var(--teal); }
+.legend .mentor::before { background: var(--amber-soft); border-color: var(--amber); }
+
+/* ציר הזמן */
+.timeline { position: relative; display: grid; gap: 14px; }
+.timeline::before { content: ""; position: absolute; top: 22px; bottom: 22px; inset-inline-start: 21px; width: 2px; background: var(--rule); }
+.stage { position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: start; scroll-margin-top: 16px; }
+.node { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--amber); color: var(--plum); font-size: 19px; font-weight: 700; position: relative; z-index: 1; }
+.stage.pre .node, .stage.post .node { background: var(--bg); border: 2px dashed var(--muted); color: var(--muted); }
+.body { border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px 12px; min-width: 0; }
+.stage.key .body { border: 2px solid var(--amber); }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.time { font-size: 13.5px; color: var(--blue); font-weight: 700; unicode-bidi: isolate; }
+.goal { font-size: 15px; color: var(--muted); margin: 2px 0 6px; }
+.who { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.who span { font-size: 12.5px; border: 1px solid var(--rule); border-radius: 999px; padding: 0 9px; color: var(--muted); }
+.who .lead-role { border-color: var(--blue); color: var(--blue); font-weight: 700; }
+.stage .say { margin: 0 0 10px; }
+.cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.cell { border-radius: 10px; padding: 9px 12px 8px; font-size: 14.5px; line-height: 1.45; border: 1px solid var(--rule); min-width: 0; }
+.lbl { display: block; font-size: 12px; font-weight: 700; letter-spacing: .03em; margin-bottom: 4px; }
+.cell ul { margin: 0; padding-inline-start: 15px; }
+.cell li { margin-bottom: 2px; }
+.cell.manual { background: var(--navy-soft); border-color: #D3DBE7; }
+.cell.manual .lbl { color: var(--blue); }
+.cell.input { background: var(--soft); }
+.cell.input .lbl { color: var(--muted); }
+.cell.output { padding: 0; border: 0; display: grid; gap: 6px; align-content: start; }
+.out { border-radius: 10px; padding: 8px 12px 7px; border: 1px solid; }
+.out.team { background: var(--teal-soft); border-color: #BFE0D8; }
+.out.team .lbl { color: var(--teal-ink); }
+.out.mentor { background: var(--amber-soft); border-color: #F3DFA6; }
+.out.mentor .lbl { color: var(--amber-ink); }
+.out.none { border: 1px dashed var(--rule); color: var(--muted); font-size: 14px; }
+.cell.tips .lbl { color: var(--plum); }
+.fallback { margin-top: 6px; border-top: 1px dashed var(--rule); padding-top: 5px; font-size: 13.5px; color: var(--muted); }
+.fallback q { display: block; quotes: "„" "“"; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 4px 8px; margin-top: 3px; }
+.file { font-weight: 700; color: var(--ink); unicode-bidi: isolate; }
+.flag { color: var(--amber-ink); font-weight: 700; }
+
+/* טבלאות ורשימות */
+.table-wrap { overflow-x: auto; margin: 10px 0 6px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.45; }
+th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 700; border-bottom: 2px solid var(--rule); }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
+ul.flags { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px; }
+ul.flags li { font-size: 15px; line-height: 1.45; padding-inline-start: 16px; position: relative; }
+ul.flags li::before { content: ""; position: absolute; inset-inline-start: 0; top: 8px; width: 7px; height: 7px; border-radius: 2px; background: var(--amber); }
+ul.flags b { color: var(--plum); }
+.note { background: var(--plum); color: #fff; border-radius: 12px; padding: 14px 18px; margin-top: 16px; font-size: 15px; line-height: 1.5; }
+.note b { color: var(--amber); }
+footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 13.5px; color: var(--muted); }
+footer a { margin-inline-end: 10px; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .principles, .cards3, .two { grid-template-columns: minmax(0, 1fr); }
+  ul.flags { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 680px) {
+  .page { padding: 22px 16px 56px; }
+  .cells { grid-template-columns: minmax(0, 1fr); }
+  .stage { grid-template-columns: 36px minmax(0, 1fr); gap: 8px; }
+  .node { width: 36px; height: 36px; font-size: 16px; }
+  .timeline::before { inset-inline-start: 17px; }
+}
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { font-size: 11pt; }
+  .body, .card, .cell { break-inside: avoid; }
+  nav.jump, .strip { display: none; }
+  .principle, .note { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <p class="eyebrow">Gov-Labs 2.0 · יום 6 · מדריך למנטור</p>
+  <h1>יום הארכיטקטורה והבקלוג: איך זה הולך לעבוד</h1>
+  <p class="lead">הארכיטקטורה כבר סגורה כשמגיעים לחדר. היום עצמו <b>סוגר את המוצר, מיישר את כולם על הארכיטקטורה, מגדיר את בדיקת המשתמשים ובונה את הבקלוג המוצרי</b> — והכול נשאר במוח.</p>
+  <div class="principles">
+    <div class="principle"><b>ההכרעות לפני, היום ליישור.</b>ההכרעות הארכיטקטוניות וה-ADR נסגרים מול אנשי המפתח בימים שלפני. לארכיטקטורה יש ביום 45 דקות, לא יותר.</div>
+    <div class="principle"><b>מוצר הוא יותר מקוד.</b>בבקלוג גם משימות ארגון DATA, משפטיות, שיווקיות וניהול השינוי. מה שלא בבקלוג — לא יקרה.</div>
+    <div class="principle"><b>המוח עובד מאחורי הקלעים.</b>אתם מבקשים, המוח מכין ובודק, הצוות מכריע. מה שמגיע לצוות עובר דרככם.</div>
+  </div>
+  <nav class="jump" aria-label="ניווט">
+    <a href="#before">לפני שמתחילים</a><a href="#flow">מהלך היום</a><a href="#asks">מה מבקשים מהמוח</a><a href="#files">הקבצים של היום</a><a href="#gaps">כשחסר קלט</a><a href="#flags">נורות אזהרה</a>
+  </nav>
+</header>
+
+<section id="before">
+  <h2>לפני שמתחילים</h2>
+  <div class="cards3">
+    <div class="card">
+      <h4>איפה הכול נשמר</h4>
+      <div class="tree">
+        <div><span><b>תיקיית היום</b></span><small class="rng">06-Architecture</small></div>
+        <div><span class="t">תוצרים/</span><small>כל תוצרי היום</small></div>
+        <div><span class="m">רפרנס-מנחה/</span><small>רק לכם ולארכיטקט</small></div>
+      </div>
+      <p><b>שני חריגים:</b> ה-PRD נשאר ב-<span class="file">04-Lean-Canvas/תוצרים/</span> — שם הוא נולד. שאלות ה-Q&amp;A נכנסות ל-<span class="file">08-Storytelling/תוצרים/</span>.</p>
+    </div>
+    <div class="card">
+      <h4>איך מדברים עם המוח</h4>
+      <p>פותחים את ה-repo של המיזם ומדברים בשפה חופשית, על מה שקורה עכשיו. אין פקודות.</p>
+      <div class="say"><b>אומרים:</b>אנחנו ביום 6, אחרי סגירת המוצר. הנה ההכרעות על הפערים.</div>
+      <div class="say"><b>אומרים:</b>תכין הצעה לבקלוג.</div>
+      <p>כל הבקשות של היום מרוכזות <a href="#asks">בטבלה אחת למטה</a>.</p>
+    </div>
+    <div class="card">
+      <h4>מה חייב להיות במוח לפני היום</h4>
+      <ul>
+        <li>PRD (v1.0, או v0.2 אם לא אושר בפגישה השבועית).</li>
+        <li>הממשק של המעצבים ובריף המסכים.</li>
+        <li>מסמך ארכיטקטורה עם ההכרעות וה-ADR.</li>
+        <li>מפרט MVP, ערכי מוצר ו-Lean Canvas.</li>
+      </ul>
+      <p>הסוכן רואה רק מה שב-repo.</p>
+    </div>
+  </div>
+  <div class="roles">
+    <span><b>המנטור העסקי</b> מוביל את המוצר, הבדיקה והבקלוג</span>
+    <span><b>המנטור הטכנולוגי</b> סוגר את הארכיטקטורה לפני, ואת ה-API אחרי</span>
+    <span><b>הארכיטקט</b> בעל הסמכות: מציג ומאשר</span>
+    <span><b>נציג IT משרדי</b> אילוצי סביבה ואישור</span>
+    <span><b>מפעיל ה-AI</b> מזין את המוח לאורך היום</span>
+    <span><b>נציג הסטודיו</b> מציג את הממשק</span>
+    <span><b>מנחה המליאה</b> פתיחה, הרצאה, הצגות</span>
+  </div>
+</section>
+
+<section id="flow">
+  <h2>מהלך היום, שלב אחר שלב</h2>
+  <p class="meta">בכל שלב: מה עושים בידיים, מה צריך להיות מוכן, מה אומרים למוח, מה יוצא — ובאיזה קובץ.</p>
+
+  <div class="strip" aria-label="סדר היום">
+    <a class="pre" href="#s1"><span class="tm">שבוע לפני</span>סגירת הארכיטקטורה</a>
+    <a class="pre" href="#s2"><span class="tm">3 ימים לפני</span>הגייט לכניסה</a>
+    <a class="pre" href="#s3"><span class="tm">יום לפני</span>PRD מול הממשק</a>
+    <a href="#s4"><span class="tm"><span class="rng">09:00–10:00</span></span>פתיחה והרצאה</a>
+    <a href="#s5"><span class="tm"><span class="rng">10:00–10:45</span></span>נסגרים על המוצר</a>
+    <a href="#s6"><span class="tm"><span class="rng">11:00–11:45</span></span>כולם על אותו הדף</a>
+    <a href="#s7"><span class="tm"><span class="rng">11:45–12:30</span></span>בדיקת המשתמשים</a>
+    <a href="#s8"><span class="tm"><span class="rng">12:30–13:15</span></span>צהריים · הצעה לבקלוג</a>
+    <a href="#s9"><span class="tm"><span class="rng">13:15–16:00</span></span>הבקלוג המוצרי</a>
+    <a href="#s10"><span class="tm"><span class="rng">16:00–16:30</span></span>הצגה במליאה</a>
+    <a class="post" href="#s11"><span class="tm">אחרי היום</span>שער · חוזה API</a>
+  </div>
+  <div class="legend">
+    <span class="k manual">עבודה ידנית</span>
+    <span class="k input">קלט שצריך להיות מוכן</span>
+    <span class="k team">פלט: תוצרים לקבוצה</span>
+    <span class="k mentor">פלט: רפרנס-מנחה</span>
+  </div>
+
+  <div class="timeline">
+
+    <article class="stage pre" id="s1">
+      <div class="node">1</div>
+      <div class="body">
+        <div class="head"><h3>סגירת הארכיטקטורה מול אנשי המפתח</h3><span class="time">שבוע לפני</span></div>
+        <p class="goal">טיוטה, חלופות, הכרעות ו-ADR — הכול לפני היום. ביום אין זמן להכריע.</p>
+        <div class="who"><span class="lead-role">הארכיטקט</span><span>המנטור הטכנולוגי</span><span>IT משרדי</span><span>ארכיטקטי המשרד</span></div>
+        <div class="say"><b>אומרים למוח:</b>תכין טיוטת ארכיטקטורה ליום 6, עם 2–3 חלופות לכל צומת מהותי.</div>
+        <div class="say"><b>אחרי כל הכרעה:</b>הארכיטקט הכריע [___]. תכתוב ADR ותעדכן את המסמך והתרשים.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מעבירים למוח את אילוצי הסביבה מה-IT: רשת, זהויות, מערכות, ענן.</li>
+            <li>סוגרים עם ה-IT וארכיטקטי המשרד כל צומת מהותי.</li>
+            <li>טוענים את ה-Rulebook וכללי הענן הממשלתי לפני הטיוטה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li><span class="file">PRD.md</span> · <span class="file">בריף-מסכים.md</span></li>
+            <li>אילוצי סביבה · סיווג מידע</li></ul>
+            <div class="fallback">סיווג לא ידוע? <q>תסמן את סיווג המידע כשאלה פתוחה עם בעלים, ותכתוב את פרק האבטחה כחלופות.</q></div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מסמך-ארכיטקטורה.md</span>: רכיבים, זרימת DATA, אבטחה ופרטיות, תרשים, ADR.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>סוכן: <b>ארכיטקטורה ו-ADR</b>.</li>
+            <li><span class="flag">הכרעה שלא נסגרה</span> — שאלה פתוחה עם בעלים ותאריך, לא "נחליט ביום".</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage pre" id="s2">
+      <div class="node">2</div>
+      <div class="body">
+        <div class="head"><h3>הגייט לכניסה (G1)</h3><span class="time">3 ימים לפני</span></div>
+        <p class="goal">השער מיום 5 נסגר, והאנשים מגיעים. מה שחסר — נסגר מול אנשי המפתח, לא נדחה.</p>
+        <div class="who"><span class="lead-role">הארכיטקט</span><span>המנטור</span></div>
+        <div class="say"><b>אומרים למוח:</b>בוא נבדוק את הגייט לכניסה ליום 6.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מאשרים הגעה: ארכיטקט, IT משרדי, מפעיל AI, נציג הסטודיו.</li>
+            <li>שולחים לצוות את התוצרים — שיגיעו עם הערות.</li></ul></div>
+          <div class="cell input"><span class="lbl">נבדק</span><ul>
+            <li>PRD v1.0 או v0.2 · הממשק + בריף סופי</li>
+            <li>מפרט MVP, ערכי מוצר, Lean Canvas</li>
+            <li>מסמך ארכיטקטורה עם ADR</li>
+            <li>סיווג מידע · אילוצי סביבה · שאלות פתוחות</li></ul>
+            <div class="fallback">PRD עוד לא אושר? <q>ה-PRD ב-v0.2. תסמן, ונסגור אותו ביום בתהליך 1.</q></div></div>
+          <div class="cell output">
+            <div class="out mentor"><span class="lbl">לעיניכם</span>רשימת חוסרים — מה נסגר מול מי, ועד מתי.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>מוביל/ת התוכנית מקבלים דיווח.</li>
+            <li><span class="flag">ארכיטקט לא מגיע?</span> מתאמים מחליף וסוגרים איתו את המסמך מראש.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage pre" id="s3">
+      <div class="node">3</div>
+      <div class="body">
+        <div class="head"><h3>PRD מול הממשק: רשימת פערים</h3><span class="time">יום לפני</span></div>
+        <p class="goal">מה השתנה בעיצוב מול ה-PRD. זה הקלט של תהליך 1.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span></div>
+        <div class="say"><b>אומרים למוח:</b>תשווה את הממשק של המעצבים ל-PRD ותכין רשימת פערים: יכולת שנוספה או ירדה, "מה ייחשב עובד" שהשתנה, גבול שזז.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מעלים ל-repo את התוצר של הסטודיו, או קישור אליו.</li>
+            <li>עוברים על הפערים — מה באמת שווה דיון.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li><span class="file">PRD.md</span> · <span class="file">בריף-מסכים.md</span> · <span class="file">מפרט-MVP.md</span></li>
+            <li>התוצר של הסטודיו</li></ul></div>
+          <div class="cell output">
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span>רשימת הפערים, לתהליך 1.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>שינוי עיצובי בלבד — לא פער. פער הוא שינוי ביכולת, ב"מה ייחשב עובד" או בגבול.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s4">
+      <div class="node">4</div>
+      <div class="body">
+        <div class="head"><h3>פתיחה והרצאה: "ניהול מוצר בעולם האמיתי"</h3><span class="time"><span class="rng">09:00–10:00</span></span></div>
+        <div class="who"><span class="lead-role">מנחה המליאה</span></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul><li>09:00 פתיחת היום · 09:15 הרצאה, 45 דק׳.</li></ul></div>
+          <div class="cell tips"><span class="lbl">הדגש</span><ul><li>מכאן כל היום הוא ניהול מוצר: לסגור, לבדוק, לתעדף.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s5">
+      <div class="node">5</div>
+      <div class="body">
+        <div class="head"><h3>תהליך 1 · נסגרים על המוצר</h3><span class="time"><span class="rng">10:00–10:45</span></span></div>
+        <p class="goal">עוברים על הממשק בדגש על ה-MVP, מכריעים על הפערים, ומאשרים את PRD v1.0 סופית.</p>
+        <div class="who"><span class="lead-role">המנטור העסקי</span><span>נציג הסטודיו</span><span>כל הקבוצה</span></div>
+        <div class="say"><b>אומרים למוח (שלב 3):</b>אלה ההכרעות על הפערים: [___]. תעדכן את ה-PRD ל-v1.0.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>15′ הממשק · 15′ הפערים · 15′ אישור.</li>
+            <li>פער שלא הוכרע — שאלה פתוחה עם בעלים.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li>רשימת הפערים מאתמול · הממשק · <span class="file">PRD.md</span></li></ul>
+            <div class="fallback">הסטודיו לא הגיע? <q>תציג את המסלול של ה-MVP מהבריף.</q></div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">04-Lean-Canvas/תוצרים/PRD.md</span> — v1.0, מאושר סופית.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>"זה מה שהחלטנו ביום 5?" — לא פותחים את המוצר מחדש.</li>
+            <li>מכאן ה-PRD נעול ליום.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s6">
+      <div class="node">6</div>
+      <div class="body">
+        <div class="head"><h3>תהליך 2 · כולם על אותו הדף</h3><span class="time"><span class="rng">11:00–11:45</span></span></div>
+        <p class="goal">הארכיטקטורה, כל היבטי אבטחת המידע, וזרימת ה-DATA ממקום למקום. הצגה ויישור קו — לא הכרעה.</p>
+        <div class="who"><span class="lead-role">הארכיטקט</span><span>IT משרדי</span><span>המנטור הטכנולוגי</span></div>
+        <div class="say"><b>אומרים למוח (שלב 4):</b>עלו השאלות: [___]. תוסיף אותן לשאלות הפתוחות במסמך הארכיטקטורה, עם בעלים ותאריך.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>15′ ארכיטקטורה ותרשים · 10′ זרימת DATA · 10′ אבטחה · 10′ שאלות.</li>
+            <li>עוקבים בקול אחרי נתון אחד של אזרח מקצה לקצה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li><span class="file">מסמך-ארכיטקטורה.md</span> עם ההכרעות וה-ADR</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מסמך-ארכיטקטורה.md</span> — מעודכן, עם השאלות הפתוחות.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><span class="flag">הכרעה נפתחת בחדר?</span> "יש ADR. שאלה חדשה נסגרת מחוץ למפגש."</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s7">
+      <div class="node">7</div>
+      <div class="body">
+        <div class="head"><h3>תהליך 3 · הגדרת בדיקת המשתמשים</h3><span class="time"><span class="rng">11:45–12:30</span></span></div>
+        <p class="goal">הבדיקה היא השלב הראשון של המוצר — ה-MVP. מה רוצים ללמוד, עם מי, מה ייחשב הצלחה, ואילו נתונים צריך.</p>
+        <div class="who"><span class="lead-role">המנטור העסקי</span><span>מפעיל ה-AI</span><span>כל הקבוצה</span></div>
+        <div class="say"><b>אומרים למוח (אחרי שלב 2):</b>זו הבדיקה שתכננו: [___]. תבדוק שכל משימה באמת בודקת את ההנחה שלה, אם יש השפעה על ה-PRD, ואילו נתונים צריך בשביל הבדיקה.</div>
+        <div class="say"><b>אומרים למוח (שלב 5):</b>אלה מדדי ההצלחה לפיילוט שדיברנו עליהם: [___]. תרשום כטיוטה ליום 7.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>10′ הנחות · 10′ עיצוב הבדיקה · 10′ המוח בודק · 10′ נתונים · 5′ מדדים.</li>
+            <li>מפעיל ה-AI מעדכן את המוח בבדיקה שתוכננה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li>PRD v1.0 — הנחות פתוחות · <span class="file">מפרט-MVP.md</span> · הממשק</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">תוכנית-בדיקת-משתמשים.md</span>: הנחות, משימות, קריטריון הצלחה, השפעה על ה-PRD, נתונים נדרשים, טיוטת מדדים.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>משימה, לא שאלה: "תגיש בקשה", לא "היית מגיש?"</li>
+            <li>מדדי הפיילוט — טיוטה. מאושרים ביום 7, שורה 13 במפת הדרכים.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s8">
+      <div class="node">8</div>
+      <div class="body">
+        <div class="head"><h3>ארוחת צהריים · המוח מכין הצעה לבקלוג</h3><span class="time"><span class="rng">12:30–13:15</span></span></div>
+        <p class="goal">בתחילת ההפסקה, כדי שההצעה תהיה מוכנה בחזרה.</p>
+        <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span></div>
+        <div class="say"><b>אומרים למוח:</b>תכין הצעה לבקלוג, מ-PRD v1.0, ממסמך הארכיטקטורה ומתוכנית בדיקת המשתמשים. הנתונים שהבדיקה צריכה — כמשימות DATA.</div>
+        <div class="cells">
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li><span class="file">PRD.md</span> v1.0 · <span class="file">מסמך-ארכיטקטורה.md</span> · <span class="file">תוכנית-בדיקת-משתמשים.md</span></li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">טיוטה</span><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span> — סיפורים ומשימות.</div></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s9">
+      <div class="node">9</div>
+      <div class="body">
+        <div class="head"><h3>תהליך 4 · בונים את הבקלוג המוצרי</h3><span class="time"><span class="rng">13:15–16:00</span></span></div>
+        <p class="goal">סיפורים עם קריטריוני קבלה, ומשימות DATA, משפטיות, שיווקיות וניהול השינוי. תעדוף, סדר בנייה, ושאלות ל-Q&amp;A.</p>
+        <div class="who"><span class="lead-role">המנטור העסקי</span><span>הארכיטקט — לסדר הבנייה</span><span>מפעיל ה-AI</span><span>כל הקבוצה</span></div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>שלב</th><th>משך</th><th>אומרים למוח</th><th>קובץ</th></tr></thead>
+          <tbody>
+            <tr><td>1 · אימות הכוונה</td><td>10′</td><td>תציג תמצית של הכוונה מה-PRD v1.0.</td><td><span class="file">דרישות.md</span></td></tr>
+            <tr><td>2 · סיפורי משתמש</td><td>35′</td><td>אלה התיקונים לסיפורים [___]. תעדכן.</td><td><span class="file">בקלוג.md</span></td></tr>
+            <tr><td>3 · משימות שאינן פיתוח</td><td>25′</td><td>תוסיף משימות DATA, משפטיות, שיווק וניהול שינוי, לכל אחת בעלים: [___].</td><td><span class="file">בקלוג.md</span></td></tr>
+            <tr><td>4 · דרישות לא-פונקציונליות</td><td>15′</td><td>תנסח את דרישות האבטחה, הפרטיות, הנגישות והביצועים כסיפורים.</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span></td></tr>
+            <tr><td>5 · תעדוף וגבולות</td><td>20′</td><td>אלה ההכרעות על התכולה: [___]. תרשום ביומן ההחלטות.</td><td><span class="file">דרישות.md</span></td></tr>
+            <tr><td>6 · סדר בנייה</td><td>25′</td><td>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך.</td><td><span class="file">תוכנית-בנייה.md</span></td></tr>
+            <tr><td>7 · סקירה</td><td>15′</td><td>תריץ סקירה על הבקלוג.</td><td>ממצאים</td></tr>
+            <tr><td>8 · שאלות ל-Q&amp;A</td><td>10′</td><td>תחלץ שאלות ל-Q&amp;A מהבקלוג. — ואחרי שאישרתם: תכניס אותן לקובץ של יום 8.</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td></tr>
+          </tbody>
+        </table></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>עוברים על הסיפורים בקבוצות של 3–5.</li>
+            <li>הארכיטקט מאשר את סדר הבנייה.</li>
+            <li>עוברים על שאלות ה-Q&amp;A לפני שהן נכנסות.</li></ul></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>"איך נדע שזה עבד?" — על הקריטריון הראשון.</li>
+            <li>"מה צריך לקרות בארגון כדי שזה יעבוד ביום הראשון?"</li>
+            <li>משימה שחוסמת סיפור — לפניו בסדר.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s10">
+      <div class="node">10</div>
+      <div class="body">
+        <div class="head"><h3>הצגה במליאה וסיום</h3><span class="time"><span class="rng">16:00–16:30</span></span></div>
+        <p class="goal">כל קבוצה מציגה את מה שיצא מהיום. בסיום — הכול במוח.</p>
+        <div class="who"><span class="lead-role">מנחה המליאה</span><span>הקבוצות</span></div>
+        <div class="cells">
+          <div class="cell input"><span class="lbl">מה מציגים</span><ul>
+            <li>PRD v1.0 · ארכיטקטורה וזרימת DATA</li>
+            <li>בדיקת המשתמשים · הבקלוג וסדר הבנייה</li></ul></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul><li>לוודא שכל תוצר נשמר בקובץ שלו לפני שיוצאים.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage post" id="s11">
+      <div class="node">11</div>
+      <div class="body">
+        <div class="head"><h3>אחרי היום: השער ליום 7 וחוזה ה-API</h3><span class="time">בימים שאחרי</span></div>
+        <p class="goal">השער בודק רק את תוצרי היום. ה-API נעשה אחריו, ואינו חלק מהשער.</p>
+        <div class="who"><span class="lead-role">הארכיטקט — לשער</span><span>המנטור הטכנולוגי + הנציגים הטכנולוגיים — ל-API</span></div>
+        <div class="say"><b>אומרים למוח:</b>בוא נבדוק את השער ליום 7.</div>
+        <div class="say"><b>תהליך 5 — רק אם יש ממשקים:</b>תייצר חוזה API מרשימת הממשקים במסמך הארכיטקטורה: OpenAPI, מוק, בדיקות חוזה ואוסף Postman.</div>
+        <div class="cells">
+          <div class="cell input"><span class="lbl">השער (G2)</span><ul>
+            <li>PRD v1.0 · מסמך ארכיטקטורה עם ADR</li>
+            <li>בקלוג: סיפורים עם קריטריונים, משימות עם בעלים</li>
+            <li>סדר בנייה · תוכנית בדיקת משתמשים</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מפרט-ארכיטקטורה-ובקלוג-פיילוט.md</span> — אינדקס החבילה, מאושר · <span class="file">מפרט-חוזה-API.md</span> — אחרי היום.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>מאשרים: ארכיטקט, צוות GovLabs, IT משרדי.</li>
+            <li>בלי מוק שאפשר לקרוא לו מהדפדפן — החוזה לא נסגר.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="asks">
+  <h2>מה מבקשים מהמוח — כל הבקשות של היום</h2>
+  <p class="meta">בשפה חופשית. הניסוח כאן הוא דוגמה, לא פקודה. במקום [___] — מה שהצוות אמר או הכריע.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>מתי</th><th>אומרים למוח</th><th>מה הוא עושה</th><th>לאן זה נכתב</th></tr></thead>
+    <tbody>
+      <tr><td>שבוע לפני</td><td>תכין טיוטת ארכיטקטורה ליום 6, עם 2–3 חלופות לכל צומת.</td><td>טיוטה, חלופות, תרשים</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
+      <tr><td>אחרי כל הכרעה</td><td>הארכיטקט הכריע [___]. תכתוב ADR.</td><td>ADR, עדכון המסמך והתרשים</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
+      <tr><td>3 ימים לפני</td><td>בוא נבדוק את הגייט לכניסה ליום 6.</td><td>רשימת חוסרים</td><td>לעיניכם</td></tr>
+      <tr><td>יום לפני</td><td>תשווה את הממשק ל-PRD ותכין רשימת פערים.</td><td>פערים ביכולות, ב"מה ייחשב עובד" ובגבולות</td><td><span class="file">רפרנס-מנחה/</span></td></tr>
+      <tr><td>10:30</td><td>אלה ההכרעות על הפערים: [___]. תעדכן את ה-PRD ל-v1.0.</td><td>PRD v1.0</td><td><span class="file">04-Lean-Canvas/תוצרים/PRD.md</span></td></tr>
+      <tr><td>11:35</td><td>עלו השאלות: [___]. תוסיף לשאלות הפתוחות.</td><td>שאלות עם בעלים ותאריך</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
+      <tr><td>12:05</td><td>זו הבדיקה שתכננו: [___]. תבדוק שהיא בודקת מה שרצינו, השפעה על ה-PRD, ואילו נתונים צריך.</td><td>ממצאים, השפעה על ה-PRD, נתונים</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span></td></tr>
+      <tr><td>12:25</td><td>אלה מדדי ההצלחה לפיילוט: [___]. תרשום כטיוטה ליום 7.</td><td>טיוטת מדדים</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span>, סעיף 7</td></tr>
+      <tr><td>12:30</td><td>תכין הצעה לבקלוג.</td><td>דרישות, סיפורים ומשימות</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span></td></tr>
+      <tr><td>13:15–15:20</td><td>תיקונים, משימות, NFR, הכרעות תכולה — ראו תהליך 4.</td><td>עדכון הבקלוג ויומן ההחלטות</td><td><span class="file">בקלוג.md</span> · <span class="file">דרישות.md</span></td></tr>
+      <tr><td>~15:20</td><td>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך.</td><td>סדר בנייה</td><td><span class="file">תוכנית-בנייה.md</span></td></tr>
+      <tr><td>~15:35</td><td>תריץ סקירה על הבקלוג.</td><td>סיפור בלי קריטריון, משימה בלי בעלים, נתון בלי משימה</td><td>ממצאים</td></tr>
+      <tr><td>~15:50</td><td>תחלץ שאלות ל-Q&amp;A מהבקלוג.</td><td>שאלות — לאישורכם</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td></tr>
+      <tr><td>אחרי היום</td><td>בוא נבדוק את השער ליום 7.</td><td>רשימת G2</td><td><span class="file">מפרט-ארכיטקטורה-ובקלוג-פיילוט.md</span></td></tr>
+      <tr><td>אחרי היום</td><td>תייצר חוזה API מרשימת הממשקים.</td><td>OpenAPI, מוק, בדיקות, Postman</td><td><span class="file">מפרט-חוזה-API.md</span></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="files">
+  <h2>הקבצים של היום</h2>
+  <p class="meta">כולם ב-<span class="file">01-ימים/06-Architecture/תוצרים/</span> של המיזם, חוץ מהמסומנים.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>קובץ</th><th>מה בו</th><th>נוצר ב-</th><th>מאשר</th></tr></thead>
+    <tbody>
+      <tr><td><span class="file">PRD.md</span> <small>(ב-04-Lean-Canvas)</small></td><td>המוצר ברמת-על · ממלא את תפקיד intent.md</td><td>תהליך 1</td><td>כל הקבוצה</td></tr>
+      <tr><td><span class="file">מסמך-ארכיטקטורה.md</span></td><td>רכיבים, זרימת DATA, אבטחה, תרשים, ADR</td><td>לפני היום · תהליך 2</td><td>ארכיטקט + IT</td></tr>
+      <tr><td><span class="file">תוכנית-בדיקת-משתמשים.md</span></td><td>הבדיקה של ה-MVP, נתונים, טיוטת מדדים</td><td>תהליך 3</td><td>הקבוצה</td></tr>
+      <tr><td><span class="file">דרישות.md</span></td><td>כוונה, דרישות, גבולות ויומן החלטות</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
+      <tr><td><span class="file">בקלוג.md</span></td><td>סיפורים עם קריטריוני קבלה, ומשימות עם בעלים</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
+      <tr><td><span class="file">תוכנית-בנייה.md</span></td><td>שלד הולך, סדר בנייה ותלויות</td><td>תהליך 4</td><td>ארכיטקט</td></tr>
+      <tr><td><span class="file">קובץ-Q&amp;A.md</span> <small>(ב-08-Storytelling)</small></td><td>שאלות חדשות מהיום</td><td>סוף תהליך 4</td><td>המנטור</td></tr>
+      <tr><td><span class="file">מפרט-ארכיטקטורה-ובקלוג-פיילוט.md</span></td><td>אינדקס החבילה והשער ליום 7</td><td>סוף היום</td><td>ארכיטקט · GovLabs · IT</td></tr>
+      <tr><td><span class="file">מפרט-חוזה-API.md</span></td><td>OpenAPI, מוק, בדיקות חוזה, Postman — רק אם יש ממשקים</td><td>תהליך 5, אחרי היום</td><td>ארכיטקט</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="gaps">
+  <h2>כשחסר קלט</h2>
+  <p class="meta">אף שלב לא נתקע. אומרים למוח מה לעשות עם החוסר. הוא לא ינחש עובדות ולא יכריע במקום הצוות.</p>
+  <div class="two">
+    <div class="card">
+      <h4>להשאיר כשאלה פתוחה</h4>
+      <p>המוח ממשיך, ורושם את החוסר עם בעלים ותאריך.</p>
+      <div class="say"><b>למשל:</b>סיווג המידע עוד לא ידוע. תרשום כשאלה פתוחה עם בעלים, ותמשיך.</div>
+    </div>
+    <div class="card">
+      <h4>לייצר ממה שיש, מסומן כהנחה</h4>
+      <p>המוח מציע על בסיס מה שב-repo, ומסמן מה שאין לו מקור.</p>
+      <div class="say"><b>למשל:</b>ה-PRD עוד ב-v0.2. תכין את רשימת הפערים מול מה שיש, ונסגור ביום.</div>
+    </div>
+  </div>
+</section>
+
+<section id="flags">
+  <h2>נורות אזהרה</h2>
+  <ul class="flags">
+    <li><b>הכרעה נפתחת בחדר.</b> "יש ADR. שאלה חדשה נסגרת מחוץ למפגש."</li>
+    <li><b>פותחים את המוצר מחדש.</b> "זה מה שהחלטנו ביום 5?"</li>
+    <li><b>זרימת DATA לא ברורה.</b> עוקבים אחרי נתון אחד מקצה לקצה.</li>
+    <li><b>בדיקה שבודקת מה שקל.</b> "מה הדבר שאם הוא לא נכון, המוצר נופל?"</li>
+    <li><b>בקלוג של קוד בלבד.</b> "מי מארגן את הנתונים? מי מאשר משפטית? מי מכין את העובדים?"</li>
+    <li><b>קריטריון שאי אפשר לבדוק.</b> "איך נדע שזה עבד?"</li>
+    <li><b>אישור סיטונאי.</b> דוגמים שלושה סיפורים בקול.</li>
+    <li><b>ההצעה לבקלוג לא הוזמנה בצהריים.</b> מבקשים בתחילת ההפסקה, לא בסופה.</li>
+  </ul>
+  <div class="note"><b>תפקידכם:</b> להגיע עם ארכיטקטורה סגורה, להוביל את הקבוצה מהמוצר לבדיקה ולבקלוג, ולוודא שכל הכרעה נכתבת במוח. <b>Definition of Done:</b> PRD v1.0 נעול · כולם מבינים את הארכיטקטורה וזרימת ה-DATA · בדיקת המשתמשים מוגדרת עם נתונים · בקלוג של סיפורים ומשימות עם בעלים · סדר בנייה · שאלות ב-Q&amp;A · הכול במוח.</div>
+</section>
+
+<footer>
+  בפלייבוק:
+  <a href="סקירה.md">סקירת היום</a>
+  <a href="היערכות-למפגש.md">היערכות</a>
+  <a href="תהליכים/1-נסגרים-על-המוצר.md">תהליך 1</a>
+  <a href="תהליכים/2-תכנון-ארכיטקטורה-אגנטית-וענן.md">תהליך 2</a>
+  <a href="תהליכים/3-הגדרת-בדיקת-המשתמשים.md">תהליך 3</a>
+  <a href="תהליכים/4-חילוץ-מפרט-ובקלוג-ב-AI.md">תהליך 4</a>
+  <a href="תהליכים/5-חוזה-API.md">תהליך 5</a>
+  <a href="../../02-תוצרים-וטמפלטים/מפרט-ארכיטקטורה-ובקלוג-פיילוט.md">אינדקס החבילה</a>
+  <a href="../../מדריך-למנטור.html">המדריך הכללי למנטור</a>
+</footer>
+
+</div>
+</body>
+</html>
