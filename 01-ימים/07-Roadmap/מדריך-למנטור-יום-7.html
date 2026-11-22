@@ -1,0 +1,616 @@
+<!doctype html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>יום ה-Roadmap</title>
+<meta name="description" content="מדריך למנטור ליום ה-Roadmap & Budget של Gov-Labs 2.0: ההכנה בלוח Canva, מהלך היום שלב אחר שלב, מה אומרים למוח, אילו קבצים הוא קורא וכותב.">
+<!--
+  מדריך למנטור ליום 7 — מקור הדף. נגזר מ: סקירה.md · היערכות-למפגש.md · תהליכים/1–6 · 04-AI/סוכנים/הכנה-למפת-הדרכים.md, מחולל-Roadmap.md, תחזית-הוצאות-ו-CFO-סקפטי.md, מחולל-Q&A.md (הגייט — בהיערכות)
+  שפה גרפית: שטראוס אסטרטגיה (s-strategy.com) — נייבי, פלום, ענבר, טורקיז. גופן: Calibri בלבד.
+  הדף המפורסם (לשיתוף): https://claude.ai/artifact/D4c4F2mVKTHB1GrcdtSyH3
+  עדכון: עורכים את הקובץ הזה, ואז מבקשים מסוכן ה-AI: "פרסם את מדריך-למנטור-יום-7.html ל-https://claude.ai/artifact/D4c4F2mVKTHB1GrcdtSyH3".
+  פרסום בלי הלינק יוצר דף חדש בכתובת אחרת. אחרי כל עדכון — קומיט ו-PR כמו כל שינוי בפלייבוק.
+-->
+<style>
+:root {
+  color-scheme: light;
+  --bg: #FFFFFF;
+  --ink: #242840;
+  --plum: #362B48;
+  --blue: #14246B;
+  --muted: #6B7280;
+  --rule: #D9D9D9;
+  --soft: #F4F5F7;
+  --amber: #FDB415;
+  --amber-soft: #FFF6DC;
+  --amber-ink: #8A5A00;
+  --teal: #39A28F;
+  --teal-soft: #E6F4F1;
+  --teal-ink: #1F6D60;
+  --navy-soft: #E8ECF1;
+  --font: Calibri, "Carlito", "Segoe UI", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); font-size: 16.5px; line-height: 1.5; }
+.page { max-width: 1120px; margin: 0 auto; padding: 36px 20px 72px; }
+a { color: var(--blue); }
+p { margin: 0 0 10px; }
+h1, h2, h3, h4 { font-family: var(--font); color: var(--plum); margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(30px, 4.6vw, 42px); font-weight: 700; margin-bottom: 10px; }
+h2 { font-size: 27px; font-weight: 700; margin-bottom: 4px; position: relative; padding-inline-start: 16px; }
+h2::before { content: ""; position: absolute; inset-inline-start: 0; top: 6px; bottom: 6px; width: 5px; border-radius: 3px; background: var(--amber); }
+h3 { font-size: 19px; font-weight: 700; }
+.eyebrow { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; color: var(--amber-ink); font-weight: 700; margin-bottom: 8px; }
+.lead { font-size: 18px; color: var(--muted); max-width: 72ch; margin-bottom: 16px; }
+.meta { color: var(--muted); font-size: 15px; margin-bottom: 14px; max-width: 76ch; }
+section { margin-top: 48px; scroll-margin-top: 16px; }
+
+/* עקרונות */
+.principles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 14px; }
+.principle { background: var(--plum); color: #fff; border-radius: 12px; padding: 14px 16px; font-size: 15px; line-height: 1.45; }
+.principle b { display: block; color: var(--amber); font-size: 16px; margin-bottom: 3px; }
+
+nav.jump { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; font-size: 14px; }
+nav.jump a { text-decoration: none; color: var(--ink); border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; }
+nav.jump a:hover { border-color: var(--amber); background: var(--amber-soft); }
+
+/* שלושה דברים */
+.cards3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }
+.card { border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px; font-size: 15px; line-height: 1.5; }
+.card h4 { font-size: 16px; margin-bottom: 6px; }
+.card ul { margin: 0; padding-inline-start: 16px; }
+.card li { margin-bottom: 3px; }
+.tree { font-size: 14.5px; line-height: 1.6; background: var(--soft); border-radius: 8px; padding: 8px 12px; margin: 6px 0 8px; }
+.tree div { display: flex; justify-content: space-between; gap: 10px; }
+.tree .t { color: var(--teal-ink); font-weight: 700; }
+.tree .m { color: var(--amber-ink); font-weight: 700; }
+.tree small { color: var(--muted); font-size: 13.5px; }
+.say { background: var(--soft); border-inline-start: 3px solid var(--amber); border-radius: 6px; padding: 6px 10px; font-size: 14.5px; margin: 6px 0; }
+.say b { color: var(--amber-ink); margin-inline-end: 4px; }
+.roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; font-size: 14px; }
+.roles span { background: var(--navy-soft); border-radius: 999px; padding: 3px 12px; }
+.roles span b { color: var(--blue); }
+
+/* רצועת סדר היום */
+.strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; margin: 14px 0 4px; }
+.strip a { text-decoration: none; color: var(--ink); font-size: 13.5px; line-height: 1.3; border: 1px solid var(--rule); border-top: 3px solid var(--blue); border-radius: 8px; padding: 6px 10px; display: grid; gap: 1px; align-content: start; }
+.strip a.pre, .strip a.post { border-top-color: var(--rule); background: var(--soft); }
+.strip a:hover { border-color: var(--amber); }
+.strip .tm { font-size: 12px; color: var(--muted); white-space: nowrap; unicode-bidi: isolate; }
+.rng { direction: ltr; unicode-bidi: isolate; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: 10px 0 18px; font-size: 13.5px; color: var(--muted); }
+.legend .k::before { content: ""; display: inline-block; width: 11px; height: 11px; border-radius: 3px; margin-inline-end: 5px; vertical-align: -1px; border: 1px solid; }
+.legend .manual::before { background: var(--navy-soft); border-color: var(--blue); }
+.legend .input::before { background: var(--soft); border-color: var(--muted); }
+.legend .team::before { background: var(--teal-soft); border-color: var(--teal); }
+.legend .mentor::before { background: var(--amber-soft); border-color: var(--amber); }
+
+/* ציר הזמן */
+.timeline { position: relative; display: grid; gap: 14px; }
+.timeline::before { content: ""; position: absolute; top: 22px; bottom: 22px; inset-inline-start: 21px; width: 2px; background: var(--rule); }
+.stage { position: relative; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: start; scroll-margin-top: 16px; }
+.node { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--amber); color: var(--plum); font-size: 19px; font-weight: 700; position: relative; z-index: 1; }
+.stage.pre .node, .stage.post .node { background: var(--bg); border: 2px dashed var(--muted); color: var(--muted); }
+.body { border: 1px solid var(--rule); border-radius: 12px; padding: 14px 16px 12px; min-width: 0; }
+.stage.key .body { border: 2px solid var(--amber); }
+.head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+.time { font-size: 13.5px; color: var(--blue); font-weight: 700; unicode-bidi: isolate; }
+.goal { font-size: 15px; color: var(--muted); margin: 2px 0 6px; }
+.who { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+.who span { font-size: 12.5px; border: 1px solid var(--rule); border-radius: 999px; padding: 0 9px; color: var(--muted); }
+.who .lead-role { border-color: var(--blue); color: var(--blue); font-weight: 700; }
+.stage .say { margin: 0 0 10px; }
+.cells { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.cell { border-radius: 10px; padding: 9px 12px 8px; font-size: 14.5px; line-height: 1.45; border: 1px solid var(--rule); min-width: 0; }
+.lbl { display: block; font-size: 12px; font-weight: 700; letter-spacing: .03em; margin-bottom: 4px; }
+.cell ul { margin: 0; padding-inline-start: 15px; }
+.cell li { margin-bottom: 2px; }
+.cell.manual { background: var(--navy-soft); border-color: #D3DBE7; }
+.cell.manual .lbl { color: var(--blue); }
+.cell.input { background: var(--soft); }
+.cell.input .lbl { color: var(--muted); }
+.cell.output { padding: 0; border: 0; display: grid; gap: 6px; align-content: start; }
+.out { border-radius: 10px; padding: 8px 12px 7px; border: 1px solid; }
+.out.team { background: var(--teal-soft); border-color: #BFE0D8; }
+.out.team .lbl { color: var(--teal-ink); }
+.out.mentor { background: var(--amber-soft); border-color: #F3DFA6; }
+.out.mentor .lbl { color: var(--amber-ink); }
+.out.none { border: 1px dashed var(--rule); color: var(--muted); font-size: 14px; }
+.cell.tips .lbl { color: var(--plum); }
+.fallback { margin-top: 6px; border-top: 1px dashed var(--rule); padding-top: 5px; font-size: 13.5px; color: var(--muted); }
+.fallback q { display: block; quotes: "„" "“"; color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 6px; padding: 4px 8px; margin-top: 3px; }
+.file { font-weight: 700; color: var(--ink); unicode-bidi: isolate; }
+.flag { color: var(--amber-ink); font-weight: 700; }
+
+/* טבלאות ורשימות */
+.table-wrap { overflow-x: auto; margin: 10px 0 6px; }
+table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.45; }
+th, td { text-align: right; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-size: 13px; color: var(--muted); font-weight: 700; border-bottom: 2px solid var(--rule); }
+.two { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 10px; }
+ul.flags { list-style: none; padding: 0; margin: 10px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 18px; }
+ul.flags li { font-size: 15px; line-height: 1.45; padding-inline-start: 16px; position: relative; }
+ul.flags li::before { content: ""; position: absolute; inset-inline-start: 0; top: 8px; width: 7px; height: 7px; border-radius: 2px; background: var(--amber); }
+ul.flags b { color: var(--plum); }
+.note { background: var(--plum); color: #fff; border-radius: 12px; padding: 14px 18px; margin-top: 16px; font-size: 15px; line-height: 1.5; }
+.note b { color: var(--amber); }
+footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--rule); font-size: 13.5px; color: var(--muted); }
+footer a { margin-inline-end: 10px; white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .principles, .cards3, .two { grid-template-columns: minmax(0, 1fr); }
+  ul.flags { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 680px) {
+  .page { padding: 22px 16px 56px; }
+  .cells { grid-template-columns: minmax(0, 1fr); }
+  .stage { grid-template-columns: 36px minmax(0, 1fr); gap: 8px; }
+  .node { width: 36px; height: 36px; font-size: 16px; }
+  .timeline::before { inset-inline-start: 17px; }
+}
+@media print {
+  @page { size: A4; margin: 12mm; }
+  body { font-size: 11pt; }
+  .body, .card, .cell { break-inside: avoid; }
+  nav.jump, .strip { display: none; }
+  .principle, .note { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <p class="eyebrow">Gov-Labs 2.0 · יום 7 · מדריך למנטור</p>
+  <h1>יום ה-Roadmap: איך זה הולך לעבוד</h1>
+  <p class="lead">בסוף היום הקבוצה יוצאת עם <b>Roadmap עד שנתיים קדימה</b> ועם <b>תחזית הוצאות והשקעות</b>, וגם <b>ה-Q&amp;A של המיזם מעודכן</b>, עם אחראי לכל תחום. העבודה מתחילה שבוע לפני, בלוח Canva.</p>
+  <div class="principles">
+    <div class="principle"><b>עריכה, לא הקלדה.</b>המוח כבר קרא את המיזם. הוא מנסח את ה-Draft 0, את שורות ה-Roadmap ואת התחזית, והקבוצה שופטת.</div>
+    <div class="principle"><b>הליבה אנושית.</b>את סולם ההתפתחות (שלבים, טריגרים, תכולה, בעלי עניין וכמויות) הקבוצה קובעת בדיון, בלי סוכן ובלי הקלטה.</div>
+    <div class="principle"><b>מה שלא בלוח לא מגיע למוח.</b>מה שהצוות יוצר נכתב בלוח ה-Canva, והמוח קורא אותו משם. התחזית נכתבת בגיליון.</div>
+  </div>
+  <nav class="jump" aria-label="ניווט">
+    <a href="#before">לפני שמתחילים</a><a href="#flow">מהלך היום</a><a href="#feed">מה אומרים למוח</a><a href="#files">אילו קבצים נוצרים</a><a href="#gaps">כשחסר קלט</a><a href="#flags">נורות אזהרה</a><a href="#open">מה עוד פתוח</a>
+  </nav>
+</header>
+
+<section id="before">
+  <h2>לפני שמתחילים</h2>
+  <div class="cards3">
+    <div class="card">
+      <h4>איפה הכול נשמר</h4>
+      <div class="tree">
+        <div><span><b>תיקיית היום</b></span><small class="rng">07-Roadmap</small></div>
+        <div><span class="t">תוצרים/</span><small>הלוח שנקרא, ה-Roadmap, התחזית</small></div>
+        <div><span class="m">רפרנס-מנחה/</span><small>ה-Draft 0 ויומן הלוח, רק לכם</small></div>
+        <div><span><b>ה-Q&amp;A</b></span><small class="rng">08-Storytelling/תוצרים</small></div>
+      </div>
+      <p>הכול ב-repo של המיזם. המוח רואה רק מה שב-repo ובלוח.</p>
+    </div>
+    <div class="card">
+      <h4>איך מדברים עם המוח</h4>
+      <p>פותחים את ה-repo של המיזם ומדברים בשפה חופשית. יש כמה משפטי מפתח שמפעילים כל שלב, והם מופיעים <a href="#feed">בטבלה למטה</a>.</p>
+      <div class="say"><b>אומרים:</b>תעשה הכנה ליום 7.</div>
+      <div class="say"><b>אומרים:</b>תקרא את הלוח, השלד נעול.</div>
+      <div class="say"><b>אומרים:</b>ה-Roadmap נעול, תבנה תחזית הוצאות.</div>
+    </div>
+    <div class="card">
+      <h4>מה צריך להיות מחובר</h4>
+      <ul>
+        <li><b>Canva MCP</b> במחשב שלכם, פעם אחת (<a href="../../skills/tools/canva.md#חיבור--פעם-אחת-בכל-מחשב">חיבור</a>).</li>
+        <li><b>תבנית הלוח</b> <span class="rng">DAHa-fhifB0</span>. לא כותבים אליה: לכל מיזם יש עותק משלו.</li>
+        <li><b>Google Drive</b> לכל חברי הצוות. לשם עולה קובץ התחזית.</li>
+        <li><b>בנצ'מרק המחירים</b> של מערך הדיגיטל. המוח מוריד אותו מהקישור.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="roles">
+    <span><b>המנטור/ית</b> צמוד/ה לקבוצה כל היום, מפעיל/ה את המוח</span>
+    <span><b>מוביל/ת התוכנית</b> ההסברים במליאה</span>
+    <span><b>חבר/ת צוות</b> מעדכן/ת את הלוח בזמן הדיון</span>
+    <span><b>מתעד/ת</b> מקליד/ה טיפים ב-Friendly Tip</span>
+    <span>3 קבוצות במקביל · <span class="rng">09:15–15:40</span></span>
+  </div>
+</section>
+
+<section id="flow">
+  <h2>מהלך העבודה, שלב אחר שלב</h2>
+  <p class="meta">בכל שלב: מה עושים בידיים, מה צריך להיות מוכן ומה עושים כשחסר, מה יוצא, ומה חשוב לכם.</p>
+
+  <div class="strip" aria-label="סדר היום">
+    <a class="pre" href="#s1"><span class="tm">שבוע לפני</span>Draft 0 בלוח</a>
+    <a class="pre" href="#s2"><span class="tm">שבוע לפני</span>הצוות מתקף</a>
+    <a class="pre" href="#s3"><span class="tm">3 ימים לפני</span>קריאת הלוח · גייט</a>
+    <a href="#s4"><span class="tm"><span class="rng">09:15–09:30</span></span>פתיחה</a>
+    <a href="#s5"><span class="tm"><span class="rng">09:30–11:00</span></span>סולם ההתפתחות</a>
+    <a href="#s6"><span class="tm"><span class="rng">11:00–11:35</span></span>Friendly Tip</a>
+    <a href="#s7"><span class="tm"><span class="rng">11:45–12:55</span></span>תיקוף ה-Roadmap</a>
+    <a href="#s8"><span class="tm"><span class="rng">12:55–13:40</span></span>צהריים · Draft 0 להוצאות</a>
+    <a href="#s9"><span class="tm"><span class="rng">13:40–14:35</span></span>תחזית + CFO סקפטי</a>
+    <a href="#s10"><span class="tm"><span class="rng">14:35–15:30</span></span>עדכון ה-Q&amp;A</a>
+    <a href="#s11"><span class="tm"><span class="rng">15:30–15:40</span></span>סיכום</a>
+    <a class="post" href="#s12"><span class="tm">אחרי היום</span>איסוף ותיעוד</a>
+  </div>
+  <div class="legend">
+    <span class="k manual">עבודה ידנית</span>
+    <span class="k input">קלט שצריך להיות מוכן</span>
+    <span class="k team">פלט: תוצרים לקבוצה</span>
+    <span class="k mentor">פלט: רפרנס-מנחה</span>
+  </div>
+
+  <div class="timeline">
+
+    <article class="stage pre" id="s1">
+      <div class="node">1</div>
+      <div class="body">
+        <div class="head"><h3>Draft 0 בלוח ההכנה</h3><span class="time">כשבוע לפני</span></div>
+        <p class="goal">המוח קורא את המיזם וממלא את שלושת חלקי הלוח: בעלי עניין, שלבי ההתפתחות ומרכיבי הוצאה. זה מצע לדיון, לא החלטה.</p>
+        <div class="who"><span class="lead-role">המנטור/ית</span><span>המוח</span><span>בלי הצוות</span></div>
+        <div class="say"><b>אומרים:</b>תעשה הכנה ליום 7. (ואם כבר יש עותק של הלוח למיזם, מצרפים את הקישור.)</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>מחברים את Canva MCP, אם עוד לא.</li>
+            <li>מוודאים שכל החומרים שצריך ליום 7 נמצאים ב-repo.</li>
+            <li>אין עותק? המוח משכפל את התבנית ל<span class="file">הכנה ליום 7 — &lt;מיזם&gt; — &lt;לקוח&gt;</span>. אם לא ברור לו השם, הוא שואל.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט: מה המוח קורא</span><ul>
+            <li><b>בעלי עניין:</b> מרחב האתגר, הפרסונות, מפת המסע החדש, Lean Canvas.</li>
+            <li><b>שלבים:</b> מפרט ה-MVP, סרטון הקונספט, מפרט הארכיטקטורה והבקלוג.</li>
+            <li><b>הוצאות:</b> Cost Structure ב-Lean Canvas, הארכיטקטורה והבקלוג.</li></ul>
+            <div class="fallback">קובץ חסר? המוח ממשיך בלעדיו, משאיר את הפריט ריק עם הסימון "חסר", ואומר בסוף מה חסר. הוא לא ממציא.</div></div>
+          <div class="cell output">
+            <div class="out mentor"><span class="lbl">בצ'אט, לכם</span><b>משוב על המוכנות ליום 7:</b> מה מולא ומה חסר · <b>קישור ללוח עם ה-Draft 0</b>, לשליחה לקבוצה.</div>
+            <div class="out team"><span class="lbl">בלוח</span>Draft 0 בשלושת החלקים: 2–3 יעדים ו-4 בעלי עניין · שם ומטרה לכל שלב (עד 5) · מרכיבי הוצאה בלי סכומים · עד 5 שאלות פתוחות.</div>
+            <div class="out mentor"><span class="lbl">רפרנס-מנחה</span><span class="file">Draft-0-הכנה.md</span>: כל הצעה עם המקור שלה. לפיו בודקים אחר כך מה הצוות שינה · <span class="file">canva/README.md</span>: יומן הלוח.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>עוברים על ה-Draft 0 <b>לפני</b> שהוא מגיע לצוות.</li>
+            <li><span class="flag">בעל עניין שהוא גוף או משרד?</span> מתקנים: בעלי עניין הם אנשים, כמו מנמ"ר המשרד, המנכ"ל או ראש אגף במשרד אחר.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage pre" id="s2">
+      <div class="node">2</div>
+      <div class="body">
+        <div class="head"><h3>הצוות מתקף בלוח, כשיעורי בית</h3><span class="time">מהשבוע שלפני ועד 3 ימים לפני</span></div>
+        <p class="goal">הצוות מתקף, מתקן ומוסיף ישירות בלוח. ההנחיה כתובה בראש הלוח.</p>
+        <div class="who"><span class="lead-role">הצוות</span><span>המנטור/ית משתף/ת ומלווה</span></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>משתפים את העותק עם הצוות <b>בהרשאת עריכה</b>, ושולחים את הקישור.</li>
+            <li>הצוות מחלק את העבודה: צוות קטן לכל חלק.</li>
+            <li>מוודאים שלכל חברי הצוות יש גישה ל-Google Drive.</li></ul></div>
+          <div class="cell input"><span class="lbl">מה הצוות עושה בכל חלק</span><ul>
+            <li><b>בעלי עניין:</b> מתקף ומחדד, עם תועלת וחסם לכל אחד.</li>
+            <li><b>שלבים:</b> מתקף ומשנה. זו נקודת הפתיחה לבוקר.</li>
+            <li><b>הוצאות:</b> בודק מה חסר. <b>בלי מספרים</b>, הם נכנסים ביום.</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">בלוח</span>לוח מתוקף, מוכן 3 ימים לפני המפגש.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>מכירים את <a href="../../03-ידע/מתודות/סולם-התפתחות.md">סולם ההתפתחות</a> ואת מסגרת השאלות של תהליך 1. שלושת המנטורים נפגשים יחד למפגש הכנה קצר, כדי שכל הקבוצות יקבלו הנחיה באותה רמה.</li>
+            <li><span class="flag">למה Draft 0 ולא דף ריק?</span> הצוות לא יודע לבנות שלבי התפתחות לבד, ושלבים שהוא ימציא לא יתאימו למה שמקובל במוצר תוכנה.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage pre key" id="s3">
+      <div class="node">3</div>
+      <div class="body">
+        <div class="head"><h3>קריאת הלוח והגייט</h3><span class="time">3 ימים לפני</span></div>
+        <p class="goal">המוח מוריד את הלוח ל-repo. זה הקלט ליום. <b>לוח מתוקף הוא תנאי כניסה ליום 7.</b></p>
+        <div class="who"><span class="lead-role">המנטור/ית</span><span>המוח</span></div>
+        <div class="say"><b>אומרים:</b>תקרא את הלוח.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>עוברים על מה שהמוח מציג, ומשלימים עם הצוות לפני המפגש.</li>
+            <li>מעדכנים את מוביל/ת התוכנית על החוסרים.</li></ul></div>
+          <div class="cell input"><span class="lbl">מה הגייט בודק</span><ul>
+            <li>אין כרטיס שזהה ל-Draft 0.</li>
+            <li>4 בעלי עניין, אנשים ולא גופים, לכל אחד תועלת וחסם, ו-2–3 יעדים.</li>
+            <li>שם ומטרה לכל שלב.</li>
+            <li>מרכיבי הוצאה: קבועה או משתנה, איך נמדד, ידוע / הערכה / לא ידוע.</li>
+            <li>השאלות הפתוחות נענו · יש גישה לדרייב.</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים/, מילה במילה מהלוח</span><span class="file">טבלת-תועלות-וחסמים.md</span> · <span class="file">מפת-דרכים-תקציב-וסיכונים.md</span> ("טיוטת הכנה") · <span class="file">תחזית-הוצאות-והשקעות.md</span> (סעיף "מרכיבי הוצאה")</div>
+            <div class="out mentor"><span class="lbl">בצ'אט, לכם</span>כרטיסים שזהים ל-Draft 0, חלק שהצוות לא נגע בו, בעל עניין שהוא גוף ולא אדם, ושאלות שלא נענו.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><span class="flag">כרטיס זהה ל-Draft 0</span> כנראה אומר שהצוות לא עבר עליו.</li>
+            <li>עוד לא נכתב מה קורה לקבוצה שלא עומדת בתנאי. אם זה קורה, מעדכנים את מוביל/ת התוכנית.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s4">
+      <div class="node">4</div>
+      <div class="body">
+        <div class="head"><h3>פתיחה במליאה</h3><span class="time"><span class="rng">09:15–09:30</span></span></div>
+        <div class="who"><span class="lead-role">מוביל/ת התוכנית</span></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">תוכן</span><ul><li>התוצרים של היום, איפה ה-AI כותב ואיפה לא, הלוח, ואיך יעבוד ה-Friendly Tip.</li></ul></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul><li>הלוח של המיזם פתוח על מסך משותף, בחלק 2.</li><li>קובעים מי מעדכן/ת את הלוח בסשן.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s5">
+      <div class="node">5</div>
+      <div class="body">
+        <div class="head"><h3>סולם ההתפתחות: שלד ה-Roadmap</h3><span class="time"><span class="rng">09:30–11:00</span> · 15 הסבר + 75 עבודה</span></div>
+        <p class="goal">ההחלטה האסטרטגית של היום. הקבוצה קובעת את השלד בדיון, <b>בלי סוכן ובלי הקלטה</b>.</p>
+        <div class="who"><span class="lead-role">המנטור/ית מנחה</span><span>חבר/ת צוות מעדכן/ת את הלוח</span></div>
+        <div class="say"><b>אומרים, בנעילה (כ-10:55):</b>תקרא את הלוח, השלד נעול.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית: לפי המסגרת, שאלה אחר שאלה</span><ul>
+            <li><b>10 דק', נקודות קצה:</b> "אם היינו משיקים מחר את הגרסה הכי מצומצמת, מה יש בה ולמי?" · "איך נראה המיזם בעוד שנתיים, אם הכול הולך טוב?"</li>
+            <li><b>20 דק', טריגרים:</b> "מה חייב לקרות כדי שנדע שאנחנו מוכנים לעבור לשלב הבא?" ואז שם קצר ומטרה לכל שלב.</li>
+            <li><b>40 דק', תכולה ובעלי עניין:</b> "מה יש בשלב הזה שלא היה בקודם?" · "מי המשתמשים, וכמה?"</li>
+            <li><b>5 דק', נעילה:</b> לכל כרטיס שלב יש שישה מרכיבים.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>חלק 2 בלוח, כפי שהצוות תיקף.</li><li>חלק 1: בעלי העניין, תועלות וחסמים.</li></ul>
+            <div class="fallback">"לא בטוחים כמה שלבים"? מתחילים מ-3 (התחלה, הרחבה, בשלות). "קשה לכמת"? הערכה גסה, כמו "בערך 50".</div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">בלוח</span>שלד נעול. לכל שלב: שם, משך, טריגר למעבר, מטרה, תכולת מוצר, בעלי עניין וכמויות.</div>
+            <div class="out team"><span class="lbl">אחרי "השלד נעול"</span>המוח קורא את חלק 2, כותב ל-<span class="file">מפת-דרכים-תקציב-וסיכונים.md</span>, ומתחיל לבנות את ה-Roadmap המלא.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><b>קודם נקודות הקצה, אחר כך השלבים.</b></li>
+            <li><span class="flag">"ה-Draft 0 נראה טוב, נאשר"?</span> עוברים עליו בכל זאת. אישור בלי דיון הוא לא החלטה.</li>
+            <li><span class="flag">מחליטים בעל פה?</span> עוצרים ומעדכנים את הלוח. מה שלא כתוב בלוח לא מגיע למוח.</li>
+            <li><span class="flag">לא נועלים שלד חלקי.</span></li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s6">
+      <div class="node">6</div>
+      <div class="body">
+        <div class="head"><h3>Friendly Tip על הסולם</h3><span class="time"><span class="rng">11:00–11:35</span> · מליאה</span></div>
+        <p class="goal">משוב חיצוני על השלד. בזמן ההצגות המוח בונה את ה-Roadmap המלא.</p>
+        <div class="who"><span class="lead-role">מוביל/ת התוכנית</span><span>מתעד/ת בכל קבוצה</span></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>כל קבוצה: כ-3 דק' הצגה מהלוח, וכ-8 דק' טיפים.</li>
+            <li>המתעד/ת מקליד/ה כל טיפ בזמן אמת, והטיפים נכנסים למאגר ה-Friendly Tips של הצוות.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>סולם ההתפתחות הנעול, מתוך הלוח.</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">במקביל, מהמוח</span><span class="file">מפת-דרכים-תקציב-וסיכונים.md</span>: 13 שורות לכל שלב, בסטטוס "טיוטה לתיקוף".</div>
+            <div class="out mentor"><span class="lbl">מאגר Friendly Tips</span>הטיפים, ב-repo של המיזם. הקבוצה מחליטה עליהם בתיקוף.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><span class="flag">ההצגות התחילו והמוח לא רץ?</span> מפעילים מיד, אחרת התיקוף יתחיל בהמתנה.</li>
+            <li>אוכפים "אין תשובה": המציגים מקשיבים וכותבים.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s7">
+      <div class="node">7</div>
+      <div class="body">
+        <div class="head"><h3>תיקוף מלא של ה-Roadmap</h3><span class="time"><span class="rng">11:45–12:55</span></span></div>
+        <p class="goal">הקבוצה עוברת על 13 השורות בכל שלב, מתקנת ומאשרת. זה דיון ולא שיחה עם סוכן.</p>
+        <div class="who"><span class="lead-role">המנטור/ית</span><span>הקבוצה</span></div>
+        <div class="say"><b>אומרים, בסוף כל שלב:</b>אלה התיקונים לשלב 2, ואלה הטיפים שאומצו. · <b>בסוף:</b>ה-Roadmap נעול.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li><b>כ-10 דק', הטיפים:</b> מחליטים על כל טיפ אם הוא אומץ או לא, וזה נרשם במאגר.</li>
+            <li><b>כ-55 דק', שלב אחר שלב:</b> קוראים את 7 השורות הנגזרות ושואלים "מה נכון, ומה צריך לתקן?" ו"האם בעל העניין הזה באמת היה מקבל את זה?"</li>
+            <li><b>כ-5 דק', נעילה:</b> אין סתירות בין שלבים, וכל טיפ קיבל החלטה.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>הטיוטה המלאה.</li><li>הטיפים מהמאגר.</li><li>חלק 1 בלוח.</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מפת-דרכים-תקציב-וסיכונים.md</span> בסטטוס "נעול" · שורה ביומן: איזה טיפ הוביל לאיזה שינוי.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>מוסרים למוח את התיקונים <b>בבת אחת לכל שלב</b>, לא תוך כדי הדיון.</li>
+            <li><span class="flag">תיקון שמשנה שלב, טריגר או כמות?</span> זה שינוי בשלד, ונדרשת החלטה מפורשת. המוח ישאל.</li>
+            <li><span class="flag">רק אחד מדבר?</span> מחלקים: כל חבר/ה אחראי/ת על שורות אחרות.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s8">
+      <div class="node">8</div>
+      <div class="body">
+        <div class="head"><h3>מאחורי הקלעים: Draft 0 להוצאות</h3><span class="time"><span class="rng">12:55–13:40</span> · בארוחת הצהריים</span></div>
+        <p class="goal">המוח מנתח את ה-Roadmap הנעול ומכין סעיפי הוצאה והנחות יסוד. עוד אין תחזית.</p>
+        <div class="who"><span class="lead-role">המנטור/ית</span><span>המוח</span></div>
+        <div class="say"><b>אומרים:</b>ה-Roadmap נעול, תבנה תחזית הוצאות.</div>
+        <div class="cells">
+          <div class="cell input"><span class="lbl">קלט: מה המוח קורא</span><ul>
+            <li>ה-Roadmap הנעול: שלבים, משך, 13 השורות.</li>
+            <li>מרכיבי ההוצאה מההכנה.</li>
+            <li>הבקלוג, Lean Canvas, מרחב האתגר, <span class="file">PR.md</span>.</li>
+            <li>בנצ'מרק המחירים של מערך הדיגיטל.</li></ul>
+            <div class="fallback">הבנצ'מרק לא נפתח? שומרים אותו ב-<span class="file">07-Roadmap/רפרנס-מנחה/</span>. בנצ'מרק לטוקנים ולענן אין בכלל, ולכן אלה נכנסים כ"הערכה — הסוכן".</div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים/</span><span class="file">תחזית-הוצאות-והשקעות.md</span>: הסעיפים, כל אחד עם קבועה או משתנה, איך נמדד ומאיפה הגיע · טבלת הנחות, כל מספר עם מקור.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>סעיף שעלה מה-Roadmap ולא היה בהכנה מסומן <b>חדש</b>. סעיף מההכנה שאין לו בסיס ב-Roadmap מסומן <b>לבדוק</b>.</li>
+            <li><span class="flag">Roadmap לא נעול?</span> המוח עוצר. לא מנתחים מגרסה ישנה.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage key" id="s9">
+      <div class="node">9</div>
+      <div class="body">
+        <div class="head"><h3>תחזית הוצאות ואתגור CFO סקפטי</h3><span class="time"><span class="rng">13:40–14:35</span> · 10 + 20 + 20 + 5</span></div>
+        <p class="goal">המוח מנסח והקבוצה מחליטה. ה-CFO מאתגר <b>לפני</b> שהמספרים ננעלים.</p>
+        <div class="who"><span class="lead-role">המנטור/ית</span><span>המוח</span><span>מוביל/ת התוכנית מסביר/ה</span></div>
+        <div class="say"><b>אומרים, אחרי ההנחות:</b>מאשרים את ההנחות, תעבור ל-CFO הסקפטי. · <b>בסוף:</b>מאשרים, תיצור את הקובץ.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li><b>10 דק', הסבר במליאה:</b> איך המוח ניתח, מה הבנצ'מרק, ולמה ה-CFO בא לפני הנעילה.</li>
+            <li><b>20 דק', סעיפים והנחות:</b> "אלה הסעיפים המרכזיים?" ולכל הנחה הקבוצה מחליטה בעצמה, או מבקשת מהמוח לקבוע לפי הבנצ'מרק.</li>
+            <li><b>20 דק', CFO:</b> 3–4 שאלות אתגור. אם התשובה לא משכנעת, נותנים טווח של אופטימי, סביר ופסימי.</li>
+            <li><b>5 דק', תחזית:</b> טבלה רבעונית בצ'אט, אישור, קובץ Excel.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>ה-Draft 0 מהצהריים.</li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">תחזית-הוצאות-והשקעות.xlsx</span>: טאב של הנחות יסוד וטאב של תחזית רבעונית, <b>כולה נוסחאות</b> · ה-<span class="file">MD</span> לידו: ההנחות, הטווחים וההחלטות.</div>
+            <div class="out mentor"><span class="lbl">עבודה שלכם</span>מעלים את הקובץ לדרייב של הקבוצה.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li>המטרה היא שהקבוצה <b>תכיר</b> את התחזית <b>ותתעמת</b> עם הנתונים.</li>
+            <li><span class="flag">"הסוכן כבר חישב"?</span> לא מדלגים על האישור ועל ה-CFO.</li>
+            <li><span class="flag">מספר בלי מקור?</span> מסמנים אותו כ"קבוצה", "בנצ'מרק" או "הערכה — הסוכן".</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s10">
+      <div class="node">10</div>
+      <div class="body">
+        <div class="head"><h3>עדכון ה-Q&amp;A וחלוקת אחריות</h3><span class="time">הפסקה <span class="rng">14:35</span> · סשן <span class="rng">14:45–15:30</span></span></div>
+        <p class="goal">לא יוצרים Q&amp;A, מעדכנים את הקיים. הוא נולד ביום 4 והוא תוצר של יום 8.</p>
+        <div class="who"><span class="lead-role">המנטור/ית</span><span>המוח</span></div>
+        <div class="say"><b>אומרים, בהפסקה:</b>תעדכן את ה-Q&amp;A.</div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li><b>10 דק', הסבר במליאה:</b> ארבעת סוגי השאלות, ולמה מחלקים אחריות.</li>
+            <li><b>25 דק':</b> עוברים רק על מה שמסומן "חדש" או "עודכן". עורכים, מדייקים, מוחקים.</li>
+            <li><b>10 דק':</b> מקבצים את השאלות לתחומים (תקציב, טכנולוגיה, בעלי עניין, תפעול), ולכל תחום יש אחראי.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul><li>ה-Q&amp;A הקיים, ה-Roadmap, התחזית, טבלת התועלות והחסמים.</li></ul>
+            <div class="fallback">אין Q&amp;A במיזם? המוח יוצר אותו במקום שלו ואומר זאת. נמצא קובץ ב-04-Lean-Canvas? המוח מציע להעביר אותו.</div></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span>: מעודכן, ולכל שאלה תחום ואחראי.</div></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><span class="flag">רק חסמים?</span> בודקים שיש גם הבהרות, הגדרות והרחבות.</li>
+            <li><span class="flag">תשובה שהומצאה?</span> מסמנים "דורש החלטה נוספת של הקבוצה".</li>
+            <li><span class="flag">אחד אחראי על הכול?</span> מחלקים.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage" id="s11">
+      <div class="node">11</div>
+      <div class="body">
+        <div class="head"><h3>סיכום במליאה</h3><span class="time"><span class="rng">15:30–15:40</span></span></div>
+        <div class="who"><span class="lead-role">מוביל/ת התוכנית</span><span>המנטור/ית עוזר/ת לנסח</span></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">תוכן</span><ul><li>כל קבוצה: תובנה אחת, ב-2 דק', שהפתיעה אותה באינטראקציה עם ה-AI, ביום או בהכנה.</li><li>הצעדים הבאים: עבודת המשך בבית, ומה קורה עם התוצרים.</li></ul></div>
+          <div class="cell tips"><span class="lbl">למנטור</span><ul><li>ה-Storytelling והפיץ' לא חלק מהיום הזה. הם ביום 8.</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="stage post" id="s12">
+      <div class="node">+</div>
+      <div class="body">
+        <div class="head"><h3>אחרי היום</h3></div>
+        <div class="cells">
+          <div class="cell manual"><span class="lbl">מה קורה</span><ul>
+            <li><b>מוביל/ת התוכנית</b> אוסף/ת מכל קבוצה קישור ל-Roadmap, לתחזית ול-Q&amp;A.</li>
+            <li>מתעדים מה עבד ומה לא, לפני עדכון הפלייבוק.</li>
+            <li>התוצרים ממשיכים להתעדן, וה-Q&amp;A ממשיך ליום 8.</li></ul></div>
+          <div class="cell output"><div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">Roadmap</span> · <span class="file">תחזית (xlsx בדרייב)</span> · <span class="file">Q&amp;A</span></div></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="feed">
+  <h2>מה אומרים למוח, ומתי</h2>
+  <p class="meta">כל המשפטים נאמרים מתוך ה-repo של המיזם. שפה חופשית עובדת, אבל אלה המשפטים שמפעילים כל שלב.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>מתי</th><th>אומרים</th><th>המוח קורא</th><th>המוח כותב</th></tr></thead>
+    <tbody>
+      <tr><td>כשבוע לפני</td><td>"תעשה הכנה ליום 7" (וקישור לעותק, אם יש)</td><td>תוצרי ימים 1–6 של המיזם</td><td>Draft 0 בלוח · <span class="file">רפרנס-מנחה/Draft-0-הכנה.md</span></td></tr>
+      <tr><td>3 ימים לפני</td><td>"תקרא את הלוח"</td><td>הלוח, דרך ה-MCP</td><td><span class="file">תוצרים/</span>: טבלת תועלות וחסמים, טיוטת שלבים, מרכיבי הוצאה · חוסרים בצ'אט</td></tr>
+      <tr><td>כ-10:55</td><td>"תקרא את הלוח, השלד נעול"</td><td>חלק 2 בלוח</td><td><span class="file">מפת-דרכים-תקציב-וסיכונים.md</span>: 13 שורות, "טיוטה לתיקוף"</td></tr>
+      <tr><td>11:00–11:35</td><td>המתעד/ת מקליד/ה את הטיפים</td><td>—</td><td>מאגר Friendly Tips</td></tr>
+      <tr><td>11:45–12:55, בסוף כל שלב</td><td>"אלה התיקונים לשלב N, ואלה הטיפים שאומצו"</td><td>התיקונים, המאגר</td><td>השלב המעודכן; בסוף, "נעול"</td></tr>
+      <tr><td>12:55</td><td>"ה-Roadmap נעול, תבנה תחזית הוצאות"</td><td>Roadmap, מרכיבי ההוצאה, בקלוג, בנצ'מרק</td><td><span class="file">תחזית-הוצאות-והשקעות.md</span>: סעיפים והנחות, Draft 0</td></tr>
+      <tr><td>13:40–14:35</td><td>אישור הסעיפים וההנחות, ואחר כך "מאשרים, תיצור את הקובץ"</td><td>ההנחות שאושרו</td><td><span class="file">תחזית-הוצאות-והשקעות.xlsx</span> + MD</td></tr>
+      <tr><td>14:35</td><td>"תעדכן את ה-Q&amp;A"</td><td>ה-Q&amp;A הקיים, Roadmap, תחזית</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span>, עם סימוני "חדש" ו"עודכן"</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="files">
+  <h2>אילו קבצים נוצרים</h2>
+  <p class="meta">הכול ב-repo של המיזם, תחת <span class="file">01-ימים/07-Roadmap/</span>, חוץ מה-Q&amp;A.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>קובץ</th><th>למי</th><th>מתי נוצר</th><th>מה עושים איתו</th></tr></thead>
+    <tbody>
+      <tr><td><span class="file">רפרנס-מנחה/Draft-0-הכנה.md</span></td><td>לכם</td><td>שבוע לפני</td><td>ההצעות והמקורות. לפיו רואים מה הצוות לא שינה.</td></tr>
+      <tr><td><span class="file">רפרנס-מנחה/canva/README.md</span></td><td>לכם</td><td>בכל כתיבה וקריאה</td><td>יומן הלוח: קישור, מזהה, ומה נעשה בו.</td></tr>
+      <tr><td><span class="file">תוצרים/טבלת-תועלות-וחסמים.md</span></td><td>לקבוצה</td><td>3 ימים לפני</td><td>חלק 1 של הלוח. משמש בסולם ובתיקוף.</td></tr>
+      <tr><td><span class="file">תוצרים/מפת-דרכים-תקציב-וסיכונים.md</span></td><td>לקבוצה</td><td>3 ימים לפני ← 10:55 ← 12:55</td><td>מ"טיוטת הכנה", דרך "טיוטה לתיקוף", ועד "נעול".</td></tr>
+      <tr><td><span class="file">תוצרים/תחזית-הוצאות-והשקעות.md</span></td><td>לקבוצה</td><td>3 ימים לפני ← צהריים ← 14:35</td><td>מקור האמת: סעיפים, הנחות, טווחים, החלטות.</td></tr>
+      <tr><td><span class="file">תוצרים/תחזית-הוצאות-והשקעות.xlsx</span></td><td>לקבוצה</td><td>כ-14:30</td><td>מעלים לדרייב. שינוי בהנחה משנה את התחזית.</td></tr>
+      <tr><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td><td>לקבוצה</td><td>מעודכן ב-14:35</td><td>עוברים על "חדש" ו"עודכן", וקובעים אחראי לכל תחום.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="gaps">
+  <h2>כשחסר קלט</h2>
+  <p class="meta">המוח לא ממציא. מה שלא נמצא בחומר נשאר ריק או מסומן, והוא אומר לכם מה חסר.</p>
+  <div class="two">
+    <div class="card">
+      <h4>לפני היום</h4>
+      <ul>
+        <li><b>תוצר של יום קודם חסר:</b> המוח ממשיך, ומסמן את הפריט "חסר". משלימים לפני שהלוח עובר לצוות.</li>
+        <li><b>הצוות לא עבר על הלוח:</b> הגייט יציג כרטיסים זהים ל-Draft 0. זה תנאי כניסה, אז משלימים לפני המפגש.</li>
+        <li><b>אין גישה לדרייב:</b> מסדרים בהכנה. אחרת אין לאן להעלות את התחזית.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h4>ביום עצמו</h4>
+      <ul>
+        <li><b>ה-Roadmap לא נעול:</b> סוכן התחזית עוצר. נועלים קודם.</li>
+        <li><b>הבנצ'מרק לא נפתח:</b> שומרים אותו ב-<span class="file">רפרנס-מנחה/</span>.</li>
+        <li><b>ענן וטוקנים:</b> אין להם מחיר בבנצ'מרק, ולכן נכנסים כ"הערכה — הסוכן". אומרים את זה לקבוצה.</li>
+        <li><b>נתונים על המשרד</b> (כמה עובדים, מה כבר משולם): המוח שואל או כותב [X]. לא מנחשים.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="flags">
+  <h2>נורות אזהרה</h2>
+  <ul class="flags">
+    <li><b>Draft 0 מאושר בלי דיון.</b> עוברים לפי המסגרת. ההחלטה היא של הקבוצה.</li>
+    <li><b>בעל עניין הוא גוף.</b> "מי האדם שאנחנו צריכים שישתף פעולה?"</li>
+    <li><b>"אנשים" הם הצוות הפנימי.</b> "מי משתמש במוצר בשלב הזה, לא מי בונה אותו."</li>
+    <li><b>שלבים שרירותיים.</b> "מה חייב לקרות כדי שנעבור?"</li>
+    <li><b>קפיצה לטכנולוגיה או לצוות.</b> "זה יגיע בתיקוף."</li>
+    <li><b>הלוח לא מתעדכן.</b> מה שלא בלוח לא מגיע למוח.</li>
+    <li><b>השלד משתנה בשקט בתיקוף.</b> שינוי בשלד דורש החלטה מפורשת.</li>
+    <li><b>התפעול לא גדל עם המוצר.</b> בודקים עקביות בין השלבים.</li>
+    <li><b>מספר בלי מקור.</b> "על סמך מה? מה קורה אם זה חצי?"</li>
+    <li><b>CFO שואל על כל מספר.</b> חוזרים ל-3–4 ההנחות המשפיעות.</li>
+  </ul>
+  <div class="note"><b>תפקידכם:</b> להנחות את הסולם לפי המסגרת, לשמור שההחלטות נכתבות בלוח, להפעיל את המוח בזמן, ולוודא שכל הנחה וכל טיפ מקבלים החלטה. <b>"גמור":</b> Roadmap נעול, שהשלד שלו נקבע ע"י הקבוצה · תחזית רבעונית בנוסחאות, ו-3–4 הנחות עברו אתגור · Q&amp;A מעודכן עם אחראי לכל תחום.</div>
+</section>
+
+<section id="open">
+  <h2>מה עוד פתוח</h2>
+  <p class="meta">היום עוד בטיוטה, ואביבית עוד לא בדקה אותו. הסוכנים עוד לא הורצו. לפני שהזרימה הופכת לברירת מחדל, מריצים אותה פעם אחת על מיזם אחד.</p>
+  <ul class="flags">
+    <li><b>קבוצה שלא עומדת בתנאי הכניסה.</b> מה קורה לה עוד לא נכתב.</li>
+    <li><b>איפה מוצג ה-Roadmap המלא.</b> כרגע ב-MD. עוד לא הוחלט אם יהיה לו אזור בלוח.</li>
+    <li><b>מיפוי סיכונים, AI Economics, המשכיות.</b> כרגע הצעות בלבד, ואין להן זמן בסדר היום.</li>
+    <li><b>מחיר לענן ולטוקנים.</b> אין בבנצ'מרק. כדאי להוסיף מחירון.</li>
+  </ul>
+</section>
+
+<footer>
+  בפלייבוק:
+  <a href="סקירה.md">סקירת היום</a>
+  <a href="היערכות-למפגש.md">היערכות</a>
+  <a href="תהליכים/1-בניית-סולם-ההתפתחות.md">תהליך 1</a>
+  <a href="תהליכים/2-Friendly-Tip-על-סולם-ההתפתחות.md">תהליך 2</a>
+  <a href="תהליכים/3-תיקוף-מפת-הדרכים.md">תהליך 3</a>
+  <a href="תהליכים/4-תחזית-הוצאות-ואתגור-CFO-סקפטי.md">תהליך 4</a>
+  <a href="תהליכים/5-עדכון-Q&amp;A-וחלוקת-אחריות.md">תהליך 5</a>
+  <a href="תהליכים/6-סיכום-ותוכנית-המשכיות-והטמעה.md">תהליך 6</a>
+  <a href="../../04-AI/סוכנים/הכנה-למפת-הדרכים.md">סוכן הכנה</a>
+  <a href="../../04-AI/סוכנים/מחולל-Roadmap.md">מחולל Roadmap</a>
+  <a href="../../04-AI/סוכנים/תחזית-הוצאות-ו-CFO-סקפטי.md">תחזית + CFO</a>
+  <a href="../../04-AI/סוכנים/מחולל-Q&amp;A.md">מחולל Q&amp;A</a>
+  <a href="היערכות-למפגש.md#הגייט-לכניסה">הגייט לכניסה</a>
+  <a href="../../skills/tools/canva.md">עבודה עם Canva</a>
+  <a href="../../מדריך-למנטור.html">המדריך הכללי למנטור</a>
+</footer>
+
+</div>
+</body>
+</html>
