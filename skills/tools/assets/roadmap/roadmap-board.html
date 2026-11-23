@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>מפת הדרכים</title>
+<!--
+  תבנית לוח ה-Roadmap — נשמר במיזם כ-מפת-דרכים-תקציב-וסיכונים-לוח.html, ליד מפת-דרכים-תקציב-וסיכונים.md, ונגזר ממנו.
+  הסוכן (מחולל Roadmap) ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
+  example: true רק בדוגמה · venture · date · horizon (האופק, למשל "עד שנתיים")
+  status: "טיוטה לתיקוף" (ברירת מחדל — עריך, לתיקוף עם הקבוצה) / "מתוקף" (התוצר הסופי — לקריאה בלבד, בלי עריכה)
+  stages: עד 5, לפי הסדר. לכל שלב:
+    חלק א — השלד (החלטת הקבוצה, מילה במילה מהלוח): name, duration, trigger, goal — טקסט; product, stakeholders — רשימות
+    חלק ב — הנגזרות (טיוטה של המוח): success, value, challenges, marketing, tech, ops, metrics — רשימות
+  כל רשימה = בולטים. נושא או פיצ'ר — בולט נפרד, בכמה מילים. בלי פסקאות.
+  בתיקוף: הקבוצה עוברת שלב אחר שלב, עורכת בולטים, מוסיפה ומוחקת, ומסמנת "השלב אושר". שינוי בשלד מסומן לאישור.
+  עריכות נשמרות בדפדפן. בסוף — המנטור לוחץ "העתקת סיכום" ומדביק למוח: ה-Roadmap המתוקף כ-Markdown, ו"מה הקבוצה שינתה".
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: header, sticky bar (progress, copy, reset), live messages, one wide grid — a label column and a column per stage, right to left — in two parts: the skeleton and the derived rows. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --ok: #1e7a45; --ok-bg: #e3f4ea;
+    --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
+    --chg: #8a5a00; --chg-bg: #fff6dc; --chg-line: #f0d48a;
+    --skel: #7a3f96; --skel-bg: #f4ecf8; --der: #1f5f8b; --der-bg: #eaf2f8; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.9vw, 19px); line-height: 1.45; padding-block: 1.2em 3em; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: hidden; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button { font: inherit; cursor: pointer; }
+  .example { background: var(--chg-bg); border: 1px dashed var(--chg); color: var(--chg); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-bottom: 0.8em; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.85em; font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .ribbon.final { background: var(--ok); }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
+  .key { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 3px; vertical-align: -0.1em; margin-inline-end: 0.3em; }
+  .key.skel { background: var(--skel); } .key.der { background: var(--der); } .key.chg { background: var(--chg-bg); border: 1px solid var(--chg-line); }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+  .count { font-weight: 800; font-size: 1.1em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
+  .chgcount { font-weight: 700; color: var(--chg); }
+  .tools { display: flex; gap: 0.4em; flex-wrap: wrap; margin-inline-start: auto; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .msgs { display: grid; gap: 0.4em; margin-bottom: 1em; }
+  .msg { border-radius: 8px; padding: 0.45em 0.8em; font-weight: 600; border-inline-start: 5px solid; overflow-wrap: anywhere; }
+  .msg.warn { background: var(--warn-bg); border-color: var(--warn); color: #7a1a12; }
+  .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
+  .msg.ok { background: var(--ok-bg); border-color: var(--ok); color: #14532d; }
+  .scroll { overflow-x: auto; border-radius: 12px; }
+  .grid { display: grid; gap: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; min-width: max-content; }
+  .cell { padding: 0.55em 0.7em; border-bottom: 1px solid var(--line); border-inline-start: 1px solid var(--line); min-width: 0; }
+  .rowlbl { background: #fafbfc; font-weight: 800; position: sticky; inset-inline-start: 0; z-index: 2; border-inline-start: 0; }
+  .rowlbl small { display: block; font-weight: 600; color: var(--muted); font-size: 0.78em; }
+  .part { grid-column: 1 / -1; padding: 0.4em 0.8em; font-weight: 800; color: #fff; position: sticky; inset-inline-start: 0; }
+  .part.skel { background: var(--skel); } .part.der { background: var(--der); }
+  .part span { font-weight: 600; opacity: 0.9; font-size: 0.9em; }
+  .stagehead { background: var(--navy-soft); display: grid; gap: 0.35em; align-content: start; }
+  .stagehead .num { font-size: 0.8em; font-weight: 800; color: var(--muted); }
+  .appr { display: inline-flex; align-items: center; gap: 0.35em; font-weight: 700; font-size: 0.9em; color: var(--muted); cursor: pointer; }
+  .appr input { width: 1.1em; height: 1.1em; accent-color: var(--ok); }
+  .appr.on { color: var(--ok); }
+  .stagehead.done { background: var(--ok-bg); }
+  .skelcell { background: color-mix(in srgb, var(--skel-bg) 55%, #fff); }
+  .val { font-weight: 700; overflow-wrap: anywhere; min-height: 1.4em; }
+  ul.items { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.25em; }
+  ul.items li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.35em; align-items: start; }
+  ul.items li::before { content: "•"; color: var(--muted); font-weight: 800; }
+  .it { overflow-wrap: anywhere; min-height: 1.4em; }
+  .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
+  .ed:hover { background: var(--navy-soft); }
+  .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
+  .chg { background: var(--chg-bg); box-shadow: inset 0 0 0 1px var(--chg-line); border-radius: 4px; }
+  .x { background: none; border: none; color: var(--muted); font-size: 0.85em; padding: 0 0.25em; border-radius: 4px; opacity: 0.55; }
+  .x:hover, .x:focus-visible { opacity: 1; color: var(--warn); }
+  .plus { background: none; border: 1px dashed var(--line); color: var(--navy); font-weight: 700; font-size: 0.82em; border-radius: 6px; padding: 0 0.5em; margin-top: 0.3em; }
+  .plus:hover { border-style: solid; }
+  .ro .ed:hover { background: none; } .ro .ed { cursor: default; }
+  details.out { margin-top: 1.2em; }
+  details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
+  details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
+  .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
+  .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
+  @media print { @page { size: A4 landscape; margin: 8mm; } .bar .tools, .x, .plus, .toast, details.out, .msgs { display: none !important; } body { background: #fff; font-size: 10.5px; } .scroll { overflow: visible; } .grid { min-width: 0; } .rowlbl, .part { position: static; } .cell { break-inside: avoid; } .part, .rowlbl, .stagehead, .skelcell { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+<header class="top">
+  <div>
+    <h1>מפת הדרכים <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon" id="ribbon"></div>
+</header>
+<div class="legend">
+  <span><span class="key skel"></span>חלק א — השלד: החלטת הקבוצה מסולם ההתפתחות</span>
+  <span id="lgder"><span class="key der"></span>חלק ב — הנגזרות: טיוטה של המוח, לתיקוף</span>
+  <span id="lgchg"><span class="key chg"></span>שונה בתיקוף</span>
+</div>
+
+<div class="bar" id="bar">
+  <span class="count" id="count" aria-live="polite"></span>
+  <span class="chgcount" id="chgcount"></span>
+  <div class="tools" id="tools">
+    <button type="button" class="btn primary" id="copy">העתקת סיכום</button>
+    <button type="button" class="btn" id="reset">חזרה להצעה</button>
+  </div>
+</div>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+
+<div class="scroll"><div class="grid" id="grid"></div></div>
+
+<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "date": "דוגמה",
+  "horizon": "עד שנתיים",
+  "status": "טיוטה לתיקוף",
+  "stages": [
+    {
+      "name": "MVP — יחידה אחת",
+      "duration": "3 חודשים",
+      "trigger": "60% מהבקשות ביחידה מוגשות דרך המערכת",
+      "goal": "להוכיח שתושבים מעלים מסמכים חסרים בזמן",
+      "product": ["התראה על מסמך חסר", "העלאה מהטלפון", "הסבר על המסמך"],
+      "stakeholders": ["כ-400 מגישים", "6 פקידים ביחידה"],
+      "success": ["פחות בקשות שנתקעות על מסמך חסר"],
+      "value": ["התושב יודע מה חסר, בלי להתקשר"],
+      "challenges": ["חשש פקידים מעומס התראות"],
+      "marketing": ["הודעה במכתב הזימון", "הדרכה לפקידים"],
+      "tech": ["שירות התראות", "אחסון מסמכים מאובטח"],
+      "ops": ["פקיד אחראי לאישור נוסחים"],
+      "metrics": ["% מסמכים שהועלו לפני המועד", "זמן טיפול בבקשה"]
+    },
+    {
+      "name": "פיילוט — מחוז",
+      "duration": "6 חודשים",
+      "trigger": "אישור תקציב להרחבה",
+      "goal": "לעבוד בהיקף מחוזי בלי תוספת כוח אדם",
+      "product": ["תזכורות אוטומטיות", "לוח מעקב לפקידים"],
+      "stakeholders": ["כ-5,000 מגישים", "40 פקידים"],
+      "success": ["אותו צוות מטפל ביותר בקשות"],
+      "value": ["פקידים עוסקים בחריגים, לא בתזכורות"],
+      "challenges": ["הטמעה ב-4 יחידות במקביל"],
+      "marketing": ["סרטון הסבר", "שגרירים בכל יחידה"],
+      "tech": ["אינטגרציה למערכת התיקים"],
+      "ops": ["מוקד תמיכה לפקידים"],
+      "metrics": ["בקשות לפקיד בחודש", "שביעות רצון מגישים"]
+    }
+  ]
+}
+</script>
+<script>
+(function () {
+  var raw = document.getElementById("data").textContent;
+  var d = JSON.parse(raw);
+  var final = d.status === "מתוקף";
+  var KEY = "roadmap-board:" + hash(raw);
+  var toastTimer = null;
+  var ROWS = [
+    { part: "skel", key: "name", label: "שם השלב", text: true },
+    { part: "skel", key: "duration", label: "משך", text: true },
+    { part: "skel", key: "trigger", label: "טריגר למעבר", text: true },
+    { part: "skel", key: "goal", label: "מטרה", text: true },
+    { part: "skel", key: "product", label: "תכולת מוצר" },
+    { part: "skel", key: "stakeholders", label: "בעלי עניין וכמויות" },
+    { part: "der", key: "success", label: "איך תיראה הצלחה" },
+    { part: "der", key: "value", label: "הצעת הערך" },
+    { part: "der", key: "challenges", label: "אתגרים וחסמים" },
+    { part: "der", key: "marketing", label: "שיווק וערוצים" },
+    { part: "der", key: "tech", label: "טכנולוגיה" },
+    { part: "der", key: "ops", label: "תפעול ומודל הפעלה" },
+    { part: "der", key: "metrics", label: "מדדים ומדידה" }
+  ];
+
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function clone(x) { return JSON.parse(JSON.stringify(x)); }
+  function fresh() {
+    var st = clone((d.stages || []).filter(Boolean)).slice(0, 5);
+    st.forEach(function (s) { ROWS.forEach(function (r) { if (r.text) s[r.key] = s[r.key] || ""; else s[r.key] = (s[r.key] || []).filter(function (x) { return x != null; }); }); s.approved = false; });
+    return { stages: st };
+  }
+  var base = fresh();
+  function load() { if (final) return null; try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.stages && s.stages.length === base.stages.length) return s; } catch (e) {} return null; }
+  function save() { if (final) return; try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var state = load() || fresh();
+
+  function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+  function changed(i, key) { return !final && !same(state.stages[i][key], base.stages[i][key]); }
+
+  if (d.example) document.getElementById("example").hidden = false;
+  document.title = "מפת הדרכים" + (d.venture ? " — " + d.venture : "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  var rb = document.getElementById("ribbon");
+  rb.textContent = final ? "ה-Roadmap המתוקף של הקבוצה" : "טיוטה לתיקוף. הקבוצה עורכת ומאשרת שלב אחר שלב.";
+  if (final) { rb.classList.add("final"); document.getElementById("tools").hidden = true; document.getElementById("lgchg").hidden = true; document.body.classList.add("ro"); document.getElementById("lgder").lastChild.textContent = "חלק ב — הנגזרות: תוקפו עם הקבוצה"; }
+
+  function editable(tag, cls, text, label, set) {
+    var n = el(tag, (cls ? cls + " " : "") + "ed", text || "");
+    if (final) return n;
+    var before = text || "";
+    n.contentEditable = "true"; n.spellcheck = false;
+    n.setAttribute("role", "textbox"); n.setAttribute("aria-label", label); n.dataset.ph = label;
+    n.addEventListener("focus", function () { before = n.textContent; });
+    n.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); n.blur(); }
+      if (e.key === "Escape") { n.textContent = before; n.blur(); }
+    });
+    n.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var t = ((e.clipboardData || window.clipboardData).getData("text") || "").replace(/\s+/g, " ");
+      document.execCommand("insertText", false, t);
+    });
+    n.addEventListener("blur", function () { var t = n.textContent.replace(/\s+/g, " ").trim(); n.textContent = t; if (t !== before) { set(t); save(); render(); } });
+    return n;
+  }
+
+  function cellFor(s, i, r) {
+    var c = el("div", "cell" + (r.part === "skel" ? " skelcell" : ""));
+    var box = el("div", changed(i, r.key) ? "chg" : "");
+    if (r.text) {
+      box.append(editable("div", "val", s[r.key], r.label, function (t) { s[r.key] = t; }));
+    } else {
+      var ul = el("ul", "items");
+      s[r.key].forEach(function (t, j) {
+        var li = el("li");
+        li.append(editable("span", "it", t, r.label, function (v) { if (v) s[r.key][j] = v; else s[r.key].splice(j, 1); }));
+        if (!final) {
+          var x = el("button", "x", "✕"); x.type = "button"; x.setAttribute("aria-label", "מחיקת בולט");
+          x.addEventListener("click", function () {
+            var old = s[r.key][j]; s[r.key].splice(j, 1); save(); render();
+            toast("הבולט נמחק", "ביטול", function () { s[r.key].splice(j, 0, old); save(); render(); });
+          });
+          li.append(x);
+        } else li.append(el("span"));
+        ul.append(li);
+      });
+      box.append(ul);
+      if (!final) {
+        var p = el("button", "plus", "+ בולט"); p.type = "button";
+        p.addEventListener("click", function () {
+          s[r.key].push(""); render();
+          var n = document.querySelectorAll('[data-k="' + i + ':' + r.key + '"] .it'); if (n.length) n[n.length - 1].focus();
+        });
+        box.append(p);
+      }
+    }
+    c.dataset.k = i + ":" + r.key;
+    c.append(box);
+    return c;
+  }
+
+  function render() {
+    var g = document.getElementById("grid"); g.textContent = "";
+    var n = state.stages.length;
+    g.style.gridTemplateColumns = "minmax(9em, 11em) repeat(" + n + ", minmax(14em, 1fr))";
+    g.append(el("div", "cell rowlbl", ""));
+    state.stages.forEach(function (s, i) {
+      var h = el("div", "cell stagehead" + (s.approved ? " done" : ""));
+      h.append(el("span", "num", "שלב " + (i + 1)));
+      if (!final) {
+        var lab = el("label", "appr" + (s.approved ? " on" : ""));
+        var cb = el("input"); cb.type = "checkbox"; cb.checked = !!s.approved;
+        cb.addEventListener("change", function () { s.approved = cb.checked; save(); render(); });
+        lab.append(cb, document.createTextNode(s.approved ? "השלב אושר" : "סמנו כשהשלב אושר"));
+        h.append(lab);
+      }
+      g.append(h);
+    });
+    var lastPart = null;
+    ROWS.forEach(function (r) {
+      if (r.part !== lastPart) {
+        lastPart = r.part;
+        var pt = el("div", "part " + r.part);
+        pt.append(document.createTextNode(r.part === "skel" ? "חלק א — שלד ההתפתחות " : "חלק ב — שורות נגזרות "));
+        pt.append(el("span", null, final ? (r.part === "skel" ? "· החלטת הקבוצה" : "· תוקף עם הקבוצה") : (r.part === "skel" ? "· החלטת הקבוצה. שינוי כאן — לאשר מול הקבוצה" : "· טיוטה של המוח. „מה מתוך זה נכון, ומה צריך לתקן?”")));
+        g.append(pt);
+      }
+      g.append(el("div", "cell rowlbl", r.label));
+      state.stages.forEach(function (s, i) { g.append(cellFor(s, i, r)); });
+    });
+    update();
+  }
+
+  function changes() {
+    var out = [];
+    state.stages.forEach(function (s, i) {
+      ROWS.forEach(function (r) {
+        if (!changed(i, r.key)) return;
+        var b = base.stages[i][r.key], a = s[r.key];
+        var bt = r.text ? (b || "—") : (b.length ? b.join(" · ") : "—");
+        var at = r.text ? (a || "—") : (a.filter(Boolean).length ? a.filter(Boolean).join(" · ") : "—");
+        out.push({ stage: i + 1, name: s.name || base.stages[i].name, row: r.label, skel: r.part === "skel", before: bt, after: at });
+      });
+    });
+    return out;
+  }
+
+  function messages() {
+    var m = [];
+    var ch = changes(), sk = ch.filter(function (c) { return c.skel; });
+    if (sk.length) m.push(["warn", "<b>שינוי בשלד</b> — " + sk.map(function (c) { return "שלב " + c.stage + ", " + c.row; }).join(" · ") + ". השלד הוא החלטת הקבוצה מסולם ההתפתחות: לאשר את השינוי בקול."]);
+    var empty = [];
+    state.stages.forEach(function (s, i) { ROWS.forEach(function (r) { var v = s[r.key]; if (r.text ? !v : !v.filter(Boolean).length) empty.push("שלב " + (i + 1) + ", " + r.label); }); });
+    if (empty.length) m.push(["info", "<b>שורות ריקות:</b> " + empty.slice(0, 8).join(" · ") + (empty.length > 8 ? " ועוד " + (empty.length - 8) : "")]);
+    var appr = state.stages.filter(function (s) { return s.approved; }).length;
+    if (state.stages.length && appr === state.stages.length) m.push(["ok", "<b>כל השלבים אושרו.</b> לוחצים \"העתקת סיכום\" ומדביקים למוח."]);
+    return m;
+  }
+
+  function summary() {
+    var L = [];
+    L.push("# Roadmap מתוקף — " + (d.venture || ""));
+    L.push("> אופק: " + (d.horizon || "—") + " · שלבים שאושרו: " + state.stages.filter(function (s) { return s.approved; }).length + " מתוך " + state.stages.length);
+    state.stages.forEach(function (s, i) {
+      L.push(""); L.push("## שלב " + (i + 1) + " — " + (s.name || "") + (s.approved ? " ✓ אושר" : " · לא סומן כמאושר"));
+      ROWS.forEach(function (r) {
+        if (r.key === "name") return;
+        if (r.text) L.push("- **" + r.label + ":** " + (s[r.key] || "—"));
+        else { var v = s[r.key].filter(Boolean); L.push("- **" + r.label + ":**" + (v.length ? "" : " —")); v.forEach(function (t) { L.push("  - " + t); }); }
+      });
+    });
+    var ch = changes();
+    L.push(""); L.push("## מה הקבוצה שינתה בהצעה");
+    if (!ch.length) L.push("- לא שונה דבר.");
+    ch.forEach(function (c) { L.push("- " + (c.skel ? "**[שלד]** " : "") + "שלב " + c.stage + " · " + c.row + ": " + c.before + " ← " + c.after); });
+    return L.join("\n");
+  }
+
+  function update() {
+    var n = state.stages.length, appr = state.stages.filter(function (s) { return s.approved; }).length;
+    document.getElementById("count").textContent = final ? n + " שלבים" : appr + " / " + n + " שלבים אושרו";
+    var ch = changes().length;
+    document.getElementById("chgcount").textContent = final ? "" : (ch ? ch + " שינויים בהצעה" : "");
+    var mb = document.getElementById("msgs"); mb.textContent = "";
+    if (!final) messages().forEach(function (x) { var e = el("div", "msg " + x[0]); e.innerHTML = x[1]; mb.append(e); });
+    document.getElementById("summary").textContent = summary();
+    document.getElementById("meta").textContent = [d.date, d.horizon ? "אופק: " + d.horizon : "", n + " שלבים", final ? "מתוקף" : "עורכים כאן, ובסוף \"העתקת סיכום\""].filter(Boolean).join(" · ");
+  }
+
+  function toast(msg, action, fn) {
+    var t = document.getElementById("toast"), b = document.getElementById("toastBtn");
+    document.getElementById("toastMsg").textContent = msg;
+    b.hidden = !action; b.textContent = action || "";
+    b.onclick = fn ? function () { fn(); t.hidden = true; } : null;
+    t.hidden = false; clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 7000);
+  }
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = summary();
+    function fallback() {
+      var ok = false;
+      try { var ta = el("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e) {}
+      done(ok);
+    }
+    function done(ok) { if (!ok) document.getElementById("out").open = true; toast(ok ? "הסיכום הועתק — הדביקו למוח" : "לא הצלחתי להעתיק — הסיכום פתוח למטה"); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback(); } catch (e) { fallback(); }
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    var prev = JSON.stringify(state);
+    state = fresh(); save(); render();
+    toast("הלוח חזר להצעה", "ביטול", function () { state = JSON.parse(prev); save(); render(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
