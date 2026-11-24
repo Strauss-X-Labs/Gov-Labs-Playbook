@@ -57,7 +57,13 @@
   .msg.warn { background: var(--warn-bg); border-color: var(--warn); color: #7a1a12; }
   .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
   .msg.ok { background: var(--ok-bg); border-color: var(--ok); color: #14532d; }
-  .scroll { overflow-x: auto; border-radius: 12px; }
+  /* עריכה: הגלילה בתוך מסגרת בגובה המסך — פס הגלילה האופקי תמיד גלוי בתחתית החלון, והכותרות נשארות במקום */
+  .scroll { overflow: auto; max-height: calc(100vh - 9em); max-height: calc(100dvh - 9em); border-radius: 12px; border: 1px solid var(--line); background: var(--paper); }
+  .grid { border: 0 !important; border-radius: 0 !important; }
+  /* מתוקף: דף אחד, בלי גלילה אופקית — העמודות מתכווצות לרוחב המסך */
+  .ro .scroll { overflow: visible; max-height: none; }
+  .ro .grid { min-width: 0 !important; }
+  .ro body, body.ro { font-size: clamp(12px, 0.8vw, 17px); }
   .grid { display: grid; gap: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; min-width: max-content; }
   .cell { padding: 0.55em 0.7em; border-bottom: 1px solid var(--line); border-inline-start: 1px solid var(--line); min-width: 0; }
   .rowlbl { background: #fafbfc; font-weight: 800; position: sticky; inset-inline-start: 0; z-index: 2; border-inline-start: 0; }
@@ -65,7 +71,8 @@
   .part { grid-column: 1 / -1; padding: 0.4em 0.8em; font-weight: 800; color: #fff; position: sticky; inset-inline-start: 0; }
   .part.skel { background: var(--skel); } .part.der { background: var(--der); }
   .part span { font-weight: 600; opacity: 0.9; font-size: 0.9em; }
-  .stagehead { background: var(--navy-soft); display: grid; gap: 0.35em; align-content: start; }
+  .stagehead { background: var(--navy-soft); display: grid; gap: 0.35em; align-content: start; position: sticky; top: 0; z-index: 3; }
+  .corner { position: sticky; top: 0; inset-inline-start: 0; z-index: 4; background: #fafbfc; }
   .stagehead .num { font-size: 0.8em; font-weight: 800; color: var(--muted); }
   .appr { display: inline-flex; align-items: center; gap: 0.35em; font-weight: 700; font-size: 0.9em; color: var(--muted); cursor: pointer; }
   .appr input { width: 1.1em; height: 1.1em; accent-color: var(--ok); }
@@ -269,8 +276,8 @@
   function render() {
     var g = document.getElementById("grid"); g.textContent = "";
     var n = state.stages.length;
-    g.style.gridTemplateColumns = "minmax(9em, 11em) repeat(" + n + ", minmax(14em, 1fr))";
-    g.append(el("div", "cell rowlbl", ""));
+    g.style.gridTemplateColumns = final ? "minmax(6.5em, 8.5em) repeat(" + n + ", minmax(0, 1fr))" : "minmax(9em, 11em) repeat(" + n + ", minmax(14em, 1fr))";
+    g.append(el("div", "cell rowlbl corner", ""));
     state.stages.forEach(function (s, i) {
       var h = el("div", "cell stagehead" + (s.approved ? " done" : ""));
       h.append(el("span", "num", "שלב " + (i + 1)));
