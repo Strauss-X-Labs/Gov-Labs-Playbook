@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>תוכנית העבודה לבדיקה</title>
+<!--
+  תבנית לוח תוכנית העבודה לבדיקת המשתמשים — נשמר במיזם כ-תוכנית-בדיקת-משתמשים-לוח.html, ליד תוכנית-בדיקת-משתמשים.md, ונגזר מסעיף 8 שלו.
+  הסוכן (המוח, ביום 6 תהליך 3) ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
+  example: true רק בדוגמה · venture · date
+  status: "טיוטה" (ברירת מחדל — עריך, הקבוצה עורכת) / "מאושר" (התוצר הסופי — לקריאה בלבד, בלי עריכה)
+  stages: שלבי הבדיקה לפי הסדר, מימין לשמאל. ברירת המחדל — שש העמודות שלמטה. לכל שלב: name, hint (משפט קצר: מה נכנס לכאן),
+    tasks — לכל משימה: text (מה עושים, בכמה מילים), owner (תפקיד או שם), due (תאריך או מועד, טקסט חופשי). חסר — מחרוזת ריקה, לא ממציאים.
+  הקבוצה עורכת כל שדה, מוסיפה ומוחקת משימות. עריכות נשמרות בדפדפן.
+  בסוף — המנטור לוחץ "העתקת סיכום" ומדביק למוח: התוכנית כ-Markdown, ו"מה הקבוצה שינתה". המוח מעדכן את סעיף 8 ב-MD ואת הלוח.
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: header, sticky bar (task count, copy, reset), live messages, a board — a column per test stage, right to left, each a stack of task cards. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --ok: #1e7a45; --ok-bg: #e3f4ea;
+    --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
+    --chg: #8a5a00; --chg-bg: #fff6dc; --chg-line: #f0d48a; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.9vw, 19px); line-height: 1.45; padding-block: 1.2em 3em; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: hidden; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button { font: inherit; cursor: pointer; }
+  .example { background: var(--chg-bg); border: 1px dashed var(--chg); color: var(--chg); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-bottom: 0.8em; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.85em; font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .ribbon.final { background: var(--ok); }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
+  .key { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 3px; vertical-align: -0.1em; margin-inline-end: 0.3em; background: var(--chg-bg); border: 1px solid var(--chg-line); }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+  .count { font-weight: 800; font-size: 1.1em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
+  .chgcount { font-weight: 700; color: var(--chg); }
+  .tools { display: flex; gap: 0.4em; flex-wrap: wrap; margin-inline-start: auto; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .msgs { display: grid; gap: 0.4em; margin-bottom: 1em; }
+  .msg { border-radius: 8px; padding: 0.45em 0.8em; font-weight: 600; border-inline-start: 5px solid; overflow-wrap: anywhere; }
+  .msg.warn { background: var(--warn-bg); border-color: var(--warn); color: #7a1a12; }
+  .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
+  .msg.ok { background: var(--ok-bg); border-color: var(--ok); color: #14532d; }
+  /* עריכה: הלוח נגלל אופקית בתוך המסגרת, וכותרות השלבים נשארות במקום */
+  .scroll { overflow: auto; max-height: calc(100vh - 9em); max-height: calc(100dvh - 9em); border-radius: 12px; border: 1px solid var(--line); background: var(--paper); }
+  .board { display: grid; gap: 0; align-items: stretch; }
+  /* מאושר: דף אחד, בלי גלילה אופקית */
+  .ro .scroll { overflow: visible; max-height: none; }
+  .ro .board { min-width: 0; }
+  body.ro { font-size: clamp(12px, 0.8vw, 17px); }
+  .col { border-inline-start: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0; }
+  .col:first-child { border-inline-start: 0; }
+  .colhead { background: var(--navy-soft); padding: 0.6em 0.75em; position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--line); }
+  .colhead .num { font-size: 0.8em; font-weight: 800; color: var(--muted); }
+  .colhead .name { font-weight: 800; font-size: 1.1em; }
+  .colhead .hint { color: var(--muted); font-size: 0.85em; }
+  .colhead .n { float: inline-end; font-weight: 800; color: var(--navy); background: var(--paper); border-radius: 999px; padding: 0 0.55em; font-size: 0.85em; }
+  .tasks { padding: 0.6em; display: grid; gap: 0.5em; align-content: start; flex: 1; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.5em 0.6em; display: grid; gap: 0.3em; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+  .card.chg { background: var(--chg-bg); border-color: var(--chg-line); }
+  .card.new { border-style: dashed; }
+  .row1 { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.35em; align-items: start; }
+  .tnum { font-size: 0.8em; font-weight: 800; color: var(--muted); padding-top: 0.15em; }
+  .txt { font-weight: 700; overflow-wrap: anywhere; min-height: 1.4em; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.2em 0.9em; font-size: 0.88em; color: var(--muted); }
+  .meta span.lbl { font-weight: 700; }
+  .meta .f { color: var(--ink); overflow-wrap: anywhere; min-width: 3em; }
+  .meta .f.miss { color: var(--warn); }
+  .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
+  .ed:hover { background: var(--navy-soft); }
+  .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
+  .x { background: none; border: none; color: var(--muted); font-size: 0.85em; padding: 0 0.25em; border-radius: 4px; opacity: 0.55; }
+  .x:hover, .x:focus-visible { opacity: 1; color: var(--warn); }
+  .plus { background: none; border: 1px dashed var(--line); color: var(--navy); font-weight: 700; font-size: 0.9em; border-radius: 8px; padding: 0.3em 0.6em; }
+  .plus:hover { border-style: solid; }
+  .ro .ed:hover { background: none; } .ro .ed { cursor: default; }
+  details.out { margin-top: 1.2em; }
+  details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
+  details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
+  .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
+  .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
+  @media print { @page { size: A4 landscape; margin: 8mm; } .bar .tools, .x, .plus, .toast, details.out, .msgs { display: none !important; } body { background: #fff; font-size: 10px; } .scroll { overflow: visible; max-height: none; } .board { min-width: 0; } .colhead { position: static; } .card { break-inside: avoid; } .colhead, .card.chg { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+<header class="top">
+  <div>
+    <h1>תוכנית העבודה לבדיקת המשתמשים <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon" id="ribbon"></div>
+</header>
+<div class="legend" id="legend">
+  <span>כל עמודה — שלב בדרך לבדיקה. כל כרטיס — משימה: מה עושים, מי אחראי, ומתי.</span>
+  <span><span class="key"></span>שונה או נוסף על ידי הקבוצה</span>
+</div>
+
+<div class="bar" id="bar">
+  <span class="count" id="count" aria-live="polite"></span>
+  <span class="chgcount" id="chgcount"></span>
+  <div class="tools" id="tools">
+    <button type="button" class="btn primary" id="copy">העתקת סיכום</button>
+    <button type="button" class="btn" id="reset">חזרה להצעה</button>
+  </div>
+</div>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+
+<div class="scroll"><div class="board" id="board"></div></div>
+
+<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "date": "דוגמה",
+  "status": "טיוטה",
+  "stages": [
+    {
+      "name": "דאטה / קלט",
+      "hint": "הנתונים והממשקים שהבדיקה צריכה",
+      "tasks": [
+        { "text": "ממשק למנוע ההמלצות — סמל, אחוז התאמה והסבר", "owner": "המנטור הטכנולוגי", "due": "לפני תחילת הפיתוח" },
+        { "text": "רשימת משתתפים: מזהה, דרך התקשרות, מאפייני פרופיל", "owner": "נציג המשרד", "due": "" }
+      ]
+    },
+    {
+      "name": "פיתוח",
+      "hint": "מה צריך להיבנות כדי שהבדיקה תרוץ",
+      "tasks": [
+        { "text": "הזדהות ממשלתית", "owner": "צוות הפיתוח", "due": "" },
+        { "text": "נגישות", "owner": "צוות הפיתוח", "due": "" },
+        { "text": "סקר שביעות רצון בתוך המערכת", "owner": "", "due": "" }
+      ]
+    },
+    {
+      "name": "תיאום תהליך הניסוי",
+      "hint": "אישורים, שותפים ותיאומים",
+      "tasks": [
+        { "text": "תיאום מול הייעוץ המשפטי", "owner": "מוביל המיזם", "due": "" },
+        { "text": "ועדת אתיקה", "owner": "מוביל המיזם", "due": "" },
+        { "text": "נוסח הודעת הזמנה — SMS / מייל", "owner": "", "due": "" },
+        { "text": "הכשרת מוקד התמיכה", "owner": "", "due": "" }
+      ]
+    },
+    {
+      "name": "בדיקות",
+      "hint": "לפני שמשתמשים אמיתיים נכנסים",
+      "tasks": [
+        { "text": "מבדק חדירות (אבטחת מידע)", "owner": "", "due": "" },
+        { "text": "בדיקות פונקציונליות", "owner": "", "due": "" },
+        { "text": "מבחני קבלה עם עובדים שהשתתפו בתכנון", "owner": "", "due": "" }
+      ]
+    },
+    {
+      "name": "ניסוי",
+      "hint": "הבדיקה עצמה, מול המשתמשים",
+      "tasks": [
+        { "text": "המשתתפים מקבלים הודעה עם קישור והסבר קצר", "owner": "", "due": "לפי שלבי הפיילוט" },
+        { "text": "לוודא שהמשתתף קיבל את הקישור ויודע מה לעשות", "owner": "", "due": "" },
+        { "text": "ניטור פניות למוקד התמיכה", "owner": "", "due": "" }
+      ]
+    },
+    {
+      "name": "ניתוח תוצאות",
+      "hint": "מה למדנו, מול ההנחות",
+      "tasks": [
+        { "text": "ניתוח אנליטיקס", "owner": "", "due": "" },
+        { "text": "ניתוח משובים", "owner": "", "due": "" },
+        { "text": "ראיונות איכותניים עם 5 משתתפים", "owner": "", "due": "" }
+      ]
+    }
+  ]
+}
+</script>
+<script>
+(function () {
+  var raw = document.getElementById("data").textContent;
+  var d = JSON.parse(raw);
+  var final = d.status === "מאושר";
+  var KEY = "user-test-board:" + hash(raw);
+  var toastTimer = null;
+
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function clone(x) { return JSON.parse(JSON.stringify(x)); }
+  function fresh() {
+    return { stages: clone((d.stages || []).filter(Boolean)).map(function (s, i) {
+      return { name: s.name || "", hint: s.hint || "", tasks: (s.tasks || []).filter(Boolean).map(function (t, j) {
+        return { id: "o" + i + "-" + j, text: t.text || "", owner: t.owner || "", due: t.due || "" };
+      }) };
+    }) };
+  }
+  var base = fresh();
+  var baseById = {};
+  base.stages.forEach(function (s, i) { s.tasks.forEach(function (t) { baseById[t.id] = { stage: i, t: t }; }); });
+  function load() { if (final) return null; try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.stages && s.stages.length === base.stages.length) return s; } catch (e) {} return null; }
+  function save() { if (final) return; try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var state = load() || fresh();
+  function nextId() { return "n" + Date.now().toString(36) + Math.floor(Math.random() * 1e4); }
+
+  function isChanged(t, i) {
+    if (final) return false;
+    var b = baseById[t.id];
+    if (!b) return true;
+    return b.stage !== i || b.t.text !== t.text || b.t.owner !== t.owner || b.t.due !== t.due;
+  }
+
+  if (d.example) document.getElementById("example").hidden = false;
+  document.title = "תוכנית העבודה לבדיקה" + (d.venture ? " — " + d.venture : "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  var rb = document.getElementById("ribbon");
+  rb.textContent = final ? "התוכנית שאושרה" : "טיוטה. הקבוצה עורכת, מוסיפה ומוחקת משימות.";
+  if (final) { rb.classList.add("final"); document.getElementById("tools").hidden = true; document.getElementById("legend").lastElementChild.hidden = true; document.body.classList.add("ro"); }
+
+  function editable(tag, cls, text, label, set) {
+    var n = el(tag, (cls ? cls + " " : "") + "ed", text || "");
+    if (final) return n;
+    var before = text || "";
+    n.contentEditable = "true"; n.spellcheck = false;
+    n.setAttribute("role", "textbox"); n.setAttribute("aria-label", label); n.dataset.ph = label;
+    n.addEventListener("focus", function () { before = n.textContent; });
+    n.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); n.blur(); }
+      if (e.key === "Escape") { n.textContent = before; n.blur(); }
+    });
+    n.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var t = ((e.clipboardData || window.clipboardData).getData("text") || "").replace(/\s+/g, " ");
+      document.execCommand("insertText", false, t);
+    });
+    n.addEventListener("blur", function () { var t = n.textContent.replace(/\s+/g, " ").trim(); n.textContent = t; if (t !== before) { set(t); save(); render(); } });
+    return n;
+  }
+
+  function card(s, i, t, j) {
+    var c = el("div", "card" + (isChanged(t, i) ? " chg" : "") + (baseById[t.id] ? "" : " new"));
+    c.dataset.id = t.id;
+    var r1 = el("div", "row1");
+    r1.append(el("span", "tnum", (i + 1) + "." + (j + 1)));
+    r1.append(editable("div", "txt", t.text, "מה עושים", function (v) { t.text = v; }));
+    if (!final) {
+      var x = el("button", "x", "✕"); x.type = "button"; x.setAttribute("aria-label", "מחיקת משימה");
+      x.addEventListener("click", function () {
+        var old = s.tasks[j]; s.tasks.splice(j, 1); save(); render();
+        toast("המשימה נמחקה", "ביטול", function () { s.tasks.splice(j, 0, old); save(); render(); });
+      });
+      r1.append(x);
+    } else r1.append(el("span"));
+    c.append(r1);
+    var m = el("div", "meta");
+    var o = el("span"); o.append(el("span", "lbl", "אחראי: "));
+    o.append(editable("span", "f" + (!t.owner && !final ? " miss" : ""), t.owner, "מי", function (v) { t.owner = v; }));
+    var w = el("span"); w.append(el("span", "lbl", "מתי: "));
+    w.append(editable("span", "f" + (!t.due && !final ? " miss" : ""), t.due, "תאריך", function (v) { t.due = v; }));
+    if (final && !t.owner) o.lastChild.textContent = "—";
+    if (final && !t.due) w.lastChild.textContent = "—";
+    m.append(o, w);
+    c.append(m);
+    return c;
+  }
+
+  function render() {
+    var b = document.getElementById("board"); b.textContent = "";
+    var n = state.stages.length;
+    b.style.gridTemplateColumns = final ? "repeat(" + n + ", minmax(0, 1fr))" : "repeat(" + n + ", minmax(15em, 1fr))";
+    state.stages.forEach(function (s, i) {
+      var col = el("section", "col"); col.setAttribute("aria-label", s.name);
+      var h = el("div", "colhead");
+      h.append(el("span", "n", String(s.tasks.length)));
+      h.append(el("div", "num", "שלב " + (i + 1)));
+      h.append(el("div", "name", s.name));
+      if (s.hint) h.append(el("div", "hint", s.hint));
+      col.append(h);
+      var list = el("div", "tasks");
+      s.tasks.forEach(function (t, j) { list.append(card(s, i, t, j)); });
+      if (!final) {
+        var p = el("button", "plus", "+ משימה"); p.type = "button";
+        p.addEventListener("click", function () {
+          var t = { id: nextId(), text: "", owner: "", due: "" };
+          s.tasks.push(t); save(); render();
+          var nn = document.querySelector('[data-id="' + t.id + '"] .txt'); if (nn) nn.focus();
+        });
+        list.append(p);
+      }
+      col.append(list);
+      b.append(col);
+    });
+    update();
+  }
+
+  function fmt(t) { return (t.text || "—") + " · אחראי: " + (t.owner || "—") + " · מתי: " + (t.due || "—"); }
+  function changes() {
+    var out = [], seen = {};
+    state.stages.forEach(function (s, i) {
+      s.tasks.forEach(function (t) {
+        seen[t.id] = true;
+        var b = baseById[t.id];
+        if (!b) { if (t.text || t.owner || t.due) out.push("נוספה · " + s.name + ": " + fmt(t)); return; }
+        if (isChanged(t, i)) out.push("שונתה · " + s.name + ": " + fmt(b.t) + " ← " + fmt(t));
+      });
+    });
+    Object.keys(baseById).forEach(function (id) { if (!seen[id]) { var b = baseById[id]; out.push("נמחקה · " + base.stages[b.stage].name + ": " + fmt(b.t)); } });
+    return out;
+  }
+
+  function all() { var a = []; state.stages.forEach(function (s, i) { s.tasks.forEach(function (t) { if (t.text) a.push({ s: s, i: i, t: t }); }); }); return a; }
+
+  function messages() {
+    var m = [], a = all();
+    var noOwner = a.filter(function (x) { return !x.t.owner; });
+    var noDue = a.filter(function (x) { return !x.t.due; });
+    var empty = state.stages.filter(function (s) { return !s.tasks.filter(function (t) { return t.text; }).length; });
+    if (noOwner.length) m.push(["warn", "<b>משימות בלי אחראי (" + noOwner.length + "):</b> " + noOwner.slice(0, 6).map(function (x) { return esc(x.t.text); }).join(" · ") + (noOwner.length > 6 ? " ועוד " + (noOwner.length - 6) : "") + ". משימה בלי אחראי — לא תקרה."]);
+    if (noDue.length) m.push(["info", "<b>משימות בלי מועד (" + noDue.length + "):</b> " + noDue.slice(0, 6).map(function (x) { return esc(x.t.text); }).join(" · ") + (noDue.length > 6 ? " ועוד " + (noDue.length - 6) : "")]);
+    if (empty.length) m.push(["info", "<b>שלבים בלי משימות:</b> " + empty.map(function (s) { return esc(s.name); }).join(" · ")]);
+    if (a.length && !noOwner.length && !noDue.length) m.push(["ok", "<b>לכל משימה יש אחראי ומועד.</b> לוחצים \"העתקת סיכום\" ומדביקים למוח."]);
+    return m;
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function cellMd(s) { return String(s || "—").replace(/\|/g, "/"); }
+
+  function summary() {
+    var L = [];
+    L.push("# תוכנית העבודה לבדיקת המשתמשים — " + (d.venture || ""));
+    L.push("> " + all().length + " משימות ב-" + state.stages.length + " שלבים");
+    L.push("");
+    L.push("| שלב | # | משימה | אחראי | מתי |");
+    L.push("|---|---|---|---|---|");
+    state.stages.forEach(function (s, i) {
+      var ts = s.tasks.filter(function (t) { return t.text; });
+      if (!ts.length) L.push("| " + cellMd(s.name) + " | — | — | — | — |");
+      ts.forEach(function (t, j) { L.push("| " + cellMd(s.name) + " | " + (i + 1) + "." + (j + 1) + " | " + cellMd(t.text) + " | " + cellMd(t.owner) + " | " + cellMd(t.due) + " |"); });
+    });
+    var ch = changes();
+    L.push(""); L.push("## מה הקבוצה שינתה בהצעה");
+    if (!ch.length) L.push("- לא שונה דבר.");
+    ch.forEach(function (c) { L.push("- " + c); });
+    return L.join("\n");
+  }
+
+  function update() {
+    var n = all().length;
+    document.getElementById("count").textContent = n + " משימות";
+    var ch = changes().length;
+    document.getElementById("chgcount").textContent = final ? "" : (ch ? ch + " שינויים בהצעה" : "");
+    var mb = document.getElementById("msgs"); mb.textContent = "";
+    if (!final) messages().forEach(function (x) { var e = el("div", "msg " + x[0]); e.innerHTML = x[1]; mb.append(e); });
+    document.getElementById("summary").textContent = summary();
+    document.getElementById("meta").textContent = [d.date, state.stages.length + " שלבים", final ? "מאושר" : "עורכים כאן, ובסוף \"העתקת סיכום\""].filter(Boolean).join(" · ");
+  }
+
+  function toast(msg, action, fn) {
+    var t = document.getElementById("toast"), b = document.getElementById("toastBtn");
+    document.getElementById("toastMsg").textContent = msg;
+    b.hidden = !action; b.textContent = action || "";
+    b.onclick = fn ? function () { fn(); t.hidden = true; } : null;
+    t.hidden = false; clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 7000);
+  }
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = summary();
+    function fallback() {
+      var ok = false;
+      try { var ta = el("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e) {}
+      done(ok);
+    }
+    function done(ok) { if (!ok) document.getElementById("out").open = true; toast(ok ? "הסיכום הועתק — הדביקו למוח" : "לא הצלחתי להעתיק — הסיכום פתוח למטה"); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback(); } catch (e) { fallback(); }
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    var prev = JSON.stringify(state);
+    state = fresh(); save(); render();
+    toast("הלוח חזר להצעה", "ביטול", function () { state = JSON.parse(prev); save(); render(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

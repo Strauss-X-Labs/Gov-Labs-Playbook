@@ -383,17 +383,21 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
         <div class="who"><span class="lead-role">המנטור העסקי</span><span>מפעיל ה-AI</span><span>כל הקבוצה</span></div>
         <div class="say"><b>אומרים למוח (אחרי שלב 2):</b>זו הבדיקה שתכננו: [___]. תבדוק שכל משימה באמת בודקת את ההנחה שלה, אם יש השפעה על ה-PRD, ואילו נתונים צריך בשביל הבדיקה.</div>
         <div class="say"><b>אומרים למוח (שלב 5):</b>אלה מדדי ההצלחה לפיילוט שדיברנו עליהם: [___]. תרשום כטיוטה ליום 7.</div>
+        <div class="say"><b>אומרים למוח (שלב 6):</b>תכין הצעה לתוכנית העבודה לבדיקה, בלוח.</div>
+        <div class="say"><b>בסוף, מהלוח:</b>"העתקת סיכום" ← מדביקים למוח: זה הסיכום מהלוח. תתעד.</div>
         <div class="cells">
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
             <li>10′ הנחות · 10′ עיצוב הבדיקה · 10′ המוח בודק · 10′ נתונים · 5′ מדדים.</li>
-            <li>מפעיל ה-AI מעדכן את המוח בבדיקה שתוכננה.</li></ul></div>
+            <li>מפעיל ה-AI מעדכן את המוח בבדיקה שתוכננה.</li>
+            <li>שלב 6 — הקבוצה עורכת את תוכנית העבודה בלוח: מוסיפה ומוחקת משימות, ולכל משימה אחראי ומועד.</li></ul></div>
           <div class="cell input"><span class="lbl">קלט</span><ul>
             <li>PRD v1.0 — הנחות פתוחות · <span class="file">מפרט-MVP.md</span> · הממשק</li></ul></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">תוכנית-בדיקת-משתמשים.md</span>: הנחות, משימות, קריטריון הצלחה, השפעה על ה-PRD, נתונים נדרשים, טיוטת מדדים.</div></div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">תוכנית-בדיקת-משתמשים.md</span>: הנחות, משימות, קריטריון הצלחה, השפעה על ה-PRD, נתונים נדרשים, טיוטת מדדים, תוכנית העבודה · <span class="file">תוכנית-בדיקת-משתמשים-לוח.html</span> — הלוח העריך.</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
             <li>משימה, לא שאלה: "תגיש בקשה", לא "היית מגיש?"</li>
-            <li>מדדי הפיילוט — טיוטה. מאושרים ביום 7, שורה 13 במפת הדרכים.</li></ul></div>
+            <li>מדדי הפיילוט — טיוטה. מאושרים ביום 7, שורה 13 במפת הדרכים.</li>
+            <li><span class="flag">תוכנית של פיתוח בלבד</span> — "מה צריך לקרות עד שהמשתמש הראשון נכנס?"</li></ul></div>
         </div>
       </div>
     </article>
@@ -409,7 +413,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
           <div class="cell input"><span class="lbl">קלט</span><ul>
             <li><span class="file">PRD.md</span> v1.0 · <span class="file">מסמך-ארכיטקטורה.md</span> · <span class="file">תוכנית-בדיקת-משתמשים.md</span></li></ul></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">טיוטה</span><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span> — סיפורים ומשימות.</div></div>
+            <div class="out team"><span class="lbl">טיוטה</span><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span> — סיפורים ומשימות · <span class="file">בקלוג-לוח.html</span> — הלוח העריך, לעבודה על המסך.</div></div>
         </div>
       </div>
     </article>
@@ -427,7 +431,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
             <tr><td>2 · סיפורי משתמש</td><td>35′</td><td>אלה התיקונים לסיפורים [___]. תעדכן.</td><td><span class="file">בקלוג.md</span></td></tr>
             <tr><td>3 · משימות שאינן פיתוח</td><td>25′</td><td>תוסיף משימות DATA, משפטיות, שיווק וניהול שינוי, לכל אחת בעלים: [___].</td><td><span class="file">בקלוג.md</span></td></tr>
             <tr><td>4 · דרישות לא-פונקציונליות</td><td>15′</td><td>תנסח את דרישות האבטחה, הפרטיות, הנגישות והביצועים כסיפורים.</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span></td></tr>
-            <tr><td>5 · תעדוף וגבולות</td><td>20′</td><td>אלה ההכרעות על התכולה: [___]. תרשום ביומן ההחלטות.</td><td><span class="file">דרישות.md</span></td></tr>
+            <tr><td>5 · תעדוף וגבולות</td><td>20′</td><td>מכריעים "בפיילוט?" בלוח. בסוף — "העתקת סיכום" ומדביקים: זה הסיכום מהלוח. תתעד.</td><td><span class="file">בקלוג.md</span> · <span class="file">דרישות.md</span> — יומן ההחלטות</td></tr>
             <tr><td>6 · סדר בנייה</td><td>25′</td><td>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך.</td><td><span class="file">תוכנית-בנייה.md</span></td></tr>
             <tr><td>7 · סקירה</td><td>15′</td><td>תריץ סקירה על הבקלוג.</td><td>ממצאים</td></tr>
             <tr><td>8 · שאלות ל-Q&amp;A</td><td>10′</td><td>תחלץ שאלות ל-Q&amp;A מהבקלוג. — ואחרי שאישרתם: תכניס אותן לקובץ של יום 8.</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td></tr>
@@ -435,6 +439,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
         </table></div>
         <div class="cells">
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
+            <li>שלבים 2–5 — עובדים בלוח, על המסך: עורכים, מוסיפים ומוחקים סיפורים, קריטריונים ומשימות.</li>
             <li>עוברים על הסיפורים בקבוצות של 3–5.</li>
             <li>הארכיטקט מאשר את סדר הבנייה.</li>
             <li>עוברים על שאלות ה-Q&amp;A לפני שהן נכנסות.</li></ul></div>
@@ -501,8 +506,9 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <tr><td>11:35</td><td>עלו השאלות: [___]. תוסיף לשאלות הפתוחות.</td><td>שאלות עם בעלים ותאריך</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
       <tr><td>12:05</td><td>זו הבדיקה שתכננו: [___]. תבדוק שהיא בודקת מה שרצינו, השפעה על ה-PRD, ואילו נתונים צריך.</td><td>ממצאים, השפעה על ה-PRD, נתונים</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span></td></tr>
       <tr><td>12:25</td><td>אלה מדדי ההצלחה לפיילוט: [___]. תרשום כטיוטה ליום 7.</td><td>טיוטת מדדים</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span>, סעיף 7</td></tr>
-      <tr><td>12:30</td><td>תכין הצעה לבקלוג.</td><td>דרישות, סיפורים ומשימות</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span></td></tr>
-      <tr><td>13:15–15:20</td><td>תיקונים, משימות, NFR, הכרעות תכולה — ראו תהליך 4.</td><td>עדכון הבקלוג ויומן ההחלטות</td><td><span class="file">בקלוג.md</span> · <span class="file">דרישות.md</span></td></tr>
+      <tr><td>תהליך 3, שלב 6</td><td>תכין הצעה לתוכנית העבודה לבדיקה, בלוח. — ובסוף: זה הסיכום מהלוח. תתעד.</td><td>הצעה בלוח · אחר כך סעיף 8 והלוח מתועדים</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span> · <span class="file">-לוח.html</span></td></tr>
+      <tr><td>12:30</td><td>תכין הצעה לבקלוג.</td><td>דרישות, סיפורים ומשימות — וגם הלוח</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span> · <span class="file">בקלוג-לוח.html</span></td></tr>
+      <tr><td>13:15–15:20</td><td>עובדים בלוח. בסוף שלב 5: זה הסיכום מהלוח. תתעד.</td><td>עדכון הבקלוג ויומן ההחלטות</td><td><span class="file">בקלוג.md</span> · <span class="file">דרישות.md</span></td></tr>
       <tr><td>~15:20</td><td>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך.</td><td>סדר בנייה</td><td><span class="file">תוכנית-בנייה.md</span></td></tr>
       <tr><td>~15:35</td><td>תריץ סקירה על הבקלוג.</td><td>סיפור בלי קריטריון, משימה בלי בעלים, נתון בלי משימה</td><td>ממצאים</td></tr>
       <tr><td>~15:50</td><td>תחלץ שאלות ל-Q&amp;A מהבקלוג.</td><td>שאלות — לאישורכם</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td></tr>
@@ -520,9 +526,9 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
     <tbody>
       <tr><td><span class="file">PRD.md</span> <small>(ב-04-Lean-Canvas)</small></td><td>המוצר ברמת-על · ממלא את תפקיד intent.md</td><td>תהליך 1</td><td>כל הקבוצה</td></tr>
       <tr><td><span class="file">מסמך-ארכיטקטורה.md</span></td><td>רכיבים, זרימת DATA, אבטחה, תרשים זרימה, טופולוגיית שירותים, אסטרטגיית בדיקות, ADR</td><td>Draft 0 ותיקוף לפני היום · תהליך 2</td><td>ארכיטקט + IT</td></tr>
-      <tr><td><span class="file">תוכנית-בדיקת-משתמשים.md</span></td><td>הבדיקה של ה-MVP, נתונים, טיוטת מדדים</td><td>תהליך 3</td><td>הקבוצה</td></tr>
+      <tr><td><span class="file">תוכנית-בדיקת-משתמשים.md</span> + <span class="file">-לוח.html</span></td><td>הבדיקה של ה-MVP, נתונים, טיוטת מדדים, תוכנית העבודה — והלוח העריך</td><td>תהליך 3</td><td>הקבוצה</td></tr>
       <tr><td><span class="file">דרישות.md</span></td><td>כוונה, דרישות, גבולות ויומן החלטות</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
-      <tr><td><span class="file">בקלוג.md</span></td><td>סיפורים עם קריטריוני קבלה, ומשימות עם בעלים</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
+      <tr><td><span class="file">בקלוג.md</span> + <span class="file">בקלוג-לוח.html</span></td><td>סיפורים עם קריטריוני קבלה, ומשימות עם בעלים — והלוח העריך</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
       <tr><td><span class="file">תוכנית-בנייה.md</span></td><td>שלד הולך, סדר בנייה ותלויות</td><td>תהליך 4</td><td>ארכיטקט</td></tr>
       <tr><td><span class="file">קובץ-Q&amp;A.md</span> <small>(ב-08-Storytelling)</small></td><td>שאלות חדשות מהיום</td><td>סוף תהליך 4</td><td>המנטור</td></tr>
       <tr><td><span class="file">מפרט-ארכיטקטורה-ובקלוג-פיילוט.md</span></td><td>אינדקס החבילה והשער ליום 7</td><td>סוף היום</td><td>ארכיטקט · GovLabs · IT</td></tr>

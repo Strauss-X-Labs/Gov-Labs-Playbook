@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>הבקלוג</title>
+<!--
+  תבנית לוח הבקלוג — נשמר במיזם כ-בקלוג-לוח.html, ליד בקלוג.md, ונגזר ממנו.
+  הסוכן (חילוץ מפרט ובקלוג, יום 6) ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
+  example: true רק בדוגמה · venture · date
+  status: "הצעה" (ברירת מחדל — עריך, הקבוצה עובדת עליו בתהליך 4) / "מאושר" (התוצר הסופי — לקריאה בלבד, בלי עריכה)
+  stories: לכל סיפור — id (US-01), story ("כ<משתמש> אני רוצה <מה> כדי <למה>"), criteria (2–4, "כאשר… המערכת…"), reqs (FR-__), screen, value,
+    pilot: "" (לא הוכרע — ברירת המחדל: הסוכן לא מתעדף) / "כן" / "לא"
+  tasks: לכל משימה — id (T-01), text, type: "DATA" / "משפטי" / "שיווק" / "ניהול שינוי", for (US-__ / "בדיקת משתמשים"), owner, pilot — כמו בסיפור.
+  חסר — מחרוזת ריקה, לא ממציאים.
+  הקבוצה עורכת כל שדה, מוסיפה ומוחקת סיפורים, קריטריונים ומשימות, ומכריעה "בפיילוט?". עריכות נשמרות בדפדפן.
+  בסוף — המנטור לוחץ "העתקת סיכום" ומדביק למוח: הבקלוג כ-Markdown, ו"מה הקבוצה שינתה". המוח מעדכן את בקלוג.md, את יומן ההחלטות בדרישות.md, ואת הלוח.
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: header, sticky bar (counts, copy, reset), live messages, stories as a card grid, then tasks as a board — a column per task type. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --ok: #1e7a45; --ok-bg: #e3f4ea;
+    --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
+    --chg: #8a5a00; --chg-bg: #fff6dc; --chg-line: #f0d48a; --out: #6b7280; --out-bg: #f1f2f4; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.9vw, 19px); line-height: 1.45; padding-block: 1.2em 3em; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: hidden; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button, select { font: inherit; cursor: pointer; }
+  .example { background: var(--chg-bg); border: 1px dashed var(--chg); color: var(--chg); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-bottom: 0.8em; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.85em; font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  h2 { font-size: 1.3em; margin: 1.2em 0 0.5em; display: flex; gap: 0.6em; align-items: baseline; flex-wrap: wrap; }
+  h2 small { font-weight: 600; color: var(--muted); font-size: 0.7em; }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .ribbon.final { background: var(--ok); }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
+  .key { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 3px; vertical-align: -0.1em; margin-inline-end: 0.3em; }
+  .key.chg { background: var(--chg-bg); border: 1px solid var(--chg-line); } .key.out { background: var(--out-bg); border: 1px solid var(--line); }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+  .count { font-weight: 800; font-size: 1.05em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
+  .chgcount { font-weight: 700; color: var(--chg); }
+  .tools { display: flex; gap: 0.4em; flex-wrap: wrap; margin-inline-start: auto; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .msgs { display: grid; gap: 0.4em; margin-bottom: 0.6em; }
+  .msg { border-radius: 8px; padding: 0.45em 0.8em; font-weight: 600; border-inline-start: 5px solid; overflow-wrap: anywhere; }
+  .msg.warn { background: var(--warn-bg); border-color: var(--warn); color: #7a1a12; }
+  .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
+  .msg.ok { background: var(--ok-bg); border-color: var(--ok); color: #14532d; }
+  .stories { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22em), 1fr)); gap: 0.7em; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.6em 0.7em; display: grid; gap: 0.35em; align-content: start; box-shadow: 0 1px 2px rgba(0,0,0,.04); min-width: 0; }
+  .card.chg { background: var(--chg-bg); border-color: var(--chg-line); }
+  .card.new { border-style: dashed; }
+  .card.out { background: var(--out-bg); }
+  .card.out .txt { color: var(--out); }
+  .head { display: flex; gap: 0.5em; align-items: center; flex-wrap: wrap; }
+  .id { font-weight: 800; color: var(--navy); font-size: 0.9em; background: var(--navy-soft); border-radius: 6px; padding: 0 0.4em; }
+  .pilot { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 0 0.6em; font-weight: 700; font-size: 0.85em; color: var(--muted); }
+  .pilot.yes { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+  .pilot.no { background: var(--out-bg); color: var(--out); }
+  .pilot.none { border-style: dashed; }
+  .spacer { flex: 1; }
+  .txt { font-weight: 700; overflow-wrap: anywhere; min-height: 1.4em; }
+  .lbl { font-weight: 700; color: var(--muted); font-size: 0.85em; }
+  ol.crit { margin: 0; padding-inline-start: 1.3em; display: grid; gap: 0.2em; font-size: 0.95em; }
+  ol.crit li { padding-inline-start: 0.1em; }
+  .critrow { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.3em; align-items: start; }
+  .crit .it { overflow-wrap: anywhere; min-height: 1.4em; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.15em 0.9em; font-size: 0.88em; color: var(--muted); }
+  .meta .f { color: var(--ink); overflow-wrap: anywhere; min-width: 2.5em; }
+  .meta .f.miss { color: var(--warn); }
+  .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
+  .ed:hover { background: var(--navy-soft); }
+  .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
+  .x { background: none; border: none; color: var(--muted); font-size: 0.85em; padding: 0 0.25em; border-radius: 4px; opacity: 0.55; }
+  .x:hover, .x:focus-visible { opacity: 1; color: var(--warn); }
+  .plus { background: none; border: 1px dashed var(--line); color: var(--navy); font-weight: 700; font-size: 0.85em; border-radius: 8px; padding: 0.2em 0.6em; justify-self: start; }
+  .plus:hover { border-style: solid; }
+  .plus.big { padding: 0.6em; font-size: 0.95em; justify-self: stretch; min-height: 4em; }
+  .typesel { border: 1px solid var(--line); border-radius: 6px; background: var(--paper); font-size: 0.82em; padding: 0 0.2em; color: var(--muted); }
+  .scroll { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); background: var(--paper); }
+  .board { display: grid; grid-template-columns: repeat(4, minmax(15em, 1fr)); }
+  .col { border-inline-start: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0; }
+  .col:first-child { border-inline-start: 0; }
+  .colhead { background: var(--navy-soft); padding: 0.55em 0.75em; border-bottom: 1px solid var(--line); font-weight: 800; }
+  .colhead small { display: block; font-weight: 600; color: var(--muted); font-size: 0.8em; }
+  .colhead .n { float: inline-end; color: var(--navy); background: var(--paper); border-radius: 999px; padding: 0 0.55em; font-size: 0.85em; }
+  .tasks { padding: 0.6em; display: grid; gap: 0.5em; align-content: start; flex: 1; }
+  .ro .ed:hover { background: none; } .ro .ed { cursor: default; } .ro .pilot { cursor: default; }
+  .ro .board { min-width: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  details.out { margin-top: 1.2em; }
+  details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
+  details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
+  .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
+  .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
+  @media print { @page { size: A4 landscape; margin: 8mm; } .bar .tools, .x, .plus, .toast, details.out, .msgs { display: none !important; } body { background: #fff; font-size: 10px; } .scroll { overflow: visible; } .board { min-width: 0; grid-template-columns: repeat(4, minmax(0, 1fr)); } .card { break-inside: avoid; } .colhead, .card.chg, .card.out, .id, .pilot { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+<header class="top">
+  <div>
+    <h1>הבקלוג <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon" id="ribbon"></div>
+</header>
+<div class="legend" id="legend">
+  <span>לחיצה על "בפיילוט?" מחליפה: לא הוכרע → כן → לא.</span>
+  <span><span class="key chg"></span>שונה או נוסף על ידי הקבוצה</span>
+  <span><span class="key out"></span>לא בפיילוט</span>
+</div>
+
+<div class="bar" id="bar">
+  <span class="count" id="count" aria-live="polite"></span>
+  <span class="chgcount" id="chgcount"></span>
+  <div class="tools" id="tools">
+    <button type="button" class="btn primary" id="copy">העתקת סיכום</button>
+    <button type="button" class="btn" id="reset">חזרה להצעה</button>
+  </div>
+</div>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+
+<h2>סיפורי משתמש <small>כל סיפור — עם 2–4 קריטריוני קבלה בדיקים, ומסך</small></h2>
+<div class="stories" id="stories"></div>
+
+<h2>משימות <small>מוצר הוא יותר מקוד — DATA, משפטי, שיווק וניהול שינוי. לכל משימה בעלים</small></h2>
+<div class="scroll"><div class="board" id="board"></div></div>
+
+<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "date": "דוגמה",
+  "status": "הצעה",
+  "stories": [
+    {
+      "id": "US-01",
+      "story": "כמגיש בקשה אני רוצה לקבל התראה על מסמך חסר כדי להשלים אותו בזמן",
+      "criteria": ["כאשר חסר מסמך בבקשה, המערכת שולחת התראה תוך 24 שעות", "כאשר המגיש לוחץ על הקישור, המערכת פותחת את מסך ההעלאה של אותו מסמך"],
+      "reqs": "FR-01", "screen": "מסך 2", "value": "שקיפות", "pilot": ""
+    },
+    {
+      "id": "US-02",
+      "story": "כמגיש בקשה אני רוצה להעלות מסמך מהטלפון כדי לא להגיע ללשכה",
+      "criteria": ["כאשר המגיש מעלה קובץ PDF או תמונה עד 10MB, המערכת שומרת אותו ומאשרת קבלה"],
+      "reqs": "FR-02", "screen": "מסך 3", "value": "חיסכון בזמן", "pilot": ""
+    },
+    {
+      "id": "US-03",
+      "story": "כפקיד אני רוצה לראות אילו בקשות עדיין חסרות מסמך כדי לטפל קודם בתקועות",
+      "criteria": [],
+      "reqs": "FR-04", "screen": "", "value": "", "pilot": ""
+    }
+  ],
+  "tasks": [
+    { "id": "T-01", "text": "רשימת המסמכים הנדרשים לכל סוג בקשה", "type": "DATA", "for": "US-01", "owner": "נציג המשרד", "pilot": "" },
+    { "id": "T-02", "text": "נתוני בקשות לדוגמה לבדיקת המשתמשים", "type": "DATA", "for": "בדיקת משתמשים", "owner": "", "pilot": "" },
+    { "id": "T-03", "text": "אישור משפטי לשליחת התראות ב-SMS", "type": "משפטי", "for": "US-01", "owner": "", "pilot": "" },
+    { "id": "T-04", "text": "נוסח הודעה למגישים על השירות החדש", "type": "שיווק", "for": "US-01", "owner": "", "pilot": "" },
+    { "id": "T-05", "text": "הדרכה לפקידים על לוח המעקב", "type": "ניהול שינוי", "for": "US-03", "owner": "", "pilot": "" }
+  ]
+}
+</script>
+<script>
+(function () {
+  var raw = document.getElementById("data").textContent;
+  var d = JSON.parse(raw);
+  var final = d.status === "מאושר";
+  var KEY = "backlog-board:" + hash(raw);
+  var toastTimer = null;
+  var TYPES = [
+    { key: "DATA", label: "ארגון DATA", hint: "כולל הנתונים לבדיקת המשתמשים" },
+    { key: "משפטי", label: "משפטי", hint: "אישורים, פרטיות, הסכמים" },
+    { key: "שיווק", label: "שיווק", hint: "הודעה לציבור, ערוצים" },
+    { key: "ניהול שינוי", label: "ניהול שינוי", hint: "הכנת העובדים, תהליכים" }
+  ];
+  var SF = ["story", "reqs", "screen", "value", "pilot"], TF = ["text", "type", "for", "owner", "pilot"];
+
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function clone(x) { return JSON.parse(JSON.stringify(x)); }
+  function str(v) { return v == null ? "" : String(v); }
+  function fresh() {
+    return {
+      stories: (d.stories || []).filter(Boolean).map(function (s, i) {
+        return { key: "s" + i, id: str(s.id), story: str(s.story), criteria: (s.criteria || []).filter(function (c) { return c != null; }).map(str), reqs: str(s.reqs), screen: str(s.screen), value: str(s.value), pilot: str(s.pilot) };
+      }),
+      tasks: (d.tasks || []).filter(Boolean).map(function (t, i) {
+        var ty = TYPES.some(function (x) { return x.key === t.type; }) ? t.type : "DATA";
+        return { key: "t" + i, id: str(t.id), text: str(t.text), type: ty, for: str(t.for), owner: str(t.owner), pilot: str(t.pilot) };
+      })
+    };
+  }
+  var base = fresh();
+  var baseS = {}, baseT = {};
+  base.stories.forEach(function (s) { baseS[s.key] = s; });
+  base.tasks.forEach(function (t) { baseT[t.key] = t; });
+  function load() { if (final) return null; try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.stories && s.tasks) return s; } catch (e) {} return null; }
+  function save() { if (final) return; try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var state = load() || fresh();
+  function nk(p) { return p + "n" + Date.now().toString(36) + Math.floor(Math.random() * 1e4); }
+  function nextId(prefix, list) { var m = 0; list.forEach(function (x) { var n = parseInt(String(x.id).replace(/\D/g, ""), 10); if (n > m) m = n; }); return prefix + String(m + 1).padStart(2, "0"); }
+
+  function sChanged(s) { if (final) return false; var b = baseS[s.key]; if (!b) return true; return SF.some(function (f) { return b[f] !== s[f]; }) || JSON.stringify(b.criteria) !== JSON.stringify(s.criteria); }
+  function tChanged(t) { if (final) return false; var b = baseT[t.key]; if (!b) return true; return TF.some(function (f) { return b[f] !== t[f]; }); }
+
+  if (d.example) document.getElementById("example").hidden = false;
+  document.title = "הבקלוג" + (d.venture ? " — " + d.venture : "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  var rb = document.getElementById("ribbon");
+  rb.textContent = final ? "הבקלוג שאושר" : "הצעה של המוח. הקבוצה עורכת, משלימה ומכריעה מה בפיילוט.";
+  if (final) { rb.classList.add("final"); document.getElementById("tools").hidden = true; document.getElementById("legend").firstElementChild.hidden = true; document.getElementById("legend").children[1].hidden = true; document.body.classList.add("ro"); }
+
+  function editable(tag, cls, text, label, set) {
+    var n = el(tag, (cls ? cls + " " : "") + "ed", text || "");
+    if (final) { if (!text) n.textContent = "—"; return n; }
+    var before = text || "";
+    n.contentEditable = "true"; n.spellcheck = false;
+    n.setAttribute("role", "textbox"); n.setAttribute("aria-label", label); n.dataset.ph = label;
+    n.addEventListener("focus", function () { before = n.textContent; });
+    n.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); n.blur(); }
+      if (e.key === "Escape") { n.textContent = before; n.blur(); }
+    });
+    n.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var t = ((e.clipboardData || window.clipboardData).getData("text") || "").replace(/\s+/g, " ");
+      document.execCommand("insertText", false, t);
+    });
+    n.addEventListener("blur", function () { var t = n.textContent.replace(/\s+/g, " ").trim(); n.textContent = t; if (t !== before) { set(t); save(); render(); } });
+    return n;
+  }
+  function field(label, val, ph, set, warnIfEmpty) {
+    var w = el("span"); w.append(el("span", "lbl", label + ": "));
+    w.append(editable("span", "f" + (warnIfEmpty && !val && !final ? " miss" : ""), val, ph, set));
+    return w;
+  }
+  function pilotBtn(obj) {
+    var cls = obj.pilot === "כן" ? "yes" : obj.pilot === "לא" ? "no" : "none";
+    var b = el("button", "pilot " + cls, "בפיילוט? " + (obj.pilot || "לא הוכרע"));
+    b.type = "button";
+    if (final) { b.disabled = true; return b; }
+    b.addEventListener("click", function () { obj.pilot = obj.pilot === "" ? "כן" : obj.pilot === "כן" ? "לא" : ""; save(); render(); });
+    return b;
+  }
+  function delBtn(label, list, idx, what) {
+    var x = el("button", "x", "✕"); x.type = "button"; x.setAttribute("aria-label", label);
+    x.addEventListener("click", function () {
+      var old = list[idx]; list.splice(idx, 1); save(); render();
+      toast(what + " נמחק/ה", "ביטול", function () { list.splice(idx, 0, old); save(); render(); });
+    });
+    return x;
+  }
+
+  function storyCard(s, i) {
+    var c = el("article", "card" + (sChanged(s) ? " chg" : "") + (baseS[s.key] ? "" : " new") + (s.pilot === "לא" ? " out" : ""));
+    c.dataset.k = s.key;
+    var h = el("div", "head");
+    h.append(editable("span", "id", s.id, "מזהה", function (v) { s.id = v; }));
+    h.append(pilotBtn(s));
+    h.append(el("span", "spacer"));
+    if (!final) h.append(delBtn("מחיקת סיפור", state.stories, i, "הסיפור"));
+    c.append(h);
+    c.append(editable("div", "txt", s.story, "כ<משתמש> אני רוצה <מה> כדי <למה>", function (v) { s.story = v; }));
+    c.append(el("div", "lbl", "קריטריוני קבלה"));
+    var ol = el("ol", "crit");
+    s.criteria.forEach(function (t, j) {
+      var li = el("li"), row = el("div", "critrow");
+      row.append(editable("span", "it", t, "כאשר… המערכת…", function (v) { if (v) s.criteria[j] = v; else s.criteria.splice(j, 1); }));
+      if (!final) row.append(delBtn("מחיקת קריטריון", s.criteria, j, "הקריטריון")); else row.append(el("span"));
+      li.append(row); ol.append(li);
+    });
+    c.append(ol);
+    if (!final) {
+      var p = el("button", "plus", "+ קריטריון"); p.type = "button";
+      p.addEventListener("click", function () {
+        s.criteria.push(""); render();
+        var n = document.querySelectorAll('[data-k="' + s.key + '"] .crit .it'); if (n.length) n[n.length - 1].focus();
+      });
+      c.append(p);
+    }
+    var m = el("div", "meta");
+    m.append(field("מסך", s.screen, "מסך", function (v) { s.screen = v; }, true));
+    m.append(field("דרישות", s.reqs, "FR-__", function (v) { s.reqs = v; }));
+    m.append(field("ערך", s.value, "ערך מוצר", function (v) { s.value = v; }));
+    c.append(m);
+    return c;
+  }
+
+  function taskCard(t) {
+    var idx = state.tasks.indexOf(t);
+    var c = el("article", "card" + (tChanged(t) ? " chg" : "") + (baseT[t.key] ? "" : " new") + (t.pilot === "לא" ? " out" : ""));
+    c.dataset.k = t.key;
+    var h = el("div", "head");
+    h.append(editable("span", "id", t.id, "מזהה", function (v) { t.id = v; }));
+    h.append(pilotBtn(t));
+    h.append(el("span", "spacer"));
+    if (!final) {
+      var sel = el("select", "typesel"); sel.setAttribute("aria-label", "סוג המשימה");
+      TYPES.forEach(function (ty) { var o = el("option", null, ty.label); o.value = ty.key; if (ty.key === t.type) o.selected = true; sel.append(o); });
+      sel.addEventListener("change", function () { t.type = sel.value; save(); render(); });
+      h.append(sel);
+      h.append(delBtn("מחיקת משימה", state.tasks, idx, "המשימה"));
+    }
+    c.append(h);
+    c.append(editable("div", "txt", t.text, "מה צריך לקרות", function (v) { t.text = v; }));
+    var m = el("div", "meta");
+    m.append(field("בשביל", t.for, "US-__ / בדיקת משתמשים", function (v) { t.for = v; }));
+    m.append(field("בעלים", t.owner, "מי", function (v) { t.owner = v; }, true));
+    c.append(m);
+    return c;
+  }
+
+  function render() {
+    var st = document.getElementById("stories"); st.textContent = "";
+    state.stories.forEach(function (s, i) { st.append(storyCard(s, i)); });
+    if (!final) {
+      var p = el("button", "plus big", "+ סיפור"); p.type = "button";
+      p.addEventListener("click", function () {
+        var s = { key: nk("s"), id: nextId("US-", state.stories), story: "", criteria: [], reqs: "", screen: "", value: "", pilot: "" };
+        state.stories.push(s); save(); render();
+        var n = document.querySelector('[data-k="' + s.key + '"] .txt'); if (n) n.focus();
+      });
+      st.append(p);
+    }
+    var b = document.getElementById("board"); b.textContent = "";
+    TYPES.forEach(function (ty) {
+      var col = el("section", "col"); col.setAttribute("aria-label", ty.label);
+      var list = state.tasks.filter(function (t) { return t.type === ty.key; });
+      var h = el("div", "colhead"); h.append(el("span", "n", String(list.length)), document.createTextNode(ty.label), el("small", null, ty.hint));
+      col.append(h);
+      var box = el("div", "tasks");
+      list.forEach(function (t) { box.append(taskCard(t)); });
+      if (!final) {
+        var p = el("button", "plus", "+ משימה"); p.type = "button";
+        p.addEventListener("click", function () {
+          var t = { key: nk("t"), id: nextId("T-", state.tasks), text: "", type: ty.key, for: "", owner: "", pilot: "" };
+          state.tasks.push(t); save(); render();
+          var n = document.querySelector('[data-k="' + t.key + '"] .txt'); if (n) n.focus();
+        });
+        box.append(p);
+      }
+      col.append(box); b.append(col);
+    });
+    update();
+  }
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function md(s) { return String(s || "—").replace(/\|/g, "/"); }
+  function list(xs, f) { return xs.slice(0, 8).map(f).join(" · ") + (xs.length > 8 ? " ועוד " + (xs.length - 8) : ""); }
+  function typeLabel(k) { var t = TYPES.filter(function (x) { return x.key === k; })[0]; return t ? t.label : k; }
+
+  function messages() {
+    var m = [];
+    var S = state.stories.filter(function (s) { return s.story; }), T = state.tasks.filter(function (t) { return t.text; });
+    var noCrit = S.filter(function (s) { return !s.criteria.filter(Boolean).length; });
+    var noScreen = S.filter(function (s) { return !s.screen; });
+    var noOwner = T.filter(function (t) { return !t.owner; });
+    var undecided = S.concat(T).filter(function (x) { return !x.pilot; });
+    var noTypes = TYPES.filter(function (ty) { return !T.some(function (t) { return t.type === ty.key; }); });
+    if (noCrit.length) m.push(["warn", "<b>סיפורים בלי קריטריון קבלה:</b> " + list(noCrit, function (s) { return esc(s.id); }) + ". \"איך נדע שזה עבד?\""]);
+    if (noOwner.length) m.push(["warn", "<b>משימות בלי בעלים:</b> " + list(noOwner, function (t) { return esc(t.id); }) + ". מה שאין לו בעלים — לא יקרה."]);
+    if (noScreen.length) m.push(["info", "<b>סיפורים בלי מסך:</b> " + list(noScreen, function (s) { return esc(s.id); })]);
+    if (noTypes.length) m.push(["info", "<b>אין משימות מסוג:</b> " + noTypes.map(function (t) { return t.label; }).join(" · ") + ". מוצר הוא יותר מקוד."]);
+    if (undecided.length) m.push(["info", "<b>\"בפיילוט?\" לא הוכרע:</b> " + list(undecided, function (x) { return esc(x.id); })]);
+    if (!noCrit.length && !noOwner.length && !undecided.length && (S.length || T.length)) m.push(["ok", "<b>לכל סיפור קריטריון, לכל משימה בעלים, והכול הוכרע.</b> לוחצים \"העתקת סיכום\" ומדביקים למוח."]);
+    return m;
+  }
+
+  function fmtS(s) { return (s.story || "—") + " · קריטריונים: " + (s.criteria.filter(Boolean).join(" / ") || "—") + " · מסך: " + (s.screen || "—") + " · בפיילוט: " + (s.pilot || "לא הוכרע"); }
+  function fmtT(t) { return (t.text || "—") + " · " + typeLabel(t.type) + " · בשביל: " + (t.for || "—") + " · בעלים: " + (t.owner || "—") + " · בפיילוט: " + (t.pilot || "לא הוכרע"); }
+  function changes() {
+    var out = [], seenS = {}, seenT = {};
+    state.stories.forEach(function (s) { seenS[s.key] = 1; if (!baseS[s.key]) { if (s.story) out.push("נוסף סיפור " + s.id + ": " + fmtS(s)); } else if (sChanged(s)) out.push("שונה " + s.id + ": " + fmtS(baseS[s.key]) + " ← " + fmtS(s)); });
+    base.stories.forEach(function (s) { if (!seenS[s.key]) out.push("נמחק סיפור " + s.id + ": " + fmtS(s)); });
+    state.tasks.forEach(function (t) { seenT[t.key] = 1; if (!baseT[t.key]) { if (t.text) out.push("נוספה משימה " + t.id + ": " + fmtT(t)); } else if (tChanged(t)) out.push("שונתה " + t.id + ": " + fmtT(baseT[t.key]) + " ← " + fmtT(t)); });
+    base.tasks.forEach(function (t) { if (!seenT[t.key]) out.push("נמחקה משימה " + t.id + ": " + fmtT(t)); });
+    return out;
+  }
+
+  function summary() {
+    var L = [], S = state.stories.filter(function (s) { return s.story; }), T = state.tasks.filter(function (t) { return t.text; });
+    L.push("# בקלוג — " + (d.venture || ""));
+    L.push("> " + S.length + " סיפורים · " + T.length + " משימות · מהלוח");
+    L.push(""); L.push("## הסיפורים");
+    L.push("| מזהה | סיפור | קריטריוני קבלה | דרישות | מסך | ערך מוצר | בפיילוט? |");
+    L.push("|---|---|---|---|---|---|---|");
+    S.forEach(function (s) { var cr = s.criteria.filter(Boolean).map(function (c, j) { return (j + 1) + ". " + c; }).join(" · "); L.push("| " + [s.id, s.story, cr, s.reqs, s.screen, s.value, s.pilot || "לא הוכרע"].map(md).join(" | ") + " |"); });
+    L.push(""); L.push("## משימות");
+    L.push("| מזהה | משימה | סוג | בשביל | בעלים | בפיילוט? |");
+    L.push("|---|---|---|---|---|---|");
+    TYPES.forEach(function (ty) { T.filter(function (t) { return t.type === ty.key; }).forEach(function (t) { L.push("| " + [t.id, t.text, ty.key, t.for, t.owner, t.pilot || "לא הוכרע"].map(md).join(" | ") + " |"); }); });
+    var ch = changes();
+    L.push(""); L.push("## מה הקבוצה שינתה בהצעה");
+    if (!ch.length) L.push("- לא שונה דבר.");
+    ch.forEach(function (c) { L.push("- " + c); });
+    return L.join("\n");
+  }
+
+  function update() {
+    var S = state.stories.filter(function (s) { return s.story; }).length, T = state.tasks.filter(function (t) { return t.text; }).length;
+    document.getElementById("count").textContent = S + " סיפורים · " + T + " משימות";
+    var ch = changes().length;
+    document.getElementById("chgcount").textContent = final ? "" : (ch ? ch + " שינויים בהצעה" : "");
+    var mb = document.getElementById("msgs"); mb.textContent = "";
+    if (!final) messages().forEach(function (x) { var e = el("div", "msg " + x[0]); e.innerHTML = x[1]; mb.append(e); });
+    document.getElementById("summary").textContent = summary();
+    document.getElementById("meta").textContent = [d.date, final ? "מאושר" : "עורכים כאן, ובסוף \"העתקת סיכום\""].filter(Boolean).join(" · ");
+  }
+
+  function toast(msg, action, fn) {
+    var t = document.getElementById("toast"), b = document.getElementById("toastBtn");
+    document.getElementById("toastMsg").textContent = msg;
+    b.hidden = !action; b.textContent = action || "";
+    b.onclick = fn ? function () { fn(); t.hidden = true; } : null;
+    t.hidden = false; clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 7000);
+  }
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = summary();
+    function fallback() {
+      var ok = false;
+      try { var ta = el("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e) {}
+      done(ok);
+    }
+    function done(ok) { if (!ok) document.getElementById("out").open = true; toast(ok ? "הסיכום הועתק — הדביקו למוח" : "לא הצלחתי להעתיק — הסיכום פתוח למטה"); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback(); } catch (e) { fallback(); }
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    var prev = JSON.stringify(state);
+    state = fresh(); save(); render();
+    toast("הלוח חזר להצעה", "ביטול", function () { state = JSON.parse(prev); save(); render(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
