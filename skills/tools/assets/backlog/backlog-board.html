@@ -12,6 +12,8 @@
   status: "הצעה" (ברירת מחדל — עריך, הקבוצה עובדת עליו בתהליך 4) / "מאושר" (התוצר הסופי — לקריאה בלבד, בלי עריכה)
   stories: לכל סיפור — id (US-01), story ("כ<משתמש> אני רוצה <מה> כדי <למה>"), criteria (2–4, "כאשר… המערכת…"), reqs (FR-__), screen, value,
     pilot: "" (לא הוכרע — ברירת המחדל: הסוכן לא מתעדף) / "כן" / "לא"
+    priority: "" (ברירת המחדל — הקבוצה קובעת) / 1–5, כש-1 הכי גבוה
+    mvp: true אם הסיפור קריטי לשאלת ה-MVP — כלומר משרת רכיב שנבחר בלוח הרכיבים ביום 5 (מפרט MVP, סעיף 5) · component: שם הרכיב
   tasks: לכל משימה — id (T-01), text, type: "DATA" / "משפטי" / "שיווק" / "ניהול שינוי", for (US-__ / "בדיקת משתמשים"), owner, pilot — כמו בסיפור.
   חסר — מחרוזת ריקה, לא ממציאים.
   הקבוצה עורכת כל שדה, מוסיפה ומוחקת סיפורים, קריטריונים ומשימות, ומכריעה "בפיילוט?". עריכות נשמרות בדפדפן.
@@ -70,6 +72,14 @@
   .pilot.yes { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
   .pilot.no { background: var(--out-bg); color: var(--out); }
   .pilot.none { border-style: dashed; }
+  .prio { border: 1px solid var(--line); border-radius: 999px; background: var(--paper); font-weight: 700; font-size: 0.85em; padding: 0 0.3em; color: var(--muted); }
+  .prio.set { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .prio.p1.set { background: #7a1a12; border-color: #7a1a12; }
+  .rprio { font-weight: 800; font-size: 0.85em; background: var(--navy); color: #fff; border-radius: 999px; padding: 0 0.6em; }
+  .mvp { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 0 0.6em; font-weight: 700; font-size: 0.85em; color: var(--muted); }
+  .mvp.on { background: #fff1d6; border-color: #c98a00; color: #7a5200; }
+  .mvpline { font-size: 0.88em; color: #7a5200; font-weight: 700; }
+  .sorter { margin-inline-start: auto; font-size: 0.6em; }
   .spacer { flex: 1; }
   .txt { font-weight: 700; overflow-wrap: anywhere; min-height: 1.4em; }
   .lbl { font-weight: 700; color: var(--muted); font-size: 0.85em; }
@@ -132,7 +142,7 @@
 </div>
 <div class="msgs" id="msgs" aria-live="polite"></div>
 
-<h2>סיפורי משתמש <small>כל סיפור — עם 2–4 קריטריוני קבלה בדיקים, ומסך</small></h2>
+<h2>סיפורי משתמש <small>כל סיפור — עם 2–4 קריטריוני קבלה בדיקים, ומסך. עדיפות 1–5: 1 הכי גבוה</small><button type="button" class="btn sorter" id="sorter">מיון לפי עדיפות</button></h2>
 <div class="stories" id="stories"></div>
 
 <h2>משימות <small>מוצר הוא יותר מקוד — DATA, משפטי, שיווק וניהול שינוי. לכל משימה בעלים</small></h2>
@@ -152,19 +162,19 @@
       "id": "US-01",
       "story": "כמגיש בקשה אני רוצה לקבל התראה על מסמך חסר כדי להשלים אותו בזמן",
       "criteria": ["כאשר חסר מסמך בבקשה, המערכת שולחת התראה תוך 24 שעות", "כאשר המגיש לוחץ על הקישור, המערכת פותחת את מסך ההעלאה של אותו מסמך"],
-      "reqs": "FR-01", "screen": "מסך 2", "value": "שקיפות", "pilot": ""
+      "reqs": "FR-01", "screen": "מסך 2", "value": "שקיפות", "pilot": "", "priority": "", "mvp": true, "component": "התראה על מסמך חסר"
     },
     {
       "id": "US-02",
       "story": "כמגיש בקשה אני רוצה להעלות מסמך מהטלפון כדי לא להגיע ללשכה",
       "criteria": ["כאשר המגיש מעלה קובץ PDF או תמונה עד 10MB, המערכת שומרת אותו ומאשרת קבלה"],
-      "reqs": "FR-02", "screen": "מסך 3", "value": "חיסכון בזמן", "pilot": ""
+      "reqs": "FR-02", "screen": "מסך 3", "value": "חיסכון בזמן", "pilot": "", "priority": "", "mvp": true, "component": "העלאה מהטלפון"
     },
     {
       "id": "US-03",
       "story": "כפקיד אני רוצה לראות אילו בקשות עדיין חסרות מסמך כדי לטפל קודם בתקועות",
       "criteria": [],
-      "reqs": "FR-04", "screen": "", "value": "", "pilot": ""
+      "reqs": "FR-04", "screen": "", "value": "", "pilot": "", "priority": "", "mvp": false, "component": ""
     }
   ],
   "tasks": [
@@ -189,7 +199,7 @@
     { key: "שיווק", label: "שיווק", hint: "הודעה לציבור, ערוצים" },
     { key: "ניהול שינוי", label: "ניהול שינוי", hint: "הכנת העובדים, תהליכים" }
   ];
-  var SF = ["story", "reqs", "screen", "value", "pilot"], TF = ["text", "type", "for", "owner", "pilot"];
+  var SF = ["story", "reqs", "screen", "value", "pilot", "priority", "mvp", "component"], TF = ["text", "type", "for", "owner", "pilot"];
 
   function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -198,7 +208,7 @@
   function fresh() {
     return {
       stories: (d.stories || []).filter(Boolean).map(function (s, i) {
-        return { key: "s" + i, id: str(s.id), story: str(s.story), criteria: (s.criteria || []).filter(function (c) { return c != null; }).map(str), reqs: str(s.reqs), screen: str(s.screen), value: str(s.value), pilot: str(s.pilot) };
+        return { key: "s" + i, id: str(s.id), story: str(s.story), criteria: (s.criteria || []).filter(function (c) { return c != null; }).map(str), reqs: str(s.reqs), screen: str(s.screen), value: str(s.value), pilot: str(s.pilot), priority: /^[1-5]$/.test(str(s.priority)) ? str(s.priority) : "", mvp: s.mvp === true, component: str(s.component) };
       }),
       tasks: (d.tasks || []).filter(Boolean).map(function (t, i) {
         var ty = TYPES.some(function (x) { return x.key === t.type; }) ? t.type : "DATA";
@@ -213,6 +223,8 @@
   function load() { if (final) return null; try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.stories && s.tasks) return s; } catch (e) {} return null; }
   function save() { if (final) return; try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
   var state = load() || fresh();
+  state.stories.forEach(function (s) { if (s.priority == null) s.priority = ""; if (s.mvp == null) s.mvp = false; if (s.component == null) s.component = ""; });
+  var sortByPrio = false;
   function nk(p) { return p + "n" + Date.now().toString(36) + Math.floor(Math.random() * 1e4); }
   function nextId(prefix, list) { var m = 0; list.forEach(function (x) { var n = parseInt(String(x.id).replace(/\D/g, ""), 10); if (n > m) m = n; }); return prefix + String(m + 1).padStart(2, "0"); }
 
@@ -273,10 +285,22 @@
     var h = el("div", "head");
     h.append(editable("span", "id", s.id, "מזהה", function (v) { s.id = v; }));
     h.append(pilotBtn(s));
+    if (final) { if (s.priority) h.append(el("span", "rprio", "עדיפות " + s.priority)); }
+    else {
+      var pr = el("select", "prio" + (s.priority ? " set p" + s.priority : "")); pr.setAttribute("aria-label", "עדיפות, 1 הכי גבוה");
+      [["", "עדיפות —"], ["1", "עדיפות 1"], ["2", "עדיפות 2"], ["3", "עדיפות 3"], ["4", "עדיפות 4"], ["5", "עדיפות 5"]].forEach(function (o) { var op = el("option", null, o[1]); op.value = o[0]; if (o[0] === s.priority) op.selected = true; pr.append(op); });
+      pr.addEventListener("change", function () { s.priority = pr.value; save(); render(); });
+      h.append(pr);
+    }
+    var mv = el("button", "mvp" + (s.mvp ? " on" : ""), s.mvp ? "★ קריטי ל-MVP" : "לא קריטי ל-MVP"); mv.type = "button";
+    mv.title = "קריטי לשאלת ה-MVP — משרת רכיב שנבחר בלוח הרכיבים";
+    if (final) { if (!s.mvp) mv.hidden = true; mv.disabled = true; } else mv.addEventListener("click", function () { s.mvp = !s.mvp; save(); render(); });
+    h.append(mv);
     h.append(el("span", "spacer"));
     if (!final) h.append(delBtn("מחיקת סיפור", state.stories, i, "הסיפור"));
     c.append(h);
     c.append(editable("div", "txt", s.story, "כ<משתמש> אני רוצה <מה> כדי <למה>", function (v) { s.story = v; }));
+    if (s.mvp) { var ml = el("div", "mvpline"); ml.append(document.createTextNode("רכיב ב-MVP: ")); ml.append(editable("span", "f", s.component, "איזה רכיב", function (v) { s.component = v; })); c.append(ml); }
     c.append(el("div", "lbl", "קריטריוני קבלה"));
     var ol = el("ol", "crit");
     s.criteria.forEach(function (t, j) {
@@ -328,7 +352,10 @@
 
   function render() {
     var st = document.getElementById("stories"); st.textContent = "";
-    state.stories.forEach(function (s, i) { st.append(storyCard(s, i)); });
+    var order = state.stories.slice();
+    if (sortByPrio) order.sort(function (a, b) { return (a.priority || "9") - (b.priority || "9") || (b.mvp - a.mvp); });
+    order.forEach(function (s) { st.append(storyCard(s, state.stories.indexOf(s))); });
+    var so = document.getElementById("sorter"); if (so) so.textContent = sortByPrio ? "מיון לפי הסדר המקורי" : "מיון לפי עדיפות";
     if (!final) {
       var p = el("button", "plus big", "+ סיפור"); p.type = "button";
       p.addEventListener("click", function () {
@@ -376,13 +403,19 @@
     if (noCrit.length) m.push(["warn", "<b>סיפורים בלי קריטריון קבלה:</b> " + list(noCrit, function (s) { return esc(s.id); }) + ". \"איך נדע שזה עבד?\""]);
     if (noOwner.length) m.push(["warn", "<b>משימות בלי בעלים:</b> " + list(noOwner, function (t) { return esc(t.id); }) + ". מה שאין לו בעלים — לא יקרה."]);
     if (noScreen.length) m.push(["info", "<b>סיפורים בלי מסך:</b> " + list(noScreen, function (s) { return esc(s.id); })]);
+    var mvpOut = S.filter(function (s) { return s.mvp && s.pilot === "לא"; });
+    if (mvpOut.length) m.push(["warn", "<b>סיפור קריטי ל-MVP מחוץ לפיילוט:</b> " + list(mvpOut, function (s) { return esc(s.id); }) + ". בלעדיו שאלת ה-MVP לא נבדקת."]);
+    var mvpLow = S.filter(function (s) { return s.mvp && (s.priority === "4" || s.priority === "5"); });
+    if (mvpLow.length) m.push(["info", "<b>סיפור קריטי ל-MVP בעדיפות נמוכה:</b> " + list(mvpLow, function (s) { return esc(s.id) + " (" + s.priority + ")"; })]);
+    var noPrio = S.filter(function (s) { return !s.priority; });
+    if (noPrio.length) m.push(["info", "<b>סיפורים בלי עדיפות:</b> " + list(noPrio, function (s) { return esc(s.id); })]);
     if (noTypes.length) m.push(["info", "<b>אין משימות מסוג:</b> " + noTypes.map(function (t) { return t.label; }).join(" · ") + ". מוצר הוא יותר מקוד."]);
     if (undecided.length) m.push(["info", "<b>\"בפיילוט?\" לא הוכרע:</b> " + list(undecided, function (x) { return esc(x.id); })]);
-    if (!noCrit.length && !noOwner.length && !undecided.length && (S.length || T.length)) m.push(["ok", "<b>לכל סיפור קריטריון, לכל משימה בעלים, והכול הוכרע.</b> לוחצים \"העתקת סיכום\" ומדביקים למוח."]);
+    if (!noCrit.length && !noOwner.length && !undecided.length && !noPrio.length && !mvpOut.length && (S.length || T.length)) m.push(["ok", "<b>לכל סיפור קריטריון, לכל משימה בעלים, והכול הוכרע.</b> לוחצים \"העתקת סיכום\" ומדביקים למוח."]);
     return m;
   }
 
-  function fmtS(s) { return (s.story || "—") + " · קריטריונים: " + (s.criteria.filter(Boolean).join(" / ") || "—") + " · מסך: " + (s.screen || "—") + " · בפיילוט: " + (s.pilot || "לא הוכרע"); }
+  function fmtS(s) { return (s.story || "—") + " · קריטריונים: " + (s.criteria.filter(Boolean).join(" / ") || "—") + " · מסך: " + (s.screen || "—") + " · בפיילוט: " + (s.pilot || "לא הוכרע") + " · עדיפות: " + (s.priority || "—") + (s.mvp ? " · קריטי ל-MVP" + (s.component ? " (" + s.component + ")" : "") : ""); }
   function fmtT(t) { return (t.text || "—") + " · " + typeLabel(t.type) + " · בשביל: " + (t.for || "—") + " · בעלים: " + (t.owner || "—") + " · בפיילוט: " + (t.pilot || "לא הוכרע"); }
   function changes() {
     var out = [], seenS = {}, seenT = {};
@@ -398,9 +431,9 @@
     L.push("# בקלוג — " + (d.venture || ""));
     L.push("> " + S.length + " סיפורים · " + T.length + " משימות · מהלוח");
     L.push(""); L.push("## הסיפורים");
-    L.push("| מזהה | סיפור | קריטריוני קבלה | דרישות | מסך | ערך מוצר | בפיילוט? |");
-    L.push("|---|---|---|---|---|---|---|");
-    S.forEach(function (s) { var cr = s.criteria.filter(Boolean).map(function (c, j) { return (j + 1) + ". " + c; }).join(" · "); L.push("| " + [s.id, s.story, cr, s.reqs, s.screen, s.value, s.pilot || "לא הוכרע"].map(md).join(" | ") + " |"); });
+    L.push("| מזהה | סיפור | קריטריוני קבלה | דרישות | מסך | ערך מוצר | קריטי ל-MVP | עדיפות | בפיילוט? |");
+    L.push("|---|---|---|---|---|---|---|---|---|");
+    S.forEach(function (s) { var cr = s.criteria.filter(Boolean).map(function (c, j) { return (j + 1) + ". " + c; }).join(" · "); L.push("| " + [s.id, s.story, cr, s.reqs, s.screen, s.value, s.mvp ? "כן" + (s.component ? " — " + s.component : "") : "לא", s.priority, s.pilot || "לא הוכרע"].map(md).join(" | ") + " |"); });
     L.push(""); L.push("## משימות");
     L.push("| מזהה | משימה | סוג | בשביל | בעלים | בפיילוט? |");
     L.push("|---|---|---|---|---|---|");
@@ -447,6 +480,9 @@
     state = fresh(); save(); render();
     toast("הלוח חזר להצעה", "ביטול", function () { state = JSON.parse(prev); save(); render(); });
   });
+
+  document.getElementById("sorter").addEventListener("click", function () { sortByPrio = !sortByPrio; render(); });
+  if (final) document.getElementById("sorter").hidden = false;
 
   render();
 })();
