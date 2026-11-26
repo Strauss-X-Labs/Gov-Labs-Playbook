@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>שאלות ותשובות</title>
+<!--
+  תבנית תצוגת ה-Q&A — נשמר במיזם כ-01-ימים/08-Storytelling/תוצרים/קובץ-Q&A.html, ליד קובץ-Q&A.md, ונגזר ממנו.
+  קובץ אחד לכל התוכנית: מי שמעדכן את ה-MD (בכל יום) בונה אותו מחדש ומפרסם לאותו קישור.
+  הסוכן ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — מכל שורות ה-MD, לפי הסדר. הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
+  example: true רק בדוגמה · venture · updated (תאריך ומאיזה מפגש, למשל "2026-11-26 · יום 7, תהליך 5")
+  items: לכל שאלה — n (#) · domain (תחום) · category (חסם שהפך לשאלה / הבהרה / הגדרה / הרחבה) · question · answer ("" = טרם נענתה)
+         owner (אחראי, "" אם טרם נקבע) · source (מקור / עודכן) · mark ("חדש" / "עודכן" / "") — מהעדכון האחרון בלבד
+  סינון: לפי קטגוריה, לפי תחום, "רק חדש ועודכן", וחיפוש חופשי. הסינון נשמר בכתובת (#), כך שאפשר לשלוח קישור לתצוגה מסוננת.
+  לקריאה בלבד — עורכים את ה-MD, לא את הדף.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: header, sticky filter bar (category chips with counts, domain chips, new-only toggle, search), then a list of question cards. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --focus: #1a5fd0;
+    --c1: #b42318; --c1-bg: #fdecea;   /* חסם שהפך לשאלה */
+    --c2: #1f5f8b; --c2-bg: #e7f0f7;   /* הבהרה */
+    --c3: #6b3fa0; --c3-bg: #f1ebf8;   /* הגדרה */
+    --c4: #1e7a45; --c4-bg: #e3f4ea;   /* הרחבה */
+    --new: #8a5a00; --new-bg: #fff6dc; --open: #8a5a00;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(15px, 1vw, 19px); line-height: 1.5; padding-block: 1.2em 3em; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: hidden; }
+  .wrap { max-width: 62em; margin: 0 auto; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button { font: inherit; cursor: pointer; }
+  .example { background: var(--new-bg); border: 1px dashed var(--new); color: var(--new); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-bottom: 0.8em; }
+  h1 { margin: 0; font-size: 2em; font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 1em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 1em; padding: 0.7em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); }
+  .bar .in { max-width: 62em; margin: 0 auto; display: grid; gap: 0.5em; }
+  .row { display: flex; gap: 0.4em; flex-wrap: wrap; align-items: center; }
+  .row .lbl { font-weight: 700; color: var(--muted); font-size: 0.88em; margin-inline-end: 0.2em; min-width: 4.2em; }
+  .chip { background: var(--paper); border: 1px solid var(--line); color: var(--ink); border-radius: 999px; padding: 0.15em 0.8em; font-weight: 700; font-size: 0.92em; display: inline-flex; align-items: center; gap: 0.4em; }
+  .chip .n { font-weight: 800; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .chip[aria-pressed="true"] { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .chip[aria-pressed="true"] .n { color: rgba(255,255,255,.8); }
+  .chip.cat .dot { width: 0.65em; height: 0.65em; border-radius: 50%; background: var(--cc, var(--muted)); }
+  .chip.cat[aria-pressed="true"] { background: var(--cc, var(--navy)); border-color: var(--cc, var(--navy)); }
+  .chip.cat[aria-pressed="true"] .dot { background: #fff; }
+  .chip:disabled { opacity: 0.45; cursor: default; }
+  .search { flex: 1 1 14em; min-width: 0; font: inherit; border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.7em; background: var(--paper); color: var(--ink); }
+  .search:focus { border-color: var(--focus); outline: none; }
+  .toggle { display: inline-flex; align-items: center; gap: 0.35em; font-weight: 700; font-size: 0.92em; color: var(--muted); cursor: pointer; }
+  .toggle input { width: 1.05em; height: 1.05em; accent-color: var(--new); margin: 0; }
+  .status { color: var(--muted); font-weight: 600; font-size: 0.9em; }
+  .clear { background: none; border: none; color: var(--focus); font-weight: 700; font-size: 0.9em; padding: 0 0.2em; text-decoration: underline; }
+  .list { display: grid; gap: 0.75em; }
+  .q { background: var(--paper); border: 1px solid var(--line); border-inline-start: 5px solid var(--cc, var(--line)); border-radius: 12px; padding: 0.85em 1.1em 0.9em; }
+  .meta { display: flex; gap: 0.4em 0.6em; flex-wrap: wrap; align-items: center; font-size: 0.86em; margin-bottom: 0.35em; }
+  .num { font-weight: 800; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .cat { background: var(--cbg, var(--navy-soft)); color: var(--cc, var(--muted)); border-radius: 999px; padding: 0 0.65em; font-weight: 700; }
+  .dom { color: var(--muted); font-weight: 700; }
+  .mark { background: var(--new-bg); color: var(--new); border: 1px solid #f0d48a; border-radius: 6px; padding: 0 0.45em; font-weight: 800; }
+  .qt { font-size: 1.12em; font-weight: 800; margin: 0 0 0.3em; text-wrap: pretty; }
+  .ans { margin: 0; overflow-wrap: anywhere; }
+  .ans.open { color: var(--open); font-weight: 700; }
+  .foot { display: flex; gap: 0.3em 1.2em; flex-wrap: wrap; margin-top: 0.5em; color: var(--muted); font-size: 0.86em; }
+  .foot b { color: var(--ink); font-weight: 700; }
+  .foot .none { color: var(--open); font-weight: 700; }
+  mark { background: #ffe58a; color: inherit; border-radius: 2px; padding: 0 1px; }
+  .empty { text-align: center; color: var(--muted); padding: 2.5em 1em; background: var(--paper); border: 1px dashed var(--line); border-radius: 12px; }
+  @media (max-width: 640px) { .bar { position: static; } .row .lbl { min-width: 0; width: 100%; } }
+  @media print { .bar { position: static; border: 0; padding: 0; margin: 0.6em 0; } .search, .toggle, .clear, .row:has(.chip.dom-chip) { display: none !important; } body { background: #fff; font-size: 11px; } .q { break-inside: avoid; } .cat, .mark, .chip, .q { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+  <h1>שאלות ותשובות <span class="tag" id="venture"></span></h1>
+  <div class="sub" id="meta"></div>
+</div>
+
+<div class="bar"><div class="in">
+  <div class="row" id="cats" role="group" aria-label="סינון לפי קטגוריה"><span class="lbl">קטגוריה</span></div>
+  <div class="row" id="doms" role="group" aria-label="סינון לפי תחום"><span class="lbl">תחום</span></div>
+  <div class="row">
+    <input class="search" id="search" type="search" placeholder="חיפוש בשאלות ובתשובות" aria-label="חיפוש">
+    <label class="toggle" id="newwrap"><input type="checkbox" id="newonly">רק חדש ועודכן</label>
+    <span class="status" id="status" aria-live="polite"></span>
+    <button type="button" class="clear" id="clear" hidden>ניקוי הסינון</button>
+  </div>
+</div></div>
+
+<div class="wrap"><div class="list" id="list"></div></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "updated": "דוגמה · יום 7, תהליך 5",
+  "items": [
+    { "n": 1, "domain": "משתמשים", "category": "חסם שהפך לשאלה", "question": "מה אם מפעל לא רוצה לדווח דרך המערכת?", "answer": "בשלב הראשון הדיווח בטופס הישן נשאר פתוח במקביל. המעבר לחובה רק אחרי שלב 2, כשיש מוקד שירות.", "owner": "נועה", "source": "יום 4 · Red Team", "mark": "" },
+    { "n": 2, "domain": "תקציב", "category": "הרחבה", "question": "למה עלות ה-AI לדיווח היא 1.2 ₪, ומה קורה אם היא פי 3?", "answer": "הערכה: לפי כ-20 אלף טוקנים לדיווח. בקצה הפסימי המחשוב עולה בכ-250,000 ₪ לתקופה, כ-9% מהתחזית.", "owner": "דניאל", "source": "יום 7 · CFO סקפטי", "mark": "חדש" },
+    { "n": 3, "domain": "טכנולוגיה", "category": "הגדרה", "question": "מה זה \"שלד הולך\"?", "answer": "גרסה ראשונה ודקה של המערכת שעוברת מקצה לקצה — מהמסך ועד הנתונים — לפני שמעמיקים בכל רכיב.", "owner": "", "source": "יום 6", "mark": "" },
+    { "n": 4, "domain": "בעלי עניין במשרד", "category": "הבהרה", "question": "מי מאשר את המעבר משלב הפיילוט לשלב המחוזי?", "answer": "", "owner": "", "source": "יום 7 · Roadmap", "mark": "חדש" },
+    { "n": 5, "domain": "תפעול", "category": "חסם שהפך לשאלה", "question": "איך המוקד יעמוד בשיא של תחילת שנת הדיווח?", "answer": "דורש החלטה נוספת של הקבוצה. האפשרויות: תגבור זמני ברבעון הראשון, או פריסת מועדי הדיווח.", "owner": "נועה", "source": "יום 7 · CFO סקפטי", "mark": "עודכן" },
+    { "n": 6, "domain": "משתמשים", "category": "הבהרה", "question": "מה קורה למידע שהמפעל מעלה?", "answer": "נשמר בענן הממשלתי, נגיש רק ליחידה המטפלת, ונמחק לפי מדיניות השמירה של המשרד.", "owner": "דניאל", "source": "יום 4 · PR", "mark": "" }
+  ]
+}
+</script>
+<script>
+(function () {
+  var d = JSON.parse(document.getElementById("data").textContent);
+  var items = (d.items || []).filter(Boolean);
+  var CATS = [
+    { name: "חסם שהפך לשאלה", c: "var(--c1)", bg: "var(--c1-bg)" },
+    { name: "הבהרה", c: "var(--c2)", bg: "var(--c2-bg)" },
+    { name: "הגדרה", c: "var(--c3)", bg: "var(--c3-bg)" },
+    { name: "הרחבה", c: "var(--c4)", bg: "var(--c4-bg)" }
+  ];
+  var catOf = {}; CATS.forEach(function (c) { catOf[c.name] = c; });
+  items.forEach(function (it) { var c = (it.category || "").trim(); if (c && !catOf[c]) { catOf[c] = { name: c, c: "var(--muted)", bg: "var(--navy-soft)" }; CATS.push(catOf[c]); } });
+  var DOMS = []; items.forEach(function (it) { var m = (it.domain || "").trim() || "ללא תחום"; if (DOMS.indexOf(m) < 0) DOMS.push(m); });
+  var f = { cat: "", dom: "", q: "", nw: false };
+
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function dom(it) { return (it.domain || "").trim() || "ללא תחום"; }
+  function isNew(it) { return !!(it.mark || "").trim(); }
+  function norm(s) { return (s || "").toLowerCase(); }
+
+  if (d.example) document.getElementById("example").hidden = false;
+  document.title = "שאלות ותשובות" + (d.venture ? " — " + d.venture : "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  var nNew = items.filter(isNew).length;
+  document.getElementById("meta").textContent = [items.length + " שאלות", nNew ? nNew + " חדשות או מעודכנות" : "", d.updated ? "עודכן: " + d.updated : ""].filter(Boolean).join(" · ");
+  if (!nNew) document.getElementById("newwrap").hidden = true;
+
+  // filters from the URL hash: #cat=…&dom=…&q=…&new=1
+  try {
+    var h = new URLSearchParams(location.hash.replace(/^#/, ""));
+    f.cat = catOf[h.get("cat")] ? h.get("cat") : "";
+    f.dom = DOMS.indexOf(h.get("dom")) >= 0 ? h.get("dom") : "";
+    f.q = h.get("q") || ""; f.nw = h.get("new") === "1" && nNew > 0;
+  } catch (e) {}
+  document.getElementById("search").value = f.q;
+  document.getElementById("newonly").checked = f.nw;
+
+  function match(it, skip) {
+    if (skip !== "cat" && f.cat && (it.category || "").trim() !== f.cat) return false;
+    if (skip !== "dom" && f.dom && dom(it) !== f.dom) return false;
+    if (f.nw && !isNew(it)) return false;
+    if (f.q) { var t = norm([it.question, it.answer, it.domain, it.category, it.owner, it.source].join(" ")); if (t.indexOf(norm(f.q)) < 0) return false; }
+    return true;
+  }
+
+  function chip(cls, label, n, pressed, onclick, cat) {
+    var b = el("button", "chip " + cls); b.type = "button"; b.setAttribute("aria-pressed", pressed ? "true" : "false");
+    if (cat) { b.style.setProperty("--cc", cat.c); b.append(el("span", "dot")); }
+    b.append(document.createTextNode(label), el("span", "n", String(n)));
+    b.disabled = !n && !pressed;
+    b.addEventListener("click", onclick);
+    return b;
+  }
+
+  function renderChips() {
+    var cats = document.getElementById("cats"), doms = document.getElementById("doms");
+    [cats, doms].forEach(function (r) { while (r.children.length > 1) r.removeChild(r.lastChild); });
+    var pool = items.filter(function (it) { return match(it, "cat"); });
+    cats.append(chip("", "הכול", pool.length, !f.cat, function () { f.cat = ""; apply(); }));
+    CATS.forEach(function (c) {
+      var n = pool.filter(function (it) { return (it.category || "").trim() === c.name; }).length;
+      cats.append(chip("cat", c.name, n, f.cat === c.name, function () { f.cat = f.cat === c.name ? "" : c.name; apply(); }, c));
+    });
+    var dpool = items.filter(function (it) { return match(it, "dom"); });
+    doms.append(chip("dom-chip", "הכול", dpool.length, !f.dom, function () { f.dom = ""; apply(); }));
+    DOMS.forEach(function (m) {
+      var n = dpool.filter(function (it) { return dom(it) === m; }).length;
+      doms.append(chip("dom-chip", m, n, f.dom === m, function () { f.dom = f.dom === m ? "" : m; apply(); }));
+    });
+    doms.hidden = DOMS.length < 2;
+  }
+
+  function hl(node, text) {
+    if (!f.q) { node.textContent = text; return; }
+    var low = norm(text), q = norm(f.q), i = 0, j;
+    while ((j = low.indexOf(q, i)) >= 0) { node.append(document.createTextNode(text.slice(i, j)), el("mark", null, text.slice(j, j + q.length))); i = j + q.length; }
+    node.append(document.createTextNode(text.slice(i)));
+  }
+
+  function renderList() {
+    var list = document.getElementById("list"); list.textContent = "";
+    var shown = items.filter(function (it) { return match(it); });
+    shown.forEach(function (it) {
+      var c = catOf[(it.category || "").trim()];
+      var card = el("article", "q"); if (c) { card.style.setProperty("--cc", c.c); card.style.setProperty("--cbg", c.bg); }
+      var m = el("div", "meta");
+      m.append(el("span", "num", "#" + (it.n != null ? it.n : "")));
+      if (it.category) m.append(el("span", "cat", it.category));
+      m.append(el("span", "dom", dom(it)));
+      if (isNew(it)) m.append(el("span", "mark", it.mark));
+      var qt = el("h2", "qt"); hl(qt, it.question || "");
+      var ans = (it.answer || "").trim();
+      var a = el("p", "ans" + (ans ? "" : " open")); if (ans) hl(a, ans); else a.textContent = "טרם נענתה";
+      var ft = el("div", "foot");
+      var ow = el("span"); ow.append(document.createTextNode("אחראי: ")); if ((it.owner || "").trim()) ow.append(el("b", null, it.owner)); else ow.append(el("span", "none", "טרם נקבע"));
+      ft.append(ow);
+      if (it.source) ft.append(el("span", null, "מקור: " + it.source));
+      card.append(m, qt, a, ft);
+      list.append(card);
+    });
+    if (!shown.length) list.append(el("div", "empty", "אין שאלות בסינון הזה."));
+    var any = f.cat || f.dom || f.q || f.nw;
+    document.getElementById("status").textContent = any ? "מוצגות " + shown.length + " מתוך " + items.length : "";
+    document.getElementById("clear").hidden = !any;
+  }
+
+  function apply() {
+    try {
+      var p = new URLSearchParams();
+      if (f.cat) p.set("cat", f.cat); if (f.dom) p.set("dom", f.dom); if (f.q) p.set("q", f.q); if (f.nw) p.set("new", "1");
+      var s = p.toString(); history.replaceState(null, "", s ? "#" + s : location.pathname + location.search);
+    } catch (e) {}
+    renderChips(); renderList();
+  }
+
+  document.getElementById("search").addEventListener("input", function (e) { f.q = e.target.value.trim(); apply(); });
+  document.getElementById("newonly").addEventListener("change", function (e) { f.nw = e.target.checked; apply(); });
+  document.getElementById("clear").addEventListener("click", function () { f = { cat: "", dom: "", q: "", nw: false }; document.getElementById("search").value = ""; document.getElementById("newonly").checked = false; apply(); });
+
+  renderChips(); renderList();
+})();
+</script>
+</body>
+</html>
