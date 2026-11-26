@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>CFO סקפטי</title>
+<!--
+  תבנית לוח ה-CFO הסקפטי — נשמר במיזם כ-תחזית-הוצאות-והשקעות-CFO.html, ליד תחזית-הוצאות-והשקעות.md, ונגזר ממנו.
+  הסוכן (תחזית הוצאות + CFO סקפטי, משימה 3) ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
+  example: true רק בדוגמה · venture · date · horizon (למשל "24 חודשים")
+  assumptions: כל הנחות היסוד מהטבלה שאושרה, לפי הסדר. לכל אחת:
+    id (H1, H2…) · type ("משתנה" / "קבועה") · item (הסעיף) · name (ההנחה) · value · unit · source (קבוצה / בנצ'מרק — <שורה> / הערכה — הסוכן) · note (נימוק במשפט, אופציונלי)
+  questions: 3–4 שאלות האתגור, לפי ההשפעה. לכל אחת:
+    assumptions (רשימת id של ההנחות שהיא מאתגרת) · question (השאלה, עם הנתון) · impact (מה קורה לתחזית — במספרים)
+  בסשן: הקבוצה כותבת תשובה לכל שאלה, ומסמנת "להוסיף ל-Q&A" (לא מסומן כברירת מחדל) לשאלות שגורם חיצוני עלול לשאול.
+  עריכות נשמרות בדפדפן. בסוף — המנטור לוחץ "העתקת סיכום" ומדביק למוח: לכל שאלה — ההנחה, השאלה, התשובה, וסימון Q&A.
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: header, sticky bar (progress, copy, reset), live messages, the assumptions table (challenged rows marked), then a card per CFO question with an answer box and a Q&A checkbox. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --ok: #1e7a45; --ok-bg: #e3f4ea;
+    --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
+    --cfo: #9a3412; --cfo-bg: #fff1e8; --cfo-line: #f5c9a8;
+    --grp: #1e7a45; --grp-bg: #e3f4ea; --bm: #1f5f8b; --bm-bg: #e7f0f7; --est: #8a5a00; --est-bg: #fff6dc;
+    --qa: #6b3fa0; --qa-bg: #f1ebf8; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.95vw, 19px); line-height: 1.45; padding-block: 1.2em 3em; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: hidden; }
+  .wrap { max-width: 78em; margin: 0 auto; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button { font: inherit; cursor: pointer; }
+  .example { background: var(--est-bg); border: 1px dashed var(--est); color: var(--est); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-bottom: 0.8em; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.85em; font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--cfo); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+  .count { font-weight: 800; font-size: 1.1em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
+  .count.qa { background: var(--qa-bg); color: var(--qa); }
+  .tools { display: flex; gap: 0.4em; flex-wrap: wrap; margin-inline-start: auto; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .msgs { display: grid; gap: 0.4em; margin-bottom: 1em; }
+  .msg { border-radius: 8px; padding: 0.45em 0.8em; font-weight: 600; border-inline-start: 5px solid; overflow-wrap: anywhere; }
+  .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
+  .msg.ok { background: var(--ok-bg); border-color: var(--ok); color: #14532d; }
+  h2 { font-size: 1.3em; font-weight: 800; margin: 1.4em 0 0.2em; }
+  h2 small { font-weight: 600; color: var(--muted); font-size: 0.72em; margin-inline-start: 0.4em; }
+  .hint { color: var(--muted); margin: 0 0 0.7em; }
+  /* הנחות היסוד */
+  .tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+  table { border-collapse: collapse; width: 100%; min-width: 46em; }
+  th, td { text-align: start; padding: 0.5em 0.7em; border-bottom: 1px solid var(--line); vertical-align: top; }
+  thead th { background: var(--navy); color: #fff; font-weight: 700; position: sticky; top: 0; }
+  tr.grp td { background: var(--navy-soft); color: var(--navy); font-weight: 800; padding-block: 0.3em; }
+  tbody tr:last-child td { border-bottom: 0; }
+  td.id { font-weight: 800; color: var(--muted); white-space: nowrap; width: 3.2em; }
+  td.val { font-weight: 800; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  td .note { display: block; color: var(--muted); font-size: 0.88em; }
+  tr.hot td { background: var(--cfo-bg); }
+  tr.hot td.id { color: var(--cfo); }
+  .src { display: inline-block; border-radius: 999px; padding: 0.05em 0.6em; font-weight: 700; font-size: 0.85em; white-space: nowrap; }
+  .src.grp { background: var(--grp-bg); color: var(--grp); } .src.bm { background: var(--bm-bg); color: var(--bm); } .src.est { background: var(--est-bg); color: var(--est); } .src.oth { background: var(--navy-soft); color: var(--muted); }
+  .qref { display: inline-block; background: var(--cfo); color: #fff; font-weight: 800; font-size: 0.8em; border-radius: 6px; padding: 0 0.45em; margin-inline-end: 0.25em; text-decoration: none; white-space: nowrap; }
+  /* שאלות ה-CFO */
+  .qs { display: grid; gap: 1em; }
+  .q { background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--cfo); border-radius: 12px; padding: 0.9em 1.1em 1em; scroll-margin-top: 5em; }
+  .q.done { border-inline-start-color: var(--ok); }
+  .qhead { display: flex; align-items: center; gap: 0.5em; flex-wrap: wrap; margin-bottom: 0.45em; }
+  .qnum { font-weight: 800; color: var(--cfo); font-size: 1.05em; }
+  .q.done .qnum { color: var(--ok); }
+  .achip { background: var(--cfo-bg); border: 1px solid var(--cfo-line); color: var(--cfo); border-radius: 999px; padding: 0.05em 0.7em; font-weight: 700; font-size: 0.88em; overflow-wrap: anywhere; }
+  .qtext { font-size: 1.2em; font-weight: 800; margin: 0 0 0.4em; text-wrap: pretty; }
+  .impact { background: #fafbfc; border: 1px solid var(--line); border-radius: 8px; padding: 0.4em 0.7em; margin-bottom: 0.7em; }
+  .impact b { color: var(--cfo); }
+  label.alab { display: block; font-weight: 700; margin-bottom: 0.25em; }
+  textarea { width: 100%; min-height: 4.5em; resize: vertical; font: inherit; color: var(--ink); background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 0.5em 0.7em; line-height: 1.45; }
+  textarea:focus { border-color: var(--focus); outline: none; box-shadow: 0 0 0 2px color-mix(in srgb, var(--focus) 25%, transparent); }
+  .qfoot { display: flex; align-items: center; justify-content: space-between; gap: 0.8em; flex-wrap: wrap; margin-top: 0.55em; }
+  .qacb { display: inline-flex; align-items: center; gap: 0.4em; font-weight: 700; color: var(--muted); cursor: pointer; border: 1px solid var(--line); border-radius: 8px; padding: 0.25em 0.7em; background: #fff; }
+  .qacb input { width: 1.15em; height: 1.15em; accent-color: var(--qa); margin: 0; }
+  .qacb.on { color: var(--qa); background: var(--qa-bg); border-color: color-mix(in srgb, var(--qa) 35%, #fff); }
+  .state { color: var(--muted); font-size: 0.9em; font-weight: 600; }
+  .q.done .state { color: var(--ok); }
+  details.out { margin-top: 1.4em; }
+  details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
+  details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
+  .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
+  .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
+  @media (max-width: 640px) { .qtext { font-size: 1.08em; } }
+  @media print { @page { size: A4; margin: 10mm; } .bar .tools, .toast, details.out, .msgs { display: none !important; } body { background: #fff; font-size: 11px; } .bar { position: static; } .q { break-inside: avoid; } thead th { position: static; } thead th, tr.grp td, tr.hot td, .src, .qref, .achip, .qacb.on { -webkit-print-color-adjust: exact; print-color-adjust: exact; } textarea { border: 1px solid #999; min-height: 3em; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+<header class="top">
+  <div>
+    <h1>CFO סקפטי <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon">אתגור ההנחות לפני שהתחזית ננעלת</div>
+</header>
+
+<div class="bar">
+  <span class="count" id="count" aria-live="polite"></span>
+  <span class="count qa" id="qacount" aria-live="polite"></span>
+  <div class="tools">
+    <button type="button" class="btn primary" id="copy">העתקת סיכום</button>
+    <button type="button" class="btn" id="reset">ניקוי התשובות</button>
+  </div>
+</div>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+
+<h2>הנחות היסוד <small id="acount"></small></h2>
+<p class="hint">כל ההנחות שהתחזית תיבנה עליהן. השורות הצבועות הן ההנחות שה-CFO מאתגר. הן נבחרו כי סטייה בהן משנה את התחזית יותר מכל השאר.</p>
+<div class="tbl"><table>
+  <thead><tr><th scope="col">#</th><th scope="col">סעיף</th><th scope="col">הנחה</th><th scope="col">ערך</th><th scope="col">יחידה</th><th scope="col">מקור</th></tr></thead>
+  <tbody id="atbody"></tbody>
+</table></div>
+
+<h2>שאלות ה-CFO <small id="qcount"></small></h2>
+<p class="hint">לכל שאלה כותבים את התשובה של הקבוצה. מסמנים "להוסיף ל-Q&amp;A" לשאלות שגם גורם חיצוני עלול לשאול.</p>
+<div class="qs" id="qs"></div>
+
+<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+</div>
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "date": "דוגמה",
+  "horizon": "24 חודשים",
+  "assumptions": [
+    { "id": "H1", "type": "משתנה", "item": "מפעלים פעילים", "name": "מפעלים בכל שלב", "value": "50 · 400 · 1,200", "unit": "מפעלים, לפי שלב", "source": "קבוצה", "note": "מ\"בעלי עניין וכמויות\" ב-Roadmap" },
+    { "id": "H2", "type": "משתנה", "item": "מחשוב / טוקנים", "name": "דיווחים למפעל", "value": "4", "unit": "דיווחים בחודש", "source": "קבוצה" },
+    { "id": "H3", "type": "משתנה", "item": "מחשוב / טוקנים", "name": "עלות AI לדיווח", "value": "1.2", "unit": "₪ לדיווח", "source": "הערכה — הסוכן", "note": "אין טוקנים בבנצ'מרק. לפי כ-20 אלף טוקנים לדיווח" },
+    { "id": "H4", "type": "משתנה", "item": "מוקד שירות", "name": "היקף המוקד", "value": "1", "unit": "משרה לכל 100 מפעלים", "source": "הערכה — הסוכן", "note": "לפי עומס פניות במוקדים ממשלתיים דומים" },
+    { "id": "H5", "type": "משתנה", "item": "מוקד שירות", "name": "שעות למשרה", "value": "165", "unit": "שעות בחודש", "source": "בנצ'מרק — ברירת מחדל" },
+    { "id": "H6", "type": "משתנה", "item": "מוקד שירות", "name": "תעריף נציג/ת", "value": "95", "unit": "₪ לשעה", "source": "קבוצה" },
+    { "id": "H7", "type": "קבועה", "item": "כוח אדם קבוע", "name": "מנהל/ת מוצר AI", "value": "0.5", "unit": "משרה · 294 ₪ לשעה", "source": "בנצ'מרק — מנהל/ת מוצר AI" },
+    { "id": "H8", "type": "קבועה", "item": "ענן ושרתים", "name": "אירוח וגיבוי", "value": "6,000", "unit": "₪ לחודש", "source": "הערכה — הסוכן", "note": "אין מחיר בבנצ'מרק" },
+    { "id": "H9", "type": "קבועה", "item": "רישיונות", "name": "כלי ניטור ותמיכה", "value": "2,500", "unit": "₪ לחודש", "source": "הערכה — הסוכן" }
+  ],
+  "questions": [
+    { "assumptions": ["H3", "H2"], "question": "עלות ה-AI היא 1.2 ₪ לדיווח. על סמך מה? אין לזה מקור בבנצ'מרק. מה קורה אם כל דיווח דורש שלוש קריאות לסוכן, ולא אחת?", "impact": "פי 3 בעלות לדיווח: המחשוב עולה בכ-250,000 ₪ לתקופה (+9% לסך התחזית)." },
+    { "assumptions": ["H4"], "question": "משרה לכל 100 מפעלים, לאורך כל השנה. מה קורה בתחילת שנת הדיווח, כשכל המפעלים מדווחים באותו חודש?", "impact": "שיא כפול ברבעון אחד בשנה: כ-190,000 ₪ נוספים לתקופה, או תור של שבועות במוקד." },
+    { "assumptions": ["H1"], "question": "1,200 מפעלים בשלב 3. מה קורה אם האימוץ הוא חצי מהצפוי?", "impact": "המשתנות יורדות בכ-35%, הקבועות לא. העלות למפעל עולה פי 1.6." },
+    { "assumptions": ["H8"], "question": "הענן קבוע: 6,000 ₪ בחודש. למה קבוע, כשמספר המפעלים גדל פי 24 בין השלב הראשון לשלישי?", "impact": "אם הענן גדל עם המפעלים, בשלב 3 הוא כ-18,000 ₪ בחודש: כ-150,000 ₪ נוספים לתקופה." }
+  ]
+}
+</script>
+<script>
+(function () {
+  var raw = document.getElementById("data").textContent;
+  var d = JSON.parse(raw);
+  var KEY = "cfo-board:" + hash(raw);
+  var toastTimer = null;
+  var A = (d.assumptions || []).filter(Boolean);
+  var Q = (d.questions || []).filter(Boolean);
+  var byId = {}; A.forEach(function (a) { byId[a.id] = a; });
+  var hot = {}; Q.forEach(function (q, i) { (q.assumptions || []).forEach(function (id) { (hot[id] = hot[id] || []).push(i + 1); }); });
+
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function fresh() { return { answers: Q.map(function () { return ""; }), qa: Q.map(function () { return false; }) }; }
+  function load() { try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.answers && s.answers.length === Q.length && s.qa && s.qa.length === Q.length) return s; } catch (e) {} return null; }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var state = load() || fresh();
+
+  function srcClass(s) { s = s || ""; if (s.indexOf("קבוצה") === 0) return "grp"; if (s.indexOf("בנצ") === 0) return "bm"; if (s.indexOf("הערכה") === 0) return "est"; return "oth"; }
+  function aLabel(a) { return a.id + " · " + a.name + ": " + a.value + " " + (a.unit || ""); }
+
+  if (d.example) document.getElementById("example").hidden = false;
+  document.title = "CFO סקפטי" + (d.venture ? " — " + d.venture : "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  document.getElementById("meta").textContent = [d.date, d.horizon ? "תקופת התחזית: " + d.horizon : "", A.length + " הנחות", Q.length + " שאלות", "עונים כאן, ובסוף \"העתקת סיכום\""].filter(Boolean).join(" · ");
+  document.getElementById("acount").textContent = A.length + " הנחות · " + Object.keys(hot).length + " מאותגרות";
+  document.getElementById("qcount").textContent = Q.length + " שאלות";
+
+  function renderAssumptions() {
+    var tb = document.getElementById("atbody"); tb.textContent = "";
+    var lastType = null;
+    A.forEach(function (a) {
+      if (a.type && a.type !== lastType) {
+        lastType = a.type;
+        var gr = el("tr", "grp"), gc = el("td", null, a.type === "קבועה" ? "הוצאות קבועות" : a.type === "משתנה" ? "הוצאות משתנות" : a.type);
+        gc.colSpan = 6; gr.append(gc); tb.append(gr);
+      }
+      var tr = el("tr", hot[a.id] ? "hot" : "");
+      tr.append(el("td", "id", a.id), el("td", null, a.item || ""));
+      var nm = el("td");
+      (hot[a.id] || []).forEach(function (n) { var r = el("a", "qref", "שאלה " + n); r.href = "#q" + n; nm.append(r); });
+      nm.append(document.createTextNode(a.name || ""));
+      if (a.note) nm.append(el("span", "note", a.note));
+      tr.append(nm, el("td", "val", a.value || "—"), el("td", null, a.unit || ""));
+      var sc = el("td"); sc.append(el("span", "src " + srcClass(a.source), a.source || "ללא מקור")); tr.append(sc);
+      tb.append(tr);
+    });
+  }
+
+  function renderQuestions() {
+    var box = document.getElementById("qs"); box.textContent = "";
+    Q.forEach(function (q, i) {
+      var card = el("section", "q"); card.id = "q" + (i + 1);
+      var head = el("div", "qhead");
+      head.append(el("span", "qnum", "שאלה " + (i + 1)));
+      (q.assumptions || []).forEach(function (id) { var a = byId[id]; head.append(el("span", "achip", a ? aLabel(a) : id)); });
+      card.append(head, el("p", "qtext", q.question || ""));
+      if (q.impact) { var im = el("div", "impact"); im.append(el("b", null, "מה על הכף: "), document.createTextNode(q.impact)); card.append(im); }
+      var lab = el("label", "alab", "התשובה של הקבוצה"); lab.htmlFor = "a" + i;
+      var ta = el("textarea"); ta.id = "a" + i; ta.value = state.answers[i] || ""; ta.placeholder = "על סמך מה ההנחה? מה עושים אם היא לא מחזיקה?";
+      ta.addEventListener("input", function () { state.answers[i] = ta.value; save(); grow(ta); mark(i); update(); });
+      var foot = el("div", "qfoot");
+      var cbl = el("label", "qacb"), cb = el("input"); cb.type = "checkbox"; cb.checked = !!state.qa[i];
+      cb.addEventListener("change", function () { state.qa[i] = cb.checked; save(); cbl.classList.toggle("on", cb.checked); update(); });
+      cbl.append(cb, document.createTextNode("להוסיף ל-Q&A"));
+      foot.append(cbl, el("span", "state"));
+      card.append(lab, ta, foot);
+      box.append(card);
+      grow(ta); mark(i); cbl.classList.toggle("on", cb.checked);
+    });
+  }
+  function grow(ta) { ta.style.height = "auto"; ta.style.height = Math.max(ta.scrollHeight + 2, 64) + "px"; }
+  function answered(i) { return !!(state.answers[i] || "").trim(); }
+  function mark(i) {
+    var c = document.getElementById("q" + (i + 1)); if (!c) return;
+    c.classList.toggle("done", answered(i));
+    c.querySelector(".state").textContent = answered(i) ? "✓ נענתה" : "עוד לא נענתה";
+  }
+
+  function summary() {
+    var L = [], n = Q.filter(function (q, i) { return answered(i); }).length, qa = state.qa.filter(Boolean).length;
+    L.push("# CFO סקפטי — התשובות של הקבוצה — " + (d.venture || ""));
+    L.push("> נענו: " + n + " מתוך " + Q.length + " · ל-Q&A: " + qa);
+    Q.forEach(function (q, i) {
+      L.push(""); L.push("## שאלה " + (i + 1));
+      L.push("- **ההנחה:** " + ((q.assumptions || []).map(function (id) { var a = byId[id]; return a ? aLabel(a) + " (" + (a.source || "ללא מקור") + ")" : id; }).join(" · ") || "—"));
+      L.push("- **השאלה:** " + (q.question || ""));
+      if (q.impact) L.push("- **מה על הכף:** " + q.impact);
+      var ans = (state.answers[i] || "").trim();
+      L.push("- **התשובה של הקבוצה:** " + (ans ? ans.replace(/\s*\n\s*/g, " / ") : "— לא נענתה"));
+      L.push("- **ל-Q&A:** " + (state.qa[i] ? "כן" : "לא"));
+    });
+    L.push(""); L.push("## להוסיף ל-Q&A");
+    if (!qa) L.push("- לא סומנה אף שאלה.");
+    Q.forEach(function (q, i) { if (state.qa[i]) L.push("- שאלה " + (i + 1) + ": " + q.question + " — התשובה: " + ((state.answers[i] || "").trim().replace(/\s*\n\s*/g, " / ") || "לא נענתה")); });
+    return L.join("\n");
+  }
+
+  function update() {
+    var n = Q.filter(function (q, i) { return answered(i); }).length, qa = state.qa.filter(Boolean).length;
+    document.getElementById("count").textContent = n + " / " + Q.length + " שאלות נענו";
+    document.getElementById("qacount").textContent = qa + " ל-Q&A";
+    var mb = document.getElementById("msgs"); mb.textContent = "";
+    var nos = A.filter(function (a) { return !a.source; }).map(function (a) { return a.id; });
+    if (nos.length) { var w = el("div", "msg info"); w.innerHTML = "<b>הנחות בלי מקור:</b> "; w.append(document.createTextNode(nos.join(" · "))); mb.append(w); }
+    if (Q.length && n === Q.length) { var o = el("div", "msg ok"); o.innerHTML = "<b>כל השאלות נענו.</b> לוחצים \"העתקת סיכום\" ומדביקים למוח."; mb.append(o); }
+    document.getElementById("summary").textContent = summary();
+  }
+
+  function toast(msg, action, fn) {
+    var t = document.getElementById("toast"), b = document.getElementById("toastBtn");
+    document.getElementById("toastMsg").textContent = msg;
+    b.hidden = !action; b.textContent = action || "";
+    b.onclick = fn ? function () { fn(); t.hidden = true; } : null;
+    t.hidden = false; clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 7000);
+  }
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = summary();
+    function fallback() {
+      var ok = false;
+      try { var ta = el("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e) {}
+      done(ok);
+    }
+    function done(ok) { if (!ok) document.getElementById("out").open = true; toast(ok ? "הסיכום הועתק — הדביקו למוח" : "לא הצלחתי להעתיק — הסיכום פתוח למטה"); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback(); } catch (e) { fallback(); }
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    var prev = JSON.stringify(state);
+    state = fresh(); save(); renderQuestions(); update();
+    toast("התשובות נוקו", "ביטול", function () { state = JSON.parse(prev); save(); renderQuestions(); update(); });
+  });
+
+  renderAssumptions(); renderQuestions(); update();
+})();
+</script>
+</body>
+</html>
