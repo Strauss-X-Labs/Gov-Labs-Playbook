@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>תוכנית הניסוי</title>
+<!--
+  תבנית לוח תוכנית הניסוי — בדיקת המשתמשים של ה-MVP. נשמר במיזם כ-תוכנית-בדיקת-משתמשים-לוח.html, ליד תוכנית-בדיקת-משתמשים.md, ונגזר ממנו.
+  המוח ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד.
+  example: true רק בדוגמה · venture · date
+  status: "הצעה" (ברירת מחדל — עריך, הקבוצה מתקפת בתהליך 3) / "מאושר" (התוצר הסופי — לקריאה בלבד, בלי עריכה)
+  hypotheses (סעיפים 1 ו-3 ב-MD): לכל הנחה — id (H1), text, source (הנחה פתוחה ב-PRD / "מה ייחשב עובד" / שאלת ה-MVP), success (מה ייחשב הצלחה),
+    tasks (משימות למשתמש שבודקות אותה — "תגיש בקשה", לא "היית מגיש?"), chosen (true — בהצעה של המוח; הקבוצה בוחרת 1–3).
+  prd (סעיף 5): רשימה — מה בבדיקה עלול לשנות את ה-PRD.
+  metrics (סעיף 7): לכל מדד — name, start, target, when. טיוטה, מאושרת ביום 7.
+  stages (סעיף 8 — תוכנית העבודה): שלבי הבדיקה לפי הסדר, מימין לשמאל. ברירת המחדל — שש העמודות שלמטה.
+    לכל שלב: name, hint, tasks — לכל משימה: text, owner, due. "דאטה / קלט" נגזר מהנתונים הנדרשים (סעיף 6).
+  חסר — מחרוזת ריקה, לא ממציאים.
+  הקבוצה עורכת כל שדה, מוסיפה ומוחקת, ובוחרת הנחות. עריכות נשמרות בדפדפן.
+  בסוף — המנטור לוחץ "העתקת סיכום" ומדביק למוח: התוכנית כ-Markdown, ו"מה הקבוצה שינתה". המוח מתעד ב-MD ומפיק את הלוח מחדש.
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  /* Layout: header, sticky bar (counts, copy, reset), live messages, then four parts: hypotheses (cards), PRD impact and pilot metrics (side by side), and the work plan board — a column per test stage, right to left. Light theme only. */
+  :root {
+    color-scheme: light;
+    --bg: #f4f5f7; --paper: #ffffff; --ink: #1c2430; --muted: #5d6878; --line: #d5dae2;
+    --navy: #1b2a4a; --navy-soft: #e8ecf3; --ok: #1e7a45; --ok-bg: #e3f4ea;
+    --warn: #b42318; --warn-bg: #fdecea; --info: #1f5f8b; --info-bg: #e7f0f7;
+    --chg: #8a5a00; --chg-bg: #fff6dc; --chg-line: #f0d48a; --out: #6b7280; --out-bg: #f1f2f4; --focus: #1a5fd0;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); }
+  body { font-family: "Assistant", "Heebo", "Arial Hebrew", Arial, sans-serif; font-size: clamp(14px, 0.9vw, 19px); line-height: 1.45; padding-block: 1.2em 3em; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); overflow-x: hidden; }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; border-radius: 4px; }
+  button { font: inherit; cursor: pointer; }
+  .example { background: var(--chg-bg); border: 1px dashed var(--chg); color: var(--chg); font-weight: 700; border-radius: 8px; padding: 0.3em 0.8em; margin-bottom: 0.8em; }
+  header.top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1em; flex-wrap: wrap; }
+  h1 { margin: 0; font-size: 1.85em; font-weight: 800; text-wrap: balance; }
+  h1 .tag { font-weight: 600; color: var(--muted); }
+  h2 { font-size: 1.3em; margin: 1.2em 0 0.5em; display: flex; gap: 0.6em; align-items: baseline; flex-wrap: wrap; }
+  h2 .no { background: var(--navy); color: #fff; border-radius: 999px; padding: 0 0.5em; font-size: 0.75em; }
+  h2 small { font-weight: 600; color: var(--muted); font-size: 0.7em; }
+  .sub { color: var(--muted); margin-top: 0.15em; }
+  .ribbon { background: var(--navy); color: #fff; font-weight: 800; padding: 0.35em 1em; border-radius: 999px; }
+  .ribbon.final { background: var(--ok); }
+  .legend { display: flex; flex-wrap: wrap; gap: 0.4em 1.2em; margin-top: 0.8em; color: var(--muted); font-size: 0.92em; align-items: center; }
+  .key { display: inline-block; width: 0.9em; height: 0.9em; border-radius: 3px; vertical-align: -0.1em; margin-inline-end: 0.3em; }
+  .key.chg { background: var(--chg-bg); border: 1px solid var(--chg-line); } .key.out { background: var(--out-bg); border: 1px solid var(--line); }
+  .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; margin: 0.9em calc(-1 * max(16px, env(safe-area-inset-left, 0px))) 0.6em; padding: 0.6em max(16px, env(safe-area-inset-left, 0px)); background: rgba(244, 245, 247, 0.97); border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 0.8em; flex-wrap: wrap; }
+  .count { font-weight: 800; font-size: 1.05em; background: var(--navy-soft); color: var(--navy); border-radius: 999px; padding: 0.15em 0.8em; white-space: nowrap; }
+  .chgcount { font-weight: 700; color: var(--chg); }
+  .tools { display: flex; gap: 0.4em; flex-wrap: wrap; margin-inline-start: auto; }
+  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.8em; font-weight: 700; color: var(--ink); }
+  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .msgs { display: grid; gap: 0.4em; margin-bottom: 0.6em; }
+  .msg { border-radius: 8px; padding: 0.45em 0.8em; font-weight: 600; border-inline-start: 5px solid; overflow-wrap: anywhere; }
+  .msg.warn { background: var(--warn-bg); border-color: var(--warn); color: #7a1a12; }
+  .msg.info { background: var(--info-bg); border-color: var(--info); color: #173f5c; }
+  .msg.ok { background: var(--ok-bg); border-color: var(--ok); color: #14532d; }
+  .ask { background: var(--paper); border: 1px solid var(--line); border-inline-start: 5px solid var(--navy); border-radius: 8px; padding: 0.45em 0.8em; font-weight: 700; margin-bottom: 0.6em; }
+  .hyps { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 22em), 1fr)); gap: 0.7em; }
+  .card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.55em 0.65em; display: grid; gap: 0.3em; align-content: start; box-shadow: 0 1px 2px rgba(0,0,0,.04); min-width: 0; }
+  .card.chg { background: var(--chg-bg); border-color: var(--chg-line); }
+  .card.new { border-style: dashed; }
+  .card.off { background: var(--out-bg); }
+  .card.off .txt { color: var(--out); }
+  .head { display: flex; gap: 0.5em; align-items: center; flex-wrap: wrap; }
+  .spacer { flex: 1; }
+  .id { font-weight: 800; color: var(--navy); font-size: 0.9em; background: var(--navy-soft); border-radius: 6px; padding: 0 0.4em; }
+  .pick { border: 1px solid var(--line); background: var(--paper); border-radius: 999px; padding: 0 0.6em; font-weight: 700; font-size: 0.85em; color: var(--muted); }
+  .pick.on { background: var(--ok-bg); border-color: var(--ok); color: var(--ok); }
+  .txt { font-weight: 700; overflow-wrap: anywhere; min-height: 1.4em; }
+  .lbl { font-weight: 700; color: var(--muted); font-size: 0.85em; }
+  .line { font-size: 0.93em; }
+  .line .f { overflow-wrap: anywhere; }
+  .f.miss { color: var(--warn); }
+  ul.items { margin: 0; padding: 0; list-style: none; display: grid; gap: 0.2em; font-size: 0.93em; }
+  ul.items li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.35em; align-items: start; }
+  ul.items li::before { content: "•"; color: var(--muted); font-weight: 800; }
+  .it { overflow-wrap: anywhere; min-height: 1.4em; }
+  .two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 24em), 1fr)); gap: 0.7em 1.2em; }
+  .two h2 { margin-top: 1em; }
+  .panel { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 0.6em 0.7em; }
+  .panel.chg { background: var(--chg-bg); border-color: var(--chg-line); }
+  table.mt { width: 100%; border-collapse: collapse; font-size: 0.93em; }
+  table.mt th { text-align: start; color: var(--muted); font-size: 0.85em; padding: 0.2em 0.3em; border-bottom: 1px solid var(--line); }
+  table.mt td { padding: 0.25em 0.3em; border-bottom: 1px solid var(--line); vertical-align: top; overflow-wrap: anywhere; }
+  table.mt tr.chg td { background: var(--chg-bg); }
+  .ed { border-radius: 4px; padding: 0 0.15em; cursor: text; }
+  .ed:hover { background: var(--navy-soft); }
+  .ed:empty::before { content: attr(data-ph); color: var(--muted); font-weight: 400; }
+  .x { background: none; border: none; color: var(--muted); font-size: 0.85em; padding: 0 0.25em; border-radius: 4px; opacity: 0.55; }
+  .x:hover, .x:focus-visible { opacity: 1; color: var(--warn); }
+  .plus { background: none; border: 1px dashed var(--line); color: var(--navy); font-weight: 700; font-size: 0.85em; border-radius: 8px; padding: 0.2em 0.6em; justify-self: start; margin-top: 0.3em; }
+  .plus:hover { border-style: solid; }
+  .plus.big { padding: 0.6em; font-size: 0.95em; justify-self: stretch; min-height: 4em; margin: 0; }
+  .scroll { overflow: auto; max-height: calc(100vh - 9em); max-height: calc(100dvh - 9em); border-radius: 12px; border: 1px solid var(--line); background: var(--paper); }
+  .board { display: grid; gap: 0; align-items: stretch; }
+  .col { border-inline-start: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0; }
+  .col:first-child { border-inline-start: 0; }
+  .colhead { background: var(--navy-soft); padding: 0.6em 0.75em; position: sticky; top: 0; z-index: 2; border-bottom: 1px solid var(--line); }
+  .colhead .num { font-size: 0.8em; font-weight: 800; color: var(--muted); }
+  .colhead .name { font-weight: 800; font-size: 1.1em; }
+  .colhead .hint { color: var(--muted); font-size: 0.85em; }
+  .colhead .n { float: inline-end; font-weight: 800; color: var(--navy); background: var(--paper); border-radius: 999px; padding: 0 0.55em; font-size: 0.85em; }
+  .tasks { padding: 0.6em; display: grid; gap: 0.5em; align-content: start; flex: 1; }
+  .row1 { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 0.35em; align-items: start; }
+  .tnum { font-size: 0.8em; font-weight: 800; color: var(--muted); padding-top: 0.15em; }
+  .meta { display: flex; flex-wrap: wrap; gap: 0.2em 0.9em; font-size: 0.88em; color: var(--muted); }
+  .meta .f { color: var(--ink); overflow-wrap: anywhere; min-width: 3em; }
+  .meta .f.miss { color: var(--warn); }
+  /* מאושר: לקריאה בלבד, דף אחד בלי גלילה אופקית */
+  .ro .ed:hover { background: none; } .ro .ed { cursor: default; } .ro .pick { cursor: default; }
+  .ro .scroll { overflow: visible; max-height: none; }
+  body.ro { font-size: clamp(12px, 0.8vw, 17px); }
+  details.out { margin-top: 1.2em; }
+  details.out summary { cursor: pointer; font-weight: 700; color: var(--muted); }
+  details.out pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.8em; font-family: inherit; margin: 0.5em 0 0; }
+  .toast { position: fixed; inset-inline: 0; bottom: calc(1.2em + env(safe-area-inset-bottom, 0px)); margin: auto; width: max-content; max-width: calc(100% - 2em); background: var(--ink); color: #fff; border-radius: 10px; padding: 0.55em 0.9em; display: flex; gap: 0.8em; align-items: center; box-shadow: 0 6px 24px rgba(0,0,0,.2); z-index: 10; }
+  .toast button { background: none; border: 1px solid rgba(255,255,255,.5); color: #fff; border-radius: 6px; padding: 0.1em 0.6em; font-weight: 700; }
+  @media print { @page { size: A4 landscape; margin: 8mm; } .bar .tools, .x, .plus, .toast, details.out, .msgs, .ask { display: none !important; } body { background: #fff; font-size: 10px; } .scroll { overflow: visible; max-height: none; } .colhead { position: static; } .card, .panel { break-inside: avoid; } .colhead, .card.chg, .card.off, .id, .pick, h2 .no { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+<header class="top">
+  <div>
+    <h1>תוכנית הניסוי <span class="tag" id="venture"></span></h1>
+    <div class="sub" id="meta"></div>
+  </div>
+  <div class="ribbon" id="ribbon"></div>
+</header>
+<div class="legend" id="legend">
+  <span>לחיצה על "נבחרה" בוחרת או מורידה הנחה. בוחרים 1–3.</span>
+  <span><span class="key chg"></span>שונה או נוסף על ידי הקבוצה</span>
+  <span><span class="key out"></span>הנחה שלא נבחרה</span>
+</div>
+
+<div class="bar" id="bar">
+  <span class="count" id="count" aria-live="polite"></span>
+  <span class="chgcount" id="chgcount"></span>
+  <div class="tools" id="tools">
+    <button type="button" class="btn primary" id="copy">העתקת סיכום</button>
+    <button type="button" class="btn" id="reset">חזרה להצעה</button>
+  </div>
+</div>
+<div class="msgs" id="msgs" aria-live="polite"></div>
+
+<h2><span class="no">1</span>מה רוצים ללמוד <small>ההנחות, מה ייחשב הצלחה, ומשימות למשתמש שבודקות כל אחת</small></h2>
+<div class="ask" id="ask">לפני שקוראים את ההצעה: "מה הדבר שאם הוא לא נכון, המוצר נופל?" — ואז משווים להנחות כאן.</div>
+<div class="hyps" id="hyps"></div>
+
+<div class="two">
+  <section>
+    <h2><span class="no">2</span>השפעה על ה-PRD <small>מה בבדיקה עלול לשנות את ה-PRD</small></h2>
+    <div class="panel" id="prd"></div>
+  </section>
+  <section>
+    <h2><span class="no">3</span>מדדי הצלחה לפיילוט <small>טיוטה — מאושרים ביום 7</small></h2>
+    <div class="panel" id="metrics"></div>
+  </section>
+</div>
+
+<h2><span class="no">4</span>תוכנית העבודה <small>כל מה שצריך לקרות עד שהבדיקה רצה ונותחה. לכל משימה אחראי ומועד</small></h2>
+<div class="scroll"><div class="board" id="board"></div></div>
+
+<details class="out" id="out"><summary>הסיכום, כ-Markdown</summary><pre id="summary"></pre></details>
+<div class="toast" id="toast" role="status" hidden><span id="toastMsg"></span><button type="button" id="toastBtn" hidden></button></div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "date": "דוגמה",
+  "status": "הצעה",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "text": "מקבלי שירות יפתחו את הקישור ויעברו על ההמלצות בלי עזרה",
+      "source": "הנחה פתוחה ב-PRD",
+      "success": "70% מהמשתתפים שקיבלו הודעה פותחים את ההמלצות תוך שבוע",
+      "tasks": ["פתח את הקישור מההודעה ומצא את המסגרת הראשונה שהומלצה לך"],
+      "chosen": true
+    },
+    {
+      "id": "H2",
+      "text": "ההסבר להתאמה מספיק כדי שמקבל השירות יבחר מסגרת",
+      "source": "שאלת ה-MVP",
+      "success": "60% בוחרים מסגרת אחת לפחות לבירור המשך",
+      "tasks": ["בחר מסגרת אחת שתרצה לברר עליה עוד, והסבר למה"],
+      "chosen": true
+    },
+    {
+      "id": "H3",
+      "text": "עובדים סוציאליים ישתמשו בפלט המערכת בשיחה",
+      "source": "\"מה ייחשב עובד\" ב-PRD",
+      "success": "",
+      "tasks": [],
+      "chosen": false
+    }
+  ],
+  "prd": ["אם ההסבר להתאמה לא מספיק — יכולת \"הסבר ההתאמה\" ב-PRD עוברת לשאלה פתוחה"],
+  "metrics": [
+    { "name": "שיעור פתיחת הקישור", "start": "—", "target": "70%", "when": "סוף הפיילוט" },
+    { "name": "שביעות רצון מקבלי השירות", "start": "", "target": "4 מתוך 5", "when": "" }
+  ],
+  "stages": [
+    { "name": "דאטה / קלט", "hint": "הנתונים והממשקים שהבדיקה צריכה", "tasks": [
+      { "text": "ממשק למנוע ההמלצות — סמל, אחוז התאמה והסבר", "owner": "המנטור הטכנולוגי", "due": "לפני תחילת הפיתוח" },
+      { "text": "רשימת משתתפים: מזהה, דרך התקשרות, מאפייני פרופיל", "owner": "נציג המשרד", "due": "" } ] },
+    { "name": "פיתוח", "hint": "מה צריך להיבנות כדי שהבדיקה תרוץ", "tasks": [
+      { "text": "הזדהות ממשלתית", "owner": "צוות הפיתוח", "due": "" },
+      { "text": "נגישות", "owner": "צוות הפיתוח", "due": "" },
+      { "text": "סקר שביעות רצון בתוך המערכת", "owner": "", "due": "" } ] },
+    { "name": "תיאום תהליך הניסוי", "hint": "אישורים, שותפים ותיאומים", "tasks": [
+      { "text": "תיאום מול הייעוץ המשפטי", "owner": "מוביל המיזם", "due": "" },
+      { "text": "ועדת אתיקה", "owner": "מוביל המיזם", "due": "" },
+      { "text": "נוסח הודעת הזמנה — SMS / מייל", "owner": "", "due": "" },
+      { "text": "הכשרת מוקד התמיכה", "owner": "", "due": "" } ] },
+    { "name": "בדיקות", "hint": "לפני שמשתמשים אמיתיים נכנסים", "tasks": [
+      { "text": "מבדק חדירות (אבטחת מידע)", "owner": "", "due": "" },
+      { "text": "בדיקות פונקציונליות", "owner": "", "due": "" },
+      { "text": "מבחני קבלה עם עובדים שהשתתפו בתכנון", "owner": "", "due": "" } ] },
+    { "name": "ניסוי", "hint": "הבדיקה עצמה, מול המשתמשים", "tasks": [
+      { "text": "המשתתפים מקבלים הודעה עם קישור והסבר קצר", "owner": "", "due": "לפי שלבי הפיילוט" },
+      { "text": "לוודא שהמשתתף קיבל את הקישור ויודע מה לעשות", "owner": "", "due": "" },
+      { "text": "ניטור פניות למוקד התמיכה", "owner": "", "due": "" } ] },
+    { "name": "ניתוח תוצאות", "hint": "מה למדנו, מול ההנחות", "tasks": [
+      { "text": "ניתוח אנליטיקס", "owner": "", "due": "" },
+      { "text": "ניתוח משובים", "owner": "", "due": "" },
+      { "text": "ראיונות איכותניים עם 5 משתתפים", "owner": "", "due": "" } ] }
+  ]
+}
+</script>
+<script>
+(function () {
+  var raw = document.getElementById("data").textContent;
+  var d = JSON.parse(raw);
+  var final = d.status === "מאושר";
+  var KEY = "user-test-board:" + hash(raw);
+  var toastTimer = null;
+
+  function hash(s) { var h = 0; for (var i = 0; i < s.length; i++) { h = (h * 31 + s.charCodeAt(i)) | 0; } return String(h); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  function str(v) { return v == null ? "" : String(v); }
+  function strs(a) { return (a || []).filter(function (x) { return x != null; }).map(str); }
+  function same(a, b) { return JSON.stringify(a) === JSON.stringify(b); }
+  function fresh() {
+    return {
+      hyps: (d.hypotheses || []).filter(Boolean).map(function (h, i) { return { key: "h" + i, id: str(h.id), text: str(h.text), source: str(h.source), success: str(h.success), tasks: strs(h.tasks), chosen: h.chosen !== false }; }),
+      prd: strs(d.prd),
+      metrics: (d.metrics || []).filter(Boolean).map(function (m, i) { return { key: "m" + i, name: str(m.name), start: str(m.start), target: str(m.target), when: str(m.when) }; }),
+      stages: (d.stages || []).filter(Boolean).map(function (s, i) {
+        return { name: str(s.name), hint: str(s.hint), tasks: (s.tasks || []).filter(Boolean).map(function (t, j) { return { key: "o" + i + "-" + j, text: str(t.text), owner: str(t.owner), due: str(t.due) }; }) };
+      })
+    };
+  }
+  var base = fresh();
+  var bH = {}, bM = {}, bT = {};
+  base.hyps.forEach(function (h) { bH[h.key] = h; });
+  base.metrics.forEach(function (m) { bM[m.key] = m; });
+  base.stages.forEach(function (s, i) { s.tasks.forEach(function (t) { bT[t.key] = { stage: i, t: t }; }); });
+  function load() { if (final) return null; try { var s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s && s.hyps && s.prd && s.metrics && s.stages && s.stages.length === base.stages.length) return s; } catch (e) {} return null; }
+  function save() { if (final) return; try { localStorage.setItem(KEY, JSON.stringify(state)); } catch (e) {} }
+  var state = load() || fresh();
+  function nk(p) { return p + "n" + Date.now().toString(36) + Math.floor(Math.random() * 1e4); }
+  function nextH() { var m = 0; state.hyps.forEach(function (h) { var n = parseInt(h.id.replace(/\D/g, ""), 10); if (n > m) m = n; }); return "H" + (m + 1); }
+
+  function hChanged(h) { if (final) return false; var b = bH[h.key]; return !b || !same(b, h); }
+  function mChanged(m) { if (final) return false; var b = bM[m.key]; return !b || !same(b, m); }
+  function tChanged(t, i) { if (final) return false; var b = bT[t.key]; if (!b) return true; return b.stage !== i || b.t.text !== t.text || b.t.owner !== t.owner || b.t.due !== t.due; }
+
+  if (d.example) document.getElementById("example").hidden = false;
+  document.title = "תוכנית הניסוי" + (d.venture ? " — " + d.venture : "");
+  document.getElementById("venture").textContent = d.venture ? "— " + d.venture : "";
+  var rb = document.getElementById("ribbon");
+  rb.textContent = final ? "תוכנית הניסוי שאושרה" : "הצעה של המוח. הקבוצה מתקפת, עורכת ובוחרת.";
+  if (final) {
+    rb.classList.add("final"); document.getElementById("tools").hidden = true; document.getElementById("ask").hidden = true;
+    var lg = document.getElementById("legend").children; lg[0].hidden = true; lg[1].hidden = true; lg[2].hidden = true;
+    document.body.classList.add("ro");
+  }
+
+  function editable(tag, cls, text, label, set) {
+    var n = el(tag, (cls ? cls + " " : "") + "ed", text || "");
+    if (final) { if (!text) n.textContent = "—"; return n; }
+    var before = text || "";
+    n.contentEditable = "true"; n.spellcheck = false;
+    n.setAttribute("role", "textbox"); n.setAttribute("aria-label", label); n.dataset.ph = label;
+    n.addEventListener("focus", function () { before = n.textContent; });
+    n.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); n.blur(); }
+      if (e.key === "Escape") { n.textContent = before; n.blur(); }
+    });
+    n.addEventListener("paste", function (e) {
+      e.preventDefault();
+      var t = ((e.clipboardData || window.clipboardData).getData("text") || "").replace(/\s+/g, " ");
+      document.execCommand("insertText", false, t);
+    });
+    n.addEventListener("blur", function () { var t = n.textContent.replace(/\s+/g, " ").trim(); n.textContent = t; if (t !== before) { set(t); save(); render(); } });
+    return n;
+  }
+  function del(label, list, idx, what) {
+    var x = el("button", "x", "✕"); x.type = "button"; x.setAttribute("aria-label", label);
+    x.addEventListener("click", function () {
+      var old = list[idx]; list.splice(idx, 1); save(); render();
+      toast(what + " נמחק/ה", "ביטול", function () { list.splice(idx, 0, old); save(); render(); });
+    });
+    return x;
+  }
+  function bullets(list, ph, label, scopeSel) {
+    var wrap = el("div");
+    var ul = el("ul", "items");
+    list.forEach(function (t, j) {
+      var li = el("li");
+      li.append(editable("span", "it", t, ph, function (v) { if (v) list[j] = v; else list.splice(j, 1); }));
+      li.append(final ? el("span") : del("מחיקה", list, j, label));
+      ul.append(li);
+    });
+    wrap.append(ul);
+    if (!final) {
+      var p = el("button", "plus", "+ " + label); p.type = "button";
+      p.addEventListener("click", function () {
+        list.push(""); render();
+        var n = document.querySelectorAll(scopeSel + " .it"); if (n.length) n[n.length - 1].focus();
+      });
+      wrap.append(p);
+    }
+    return wrap;
+  }
+  function lineField(label, val, ph, set, warn) {
+    var w = el("div", "line"); w.append(el("span", "lbl", label + ": "));
+    w.append(editable("span", "f" + (warn && !val && !final ? " miss" : ""), val, ph, set));
+    return w;
+  }
+
+  function hypCard(h, i) {
+    var c = el("article", "card" + (hChanged(h) ? " chg" : "") + (bH[h.key] ? "" : " new") + (h.chosen ? "" : " off"));
+    c.dataset.k = h.key;
+    var hd = el("div", "head");
+    hd.append(editable("span", "id", h.id, "מזהה", function (v) { h.id = v; }));
+    var b = el("button", "pick" + (h.chosen ? " on" : ""), h.chosen ? "✓ נבחרה" : "לא נבחרה"); b.type = "button";
+    if (final) b.disabled = true; else b.addEventListener("click", function () { h.chosen = !h.chosen; save(); render(); });
+    hd.append(b, el("span", "spacer"));
+    if (!final) hd.append(del("מחיקת הנחה", state.hyps, i, "ההנחה"));
+    c.append(hd);
+    c.append(editable("div", "txt", h.text, "ההנחה", function (v) { h.text = v; }));
+    c.append(lineField("מאיפה", h.source, "הנחה פתוחה ב-PRD / מה ייחשב עובד / שאלת ה-MVP", function (v) { h.source = v; }));
+    c.append(lineField("מה ייחשב הצלחה", h.success, "משפט שאפשר למדוד", function (v) { h.success = v; }, true));
+    c.append(el("div", "lbl", "משימות למשתמש"));
+    c.append(bullets(h.tasks, "תגיש… / תמצא… — לא \"היית…?\"", "משימה", '[data-k="' + h.key + '"]'));
+    return c;
+  }
+
+  function metricsPanel() {
+    var p = document.getElementById("metrics"); p.textContent = "";
+    var t = el("table", "mt"), th = el("tr");
+    ["מדד", "ערך התחלה", "ערך יעד", "תאריך מדידה", ""].forEach(function (x) { th.append(el("th", null, x)); });
+    t.append(th);
+    state.metrics.forEach(function (m, i) {
+      var tr = el("tr", mChanged(m) ? "chg" : ""); tr.dataset.k = m.key;
+      [["name", "מדד"], ["start", "התחלה"], ["target", "יעד"], ["when", "מתי"]].forEach(function (f) {
+        var td = el("td"); td.append(editable("span", "f" + (!m[f[0]] && !final && f[0] !== "start" ? " miss" : ""), m[f[0]], f[1], function (v) { m[f[0]] = v; })); tr.append(td);
+      });
+      var tdx = el("td"); if (!final) tdx.append(del("מחיקת מדד", state.metrics, i, "המדד")); tr.append(tdx);
+      t.append(tr);
+    });
+    p.append(t);
+    if (!final) {
+      var b = el("button", "plus", "+ מדד"); b.type = "button";
+      b.addEventListener("click", function () { var m = { key: nk("m"), name: "", start: "", target: "", when: "" }; state.metrics.push(m); save(); render(); var n = document.querySelector('[data-k="' + m.key + '"] .ed'); if (n) n.focus(); });
+      p.append(b);
+    }
+  }
+
+  function taskCard(s, i, t, j) {
+    var c = el("div", "card" + (tChanged(t, i) ? " chg" : "") + (bT[t.key] ? "" : " new"));
+    c.dataset.k = t.key;
+    var r1 = el("div", "row1");
+    r1.append(el("span", "tnum", (i + 1) + "." + (j + 1)));
+    r1.append(editable("div", "txt", t.text, "מה עושים", function (v) { t.text = v; }));
+    r1.append(final ? el("span") : del("מחיקת משימה", s.tasks, j, "המשימה"));
+    c.append(r1);
+    var m = el("div", "meta");
+    var o = el("span"); o.append(el("span", "lbl", "אחראי: "), editable("span", "f" + (!t.owner && !final ? " miss" : ""), t.owner, "מי", function (v) { t.owner = v; }));
+    var w = el("span"); w.append(el("span", "lbl", "מתי: "), editable("span", "f" + (!t.due && !final ? " miss" : ""), t.due, "תאריך", function (v) { t.due = v; }));
+    m.append(o, w); c.append(m);
+    return c;
+  }
+
+  function render() {
+    var hs = document.getElementById("hyps"); hs.textContent = "";
+    state.hyps.forEach(function (h, i) { hs.append(hypCard(h, i)); });
+    if (!final) {
+      var p = el("button", "plus big", "+ הנחה"); p.type = "button";
+      p.addEventListener("click", function () { var h = { key: nk("h"), id: nextH(), text: "", source: "", success: "", tasks: [], chosen: true }; state.hyps.push(h); save(); render(); var n = document.querySelector('[data-k="' + h.key + '"] .txt'); if (n) n.focus(); });
+      hs.append(p);
+    }
+    var pr = document.getElementById("prd"); pr.textContent = "";
+    pr.className = "panel" + (!final && !same(state.prd, base.prd) ? " chg" : "");
+    pr.append(bullets(state.prd, "מה עלול להשתנות, ואיזו יכולת או הנחה ב-PRD", "שורה", "#prd"));
+    metricsPanel();
+    var b = document.getElementById("board"); b.textContent = "";
+    var n = state.stages.length;
+    b.style.gridTemplateColumns = final ? "repeat(" + n + ", minmax(0, 1fr))" : "repeat(" + n + ", minmax(15em, 1fr))";
+    state.stages.forEach(function (s, i) {
+      var col = el("section", "col"); col.setAttribute("aria-label", s.name);
+      var h = el("div", "colhead");
+      h.append(el("span", "n", String(s.tasks.length)), el("div", "num", "שלב " + (i + 1)), el("div", "name", s.name));
+      if (s.hint) h.append(el("div", "hint", s.hint));
+      col.append(h);
+      var list = el("div", "tasks");
+      s.tasks.forEach(function (t, j) { list.append(taskCard(s, i, t, j)); });
+      if (!final) {
+        var pl = el("button", "plus", "+ משימה"); pl.type = "button";
+        pl.addEventListener("click", function () { var t = { key: nk("t"), text: "", owner: "", due: "" }; s.tasks.push(t); save(); render(); var nn = document.querySelector('[data-k="' + t.key + '"] .txt'); if (nn) nn.focus(); });
+        list.append(pl);
+      }
+      col.append(list); b.append(col);
+    });
+    update();
+  }
+
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function md(s) { return String(s || "—").replace(/\|/g, "/"); }
+  function few(xs, f) { return xs.slice(0, 6).map(f).join(" · ") + (xs.length > 6 ? " ועוד " + (xs.length - 6) : ""); }
+  function chosen() { return state.hyps.filter(function (h) { return h.chosen && h.text; }); }
+  function work() { var a = []; state.stages.forEach(function (s, i) { s.tasks.forEach(function (t) { if (t.text) a.push({ s: s, i: i, t: t }); }); }); return a; }
+
+  function messages() {
+    var m = [], ch = chosen(), w = work();
+    if (!ch.length) m.push(["warn", "<b>לא נבחרה אף הנחה.</b> \"מה הדבר שאם הוא לא נכון, המוצר נופל?\""]);
+    if (ch.length > 3) m.push(["warn", "<b>נבחרו " + ch.length + " הנחות.</b> בוחרים 1–3 — בדיקה שבודקת הכול לא מוכיחה כלום."]);
+    var noSucc = ch.filter(function (h) { return !h.success; }), noTask = ch.filter(function (h) { return !h.tasks.filter(Boolean).length; });
+    if (noSucc.length) m.push(["warn", "<b>הנחות בלי \"מה ייחשב הצלחה\":</b> " + few(noSucc, function (h) { return esc(h.id); }) + ". בלי קריטריון אין מסקנה."]);
+    if (noTask.length) m.push(["warn", "<b>הנחות בלי משימה למשתמש:</b> " + few(noTask, function (h) { return esc(h.id); })]);
+    var noOwner = w.filter(function (x) { return !x.t.owner; }), noDue = w.filter(function (x) { return !x.t.due; });
+    if (noOwner.length) m.push(["warn", "<b>משימות עבודה בלי אחראי (" + noOwner.length + "):</b> " + few(noOwner, function (x) { return esc(x.t.text); }) + ". משימה בלי אחראי — לא תקרה."]);
+    if (noDue.length) m.push(["info", "<b>משימות עבודה בלי מועד (" + noDue.length + "):</b> " + few(noDue, function (x) { return esc(x.t.text); })]);
+    var empty = state.stages.filter(function (s) { return !s.tasks.filter(function (t) { return t.text; }).length; });
+    if (empty.length) m.push(["info", "<b>שלבים בלי משימות:</b> " + empty.map(function (s) { return esc(s.name); }).join(" · ")]);
+    if (!state.metrics.filter(function (x) { return x.name; }).length) m.push(["info", "<b>אין מדדי הצלחה לפיילוט.</b> מספיק כיוון ומספר ראשון."]);
+    if (!m.length) m.push(["ok", "<b>התוכנית שלמה.</b> לוחצים \"העתקת סיכום\" ומדביקים למוח."]);
+    return m;
+  }
+
+  function fmtH(h) { return (h.text || "—") + " · הצלחה: " + (h.success || "—") + " · משימות: " + (h.tasks.filter(Boolean).join(" / ") || "—") + (h.chosen ? "" : " · לא נבחרה"); }
+  function fmtM(m) { return (m.name || "—") + " · " + (m.start || "—") + " → " + (m.target || "—") + " · " + (m.when || "—"); }
+  function fmtT(t) { return (t.text || "—") + " · אחראי: " + (t.owner || "—") + " · מתי: " + (t.due || "—"); }
+  function changes() {
+    var out = [], seen = {};
+    state.hyps.forEach(function (h) { seen[h.key] = 1; var b = bH[h.key]; if (!b) { if (h.text) out.push("נוספה הנחה " + h.id + ": " + fmtH(h)); } else if (hChanged(h)) out.push("שונתה " + h.id + ": " + fmtH(b) + " ← " + fmtH(h)); });
+    base.hyps.forEach(function (h) { if (!seen[h.key]) out.push("נמחקה הנחה " + h.id + ": " + fmtH(h)); });
+    if (!final && !same(state.prd, base.prd)) out.push("השפעה על ה-PRD: " + (base.prd.join(" / ") || "—") + " ← " + (state.prd.filter(Boolean).join(" / ") || "—"));
+    seen = {};
+    state.metrics.forEach(function (m) { seen[m.key] = 1; var b = bM[m.key]; if (!b) { if (m.name) out.push("נוסף מדד: " + fmtM(m)); } else if (mChanged(m)) out.push("שונה מדד: " + fmtM(b) + " ← " + fmtM(m)); });
+    base.metrics.forEach(function (m) { if (!seen[m.key]) out.push("נמחק מדד: " + fmtM(m)); });
+    seen = {};
+    state.stages.forEach(function (s, i) { s.tasks.forEach(function (t) { seen[t.key] = 1; var b = bT[t.key]; if (!b) { if (t.text) out.push("נוספה משימת עבודה · " + s.name + ": " + fmtT(t)); } else if (tChanged(t, i)) out.push("שונתה משימת עבודה · " + s.name + ": " + fmtT(b.t) + " ← " + fmtT(t)); }); });
+    Object.keys(bT).forEach(function (k) { if (!seen[k]) out.push("נמחקה משימת עבודה · " + base.stages[bT[k].stage].name + ": " + fmtT(bT[k].t)); });
+    return out;
+  }
+
+  function summary() {
+    var L = [];
+    L.push("# תוכנית הניסוי — " + (d.venture || ""));
+    L.push(""); L.push("## 1. מה רוצים ללמוד");
+    L.push("| # | ההנחה | מאיפה | מה ייחשב הצלחה |"); L.push("|---|---|---|---|");
+    chosen().forEach(function (h) { L.push("| " + [h.id, h.text, h.source, h.success].map(md).join(" | ") + " |"); });
+    var off = state.hyps.filter(function (h) { return !h.chosen && h.text; });
+    if (off.length) { L.push(""); L.push("לא נבחרו: " + off.map(function (h) { return h.id + " — " + h.text; }).join(" · ")); }
+    L.push(""); L.push("## 3. משימות");
+    L.push("| משימה | ההנחה שהיא בודקת |"); L.push("|---|---|");
+    chosen().forEach(function (h) { h.tasks.filter(Boolean).forEach(function (t) { L.push("| " + md(t) + " | " + md(h.id) + " |"); }); });
+    L.push(""); L.push("## 5. השפעה על ה-PRD");
+    var pr = state.prd.filter(Boolean); if (!pr.length) L.push("- —"); pr.forEach(function (x) { L.push("- " + x); });
+    L.push(""); L.push("## 7. מדדי הצלחה לפיילוט — טיוטה");
+    L.push("| מדד | ערך התחלה | ערך יעד | תאריך מדידה |"); L.push("|---|---|---|---|");
+    state.metrics.filter(function (m) { return m.name; }).forEach(function (m) { L.push("| " + [m.name, m.start, m.target, m.when].map(md).join(" | ") + " |"); });
+    L.push(""); L.push("## 8. תוכנית העבודה לבדיקה");
+    L.push("| שלב | # | משימה | אחראי | מתי |"); L.push("|---|---|---|---|---|");
+    state.stages.forEach(function (s, i) {
+      var ts = s.tasks.filter(function (t) { return t.text; });
+      if (!ts.length) L.push("| " + md(s.name) + " | — | — | — | — |");
+      ts.forEach(function (t, j) { L.push("| " + md(s.name) + " | " + (i + 1) + "." + (j + 1) + " | " + md(t.text) + " | " + md(t.owner) + " | " + md(t.due) + " |"); });
+    });
+    var ch = changes();
+    L.push(""); L.push("## מה הקבוצה שינתה בהצעה");
+    if (!ch.length) L.push("- לא שונה דבר.");
+    ch.forEach(function (c) { L.push("- " + c); });
+    return L.join("\n");
+  }
+
+  function update() {
+    document.getElementById("count").textContent = chosen().length + " הנחות · " + work().length + " משימות עבודה";
+    var ch = changes().length;
+    document.getElementById("chgcount").textContent = final ? "" : (ch ? ch + " שינויים בהצעה" : "");
+    var mb = document.getElementById("msgs"); mb.textContent = "";
+    if (!final) messages().forEach(function (x) { var e = el("div", "msg " + x[0]); e.innerHTML = x[1]; mb.append(e); });
+    document.getElementById("summary").textContent = summary();
+    document.getElementById("meta").textContent = [d.date, final ? "מאושר" : "עורכים כאן, ובסוף \"העתקת סיכום\""].filter(Boolean).join(" · ");
+  }
+
+  function toast(msg, action, fn) {
+    var t = document.getElementById("toast"), b = document.getElementById("toastBtn");
+    document.getElementById("toastMsg").textContent = msg;
+    b.hidden = !action; b.textContent = action || "";
+    b.onclick = fn ? function () { fn(); t.hidden = true; } : null;
+    t.hidden = false; clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, 7000);
+  }
+
+  document.getElementById("copy").addEventListener("click", function () {
+    var text = summary();
+    function fallback() {
+      var ok = false;
+      try { var ta = el("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0"; document.body.append(ta); ta.select(); ok = document.execCommand("copy"); ta.remove(); } catch (e) {}
+      done(ok);
+    }
+    function done(ok) { if (!ok) document.getElementById("out").open = true; toast(ok ? "הסיכום הועתק — הדביקו למוח" : "לא הצלחתי להעתיק — הסיכום פתוח למטה"); }
+    try { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, fallback); else fallback(); } catch (e) { fallback(); }
+  });
+  document.getElementById("reset").addEventListener("click", function () {
+    var prev = JSON.stringify(state);
+    state = fresh(); save(); render();
+    toast("הלוח חזר להצעה", "ביטול", function () { state = JSON.parse(prev); save(); render(); });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>

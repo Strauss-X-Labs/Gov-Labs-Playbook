@@ -166,7 +166,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
   <h1>יום הארכיטקטורה והבקלוג: איך זה הולך לעבוד</h1>
   <p class="lead">הארכיטקטורה כבר סגורה כשמגיעים לחדר. היום עצמו <b>סוגר את המוצר, מיישר את כולם על הארכיטקטורה, מגדיר את בדיקת המשתמשים ובונה את הבקלוג המוצרי</b> — והכול נשאר במוח.</p>
   <div class="principles">
-    <div class="principle"><b>ההכרעות לפני, היום ליישור.</b>ההכרעות הארכיטקטוניות וה-ADR נסגרים מול אנשי המפתח בימים שלפני. לארכיטקטורה יש ביום 45 דקות, לא יותר.</div>
+    <div class="principle"><b>ההכרעות לפני, היום ליישור.</b>Draft 0 נוצר לפני היום, מתוקף מול גורמי המפתח במשרד, ומגיע ליום כ-blueprint. לארכיטקטורה יש ביום 45 דקות, לא יותר.</div>
     <div class="principle"><b>מוצר הוא יותר מקוד.</b>בבקלוג גם משימות ארגון DATA, משפטיות, שיווקיות וניהול השינוי. מה שלא בבקלוג — לא יקרה.</div>
     <div class="principle"><b>המוח עובד מאחורי הקלעים.</b>אתם מבקשים, המוח מכין ובודק, הצוות מכריע. מה שמגיע לצוות עובר דרככם.</div>
   </div>
@@ -199,7 +199,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <ul>
         <li>PRD (v1.0, או v0.2 אם לא אושר בפגישה השבועית).</li>
         <li>הממשק של המעצבים ובריף המסכים.</li>
-        <li>מסמך ארכיטקטורה עם ההכרעות וה-ADR.</li>
+        <li>ה-blueprint: מסמך ארכיטקטורה עם ההכרעות וה-ADR.</li>
         <li>מפרט MVP, ערכי מוצר ו-Lean Canvas.</li>
       </ul>
       <p>הסוכן רואה רק מה שב-repo.</p>
@@ -207,7 +207,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
   </div>
   <div class="roles">
     <span><b>המנטור העסקי</b> מוביל את המוצר, הבדיקה והבקלוג</span>
-    <span><b>המנטור הטכנולוגי</b> סוגר את הארכיטקטורה לפני, ואת ה-API אחרי</span>
+    <span><b>המנטור הטכנולוגי</b> מייצר את Draft 0 ומתקף אותו לפני, ואת ה-API אחרי</span>
     <span><b>הארכיטקט</b> בעל הסמכות: מציג ומאשר</span>
     <span><b>נציג IT משרדי</b> אילוצי סביבה ואישור</span>
     <span><b>מפעיל ה-AI</b> מזין את המוח לאורך היום</span>
@@ -221,7 +221,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
   <p class="meta">בכל שלב: מה עושים בידיים, מה צריך להיות מוכן, מה אומרים למוח, מה יוצא — ובאיזה קובץ.</p>
 
   <div class="strip" aria-label="סדר היום">
-    <a class="pre" href="#s1"><span class="tm">שבוע לפני</span>סגירת הארכיטקטורה</a>
+    <a class="pre" href="#s1"><span class="tm">שבוע לפני</span>Draft 0 → blueprint</a>
     <a class="pre" href="#s2"><span class="tm">3 ימים לפני</span>הגייט לכניסה</a>
     <a class="pre" href="#s3"><span class="tm">יום לפני</span>PRD מול הממשק</a>
     <a href="#s4"><span class="tm"><span class="rng">09:00–10:00</span></span>פתיחה והרצאה</a>
@@ -245,24 +245,27 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
     <article class="stage pre" id="s1">
       <div class="node">1</div>
       <div class="body">
-        <div class="head"><h3>סגירת הארכיטקטורה מול אנשי המפתח</h3><span class="time">שבוע לפני</span></div>
-        <p class="goal">טיוטה, חלופות, הכרעות ו-ADR — הכול לפני היום. ביום אין זמן להכריע.</p>
-        <div class="who"><span class="lead-role">הארכיטקט</span><span>המנטור הטכנולוגי</span><span>IT משרדי</span><span>ארכיטקטי המשרד</span></div>
-        <div class="say"><b>אומרים למוח:</b>תכין טיוטת ארכיטקטורה ליום 6, עם 2–3 חלופות לכל צומת מהותי.</div>
-        <div class="say"><b>אחרי כל הכרעה:</b>הארכיטקט הכריע [___]. תכתוב ADR ותעדכן את המסמך והתרשים.</div>
+        <div class="head"><h3>מ-Draft 0 ל-blueprint</h3><span class="time">שבוע לפני</span></div>
+        <p class="goal">Draft 0 מהמוח, תיקוף מול גורמי המפתח במשרד, ו-blueprint מוכן — הכול לפני היום. ביום אין זמן להכריע.</p>
+        <div class="who"><span class="lead-role">הארכיטקט</span><span>המנטור הטכנולוגי</span><span>IT משרדי</span><span>גורמי המפתח במשרד</span></div>
+        <div class="say"><b>אומרים למוח (Draft 0):</b>תכין Draft 0 לארכיטקטורה של יום 6. קודם תשאל אותי על הדגשים הייחודיים למיזם.</div>
+        <div class="say"><b>אחרי כל שיחה עם גורם מפתח:</b>זה התמלול של השיחה עם [___]. תעדכן את מסמך הארכיטקטורה ואת השאלות הפתוחות.</div>
+        <div class="say"><b>אחרי כל הכרעה:</b>הארכיטקט הכריע [___]. תכתוב ADR ותעדכן את המסמך והתרשימים.</div>
         <div class="cells">
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
-            <li>מעבירים למוח את אילוצי הסביבה מה-IT: רשת, זהויות, מערכות, ענן.</li>
-            <li>סוגרים עם ה-IT וארכיטקטי המשרד כל צומת מהותי.</li>
-            <li>טוענים את ה-Rulebook וכללי הענן הממשלתי לפני הטיוטה.</li></ul></div>
+            <li>עונים למוח על הדגשים הייחודיים למיזם — <b>קודם כול: על איזה ענן עובדים</b>. ענן אחד.</li>
+            <li>מעבירים למוח את אילוצי הסביבה מה-IT: רשת, זהויות, מערכות.</li>
+            <li>מתקפים את הטיוטה מול גורמי המפתח במשרד — ה-CTO, ארכיטקט המשרד, ה-IT — וטוענים כל שיחה למוח.</li>
+            <li>טוענים את כללי הענן הממשלתי. את כללי הפלייבוק המוח קורא בעצמו.</li></ul></div>
           <div class="cell input"><span class="lbl">קלט</span><ul>
             <li><span class="file">PRD.md</span> · <span class="file">בריף-מסכים.md</span></li>
-            <li>אילוצי סביבה · סיווג מידע</li></ul>
+            <li>אילוצי סביבה · סיווג מידע · הענן</li></ul>
             <div class="fallback">סיווג לא ידוע? <q>תסמן את סיווג המידע כשאלה פתוחה עם בעלים, ותכתוב את פרק האבטחה כחלופות.</q></div></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מסמך-ארכיטקטורה.md</span>: רכיבים, זרימת DATA, אבטחה ופרטיות, תרשים, ADR.</div></div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">מסמך-ארכיטקטורה.md</span>: רכיבים, זרימת DATA, אבטחה ופרטיות, תרשים זרימה, טופולוגיית שירותים, אסטרטגיית בדיקות, ADR.</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
             <li>סוכן: <b>ארכיטקטורה ו-ADR</b>.</li>
+            <li><span class="flag">ענן לא הוכרע</span> — אין טופולוגיה. מסלימים בתוך יומיים, לא מחכים לגייט.</li>
             <li><span class="flag">הכרעה שלא נסגרה</span> — שאלה פתוחה עם בעלים ותאריך, לא "נחליט ביום".</li></ul></div>
         </div>
       </div>
@@ -376,21 +379,24 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <div class="node">7</div>
       <div class="body">
         <div class="head"><h3>תהליך 3 · הגדרת בדיקת המשתמשים</h3><span class="time"><span class="rng">11:45–12:30</span></span></div>
-        <p class="goal">הבדיקה היא השלב הראשון של המוצר — ה-MVP. מה רוצים ללמוד, עם מי, מה ייחשב הצלחה, ואילו נתונים צריך.</p>
+        <p class="goal">הבדיקה היא השלב הראשון של המוצר — ה-MVP. המוח הכין את כל תוכנית הניסוי בהפסקת הקפה; הקבוצה מתקפת: קודם ההנחות, ואז הלוח.</p>
         <div class="who"><span class="lead-role">המנטור העסקי</span><span>מפעיל ה-AI</span><span>כל הקבוצה</span></div>
-        <div class="say"><b>אומרים למוח (אחרי שלב 2):</b>זו הבדיקה שתכננו: [___]. תבדוק שכל משימה באמת בודקת את ההנחה שלה, אם יש השפעה על ה-PRD, ואילו נתונים צריך בשביל הבדיקה.</div>
-        <div class="say"><b>אומרים למוח (שלב 5):</b>אלה מדדי ההצלחה לפיילוט שדיברנו עליהם: [___]. תרשום כטיוטה ליום 7.</div>
+        <div class="say"><b>אומרים למוח (בהפסקת הקפה, 10:45):</b>תכין את תוכנית הניסוי.</div>
+        <div class="say"><b>בסוף, מהלוח:</b>"העתקת סיכום" ← מדביקים למוח: זה הסיכום מהלוח. תתעד.</div>
         <div class="cells">
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
-            <li>10′ הנחות · 10′ עיצוב הבדיקה · 10′ המוח בודק · 10′ נתונים · 5′ מדדים.</li>
-            <li>מפעיל ה-AI מעדכן את המוח בבדיקה שתוכננה.</li></ul></div>
+            <li>10′ ההנחות — <b>לפני שפותחים את הלוח:</b> "מה הדבר שאם הוא לא נכון, המוצר נופל?" ואז משווים להצעה. בוחרים 1–3.</li>
+            <li>35′ הלוח — קריטריוני הצלחה, משימות למשתמש, השפעה על ה-PRD, מדדים, ותוכנית העבודה: לכל משימה אחראי ומועד.</li></ul></div>
           <div class="cell input"><span class="lbl">קלט</span><ul>
-            <li>PRD v1.0 — הנחות פתוחות · <span class="file">מפרט-MVP.md</span> · הממשק</li></ul></div>
+            <li>PRD v1.0 — הנחות פתוחות · <span class="file">מפרט-MVP.md</span> · הממשק</li>
+            <li>ההצעה של המוח — ב-MD ובלוח</li></ul></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">תוכנית-בדיקת-משתמשים.md</span>: הנחות, משימות, קריטריון הצלחה, השפעה על ה-PRD, נתונים נדרשים, טיוטת מדדים.</div></div>
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">תוכנית-בדיקת-משתמשים.md</span>: הנחות, משימות, קריטריון הצלחה, השפעה על ה-PRD, נתונים נדרשים, טיוטת מדדים, תוכנית העבודה · <span class="file">תוכנית-בדיקת-משתמשים-לוח.html</span> — הלוח העריך.</div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
+            <li><span class="flag">מאשרים את ההצעה כמו שהיא</span> — הקבוצה עונה קודם, ורק אז קוראת.</li>
             <li>משימה, לא שאלה: "תגיש בקשה", לא "היית מגיש?"</li>
-            <li>מדדי הפיילוט — טיוטה. מאושרים ביום 7, שורה 13 במפת הדרכים.</li></ul></div>
+            <li>מדדי הפיילוט — טיוטה. מאושרים ביום 7, שורה 13 במפת הדרכים.</li>
+            <li><span class="flag">תוכנית של פיתוח בלבד</span> — "מה צריך לקרות עד שהמשתמש הראשון נכנס?"</li></ul></div>
         </div>
       </div>
     </article>
@@ -401,12 +407,12 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
         <div class="head"><h3>ארוחת צהריים · המוח מכין הצעה לבקלוג</h3><span class="time"><span class="rng">12:30–13:15</span></span></div>
         <p class="goal">בתחילת ההפסקה, כדי שההצעה תהיה מוכנה בחזרה.</p>
         <div class="who"><span class="lead-role">המנטור</span><span>מפעיל ה-AI</span></div>
-        <div class="say"><b>אומרים למוח:</b>תכין הצעה לבקלוג, מ-PRD v1.0, ממסמך הארכיטקטורה ומתוכנית בדיקת המשתמשים. הנתונים שהבדיקה צריכה — כמשימות DATA.</div>
+        <div class="say"><b>אומרים למוח:</b>תכין הצעה לבקלוג.</div>
         <div class="cells">
           <div class="cell input"><span class="lbl">קלט</span><ul>
             <li><span class="file">PRD.md</span> v1.0 · <span class="file">מסמך-ארכיטקטורה.md</span> · <span class="file">תוכנית-בדיקת-משתמשים.md</span></li></ul></div>
           <div class="cell output">
-            <div class="out team"><span class="lbl">טיוטה</span><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span> — סיפורים ומשימות.</div></div>
+            <div class="out team"><span class="lbl">טיוטה</span><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span> — סיפורים ומשימות · <span class="file">בקלוג-לוח.html</span> — הלוח העריך, לעבודה על המסך.</div></div>
         </div>
       </div>
     </article>
@@ -415,29 +421,29 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
       <div class="node">9</div>
       <div class="body">
         <div class="head"><h3>תהליך 4 · בונים את הבקלוג המוצרי</h3><span class="time"><span class="rng">13:15–16:00</span></span></div>
-        <p class="goal">סיפורים עם קריטריוני קבלה, ומשימות DATA, משפטיות, שיווקיות וניהול השינוי. תעדוף, סדר בנייה, ושאלות ל-Q&amp;A.</p>
+        <p class="goal">קודם הקבוצה עובדת בלוח, בלי לדבר עם המוח. אחר כך המוח: סדר בנייה, סקירה ושאלות ל-Q&amp;A.</p>
         <div class="who"><span class="lead-role">המנטור העסקי</span><span>הארכיטקט — לסדר הבנייה</span><span>מפעיל ה-AI</span><span>כל הקבוצה</span></div>
-        <div class="table-wrap"><table>
-          <thead><tr><th>שלב</th><th>משך</th><th>אומרים למוח</th><th>קובץ</th></tr></thead>
-          <tbody>
-            <tr><td>1 · אימות הכוונה</td><td>10′</td><td>תציג תמצית של הכוונה מה-PRD v1.0.</td><td><span class="file">דרישות.md</span></td></tr>
-            <tr><td>2 · סיפורי משתמש</td><td>35′</td><td>אלה התיקונים לסיפורים [___]. תעדכן.</td><td><span class="file">בקלוג.md</span></td></tr>
-            <tr><td>3 · משימות שאינן פיתוח</td><td>25′</td><td>תוסיף משימות DATA, משפטיות, שיווק וניהול שינוי, לכל אחת בעלים: [___].</td><td><span class="file">בקלוג.md</span></td></tr>
-            <tr><td>4 · דרישות לא-פונקציונליות</td><td>15′</td><td>תנסח את דרישות האבטחה, הפרטיות, הנגישות והביצועים כסיפורים.</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span></td></tr>
-            <tr><td>5 · תעדוף וגבולות</td><td>20′</td><td>אלה ההכרעות על התכולה: [___]. תרשום ביומן ההחלטות.</td><td><span class="file">דרישות.md</span></td></tr>
-            <tr><td>6 · סדר בנייה</td><td>25′</td><td>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך.</td><td><span class="file">תוכנית-בנייה.md</span></td></tr>
-            <tr><td>7 · סקירה</td><td>15′</td><td>תריץ סקירה על הבקלוג.</td><td>ממצאים</td></tr>
-            <tr><td>8 · שאלות ל-Q&amp;A</td><td>10′</td><td>תחלץ שאלות ל-Q&amp;A מהבקלוג. — ואחרי שאישרתם: תכניס אותן לקובץ של יום 8.</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td></tr>
-          </tbody>
-        </table></div>
+        <div class="say"><b>בסוף שלב 1, מהלוח:</b>"העתקת סיכום" ← מדביקים למוח: זה הסיכום מהלוח. תתעד.</div>
+        <div class="say"><b>אומרים למוח (שלב 2):</b>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך (Walking Skeleton).</div>
+        <div class="say"><b>אומרים למוח (שלב 3):</b>תריץ סקירה על הבקלוג.</div>
+        <div class="say"><b>אומרים למוח (שלב 4):</b>תחלץ שאלות ל-Q&amp;A מהבקלוג. — ואחרי שאישרתם: תכניס אותן לקובץ של יום 8.</div>
         <div class="cells">
           <div class="cell manual"><span class="lbl">עבודה ידנית</span><ul>
-            <li>עוברים על הסיפורים בקבוצות של 3–5.</li>
-            <li>הארכיטקט מאשר את סדר הבנייה.</li>
-            <li>עוברים על שאלות ה-Q&amp;A לפני שהן נכנסות.</li></ul></div>
+            <li>105′ שלב 1, בלוח · 25′ סדר בנייה · 15′ סקירה · 10′ שאלות ל-Q&amp;A.</li>
+            <li>סיפורים, בקבוצות של 3–5: קריטריונים ומסך.</li>
+            <li>משימות שאינן פיתוח: DATA, משפטי, שיווק, ניהול שינוי — לכל אחת בעלים.</li>
+            <li>דרישות לא-פונקציונליות — כסיפורים.</li>
+            <li>"בפיילוט?" — לכל סיפור ומשימה.</li>
+            <li>הארכיטקט מאשר את סדר הבנייה; עוברים על שאלות ה-Q&amp;A לפני שהן נכנסות.</li></ul></div>
+          <div class="cell input"><span class="lbl">קלט</span><ul>
+            <li>ההצעה מהצהריים — <span class="file">בקלוג-לוח.html</span></li></ul></div>
+          <div class="cell output">
+            <div class="out team"><span class="lbl">תוצרים לקבוצה</span><span class="file">בקלוג.md</span> · <span class="file">דרישות.md</span> — יומן ההחלטות · <span class="file">תוכנית-בנייה.md</span> · שאלות ב-<span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></div></div>
           <div class="cell tips"><span class="lbl">למנטור</span><ul>
             <li>"איך נדע שזה עבד?" — על הקריטריון הראשון.</li>
             <li>"מה צריך לקרות בארגון כדי שזה יעבוד ביום הראשון?"</li>
+            <li>ההודעות בלוח הן רשימת המשימות — מעתיקים כשהן מטופלות.</li>
+            <li><span class="flag">חוזרים לצ'אט באמצע</span> — מתקנים בלוח. המוח מקבל הכול בסוף.</li>
             <li>משימה שחוסמת סיפור — לפניו בסדר.</li></ul></div>
         </div>
       </div>
@@ -465,7 +471,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
         <p class="goal">השער בודק רק את תוצרי היום. ה-API נעשה אחריו, ואינו חלק מהשער.</p>
         <div class="who"><span class="lead-role">הארכיטקט — לשער</span><span>המנטור הטכנולוגי + הנציגים הטכנולוגיים — ל-API</span></div>
         <div class="say"><b>אומרים למוח:</b>בוא נבדוק את השער ליום 7.</div>
-        <div class="say"><b>תהליך 5 — רק אם יש ממשקים:</b>תייצר חוזה API מרשימת הממשקים במסמך הארכיטקטורה: OpenAPI, מוק, בדיקות חוזה ואוסף Postman.</div>
+        <div class="say"><b>תהליך 5 — רק אם יש ממשקים:</b>תייצר חוזה API מרשימת הממשקים במסמך הארכיטקטורה — כולל ה-API שבין הפרונט ל-backend: OpenAPI, מוק, בדיקות חוזה ואוסף Postman.</div>
         <div class="cells">
           <div class="cell input"><span class="lbl">השער (G2)</span><ul>
             <li>PRD v1.0 · מסמך ארכיטקטורה עם ADR</li>
@@ -489,21 +495,22 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
   <div class="table-wrap"><table>
     <thead><tr><th>מתי</th><th>אומרים למוח</th><th>מה הוא עושה</th><th>לאן זה נכתב</th></tr></thead>
     <tbody>
-      <tr><td>שבוע לפני</td><td>תכין טיוטת ארכיטקטורה ליום 6, עם 2–3 חלופות לכל צומת.</td><td>טיוטה, חלופות, תרשים</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
+      <tr><td>שבוע לפני</td><td>תכין Draft 0 לארכיטקטורה של יום 6. קודם תשאל אותי על הדגשים הייחודיים למיזם.</td><td>שאלות (קודם כול: איזה ענן), ואז טיוטה, חלופות, תרשימים, אסטרטגיית בדיקות</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
+      <tr><td>אחרי כל שיחה עם גורם מפתח</td><td>זה התמלול של השיחה עם [___]. תעדכן את המסמך.</td><td>עדכון המסמך והשאלות הפתוחות — עד blueprint</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
       <tr><td>אחרי כל הכרעה</td><td>הארכיטקט הכריע [___]. תכתוב ADR.</td><td>ADR, עדכון המסמך והתרשים</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
       <tr><td>3 ימים לפני</td><td>בוא נבדוק את הגייט לכניסה ליום 6.</td><td>רשימת חוסרים</td><td>לעיניכם</td></tr>
       <tr><td>יום לפני</td><td>תשווה את הממשק ל-PRD ותכין רשימת פערים.</td><td>פערים ביכולות, ב"מה ייחשב עובד" ובגבולות</td><td><span class="file">רפרנס-מנחה/</span></td></tr>
       <tr><td>10:30</td><td>אלה ההכרעות על הפערים: [___]. תעדכן את ה-PRD ל-v1.0.</td><td>PRD v1.0</td><td><span class="file">04-Lean-Canvas/תוצרים/PRD.md</span></td></tr>
+      <tr><td>10:45</td><td>תכין את תוכנית הניסוי.</td><td>הצעה מלאה שנבדקה: הנחות, משימות, PRD, נתונים, מדדים, תוכנית עבודה</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span> · <span class="file">-לוח.html</span></td></tr>
       <tr><td>11:35</td><td>עלו השאלות: [___]. תוסיף לשאלות הפתוחות.</td><td>שאלות עם בעלים ותאריך</td><td><span class="file">מסמך-ארכיטקטורה.md</span></td></tr>
-      <tr><td>12:05</td><td>זו הבדיקה שתכננו: [___]. תבדוק שהיא בודקת מה שרצינו, השפעה על ה-PRD, ואילו נתונים צריך.</td><td>ממצאים, השפעה על ה-PRD, נתונים</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span></td></tr>
-      <tr><td>12:25</td><td>אלה מדדי ההצלחה לפיילוט: [___]. תרשום כטיוטה ליום 7.</td><td>טיוטת מדדים</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span>, סעיף 7</td></tr>
-      <tr><td>12:30</td><td>תכין הצעה לבקלוג.</td><td>דרישות, סיפורים ומשימות</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span></td></tr>
-      <tr><td>13:15–15:20</td><td>תיקונים, משימות, NFR, הכרעות תכולה — ראו תהליך 4.</td><td>עדכון הבקלוג ויומן ההחלטות</td><td><span class="file">בקלוג.md</span> · <span class="file">דרישות.md</span></td></tr>
-      <tr><td>~15:20</td><td>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך.</td><td>סדר בנייה</td><td><span class="file">תוכנית-בנייה.md</span></td></tr>
-      <tr><td>~15:35</td><td>תריץ סקירה על הבקלוג.</td><td>סיפור בלי קריטריון, משימה בלי בעלים, נתון בלי משימה</td><td>ממצאים</td></tr>
-      <tr><td>~15:50</td><td>תחלץ שאלות ל-Q&amp;A מהבקלוג.</td><td>שאלות — לאישורכם</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td></tr>
+                  <tr><td>12:25</td><td>זה הסיכום מהלוח. תתעד.</td><td>תוכנית הניסוי מתועדת, והלוח מופק מחדש</td><td><span class="file">תוכנית-בדיקת-משתמשים.md</span> · <span class="file">-לוח.html</span></td></tr>
+      <tr><td>12:30</td><td>תכין הצעה לבקלוג.</td><td>דרישות, סיפורים ומשימות — וגם הלוח</td><td><span class="file">דרישות.md</span> · <span class="file">בקלוג.md</span> · <span class="file">בקלוג-לוח.html</span></td></tr>
+      <tr><td>~15:00</td><td>זה הסיכום מהלוח. תתעד.</td><td>עדכון הבקלוג ויומן ההחלטות</td><td><span class="file">בקלוג.md</span> · <span class="file">דרישות.md</span></td></tr>
+      <tr><td>~15:00</td><td>תסדר את הבקלוג לפי תלויות ותסמן את השלד ההולך (Walking Skeleton).</td><td>סדר בנייה</td><td><span class="file">תוכנית-בנייה.md</span></td></tr>
+      <tr><td>~15:25</td><td>תריץ סקירה על הבקלוג.</td><td>סיפור בלי קריטריון, משימה בלי בעלים, נתון בלי משימה</td><td>ממצאים</td></tr>
+      <tr><td>~15:40</td><td>תחלץ שאלות ל-Q&amp;A מהבקלוג.</td><td>שאלות — לאישורכם</td><td><span class="file">08-Storytelling/תוצרים/קובץ-Q&amp;A.md</span></td></tr>
       <tr><td>אחרי היום</td><td>בוא נבדוק את השער ליום 7.</td><td>רשימת G2</td><td><span class="file">מפרט-ארכיטקטורה-ובקלוג-פיילוט.md</span></td></tr>
-      <tr><td>אחרי היום</td><td>תייצר חוזה API מרשימת הממשקים.</td><td>OpenAPI, מוק, בדיקות, Postman</td><td><span class="file">מפרט-חוזה-API.md</span></td></tr>
+      <tr><td>אחרי היום</td><td>תייצר חוזה API מרשימת הממשקים, כולל פרונט ל-backend.</td><td>OpenAPI, מוק, בדיקות, Postman</td><td><span class="file">מפרט-חוזה-API.md</span></td></tr>
     </tbody>
   </table></div>
 </section>
@@ -515,14 +522,14 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
     <thead><tr><th>קובץ</th><th>מה בו</th><th>נוצר ב-</th><th>מאשר</th></tr></thead>
     <tbody>
       <tr><td><span class="file">PRD.md</span> <small>(ב-04-Lean-Canvas)</small></td><td>המוצר ברמת-על · ממלא את תפקיד intent.md</td><td>תהליך 1</td><td>כל הקבוצה</td></tr>
-      <tr><td><span class="file">מסמך-ארכיטקטורה.md</span></td><td>רכיבים, זרימת DATA, אבטחה, תרשים, ADR</td><td>לפני היום · תהליך 2</td><td>ארכיטקט + IT</td></tr>
-      <tr><td><span class="file">תוכנית-בדיקת-משתמשים.md</span></td><td>הבדיקה של ה-MVP, נתונים, טיוטת מדדים</td><td>תהליך 3</td><td>הקבוצה</td></tr>
+      <tr><td><span class="file">מסמך-ארכיטקטורה.md</span></td><td>רכיבים, זרימת DATA, אבטחה, תרשים זרימה, טופולוגיית שירותים, אסטרטגיית בדיקות, ADR</td><td>Draft 0 ותיקוף לפני היום · תהליך 2</td><td>ארכיטקט + IT</td></tr>
+      <tr><td><span class="file">תוכנית-בדיקת-משתמשים.md</span> + <span class="file">-לוח.html</span></td><td>הבדיקה של ה-MVP, נתונים, טיוטת מדדים, תוכנית העבודה — והלוח העריך</td><td>תהליך 3</td><td>הקבוצה</td></tr>
       <tr><td><span class="file">דרישות.md</span></td><td>כוונה, דרישות, גבולות ויומן החלטות</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
-      <tr><td><span class="file">בקלוג.md</span></td><td>סיפורים עם קריטריוני קבלה, ומשימות עם בעלים</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
-      <tr><td><span class="file">תוכנית-בנייה.md</span></td><td>שלד הולך, סדר בנייה ותלויות</td><td>תהליך 4</td><td>ארכיטקט</td></tr>
+      <tr><td><span class="file">בקלוג.md</span> + <span class="file">בקלוג-לוח.html</span></td><td>סיפורים עם קריטריוני קבלה, ומשימות עם בעלים — והלוח העריך</td><td>צהריים · תהליך 4</td><td>מנטור עסקי + ארכיטקט</td></tr>
+      <tr><td><span class="file">תוכנית-בנייה.md</span></td><td>שלד הולך (Walking Skeleton), סדר בנייה ותלויות</td><td>תהליך 4</td><td>ארכיטקט</td></tr>
       <tr><td><span class="file">קובץ-Q&amp;A.md</span> <small>(ב-08-Storytelling)</small></td><td>שאלות חדשות מהיום</td><td>סוף תהליך 4</td><td>המנטור</td></tr>
       <tr><td><span class="file">מפרט-ארכיטקטורה-ובקלוג-פיילוט.md</span></td><td>אינדקס החבילה והשער ליום 7</td><td>סוף היום</td><td>ארכיטקט · GovLabs · IT</td></tr>
-      <tr><td><span class="file">מפרט-חוזה-API.md</span></td><td>OpenAPI, מוק, בדיקות חוזה, Postman — רק אם יש ממשקים</td><td>תהליך 5, אחרי היום</td><td>ארכיטקט</td></tr>
+      <tr><td><span class="file">מפרט-חוזה-API.md</span></td><td>OpenAPI, מוק, בדיקות חוזה, Postman — ל-API שבין הפרונט ל-backend ולממשקים חיצוניים</td><td>תהליך 5, אחרי היום</td><td>ארכיטקט</td></tr>
     </tbody>
   </table></div>
 </section>
@@ -547,6 +554,7 @@ footer a { margin-inline-end: 10px; white-space: nowrap; }
 <section id="flags">
   <h2>נורות אזהרה</h2>
   <ul class="flags">
+    <li><b>מגיעים בלי blueprint.</b> Draft 0 שלא תוקף מול גורמי המפתח — הוא לא ארכיטקטורה סגורה.</li>
     <li><b>הכרעה נפתחת בחדר.</b> "יש ADR. שאלה חדשה נסגרת מחוץ למפגש."</li>
     <li><b>פותחים את המוצר מחדש.</b> "זה מה שהחלטנו ביום 5?"</li>
     <li><b>זרימת DATA לא ברורה.</b> עוקבים אחרי נתון אחד מקצה לקצה.</li>
