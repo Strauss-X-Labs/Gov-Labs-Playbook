@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Prototype</title>
+<!--
+  תבנית ה-Prototype — דף נפרד מהבריף, ברמת גימור גבוהה: איך המערכת העתידית תיראה ותרגיש, בתוך מכשיר אמיתי.
+    נשמר במיזם כ-01-ימים/05-Design-Sprint/תוצרים/Prototype.html. נוצר יחד עם בריף Draft 0 (kind: "Draft 0"), ומתעדכן יחד עם בריף המסכים (kind: "בריף"):
+    באותה ריצה, מאותם מסכים ומאותו מסלול. הבריף נשאר בנאמנות נמוכה. כאן High Fidelity, בשפה של מערכת העיצוב הממשלתית (IGDS 3.0).
+  הסוכן ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב, המכשירים והרכיבים קבועים. לא כותבים HTML.
+
+  הנתונים:
+    example: true רק בדוגמה (פס "דוגמה") · venture · kind: "Draft 0" / "בריף" · updated: תאריך (27.11.2026) · brief: קישור https לדף הבריף (רשות)
+    frame: צבע המכשיר — "blue" (ברירת מחדל) · "teal" · "pink" · "orange" · "graphite" · "silver"
+    service: name — שם השירות · agent — שם הסוכן בשירות, אם יש · owner — הגוף, בשורה (רשות) · mark — אות לסמל השירות (רשות)
+             address — כתובת בדיונית לשורת הכתובת במחשב (רשות; ברירת מחדל prototype.app. כתובת של gov.il לא מוצגת)
+    actors: id (אות — A, B), name, device: "iphone" / "desktop" / "tablet" (מתקבל גם "נייד" / "מחשב" / "טאבלט")
+    path: סדר המסכים במסלול המרכזי — כמו path בבריף. חסר — לפי סדר המסכים. מסך שלא במסלול מופיע ב"מסכים נוספים", ומגיעים אליו ב-"to"
+    start: מסך הפתיחה (רשות; ברירת מחדל — הראשון במסלול). גם #A3 או ?s=A3 בכתובת פותחים את A3
+    screens: code (כמו בבריף) · actor · name · step (שלב בתרחיש, רשות) · note (שורה למציג: מה המסך מראה, ואיזו התנהגות משאלת ה-MVP)
+             components (שמות הרכיבים מהמפרט שבמסך) · device (רשות — עוקף את המכשיר של השחקן)
+             lock: true — מסך הנעילה של iPhone, וההתראות עליו (לפתיחה בהתראה יזומה)
+             auto: { to, after } — עובר לבד למסך to אחרי after מילישניות (ברירת מחדל 2400) — למצבי "בבדיקה"
+             header: { title, subtitle, back: קוד מסך או true (המסך הקודם), backText (מחשב), avatar: "agent" / "service", live: true — נקודה ירוקה, הסוכן זמין }
+                     חסר — הכותרת היא name. false — בלי כותרת. avatar חסר — "agent" אם יש במסך הודעה מהסוכן
+             nav (מחשב / טאבלט): [{ text, icon, to, active, count }] — תפריט צד · alerts: מספר על הפעמון (מחשב / טאבלט)
+             body: אבני בניין, מלמעלה למטה · footer: אבני בניין בתחתית — בנייד, הפעולות הקבועות למטה; במחשב, שורת הפעולות
+  אבני הבניין — { "t": ... }. כל אחת יכולה לקבל "to" (קוד מסך) — לחיצה עוברת למסך:
+    agent { text, name, time, typing } — הודעה מהסוכן · user { text, time } — הודעה של המשתמש · quick { items: [{ text, to }] } — תשובות מהירות
+    push { app, title, text, time, to } — התראה (בנייד נכנסת מלמעלה; במסך נעילה — על המסך; במחשב — בפינה)
+    hero { kicker, title, text, icon, tone: "soft", ring: { value, max, label } } · heading { text, meta, action: { text, to } } · text { text, muted, small, center }
+    card { icon, title, text, meta, badge: { text, tone }, tone, to } · status { text, meta, tone, pulse } — מה הסוכן עושה עכשיו
+    stepper { items: [...], current (מ-1) } · progress { label, value, max, text, tone, ring: true, center }
+    checklist { title, items: [{ text, meta, state, label, to }] } — state: done (התקבל) · pending (בבדיקה) · review (לבדיקה אנושית) · fix (צריך תיקון) · wrong (לא המסמך שביקשנו) · todo (חסר)
+    upload { title, file, size, state: idle / checking / ok / fix / wrong, message, label, action: { text, to }, to } — העלאה עם תוצאת בדיקה מיידית
+    notice { tone, title, text, icon, action: { text, to } } · confirm { title, subtitle, rows: [{ label, value }], editable, note } — "זה מה שאנחנו יודעים"
+    disclosure { title, text, open } — "למה צריך את זה?" · field { label, value, placeholder, hint, error, required, kind: text / select / date }
+    choices { label, multi, items: [{ text, sub, selected, to }] } · button { text, variant: primary / secondary / link, size: large / small, icon, inline, to }
+    people { title, items: [{ name, role, status, tone, done, total, to }] } · summary { title, subtitle, icon, rows: [{ label, value, tone, to }] }
+    list { items: [{ text, meta, icon, to }] } · table { title, meta, columns, rows: [[...]] או [{ cells: [...], to }] — תא: טקסט, או { text, tone } לתגית }
+    kpis { items: [{ label, value, meta, tone, to }] } · divider { text } · spacer · split { main: [...], side: [...] } — מחשב / טאבלט, שני טורים (בנייד — אחד מתחת לשני)
+    tone: info · success · warning · error · neutral · brand
+    icon: check clock alert info upload file chat person people lock shield star phone globe bell edit search home sparkle calendar camera headset eye refresh plus
+    גם אבני הבניין של screens.html — title, bubble, chips, note, input, list — עובדות, ומתורגמות לרכיבים המקבילים.
+  כללי התוכן:
+    המסכים, הסדר והפעולות — מהבריף, אחד לאחד: אותם קודים, אותו path, אותם רכיבים. אין מסך שלא בבריף.
+    נוסח הצוות — מילה במילה. כמויות, ספים או תוכן מקצועי שלא הוגדרו — [X], ומוצג כתגית "עוד לא הוגדר". **טקסט** — מודגש.
+    נתונים אישיים (שמות, תאריכים, סכומים) — בדיוניים. בראש הדף תמיד: "אב-טיפוס · הנתונים לדוגמה".
+    בלי סמל המדינה, ובלי הלוגו או הכתובת של gov.il — שם השירות וסמל אות בלבד. השפה הגרפית — IGDS; הזהות — של השירות.
+  בדיקה: "to" שמוביל למסך שלא קיים, או קוד ב-path שאין לו מסך — מוצגים כאזהרה בראש הצד. JSON לא תקין — הודעה במקום המכשיר.
+  למציג: "הבא" / "הקודם", החצים במקלדת (← הבא, → הקודם), Home — מההתחלה, "הצגת אזורים לחיצים", ו"מסך מלא" (Esc — יציאה).
+    לחיצה על משהו לא לחיץ — הלחיצים מהבהבים. #A3 בכתובת — קפיצה למסך.
+  לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון — לאותו קישור. הקישור בראש בריף-מסכים.md ובדף הבריף.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Assistant:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Layout: top bar, presenter panel (right), stage with the device scaled to the viewport height. App UI in IGDS 3.0 tokens. Light theme only. */
+  :root {
+    color-scheme: light;
+    --brand: #0068F5; --brand-h: #0057CC; --brand-p: #0045A3; --soft: #EBF3FF; --tint: #B7D6FF; --info-bg: #E8F0FC; --nh: #F2F6FD;
+    --ink: #0C3058; --ink2: #466186; --dis: #5C697A; --div: #B5C7E2; --line: rgba(181, 199, 226, 0.55);
+    --err: #A72223; --err-bg: #FFCBCB; --ok: #347314; --ok-bg: #DDFFCD; --warn: #A35200; --warn-bg: #FFECC2; --badge: #C93435; --focus: #FFDD00;
+    --sh1: 0 2px 8px rgba(6, 77, 173, 0.1); --sh2: 0 4px 12px rgba(6, 77, 173, 0.15); --sh3: 0 10px 24px rgba(0, 104, 245, 0.15);
+    --font: "Rubik", "Assistant", "Arial Hebrew", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html, body { margin: 0; height: 100%; }
+  body { font-family: var(--font); color: var(--ink); -webkit-font-smoothing: antialiased; height: 100vh; overflow: hidden;
+    display: grid; grid-template-rows: auto auto minmax(0, 1fr);
+    background: radial-gradient(1000px 640px at 12% -8%, #fff 0%, rgba(255, 255, 255, 0) 60%), radial-gradient(900px 620px at 96% 106%, var(--info-bg) 0%, rgba(232, 240, 252, 0) 60%), var(--nh); }
+  button { font: inherit; color: inherit; cursor: pointer; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+  .example { grid-row: 1; background: var(--warn-bg); color: var(--warn); font-weight: 500; text-align: center; padding: 5px 12px; font-size: 14px; border-bottom: 1px dashed var(--warn); }
+
+  /* ===== top bar ===== */
+  .top { grid-row: 2; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; padding: 10px 22px; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); z-index: 5; }
+  .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+  .mark { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--brand), var(--brand-p)); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 17px; flex: none; box-shadow: var(--sh3); line-height: 1; }
+  .svc { font-weight: 700; font-size: 17px; line-height: 1.2; }
+  .own { font-size: 12.5px; color: var(--ink2); }
+  .tags { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tag { border-radius: 999px; padding: 3px 11px; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  .tproto { background: var(--info-bg); color: var(--brand-p); }
+  .twarn { background: var(--warn-bg); color: var(--warn); }
+  .tupd { font-size: 13px; color: var(--ink2); white-space: nowrap; }
+  .tact { margin-inline-start: auto; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .tlink { color: var(--brand-p); font-weight: 500; font-size: 14px; text-decoration: none; padding: 7px 10px; border-radius: 8px; }
+  .tlink:hover { background: var(--soft); }
+  .tbtn { height: 36px; border-radius: 8px; border: 1px solid var(--brand); background: #fff; color: var(--brand); padding: 0 14px; font-size: 14px; font-weight: 500; }
+  .tbtn:hover { color: var(--brand-p); border-color: var(--brand-p); }
+  .tbtn[aria-pressed="true"] { background: var(--soft); color: var(--brand-p); border-color: var(--brand-p); }
+  .tbtn-p { background: var(--brand); color: #F5F9FF; }
+  .tbtn-p:hover { background: var(--brand-h); color: #F5F9FF; }
+
+  /* ===== presenter panel + stage ===== */
+  .wrap { grid-row: 3; display: grid; grid-template-columns: 340px minmax(0, 1fr); grid-template-rows: minmax(0, 1fr); min-height: 0; }
+  .side { overflow-y: auto; padding: 18px 22px 22px 6px; display: flex; flex-direction: column; gap: 14px; scrollbar-width: thin; }
+  .warnbox { background: var(--warn-bg); color: var(--warn); border-radius: 12px; padding: 10px 12px; font-size: 13.5px; line-height: 1.45; }
+  .warnbox b { display: block; margin-bottom: 2px; }
+  .now { background: #fff; border-radius: 16px; box-shadow: var(--sh1); padding: 16px 16px 14px; display: flex; flex-direction: column; gap: 10px; }
+  .now-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .code { --c: var(--brand); display: inline-flex; align-items: center; font-weight: 700; font-size: 14px; color: var(--c); background: color-mix(in srgb, var(--c) 12%, #fff); border-radius: 8px; padding: 3px 9px; letter-spacing: 0.02em; white-space: nowrap; }
+  .ndev { font-size: 13px; color: var(--ink2); display: flex; align-items: center; gap: 6px; min-width: 0; }
+  .nname { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.25; }
+  .nstep { font-size: 13px; color: var(--ink2); margin-top: -6px; }
+  .lbl { display: block; font-size: 12px; font-weight: 500; color: var(--ink2); margin-bottom: 5px; }
+  .nnote { background: linear-gradient(180deg, var(--soft), #fff); border: 1px solid var(--info-bg); border-radius: 12px; padding: 10px 12px; }
+  .nnote p { margin: 0; font-size: 15px; line-height: 1.5; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips span { background: var(--nh); border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; font-size: 13px; font-weight: 500; }
+  .nauto { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--brand-p); }
+  .ctrl { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px; align-items: center; }
+  .cbtn { height: 44px; border-radius: 8px; border: 1px solid var(--brand); background: #fff; color: var(--brand); font-weight: 500; font-size: 15px; }
+  .cbtn:hover { color: var(--brand-p); border-color: var(--brand-p); }
+  .cbtn-p { background: var(--brand); color: #F5F9FF; }
+  .cbtn-p:hover { background: var(--brand-h); color: #F5F9FF; }
+  .cbtn:disabled { opacity: 0.4; cursor: default; }
+  .ccount { font-size: 14px; color: var(--ink2); font-weight: 500; min-width: 54px; text-align: center; white-space: nowrap; }
+  .restart { align-self: flex-start; background: none; border: 0; color: var(--brand-p); font-weight: 500; font-size: 14px; padding: 2px 4px; }
+  .route { background: #fff; border-radius: 16px; box-shadow: var(--sh1); padding: 12px 10px; }
+  .route .lbl { padding-inline: 6px; }
+  .route ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .rgrp { font-size: 12px; color: var(--ink2); padding: 9px 8px 3px; display: flex; align-items: center; gap: 6px; }
+  .rgrp:first-child { padding-top: 2px; }
+  .rdot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .ri { width: 100%; display: flex; align-items: center; gap: 10px; background: none; border: 0; border-radius: 10px; padding: 7px 8px; text-align: start; font-size: 14.5px; color: var(--ink); }
+  .ri:hover { background: var(--nh); }
+  .ri[aria-current="step"] { background: var(--soft); font-weight: 600; }
+  .ri .code { font-size: 12px; padding: 1px 7px; }
+  .rn { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .keys { margin: 0; font-size: 12.5px; color: var(--ink2); line-height: 1.5; }
+  .stage { position: relative; min-height: 0; min-width: 0; display: grid; place-items: center; overflow: hidden; }
+  .stage::before { content: ""; position: absolute; inset: 14% 16%; background: radial-gradient(closest-side, rgba(0, 104, 245, 0.17), rgba(0, 104, 245, 0)); pointer-events: none; }
+  .holder { position: relative; z-index: 1; }
+  .scaler { position: absolute; top: 0; left: 0; transform-origin: 0 0; }
+  .err-box { position: relative; z-index: 2; max-width: 560px; margin: 24px; background: #fff; border: 2px solid var(--err); color: var(--err); border-radius: 12px; padding: 14px 16px; font-weight: 500; }
+  body.present .top, body.present .side { display: none; }
+  body.present .wrap { grid-template-columns: minmax(0, 1fr); }
+  body.present .stage { padding-bottom: 62px; }
+  .pbar { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; background: rgba(12, 48, 88, 0.86); color: #fff; border-radius: 999px; padding: 6px 8px; box-shadow: 0 10px 30px rgba(12, 48, 88, 0.3); z-index: 20; backdrop-filter: blur(8px); }
+  .pbar button { background: rgba(255, 255, 255, 0.14); border: 0; color: #fff; border-radius: 999px; height: 36px; min-width: 40px; padding: 0 12px; font-size: 15px; }
+  .pbar button:hover { background: rgba(255, 255, 255, 0.24); }
+  .pbar span { padding: 0 8px; font-size: 14px; white-space: nowrap; }
+
+  /* ===== device frames ===== */
+  .dev { position: relative; font-family: var(--font); color: var(--ink); animation: devIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .dev[data-frame="blue"] { --f1: #cfe0ff; --f2: #5d8fe8; --f3: #2547a3; }
+  .dev[data-frame="teal"] { --f1: #c9efe8; --f2: #3fb3a3; --f3: #11665b; }
+  .dev[data-frame="pink"] { --f1: #ffe0ea; --f2: #f08fae; --f3: #b44a6c; }
+  .dev[data-frame="orange"] { --f1: #ffe2c6; --f2: #f39248; --f3: #a84d12; }
+  .dev[data-frame="graphite"] { --f1: #a7adb5; --f2: #4d535b; --f3: #1d2025; }
+  .dev[data-frame="silver"] { --f1: #fdfdfe; --f2: #d3d6db; --f3: #949aa3; }
+  .metal { background: linear-gradient(135deg, var(--f1) 0%, var(--f2) 20%, var(--f3) 46%, var(--f2) 72%, var(--f1) 100%); }
+  @keyframes devIn { from { opacity: 0; transform: translateY(14px) scale(0.97); } to { opacity: 1; transform: none; } }
+  .vw { position: absolute; inset: 0; }
+  .scn { position: absolute; inset: 0; }
+  .scn.inF { animation: inF 0.34s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .scn.inB { animation: inB 0.34s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  @keyframes inF { from { opacity: 0; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+  @keyframes inB { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+
+  .iphone { width: 429px; height: 888px; padding: 6px; border-radius: 73px;
+    box-shadow: 0 50px 90px -22px rgba(12, 48, 88, 0.45), 0 18px 36px -14px rgba(12, 48, 88, 0.3), inset 0 0 0 1px rgba(255, 255, 255, 0.5), inset 0 0 3px 1px rgba(0, 0, 0, 0.35); }
+  .iphone .bezel { width: 100%; height: 100%; background: #050608; border-radius: 67px; padding: 12px; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.07); }
+  .iphone .scr { position: relative; width: 393px; height: 852px; border-radius: 55px; overflow: hidden; background: var(--nh); isolation: isolate; }
+  .sbtn { position: absolute; width: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--f3), var(--f1) 50%, var(--f3)); }
+  .sbtn.l1 { left: -3px; top: 168px; height: 32px; } .sbtn.l2 { left: -3px; top: 222px; height: 62px; } .sbtn.l3 { left: -3px; top: 298px; height: 62px; } .sbtn.r1 { right: -3px; top: 262px; height: 98px; }
+  .island { position: absolute; top: 11px; left: 50%; transform: translateX(-50%); width: 124px; height: 36px; background: #000; border-radius: 20px; z-index: 40; }
+  .island::after { content: ""; position: absolute; right: 14px; top: 50%; width: 11px; height: 11px; margin-top: -5.5px; border-radius: 50%; background: radial-gradient(circle at 35% 35%, #33455e, #0a0f17 60%); }
+  .sbar { position: absolute; top: 0; left: 0; right: 0; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 3px 14px 0; z-index: 35; font-weight: 600; font-size: 16.5px; color: var(--ink); pointer-events: none; letter-spacing: -0.01em; transition: color 0.3s; }
+  .sbar .st, .sbar .si { width: 118px; display: flex; align-items: center; justify-content: center; gap: 6px; }
+  .light .sbar { color: #fff; }
+  .hind { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); width: 134px; height: 5px; border-radius: 3px; background: var(--ink); z-index: 40; pointer-events: none; }
+  .lockon .hind { background: #fff; }
+
+  .ipad { width: 1230px; height: 870px; padding: 5px; border-radius: 44px; box-shadow: 0 50px 90px -24px rgba(12, 48, 88, 0.42), 0 18px 36px -14px rgba(12, 48, 88, 0.28), inset 0 0 0 1px rgba(255, 255, 255, 0.5); }
+  .ipad .bezel { position: relative; width: 100%; height: 100%; background: #050608; border-radius: 39px; padding: 20px; }
+  .ipad .bezel::before { content: ""; position: absolute; top: 7px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #1d2733; }
+  .ipad .scr { position: relative; width: 1180px; height: 820px; border-radius: 20px; overflow: hidden; background: var(--nh); }
+  .ipad .sbar { height: 26px; font-size: 13px; padding: 0 18px; }
+  .ipad .sbar .st, .ipad .sbar .si { width: auto; }
+
+  .laptop { width: 1268px; display: flex; flex-direction: column; align-items: center; }
+  .lidrim { padding: 2px; border-radius: 22px 22px 10px 10px; box-shadow: 0 50px 90px -34px rgba(12, 48, 88, 0.45), 0 16px 36px -16px rgba(12, 48, 88, 0.3); }
+  .lid { position: relative; background: #0b0d10; border-radius: 20px 20px 8px 8px; padding: 20px 14px 16px; }
+  .cam { position: absolute; top: 7px; left: 50%; width: 6px; height: 6px; margin-left: -3px; border-radius: 50%; background: #1d2733; box-shadow: inset 0 0 2px rgba(120, 160, 220, 0.6); }
+  .laptop .scr { position: relative; width: 1120px; height: 724px; border-radius: 6px; overflow: hidden; background: #fff; }
+  .base { width: 1268px; height: 18px; border-radius: 2px 2px 14px 14px; background: linear-gradient(180deg, var(--f1), var(--f2) 55%, var(--f3)); position: relative; box-shadow: 0 20px 30px -14px rgba(12, 48, 88, 0.45); }
+  .base::before { content: ""; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 170px; height: 7px; border-radius: 0 0 9px 9px; background: linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.08)); }
+  .browser { position: absolute; inset: 0; display: flex; flex-direction: column; }
+  .chrome { height: 44px; flex: none; display: flex; align-items: center; gap: 14px; padding: 0 14px; background: linear-gradient(180deg, #f8fafd, #eef2f8); border-bottom: 1px solid #dfe6f0; direction: ltr; color: #8a97ab; }
+  .lights { display: flex; gap: 7px; }
+  .lights i { width: 12px; height: 12px; border-radius: 50%; display: block; }
+  .lights i:nth-child(1) { background: #ff5f57; } .lights i:nth-child(2) { background: #febc2e; } .lights i:nth-child(3) { background: #28c840; }
+  .cgrp { display: flex; align-items: center; gap: 10px; }
+  .addr { flex: 1; max-width: 520px; margin: 0 auto; height: 28px; border-radius: 8px; background: #fff; border: 1px solid #dfe6f0; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 13px; color: var(--ink2); }
+  .bview { position: relative; flex: 1; min-height: 0; }
+</style>
+<style>
+  /* ===== lock screen + notifications ===== */
+  .lock { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; color: #fff;
+    background: radial-gradient(120% 70% at 85% 8%, rgba(183, 214, 255, 0.55), rgba(183, 214, 255, 0) 60%), radial-gradient(90% 60% at 8% 88%, rgba(0, 104, 245, 0.55), rgba(0, 104, 245, 0) 70%), linear-gradient(165deg, #0045A3 0%, #0068F5 48%, #0C3058 100%); }
+  .lk-lock { margin-top: 62px; opacity: 0.9; display: flex; }
+  .lk-date { margin-top: 8px; font-size: 19px; font-weight: 500; opacity: 0.92; }
+  .lk-time { font-size: 98px; font-weight: 600; line-height: 1; letter-spacing: -0.02em; margin-top: 2px; text-shadow: 0 2px 20px rgba(12, 48, 88, 0.25); }
+  .lk-notes { margin-top: auto; width: 100%; padding: 0 10px 22px; display: flex; flex-direction: column; gap: 8px; }
+  .lk-bot { width: 100%; display: flex; justify-content: space-between; padding: 0 46px 44px; }
+  .lk-bot span { width: 50px; height: 50px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); backdrop-filter: blur(10px); display: grid; place-items: center; }
+  .push { display: flex; gap: 10px; align-items: flex-start; width: 100%; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4); border-radius: 22px; padding: 11px 13px; color: var(--ink); box-shadow: 0 8px 24px rgba(12, 48, 88, 0.18); text-align: start; }
+  .push .mark { width: 38px; height: 38px; border-radius: 9px; font-size: 17px; box-shadow: none; }
+  .push .mark.alt { background: linear-gradient(135deg, #8091a9, #466186); }
+  .p-c { flex: 1; min-width: 0; }
+  .p-top { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; color: var(--ink2); }
+  .p-app { font-weight: 500; }
+  .p-title { font-weight: 600; font-size: 15px; margin-top: 1px; line-height: 1.3; }
+  .p-text { font-size: 14.5px; line-height: 1.38; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+  .pushes { position: absolute; top: 54px; left: 8px; right: 8px; z-index: 30; display: flex; flex-direction: column; gap: 6px; }
+  .pushes .push, .lk-notes .push { animation: pushIn 0.6s 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .lk-notes .push + .push { animation-delay: 0.45s; }
+  @keyframes pushIn { from { opacity: 0; transform: translateY(-26px) scale(0.96); } to { opacity: 1; transform: none; } }
+
+  /* ===== app (phone) ===== */
+  .app { position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--nh); color: var(--ink); font-size: 16px; line-height: 1.45; text-align: start; }
+  .ah { position: relative; flex: none; padding: 58px 16px 18px; color: #fff; border-radius: 0 0 26px 26px; overflow: hidden; z-index: 2;
+    background: linear-gradient(155deg, #0045A3 0%, #0057CC 45%, #0068F5 100%); box-shadow: 0 8px 20px rgba(0, 69, 163, 0.18); }
+  .ah::before, .ah::after { content: ""; position: absolute; border-radius: 50%; pointer-events: none; }
+  .ah::before { width: 220px; height: 220px; top: -96px; left: -64px; background: rgba(255, 255, 255, 0.08); }
+  .ah::after { width: 140px; height: 140px; bottom: -78px; left: 96px; background: rgba(183, 214, 255, 0.14); }
+  .ah-row { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; }
+  .ah-back { width: 36px; height: 36px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, 0.16); color: #fff; display: grid; place-items: center; flex: none; padding: 0; }
+  .ah-back:hover { background: rgba(255, 255, 255, 0.26); }
+  .ah-tx { flex: 1; min-width: 0; }
+  .ah-title { font-size: 19px; font-weight: 600; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ah-sub { font-size: 13px; opacity: 0.9; margin-top: 2px; display: flex; align-items: center; gap: 6px; white-space: nowrap; overflow: hidden; }
+  .live { width: 8px; height: 8px; border-radius: 50%; background: var(--ok-bg); box-shadow: 0 0 0 3px rgba(221, 255, 205, 0.25); flex: none; }
+  .ah .mark { background: #fff; color: var(--brand); box-shadow: none; }
+  .ah .av-ag { background: rgba(255, 255, 255, 0.2); box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35); }
+  .av-ag { position: relative; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(140deg, #0068F5, #0045A3); color: #fff; flex: none; }
+  .av-ag .on { position: absolute; bottom: 0; left: 0; width: 11px; height: 11px; border-radius: 50%; background: var(--ok); border: 2px solid #fff; }
+  .ab { flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 16px 16px 20px; display: flex; flex-direction: column; gap: 12px; scrollbar-width: none; }
+  .ab::-webkit-scrollbar { display: none; }
+  .ab.pb { padding-bottom: 40px; }
+  .app.noh .ab { padding-top: 62px; }
+  .af { flex: none; padding: 12px 16px 30px; background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(12px); border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+  .app .btn { width: 100%; }
+  .app .btn.inl, .app .btn.v-link { width: auto; align-self: center; }
+
+  /* ===== building blocks (shared) ===== */
+  .txt { margin: 0; color: var(--ink); font-size: 15.5px; white-space: pre-line; }
+  .txt.mu { color: var(--ink2); } .txt.sm { font-size: 13.5px; } .txt.ce { text-align: center; }
+  .hd { display: flex; align-items: baseline; gap: 8px; margin-top: 4px; }
+  .hd h3 { margin: 0; font-size: 17px; font-weight: 600; flex: 1; }
+  .hm { font-size: 13px; color: var(--ink2); }
+  .ha { background: none; border: 0; color: var(--brand); font-weight: 500; font-size: 14px; padding: 0; }
+  .ph { display: inline-block; background: var(--warn-bg); color: var(--warn); border: 1px dashed var(--warn); border-radius: 6px; padding: 0 6px; font-size: 0.82em; font-weight: 600; line-height: 1.45; margin: 0 1px; vertical-align: baseline; }
+  .pill { display: inline-flex; align-items: center; gap: 5px; border-radius: 999px; padding: 3px 10px; font-size: 12.5px; font-weight: 500; background: var(--tb); color: var(--tc); white-space: nowrap; flex: none; line-height: 1.35; }
+  .t-info { --tc: #0045A3; --tb: #E8F0FC; --tk: #0068F5; }
+  .t-success { --tc: #347314; --tb: #DDFFCD; --tk: #347314; }
+  .t-warning { --tc: #A35200; --tb: #FFECC2; --tk: #A35200; }
+  .t-error { --tc: #A72223; --tb: #FFCBCB; --tk: #A72223; }
+  .t-neutral { --tc: #466186; --tb: #F2F6FD; --tk: #5C697A; }
+  .t-brand { --tc: #F5F9FF; --tb: #0068F5; --tk: #0068F5; }
+  .pill.t-neutral { box-shadow: inset 0 0 0 1px var(--div); }
+  .chev { color: var(--ink2); display: flex; flex: none; }
+  .vw .hot { cursor: pointer; }
+  .vw [data-dead] { cursor: not-allowed; }
+  .show-hot .vw .hot { outline: 3px solid var(--focus) !important; outline-offset: 2px; }
+  .flash .vw .hot { animation: hotflash 0.8s ease; }
+  @keyframes hotflash { 0%, 100% { outline: 3px solid rgba(255, 221, 0, 0); outline-offset: 3px; } 35% { outline: 3px solid rgba(255, 221, 0, 1); outline-offset: 3px; } }
+
+  /* chat */
+  .msg { display: flex; align-items: flex-end; gap: 8px; }
+  .msg.out { justify-content: flex-end; }
+  .msg.cont { margin-top: -6px; }
+  .msg.cont > .av-ag { visibility: hidden; }
+  .mcol { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; max-width: 82%; min-width: 0; }
+  .mmeta { font-size: 12px; color: var(--ink2); padding-inline: 4px; }
+  .bub { border-radius: 18px; padding: 10px 13px; font-size: 15.5px; line-height: 1.42; white-space: pre-line; overflow-wrap: anywhere; }
+  .bub.in { background: #fff; color: var(--ink); border-radius: 18px 18px 5px 18px; box-shadow: var(--sh1); }
+  .bub.out { max-width: 80%; background: linear-gradient(135deg, #0068F5, #0057CC); color: #F5F9FF; border-radius: 18px 18px 18px 5px; box-shadow: 0 4px 12px rgba(0, 104, 245, 0.22); }
+  .tm { display: flex; align-items: center; justify-content: flex-end; gap: 4px; font-size: 11px; opacity: 0.85; margin-top: 3px; margin-bottom: -2px; }
+  .bub.typing { display: inline-flex; gap: 4px; padding: 13px 14px; }
+  .bub.typing i { width: 7px; height: 7px; border-radius: 50%; background: var(--ink2); animation: blink 1.2s infinite; }
+  .bub.typing i:nth-child(2) { animation-delay: 0.2s; } .bub.typing i:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes blink { 0%, 80%, 100% { opacity: 0.25; transform: none; } 40% { opacity: 0.9; transform: translateY(-3px); } }
+  .quick { display: flex; flex-wrap: wrap; gap: 8px; padding-inline-start: 38px; }
+  .qr { border: 1.5px solid var(--brand); background: #fff; color: var(--brand); border-radius: 999px; padding: 7px 14px; font-size: 14.5px; font-weight: 500; line-height: 1.2; }
+  .qr:hover { background: var(--soft); color: var(--brand-p); border-color: var(--brand-p); }
+
+  /* hero, ring */
+  .hero { position: relative; overflow: hidden; border-radius: 20px; padding: 18px; display: flex; align-items: center; gap: 14px; background: linear-gradient(135deg, #0068F5 0%, #0045A3 100%); color: #F5F9FF; box-shadow: var(--sh3); }
+  .hero::before { content: ""; position: absolute; width: 180px; height: 180px; border-radius: 50%; background: rgba(183, 214, 255, 0.16); top: -70px; left: -50px; }
+  .hero::after { content: ""; position: absolute; width: 120px; height: 120px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); bottom: -62px; left: 72px; }
+  .hero-t { position: relative; z-index: 1; flex: 1; min-width: 0; }
+  .hk { font-size: 12.5px; font-weight: 500; opacity: 0.88; }
+  .hh { font-size: 20px; font-weight: 600; line-height: 1.25; margin-top: 2px; }
+  .hp { font-size: 14.5px; opacity: 0.92; margin-top: 4px; }
+  .hero-ic { position: relative; z-index: 1; width: 56px; height: 56px; border-radius: 16px; background: rgba(255, 255, 255, 0.16); display: grid; place-items: center; flex: none; }
+  .hero.soft { background: linear-gradient(135deg, #EBF3FF, #fff); color: var(--ink); box-shadow: var(--sh1); }
+  .hero.soft::before { background: rgba(0, 104, 245, 0.06); }
+  .hero.soft .hero-ic { background: #fff; color: var(--brand); }
+  .ring { position: relative; width: 72px; height: 72px; flex: none; z-index: 1; }
+  .ring svg { transform: rotate(-90deg); display: block; }
+  .ring .rb { fill: none; stroke: #E8F0FC; stroke-width: 7; }
+  .ring .rf { fill: none; stroke: var(--brand); stroke-width: 7; stroke-linecap: round; animation: ringIn 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .ring.dk .rb { stroke: rgba(255, 255, 255, 0.22); } .ring.dk .rf { stroke: #fff; }
+  .ring .rt { position: absolute; inset: 0; display: grid; place-items: center; font-weight: 600; font-size: 17px; direction: ltr; }
+  @keyframes ringIn { from { stroke-dashoffset: var(--c0); } }
+
+  /* card, status */
+  .card { display: flex; align-items: center; gap: 12px; background: #fff; border-radius: 16px; padding: 14px; box-shadow: var(--sh1); transition: box-shadow 0.2s, transform 0.2s; }
+  .card.link:hover, .cli.link:hover, .pr.link:hover, .lsi.link:hover, .kpi.hot:hover { box-shadow: var(--sh2); }
+  .cic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--tb); color: var(--tk); flex: none; }
+  .cm { flex: 1; min-width: 0; }
+  .ct { font-weight: 600; font-size: 15.5px; line-height: 1.3; }
+  .cx { font-size: 14px; color: var(--ink2); margin-top: 2px; }
+  .cmeta { font-size: 12.5px; color: var(--ink2); margin-top: 4px; }
+  .status { display: flex; align-items: center; gap: 10px; border-radius: 14px; padding: 10px 14px; background: var(--tb); color: var(--tc); font-size: 14.5px; font-weight: 500; }
+  .stx { flex: 1; min-width: 0; }
+  .smeta { font-size: 12.5px; opacity: 0.85; font-weight: 400; white-space: nowrap; }
+  .dot { position: relative; width: 9px; height: 9px; border-radius: 50%; background: var(--tk); flex: none; }
+  .dot.pulse::after { content: ""; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid var(--tk); opacity: 0; animation: pulse 1.6s ease-out infinite; }
+  @keyframes pulse { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(1.4); opacity: 0; } }
+
+  /* stepper */
+  .stp { list-style: none; margin: 0; padding: 14px 6px 12px; display: flex; background: #fff; border-radius: 16px; box-shadow: var(--sh1); }
+  .stp li { flex: 1; position: relative; display: flex; flex-direction: column; align-items: center; gap: 6px; min-width: 0; }
+  .stp li + li::before { content: ""; position: absolute; top: 13px; left: 50%; width: 100%; height: 2px; background: var(--div); }
+  .stp li.done::before, .stp li.cur::before { background: var(--brand); }
+  .stp .c { position: relative; z-index: 1; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: #fff; border: 2px solid var(--div); font-size: 13px; font-weight: 600; color: var(--ink2); }
+  .stp .done .c { background: var(--brand); border-color: var(--brand); color: #fff; }
+  .stp .cur .c { border-color: var(--brand); color: var(--brand); box-shadow: 0 0 0 5px rgba(0, 104, 245, 0.14); }
+  .stp .l { font-size: 12px; color: var(--ink2); text-align: center; line-height: 1.2; padding: 0 2px; }
+  .stp .cur .l { color: var(--ink); font-weight: 600; }
+
+  /* checklist */
+  .cl, .pp, .ls, .sm, .tb, .cf { background: #fff; border-radius: 16px; box-shadow: var(--sh1); overflow: hidden; }
+  .cl-h { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 13px 16px 9px; }
+  .clt { font-weight: 600; font-size: 15.5px; }
+  .cnt { font-size: 12.5px; color: var(--ink2); background: var(--nh); border-radius: 999px; padding: 2px 9px; white-space: nowrap; }
+  .cli { display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-top: 1px solid var(--line); }
+  .si { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--tb); color: var(--tk); flex: none; }
+  .si.empty { background: #fff; border: 2px dashed var(--div); }
+  .tx { flex: 1; min-width: 0; }
+  .t1 { font-weight: 500; font-size: 15px; line-height: 1.3; }
+  .t2 { font-size: 12.5px; color: var(--ink2); margin-top: 2px; }
+  .spin { width: 16px; height: 16px; border-radius: 50%; border: 2.2px solid currentColor; border-top-color: transparent; animation: spin 0.85s linear infinite; display: inline-block; flex: none; }
+  .spin.sm { width: 11px; height: 11px; border-width: 2px; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* progress */
+  .pg { background: #fff; border-radius: 16px; box-shadow: var(--sh1); padding: 13px 16px 15px; }
+  .pgtop { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }
+  .pgl { font-weight: 500; font-size: 14.5px; } .pgv { font-size: 13px; color: var(--ink2); white-space: nowrap; }
+  .track { height: 10px; border-radius: 999px; background: #E8F0FC; overflow: hidden; margin-top: 9px; }
+  .fill { height: 100%; border-radius: inherit; background: linear-gradient(270deg, #0068F5, #0045A3); animation: grow 1s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+  .fill.t-success, .fill.t-warning, .fill.t-error, .fill.t-neutral { background: var(--tk); }
+  @keyframes grow { from { width: 0; } }
+  .pg.pr { display: flex; align-items: center; gap: 14px; }
+  .prt { flex: 1; min-width: 0; } .pgs { font-size: 13.5px; color: var(--ink2); margin-top: 2px; }
+
+  /* upload */
+  .up { background: #fff; border-radius: 16px; box-shadow: var(--sh1); padding: 14px; }
+  .up-ok { box-shadow: var(--sh1), inset 0 0 0 1.5px rgba(52, 115, 20, 0.28); }
+  .up-fix, .up-wrong { box-shadow: var(--sh1), inset 0 0 0 1.5px rgba(167, 34, 35, 0.35); }
+  .upt { font-size: 12.5px; font-weight: 500; color: var(--ink2); margin-bottom: 8px; }
+  .up-idle { padding: 12px; }
+  .drop { border: 2px dashed var(--tint); border-radius: 12px; background: linear-gradient(180deg, #F2F6FD, #fff); padding: 16px 14px; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .dic { width: 50px; height: 50px; border-radius: 50%; background: var(--soft); color: var(--brand); display: grid; place-items: center; margin-bottom: 6px; }
+  .d1 { font-weight: 600; font-size: 15px; } .d2 { font-size: 12.5px; color: var(--ink2); }
+  .dbtns { display: flex; gap: 8px; margin-top: 10px; }
+  .mini { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border-radius: 8px; border: 1px solid var(--brand); color: var(--brand); font-size: 14px; font-weight: 500; background: #fff; }
+  .upf { display: flex; align-items: center; gap: 12px; }
+  .fic { position: relative; width: 42px; height: 50px; border-radius: 8px; background: var(--info-bg); color: var(--brand-p); display: grid; place-items: center; flex: none; }
+  .fic svg { margin-top: -9px; }
+  .fic .ext { position: absolute; bottom: 5px; left: 0; right: 0; text-align: center; font-size: 8.5px; font-weight: 700; letter-spacing: 0.04em; }
+  .upn { flex: 1; min-width: 0; }
+  .fn { font-weight: 500; font-size: 14.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-align: start; }
+  .fs { font-size: 12.5px; color: var(--ink2); }
+  .ind { position: relative; height: 5px; border-radius: 999px; background: #E8F0FC; overflow: hidden; margin-top: 12px; }
+  .ind::after { content: ""; position: absolute; top: 0; bottom: 0; width: 38%; border-radius: inherit; background: linear-gradient(90deg, rgba(0, 104, 245, 0), #0068F5, rgba(0, 104, 245, 0)); animation: ind 1.25s ease-in-out infinite; }
+  @keyframes ind { from { right: -40%; } to { right: 100%; } }
+  .upm { display: flex; gap: 8px; align-items: flex-start; margin-top: 12px; border-radius: 12px; padding: 10px 12px; background: color-mix(in srgb, var(--tb) 60%, #fff); color: var(--tc); font-size: 14px; line-height: 1.45; }
+  .upm svg { flex: none; margin-top: 1px; }
+  .up-checking .upm { background: var(--nh); color: var(--ink2); }
+  .up .upa { margin-top: 12px; }
+
+  /* notice, confirm, disclosure */
+  .nt { display: flex; gap: 10px; align-items: flex-start; border-radius: 14px; padding: 12px 14px; background: var(--tb); border-inline-start: 4px solid var(--tk); }
+  .nti { color: var(--tk); display: flex; flex: none; margin-top: 1px; }
+  .ntc { flex: 1; min-width: 0; }
+  .ntt { font-weight: 600; font-size: 15px; color: var(--ink); }
+  .ntx { font-size: 14px; color: var(--ink2); margin-top: 2px; }
+  .nta { background: none; border: 0; padding: 0; margin-top: 6px; color: var(--brand); font-weight: 500; font-size: 14px; text-decoration: underline; text-underline-offset: 3px; }
+  .cfh { display: flex; align-items: center; gap: 10px; padding: 12px 16px; background: linear-gradient(180deg, #EBF3FF, #F2F6FD); }
+  .cfi { width: 36px; height: 36px; border-radius: 10px; background: #fff; color: var(--brand); display: grid; place-items: center; box-shadow: var(--sh1); flex: none; }
+  .cft { font-weight: 600; font-size: 15.5px; } .cfs { font-size: 12.5px; color: var(--ink2); }
+  .cfr { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-top: 1px solid var(--line); }
+  .cfx { flex: 1; min-width: 0; } .cfl { font-size: 12.5px; color: var(--ink2); } .cfv { font-size: 15px; font-weight: 500; }
+  .cfe { width: 34px; height: 34px; border-radius: 8px; border: 0; background: transparent; color: var(--brand); display: grid; place-items: center; padding: 0; }
+  .cfe:hover { background: var(--soft); }
+  .cfn { font-size: 12.5px; color: var(--ink2); padding: 9px 16px 12px; border-top: 1px solid var(--line); display: flex; gap: 6px; align-items: flex-start; }
+  .cfn svg { flex: none; margin-top: 1px; }
+  .dc { background: #fff; border-radius: 14px; box-shadow: var(--sh1); }
+  .dch { width: 100%; display: flex; align-items: center; gap: 10px; padding: 12px 14px; background: none; border: 0; text-align: start; }
+  .dcq { width: 28px; height: 28px; border-radius: 50%; background: var(--soft); color: var(--brand); display: grid; place-items: center; flex: none; }
+  .dct { flex: 1; font-weight: 500; font-size: 15px; color: var(--ink); }
+  .dcc { color: var(--ink2); display: flex; transition: transform 0.2s; }
+  .dc.open .dcc { transform: rotate(180deg); }
+  .dcb { display: none; padding: 0 52px 14px 14px; font-size: 14px; color: var(--ink2); line-height: 1.5; white-space: pre-line; }
+  .dc.open .dcb { display: block; }
+
+  /* field, choices, button */
+  .fd { display: flex; flex-direction: column; gap: 6px; }
+  .fl { font-weight: 500; font-size: 15px; color: var(--ink); }
+  .req { color: var(--err); }
+  .fin { height: 48px; border: 1px solid var(--dis); border-radius: 8px; background: #fff; display: flex; align-items: center; gap: 8px; padding: 0 14px; color: var(--ink); font-size: 16px; transition: border-color 0.2s; }
+  .fin input { flex: 1; min-width: 0; height: 100%; border: 0; outline: 0; background: transparent; font: inherit; color: inherit; }
+  .fin input::placeholder { color: var(--ink2); }
+  .fin.pre { background: var(--soft); border-color: #323B49; }
+  .fin:focus-within { border: 2px solid var(--brand); padding: 0 13px; }
+  .fin.sel { cursor: pointer; } .fin .fv { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; } .fin.ph0 .fv { color: var(--ink2); }
+  .fin svg { color: var(--ink2); flex: none; }
+  .fd.err .fin { border: 2px solid var(--err); padding: 0 13px; }
+  .fe { font-size: 13.5px; color: var(--err); } .fh { font-size: 13.5px; color: var(--ink2); }
+  .chs { display: flex; flex-direction: column; gap: 8px; }
+  .chi { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--dis); border-radius: 12px; padding: 12px 14px; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+  .chi:hover { border-color: var(--brand-p); background: var(--nh); }
+  .chi.on { border: 2px solid var(--brand); padding: 11px 13px; background: var(--nh); box-shadow: var(--sh1); }
+  .chm { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--dis); display: grid; place-items: center; flex: none; background: #fff; color: #fff; }
+  .chi.on .chm { border-color: var(--brand); background: var(--brand); box-shadow: inset 0 0 0 4px #fff; }
+  .chi.multi .chm { border-radius: 6px; }
+  .chi.multi.on .chm { box-shadow: none; }
+  .chi.multi .chm svg { opacity: 0; } .chi.multi.on .chm svg { opacity: 1; }
+  .chx { flex: 1; min-width: 0; } .cht { font-weight: 500; font-size: 15px; } .chs2 { font-size: 12.5px; color: var(--ink2); }
+  .chi.on .cht { color: var(--brand-p); }
+  .btn { height: 48px; border-radius: 8px; border: 1px solid transparent; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 20px; font-size: 16px; font-weight: 400; line-height: 1; white-space: nowrap; transition: background 0.15s, border-color 0.15s, color 0.15s; }
+  .v-primary { background: var(--brand); color: #F5F9FF; font-weight: 500; box-shadow: 0 6px 16px rgba(0, 104, 245, 0.24); }
+  .v-primary:hover { background: var(--brand-h); } .v-primary:active { background: var(--brand-p); }
+  .v-secondary { background: #fff; color: var(--brand); border-color: var(--brand); }
+  .v-secondary:hover { color: var(--brand-p); border-color: var(--brand-p); } .v-secondary:active { background: var(--soft); }
+  .v-link { background: transparent; color: var(--brand); height: 40px; padding: 0 10px; }
+  .v-link:hover { color: var(--brand-p); } .v-link:active { background: var(--soft); }
+  .s-large { height: 56px; font-size: 18px; } .s-small { height: 36px; font-size: 15px; padding: 0 14px; }
+
+  /* people, summary, list, table, kpis, divider, split */
+  .pph { font-weight: 600; font-size: 15.5px; padding: 13px 16px 9px; }
+  .pr { display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-top: 1px solid var(--line); }
+  .pp > .pr:first-child { border-top: 0; }
+  .pav { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 600; font-size: 14px; flex: none; color: #fff; }
+  .pav.c0 { background: linear-gradient(135deg, #0068F5, #0045A3); } .pav.c1 { background: #A35200; } .pav.c2 { background: #347314; } .pav.c3 { background: #466186; }
+  .prx { flex: 1; min-width: 0; } .prn { font-weight: 500; font-size: 15px; } .prr { font-size: 12.5px; color: var(--ink2); }
+  .pend { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; }
+  .mp { display: flex; align-items: center; gap: 6px; }
+  .mpt { display: block; width: 64px; height: 5px; border-radius: 999px; background: #E8F0FC; overflow: hidden; }
+  .mpf { display: block; height: 100%; background: var(--brand); border-radius: inherit; }
+  .mpl { font-size: 11.5px; color: var(--ink2); white-space: nowrap; }
+  .smh { display: flex; align-items: center; gap: 10px; padding: 13px 16px; border-bottom: 1px solid var(--line); }
+  .smi { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(140deg, #0068F5, #0045A3); color: #fff; display: grid; place-items: center; flex: none; }
+  .smt { font-weight: 600; font-size: 15.5px; } .sms { font-size: 12.5px; color: var(--ink2); }
+  .smr { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 16px; }
+  .smr + .smr { border-top: 1px solid var(--line); }
+  .sml { font-size: 14px; color: var(--ink2); } .smv { font-size: 14.5px; font-weight: 500; text-align: end; }
+  .smr .pill { white-space: normal; max-width: 62%; }
+  .lsi { display: flex; align-items: center; gap: 12px; padding: 12px 16px; }
+  .lsi + .lsi { border-top: 1px solid var(--line); }
+  .lsic { width: 36px; height: 36px; border-radius: 10px; background: var(--soft); color: var(--brand); display: grid; place-items: center; flex: none; }
+  .lsx { flex: 1; min-width: 0; } .lst { font-weight: 500; font-size: 15px; } .lsm { font-size: 12.5px; color: var(--ink2); }
+  .tbh { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 14px 18px; font-weight: 600; font-size: 16px; border-bottom: 1px solid var(--line); }
+  .tbm { font-weight: 400; font-size: 13px; color: var(--ink2); }
+  .tbs { overflow-x: auto; }
+  .tb table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .tb th { text-align: start; font-weight: 500; font-size: 13px; color: var(--ink2); background: var(--nh); padding: 10px 18px; white-space: nowrap; }
+  .tb td { padding: 12px 18px; border-top: 1px solid var(--line); vertical-align: middle; }
+  .tb td.c0 { font-weight: 600; color: var(--brand-p); font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .tb td.tch { width: 34px; padding-inline: 6px; color: var(--ink2); }
+  .tb tr.hot:hover td { background: var(--nh); }
+  .kp { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+  .kpi { position: relative; overflow: hidden; background: #fff; border-radius: 16px; box-shadow: var(--sh1); padding: 15px 16px 14px; }
+  .kpi::before { content: ""; position: absolute; top: 0; right: 0; left: 0; height: 3px; background: var(--tk); }
+  .kpt { display: flex; align-items: center; gap: 7px; font-size: 13px; color: var(--ink2); }
+  .kd { width: 8px; height: 8px; border-radius: 50%; background: var(--tk); flex: none; }
+  .kpv { font-size: 30px; font-weight: 600; line-height: 1.15; margin-top: 6px; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .kpv .ph { font-size: 0.6em; vertical-align: middle; }
+  .kpm { font-size: 12px; color: var(--ink2); margin-top: 2px; }
+  .dv { height: 1px; background: var(--line); margin: 4px 0; flex: none; }
+  .dv.lab { height: auto; background: none; display: flex; justify-content: center; }
+  .dv.lab span { font-size: 12px; color: var(--ink2); background: #fff; border-radius: 999px; padding: 3px 12px; box-shadow: var(--sh1); }
+  .spc { height: 6px; flex: none; }
+  .split { display: grid; grid-template-columns: minmax(0, 1fr) 330px; gap: 16px; align-items: start; }
+  .spm, .sps { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+  .app .split { grid-template-columns: minmax(0, 1fr); }
+
+  /* ===== desktop / tablet app ===== */
+  .dapp { position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--nh); color: var(--ink); font-size: 15px; line-height: 1.45; text-align: start; }
+  .dapp.tab { padding-top: 26px; }
+  .dapp.tab::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 26px; background: #0045A3; }
+  .dtop { position: relative; overflow: hidden; height: 60px; flex: none; display: flex; align-items: center; gap: 16px; padding: 0 22px; color: #F5F9FF; background: linear-gradient(to left, #0045A3, #0068F5); }
+  .dtop::after { content: ""; position: absolute; width: 260px; height: 260px; border-radius: 50%; background: rgba(183, 214, 255, 0.12); left: -80px; top: -150px; pointer-events: none; }
+  .dbrand { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; }
+  .dbrand .mark { width: 34px; height: 34px; font-size: 16px; background: #fff; color: var(--brand); box-shadow: none; }
+  .dsvc { font-weight: 600; font-size: 16px; line-height: 1.2; } .down { font-size: 12px; opacity: 0.85; }
+  .dsearch { position: relative; z-index: 1; display: flex; align-items: center; gap: 8px; height: 36px; border-radius: 8px; background: rgba(255, 255, 255, 0.14); padding: 0 12px; width: 280px; font-size: 14px; color: rgba(245, 249, 255, 0.85); margin-inline-start: 18px; }
+  .dsp { flex: 1; }
+  .dbell { position: relative; z-index: 1; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.12); }
+  .nb { position: absolute; top: -3px; left: -3px; min-width: 18px; height: 18px; border-radius: 9px; background: var(--badge); color: #F5F9FF; font-size: 11px; font-style: normal; font-weight: 600; display: grid; place-items: center; padding: 0 4px; box-shadow: 0 0 0 2px #0057CC; }
+  .duser { position: relative; z-index: 1; display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.12); border-radius: 999px; padding: 4px 4px 4px 14px; }
+  .dav { width: 30px; height: 30px; border-radius: 50%; background: #fff; color: var(--brand-p); display: grid; place-items: center; font-weight: 600; font-size: 13px; }
+  .dun { font-size: 14px; font-weight: 500; white-space: nowrap; }
+  .dmain { flex: 1; display: flex; min-height: 0; }
+  .dnav { width: 216px; flex: none; background: #fff; border-inline-end: 1px solid var(--line); padding: 16px 10px; display: flex; flex-direction: column; gap: 3px; }
+  .dni { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 10px; color: var(--ink2); font-weight: 500; font-size: 14.5px; background: none; border: 0; width: 100%; text-align: start; }
+  .dni:hover { background: var(--nh); }
+  .dni.act { background: var(--soft); color: var(--brand-p); box-shadow: inset -3px 0 0 var(--brand); }
+  .dnt { flex: 1; }
+  .dnc { font-style: normal; min-width: 22px; height: 20px; border-radius: 10px; background: var(--badge); color: #F5F9FF; font-size: 11.5px; font-weight: 600; display: grid; place-items: center; padding: 0 6px; }
+  .dcontent { flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+  .dhead { flex: none; padding: 20px 28px 8px; }
+  .dback { display: inline-flex; align-items: center; gap: 4px; background: none; border: 0; color: var(--brand); font-size: 14px; font-weight: 500; padding: 0; margin-bottom: 6px; }
+  .dtitle { margin: 0; font-size: 24px; font-weight: 600; line-height: 1.25; }
+  .dsub { font-size: 14px; color: var(--ink2); margin-top: 3px; }
+  .dbody { flex: 1; min-height: 0; overflow: auto; padding: 10px 28px 22px; display: flex; flex-direction: column; gap: 16px; scrollbar-width: thin; }
+  .dfoot { flex: none; display: flex; gap: 10px; align-items: center; padding: 12px 28px; background: #fff; border-top: 1px solid var(--line); }
+  .dapp .pushes { top: 70px; left: 18px; right: auto; width: 360px; }
+
+  @media (max-width: 980px) {
+    body { display: block; height: auto; overflow: auto; }
+    .wrap { display: flex; flex-direction: column-reverse; }
+    .stage { height: min(86vh, 920px); }
+    .side { overflow: visible; padding: 16px; }
+  }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition: none !important; } }
+</style>
+</head>
+<body>
+<div class="example" id="example" hidden>דוגמה — מיזם לדוגמה, לא מיזם אמיתי. הסוכן מחליף את כל הנתונים.</div>
+<header class="top" id="top">
+  <div class="brand"><span class="mark" id="tmark"></span><div><div class="svc" id="tsvc"></div><div class="own" id="town"></div></div></div>
+  <div class="tags"><span class="tag tproto" id="tkind"></span><span class="tag twarn">אב-טיפוס · הנתונים לדוגמה</span><span class="tupd" id="tupd"></span></div>
+  <div class="tact">
+    <a class="tlink" id="tbrief" hidden target="_blank" rel="noopener">לבריף המסכים ←</a>
+    <button type="button" class="tbtn" id="bhot" aria-pressed="false">הצגת אזורים לחיצים</button>
+    <button type="button" class="tbtn tbtn-p" id="bpres">מסך מלא</button>
+  </div>
+</header>
+<main class="wrap" id="wrap">
+  <aside class="side" id="side" aria-label="שליטה ב-Prototype">
+    <div class="warnbox" id="warn" hidden></div>
+    <section class="now" aria-live="polite">
+      <div class="now-top"><span class="code" id="ncode"></span><span class="ndev" id="ndev"></span></div>
+      <h1 class="nname" id="nname"></h1>
+      <div class="nstep" id="nstep"></div>
+      <div class="nnote" id="nnote"><span class="lbl">למציג</span><p id="nnotep"></p></div>
+      <div id="ncomps"><span class="lbl">רכיבים במסך</span><div class="chips" id="nchips"></div></div>
+      <div class="nauto" id="nauto" hidden><span class="spin sm"></span>עובר לבד למסך הבא…</div>
+    </section>
+    <div class="ctrl">
+      <button type="button" class="cbtn" id="bprev">→ הקודם</button>
+      <span class="ccount" id="ccount"></span>
+      <button type="button" class="cbtn cbtn-p" id="bnext">הבא ←</button>
+    </div>
+    <button type="button" class="restart" id="bstart">מההתחלה</button>
+    <nav class="route" aria-label="המסלול"><span class="lbl">המסלול</span><ol id="route"></ol><div id="extra"></div></nav>
+    <p class="keys">← → מעבר בין מסכים · Home — מההתחלה · לוחצים במסך כמו באפליקציה. לחיצה על משהו לא לחיץ — הלחיצים מהבהבים.</p>
+  </aside>
+  <div class="stage" id="stage">
+    <div class="holder" id="holder"><div class="scaler" id="scaler"></div></div>
+  </div>
+</main>
+<div class="pbar" id="pbar" hidden>
+  <button type="button" id="pprev" aria-label="המסך הקודם">→</button>
+  <span id="plabel"></span>
+  <button type="button" id="pnext" aria-label="המסך הבא">←</button>
+  <button type="button" id="pexit">יציאה ממסך מלא</button>
+</div>
+
+<script type="application/json" id="data">
+{
+  "example": true,
+  "venture": "מיזם לדוגמה",
+  "kind": "Draft 0",
+  "brief": "",
+  "updated": "27.11.2026",
+  "frame": "blue",
+  "service": { "name": "סיוע בשכר דירה", "agent": "נוגה", "owner": "גוף ממשלתי לדוגמה", "mark": "ס", "address": "siyua.example" },
+  "actors": [
+    { "id": "A", "name": "מגישת הבקשה", "device": "iphone" },
+    { "id": "B", "name": "רכזת הטיפול", "device": "desktop" }
+  ],
+  "path": ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "B1", "B2"],
+  "screens": [
+    {
+      "code": "A1", "actor": "A", "name": "ההתראה הראשונה", "step": "1", "lock": true,
+      "note": "השירות פונה ראשון, ביוזמתו — המגישה לא צריכה להתקשר ולשאול מה עכשיו.",
+      "components": ["התראה יזומה"],
+      "body": [
+        { "t": "push", "app": "סיוע בשכר דירה", "time": "עכשיו", "title": "הבקשה שלך התקבלה לטיפול", "text": "שלום דנה, אני נוגה. נאסוף יחד את המסמכים — זה לוקח בערך [X] דקות. לחצי כדי להתחיל.", "to": "A2" },
+        { "t": "push", "app": "יומן", "time": "לפני שעה", "title": "אסיפת הורים", "text": "מחר, 18:00" }
+      ]
+    },
+    {
+      "code": "A2", "actor": "A", "name": "שיחת הפתיחה", "step": "2",
+      "note": "שיחה, לא טופס: הסוכנת מציגה את עצמה, אומרת מה יקרה, ותמיד אפשר לבקש אדם.",
+      "components": ["צ'אט עם הסוכן", "פנייה לנציג"],
+      "header": { "title": "נוגה", "subtitle": "הסוכנת הדיגיטלית · עונה מיד", "back": "A1", "live": true },
+      "body": [
+        { "t": "divider", "text": "היום" },
+        { "t": "agent", "text": "שלום דנה, אני נוגה — הסוכנת הדיגיטלית של השירות.", "time": "10:02" },
+        { "t": "agent", "text": "הבקשה שלך לסיוע בשכר דירה התקבלה. אלווה אותך עד שהתיק יהיה שלם, ובכל שלב אגיד לך מה הצעד הבא." },
+        { "t": "user", "text": "מעולה. כמה זמן זה לוקח?", "time": "10:03" },
+        { "t": "agent", "text": "בדרך כלל [X] דקות. קודם נוודא שהפרטים שיש לנו נכונים, ואז נעבור למסמכים.", "time": "10:03" },
+        { "t": "quick", "items": [ { "text": "בואי נתחיל", "to": "A3" }, { "text": "למה צריך את כל זה?" }, { "text": "לדבר עם נציג", "to": "A8" } ] }
+      ]
+    },
+    {
+      "code": "A3", "actor": "A", "name": "אישור הפרטים", "step": "2",
+      "note": "לשקף, לא לשאול שוב: מה שכבר ידוע מוצג לאישור, ואפשר לתקן כל פרט.",
+      "components": ["כרטיס אישור פרטים", "הסבר למה צריך"],
+      "header": { "title": "הפרטים שלך", "subtitle": "שלב 1 מתוך 4", "back": "A2", "avatar": "agent" },
+      "body": [
+        { "t": "stepper", "items": ["פרטים", "מסמכים", "בדיקה", "הגשה"], "current": 1 },
+        { "t": "agent", "text": "זה מה שכבר יש אצלנו. משהו לא נכון? אפשר לתקן כל פרט." },
+        { "t": "confirm", "title": "זה מה שאנחנו יודעים", "subtitle": "מתוך הבקשה שהגשת ב-24.11", "editable": true, "rows": [
+          { "label": "שם מלא", "value": "דנה לוי" },
+          { "label": "תעודת זהות", "value": "•••••4821" },
+          { "label": "כתובת הדירה", "value": "רחוב הדקל 12, עיר לדוגמה" },
+          { "label": "בני משק הבית", "value": "3 — דנה, יואב ונועה" }
+        ], "note": "הפרטים נשארים אצלנו, ולא עוברים לאף גורם אחר." },
+        { "t": "disclosure", "title": "למה צריך את הפרטים האלה?", "text": "הזכאות נקבעת לפי מספר בני משק הבית וההכנסה. בלי הפרטים לא נוכל לחשב את הסיוע." }
+      ],
+      "footer": [ { "t": "button", "text": "הפרטים נכונים", "to": "A4" }, { "t": "button", "text": "יש פרט לא נכון", "variant": "link" } ]
+    },
+    {
+      "code": "A4", "actor": "A", "name": "רשימת המסמכים האישית", "step": "3",
+      "note": "רק מה שהיא צריכה להביא, מה כבר התקבל, ולמה צריך כל מסמך.",
+      "components": ["רשימת מסמכים אישית", "הסבר למה צריך"],
+      "header": { "title": "המסמכים שלך", "subtitle": "שלב 2 מתוך 4", "back": "A3", "avatar": "agent" },
+      "body": [
+        { "t": "stepper", "items": ["פרטים", "מסמכים", "בדיקה", "הגשה"], "current": 2 },
+        { "t": "progress", "label": "המסמכים שהתקבלו", "value": 2, "max": 4 },
+        { "t": "checklist", "title": "מה צריך להביא", "items": [
+          { "text": "תעודת זהות וספח", "meta": "התקבל · 24.11", "state": "done" },
+          { "text": "חוזה שכירות", "meta": "התקבל · 24.11", "state": "done" },
+          { "text": "דפי חשבון בנק", "meta": "3 החודשים האחרונים, מכל החשבונות", "state": "todo", "to": "A5" },
+          { "text": "אישור הכנסה", "meta": "מהמעסיק, 3 החודשים האחרונים", "state": "todo" }
+        ] },
+        { "t": "disclosure", "title": "למה צריך דפי חשבון?", "text": "כדי לראות את ההכנסות וההוצאות הקבועות. מסתכלים רק על הסכומים — לא על מה קניתם." }
+      ],
+      "footer": [ { "t": "button", "text": "העלאת דפי חשבון", "icon": "upload", "to": "A5" } ]
+    },
+    {
+      "code": "A5", "actor": "A", "name": "העלאה — בבדיקה", "step": "4",
+      "note": "הבדיקה קורית ברגע ההעלאה, לא אחרי שבועיים. המסך עובר לבד לתוצאה.",
+      "components": ["העלאה עם בדיקה מיידית", "סטטוס הסוכן"],
+      "auto": { "to": "A6", "after": 2600 },
+      "header": { "title": "דפי חשבון בנק", "subtitle": "שלב 2 מתוך 4", "back": "A4", "avatar": "agent" },
+      "body": [
+        { "t": "agent", "text": "אפשר להעלות קובץ אחד או כמה. אני בודקת כל מסמך ברגע שהוא עולה." },
+        { "t": "upload", "title": "אוגוסט 2026", "file": "דף-חשבון-אוגוסט.pdf", "size": "3 עמודים · 1.2MB", "state": "ok", "message": "תקין: כל העמודים, החשבון על שמך, והוא עדכני." },
+        { "t": "upload", "title": "ספטמבר 2026", "file": "דף-חשבון-ספטמבר.pdf", "state": "checking" },
+        { "t": "status", "text": "נוגה בודקת את המסמך…", "tone": "info", "pulse": true }
+      ]
+    },
+    {
+      "code": "A6", "actor": "A", "name": "העלאה — צריך תיקון", "step": "4",
+      "note": "כשמשהו לא תקין — אומרים מה חסר, למה, ואיך מתקנים. בלי להאשים.",
+      "components": ["העלאה עם בדיקה מיידית"],
+      "header": { "title": "דפי חשבון בנק", "subtitle": "שלב 2 מתוך 4", "back": "A4", "avatar": "agent" },
+      "body": [
+        { "t": "upload", "title": "אוגוסט 2026", "file": "דף-חשבון-אוגוסט.pdf", "size": "3 עמודים · 1.2MB", "state": "ok", "message": "תקין: כל העמודים, החשבון על שמך, והוא עדכני." },
+        { "t": "upload", "title": "ספטמבר 2026", "file": "דף-חשבון-ספטמבר.pdf", "size": "2 עמודים · 0.8MB", "state": "fix", "message": "חסר עמוד 2 מתוך 3. צריך את כל העמודים כדי לראות את היתרה בסוף החודש.", "action": { "text": "העלאה מחדש", "to": "A7" } },
+        { "t": "upload", "title": "אוקטובר 2026", "state": "idle", "to": "A7" }
+      ]
+    },
+    {
+      "code": "A7", "actor": "A", "name": "הצעד הבא", "step": "5",
+      "note": "אף מסך לא נגמר בלי צעד הבא: מה התקבל, מה נשאר, ומה הסוכנת עושה עכשיו.",
+      "components": ["כרטיס הצעד הבא", "סטטוס הסוכן", "פנייה לנציג"],
+      "header": { "title": "המסמכים שלך", "subtitle": "שלב 2 מתוך 4", "back": "A4", "avatar": "agent" },
+      "body": [
+        { "t": "hero", "kicker": "כמעט סיימנו", "title": "3 מתוך 4 מסמכים התקבלו", "text": "נשאר רק אישור הכנסה. את השאר כבר בדקתי.", "ring": { "value": 3, "max": 4 } },
+        { "t": "upload", "title": "ספטמבר 2026", "file": "דף-חשבון-ספטמבר.pdf", "size": "3 עמודים · 1.3MB", "state": "ok", "message": "תקין: 3 עמודים מתוך 3. תודה!" },
+        { "t": "card", "icon": "file", "title": "הצעד הבא: אישור הכנסה", "text": "מבקשים מהמעסיק. הכנתי נוסח מוכן לשליחה.", "badge": { "text": "הבא", "tone": "info" } },
+        { "t": "status", "text": "התיק מתקדם לפי הזמנים", "meta": "צפי: [X] ימי עבודה", "tone": "success" }
+      ],
+      "footer": [ { "t": "button", "text": "לאישור ההכנסה" }, { "t": "button", "text": "לדבר עם רכזת", "variant": "secondary", "icon": "headset", "to": "A8" } ]
+    },
+    {
+      "code": "A8", "actor": "A", "name": "מעבר לאדם", "step": "5",
+      "note": "המעבר לאדם תמיד גלוי — והרכזת מקבלת את כל ההקשר, בלי לשאול שוב.",
+      "components": ["פנייה לנציג", "באנר העברה"],
+      "header": { "title": "שיחה עם רכזת", "subtitle": "העברה לאדם", "back": "A7", "avatar": "agent" },
+      "body": [
+        { "t": "status", "text": "הועבר לרכזת הטיפול", "meta": "מענה תוך [X] שעות", "tone": "info", "pulse": true },
+        { "t": "agent", "text": "העברתי את הפנייה שלך לרכזת, יחד עם כל מה שכבר עשינו. לא תצטרכי להסביר שוב." },
+        { "t": "notice", "tone": "success", "title": "הפנייה הועברה", "text": "מיכל, רכזת הטיפול, תחזור אלייך. התיק והשיחה כבר אצלה." },
+        { "t": "choices", "label": "איך נוח לך שיחזרו אלייך?", "items": [ { "text": "שיחת טלפון", "sub": "050-0000000", "selected": true }, { "text": "הודעה כאן בצ'אט" }, { "text": "שיחת וידאו" } ] },
+        { "t": "field", "label": "מתי נוח לך?", "kind": "select", "value": "היום, בין 16:00 ל-18:00" }
+      ],
+      "footer": [ { "t": "button", "text": "אישור", "to": "B1" } ]
+    },
+    {
+      "code": "B1", "actor": "B", "name": "התיקים של הרכזת", "step": "6",
+      "note": "הרכזת רואה רק תיקים שהסוכנת סיימה — או סימנה לבדיקה אנושית.",
+      "components": ["רשימת תיקים לרכזת"],
+      "alerts": 3,
+      "header": { "title": "תיקים פתוחים", "subtitle": "עודכן היום, 10:45 · מה שנוגה העבירה אלייך" },
+      "nav": [ { "text": "תיקים פתוחים", "icon": "file", "active": true, "to": "B1", "count": 5 }, { "text": "ממתינים לי", "icon": "clock" }, { "text": "שיחות", "icon": "chat" }, { "text": "חיפוש", "icon": "search" } ],
+      "body": [
+        { "t": "kpis", "items": [
+          { "label": "תיקים שלמים", "value": "18", "tone": "success" },
+          { "label": "ממתינים למסמכים", "value": "42", "tone": "info" },
+          { "label": "סומנו לבדיקה אנושית", "value": "5", "tone": "warning" },
+          { "label": "זמן ממוצע לתיק שלם", "value": "[X] ימים", "tone": "brand" }
+        ] },
+        { "t": "table", "title": "תיקים אחרונים", "meta": "לחיצה על תיק פותחת את הסיכום", "columns": ["תיק", "מגיש/ה", "מסמכים", "מצב", "עדכון אחרון"], "rows": [
+          { "cells": ["2026-0412", "דנה לוי", "4 מתוך 4", { "text": "שלם · מסמך אחד לבדיקה", "tone": "warning" }, "היום, 10:42"], "to": "B2" },
+          { "cells": ["2026-0409", "אבי כהן", "4 מתוך 4", { "text": "תיק שלם", "tone": "success" }, "היום, 09:15"] },
+          { "cells": ["2026-0398", "רות מזרחי", "2 מתוך 5", { "text": "ממתין למסמכים", "tone": "info" }, "אתמול"] },
+          { "cells": ["2026-0391", "יוסף אברהם", "3 מתוך 4", { "text": "צריך תיקון", "tone": "error" }, "אתמול"] },
+          { "cells": ["2026-0385", "מאיה פרץ", "1 מתוך 4", { "text": "ממתין למסמכים", "tone": "info" }, "לפני 3 ימים"] }
+        ] }
+      ]
+    },
+    {
+      "code": "B2", "actor": "B", "name": "סיכום התיק", "step": "7",
+      "note": "מה נבדק ומה סומן כלא ודאי — כדי שהרכזת לא תבדוק הכול מחדש.",
+      "components": ["סיכום תיק לרכזת", "מצב לא ודאי"],
+      "alerts": 3,
+      "header": { "title": "תיק 2026-0412 · דנה לוי", "subtitle": "הוגש 24.11.2026 · שלם מהיום, 10:42", "back": "B1", "backText": "לכל התיקים" },
+      "nav": [ { "text": "תיקים פתוחים", "icon": "file", "active": true, "to": "B1", "count": 5 }, { "text": "ממתינים לי", "icon": "clock" }, { "text": "שיחות", "icon": "chat" }, { "text": "חיפוש", "icon": "search" } ],
+      "body": [
+        { "t": "split", "main": [
+          { "t": "summary", "icon": "sparkle", "title": "הסיכום של נוגה", "subtitle": "נבדק ברגע ההעלאה של כל מסמך", "rows": [
+            { "label": "מסמכים שהתקבלו", "value": "4 מתוך 4", "tone": "success" },
+            { "label": "נבדקו ונמצאו תקינים", "value": "3", "tone": "success" },
+            { "label": "סומן כלא ודאי", "value": "אישור הכנסה — החתימה לא קריאה", "tone": "warning" },
+            { "label": "פרטים שהמגישה תיקנה", "value": "אין" }
+          ] },
+          { "t": "checklist", "title": "המסמכים בתיק", "items": [
+            { "text": "תעודת זהות וספח", "meta": "נבדק · תקין", "state": "done" },
+            { "text": "חוזה שכירות", "meta": "נבדק · הכתובת תואמת לבקשה", "state": "done" },
+            { "text": "דפי חשבון בנק", "meta": "3 חודשים · העמוד החסר הושלם בהעלאה השנייה", "state": "done" },
+            { "text": "אישור הכנסה", "meta": "נוגה לא בטוחה בחתימה — ולא ניחשה", "state": "review" }
+          ] }
+        ], "side": [
+          { "t": "notice", "tone": "warning", "title": "מסמך אחד מחכה להחלטה שלך", "text": "אישור ההכנסה סומן כלא ודאי והועבר אלייך.", "action": { "text": "פתיחת המסמך" } },
+          { "t": "people", "title": "משק הבית", "items": [
+            { "name": "דנה לוי", "role": "מגישת הבקשה", "status": "הושלם", "tone": "success", "done": 4, "total": 4 },
+            { "name": "יואב לוי", "role": "בן זוג", "status": "הושלם", "tone": "success", "done": 2, "total": 2 },
+            { "name": "נועה לוי", "role": "בת, 16", "status": "לא נדרש", "tone": "neutral" }
+          ] },
+          { "t": "card", "icon": "chat", "title": "השיחה עם נוגה", "text": "14 הודעות · פנייה אחת לרכזת", "to": "A2" }
+        ] }
+      ],
+      "footer": [ { "t": "button", "text": "אישור התיק", "icon": "check" }, { "t": "button", "text": "בקשת מסמך נוסף", "variant": "secondary" } ]
+    }
+  ]
+}
+</script>
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var stage = document.getElementById("stage"), holder = document.getElementById("holder"), scaler = document.getElementById("scaler");
+  function fail(msg) { var b = document.createElement("div"); b.className = "err-box"; b.textContent = "ה-Prototype לא נטען: " + msg; stage.appendChild(b); }
+  var D;
+  try { D = JSON.parse(document.getElementById("data").textContent); } catch (e) { fail("בלוק הנתונים (id=\"data\") הוא לא JSON תקין — " + e.message); return; }
+  try { main(D); } catch (e) { console.error(e); fail(e && e.message ? e.message : String(e)); }
+
+  function main(D) {
+    // ---------- data ----------
+    var SVC = D.service || {};
+    var SV_NAME = SVC.name || D.venture || "השירות";
+    var AGENT = SVC.agent || "";
+    var MARK = String(SVC.mark || SV_NAME).replace(/["'״׳\s]/g, "").slice(0, 2) || "•";
+    var ADDRESS = SVC.address && !/gov\.il/i.test(SVC.address) ? String(SVC.address) : "prototype.app";
+    var FRAMES = ["blue", "teal", "pink", "orange", "graphite", "silver"];
+    var FRAME = FRAMES.indexOf(D.frame) > -1 ? D.frame : "blue";
+    var COLORS = ["#0068F5", "#A35200", "#347314", "#0C3058", "#A72223"];
+    var DEVN = { iphone: "iPhone", desktop: "מחשב", tablet: "טאבלט" };
+    var A = {}; (D.actors || []).forEach(function (a, i) { if (a && a.id) { A[a.id] = a; a._i = i; } });
+    var screens = (D.screens || []).filter(function (s) { return s && s.code; });
+    var S = {}; screens.forEach(function (s) { S[s.code] = s; });
+    var badPath = (D.path || []).filter(function (c) { return !S[c]; });
+    var path = (D.path || []).filter(function (c) { return S[c]; });
+    if (!path.length) path = screens.map(function (s) { return s.code; });
+    var extras = screens.map(function (s) { return s.code; }).filter(function (c) { return path.indexOf(c) === -1; });
+    var DATE = (function () {
+      var m = /(\d{1,2})[.\/-](\d{1,2})[.\/-](\d{4})/.exec(D.updated || "");
+      var d = m ? new Date(+m[3], +m[2] - 1, +m[1]) : new Date();
+      try { return new Intl.DateTimeFormat("he-IL", { weekday: "long", day: "numeric", month: "long" }).format(d); } catch (e) { return ""; }
+    })();
+    var UID = 0;
+
+    function color(actorId) { var a = A[actorId]; return COLORS[(a ? a._i : 0) % COLORS.length]; }
+    function devOf(s) {
+      var a = A[s.actor] || {};
+      var d = String(s.device || a.device || "iphone").toLowerCase();
+      if (/desk|מחשב|web|laptop|browser|pc/.test(d)) return "desktop";
+      if (/tab|ipad|טאבלט/.test(d)) return "tablet";
+      return "iphone";
+    }
+
+    // ---------- dom helpers ----------
+    function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null && text !== "") e.textContent = text; return e; }
+    var SPLIT = /(\[[^\[\]\n]{1,40}\]|\*\*[^*\n]+\*\*)/;
+    function rich(node, text) {
+      if (text == null) return node;
+      String(text).split(SPLIT).forEach(function (p) {
+        if (!p) return;
+        if (/^\[[^\[\]\n]{1,40}\]$/.test(p)) { var c = el("span", "ph", p.slice(1, -1)); c.title = "עוד לא הוגדר"; node.appendChild(c); }
+        else if (/^\*\*[^*\n]+\*\*$/.test(p)) node.appendChild(el("b", null, p.slice(2, -2)));
+        else node.appendChild(document.createTextNode(p));
+      });
+      return node;
+    }
+    function T(tag, cls, text) { return rich(el(tag, cls), text); }
+    function tone(t) {
+      t = String(t || "").toLowerCase();
+      if (!t) return "";
+      if (/^(ok|success|done|good)$/.test(t)) return "success";
+      if (/^(error|fail|failure|danger|bad)$/.test(t)) return "error";
+      if (/^(warn|warning)$/.test(t)) return "warning";
+      if (/^(brand|primary)$/.test(t)) return "brand";
+      if (/^(neutral|muted|grey|gray)$/.test(t)) return "neutral";
+      return "info";
+    }
+    function pill(text, t) { return T("span", "pill t-" + (tone(t) || "neutral"), text); }
+    function initials(n) { var w = String(n || "").trim().split(/\s+/).filter(Boolean); if (!w.length) return "?"; return w[0].charAt(0) + (w[1] ? w[1].charAt(0) : ""); }
+
+    // ---------- icons (outlined, 24px, currentColor) ----------
+    function C(cx, cy, r) { return "M" + (cx - r) + " " + cy + "a" + r + " " + r + " 0 1 0 " + 2 * r + " 0a" + r + " " + r + " 0 1 0 " + -2 * r + " 0"; }
+    function R(x, y, w, h, r) { return "M" + (x + r) + " " + y + "h" + (w - 2 * r) + "a" + r + " " + r + " 0 0 1 " + r + " " + r + "v" + (h - 2 * r) + "a" + r + " " + r + " 0 0 1 " + -r + " " + r + "h" + -(w - 2 * r) + "a" + r + " " + r + " 0 0 1 " + -r + " " + -r + "v" + -(h - 2 * r) + "a" + r + " " + r + " 0 0 1 " + r + " " + -r + "z"; }
+    var IC = {
+      check: ["M5 12.5l4.2 4.2L19 7"],
+      clock: [C(12, 12, 9), "M12 7.5V12l3 2"],
+      alert: ["M12 3.8l9 15.7H3z", "M12 10v4.2", "M12 17.2v.3"],
+      info: [C(12, 12, 9), "M12 11v5.5", "M12 7.6v.3"],
+      upload: ["M12 15.5V4.5", "M7.5 9L12 4.5 16.5 9", "M4.5 15.5v3A1.5 1.5 0 0 0 6 20h12a1.5 1.5 0 0 0 1.5-1.5v-3"],
+      file: ["M14 3.5H7A1.5 1.5 0 0 0 5.5 5v14A1.5 1.5 0 0 0 7 20.5h10a1.5 1.5 0 0 0 1.5-1.5V8z", "M14 3.5V8h4.5", "M9 13h6", "M9 16.5h4"],
+      chat: ["M4.5 6A1.5 1.5 0 0 1 6 4.5h12A1.5 1.5 0 0 1 19.5 6v8.5A1.5 1.5 0 0 1 18 16H9.5l-5 4z"],
+      person: [C(12, 8, 3.8), "M4.5 20c1.4-3.4 4.2-5 7.5-5s6.1 1.6 7.5 5"],
+      people: [C(9, 8.5, 3.3), "M3 19.5c.9-3 3.2-4.6 6-4.6s5.1 1.6 6 4.6", "M15 5.2a3.3 3.3 0 0 1 0 6.6", "M16.8 15.1c2 .5 3.4 1.9 4.2 4.4"],
+      lock: [R(5, 10.5, 14, 10, 2), "M8 10.5V8a4 4 0 0 1 8 0v2.5"],
+      arrow: ["M19 12H5", "M11 6l-6 6 6 6"],
+      chevron: ["M14.5 6l-6 6 6 6"],
+      back: ["M9.5 6l6 6-6 6"],
+      down: ["M6 9.5l6 6 6-6"],
+      shield: ["M12 3.5l7 2.8v5.4c0 4.3-3 7.9-7 9.3-4-1.4-7-5-7-9.3V6.3z", "M8.8 12.2l2.2 2.2 4.2-4.3"],
+      star: ["M12 4l2.4 5 5.4.7-4 3.8 1 5.4L12 16.3l-4.8 2.6 1-5.4-4-3.8 5.4-.7z"],
+      phone: ["M6.5 4h3l1.5 4.2-2 1.3a10.5 10.5 0 0 0 5.5 5.5l1.3-2 4.2 1.5v3a1.5 1.5 0 0 1-1.5 1.5A14.5 14.5 0 0 1 5 5.5 1.5 1.5 0 0 1 6.5 4z"],
+      globe: [C(12, 12, 9), "M3 12h18", "M12 3c2.4 2.6 3.6 5.6 3.6 9s-1.2 6.4-3.6 9c-2.4-2.6-3.6-5.6-3.6-9S9.6 5.6 12 3z"],
+      bell: ["M6.5 16V11a5.5 5.5 0 0 1 11 0v5l1.5 2h-14z", "M10 20.5a2 2 0 0 0 4 0"],
+      edit: ["M4.5 19.5h3.8L19 8.8 15.2 5 4.5 15.7z", "M13.5 6.7l3.8 3.8"],
+      search: [C(11, 11, 6.5), "M16 16l4 4"],
+      home: ["M4.5 10.5L12 4.5l7.5 6v9H15V14H9v5.5H4.5z"],
+      sparkle: ["M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9-1.9 5.1-1.9-5.1-5.1-1.9 5.1-1.9z", "M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"],
+      calendar: [R(4, 5.5, 16, 14.5, 2), "M4 10h16", "M8.5 3.5v4", "M15.5 3.5v4"],
+      camera: ["M4 9a1.5 1.5 0 0 1 1.5-1.5H8l1.5-2h5l1.5 2h2.5A1.5 1.5 0 0 1 20 9v8.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 17.5z", C(12, 13, 3.4)],
+      x: ["M6.5 6.5l11 11", "M17.5 6.5l-11 11"],
+      headset: ["M4.5 14v-2a7.5 7.5 0 0 1 15 0v2", "M4.5 14h3v5H6a1.5 1.5 0 0 1-1.5-1.5z", "M19.5 14h-3v5H18a1.5 1.5 0 0 0 1.5-1.5z", "M16.5 19c0 1.2-1.6 2-4 2"],
+      refresh: ["M19.5 11.5A7.5 7.5 0 1 0 17.3 17", "M19.5 5v6.5H13"],
+      eye: ["M2.5 12s3.5-6.5 9.5-6.5 9.5 6.5 9.5 6.5-3.5 6.5-9.5 6.5S2.5 12 2.5 12z", C(12, 12, 3)],
+      flash: ["M9 3.5h6l-1 5h3.5L10 20.5l1.5-8.5H8z"],
+      plus: ["M12 5v14", "M5 12h14"],
+      share: ["M12 15V4", "M8 8l4-4 4 4", "M6.5 11H5v9h14v-9h-1.5"],
+      sidebar: [R(3.5, 5, 17, 14, 2), "M9.5 5v14"],
+      mobile: [R(7, 3, 10, 18, 2.5), "M11 17.5h2"],
+      monitor: [R(3, 4.5, 18, 12, 2), "M8.5 20h7", "M12 16.5V20"],
+      tablet: [R(4, 3.5, 16, 17, 2.5), "M11 17.5h2"]
+    };
+    function icon(name, size, sw) {
+      var ds = IC[name]; if (!ds) return null;
+      var s = document.createElementNS(NS, "svg");
+      s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("width", size || 22); s.setAttribute("height", size || 22);
+      s.setAttribute("fill", "none"); s.setAttribute("stroke", "currentColor"); s.setAttribute("stroke-width", sw || 1.8);
+      s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round"); s.setAttribute("aria-hidden", "true");
+      ds.forEach(function (d) { var p = document.createElementNS(NS, "path"); p.setAttribute("d", d); s.appendChild(p); });
+      return s;
+    }
+    function ticks() {
+      var s = document.createElementNS(NS, "svg"); s.setAttribute("viewBox", "0 0 18 12"); s.setAttribute("width", "16"); s.setAttribute("height", "11");
+      s.setAttribute("fill", "none"); s.setAttribute("stroke", "currentColor"); s.setAttribute("stroke-width", "1.8"); s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round"); s.setAttribute("aria-hidden", "true");
+      ["M1.5 6.5l3 3L11 2.5", "M8 9.5l.5.5L16.5 2.5"].forEach(function (d) { var p = document.createElementNS(NS, "path"); p.setAttribute("d", d); s.appendChild(p); });
+      return s;
+    }
+    function circle(cx, cy, r, cls) { var c = document.createElementNS(NS, "circle"); c.setAttribute("cx", cx); c.setAttribute("cy", cy); c.setAttribute("r", r); c.setAttribute("class", cls); return c; }
+
+    // ---------- clickable ----------
+    var dead = [];
+    function hot(n, to) {
+      if (!to) return n;
+      if (S[to]) {
+        n.setAttribute("data-to", to); n.classList.add("hot");
+        if (n.tagName !== "BUTTON" && n.tagName !== "A") { n.setAttribute("role", "button"); n.tabIndex = 0; }
+      } else { n.setAttribute("data-dead", to); n.title = "אין מסך " + to; }
+      return n;
+    }
+    function markBack(n, back) {
+      if (back === true) { n.setAttribute("data-back", "1"); n.classList.add("hot"); }
+      else hot(n, back);
+    }
+    function markEl(size) { var m = el("span", "mark", MARK); if (size) { m.style.width = m.style.height = size + "px"; } return m; }
+    function agentAvatar(size, online) {
+      var a = el("span", "av-ag"); a.style.width = a.style.height = size + "px";
+      a.appendChild(icon("sparkle", Math.round(size * 0.56), 1.7));
+      if (online) a.appendChild(el("i", "on"));
+      if (AGENT) a.title = AGENT;
+      return a;
+    }
+    function ring(v, m, label, dark) {
+      v = +v || 0; m = +m || 100; var p = Math.max(0, Math.min(1, v / m));
+      var w = el("div", "ring" + (dark ? " dk" : ""));
+      var s = document.createElementNS(NS, "svg"); s.setAttribute("viewBox", "0 0 72 72"); s.setAttribute("width", "72"); s.setAttribute("height", "72");
+      var r = 30, c = 2 * Math.PI * r;
+      var fg = circle(36, 36, r, "rf"); fg.setAttribute("stroke-dasharray", c.toFixed(2)); fg.setAttribute("stroke-dashoffset", (c * (1 - p)).toFixed(2)); fg.style.setProperty("--c0", c.toFixed(2));
+      s.appendChild(circle(36, 36, r, "rb")); s.appendChild(fg); w.appendChild(s);
+      var t = el("div", "rt"); t.appendChild(el("b", null, label != null ? String(label) : (m === 100 ? Math.round(p * 100) + "%" : v + "/" + m))); w.appendChild(t);
+      return w;
+    }
+    function btn(b, defVariant) {
+      var v = b.variant || defVariant || "primary";
+      var n = el("button", "btn v-" + v + (b.size ? " s-" + b.size : "") + (b.inline ? " inl" : "")); n.type = "button";
+      if (b.icon && IC[b.icon]) n.appendChild(icon(b.icon, 20, 2));
+      n.appendChild(T("span", null, b.text || ""));
+      hot(n, b.to); return n;
+    }
+    function pushCard(b) {
+      var n = el("div", "push"); hot(n, b.to);
+      var other = b.app && b.app !== SV_NAME; var ic = el("div", "p-ic"); var mk = other ? el("span", "mark alt", String(b.app).charAt(0)) : markEl(); ic.appendChild(mk); n.appendChild(ic);
+      var c = el("div", "p-c"); var top = el("div", "p-top");
+      top.appendChild(el("span", "p-app", b.app || SV_NAME)); top.appendChild(el("span", "p-time", b.time || "עכשיו")); c.appendChild(top);
+      if (b.title) c.appendChild(T("div", "p-title", b.title));
+      if (b.text) c.appendChild(T("div", "p-text", b.text));
+      n.appendChild(c); return n;
+    }
+    var ST = {
+      done: { i: "check", t: "success", l: "התקבל" }, ok: { i: "check", t: "success", l: "תקין" },
+      pending: { i: "spin", t: "info", l: "בבדיקה" }, checking: { i: "spin", t: "info", l: "בבדיקה" },
+      review: { i: "eye", t: "warning", l: "לבדיקה אנושית" }, fix: { i: "alert", t: "error", l: "צריך תיקון" },
+      wrong: { i: "x", t: "error", l: "לא המסמך שביקשנו" }, todo: { i: null, t: "neutral", l: "חסר" }
+    };
+    var US = { checking: { t: "info", l: "בבדיקה" }, ok: { t: "success", l: "תקין" }, fix: { t: "error", l: "צריך תיקון" }, wrong: { t: "error", l: "לא המסמך שביקשנו" } };
+    function ext(f) { var m = /\.([a-z0-9]{2,4})$/i.exec(String(f || "")); return m ? m[1].toUpperCase() : "PDF"; }
+
+    // ---------- building blocks ----------
+    var B = {
+      agent: function (b, ctx, prev) {
+        var row = el("div", "msg in" + (prev === "agent" ? " cont" : ""));
+        row.appendChild(agentAvatar(30));
+        var col = el("div", "mcol");
+        if (prev !== "agent") col.appendChild(el("div", "mmeta", (b.name || AGENT || SV_NAME) + (b.time ? " · " + b.time : "")));
+        if (b.text) col.appendChild(T("div", "bub in", b.text));
+        if (b.typing) { var ty = el("div", "bub in typing"); ty.appendChild(el("i")); ty.appendChild(el("i")); ty.appendChild(el("i")); col.appendChild(ty); }
+        row.appendChild(col); return hot(row, b.to);
+      },
+      user: function (b) {
+        var row = el("div", "msg out"); var bub = T("div", "bub out", b.text);
+        var tm = el("span", "tm"); if (b.time) tm.appendChild(el("span", null, b.time)); tm.appendChild(ticks()); bub.appendChild(tm);
+        row.appendChild(bub); return hot(row, b.to);
+      },
+      quick: function (b) {
+        var q = el("div", "quick");
+        (b.items || []).forEach(function (x) { var it = typeof x === "string" ? { text: x } : x || {}; var c = T("button", "qr", it.text); c.type = "button"; q.appendChild(hot(c, it.to)); });
+        return q;
+      },
+      push: function (b) { return pushCard(b); },
+      hero: function (b) {
+        var h = el("div", "hero" + (b.tone === "soft" ? " soft" : "")); var tx = el("div", "hero-t");
+        if (b.kicker) tx.appendChild(T("div", "hk", b.kicker));
+        if (b.title) tx.appendChild(T("div", "hh", b.title));
+        if (b.text) tx.appendChild(T("div", "hp", b.text));
+        h.appendChild(tx);
+        if (b.ring) h.appendChild(ring(b.ring.value, b.ring.max, b.ring.label, b.tone !== "soft"));
+        else if (b.icon && IC[b.icon]) { var ic = el("div", "hero-ic"); ic.appendChild(icon(b.icon, 30, 1.7)); h.appendChild(ic); }
+        return hot(h, b.to);
+      },
+      heading: function (b) {
+        var h = el("div", "hd"); h.appendChild(T("h3", null, b.text));
+        if (b.meta) h.appendChild(T("span", "hm", b.meta));
+        if (b.action) { var a = T("button", "ha", b.action.text); a.type = "button"; h.appendChild(hot(a, b.action.to)); }
+        return h;
+      },
+      text: function (b) { return hot(T("p", "txt" + (b.muted ? " mu" : "") + (b.small ? " sm" : "") + (b.center ? " ce" : ""), b.text), b.to); },
+      card: function (b) {
+        var c = el("div", "card" + (b.to ? " link" : ""));
+        if (b.icon && IC[b.icon]) { var ic = el("div", "cic t-" + (tone(b.tone) || "info")); ic.appendChild(icon(b.icon, 22, 1.8)); c.appendChild(ic); }
+        var m = el("div", "cm");
+        if (b.title) m.appendChild(T("div", "ct", b.title));
+        if (b.text) m.appendChild(T("div", "cx", b.text));
+        if (b.meta) m.appendChild(T("div", "cmeta", b.meta));
+        c.appendChild(m);
+        if (b.badge) c.appendChild(pill(b.badge.text, b.badge.tone));
+        if (b.to) { var ch = el("span", "chev"); ch.appendChild(icon("chevron", 20, 2)); c.appendChild(ch); }
+        return hot(c, b.to);
+      },
+      status: function (b) {
+        var s = el("div", "status t-" + (tone(b.tone) || "info"));
+        s.appendChild(el("span", "dot" + (b.pulse ? " pulse" : "")));
+        s.appendChild(T("span", "stx", b.text));
+        if (b.meta) s.appendChild(T("span", "smeta", b.meta));
+        return hot(s, b.to);
+      },
+      stepper: function (b) {
+        var cur = Math.max(1, +b.current || 1); var o = el("ol", "stp");
+        (b.items || []).forEach(function (x, i) {
+          var n = i + 1; var li = el("li", n < cur ? "done" : n === cur ? "cur" : "");
+          var c = el("span", "c"); if (n < cur) c.appendChild(icon("check", 14, 2.6)); else c.textContent = n;
+          li.appendChild(c); li.appendChild(T("span", "l", typeof x === "string" ? x : (x && x.text) || "")); o.appendChild(li);
+        });
+        return o;
+      },
+      checklist: function (b) {
+        var w = el("div", "cl"); var items = (b.items || []).filter(Boolean);
+        var done = items.filter(function (x) { return x.state === "done" || x.state === "ok"; }).length;
+        var h = el("div", "cl-h"); h.appendChild(T("span", "clt", b.title || "")); h.appendChild(el("span", "cnt", done + " מתוך " + items.length)); w.appendChild(h);
+        items.forEach(function (x) {
+          var st = ST[x.state] || ST.todo; var li = el("div", "cli" + (x.to ? " link" : ""));
+          var si = el("span", "si t-" + st.t + (st.i ? "" : " empty"));
+          if (st.i === "spin") si.appendChild(el("span", "spin")); else if (st.i) si.appendChild(icon(st.i, 18, 2.2));
+          li.appendChild(si);
+          var tx = el("div", "tx"); tx.appendChild(T("div", "t1", x.text)); if (x.meta) tx.appendChild(T("div", "t2", x.meta)); li.appendChild(tx);
+          li.appendChild(pill(x.label || st.l, st.t));
+          if (x.to) { var cv = el("span", "chev"); cv.appendChild(icon("chevron", 18, 2)); li.appendChild(cv); }
+          w.appendChild(hot(li, x.to));
+        });
+        return w;
+      },
+      progress: function (b) {
+        var v = +b.value || 0, m = +b.max || 100;
+        if (b.ring) {
+          var w = el("div", "pg pr"); w.appendChild(ring(v, m, b.center));
+          var t = el("div", "prt"); if (b.label) t.appendChild(T("div", "pgl", b.label)); if (b.text) t.appendChild(T("div", "pgs", b.text)); w.appendChild(t);
+          return w;
+        }
+        var w2 = el("div", "pg"); var top = el("div", "pgtop");
+        top.appendChild(T("span", "pgl", b.label || "")); top.appendChild(T("span", "pgv", b.text != null ? b.text : v + " מתוך " + m)); w2.appendChild(top);
+        var tr = el("div", "track"); var f = el("div", "fill t-" + (tone(b.tone) || "brand")); f.style.width = Math.max(0, Math.min(100, v / m * 100)) + "%";
+        tr.appendChild(f); w2.appendChild(tr); return w2;
+      },
+      upload: function (b) {
+        var st = b.state || "idle"; var w = el("div", "up up-" + st);
+        if (b.title) w.appendChild(T("div", "upt", b.title));
+        if (st === "idle") {
+          var z = el("div", "drop"); var ic = el("div", "dic"); ic.appendChild(icon("upload", 26, 1.9)); z.appendChild(ic);
+          z.appendChild(T("div", "d1", b.text || "צילום או בחירת קובץ"));
+          z.appendChild(T("div", "d2", b.hint || "PDF, JPG או PNG · עד 10MB"));
+          var bt = el("div", "dbtns");
+          [["camera", "צילום"], ["file", "קובץ"]].forEach(function (p) { var c = el("span", "mini"); c.appendChild(icon(p[0], 18, 1.9)); c.appendChild(el("span", null, p[1])); bt.appendChild(c); });
+          z.appendChild(bt); w.appendChild(z); return hot(w, b.to);
+        }
+        var u = US[st] || US.checking;
+        var row = el("div", "upf"); var fi = el("div", "fic"); fi.appendChild(icon("file", 22, 1.8)); fi.appendChild(el("span", "ext", ext(b.file))); row.appendChild(fi);
+        var ft = el("div", "upn"); var fn = T("div", "fn", b.file || "מסמך"); fn.dir = "auto"; ft.appendChild(fn);
+        ft.appendChild(T("div", "fs", b.size || (st === "checking" ? "בבדיקה…" : "הועלה עכשיו"))); row.appendChild(ft);
+        var bd = pill(b.label || u.l, u.t);
+        if (st === "checking") bd.insertBefore(el("span", "spin sm"), bd.firstChild); else bd.insertBefore(icon(st === "ok" ? "check" : "alert", 14, 2.4), bd.firstChild);
+        row.appendChild(bd); w.appendChild(row);
+        if (st === "checking") w.appendChild(el("div", "ind"));
+        var msg = b.message || (st === "checking" ? "בדיקה: זה המסמך שביקשנו? הוא שלם ועדכני?" : "");
+        if (msg) { var mb = el("div", "upm t-" + u.t); mb.appendChild(icon(st === "ok" ? "check" : st === "checking" ? "sparkle" : "alert", 18, 2)); mb.appendChild(T("div", null, msg)); w.appendChild(mb); }
+        if (b.action) { var a = btn(b.action, "secondary"); a.classList.add("upa"); w.appendChild(a); return w; }
+        return hot(w, b.to);
+      },
+      notice: function (b) {
+        var tn = tone(b.tone) || "info"; if (tn === "brand") tn = "info";
+        var n = el("div", "nt t-" + tn); var ic = el("span", "nti");
+        ic.appendChild(icon(b.icon && IC[b.icon] ? b.icon : tn === "success" ? "check" : tn === "info" || tn === "neutral" ? "info" : "alert", 20, 2)); n.appendChild(ic);
+        var c = el("div", "ntc");
+        if (b.title) c.appendChild(T("div", "ntt", b.title));
+        if (b.text) c.appendChild(T("div", "ntx", b.text));
+        if (b.action) { var a = T("button", "nta", b.action.text); a.type = "button"; c.appendChild(hot(a, b.action.to)); }
+        n.appendChild(c); return hot(n, b.to);
+      },
+      confirm: function (b) {
+        var w = el("div", "cf"); var h = el("div", "cfh"); var ic = el("span", "cfi"); ic.appendChild(icon("shield", 20, 1.9)); h.appendChild(ic);
+        var ht = el("div"); ht.appendChild(T("div", "cft", b.title || "זה מה שאנחנו יודעים")); if (b.subtitle) ht.appendChild(T("div", "cfs", b.subtitle)); h.appendChild(ht); w.appendChild(h);
+        (b.rows || []).forEach(function (r) {
+          if (!r) return; var row = el("div", "cfr"); var tx = el("div", "cfx");
+          tx.appendChild(T("div", "cfl", r.label)); tx.appendChild(T("div", "cfv", r.value)); row.appendChild(tx);
+          if (b.editable || r.editable) { var e = el("button", "cfe"); e.type = "button"; e.setAttribute("aria-label", "עריכה"); e.appendChild(icon("edit", 18, 1.9)); row.appendChild(hot(e, r.to)); }
+          w.appendChild(row);
+        });
+        if (b.note) { var nt = el("div", "cfn"); nt.appendChild(icon("lock", 14, 2)); nt.appendChild(T("span", null, b.note)); w.appendChild(nt); }
+        return w;
+      },
+      disclosure: function (b) {
+        var w = el("div", "dc" + (b.open ? " open" : "")); var h = el("button", "dch"); h.type = "button"; h.setAttribute("aria-expanded", b.open ? "true" : "false");
+        var q = el("span", "dcq"); q.appendChild(icon("info", 18, 2)); h.appendChild(q);
+        h.appendChild(T("span", "dct", b.title || "")); var ch = el("span", "dcc"); ch.appendChild(icon("down", 18, 2)); h.appendChild(ch);
+        h.addEventListener("click", function (e) { e.stopPropagation(); var o = !w.classList.contains("open"); w.classList.toggle("open", o); h.setAttribute("aria-expanded", o ? "true" : "false"); });
+        w.appendChild(h); w.appendChild(T("div", "dcb", b.text)); return w;
+      },
+      field: function (b) {
+        var w = el("div", "fd" + (b.error ? " err" : "")); var id = "pf" + (++UID);
+        if (b.label) { var l = T("label", "fl", b.label); l.htmlFor = id; if (b.required) l.appendChild(el("span", "req", " *")); w.appendChild(l); }
+        var k = b.kind || "text"; var box = el("div", "fin" + (b.value ? " pre" : "") + (k === "select" ? " sel" : ""));
+        if (k === "select") {
+          box.appendChild(T("span", "fv", b.value || b.placeholder || "בחירה")); if (!b.value) box.classList.add("ph0");
+          box.appendChild(icon("down", 20, 2)); box.id = id; box.tabIndex = 0; hot(box, b.to);
+        } else {
+          var inp = el("input"); inp.id = id; inp.type = "text"; inp.dir = "auto"; if (b.value) inp.value = b.value; if (b.placeholder) inp.placeholder = b.placeholder;
+          box.appendChild(inp); if (k === "date") box.appendChild(icon("calendar", 20, 1.8));
+        }
+        w.appendChild(box);
+        if (b.error) w.appendChild(T("div", "fe", b.error)); else if (b.hint) w.appendChild(T("div", "fh", b.hint));
+        return w;
+      },
+      choices: function (b) {
+        var w = el("div", "chs"); if (b.label) w.appendChild(T("div", "fl", b.label)); var multi = !!b.multi;
+        (b.items || []).forEach(function (x) {
+          var it = typeof x === "string" ? { text: x } : x || {};
+          var c = el("div", "chi" + (it.selected ? " on" : "") + (multi ? " multi" : ""));
+          c.setAttribute("role", multi ? "checkbox" : "radio"); c.setAttribute("aria-checked", it.selected ? "true" : "false"); c.tabIndex = 0;
+          var mk = el("span", "chm"); if (multi) mk.appendChild(icon("check", 14, 3)); c.appendChild(mk);
+          var tx = el("div", "chx"); tx.appendChild(T("div", "cht", it.text)); if (it.sub) tx.appendChild(T("div", "chs2", it.sub)); c.appendChild(tx);
+          if (it.to && S[it.to]) { c.setAttribute("data-go", it.to); c.classList.add("hot"); }
+          c.addEventListener("click", function (e) {
+            e.stopPropagation();
+            if (multi) c.classList.toggle("on");
+            else { Array.prototype.forEach.call(w.querySelectorAll(".chi"), function (o) { o.classList.remove("on"); o.setAttribute("aria-checked", "false"); }); c.classList.add("on"); }
+            c.setAttribute("aria-checked", c.classList.contains("on") ? "true" : "false");
+            var g = c.getAttribute("data-go"); if (g) setTimeout(function () { go(g); }, 220);
+          });
+          w.appendChild(c);
+        });
+        return w;
+      },
+      button: function (b) { return btn(b); },
+      people: function (b) {
+        var w = el("div", "pp"); if (b.title) w.appendChild(T("div", "pph", b.title));
+        (b.items || []).forEach(function (x, i) {
+          if (!x) return; var r = el("div", "pr" + (x.to ? " link" : ""));
+          r.appendChild(el("span", "pav c" + (i % 4), initials(x.name)));
+          var tx = el("div", "prx"); tx.appendChild(T("div", "prn", x.name)); if (x.role) tx.appendChild(T("div", "prr", x.role)); r.appendChild(tx);
+          var end = el("div", "pend"); if (x.status) end.appendChild(pill(x.status, x.tone));
+          if (x.total) {
+            var mp = el("div", "mp"); var tr = el("span", "mpt"); var f = el("span", "mpf"); f.style.width = Math.min(100, (+x.done || 0) / (+x.total) * 100) + "%";
+            tr.appendChild(f); mp.appendChild(tr); mp.appendChild(el("span", "mpl", (+x.done || 0) + " מתוך " + x.total)); end.appendChild(mp);
+          }
+          r.appendChild(end); w.appendChild(hot(r, x.to));
+        });
+        return w;
+      },
+      summary: function (b) {
+        var w = el("div", "sm"); var h = el("div", "smh");
+        if (b.icon && IC[b.icon]) { var ic = el("span", "smi"); ic.appendChild(icon(b.icon, 20, 1.9)); h.appendChild(ic); }
+        var ht = el("div"); ht.appendChild(T("div", "smt", b.title || "")); if (b.subtitle) ht.appendChild(T("div", "sms", b.subtitle)); h.appendChild(ht); w.appendChild(h);
+        (b.rows || []).forEach(function (r) {
+          if (!r) return; var row = el("div", "smr"); row.appendChild(T("div", "sml", r.label));
+          row.appendChild(r.tone ? pill(r.value, r.tone) : T("div", "smv", r.value)); w.appendChild(hot(row, r.to));
+        });
+        return w;
+      },
+      list: function (b) {
+        var w = el("div", "ls");
+        (b.items || []).forEach(function (x) {
+          var it = typeof x === "string" ? { text: x } : x || {}; var r = el("div", "lsi" + (it.to ? " link" : ""));
+          if (it.icon && IC[it.icon]) { var ic = el("span", "lsic"); ic.appendChild(icon(it.icon, 20, 1.8)); r.appendChild(ic); }
+          var tx = el("div", "lsx"); tx.appendChild(T("div", "lst", it.text)); if (it.meta) tx.appendChild(T("div", "lsm", it.meta)); r.appendChild(tx);
+          if (it.to) { var c = el("span", "chev"); c.appendChild(icon("chevron", 18, 2)); r.appendChild(c); }
+          w.appendChild(hot(r, it.to));
+        });
+        return w;
+      },
+      table: function (b) {
+        var w = el("div", "tb");
+        if (b.title) { var h = el("div", "tbh"); h.appendChild(T("span", null, b.title)); if (b.meta) h.appendChild(T("span", "tbm", b.meta)); w.appendChild(h); }
+        var rows = (b.rows || []).filter(Boolean); var linked = rows.some(function (r) { return !Array.isArray(r) && r.to; });
+        var tbl = el("table"); var cols = b.columns || [];
+        if (cols.length) { var th = el("thead"); var tr = el("tr"); cols.forEach(function (c) { tr.appendChild(T("th", null, c)); }); if (linked) tr.appendChild(el("th")); th.appendChild(tr); tbl.appendChild(th); }
+        var tb = el("tbody");
+        rows.forEach(function (r) {
+          var cells = Array.isArray(r) ? r : r.cells || []; var to = Array.isArray(r) ? null : r.to; var row = el("tr");
+          cells.forEach(function (c, i) {
+            var td = el("td", i === 0 ? "c0" : null);
+            if (c && typeof c === "object") td.appendChild(pill(c.text, c.tone)); else rich(td, c == null ? "" : String(c));
+            row.appendChild(td);
+          });
+          if (linked) { var tc = el("td", "tch"); if (to) tc.appendChild(icon("chevron", 18, 2)); row.appendChild(tc); }
+          tb.appendChild(hot(row, to));
+        });
+        tbl.appendChild(tb); var sc = el("div", "tbs"); sc.appendChild(tbl); w.appendChild(sc); return w;
+      },
+      kpis: function (b) {
+        var g = el("div", "kp");
+        (b.items || []).forEach(function (k) {
+          if (!k) return; var t = el("div", "kpi t-" + (tone(k.tone) || "brand"));
+          var top = el("div", "kpt"); top.appendChild(el("span", "kd")); top.appendChild(T("span", null, k.label)); t.appendChild(top);
+          t.appendChild(T("div", "kpv", k.value)); if (k.meta) t.appendChild(T("div", "kpm", k.meta)); g.appendChild(hot(t, k.to));
+        });
+        return g;
+      },
+      divider: function (b) { var d = el("div", "dv" + (b.text ? " lab" : "")); if (b.text) d.appendChild(T("span", null, b.text)); return d; },
+      spacer: function () { return el("div", "spc"); },
+      split: function (b, ctx) { var g = el("div", "split"); var m = el("div", "spm"), s = el("div", "sps"); renderBlocks(b.main, m, ctx); renderBlocks(b.side, s, ctx); g.appendChild(m); g.appendChild(s); return g; }
+    };
+    // אבני הבניין של screens.html — מתורגמות
+    var ALIAS = {
+      title: function (b) { return { t: "heading", text: b.text }; },
+      bubble: function (b) { return { t: b.side === "out" ? "user" : "agent", text: b.text || "…", name: b.label }; },
+      chips: function (b) { return { t: "quick", items: b.items }; },
+      note: function (b) { return { t: "notice", tone: "info", text: b.text }; },
+      input: function (b) { return { t: "field", placeholder: b.text, label: b.label }; },
+      bar: function () { return null; }
+    };
+    function renderBlocks(list, box, ctx) {
+      var prev = null;
+      (list || []).forEach(function (b) {
+        if (!b || typeof b !== "object") return;
+        var t = ALIAS[b.t] ? ALIAS[b.t](b) : b; if (!t) return;
+        var n = null;
+        try { n = B[t.t] ? B[t.t](t, ctx || {}, prev) : (t.text ? T("p", "txt", t.text) : null); if (!B[t.t]) console.warn("prototype: unknown block", t.t); }
+        catch (e) { console.error("prototype block", t, e); }
+        if (n) box.appendChild(n);
+        prev = t.t;
+      });
+    }
+
+    // ---------- device shells ----------
+    var SIG = '<svg width="19" height="12" viewBox="0 0 19 12" aria-hidden="true"><rect x="0" y="8" width="3.2" height="4" rx="1" fill="currentColor"/><rect x="5" y="5.5" width="3.2" height="6.5" rx="1" fill="currentColor"/><rect x="10" y="3" width="3.2" height="9" rx="1" fill="currentColor"/><rect x="15" y="0" width="3.2" height="12" rx="1" fill="currentColor"/></svg>';
+    var WIFI = '<svg width="17" height="12" viewBox="0 0 17 12" aria-hidden="true"><path d="M8.5 2.2c2.5 0 4.8 1 6.5 2.6l1.2-1.3A11 11 0 0 0 8.5.4 11 11 0 0 0 .8 3.5L2 4.8a9.3 9.3 0 0 1 6.5-2.6z" fill="currentColor"/><path d="M8.5 5.8c1.5 0 2.9.6 3.9 1.6l1.2-1.3A7.3 7.3 0 0 0 8.5 4a7.3 7.3 0 0 0-5.1 2.1l1.2 1.3c1-1 2.4-1.6 3.9-1.6z" fill="currentColor"/><path d="M8.5 9.3c.6 0 1.1.2 1.5.6L8.5 11.6 7 9.9c.4-.4.9-.6 1.5-.6z" fill="currentColor"/></svg>';
+    var BAT = '<svg width="27" height="13" viewBox="0 0 27 13" aria-hidden="true"><rect x=".5" y=".5" width="23" height="12" rx="3.8" fill="none" stroke="currentColor" opacity=".45"/><rect x="2" y="2" width="20" height="9" rx="2.5" fill="currentColor"/><path d="M25 4.5v4c.8-.3 1.4-1.1 1.4-2s-.6-1.7-1.4-2z" fill="currentColor" opacity=".5"/></svg>';
+    function sbar() { var s = el("div", "sbar"); s.innerHTML = '<span class="st">9:41</span><span class="si">' + SIG + WIFI + BAT + "</span>"; return s; }
+    function shellPhone() {
+      var dev = el("div", "dev iphone metal"); dev.setAttribute("data-frame", FRAME);
+      ["l1", "l2", "l3", "r1"].forEach(function (c) { dev.appendChild(el("span", "sbtn " + c)); });
+      var bez = el("div", "bezel"), scr = el("div", "scr");
+      scr.appendChild(el("div", "island")); scr.appendChild(sbar());
+      var view = el("div", "vw"); scr.appendChild(view); scr.appendChild(el("div", "hind"));
+      bez.appendChild(scr); dev.appendChild(bez);
+      return { dev: dev, view: view, scr: scr };
+    }
+    function shellTablet() {
+      var dev = el("div", "dev ipad metal"); dev.setAttribute("data-frame", FRAME);
+      var bez = el("div", "bezel"), scr = el("div", "scr light");
+      var view = el("div", "vw"); scr.appendChild(view); scr.appendChild(sbar());
+      bez.appendChild(scr); dev.appendChild(bez);
+      return { dev: dev, view: view, scr: null };
+    }
+    function shellLaptop() {
+      var dev = el("div", "dev laptop"); dev.setAttribute("data-frame", FRAME);
+      var rim = el("div", "lidrim metal"), lid = el("div", "lid"); lid.appendChild(el("span", "cam"));
+      var scr = el("div", "scr"), br = el("div", "browser"), ch = el("div", "chrome");
+      var lights = el("span", "lights"); lights.appendChild(el("i")); lights.appendChild(el("i")); lights.appendChild(el("i")); ch.appendChild(lights);
+      var g1 = el("span", "cgrp"); g1.appendChild(icon("sidebar", 18, 1.7)); g1.appendChild(icon("chevron", 18, 2)); g1.appendChild(icon("back", 18, 2)); ch.appendChild(g1);
+      var addr = el("div", "addr"); addr.appendChild(icon("lock", 12, 2.2)); addr.appendChild(el("span", null, ADDRESS)); ch.appendChild(addr);
+      var g2 = el("span", "cgrp"); g2.appendChild(icon("share", 18, 1.7)); g2.appendChild(icon("plus", 18, 1.9)); ch.appendChild(g2);
+      var view = el("div", "bview vw"); br.appendChild(ch); br.appendChild(view); scr.appendChild(br);
+      lid.appendChild(scr); rim.appendChild(lid); dev.appendChild(rim); dev.appendChild(el("div", "base metal"));
+      return { dev: dev, view: view, scr: null };
+    }
+
+    // ---------- screens ----------
+    function split(s) { var body = [], pushes = []; (s.body || []).forEach(function (b) { if (b && typeof b === "object") (b.t === "push" ? pushes : body).push(b); }); return { body: body, pushes: pushes }; }
+    function screenPhone(s) {
+      var p = split(s);
+      if (s.lock) {
+        var l = el("div", "lock"); var lk = el("div", "lk-lock"); lk.appendChild(icon("lock", 18, 2)); l.appendChild(lk);
+        l.appendChild(el("div", "lk-date", DATE)); l.appendChild(el("div", "lk-time", "9:41"));
+        var notes = el("div", "lk-notes"); renderBlocks(p.body, notes, { dev: "phone" }); p.pushes.forEach(function (b) { notes.appendChild(pushCard(b)); }); l.appendChild(notes);
+        var bot = el("div", "lk-bot"); var b1 = el("span"); b1.appendChild(icon("flash", 22, 1.8)); var b2 = el("span"); b2.appendChild(icon("camera", 22, 1.8)); bot.appendChild(b1); bot.appendChild(b2); l.appendChild(bot);
+        return { node: l, light: true, lock: true };
+      }
+      var app = el("div", "app"); var h = s.header === false ? null : s.header || {};
+      if (h) {
+        var hd = el("header", "ah"), row = el("div", "ah-row");
+        if (h.back) { var bb = el("button", "ah-back"); bb.type = "button"; bb.setAttribute("aria-label", "חזרה"); bb.appendChild(icon("back", 22, 2)); markBack(bb, h.back); row.appendChild(bb); }
+        var isAgent = h.avatar ? h.avatar === "agent" : p.body.some(function (b) { return b.t === "agent" || (b.t === "bubble" && b.side !== "out"); });
+        row.appendChild(isAgent ? agentAvatar(40) : markEl(40));
+        var tx = el("div", "ah-tx"); tx.appendChild(T("div", "ah-title", h.title || s.name || ""));
+        var subText = h.subtitle || (isAgent && AGENT ? "עונה מיד" : "");
+        var live = h.live != null ? !!h.live : isAgent && !h.subtitle;
+        if (subText) { var sub = el("div", "ah-sub"); if (live) sub.appendChild(el("span", "live")); sub.appendChild(T("span", null, subText)); tx.appendChild(sub); }
+        row.appendChild(tx); hd.appendChild(row); app.appendChild(hd);
+      } else app.classList.add("noh");
+      var ab = el("div", "ab"); renderBlocks(p.body, ab, { dev: "phone" }); app.appendChild(ab);
+      var foot = (s.footer || []).filter(Boolean);
+      if (foot.length) { var af = el("div", "af"); renderBlocks(foot, af, { dev: "phone", footer: true }); app.appendChild(af); } else ab.classList.add("pb");
+      if (p.pushes.length) { var ps = el("div", "pushes"); p.pushes.forEach(function (b) { ps.appendChild(pushCard(b)); }); app.appendChild(ps); }
+      return { node: app, light: !!h };
+    }
+    function screenDesk(s, dev) {
+      var p = split(s); var a = el("div", "dapp" + (dev === "tablet" ? " tab" : ""));
+      var top = el("div", "dtop"); var br = el("div", "dbrand"); br.appendChild(markEl(34));
+      var bt = el("div"); bt.appendChild(el("div", "dsvc", SV_NAME)); if (SVC.owner) bt.appendChild(el("div", "down", SVC.owner)); br.appendChild(bt); top.appendChild(br);
+      var sr = el("div", "dsearch"); sr.appendChild(icon("search", 18, 2)); sr.appendChild(el("span", null, "חיפוש")); top.appendChild(sr);
+      top.appendChild(el("div", "dsp"));
+      var bell = el("span", "dbell"); bell.appendChild(icon("bell", 22, 1.8)); if (s.alerts) bell.appendChild(el("i", "nb", String(s.alerts))); top.appendChild(bell);
+      var actor = A[s.actor] || {}; var u = el("div", "duser"); u.appendChild(el("span", "dav", initials(actor.name || ""))); if (actor.name) u.appendChild(el("span", "dun", actor.name)); top.appendChild(u);
+      a.appendChild(top);
+      var mainEl = el("div", "dmain");
+      if (s.nav && s.nav.length) {
+        var nav = el("nav", "dnav");
+        s.nav.forEach(function (n) {
+          if (!n) return; var it = el("button", "dni" + (n.active ? " act" : "")); it.type = "button";
+          if (n.icon && IC[n.icon]) it.appendChild(icon(n.icon, 20, 1.8));
+          it.appendChild(T("span", "dnt", n.text)); if (n.count != null) it.appendChild(el("i", "dnc", String(n.count)));
+          nav.appendChild(hot(it, n.to));
+        });
+        mainEl.appendChild(nav);
+      }
+      var content = el("div", "dcontent"); var h = s.header === false ? null : s.header || {};
+      if (h) {
+        var dh = el("div", "dhead");
+        if (h.back) { var bk = el("button", "dback"); bk.type = "button"; bk.appendChild(icon("back", 18, 2)); bk.appendChild(el("span", null, h.backText || "חזרה")); markBack(bk, h.back); dh.appendChild(bk); }
+        dh.appendChild(T("h1", "dtitle", h.title || s.name || "")); if (h.subtitle) dh.appendChild(T("div", "dsub", h.subtitle)); content.appendChild(dh);
+      }
+      var db = el("div", "dbody"); renderBlocks(p.body, db, { dev: "desk" }); content.appendChild(db);
+      var foot = (s.footer || []).filter(Boolean);
+      if (foot.length) { var df = el("div", "dfoot"); renderBlocks(foot, df, { dev: "desk", footer: true }); content.appendChild(df); }
+      mainEl.appendChild(content); a.appendChild(mainEl);
+      if (p.pushes.length) { var ps = el("div", "pushes"); p.pushes.forEach(function (b) { ps.appendChild(pushCard(b)); }); a.appendChild(ps); }
+      return { node: a, light: false };
+    }
+
+    // ---------- navigation ----------
+    var shell = null, curDev = null, cur = null, hist = [], lastIdx = 0, autoT = null, present = false, flashT = null;
+    var routeBtns = {};
+    function pos(c) { var i = path.indexOf(c); return i > -1 ? i : path.length + extras.indexOf(c); }
+    function go(code, how) {
+      if (!S[code] || (code === cur && how !== "init")) return;
+      var dir = 0;
+      if (cur && how !== "init") dir = how === "back" ? -1 : pos(code) >= pos(cur) ? 1 : -1;
+      if (cur && !how) { hist.push(cur); if (hist.length > 60) hist.shift(); }
+      cur = code; var s = S[code]; var pi = path.indexOf(code); if (pi > -1) lastIdx = pi;
+      var dev = devOf(s); var fresh = dev !== curDev;
+      if (fresh) {
+        shell = dev === "desktop" ? shellLaptop() : dev === "tablet" ? shellTablet() : shellPhone();
+        scaler.textContent = ""; scaler.appendChild(shell.dev); curDev = dev;
+      }
+      var r = dev === "iphone" ? screenPhone(s) : screenDesk(s, dev);
+      var wrapN = el("div", "scn" + (fresh || !dir ? "" : dir > 0 ? " inF" : " inB")); wrapN.appendChild(r.node);
+      shell.view.textContent = ""; shell.view.appendChild(wrapN);
+      if (shell.scr) { shell.scr.classList.toggle("light", !!r.light); shell.scr.classList.toggle("lockon", !!r.lock); }
+      panel(s); setHash(code);
+      clearTimeout(autoT);
+      if (s.auto && S[s.auto.to]) { var to = s.auto.to; autoT = setTimeout(function () { if (cur === code) go(to, "auto"); }, Math.max(600, +s.auto.after || 2400)); }
+      if (fresh) { fit(); requestAnimationFrame(fit); }
+    }
+    function next() { var i = path.indexOf(cur); if (i > -1) { if (i < path.length - 1) go(path[i + 1]); } else go(path[Math.min(lastIdx + 1, path.length - 1)]); }
+    function prev() { var i = path.indexOf(cur); if (i > 0) go(path[i - 1]); else if (i === -1) go(path[lastIdx]); }
+    function back() { var p = hist.pop(); if (p) go(p, "back"); else prev(); }
+    function setHash(code) { try { if (decodeURIComponent((location.hash || "").slice(1)) !== code) history.replaceState(null, "", "#" + encodeURIComponent(code)); } catch (e) { /* sandboxed */ } }
+    function fromLoc() {
+      var h = ""; try { h = decodeURIComponent((location.hash || "").replace(/^#/, "")); } catch (e) {}
+      if (S[h]) return h;
+      var m = /[?&]s=([^&#]+)/.exec(location.search || "");
+      if (m) { try { var q = decodeURIComponent(m[1]); if (S[q]) return q; } catch (e) {} }
+      return null;
+    }
+    function fit() {
+      if (!shell) return;
+      var pad = present ? 22 : 34; var aw = stage.clientWidth - pad * 2, ah = stage.clientHeight - pad * 2 - (present ? 62 : 0);
+      var nw = shell.dev.offsetWidth, nh = shell.dev.offsetHeight;
+      if (!nw || !nh || aw <= 0 || ah <= 0) return;
+      var sc = Math.min(aw / nw, ah / nh, present ? 1.6 : 1.05);
+      holder.style.width = Math.floor(nw * sc) + "px"; holder.style.height = Math.floor(nh * sc) + "px";
+      scaler.style.transform = "scale(" + sc + ")";
+    }
+    function flash() { document.body.classList.remove("flash"); void document.body.offsetWidth; document.body.classList.add("flash"); clearTimeout(flashT); flashT = setTimeout(function () { document.body.classList.remove("flash"); }, 850); }
+    function setPresent(on) { present = on; document.body.classList.toggle("present", on); document.getElementById("pbar").hidden = !on; fit(); requestAnimationFrame(fit); }
+
+    // ---------- presenter panel ----------
+    var $ = function (id) { return document.getElementById(id); };
+    function devIcon(d) { return icon(d === "desktop" ? "monitor" : d === "tablet" ? "tablet" : "mobile", 16, 1.8); }
+    function panel(s) {
+      var a = A[s.actor] || {}; var dv = devOf(s);
+      var nc = $("ncode"); nc.textContent = s.code; nc.style.setProperty("--c", color(s.actor));
+      var nd = $("ndev"); nd.textContent = ""; nd.appendChild(devIcon(dv)); nd.appendChild(el("span", null, (a.name ? a.name + " · " : "") + DEVN[dv]));
+      $("nname").textContent = s.name || s.code;
+      $("nstep").textContent = s.step ? "שלב בתרחיש: " + s.step : ""; $("nstep").hidden = !s.step;
+      var np = $("nnotep"); np.textContent = ""; rich(np, s.note || ""); $("nnote").hidden = !s.note;
+      var ch = $("nchips"); ch.textContent = ""; (s.components || []).forEach(function (c) { ch.appendChild(el("span", null, c)); }); $("ncomps").hidden = !(s.components || []).length;
+      $("nauto").hidden = !(s.auto && S[s.auto.to]);
+      var i = path.indexOf(s.code); var count = i > -1 ? i + 1 + " / " + path.length : "מחוץ למסלול";
+      $("ccount").textContent = count; $("bprev").disabled = i === 0; $("bnext").disabled = i === path.length - 1;
+      $("pprev").disabled = i === 0; $("pnext").disabled = i === path.length - 1;
+      $("plabel").textContent = s.code + " · " + (s.name || "") + " · " + count;
+      Object.keys(routeBtns).forEach(function (c) { if (c === s.code) routeBtns[c].setAttribute("aria-current", "step"); else routeBtns[c].removeAttribute("aria-current"); });
+      var sideEl = $("side"), rb = routeBtns[s.code];
+      if (rb && sideEl.scrollHeight > sideEl.clientHeight + 2) { var r1 = rb.getBoundingClientRect(), r2 = sideEl.getBoundingClientRect(); if (r1.top < r2.top || r1.bottom > r2.bottom) sideEl.scrollTop += r1.top - r2.top - sideEl.clientHeight / 2; }
+    }
+    function routeList(codes, box) {
+      var last = null;
+      codes.forEach(function (c) {
+        var s = S[c];
+        if (s.actor !== last) {
+          var g = el("li", "rgrp"); var d = el("span", "rdot"); d.style.background = color(s.actor); g.appendChild(d);
+          var a = A[s.actor] || {}; g.appendChild(el("span", null, (a.name || s.actor || "") + " · " + DEVN[devOf(s)])); box.appendChild(g); last = s.actor;
+        }
+        var li = el("li"); var b = el("button", "ri"); b.type = "button";
+        var cd = el("span", "code", c); cd.style.setProperty("--c", color(s.actor)); b.appendChild(cd);
+        b.appendChild(el("span", "rn", s.name || "")); b.addEventListener("click", function () { go(c); });
+        li.appendChild(b); box.appendChild(li); routeBtns[c] = b;
+      });
+    }
+
+    // ---------- checks: links to missing screens ----------
+    (function () {
+      function walk(o, where) {
+        if (Array.isArray(o)) { o.forEach(function (x) { walk(x, where); }); return; }
+        if (!o || typeof o !== "object") return;
+        Object.keys(o).forEach(function (k) {
+          if (k === "to" && typeof o[k] === "string" && o[k] && !S[o[k]]) dead.push(o[k] + " (מ-" + where + ")");
+          else if (k === "back" && typeof o[k] === "string" && !S[o[k]]) dead.push(o[k] + " (מ-" + where + ")");
+          else walk(o[k], where);
+        });
+      }
+      screens.forEach(function (s) { walk(s, s.code); });
+      var msgs = [];
+      if (dead.length) msgs.push(["לחיצות שמובילות למסך שלא קיים:", dead.join(" · ")]);
+      if (badPath.length) msgs.push(["ב-path, בלי מסך:", badPath.join(" · ")]);
+      if (msgs.length) {
+        var w = $("warn"); w.hidden = false;
+        msgs.forEach(function (m) { var p = el("div"); p.appendChild(el("b", null, "⚠ " + m[0])); p.appendChild(document.createTextNode(m[1])); w.appendChild(p); });
+      }
+    })();
+
+    // ---------- init ----------
+    if (D.example) $("example").hidden = false;
+    document.title = SV_NAME + " · Prototype";
+    $("tmark").textContent = MARK; $("tsvc").textContent = SV_NAME;
+    $("town").textContent = [SVC.owner, D.venture].filter(Boolean).join(" · ");
+    $("tkind").textContent = "Prototype" + (D.kind === "בריף" ? " · לפי בריף המסכים" : D.kind ? " · לפי בריף " + D.kind : "");
+    if (D.updated) $("tupd").textContent = "עודכן: " + D.updated; else $("tupd").hidden = true;
+    if (/^https:\/\//.test(D.brief || "")) { $("tbrief").href = D.brief; $("tbrief").hidden = false; }
+    if (!screens.length) { fail("אין מסכים בבלוק הנתונים (screens)."); return; }
+    routeList(path, $("route"));
+    if (extras.length) { var ex = $("extra"); ex.appendChild(el("span", "lbl", "מסכים נוספים — לא במסלול")); var ol = el("ol"); ex.appendChild(ol); routeList(extras, ol); ex.firstChild.style.marginTop = "10px"; }
+
+    stage.addEventListener("click", function (e) {
+      var t = e.target.closest ? e.target.closest("[data-to],[data-back]") : null;
+      if (t && stage.contains(t)) { e.preventDefault(); if (t.hasAttribute("data-to")) go(t.getAttribute("data-to")); else back(); return; }
+      if (e.target.closest && e.target.closest(".vw") && !e.target.closest("input, textarea, .chi, .dc, .hot")) flash();
+    });
+    stage.addEventListener("keydown", function (e) {
+      if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches("[data-to]:not(button), .chi")) { e.preventDefault(); e.target.click(); }
+    });
+    document.addEventListener("keydown", function (e) {
+      var t = e.target; if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) return;
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      if (e.key === "ArrowLeft" || e.key === "PageDown") { e.preventDefault(); next(); }
+      else if (e.key === "ArrowRight" || e.key === "PageUp") { e.preventDefault(); prev(); }
+      else if (e.key === "Home") { e.preventDefault(); go(path[0]); }
+      else if (e.key === "Escape" && present) setPresent(false);
+    });
+    $("bnext").addEventListener("click", next); $("bprev").addEventListener("click", prev); $("bstart").addEventListener("click", function () { hist = []; go(path[0]); });
+    $("pnext").addEventListener("click", next); $("pprev").addEventListener("click", prev); $("pexit").addEventListener("click", function () { setPresent(false); });
+    $("bpres").addEventListener("click", function () { setPresent(true); });
+    $("bhot").addEventListener("click", function () { var on = !document.body.classList.contains("show-hot"); document.body.classList.toggle("show-hot", on); this.setAttribute("aria-pressed", on ? "true" : "false"); });
+    window.addEventListener("hashchange", function () { var h = fromLoc(); if (h && h !== cur) go(h); });
+    window.addEventListener("resize", fit);
+    if (window.ResizeObserver) new ResizeObserver(fit).observe(stage);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+
+    go(fromLoc() || (S[D.start] ? D.start : path[0]), "init");
+  }
+})();
+</script>
+</body>
+</html>

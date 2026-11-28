@@ -13,7 +13,7 @@
   stories: לכל סיפור — id (US-01), story ("כ<משתמש> אני רוצה <מה> כדי <למה>"), criteria (2–4, "כאשר… המערכת…"), reqs (FR-__), screen, value,
     pilot: "" (לא הוכרע — ברירת המחדל: הסוכן לא מתעדף) / "כן" / "לא"
     priority: "" (ברירת המחדל — הקבוצה קובעת) / 1–5, כש-1 הכי גבוה
-    mvp: true אם הסיפור קריטי לשאלת ה-MVP — כלומר משרת רכיב שנבחר בלוח הרכיבים ביום 5 (מפרט MVP, סעיף 5) · component: שם הרכיב
+    mvp: true אם הסיפור קריטי לשאלת ה-MVP — כלומר משרת רכיב שנבחר ל-MVP בטבלת הרכיבים ביום 5 (מפרט MVP, סעיף 5) · component: שם הרכיב
   tasks: לכל משימה — id (T-01), text, type: "DATA" / "משפטי" / "שיווק" / "ניהול שינוי", for (US-__ / "בדיקת משתמשים"), owner, pilot — כמו בסיפור.
   חסר — מחרוזת ריקה, לא ממציאים.
   הקבוצה עורכת כל שדה, מוסיפה ומוחקת סיפורים, קריטריונים ומשימות, ומכריעה "בפיילוט?". עריכות נשמרות בדפדפן.
@@ -293,7 +293,7 @@
       h.append(pr);
     }
     var mv = el("button", "mvp" + (s.mvp ? " on" : ""), s.mvp ? "★ קריטי ל-MVP" : "לא קריטי ל-MVP"); mv.type = "button";
-    mv.title = "קריטי לשאלת ה-MVP — משרת רכיב שנבחר בלוח הרכיבים";
+    mv.title = "קריטי לשאלת ה-MVP — משרת רכיב שנבחר ל-MVP בטבלת הרכיבים";
     if (final) { if (!s.mvp) mv.hidden = true; mv.disabled = true; } else mv.addEventListener("click", function () { s.mvp = !s.mvp; save(); render(); });
     h.append(mv);
     h.append(el("span", "spacer"));

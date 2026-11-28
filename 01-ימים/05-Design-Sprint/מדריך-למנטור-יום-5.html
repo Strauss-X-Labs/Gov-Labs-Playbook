@@ -8,6 +8,7 @@
 <!--
   מדריך למנטור ליום 5 — מקור הדף. הדף של אביבית, מובילת היום, 2026-11-11: סדר היום ומי עושה מה.
   המקור, כפי שנשלח: חומרי-מקור/מסמכים/אביבית/יום-5-מי-עושה-מה-2026-11-11.html. שינוי אחד: שם כלי העיצוב הוחלף בניסוח כללי (כלל 11 באיך-תורמים.md).
+  עודכן 2026-11-27 לפי הנחיית אריאל: טבלת הרכיבים לפי ערך, דף תרחישים, עריכה ו"שמירה לכולם" בדף, וה-Prototype בדף נפרד. הזמנים והתפקידים — בלי שינוי.
   מחליף את המדריך הארוך מ-2026-11-08. מה אומרים לסוכן בכל שלב — הסוכן עצמו אומר, כששואלים "מה השלב הבא?" (04-AI/סוכנים/MVP-שאלה-רכיבים-ומסכים.md, "ההודעות בצ'אט").
   הדף המפורסם (לשיתוף): https://claude.ai/artifact/FLBZLa8PTRQjoQyaNSyMbC
   עדכון: עורכים את הקובץ הזה, ואז מבקשים מסוכן ה-AI: "פרסם את מדריך-למנטור-יום-5.html ל-https://claude.ai/artifact/FLBZLa8PTRQjoQyaNSyMbC".
@@ -221,36 +222,36 @@ footer { color: var(--ink-soft); font-size: 13px; border-top: 1px solid var(--ru
         <div class="stage"><span class="when">09:45–12:30</span><h3>רכיבים לשאלת ה-MVP</h3><small>ב׳ · עד 5 רכיבים</small></div>
         <div data-role="מנחה המליאה"><p class="dash">—</p></div>
         <div data-role="המנטורים">
-          <p><span class="lead-pill">מוביל</span><b>15 דק׳:</b> כל חבר צוות כותב רכיבים שחשוב לו שיהיו בממשק. אחר כך מציג את לוח ה-HTML, עובר עם הצוות ומדייקים עד 5.</p>
-          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>במקביל ל-15 הדקות, מריץ את מיפוי הרכיבים. כשמסיימים לדייק, מעתיק את הסיכום מהלוח לריפו.</p></div>
+          <p><span class="lead-pill">מוביל</span><b>15 דק׳:</b> כל חבר צוות כותב רכיבים שחשוב לו שיהיו בממשק. אחר כך מציג את טבלת הרכיבים, עובר עם הצוות, ועורכים בה עד 5 ב-MVP.</p>
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>במקביל ל-15 הדקות, מריץ את מיפוי הרכיבים, ומעלה את הטבלה מהמחשב שלו. כשמסיימים: "שמירה לכולם", ואומר לסוכן "שמרנו את הטבלה".</p></div>
         </div>
-        <div class="ai" data-role="AI"><h4>מיפוי רכיבים</h4><p>8–12 רכיבים מדורגים, ויכולות מאחורי הקלעים בנפרד. לוח בחירה ב-HTML למסך הקבוצה. מפרט MVP, סעיפים 2–3.</p></div>
+        <div class="ai" data-role="AI"><h4>טבלת הרכיבים</h4><p>לכל ערך: התנהגות ממשק, רכיב ב-Design System ומיקרו-קופי, עם ★ לכל ערך והצעה ל-MVP. דף עריך למסך הקבוצה. יכולות — בנפרד. מפרט MVP, סעיפים 2–3.</p></div>
       </div>
 
       <div class="row">
-        <div class="stage"><span class="when">09:45–12:30</span><h3>תרחיש השימוש</h3><small>ג׳ · לפרסונה, מקצה לקצה</small></div>
+        <div class="stage"><span class="when">09:45–12:30</span><h3>תרחישי השימוש</h3><small>ג׳ · לפרסונה, לאורך המסע</small></div>
         <div data-role="מנחה המליאה"><p class="dash">—</p></div>
         <div data-role="המנטורים">
-          <p><span class="lead-pill">מוביל</span>הקבוצה עורכת יחד את התרחיש המוצע: של הפרסונה, כל רכיב שנבחר מופיע, ובכל שלב ברור מי עושה, AI או אדם.</p>
-          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>מריץ את הסוכן ומעלה את ה-HTML למסך. אחרי העריכה, מעתיק את התרחיש חזרה לריפו.</p></div>
+          <p><span class="lead-pill">מוביל</span>הקבוצה עורכת יחד את התרחישים המוצעים: של הפרסונה, כל רכיב ב-MVP מופיע, ובכל צעד ברור מי עושה, AI או אדם.</p>
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>מעלה את דף התרחישים למסך, מהמחשב שלו. אחרי העריכה: "שמירה לכולם", ו"שמרנו את התרחישים".</p></div>
         </div>
-        <div class="ai" data-role="AI"><h4>תרחיש שימוש מוצע</h4><p>תרחיש לפרסונה ב-HTML עריך. אחרי העריכה: מפרט MVP, סעיף 4.</p></div>
+        <div class="ai" data-role="AI"><h4>תרחישים מוצעים</h4><p>כמה תרחישים, בדף עריך: מה קורה — לא הנוסח — מי עושה, וב-MVP. אחרי העריכה: מפרט MVP, סעיף 4.</p></div>
       </div>
 
       <div class="row">
         <div class="stage"><span class="when">12:30–13:15</span><h3>ארוחת צהריים</h3><small>מאחורי הקלעים</small></div>
         <div data-role="מנחה המליאה"><p class="dash">—</p></div>
         <div data-role="המנטורים">
-          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>מריץ את בריף Draft 0, עובר ומתקן, ומוסר למעצב.</p></div>
+          <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>עובר על בריף Draft 0 ועל ה-Prototype ומתקן, שולח לקבוצה, ומוסר למעצב.</p></div>
           <div class="box a"><span class="lbl">המעצב</span><p>מקבל את Draft 0 כ-MD וכ-HTML ומתחיל לבנות.</p></div>
         </div>
-        <div class="ai" data-role="AI"><h4>בריף Draft 0</h4><p>מפת זרימה, וכרטיס ו-wireframe בנאמנות נמוכה לכל מסך. MD ו-HTML.</p></div>
+        <div class="ai" data-role="AI"><h4>בריף Draft 0 ו-Prototype</h4><p>מפת זרימה, וכרטיס ו-wireframe בנאמנות נמוכה לכל מסך. MD ו-HTML. ולצדו ה-Prototype — דף נפרד, שנראה כמו המערכת.</p></div>
       </div>
 
       <div class="row">
         <div class="stage"><span class="when">13:15–13:30</span><h3>הסבר על גיבוש הפרוטוטייפ</h3></div>
         <div data-role="מנחה המליאה"><p><span class="lead-pill">מוביל</span>מסביר את שלב גיבוש הפרוטוטייפ ומה עושים בו.</p></div>
-        <div data-role="המנטורים"><p>הקבוצה רואה את Draft 0. <b>מצע לדיון, לא החלטה.</b></p></div>
+        <div data-role="המנטורים"><p>הקבוצה רואה את Draft 0 ומפעילה את ה-Prototype. <b>מצע לדיון, לא החלטה.</b></p></div>
         <div class="ai" data-role="AI"><p class="dash">—</p></div>
       </div>
 
@@ -272,19 +273,19 @@ footer { color: var(--ink-soft); font-size: 13px; border-top: 1px solid var(--ru
           <div class="box v"><span class="lbl">המנטור הטכנולוגי</span><p>מתעד את ההחלטות תוך כדי, כך שבסוף הסבב יש בריף מדויק, מוכן למעצב.</p></div>
           <div class="box a"><span class="lbl">המעצב</span><p>מעצב את המסכים עם התיקונים של הצוות.</p></div>
         </div>
-        <div class="ai" data-role="AI"><h4>בריף מסכים</h4><p>מעודכן לפי ההחלטות: לכל מסך מהות, פעולות, רכיבים וערך, wireframe, ומה השתנה בסבב. MD ו-HTML.</p></div>
+        <div class="ai" data-role="AI"><h4>בריף מסכים</h4><p>מעודכן לפי ההחלטות: לכל מסך מהות, פעולות, רכיבים וערך, wireframe, ומה השתנה בסבב. MD ו-HTML. וה-Prototype מתעדכן איתו.</p></div>
       </div>
 
       <div class="row">
         <div class="stage"><span class="when">16:30–17:00</span><h3>הצגת התוצר</h3></div>
         <div data-role="מנחה המליאה"><p><span class="lead-pill">מוביל</span>את ההצגות.</p></div>
-        <div data-role="המנטורים"><p><b>הצוות בוחר מה להציג:</b> את הפרוטוטייפ של המעצב, או את הפרוטוטייפ שנוצר מהבריף העדכני.</p></div>
-        <div class="ai" data-role="AI"><h4>פרוטוטייפ מהבריף</h4><p>אם הצוות בחר בו.</p></div>
+        <div data-role="המנטורים"><p><b>הצוות בוחר מה להציג:</b> את הפרוטוטייפ של המעצב, או את ה-Prototype העדכני.</p></div>
+        <div class="ai" data-role="AI"><h4>ה-Prototype</h4><p>אם הצוות בחר בו.</p></div>
       </div>
     </div>
   </section>
 
-  <footer>יום ה-Design Sprint · עודכן 11 בנובמבר 2026 · המקור: הפלייבוק, יום 5, עם הלו"ז והדיוקים של צוות ההנחיה.</footer>
+  <footer>יום ה-Design Sprint · עודכן 27 בנובמבר 2026 · המקור: הפלייבוק, יום 5, עם הלו"ז והדיוקים של צוות ההנחיה.</footer>
 </div>
 </body>
 </html>
