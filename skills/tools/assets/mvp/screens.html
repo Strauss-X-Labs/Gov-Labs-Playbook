@@ -7,14 +7,16 @@
 <title>מסכים ו-Prototype</title>
 <!--
   תבנית המסכים — שני שימושים, אותה תבנית:
-    kind: "Draft 0" — נשמר במיזם כ-Draft-0-Wireframes.html, ליד Draft-0-Wireframes.md. בריף Draft 0 — מצע לדיון, לא החלטה. Prototype תמיד.
-    kind: "בריף"    — נשמר במיזם כ-בריף-מסכים.html, ליד בריף-מסכים.md. מוכן לעיצוב, מההחלטות של הסבב. Prototype — תמיד, אלא אם prototype: false.
+    kind: "Draft 0" — נשמר במיזם כ-Draft-0-Wireframes.html, ליד Draft-0-Wireframes.md. בריף Draft 0 — מצע לדיון, לא החלטה.
+    kind: "בריף"    — נשמר במיזם כ-בריף-מסכים.html, ליד בריף-מסכים.md. מוכן לעיצוב, מההחלטות של הסבב.
+  ה-Prototype — דף נפרד, ברמת גימור גבוהה: Prototype.html, מהתבנית prototype.html, נוצר באותה ריצה עם הבריף. כאן — רק קישור אליו, והמסלול.
   הסוכן ממלא רק את בלוק הנתונים (id="data"), ומחליף את כולו — הנתונים כאן הם דוגמה. העיצוב קבוע. Light theme בלבד. wireframe בנאמנות נמוכה.
   example: true רק בדוגמה · question: שאלת ה-MVP · studio: קישור לעבודה של המעצב (בבריף, רשות)
   context: ההקשר למעצב, שלא היה בבוקר ולא מחובר ל-repo — persona (שורה), values (שמות הערכים), components [{ name, value }] (הרכיבים שנבחרו)
   actors: id (אות — A, B), name, device ("נייד" / "מחשב"), who (שורה: מי זה, רשות)
   steps: n, text (שלב בתרחיש, מתוך מפרט ה-MVP), screens (קודי מסכים)
-  path: סדר המסכים ב-Prototype (המסלול המרכזי). חסר — לפי סדר השלבים
+  prototypeUrl: הקישור המלא (https) לדף ה-Prototype — אותו קישור בכל ריצה. חסר — הדף אומר שה-Prototype עוד לא פורסם
+  path: סדר המסכים ב-Prototype (המסלול המרכזי) — אותו path כמו ב-Prototype.html. חסר — לפי סדר השלבים
   screens: code, name, actor, device, step, lead (רשות), essence, does, actions [{ label, to, result }], components [{ name, value, notSelected }],
            changed (מה השתנה — בבריף), wireframe: אבני בניין, מלמעלה למטה:
              { "t": "bar", "text" } · { "t": "title", "text" } · { "t": "text", "text" } או { "t": "text", "lines": 2 }
@@ -22,7 +24,7 @@
              { "t": "button", "text", "secondary": true, "to" } · { "t": "input", "text" } · { "t": "list", "items": ["...", { "text", "to" }] }
              { "t": "bubble", "side": "in" / "out", "text", "lines", "label" } · { "t": "note", "text" } · { "t": "spacer" }
              { "t": "split", "side": [...], "main": [...] } — מחשב, שני טורים
-           "to" — קוד המסך שהלחיצה מובילה אליו. ב-Prototype זה לחיץ.
+           "to" — קוד המסך שהלחיצה מובילה אליו (הפעולה, לפי הבריף; ב-Prototype.html זה לחיץ).
   open: מה שעלה ולא הוחלט
   לשיתוף: מפרסמים כדף (Claude Artifact) מהקובץ שב-repo, ובכל עדכון לאותו קישור.
   הדוגמה מפורסמת: https://claude.ai/artifact/CAcdoznESpKwAxGCZ8YAWP — עדכון התבנית: מפרסמים את הקובץ הזה לאותו קישור.
@@ -140,31 +142,21 @@
   .wf-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 0.6em; flex: 1; }
   .wf-split > div { display: flex; flex-direction: column; gap: 0.45em; min-width: 0; }
   .wf-split > div:first-child { border-inline-end: 1.5px solid var(--wf-line); padding-inline-end: 0.6em; }
-  /* Prototype */
-  .proto { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1.2em; align-items: start; }
-  .proto-side { display: grid; gap: 0.7em; align-content: start; min-width: 0; }
-  .proto-now { background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--c, var(--navy)); border-radius: 10px; padding: 0.6em 0.9em; }
-  .proto-now .t { font-weight: 800; font-size: 1.1em; }
-  .proto-ctrl { display: flex; gap: 0.4em; flex-wrap: wrap; }
-  .btn { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 0.3em 0.9em; font-weight: 700; color: var(--ink); }
-  .btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
-  .btn:disabled { opacity: 0.45; cursor: default; }
-  .proto-path { display: flex; gap: 0.3em; flex-wrap: wrap; }
-  .proto-path button { border: 1px solid var(--line); background: var(--paper); border-radius: 6px; padding: 0.05em 0.5em; font-weight: 700; color: var(--muted); }
-  .proto-path button[aria-current="step"] { background: var(--navy); color: #fff; border-color: var(--navy); }
-  .proto-hint { color: var(--muted); font-size: 0.9em; }
-  .proto-stage { display: flex; justify-content: center; }
-  .proto-stage .wf { font-size: 0.95em; }
-  .proto-stage .wf.phone { width: 21em; min-height: 36em; }
-  .proto-stage .wf.desk { width: 46em; min-height: 24em; }
-  .proto-stage [data-to] { cursor: pointer; outline: 2px dashed var(--focus); outline-offset: 2px; }
-  .proto-stage [data-to]:hover { filter: brightness(0.96); }
+  /* Prototype — קישור לדף הנפרד */
+  .protocard { background: var(--paper); border: 1px solid var(--line); border-inline-start: 6px solid var(--navy); border-radius: 12px; padding: 0.9em 1.2em; display: grid; gap: 0.6em; }
+  .protocard p { margin: 0; overflow-wrap: anywhere; }
+  .protocard .go { justify-self: start; display: inline-block; background: var(--navy); color: #fff; text-decoration: none; font-weight: 800; border-radius: 10px; padding: 0.45em 1.2em; }
+  .protocard .go:hover { filter: brightness(1.15); }
+  .protocard .missing { color: var(--warn); font-weight: 700; }
+  .proto-path { display: flex; gap: 0.3em; flex-wrap: wrap; align-items: center; }
+  .proto-path a { border: 1px solid var(--line); background: var(--paper); border-radius: 6px; padding: 0.05em 0.5em; font-weight: 700; color: var(--ink); text-decoration: none; border-inline-start: 4px solid var(--c, var(--navy)); }
+  .proto-path .arr { color: var(--muted); }
+  .ptop { display: inline-block; margin-top: 0.5em; font-weight: 800; color: var(--navy); }
   .empty { color: var(--muted); font-style: italic; }
   ul.open { margin: 0; padding-inline-start: 1.2em; } ul.open li { margin: 0.3em 0; overflow-wrap: anywhere; }
   footer.page { margin-block: 2.5em 2em; color: var(--muted); font-size: 0.85em; }
-  @media (max-width: 900px) { .proto { grid-template-columns: 1fr; } .proto-stage .wf.desk { width: 100%; } }
   @media (max-width: 680px) { .screen { grid-template-columns: 1fr; grid-template-areas: "head" "info" "wf" "foot"; } }
-  @media print { nav.jump, #proto { display: none; } body { background: #fff; } .screen { break-inside: avoid; } }
+  @media print { nav.jump { display: none; } body { background: #fff; } .screen { break-inside: avoid; } }
 </style>
 </head>
 <body>
@@ -199,21 +191,9 @@
     <div class="screens" id="screens"></div>
   </section>
 
-  <section id="proto" hidden>
-    <h2>Prototype — להפעלה מול הצוות</h2>
-    <div class="proto">
-      <div class="proto-side">
-        <div class="proto-now" id="pnow"></div>
-        <div class="proto-ctrl">
-          <button type="button" class="btn" id="pprev">הקודם</button>
-          <button type="button" class="btn primary" id="pnext">הבא</button>
-          <button type="button" class="btn" id="preset">מההתחלה</button>
-        </div>
-        <div><div class="lbl">המסלול</div><div class="proto-path" id="ppath"></div></div>
-        <p class="proto-hint">מה שמסומן במסגרת מקווקוות — לחיץ, ומוביל למסך הבא. אפשר להקליד בשדות. טקסט בסוגריים מרובעים — עוד לא הוגדר.</p>
-      </div>
-      <div class="proto-stage" id="pstage"></div>
-    </div>
+  <section id="proto">
+    <h2>Prototype</h2>
+    <div class="protocard" id="pcard"></div>
   </section>
 
   <section id="open-sec" hidden>
@@ -232,7 +212,7 @@
   "date": "דוגמה",
   "question": "האם תושב שמקבל מהסוכן, ולא מפקיד בטלפון, הודעה על מסמך חסר עם הסבר מה להעלות, יעלה את המסמך לפני המועד?",
   "studio": "",
-  "prototype": true,
+  "prototypeUrl": "",
   "context": {
     "persona": "התושב — מגיש בקשה מהטלפון, לא מכיר את התהליך",
     "values": ["פשטות", "אמון", "ליווי"],
@@ -326,7 +306,7 @@
   var sByCode = {}; screens.forEach(function (s) { sByCode[s.code] = s; });
   var steps = (d.steps || []).filter(function (s) { return s && s.text; });
   var isDraft = (d.kind || "Draft 0") === "Draft 0";
-  var hasProto = isDraft || d.prototype !== false;
+  var protoUrl = /^https:\/\//.test(d.prototypeUrl || "") ? d.prototypeUrl : "";
 
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function color(actor) { return actor in aIndex ? LANE[aIndex[actor] % LANE.length] : "var(--navy)"; }
@@ -362,7 +342,7 @@
   function jl(href, text, cls, c) { var a = el("a", cls, text); a.href = href; if (c) a.style.setProperty("--c", c); jump.append(a); }
   jl("#actors-sec", "מי משתמש במה"); jl("#flow-sec", "מפת הזרימה"); jump.append(el("span", "sep"));
   screens.forEach(function (s) { var a = el("a", "code", s.code); a.href = "#" + s.code; a.title = s.name || ""; a.style.setProperty("--c", color(s.actor)); jump.append(a); });
-  if (hasProto) { jump.append(el("span", "sep")); jl("#proto", "Prototype"); }
+  jump.append(el("span", "sep")); jl("#proto", "Prototype");
   if ((d.open || []).length) jl("#open-sec", "מה פתוח");
 
   // מי משתמש במה
@@ -488,41 +468,24 @@
     var foot = el("footer"), up = el("a", null, "↑ לראש הדף"); up.href = "#actors-sec"; foot.append(up);
     var nx = screens[idx + 1];
     if (nx) { var n = el("a", null, "המסך הבא: " + nx.code + " ←"); n.href = "#" + nx.code; foot.append(n); }
-    else if (hasProto) { var p = el("a", null, "ל-Prototype ←"); p.href = "#proto"; foot.append(p); }
+    else { var p = el("a", null, "ל-Prototype ←"); p.href = "#proto"; foot.append(p); }
     card.append(foot);
     grid.append(card);
   });
 
-  // Prototype
-  if (hasProto && screens.length) {
-    document.getElementById("proto").hidden = false;
-    var path = (d.path || []).filter(function (c) { return sByCode[c]; });
-    if (!path.length) { steps.forEach(function (s) { (s.screens || []).forEach(function (c) { if (sByCode[c] && path.indexOf(c) === -1) path.push(c); }); }); }
-    if (!path.length) path = screens.map(function (s) { return s.code; });
-    var cur = path[0];
-    var stage = document.getElementById("pstage"), now = document.getElementById("pnow"), pp = document.getElementById("ppath");
-    path.forEach(function (c) { var b = el("button", null, c); b.type = "button"; b.title = sByCode[c].name || ""; b.addEventListener("click", function () { go(c); }); pp.append(b); });
-    function stepText(s) { var st = steps.filter(function (x) { return (x.screens || []).indexOf(s.code) !== -1; })[0]; return st ? "שלב " + st.n + ": " + st.text : ""; }
-    function go(code) {
-      if (!sByCode[code]) return;
-      cur = code; var s = sByCode[code], actor = actors[aIndex[s.actor]];
-      now.style.setProperty("--c", color(s.actor)); now.textContent = "";
-      now.append(el("div", "lbl", stepText(s)), el("div", "t", s.code + " · " + (s.name || "")), el("div", "who", (actor ? actor.name : "") + " · " + (s.device || "")));
-      stage.textContent = "";
-      var wf = el("div", "wf " + (isDesk(s) ? "desk" : "phone"));
-      blocks(s.wireframe, wf, true); stage.append(wf);
-      var i = path.indexOf(code);
-      document.getElementById("pprev").disabled = i <= 0;
-      document.getElementById("pnext").disabled = i === -1 || i >= path.length - 1;
-      Array.prototype.forEach.call(pp.children, function (b) { if (b.textContent === code) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
-    }
-    stage.addEventListener("click", function (e) { var t = e.target.closest("[data-to]"); if (t) go(t.dataset.to); });
-    stage.addEventListener("keydown", function (e) { if ((e.key === "Enter" || e.key === " ") && e.target.dataset && e.target.dataset.to) { e.preventDefault(); go(e.target.dataset.to); } });
-    document.getElementById("pprev").addEventListener("click", function () { var i = path.indexOf(cur); if (i > 0) go(path[i - 1]); });
-    document.getElementById("pnext").addEventListener("click", function () { var i = path.indexOf(cur); if (i < path.length - 1) go(path[i + 1]); });
-    document.getElementById("preset").addEventListener("click", function () { go(path[0]); });
-    go(cur);
-  }
+  // Prototype — דף נפרד; כאן הקישור והמסלול
+  var path = (d.path || []).filter(function (c) { return sByCode[c]; });
+  if (!path.length) { steps.forEach(function (st) { (st.screens || []).forEach(function (c) { if (sByCode[c] && path.indexOf(c) === -1) path.push(c); }); }); }
+  if (!path.length) path = screens.map(function (x) { return x.code; });
+  var pc = document.getElementById("pcard");
+  pc.append(el("p", null, "המערכת כמו שהיא תיראה: המסלול המרכזי, לחיץ מההתחלה עד הסוף, בתוך מסגרת המכשיר ובשפה של ה-Design System הממשלתי. דף נפרד — להצגה מול הצוות ובסוף היום."));
+  var pr = el("div", "proto-path"); pr.append(el("span", "lbl", "המסלול:"));
+  path.forEach(function (c, i) { if (i) pr.append(el("span", "arr", "←")); var a = el("a", null, c); a.href = "#" + c; a.title = sByCode[c].name || ""; a.style.setProperty("--c", color(sByCode[c].actor)); pr.append(a); });
+  pc.append(pr);
+  if (protoUrl) {
+    var go = el("a", "go", "פתיחת ה-Prototype ←"); go.href = protoUrl; go.target = "_blank"; go.rel = "noopener"; pc.append(go);
+    var tp = el("a", "ptop", "Prototype ←"); tp.href = protoUrl; tp.target = "_blank"; tp.rel = "noopener"; document.getElementById("meta").after(tp);
+  } else pc.append(el("p", "missing", "ה-Prototype עוד לא פורסם. הקובץ: Prototype.html, ליד הבריף."));
 
   // מה פתוח
   var open = (d.open || []).filter(Boolean), ou = document.getElementById("open");
